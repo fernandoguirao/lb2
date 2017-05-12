@@ -1,0 +1,546 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Landbot | Convert a Landing Page into a Chatbot</title>
+    <meta name="description" content="Landbot.io is a tool to create conversational interfaces in substitution of forms. No coding required!">
+    <meta property="og:title" content="Landbot | Convert a Landing Page into a Chatbot"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="http://landbot.io/ogimage.jpg"/>
+    <meta property="og:url" content="http://landbot.io"/>
+    <meta property="og:description" content="Landbot.io is a tool to create conversational interfaces in substitution of forms. No coding required!"/>
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="http://landbot.io">
+    <meta name="twitter:title" content="Landbot | Convert a Landing Page into a Chatbot">
+    <meta name="twitter:description" content="Landbot.io is a tool to create conversational interfaces in substitution of forms. No coding required!">
+    <meta name="twitter:image" content="http://landbot.io/ogimage.jpg">
+
+	  <style>
+
+  body {
+    background: #ffad59;
+    /* Old browsers */
+    background: -moz-linear-gradient(to bottom, #ffad59 0%, #ffe199 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(to bottom, #ffad59 0%, #ffe199 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ffad59 0%, #ffe199 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=0 );
+    /* IE6-9 */
+    background-size: cover;
+background-repeat: no-repeat;
+width: 100%;
+height: 100%;
+overflow: hidden;
+  }
+
+  @font-face {
+    font-family: 'Gotham Rounded';
+    src: url(https://guidango.com/fonts/gotham/gotham-rounded-medium.eot);
+    /* IE9 Compat Modes */
+    src: url(https://guidango.com/fonts/gotham/gotham-rounded-medium.eot?#iefix) format("embedded-opentype"), url(https://guidango.com/fonts/gotham/gotham-rounded-medium.woff) format("woff"), url(https://guidango.com/fonts/gotham/gotham-rounded-medium.ttf) format("truetype"), url(https://guidango.com/fonts/gotham/gotham-rounded-medium.svg#GothamRoundedMedium) format("svg");
+    /* Legacy iOS */
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: 'Gotham Rounded';
+    src: url(https://guidango.com/fonts/gotham/gotham-rounded-bold.eot);
+    /* IE9 Compat Modes */
+    src: url(https://guidango.com/fonts/gotham/gotham-rounded-bold.eot?#iefix) format("embedded-opentype"), url(https://guidango.com/fonts/gotham/gotham-rounded-bold.otf) format("opentype"), url(https://guidango.com/fonts/gotham/gotham-rounded-bold.svg#gotham_roundedbold) format("svg");
+    /* Legacy iOS */
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: 'Gotham Rounded';
+    src: url(https://guidango.com/fonts/gotham/gotham-rounded-book.eot);
+    /* IE9 Compat Modes */
+    src: url(https://guidango.com/fonts/gotham/gotham-rounded-book.eot?#iefix) format("embedded-opentype"), url(https://guidango.com/fonts/gotham/gotham-rounded-book.woff) format("woff"), url(https://guidango.com/fonts/gotham/gotham-rounded-book.ttf) format("truetype"), url(https://guidango.com/fonts/gotham/gotham-rounded-book.svg#gotham_roundedbook) format("svg");
+    /* Legacy iOS */
+  }
+  .referral {
+    font-family: "Gotham Rounded", sans-serif !important;
+    position: absolute;
+    bottom: 16px;
+    left: 0;
+    margin-right: 5px;
+    color: white;
+    width: 100%;
+    text-align: center;
+    z-index: 100000000000;
+  }
+  .referral a {
+    font-family: "Gotham Rounded", sans-serif !important;
+    color: white;
+    font-size: 11px;
+    text-decoration: none;
+  }
+  .referral a img {
+    width: 24px;
+    position: relative;
+    top: 5px;
+    margin-right: 4px;
+  }
+
+  div#hu-experiment-header {
+    z-index: 100000000;
+    position: fixed;
+    top: -15px;
+    width: 92%;
+    font-family: "Gotham Rounded", sans-serif !important;
+    line-height: 1.2 !important;
+    padding: 32px;
+    margin-left: 0%;
+    display: block;
+    background: white;
+    width: 100% !important;
+    margin: 0 !important;
+    left: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  div#hu-experiment-header .hu-left-header {
+    position: relative;
+    top: 5px;
+    float: left;
+    margin-left: 100px;
+  }
+  div#hu-experiment-header .hu-left-header img {
+    width: 103px;
+  }
+  div#hu-experiment-header .hu-right-header {
+    top: 12px;
+    position: relative;
+    float: right;
+    margin-right: 100px;
+  }
+  div#hu-experiment-header .hu-right-header a {
+    background-color: #4A50A8;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    padding: 11px 31px;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+
+
+  @media screen and (max-width: 800px) {
+    .hu-left-header {
+      margin-left: 30px;
+    }
+
+    .hu-right-header {
+      margin-right: 30px;
+    }
+  }
+  @media screen and (max-width: 770px) {
+    .hu-right-header a {
+      display: none !important;
+    }
+
+    .hu-left-header {
+      float: none !important;
+      margin: 0 calc(50% - 65px);
+      display: inline-block;
+		margin-left: 0!important;
+  text-align: center;
+  width: 100%;
+    }
+    .more-leads {
+	    display: none!important;
+    }
+  }
+  iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+  }
+
+
+	.hu-loader {
+  top: 165px !important;
+  text-align: center;
+  width: 100%;
+  height: 48px;
+  position: relative;
+  /* z-index: 100000000; */
+  background: transparent;
+  font-family: "Gotham Rounded", sans-serif !important;
+}
+.hu-loader:after {
+  content: "";
+  display: block;
+  width: 400px;
+  position: relative;
+  top: -106px;
+  background-image: url(http://helloumi.org/botchat/preloader.gif);
+  height: 400px;
+  background-size: 400px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  margin: 0 auto;
+}
+.hu-loader:before {
+  content: "Cargando chatbot...";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  color: white;
+  font-size: 13px;
+  padding-top: 136px;
+  background: transparent;
+}
+
+
+@media screen and (max-width: 600px) {
+  .hu-loader {
+    -webkit-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    transform: scale(0.5);
+    margin-top: -109px;
+	    margin-left: -4px;
+	    top: 252px !important;
+  }
+  .hu-loader:before {
+    background: transparent !important;
+    font-size: 26px;
+    top: -193px;
+  }
+
+}
+
+	@media screen and (max-width:800px) {
+		.referral {
+	display: none!important;
+	}
+	}
+
+		  /*CUSTOM*/
+
+		  span.hu-italic {
+  font-style: inherit!important;
+}
+
+.stripes {
+  background: linear-gradient(-180deg,#f6bf4e 1%,#f9d281 23%,#fffdf3 71%);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* z-index: 9999999; */
+  transform: skewY(-12deg);
+}
+
+.stripes * {
+    position: absolute;
+  height: 190px;
+}
+.stripe1 {top: 0;left: 0;width: 30%;background:linear-gradient(90deg,#ffad5a,rgba(250,175,82,.25));}
+
+.stripe2 {
+  top: 190px;
+  left: 0;
+  width: 38%;
+  background: linear-gradient(90deg,#ffcd68,rgba(255,199,107,0));
+
+}
+
+.stripe3 {
+  top: 380px;
+  right: 0;
+  width: 36%;
+  background: linear-gradient(90deg,hsla(46,98%,78%,0),#ffda84);
+}
+
+div#hu-container-widget div#hu-container-messenger {
+  background: linear-gradient(to bottom, #ffad59 0%, #ffe199 100%);
+}
+
+div#hu-experiment-header {
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.03);
+}
+.hu-right-header a:hover {
+
+  color: #4f55ad;
+  transform: translateY(-10px);
+  box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+background-color: #5b60b7!important;
+
+
+}
+
+.hu-right-header a {
+transition: all .15s ease;
+text-transform: uppercase;
+font-size:12px!important;
+position: relative;
+top: -4px;
+
+}
+
+
+.more-leads {
+  font-size: 13px;
+  top: -1px;
+  position: relative;
+  display: inline-block;
+  margin-left: 13px;
+  margin-bottom: -4px;
+  color: rgba(76, 85, 175, 0.89);
+}
+
+
+.btt {
+  margin-right: 6px;
+  background: white!important;
+  border: 2px solid #4a50a8;
+  color: #4a50a8!important;
+  padding: 9px 29px!important;
+}
+
+.btt:hover {
+	color: white!important;
+}
+
+.notclickable {
+  opacity: .2;
+  pointer-events: none;
+}
+
+.hu-right-header {
+	-webkit-transition: opacity .5s;
+	transition: opacity .5s;
+}
+
+
+@media screen and (max-width: 890px) {
+	div#hu-experiment-header .hu-right-header {
+		margin-right: 60px;
+	}
+	div#hu-experiment-header .hu-left-header {
+		margin-left: 60px;
+	}
+}
+
+</style>
+  </head>
+  <body>
+
+    <div id="hu-experiment-header">
+      <div class="hu-left-header">
+        <img src="http://bueninvento.es/umiexp2.png" alt="">
+        <span class="more-leads">Get more leads using chatbots 🤖</span>
+      </div>
+      <div class="hu-right-header" id="rightheader">
+	    <a href="#" class="btt" onclick="event.preventDefault(); fakeMessage('features');">
+          Features
+        </a>
+        <a href="#" onclick="event.preventDefault(); fakeMessage('signup');">
+          Early Access
+        </a>
+      </div>
+    </div>
+
+
+<!-- SPINER -->
+  <style type="text/css">
+    /*
+ *  Usage:
+ *
+      <div class="sk-folding-cube">
+        <div class="sk-cube1 sk-cube"></div>
+        <div class="sk-cube2 sk-cube"></div>
+        <div class="sk-cube4 sk-cube"></div>
+        <div class="sk-cube3 sk-cube"></div>
+      </div>
+ *
+ */
+.sk-folding-cube {
+  top: 40%;
+  left: calc(50% - 30px);
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  -webkit-transform: rotateZ(45deg) scale(1.5);
+  transform: rotateZ(45deg) scale(1.5);
+}
+  .sk-folding-cube .sk-cube {
+    float: left;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1); }
+  .sk-folding-cube .sk-cube:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+/*     background-color: #ce4b81; */
+    background-color: white;
+    -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+            animation: sk-foldCubeAngle 2.4s infinite linear both;
+    -webkit-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+            transform-origin: 100% 100%; }
+  .sk-folding-cube .sk-cube2 {
+    -webkit-transform: scale(1.1) rotateZ(90deg);
+            transform: scale(1.1) rotateZ(90deg); }
+  .sk-folding-cube .sk-cube3 {
+    -webkit-transform: scale(1.1) rotateZ(180deg);
+            transform: scale(1.1) rotateZ(180deg); }
+  .sk-folding-cube .sk-cube4 {
+    -webkit-transform: scale(1.1) rotateZ(270deg);
+            transform: scale(1.1) rotateZ(270deg); }
+  .sk-folding-cube .sk-cube2:before {
+    -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s; }
+  .sk-folding-cube .sk-cube3:before {
+    -webkit-animation-delay: 0.6s;
+            animation-delay: 0.6s; }
+  .sk-folding-cube .sk-cube4:before {
+    -webkit-animation-delay: 0.9s;
+            animation-delay: 0.9s; }
+@-webkit-keyframes sk-foldCubeAngle {
+  0%, 10% {
+    -webkit-transform: perspective(140px) rotateX(-180deg);
+            transform: perspective(140px) rotateX(-180deg);
+    opacity: 0; }
+  25%, 75% {
+    -webkit-transform: perspective(140px) rotateX(0deg);
+            transform: perspective(140px) rotateX(0deg);
+    opacity: 1; }
+  90%, 100% {
+    -webkit-transform: perspective(140px) rotateY(180deg);
+            transform: perspective(140px) rotateY(180deg);
+    opacity: 0; } }
+@keyframes sk-foldCubeAngle {
+  0%, 10% {
+    -webkit-transform: perspective(140px) rotateX(-180deg);
+            transform: perspective(140px) rotateX(-180deg);
+    opacity: 0; }
+  25%, 75% {
+    -webkit-transform: perspective(140px) rotateX(0deg);
+            transform: perspective(140px) rotateX(0deg);
+    opacity: 1; }
+  90%, 100% {
+    -webkit-transform: perspective(140px) rotateY(180deg);
+            transform: perspective(140px) rotateY(180deg);
+    opacity: 0; } }
+  </style>
+<!--
+<div class='demo'>
+  <div class='circle'>
+    <div class='inner'></div>
+  </div>
+  <div class='circle'>
+    <div class='inner'></div>
+  </div>
+  <div class='circle'>
+    <div class='inner'></div>
+  </div>
+  <div class='circle'>
+    <div class='inner'></div>
+  </div>
+  <div class='circle'>
+    <div class='inner'></div>
+  </div>
+</div>
+-->
+ <div class="sk-folding-cube">
+        <div class="sk-cube1 sk-cube"></div>
+        <div class="sk-cube2 sk-cube"></div>
+        <div class="sk-cube4 sk-cube"></div>
+        <div class="sk-cube3 sk-cube"></div>
+      </div>
+<!-- SPINER -->
+
+
+<!-- 	 <div class="hu-loader"></div> -->
+
+   <!-- <div class="referral">
+      <a target="_blank" href="https://daisho.helloumi.com/signup/?hu_source=referral&hu_medium=messenger&hu_campaign=livechat%20vs%20landingbot&hu_content=iteracion01&hu_referrer=landingbot">
+        <img src="https://storage.googleapis.com/media.helloumi.com/channels/2789.png" alt="" />
+        A product by
+        <b>Helloumi</b>
+      </a>
+    </div> -->
+
+
+<link rel="stylesheet" href="https://storage.googleapis.com/static-demo-helloumi/webchat-widget/css/main.css"\><script>function loadHelloumiLiveChat(){ window.HULiveChat = new Umichat({ "staticUrl": "https://storage.googleapis.com/static-demo-helloumi/", "channelToken": "H-55-3S9G13MZ1NB4HXU0", "brandID": "233", "version": "1.0.0.6", "apiKey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU", "authDomain": "daisho-yexir.firebaseapp.com", "databaseURL": "https://daisho-yexir.firebaseio.com", "storageBucket": "daisho-yexir.appspot.com","open":true,"channelid":"8"}); HULiveChat.createLiveChat(); }</script><script src="https://storage.googleapis.com/static-demo-helloumi/webchat-widget/js/main.js?1" onload="loadHelloumiLiveChat()" charset="UTF-8"></script>
+
+// <script>
+//   !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
+//   analytics.load("sSnmeJKKUKWb3nCNyHTINdMkD7niGFwk");
+//   analytics.page();
+//   }}();
+// </script>
+
+<script>
+
+HULiveChat.on('render', function() {
+    console.log('Ya he cargado');
+    HULiveChat.ifrWindow.document.querySelector('head').innerHTML += '<link rel="stylesheet" href="botchat.css" type="text/css"/>';
+});
+
+
+  function identifyUser(flag, data) {
+    if (typeof(window[flag])=='undefined'){
+      var analyticsUserId = window.analytics.user().id();
+      if( analyticsUserId == null ) {
+        var distinctId = window.mixpanel.get_distinct_id();
+        window.analytics.identify(distinctId, data );
+      } else {
+        if (analyticsUserId.substr(0,6) != 'brand_') {
+          window.analytics.identify(analyticsUserId, data );
+        }
+      }
+      window[flag]=1;
+    }
+  };
+
+  function trackEvent(flag, eventName, stepName) {
+    if (typeof(window[flag])=='undefined'){
+      window.analytics.track(eventName, {step: stepName});
+      window[flag]=1;
+    }
+  };
+
+
+
+
+// MENSAJE FAKE
+function fakeMessage(msg){
+	var formData = new FormData();
+	formData.append('message', msg);
+
+	var umichatCore  = HULiveChat.ifrWindow.helloumi.webchat.umichatcore;
+	umichatCore.sendMessage(
+		formData,
+		umichatCore.messageSent.bind(umichatCore)
+	);
+}
+
+
+// ADD CLASS REMOVE CLASS
+function addClass(){
+	var d = document.getElementById("rightheader");
+	d.className += " notclickable";
+}
+function removeClass(){
+	var d = document.getElementById("rightheader");
+	d.classList.remove("notclickable");
+}
+
+</script>
+</body>
+</html>

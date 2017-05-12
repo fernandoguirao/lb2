@@ -1,0 +1,531 @@
+@charset "UTF-8";
+div#hu-container-widget {
+  width: 100%;
+  padding-bottom: 117px !important; }
+  div#hu-container-widget div#hu-container-messenger {
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    background: #4a50a8;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #4a50a8 0%, #7db9e8 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #4a50a8 0%, #7db9e8 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #4a50a8 0%, #7db9e8 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=0 );
+    /* IE6-9 */ }
+    div#hu-container-widget div#hu-container-messenger .hu-messenger-header {
+      background-color: transparent !important;
+      height: 73px !important; }
+      div#hu-container-widget div#hu-container-messenger .hu-messenger-header.js-initial {
+        height: 200px; }
+      div#hu-container-widget div#hu-container-messenger .hu-messenger-header .hu-header-state.hu-header-initial {
+        display: none !important; }
+      div#hu-container-widget div#hu-container-messenger .hu-messenger-header .hu-header-state.hu-header-chat {
+        opacity: 1 !important;
+        padding-left: 5%;
+        padding-right: 20%;
+        padding-top: 12px; }
+      div#hu-container-widget div#hu-container-messenger .hu-messenger-header .hu-header-state .hu-header-cross.hu-header-btn {
+        display: none !important; }
+      div#hu-container-widget div#hu-container-messenger .hu-messenger-header .hu-header-state .hu-header-title.hu-header-btn, div#hu-container-widget div#hu-container-messenger .hu-messenger-header .hu-header-state .hu-header-title p {
+        display: none !important; }
+    div#hu-container-widget div#hu-container-messenger .hu-messenger-body {
+      background-image: none !important;
+      background: transparent !important;
+      margin-bottom: 0px !important; }
+      div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state {
+        padding-top: 55px !important; }
+        div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-date.hu-js-date {
+          display: none !important; }
+        div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content-group {
+          position: relative;
+          width: 100%; }
+        div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content {
+          padding: 12px !important;
+          -webkit-box-shadow: 0 0 9px 0px rgba(0, 0, 0, 0.08);
+          -moz-box-shadow: 0 0 9px 0px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 0 9px 0px rgba(0, 0, 0, 0.08); }
+          div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content p {
+            font-size: 14px !important;
+            line-height: 1.35em !important; }
+            div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content p span.hu-bold {
+              font-weight: 500 !important; }
+          div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content.hu-message-content-buttons {
+            background: transparent !important;
+            padding: 0 !important;
+            margin: 30px 0 13px;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            top: 43px;
+            display: none; }
+            div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content.hu-message-content-buttons .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink {
+              float: left;
+              margin-right: 6px;
+              border-radius: 4px !important;
+              font-size: 15px;
+              padding: 15px 31px;
+              border-width: 2px;
+              line-height: 1.3; }
+              div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content.hu-message-content-buttons .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink:last-child {
+                background-color: transparent;
+                color: white;
+                border-color: white; }
+                div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content.hu-message-content-buttons .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink:last-child:hover {
+                  background: white;
+                  color: #4A50A8; }
+                div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content.hu-message-content-buttons .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink:last-child:first-child {
+                  background-color: #da548b;
+                  color: white; }
+          div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content.hu-message-content-image {
+            width: 100%; }
+            div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content.hu-message-content-image img {
+              max-width: 100% !important;
+              min-width: 100% !important;
+              height: auto !important;
+              max-height: none; }
+        div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message:last-child .hu-message-content-buttons {
+          display: inherit !important; }
+        div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-avatar {
+          width: 40px !important;
+          height: 40px !important; }
+        div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message.hu-messenger-message-user .hu-message-container .hu-message-content.hu-message-content-text {
+          background: rgba(255, 255, 255, 0.13) !important; }
+        div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message.hu-messenger-message-user .hu-message-container .hu-message-info * {
+          -webkit-filter: brightness(10) grayscale(10) opacity(1) contrast(10) !important;
+          -moz-filter: brightness(10) grayscale(10) opacity(1) contrast(10) !important;
+          -ms-filter: brightness(10) grayscale(10) opacity(1) contrast(10) !important;
+          -o-filter: brightness(10) grayscale(10) opacity(1) contrast(10) !important;
+          filter: brightness(10) grayscale(10) opacity(1) contrast(10) !important; }
+        div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message.hu-messenger-message-brand[data-samurai^="\-"] .hu-avatar {
+          background-image: url("https://randomuser.me/api/portraits/women/60.jpg") !important; }
+      div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-powered {
+        display: none; }
+      div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-loader {
+        top: 94px !important; }
+        div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-loader:after {
+          content: "";
+          display: block;
+          width: 400px;
+          position: relative;
+          top: -106px;
+          background-image: url(http://helloumi.org/botchat/preloader.gif);
+          height: 400px;
+          background-size: 400px;
+          background-repeat: no-repeat;
+          background-position: bottom;
+          margin: 0 auto; }
+        div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-loader:before {
+          display: none;
+          content: "Cargando chatbot...";
+          position: fixed;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+          color: white;
+          font-size: 13px;
+          padding-top: 136px;
+          background: #4a50a8;
+          /* Old browsers */
+          background: -moz-linear-gradient(top, #4a50a8 0%, #7db9e8 100%);
+          /* FF3.6-15 */
+          background: -webkit-linear-gradient(top, #4a50a8 0%, #7db9e8 100%);
+          /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to bottom, #4a50a8 0%, #7db9e8 100%);
+          /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=0 );
+          /* IE6-9 */ }
+    div#hu-container-widget div#hu-container-messenger .hu-messenger-footer {
+      border-radius: 6px;
+      border: 2px solid #6369BE; }
+      div#hu-container-widget div#hu-container-messenger .hu-messenger-footer .hu-footer-state {
+        width: 100%; }
+        div#hu-container-widget div#hu-container-messenger .hu-messenger-footer .hu-footer-state .hu-composer .hu-composer-text {
+          padding-bottom: 13px !important; }
+          div#hu-container-widget div#hu-container-messenger .hu-messenger-footer .hu-footer-state .hu-composer .hu-composer-text #hu-composer-aux-box {
+            opacity: 0; }
+  div#hu-container-widget #hu-container-proactive {
+    display: none; }
+    div#hu-container-widget #hu-container-proactive.hu-js-closed {
+      display: none; }
+  div#hu-container-widget[data-assigned="ronin"][data-status="pick-data"] .hu-composer-text, div#hu-container-widget[data-assigned="ronin"][data-status="pick-option"] .hu-composer-text {
+    width: 368px;
+    padding-bottom: 13px; }
+  div#hu-container-widget[data-assigned="ronin"][data-status="pick-data"] .hu-composer-buttons, div#hu-container-widget[data-assigned="ronin"][data-status="pick-option"] .hu-composer-buttons {
+    width: 50px; }
+  div#hu-container-widget[data-assigned="ronin"][data-status="pick-data"] .hu-composer-emoji-button, div#hu-container-widget[data-assigned="ronin"][data-status="pick-option"] .hu-composer-emoji-button {
+    display: none !important; }
+  div#hu-container-widget[data-assigned="ronin"][data-status="pick-data"] .hu-composer-send-button, div#hu-container-widget[data-assigned="ronin"][data-status="pick-option"] .hu-composer-send-button {
+    display: inherit !important; }
+  div#hu-container-widget[data-assigned="ronin"][data-status="pick-data"] .hu-composer-file-button, div#hu-container-widget[data-assigned="ronin"][data-status="pick-option"] .hu-composer-file-button {
+    display: none !important; }
+  div#hu-container-widget[data-assigned="ronin"][data-status="pick-data"] .hu-composer-send-button.hu-js-hide {
+    opacity: 0.5 !important;
+    pointer-events: none; }
+  div#hu-container-widget[data-assigned="ronin"][data-status="pick-option"] .hu-composer-send-button.hu-js-hide {
+    opacity: 0.5 !important;
+    pointer-events: none; }
+  div#hu-container-widget[data-assigned="ronin"][data-status="pick-option"] .hu-messenger-body-state {
+    padding-bottom: 150px !important; }
+
+@media screen and (min-width: 800px) {
+  .hu-messenger-body-state {
+    padding: 0 13%; }
+
+  .hu-messenger-footer {
+    margin: 0 21% 81px;
+    width: 56.4%; } }
+@media screen and (min-width: 1044px) {
+  .hu-messenger-body-state {
+    padding: 0 23%; }
+
+  .hu-messenger-footer {
+    margin: 0 29.3% 81px;
+    width: 41%; } }
+@media screen and (min-width: 1300px) {
+  .hu-messenger-body-state {
+    padding: 0 30%; }
+
+  .hu-messenger-footer {
+    margin: 0 35.3% 81px;
+    width: 30%; } }
+@media screen and (max-width: 600px) {
+  .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink {
+    float: none !important; }
+
+  .hu-loader {
+    -webkit-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    transform: scale(0.5);
+    margin-top: -109px; }
+    .hu-loader:before {
+      background: transparent !important;
+      font-size: 26px;
+      top: -193px; } }
+@media screen and (max-width: 799px) {
+  .hu-messenger-footer {
+    border-radius: 0 !important;
+    border: none !important; } }
+#hu-container-widget span.hu-size-big {
+  background: #da548b;
+  font-size: 13px !important;
+  position: relative;
+  padding: 0;
+  border-radius: 4px;
+  width: 107px;
+  overflow: hidden;
+  height: 40px;
+  display: inline-block; }
+  #hu-container-widget span.hu-size-big:hover {
+    background-color: #ce2d6f; }
+  #hu-container-widget span.hu-size-big:before {
+    content: "Sign up";
+    position: absolute;
+    color: white;
+    width: 100%;
+    margin-top: 12px;
+    text-align: center; }
+  #hu-container-widget span.hu-size-big a {
+    color: transparent !important;
+    z-index: 1;
+    position: relative;
+    width: 107px;
+    display: block; }
+
+div[data-assigned="ronin"] .hu-messenger-message-brand .hu-message-content:not(.hu-message-content-image):not(.hu-message-content-buttons) {
+  animation-name: example;
+  animation-duration: 1.3s; }
+div[data-assigned="ronin"] .hu-messenger-message-brand .hu-message-content p::before {
+  opacity: 0;
+  content: "";
+  background-image: url("http://helloumi.org/typig.png");
+  width: 40px;
+  height: 10px;
+  display: inline-block;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 2px;
+  animation-name: example2;
+  animation-duration: 1.3s; }
+div[data-assigned="ronin"] .hu-messenger-message-brand .hu-message-content:not(.hu-message-content-image):not(.hu-message-content-buttons) span, div[data-assigned="ronin"] .hu-messenger-message-brand .hu-message-content:not(.hu-message-content-image):not(.hu-message-content-buttons) a, div[data-assigned="ronin"] .hu-messenger-message-brand .hu-message-content:not(.hu-message-content-image):not(.hu-message-content-buttons) b, div[data-assigned="ronin"] .hu-messenger-message-brand .hu-message-content:not(.hu-message-content-image):not(.hu-message-content-buttons) p {
+  animation-name: example3;
+  animation-duration: 1.3s; }
+
+@keyframes example {
+  0% {
+    color: transparent !important;
+    width: 68px;
+    height: 36px;
+    overflow: hidden; }
+  100% {
+    color: transparent !important;
+    width: 68px;
+    height: 36px;
+    overflow: hidden; } }
+@keyframes example2 {
+  0% {
+    opacity: 0; }
+  5% {
+    opacity: 0.5; }
+  30% {
+    opacity: 0.5; }
+  35% {
+    opacity: 0; }
+  40% {
+    opacity: 0.5; }
+  65% {
+    opacity: 0.5; }
+  70% {
+    opacity: 0; }
+  75% {
+    opacity: 0.5; }
+  100% {
+    opacity: .5; } }
+@keyframes example3 {
+  0% {
+    color: #f1f1f1;
+    color: transparent; }
+  100% {
+    color: #f1f1f1;
+    color: transparent; } }
+.hu-messenger-message-brand a.hu-link:not([href*=mailto]) {
+  background: #ce4b81;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 259px;
+  display: block;
+  width: 100%;
+  border-radius: 6px;
+  color: white !important;
+  text-decoration: none !important;
+  padding: 17px; }
+
+.hu-messenger-body {
+  -webkit-overflow-scrolling: touch; }
+
+div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state {
+  padding-bottom: 32px; }
+
+/* ESTILOS NUEVOS */
+.hu-italic.hu-bold {
+  display: block;
+  background: rgba(82, 96, 178, 0.21);
+  padding: 9px;
+  border-radius: 8px;
+  margin: 8px 0 0; }
+
+div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message.hu-messenger-message-brand[data-samurai^="\-"] .hu-avatar {
+  position: relative;
+  left: -7px;
+  box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.08); }
+
+.hu-messenger-message.hu-messenger-message-brand {
+  animation: appear-left;
+  animation-duration: .3s;
+  position: relative; }
+
+.hu-message-content-buttons {
+  animation: appear-right2;
+  animation-duration: .5s;
+  position: relative;
+  transition-timing-function: ease-in-out; }
+
+@keyframes appear-left {
+  from {
+    opacity: 0;
+    left: -30px; }
+  to {
+    opacity: 1;
+    left: 0; } }
+@keyframes appear-right2 {
+  from {
+    opacity: 0;
+    left: 30px !important; }
+  to {
+    opacity: 1;
+    left: 0; } }
+span.hu-italic {
+  font-style: inherit !important;
+  font-style: inherit !important; }
+
+.stripes {
+  background: linear-gradient(-180deg, #f6bf4e 1%, #f9d281 23%, #fffdf3 71%);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* z-index: 9999999; */
+  transform: skewY(-12deg); }
+  .stripes * {
+    position: absolute;
+    height: 190px; }
+
+.stripe1 {
+  top: 0;
+  left: 0;
+  width: 30%;
+  background: linear-gradient(90deg, #ffad5a, rgba(250, 175, 82, 0.25)); }
+
+.stripe2 {
+  top: 190px;
+  left: 0;
+  width: 38%;
+  background: linear-gradient(90deg, #ffcd68, rgba(255, 199, 107, 0)); }
+
+.stripe3 {
+  top: 380px;
+  right: 0;
+  width: 36%;
+  background: linear-gradient(90deg, rgba(254, 228, 144, 0), #ffda84); }
+
+div#hu-container-widget div#hu-container-messenger {
+  background: linear-gradient(to bottom, #ffad59 0%, #ffe199 100%); }
+div#hu-experiment-header {
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.03);
+  background: rgba(255, 255, 255, 0.16); }
+
+.hu-messenger-message.hu-messenger-message-brand .hu-message-content {
+  background-color: white; }
+
+div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message.hu-messenger-message-user .hu-message-container .hu-message-content.hu-message-content-text {
+  background: #ce4b81 !important; }
+
+.hu-message-info {
+  display: none !important; }
+
+div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content.hu-message-content-buttons .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink:last-child {
+  background-color: transparent;
+  color: #ce4b81;
+  border-color: #ce4b81; }
+  div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content.hu-message-content-buttons .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink:last-child:hover {
+    background: #ce4b81;
+    color: white; }
+div#hu-container-widget div#hu-container-messenger .hu-messenger-header {
+  background-color: transparent !important;
+  height: 63px !important; }
+div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content p {
+  font-weight: 500 !important; }
+
+/* MÁS */
+.hu-btn span, #hu-container-widget span {
+  font-weight: 500 !important; }
+
+div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content p span.hu-bold {
+  font-weight: 700 !important; }
+div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content p span.hu-italic {
+  font-weight: 500 !important; }
+
+span.hu-italic.hu-bold {
+  background: #fdf2d8;
+  font-style: italic !important; }
+
+.hu-message-content {
+  border-radius: 3px !important; }
+
+textarea#hu-composer-box {
+  color: #4a50a8; }
+  textarea#hu-composer-box::placeholder {
+    color: #b2b5de;
+    text-transform: uppercase;
+    font-weight: 500; }
+
+#hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Capturar"], #hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Medir"], #hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Integraciones"], #hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Configura"], #hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Chatear"], #hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Precio"] {
+  font-size: 11px !important;
+  text-transform: uppercase;
+  font-weight: 700 !important;
+  width: 94px !important;
+  display: inline-block;
+  text-align: center;
+  margin: -7px -16px -7px -22px !important; }
+#hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Data Capturing"], #hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Metrics"], #hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Integrations"], #hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Setting up"], #hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Talk to a customer"], #hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Pricing"] {
+  font-size: 11px !important;
+  text-transform: uppercase;
+  font-weight: 700 !important;
+  width: 115px !important;
+  display: inline-block;
+  text-align: center;
+  margin: -7px -16px -7px -22px !important; }
+
+div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-loader:after {
+  content: "Ready to talk";
+  display: block;
+  position: relative;
+  margin: 13px auto;
+  color: #4a50a8;
+  font-family: "Gotham Rounded";
+  font-weight: 500;
+  font-size: 15px;
+  text-transform: uppercase;
+  background-image: url(http://bueninvento.es/umiexp2.png);
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 200px;
+  background-position: 0 0px;
+  padding-top: 71px; }
+
+.hu-loader-1, .hu-loader-2, .hu-loader-3 {
+  display: none !important; }
+
+div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-loader:after {
+  content: "Ready! 🚀";
+  display: block;
+  position: fixed;
+  margin: 13px auto;
+  color: #ffffff;
+  font-family: "Gotham Rounded";
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: uppercase;
+  background-image: none;
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 200px;
+  background-position: 0 0px;
+  top: calc(30% - 26px);
+  left: calc(50% - 211px); }
+div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message.hu-messenger-message-brand[data-samurai^="\-"] .hu-avatar {
+  background-image: none !important;
+  background-color: #ce4b81; }
+  div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message.hu-messenger-message-brand[data-samurai^="\-"] .hu-avatar::before {
+    content: "";
+    position: relative;
+    top: 5px;
+    background-size: 100%;
+    background-image: url(http://landbot.io/avatar.png);
+    width: 26px;
+    height: 26px;
+    display: inherit;
+    background-repeat: no-repeat;
+    left: 7px; }
+
+@media screen and (min-width: 800px) {
+  #hu-webchat-ghosts .hu-messenger-message-user .hu-message-content {
+    animation: fer .5s normal forwards; } }
+@keyframes fer {
+  from {
+    transform: translate(-315px, 100px);
+    opacity: 0; } }
+.hu-messenger-footer {
+  -webkit-transition: transform 0.5s, opacity 0.5s !important;
+  transition: transform 0.5s, opacity 0.5s !important; }
+
+div#hu-container-widget[data-textbox="hidden"] .hu-messenger-footer {
+  /*   display: none!important; */
+  /* opacity: 0; */
+  transform: translateY(105px);
+  opacity: 0; }
+div#hu-container-widget:not([data-textbox]):not([data-assigned="ronin"]) .hu-messenger-footer {
+  transform: translateY(105px);
+  opacity: 0; }
+
+/*# sourceMappingURL=botchat.css.map */
