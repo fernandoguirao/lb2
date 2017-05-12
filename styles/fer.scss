@@ -27,15 +27,17 @@
 }
 
 
-
+// WIDGET
 div#hu-container-widget {
   width: 100%;
   padding-bottom: 117px !important;
 
+  // MESSENGER
   div#hu-container-messenger {
     @include box-shadow(none!important);
     @include gradient(#4a50a8,#7db9e8);
 
+    // MESSENGER HEADER
     .hu-messenger-header {
       background-color: transparent !important;
       height: 73px !important;
@@ -62,6 +64,8 @@ div#hu-container-widget {
         }
       }
     }
+
+    // MESSENGER BODY
     .hu-messenger-body {
       background-image: none !important;
       background: transparent !important;
@@ -80,9 +84,7 @@ div#hu-container-widget {
               }
               .hu-message-content {
                 padding: 12px !important;
-                -webkit-box-shadow: 0 0 9px 0px rgba(0, 0, 0, 0.08);
-                -moz-box-shadow: 0 0 9px 0px rgba(0, 0, 0, 0.08);
-                box-shadow: 0 0 9px 0px rgba(0, 0, 0, 0.08);
+                @include box-shadow(rgba(0, 0, 0, 0.08));
                 p {
                   font-size: 14px !important;
                   line-height: 1.35em !important;
@@ -94,9 +96,7 @@ div#hu-container-widget {
                   background: transparent !important;
                   padding: 0 !important;
                   margin: 30px 0 13px;
-                  -webkit-box-shadow: none;
-                  -moz-box-shadow: none;
-                  box-shadow: none;
+                  @include box-shadow(none);
                   position: absolute;
                   left: 0;
                   width: 100%;
@@ -310,6 +310,7 @@ div#hu-container-widget {
   }
 }
 
+// Esto creo que al final no lo usamos
 #hu-container-widget span.hu-size-big {
   background: #da548b;
   font-size: 13px !important;
@@ -339,7 +340,9 @@ div#hu-container-widget {
     display: block;
   }
 }
+// Fin de lo que creo que no usamos
 
+// Estado de loading
 div[data-assigned="ronin"] .hu-messenger-message-brand .hu-message-content {
   &:not(.hu-message-content-image):not(.hu-message-content-buttons) {
     animation-name: example;
@@ -435,7 +438,7 @@ div[data-assigned="ronin"] .hu-messenger-message-brand .hu-message-content {
   }
 }
 
-
+// Estilos para que los links parezcan botones
 .hu-messenger-message-brand a.hu-link:not([href*=mailto]) {
   background: #ce4b81;
   overflow: hidden;
@@ -518,6 +521,8 @@ span.hu-italic {
   font-style: inherit !important;
 }
 
+
+// El precargador de partida
 .stripes {
   background: linear-gradient(-180deg, #f6bf4e 1%, #f9d281 23%, #fffdf3 71%);
   width: 100%;
@@ -628,6 +633,7 @@ textarea#hu-composer-box {
   }
 }
 
+// Estilos específicos de unos botones concretos (cuando son más de 3 para que aparezcan más pequeños), habría que pensar una forma de hacerlo escalable
 #hu-container-widget .hu-btn-group-vertical .hu-btn span {
   &[data-click^="Capturar"], &[data-click^="Medir"], &[data-click^="Integraciones"], &[data-click^="Configura"], &[data-click^="Chatear"], &[data-click^="Precio"] {
     font-size: 11px !important;
