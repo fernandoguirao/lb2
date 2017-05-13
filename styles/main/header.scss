@@ -1,0 +1,78 @@
+div#hu-experiment-header {
+  z-index: 100000000;
+  position: relative;
+  width: 92%;
+  font-family: "Gotham Rounded", sans-serif !important;
+  line-height: 1.2 !important;
+  padding: 17px 32px 32px;
+  margin-left: 0%;
+  display: block;
+  background: white;
+  width: 100% !important;
+  margin: 0 !important;
+  left: 0;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+div#hu-experiment-header .hu-left-header {
+  position: relative;
+  top: 5px;
+  float: left;
+  margin-left: 100px;
+}
+div#hu-experiment-header .hu-left-header img {
+  width: 103px;
+}
+div#hu-experiment-header .hu-right-header {
+  top: 12px;
+  position: relative;
+  float: right;
+  margin-right: 100px;
+}
+div#hu-experiment-header .hu-right-header a {
+  background-color: #4A50A8;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  padding: 11px 31px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+
+
+@media screen and (max-width: 800px) {
+  .hu-left-header {
+    margin-left: 30px;
+  }
+
+  .hu-right-header {
+    margin-right: 30px;
+  }
+}
+@media screen and (max-width: 770px) {
+  .hu-right-header a {
+    display: none !important;
+  }
+
+  .hu-left-header {
+    float: none !important;
+    margin: 0 calc(50% - 65px);
+    display: inline-block;
+  margin-left: 0!important;
+text-align: center;
+width: 100%;
+  }
+  .more-leads {
+    display: none!important;
+  }
+}
+
+@media screen and (max-width: 890px) {
+div#hu-experiment-header .hu-right-header {
+  margin-right: 60px;
+}
+div#hu-experiment-header .hu-left-header {
+  margin-left: 60px;
+}
+}

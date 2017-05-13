@@ -2,6 +2,7 @@
 *.scssc
 
 styles/botchat.css
+styles/main.css
 
 *.map
 
