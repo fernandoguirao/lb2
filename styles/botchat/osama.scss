@@ -1,0 +1,23 @@
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  .hu-message-avatar, .hu-avatar   {
+    display: none !important;
+  }
+  .hu-messenger-body-state .hu-messenger-messages {
+    margin: 0 12px !important;
+  }
+  .hu-messenger-footer {
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+  .hu-messenger-message .hu-message-container .hu-message-content-group {
+    max-width: 100%;
+    .hu-message-content{
+      &:not(.hu-message-content-buttons) {
+        max-width: 82%;
+      }
+      .hu-btn-block {
+        text-align: center;
+      }
+    }
+  }
+}

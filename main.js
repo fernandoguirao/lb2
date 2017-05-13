@@ -17,6 +17,13 @@ function identifyUser(flag, data) {
 function helloumiLivechatLoaded() {
   console.log('Ya he cargado');
   window.HULiveChat.ifrWindow.document.querySelector('head').innerHTML += '<link rel="stylesheet" href="styles/botchat.css" type="text/css"/>';
+  window.HULiveChat.ifrWindow.document.querySelector('.hu-messenger-body').addEventListener('scroll', function(e) {
+    if (e.target.scrollTop <= 5) {
+      document.getElementById('hu-experiment-header').className = '';
+    } else {
+      document.getElementById('hu-experiment-header').className = 'hu-scrolled';
+    }
+  });
   setTimeout(hideLoader, 600);
 }
 
@@ -52,18 +59,17 @@ function removeClass(){
 
 // ADD CLASS REMOVE CLASS
 function showLoader(){
-  document.getElementById("hu-live-chat").style.opacity = "0";
+  // document.getElementById("hu-live-chat").style.opacity = "0";
 	document.querySelector(".sk-folding-cube").style.opacity = "1";
 }
 
 function hideLoader(){
 	document.querySelector(".sk-folding-cube").style.opacity = "0";
-  document.getElementById("hu-live-chat").style.opacity = "1";
+  // document.getElementById("hu-live-chat").style.opacity = "1";
 }
 
-function bodyLoaded(){
-  document.getElementById('hu-experiment-header').addEventListener('touchstart', function(e){
-    console.log('prevented');
-    e.preventDefault()
-  })
-}
+// function bodyLoaded(){
+//   document.querySelector('body').addEventListener('scroll', function(e){
+//     console.log(e); e.preventDefault();
+//   })
+// }

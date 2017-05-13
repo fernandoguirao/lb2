@@ -4,7 +4,7 @@ div#hu-experiment-header {
   width: 92%;
   font-family: "Gotham Rounded", sans-serif !important;
   line-height: 1.2 !important;
-  padding: 17px 32px 32px;
+  padding: 20px 32px 30px;
   margin-left: 0%;
   display: block;
   background: white;
@@ -13,6 +13,11 @@ div#hu-experiment-header {
   left: 0;
   padding-left: 0 !important;
   padding-right: 0 !important;
+  // &.hu-scrolled {
+  //   animation-name: hide-header;
+  //   animation-duration: 0.3s;
+  //   animation-fill-mode: forwards;
+  // }
 }
 div#hu-experiment-header .hu-left-header {
   position: relative;
@@ -24,7 +29,7 @@ div#hu-experiment-header .hu-left-header img {
   width: 103px;
 }
 div#hu-experiment-header .hu-right-header {
-  top: 12px;
+  top: 8px;
   position: relative;
   float: right;
   margin-right: 100px;
@@ -39,7 +44,27 @@ div#hu-experiment-header .hu-right-header a {
   font-size: 14px;
 }
 
+@keyframes hide-header {
+  0% {
+    opacity: 1;
+    margin-top: 0%;
+  }
+  100% {
+    opacity: 0;
+    margin-top: -70px;
+  }
+}
 
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  div#hu-experiment-header {
+    &.hu-scrolled {
+      // display: none;
+      animation-name: hide-header;
+      animation-duration: 0.2s;
+      animation-fill-mode: forwards;
+    }
+  }
+}
 
 @media screen and (max-width: 800px) {
   .hu-left-header {

@@ -45,6 +45,7 @@ div#hu-container-widget {
       .hu-messenger-body-state {
         padding-top: 25px !important;
         .hu-messenger-messages {
+          padding-bottom: 10px;
           .hu-messenger-date.hu-js-date {
             display: none !important;
           }
@@ -67,12 +68,13 @@ div#hu-container-widget {
                 &.hu-message-content-buttons {
                   background: transparent !important;
                   padding: 0 !important;
-                  margin: 30px 0 13px;
+                  // margin: 30px 0 13px;
+                  margin: 10px 0 0;
                   @include box-shadow(none);
-                  position: absolute;
+                  position: relative;
                   left: 0;
                   width: 100%;
-                  top: 43px;
+                  // top: -20px;
                   display: none;
                   .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink {
                     float: left;
@@ -222,9 +224,9 @@ div#hu-container-widget {
         opacity: 0.5 !important;
         pointer-events: none;
       }
-      .hu-messenger-body-state {
-        padding-bottom: 150px !important;
-      }
+      // .hu-messenger-body-state {
+      //   padding-bottom: 150px !important;
+      // }
     }
   }
 }
@@ -283,16 +285,6 @@ div#hu-container-widget {
   }
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-  .hu-message-avatar, .hu-avatar   {
-    display: none !important;
-  }
-  .hu-messenger-body-state .hu-messenger-messages {
-    margin: 0 12px !important;
-  }
-}
-
-
 // Esto creo que al final no lo usamos
 #hu-container-widget span.hu-size-big {
   background: #da548b;
@@ -348,6 +340,10 @@ div[data-assigned="ronin"] .hu-messenger-message-brand .hu-message-content {
   &:not(.hu-message-content-image):not(.hu-message-content-buttons) {
     span, a, b, p {
       animation-name: example3;
+      animation-duration: 1.3s;
+    }
+    span.hu-bold {
+      animation-name: example4;
       animation-duration: 1.3s;
     }
   }
@@ -418,6 +414,18 @@ div[data-assigned="ronin"] .hu-messenger-message-brand .hu-message-content {
   100% {
     color: #f1f1f1;
     color: transparent;
+  }
+}
+
+@keyframes example4 {
+  0% {
+    opacity: 0;
+    height: 1px;
+  }
+
+  100% {
+    opacity: 0;
+    height: 5px;
   }
 }
 
@@ -720,13 +728,13 @@ div#hu-container-widget {
   &[data-textbox="hidden"] .hu-messenger-footer {
     /*   display: none!important; */
     /* opacity: 0; */
-    transform: translateY(105px);
+    // transform: translateY(105px);
+    margin-bottom: -105px;
     opacity: 0;
-    display: none; /* TEST */
   }
   &:not([data-textbox]):not([data-assigned="ronin"]) .hu-messenger-footer {
-    transform: translateY(105px);
+    // transform: translateY(105px);
+    margin-bottom: -105px;
     opacity: 0;
-    display: none; /* TEST */
   }
 }

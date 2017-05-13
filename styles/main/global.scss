@@ -4,21 +4,11 @@ body {
     position: fixed;
     width: 100%;
     height: 100%;
+    min-height: 100%;
+    @include gradient(#ffad59, #ffe199);
 }
 
 body{
-  background: #ffad59;
-  /* Old browsers */
-  background: -moz-linear-gradient(to bottom, #ffad59 0%, #ffe199 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(to bottom, #ffad59 0%, #ffe199 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #ffad59 0%, #ffe199 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=0 );
-  /* IE6-9 */
-  background-size: cover;
-  background-repeat: no-repeat;
   @include display-must-flex();
   @include flex-direction(column);
   margin: 0 !important;
@@ -50,7 +40,7 @@ body{
 }
 
 
-iframe#hu-live-chat {
+iframe#hu-live-chat, div#hu-container-widget {
   width: 100vw !important;
   max-width: 100vw !important;
   min-width: auto !important;
@@ -58,12 +48,10 @@ iframe#hu-live-chat {
   max-height: initial !important;
   min-height: initial !important;
   @include flex(1);
+  @include box-shadow(none !important);
   position: relative !important;
-  opacity: 0;
+  background: transparent;
 }
-
-
-
 
     /*CUSTOM*/
 
