@@ -39,7 +39,8 @@ function fakeMessage(msg){
 	var formData = new FormData();
 	formData.append('message', msg);
 
-	var umichatCore  = HULiveChat.ifrWindow.helloumi.webchat.umichatcore;
+	var umichatCore = (typeof(helloumi) != 'undefined') ? helloumi.webchat.umichatcore
+                  : HULiveChat.ifrWindow.helloumi.webchat.umichatcore;
 	umichatCore.sendMessage(
 		formData,
 		umichatCore.messageSent.bind(umichatCore)

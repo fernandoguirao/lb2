@@ -236,8 +236,8 @@ div#hu-container-widget {
     padding: 0 13%;
   }
   .hu-messenger-footer {
-    margin: 0 21% 81px;
-    width: 56.4%;
+    margin: 0 21% 81px !important;;
+    width: 56.4% !important;;
   }
 }
 
@@ -556,7 +556,7 @@ div {
   }
   &#hu-experiment-header {
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.03);
-    background: rgba(255, 255, 255, 0.16);
+    // background: rgba(255, 255, 255, 0.16);
   }
 }
 
@@ -730,11 +730,17 @@ div#hu-container-widget {
     /* opacity: 0; */
     // transform: translateY(105px);
     margin-bottom: -105px;
+    height: 0;
     opacity: 0;
+    margin: 0 !important;
+    padding: 0;
   }
   &:not([data-textbox]):not([data-assigned="ronin"]) .hu-messenger-footer {
     // transform: translateY(105px);
     margin-bottom: -105px;
+    height: 0;
     opacity: 0;
+    margin: 0 !important;
+    padding: 0;
   }
 }
