@@ -236,7 +236,7 @@ div#hu-container-widget {
     max-height: calc(100% - 120px);
   }
   .hu-messenger-body-state {
-    padding: 0 13%;
+    padding: 55px 13% 0;
   }
   .hu-messenger-footer {
     margin: 0 21% 81px !important;
@@ -246,7 +246,7 @@ div#hu-container-widget {
 
 @media screen and (min-width: 1044px) {
   .hu-messenger-body-state {
-    padding: 0 23%;
+    padding: 55px 23% 0;
   }
   .hu-messenger-footer {
     margin: 0 29.3% 81px;
@@ -256,7 +256,7 @@ div#hu-container-widget {
 
 @media screen and (min-width: 1300px) {
   .hu-messenger-body-state {
-    padding: 0 30%;
+    padding: 55px 30% 0;
   }
   .hu-messenger-footer {
     margin: 0 35.3% 81px;
