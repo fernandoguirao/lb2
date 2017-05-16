@@ -1,449 +1,611 @@
 {
-  "58": {
+  "5": {
+    "function": "__text__",
+    "id": "5",
+    "name": "Pick @name",
+    "top": 576,
+    "field": "custom",
+    "overwrite": true,
     "next": {
-      "success": "39"
+      "success": "6",
+      "failed": "72"
     },
-    "id": "58",
-    "top": 2424,
     "delaytime": 0,
-    "name": "imagen",
-    "left": 1063,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "path": "https://storage.googleapis.com/media.yexir.com/ronin/1494521661.283529.png",
-        "order": 0,
-        "entity": "image"
-      }
-    ],
-    "function": "__send_message__"
+    "left": 1171,
+    "custom_field": "username"
   },
-  "14": {
-    "next": {
-      "success": "15"
-    },
-    "id": "14",
-    "delaytime": 0,
-    "name": "I promise we don't send Spam",
-    "left": 109,
+  "64": {
     "function": "__send_message__",
+    "id": "64",
+    "name": "🛎 Sending you a Slack (or push) notifications when needed.",
+    "top": 2369,
     "responses": [
       {
-        "text": "_I promise we won't Spam_ 😇",
+        "entity": "text",
         "order": 0,
-        "entity": "text"
+        "text": "🛎  Sending you a Slack (or push) notification when needed."
       }
     ],
-    "top": 1612
-  },
-  "39": {
     "next": {
-      "success": "40"
+      "success": "65"
     },
-    "id": "39",
-    "top": 1443,
-    "delaytime": 3,
-    "name": "How does that sound?",
-    "left": 1418,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "How does that sound?",
-        "order": 0,
-        "entity": "button",
-        "choice_text": "*Type the number of the option you are interested in",
-        "buttons": [
-          "Sign me up",
-          "I need more info"
-        ]
-      }
-    ],
-    "function": "__send_message__"
+    "delaytime": 2,
+    "left": 1259,
+    "hidetextbox": true
   },
   "9": {
+    "function": "__send_message__",
+    "id": "9",
+    "name": "Great! I'll need",
+    "top": 443,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Great! 👏🏻\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.identifyUser('flag15a',{name: '@username'}); window.parent.trackEvent('flag15b','Landbot Chat', 'Wants signup');\"/>{/html}"
+      }
+    ],
     "next": {
       "success": "73"
     },
-    "id": "9",
-    "top": 443,
     "delaytime": 0.6,
-    "name": "Great! I'll need",
     "left": 393,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "Great! 👏🏻\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.identifyUser('flag15a',{name: '@username'}); window.parent.trackEvent('flag15b','Landbot Chat', 'Wants signup');\"/>{/html}",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
+    "hidetextbox": true
   },
-  "6": {
-    "next": {
-      "success": "10"
-    },
-    "id": "6",
-    "top": 661,
-    "delaytime": 0.4,
-    "name": "Pleased to meet you",
-    "left": 1272,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "Pleased to meet you, @username 🙂\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.identifyUser('flag4a',{name: '@username'}); window.parent.trackEvent('flag4b','Landbot Chat', 'Answer name');window.parent.removeClass();\"/>{/html}",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "69": {
-    "next": {
-      "success": "70"
-    },
-    "id": "69",
-    "top": 2111,
-    "delaytime": 4,
-    "name": "That way, your customer won't have to switch channels to talk to you. That's what I call a perk! 🙂",
-    "left": 1880,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "That way, your customer won't have to switch channels to talk to you. That's what I call a perk! 🙂",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "52": {
-    "next": {
-      "success": "77"
-    },
-    "id": "52",
-    "top": 2276,
-    "delaytime": 0,
-    "name": "You could even use that data in the",
-    "left": 722,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "You could even use that data in the conversation you're having, *@username*.",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "71": {
-    "next": {
-      "success": "7"
-    },
-    "id": "71",
-    "top": 206,
-    "delaytime": 2.6,
-    "name": "Imagen",
-    "left": 774,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "path": "https://storage.googleapis.com/media.yexir.com/ronin/1494935124.953778.gif",
-        "order": 0,
-        "entity": "image"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "27": {
-    "next": {
-      "vs": "28",
-      "do": "34",
-      "work": "34",
-      "forms": "28",
-      "features": "41",
-      "how": "34",
-      "signup": "9",
-      "you": "34",
-      "bots": "28"
-    },
-    "id": "27",
-    "delaytime": 0,
-    "name": "Pick selected option",
-    "left": 1158,
-    "hidetextbox": true,
-    "function": "__choice__",
-    "top": 844
-  },
-  "36": {
-    "next": {
-      "success": "37"
-    },
-    "id": "36",
-    "top": 1188,
-    "delaytime": 1.2,
-    "name": "👉🏻 and go out for a drink while *I take care of your customers*.",
-    "left": 1398,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "👉🏻 and go out for a drink while *I take care of your customers*. 🍻",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "24": {
-    "id": "24",
-    "name": "Still *not a valid one",
-    "delaytime": 0,
-    "left": 124,
+  "61": {
     "function": "__send_message__",
+    "id": "61",
+    "name": "In essence, they're tools that allow you to link another one like myself with the most common apps a",
+    "top": 2095,
     "responses": [
       {
-        "text": "Still *not a valid one* 😓",
+        "entity": "text",
         "order": 0,
-        "entity": "text"
+        "text": "In essence, they're tools that allow you to link a bot like me with the most common apps and webs around."
       }
     ],
-    "top": 1857
-  },
-  "17": {
     "next": {
-      "success": "18"
+      "success": "60"
     },
-    "id": "17",
-    "top": 963,
-    "delaytime": 4,
-    "name": "Anything else I could help you with?",
-    "left": 242,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "Anything else I could help you with?",
-        "order": 0,
-        "entity": "button",
-        "choice_text": "*Type the number of the option you are interested in",
-        "buttons": [
-          "Leave us a message",
-          "It's done",
-          "More information"
-        ]
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "76": {
-    "next": {
-      "success": "21"
-    },
-    "id": "76",
     "delaytime": 0.6,
-    "name": "Error message",
-    "left": 353,
-    "function": "__send_message__",
-    "responses": [
-      {
-        "text": "If you want something more write it here and I will send it to our support team as soon as possible 😉",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "top": 1394
+    "left": 1454,
+    "hidetextbox": true
   },
   "47": {
+    "function": "__send_message__",
+    "id": "47",
+    "name": "Many times it's important for co-founders to personally attend certain leads you can directly chat w",
+    "top": 1927,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Many times it's important for co-founders to personally attend certain leads: you can directly chat with anyone at any time using my interface.\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag13','Landbot Chat', 'Talk hybrid');\"/>{/html}"
+      }
+    ],
     "next": {
       "success": "68"
     },
-    "id": "47",
-    "top": 1927,
     "delaytime": 0.6,
-    "name": "Many times it's important for co-founders to personally attend certain leads you can directly chat w",
     "left": 1877,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "Many times it's important for co-founders to personally attend certain leads: you can directly chat with anyone at any time using my interface.\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag13','Landbot Chat', 'Talk hybrid');\"/>{/html}",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
+    "hidetextbox": true
   },
-  "73": {
-    "next": {
-      "success": "11"
-    },
-    "id": "73",
-    "delaytime": 0.6,
-    "name": "_I'll need your e-ma",
-    "left": 358,
+  "72": {
     "function": "__send_message__",
+    "id": "72",
+    "name": "Pleased to meet you",
+    "top": 652,
     "responses": [
       {
-        "text": "_I'll need your e-mail address to sign you up. *Type your email below, please*_\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.addClass();\"/>{/html}",
+        "entity": "text",
         "order": 0,
-        "entity": "text"
+        "text": "Pleased to meet you 🙂\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag3','Landbot Chat', 'Answer name error');removeClass();\"/>{/html}"
       }
     ],
-    "top": 543
-  },
-  "19": {
     "next": {
-      "success": "20"
+      "success": "10"
     },
-    "id": "19",
-    "top": 1199,
+    "delaytime": 0.4,
+    "left": 1019,
+    "hidetextbox": true
+  },
+  "24": {
+    "function": "__send_message__",
+    "id": "24",
+    "name": "Still *not a valid one",
+    "top": 1857,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Still *not a valid one* 😓"
+      }
+    ],
+    "delaytime": 0,
+    "left": 124
+  },
+  "40": {
+    "function": "__choice__",
+    "name": "Pick selected option",
+    "top": 1529,
+    "id": "40",
+    "next": {
+      "up": "9",
+      "more": "41",
+      "signup": "9",
+      "need": "41",
+      "features": "41",
+      "info": "41",
+      "sign": "9",
+      "i": "41",
+      "me": "9"
+    },
+    "delaytime": 0,
+    "left": 1385,
+    "hidetextbox": true
+  },
+  "6": {
+    "function": "__send_message__",
+    "id": "6",
+    "name": "Pleased to meet you",
+    "top": 661,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Pleased to meet you, @username 🙂\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.identifyUser('flag4a',{name: '@username'}); window.parent.trackEvent('flag4b','Landbot Chat', 'Answer name');removeClass();\"/>{/html}"
+      }
+    ],
+    "next": {
+      "success": "10"
+    },
+    "delaytime": 0.4,
+    "left": 1272,
+    "hidetextbox": true
+  },
+  "63": {
+    "function": "__send_message__",
+    "id": "63",
+    "name": "📊 Saving chat data in your *CRM* or as an *Excel doc*.",
+    "top": 2296,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "📊  Saving chat data in your *CRM* or as an *Excel doc*."
+      }
+    ],
+    "next": {
+      "success": "64"
+    },
+    "delaytime": 1.2,
+    "left": 1258,
+    "hidetextbox": true
+  },
+  "43": {
+    "function": "__send_message__",
+    "id": "43",
+    "name": "Easy stuff...",
+    "top": 1921,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Easy stuff...\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag8','Landbot Chat', 'Capture data');\"/>{/html}"
+      }
+    ],
+    "next": {
+      "success": "49"
+    },
     "delaytime": 0.6,
-    "name": "Tell me about it",
-    "left": 106,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "Tell me about it and *our support team will e-mail you* in no time.\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag19','Landbot Chat', 'Leave message');\"/>{/html}",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
+    "left": 726,
+    "hidetextbox": true
   },
-  "30": {
+  "75": {
+    "function": "__choice__",
+    "name": "Pick selected option",
+    "top": 1292,
+    "id": "75",
     "next": {
-      "success": "31"
+      "features": "41",
+      "failed": "76",
+      "signup": "9"
     },
-    "id": "30",
-    "top": 1182,
-    "delaytime": 3,
-    "name": "imagen",
-    "left": 1042,
-    "hidetextbox": true,
+    "delaytime": 0,
+    "left": 339
+  },
+  "22": {
+    "function": "__send_message__",
+    "id": "22",
+    "name": "See you soon @name",
+    "top": 1203,
     "responses": [
       {
-        "path": "https://storage.googleapis.com/media.yexir.com/ronin/1494930146.615037.png",
+        "entity": "text",
         "order": 0,
-        "entity": "image"
+        "text": "See you soon! It's been a pleasure chatting with you! 🙂\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag18','Landbot Chat', 'Its done');removeClass();\"/>{/html}"
       }
     ],
-    "function": "__send_message__"
+    "next": {
+      "success": "75"
+    },
+    "delaytime": 0.6,
+    "left": 335
   },
-  "70": {
+  "36": {
+    "function": "__send_message__",
+    "id": "36",
+    "name": "👉🏻 and go out for a drink while *I take care of your customers*.",
+    "top": 1188,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "👉🏻 and go out for a drink while *I take care of your customers*. 🍻"
+      }
+    ],
+    "next": {
+      "success": "37"
+    },
+    "delaytime": 1.2,
+    "left": 1398,
+    "hidetextbox": true
+  },
+  "33": {
+    "function": "__choice__",
+    "name": "Pick selected option",
+    "top": 1449,
+    "id": "33",
+    "next": {
+      "yes": "9",
+      "work": "34",
+      "signup": "9",
+      "how": "34",
+      "you": "34",
+      "features": "41",
+      "do": "34"
+    },
+    "delaytime": 0,
+    "left": 1009,
+    "hidetextbox": true
+  },
+  "7": {
+    "function": "__send_message__",
+    "id": "7",
+    "name": "Do you want to sign up...",
+    "top": 280,
+    "responses": [
+      {
+        "entity": "button",
+        "buttons": [
+          "Yes",
+          "Tell me more"
+        ],
+        "order": 0,
+        "text": "Do you want to sign up to get early access?",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "next": {
+      "success": "8"
+    },
+    "delaytime": 2,
+    "left": 734,
+    "hidetextbox": true
+  },
+  "71": {
+    "function": "__send_message__",
+    "id": "71",
+    "name": "Imagen",
+    "top": 206,
+    "responses": [
+      {
+        "entity": "image",
+        "path": "https://storage.googleapis.com/media.yexir.com/ronin/1494935124.953778.gif",
+        "order": 0
+      }
+    ],
+    "next": {
+      "success": "7"
+    },
+    "delaytime": 2.6,
+    "left": 774,
+    "hidetextbox": true
+  },
+  "54": {
+    "function": "__send_message__",
+    "id": "54",
+    "name": "That way, we can get to know that I've reached right now:",
+    "top": 2099,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "That way, we can get to know my humble benchmarks:"
+      }
+    ],
+    "next": {
+      "success": "55"
+    },
+    "delaytime": 4,
+    "left": 1027,
+    "hidetextbox": true
+  },
+  "57": {
+    "function": "__send_message__",
+    "id": "57",
+    "name": "👉🏻 An average of 5 messages per lead.",
+    "top": 2342,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "⚡️ An average of 5 messages per lead."
+      }
+    ],
+    "next": {
+      "success": "58"
+    },
+    "delaytime": 1.6,
+    "left": 1028,
+    "hidetextbox": true
+  },
+  "42": {
+    "function": "__choice__",
+    "name": "Pick selected option",
+    "top": 1764,
+    "id": "42",
+    "next": {
+      "data": "43",
+      "up": "46",
+      "customer": "47",
+      "integrations": "45",
+      "features": "41",
+      "metrics": "44",
+      "analytics": "44",
+      "pricing": "48",
+      "capturing": "43",
+      "a": "47",
+      "signup": "9",
+      "talk": "47",
+      "&": "44",
+      "setting": "46",
+      "to": "47"
+    },
+    "delaytime": 0,
+    "left": 1388,
+    "hidetextbox": true
+  },
+  "18": {
+    "function": "__choice__",
+    "name": "Pick selected option",
+    "top": 1050,
+    "id": "18",
+    "next": {
+      "message": "19",
+      "it's": "22",
+      "us": "19",
+      "more": "41",
+      "done": "22",
+      "a": "19",
+      "leave": "19",
+      "features": "41",
+      "signup": "9",
+      "information": "41"
+    },
+    "delaytime": "0.01",
+    "left": 245,
+    "hidetextbox": true
+  },
+  "52": {
+    "function": "__send_message__",
+    "id": "52",
+    "name": "You could even use that data in the",
+    "top": 2276,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "You could even use that data in the conversation you're having, *@username*."
+      }
+    ],
+    "next": {
+      "success": "77"
+    },
+    "delaytime": 0,
+    "left": 722,
+    "hidetextbox": true
+  },
+  "46": {
+    "function": "__send_message__",
+    "id": "46",
+    "name": "Setting up a landbot is quite easy: with just a bunch of clicks you'll get your first bot up and run",
+    "top": 1930,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Setting up a landbot is quite easy: with just a bunch of clicks you'll get your first bot up and running! 🤓\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag12','Landbot Chat', 'How Setup');\"/>{/html}"
+      }
+    ],
+    "next": {
+      "success": "66"
+    },
+    "delaytime": 0.6,
+    "left": 1614,
+    "hidetextbox": true
+  },
+  "14": {
+    "function": "__send_message__",
+    "id": "14",
+    "name": "I promise we don't send Spam",
+    "top": 1612,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "_I promise we won't Spam_ 😇"
+      }
+    ],
+    "next": {
+      "success": "15"
+    },
+    "delaytime": 0,
+    "left": 109
+  },
+  "12": {
+    "function": "__send_message__",
+    "id": "12",
+    "name": "Gotcha!! 🎉",
+    "top": 719,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Gotcha!! 🎉\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.identifyUser('flag16a',{email: '@email'}); window.parent.trackEvent('flag16b','Landbot Chat', 'Give email');removeClass();\"/>{/html}"
+      }
+    ],
+    "next": {
+      "success": "74"
+    },
+    "delaytime": 0.6,
+    "left": 273,
+    "hidetextbox": true
+  },
+  "1": {
+    "function": "__send_message__",
+    "id": "1",
+    "name": "Hi, there!",
+    "top": 32,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Hi, there! 👋\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.identifyUser('flag1a',{name: 'Anonimo'}); window.parent.trackEvent('flag1b','Landbot Start Chat');\"/>{/html}"
+      }
+    ],
+    "next": {
+      "success": "2"
+    },
+    "delaytime": 0.8,
+    "left": 766,
+    "hidetextbox": true
+  },
+  "2": {
+    "function": "__send_message__",
+    "id": "2",
+    "name": "My name is Landbot",
+    "top": 124,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "My name is Landbot and I can help you out *turning your website into a chatbot* 🤖"
+      }
+    ],
+    "next": {
+      "success": "71"
+    },
+    "delaytime": 0.4,
+    "left": 736,
+    "hidetextbox": true
+  },
+  "76": {
+    "function": "__send_message__",
+    "id": "76",
+    "name": "Error message",
+    "top": 1394,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "If you want something more write it here and I will send it to our support team as soon as possible 😉"
+      }
+    ],
+    "next": {
+      "success": "21"
+    },
+    "delaytime": 0.6,
+    "left": 353
+  },
+  "34": {
+    "function": "__send_message__",
+    "id": "34",
+    "name": "In short, this is how I work:",
+    "top": 965,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "In short, this is how I work:\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag6','Landbot Chat', 'How it works');\"/>{/html}"
+      }
+    ],
+    "next": {
+      "success": "35"
+    },
+    "delaytime": 0.8,
+    "left": 1397,
+    "hidetextbox": true
+  },
+  "23": {
+    "function": "__email__",
+    "id": "23",
+    "name": "Pick @email",
+    "top": 1773,
+    "field": "email",
+    "overwrite": true,
+    "next": {
+      "failed": "24"
+    },
+    "delaytime": 0,
+    "left": 154
+  },
+  "66": {
+    "function": "__send_message__",
+    "id": "66",
+    "name": "I can proudly say that I'm the _'Wordpress of chatbots'_: you don't need to be a skilled technician",
+    "top": 2016,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "I can proudly say that I'm the *Wordpress of chatbots*: you don't need to be a skilled technician to build me up."
+      }
+    ],
     "next": {
       "success": "39"
     },
-    "id": "70",
-    "top": 2190,
-    "delaytime": 3.2,
-    "name": "imagen",
-    "left": 1911,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "path": "https://storage.googleapis.com/media.yexir.com/ronin/1494937254.29464.png",
-        "order": 0,
-        "entity": "image"
-      }
-    ],
-    "function": "__send_message__"
+    "delaytime": 3.6,
+    "left": 1616,
+    "hidetextbox": true
   },
-  "25": {
+  "26": {
+    "function": "__choice__",
+    "name": "Pick selected option",
+    "top": 1002,
+    "id": "26",
     "next": {
-      "success": "26"
-    },
-    "id": "25",
-    "top": 798,
-    "delaytime": 4,
-    "name": "Do you want me to",
-    "left": 549,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "Do you want me to explain you how I work, instead?",
-        "order": 0,
-        "entity": "button",
-        "choice_text": "*Type the number of the option you are interested in",
-        "buttons": [
-          "Yes, explain me",
-          "I want to sign up"
-        ]
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "28": {
-    "next": {
-      "success": "29"
-    },
-    "id": "28",
-    "top": 1016,
-    "delaytime": 1,
-    "name": "The guys doing all the programming",
-    "left": 1007,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "Good question! The guys doing all the programming are totally data-obsessed, you know?\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag5','Landbot Chat', 'Forms vs bots');\"/>{/html}",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "74": {
-    "next": {
-      "success": "16"
-    },
-    "id": "74",
-    "top": 795,
-    "delaytime": 0.6,
-    "name": "Enviar imagen",
-    "left": 264,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "path": "https://storage.googleapis.com/media.yexir.com/ronin/1494937363.958855.gif",
-        "order": 0,
-        "entity": "image"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "40": {
-    "next": {
-      "me": "9",
-      "i": "41",
-      "info": "41",
-      "more": "41",
-      "sign": "9",
+      "explain": "3",
+      "yes": "3",
+      "want": "9",
       "signup": "9",
       "features": "41",
-      "up": "9",
-      "need": "41"
+      "to": "9",
+      "i": "9",
+      "me": "3"
     },
-    "id": "40",
-    "delaytime": 0,
-    "name": "Pick selected option",
-    "left": 1385,
-    "hidetextbox": true,
-    "function": "__choice__",
-    "top": 1529
+    "delaytime": "0.01",
+    "left": 504,
+    "hidetextbox": true
   },
   "41": {
-    "next": {
-      "success": "42"
-    },
+    "function": "__send_message__",
     "id": "41",
-    "top": 1677,
-    "delaytime": 1,
     "name": "Fine. Which specific topic do you want me to delve into?",
-    "left": 1387,
-    "hidetextbox": true,
+    "top": 1677,
     "responses": [
       {
-        "text": "Fine. Which specific topic do you want me to delve into?\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag7','Landbot Chat', 'More info 02');\"/>{/html}",
-        "order": 0,
         "entity": "button",
-        "choice_text": "*Type the number of the option you are interested in",
         "buttons": [
           "Data Capturing",
           "Metrics & Analytics",
@@ -451,1009 +613,847 @@
           "Setting up",
           "Talk to a customer",
           "Pricing"
-        ]
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "57": {
-    "next": {
-      "success": "58"
-    },
-    "id": "57",
-    "top": 2342,
-    "delaytime": 1.6,
-    "name": "👉🏻 An average of 5 messages per lead.",
-    "left": 1028,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "⚡️ An average of 5 messages per lead.",
+        ],
         "order": 0,
-        "entity": "text"
+        "text": "Fine. Which specific topic do you want me to delve into?\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag7','Landbot Chat', 'More info 02');\"/>{/html}",
+        "choice_text": "*Type the number of the option you are interested in"
       }
     ],
-    "function": "__send_message__"
-  },
-  "2": {
     "next": {
-      "success": "71"
+      "success": "42"
     },
-    "id": "2",
-    "top": 124,
-    "delaytime": 0.4,
-    "name": "My name is Landbot",
-    "left": 736,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "My name is Landbot and I can help you out *turning your website into a chatbot* 🤖",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
+    "delaytime": 1,
+    "left": 1387,
+    "hidetextbox": true
   },
-  "34": {
-    "next": {
-      "success": "35"
-    },
-    "id": "34",
-    "top": 965,
-    "delaytime": 0.8,
-    "name": "In short, this is how I work:",
-    "left": 1397,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "In short, this is how I work:\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag6','Landbot Chat', 'How it works');\"/>{/html}",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "59": {
-    "next": {
-      "no": "61",
-      "signup": "9",
-      "yes": "60",
-      "sure": "60",
-      "features": "41"
-    },
-    "id": "59",
-    "delaytime": 0,
-    "name": "Pick selected option",
-    "left": 1349,
-    "hidetextbox": true,
-    "function": "__choice__",
-    "top": 2010
-  },
-  "26": {
-    "next": {
-      "i": "9",
-      "to": "9",
-      "features": "41",
-      "me": "3",
-      "explain": "3",
-      "signup": "9",
-      "yes": "3",
-      "want": "9"
-    },
-    "id": "26",
-    "delaytime": "0.01",
-    "name": "Pick selected option",
-    "left": 504,
-    "hidetextbox": true,
-    "function": "__choice__",
-    "top": 1002
-  },
-  "12": {
-    "next": {
-      "success": "74"
-    },
-    "id": "12",
-    "top": 719,
-    "delaytime": 0.6,
-    "name": "Gotcha!! 🎉",
-    "left": 273,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "Gotcha!! 🎉\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.identifyUser('flag16a',{email: '@email'}); window.parent.trackEvent('flag16b','Landbot Chat', 'Give email');window.parent.removeClass();\"/>{/html}",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "44": {
-    "next": {
-      "success": "53"
-    },
-    "id": "44",
-    "top": 1928,
-    "delaytime": 0.6,
-    "name": "In many senses, *I behave just like a website*. And that brings along some nifty advantages.🤓",
-    "left": 1029,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "In many senses, *I behave just like a website*. And that brings along some nifty advantages.🤓\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag9','Landbot Chat', 'Metrics');\"/>{/html}",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "65": {
-    "next": {
-      "success": "39"
-    },
-    "id": "65",
-    "top": 2454,
-    "delaytime": 2,
-    "name": "And even more!",
-    "left": 1280,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "And even more! 💪🏻",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "66": {
-    "next": {
-      "success": "39"
-    },
-    "id": "66",
-    "top": 2016,
-    "delaytime": 3.6,
-    "name": "I can proudly say that I'm the _'Wordpress of chatbots'_: you don't need to be a skilled technician",
-    "left": 1616,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "I can proudly say that I'm the *Wordpress of chatbots*: you don't need to be a skilled technician to build me up.",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "33": {
-    "next": {
-      "work": "34",
-      "features": "41",
-      "how": "34",
-      "signup": "9",
-      "you": "34",
-      "do": "34",
-      "yes": "9"
-    },
-    "id": "33",
-    "delaytime": 0,
-    "name": "Pick selected option",
-    "left": 1009,
-    "hidetextbox": true,
-    "function": "__choice__",
-    "top": 1449
-  },
-  "75": {
-    "next": {
-      "signup": "9",
-      "failed": "76",
-      "features": "41"
-    },
-    "id": "75",
-    "delaytime": 0,
-    "name": "Pick selected option",
-    "left": 339,
-    "top": 1292,
-    "function": "__choice__"
-  },
-  "72": {
-    "next": {
-      "success": "10"
-    },
-    "id": "72",
-    "top": 652,
-    "delaytime": 0.4,
-    "name": "Pleased to meet you",
-    "left": 1019,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "Pleased to meet you 🙂\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag3','Landbot Chat', 'Answer name error');window.parent.removeClass();\"/>{/html}",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "18": {
-    "next": {
-      "us": "19",
-      "done": "22",
-      "it's": "22",
-      "message": "19",
-      "more": "41",
-      "leave": "19",
-      "signup": "9",
-      "features": "41",
-      "information": "41",
-      "a": "19"
-    },
-    "id": "18",
-    "delaytime": "0.01",
-    "name": "Pick selected option",
-    "left": 245,
-    "hidetextbox": true,
-    "function": "__choice__",
-    "top": 1050
-  },
-  "37": {
-    "next": {
-      "success": "38"
-    },
-    "id": "37",
-    "top": 1273,
-    "delaytime": 2,
-    "name": "👉🏻 When you feel like coming back, I'll",
-    "left": 1396,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "👉🏻 When you feel like coming back, I'll provide you with *a full report on everything I did*.",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "4": {
-    "next": {
-      "success": "5"
-    },
-    "id": "4",
-    "delaytime": 4,
-    "name": "What's your name?",
-    "left": 1151,
+  "39": {
     "function": "__send_message__",
+    "id": "39",
+    "name": "How does that sound?",
+    "top": 1443,
     "responses": [
       {
-        "text": "_What's your name? *Type your name below please*_\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.addClass();\"/>{/html}",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "top": 482
-  },
-  "8": {
-    "next": {
-      "me": "3",
-      "more": "3",
-      "tell": "3",
-      "signup": "9",
-      "features": "41",
-      "yes": "9"
-    },
-    "id": "8",
-    "delaytime": 0,
-    "name": "Pick selected option",
-    "left": 737,
-    "hidetextbox": true,
-    "function": "__choice__",
-    "top": 371
-  },
-  "7": {
-    "next": {
-      "success": "8"
-    },
-    "id": "7",
-    "top": 280,
-    "delaytime": 2,
-    "name": "Do you want to sign up...",
-    "left": 734,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "Do you want to sign up to get early access?",
-        "order": 0,
         "entity": "button",
-        "choice_text": "*Type the number of the option you are interested in",
         "buttons": [
-          "Yes",
-          "Tell me more"
-        ]
+          "Sign me up",
+          "I need more info"
+        ],
+        "order": 0,
+        "text": "How does that sound?",
+        "choice_text": "*Type the number of the option you are interested in"
       }
     ],
-    "function": "__send_message__"
-  },
-  "45": {
     "next": {
-      "success": "59"
+      "success": "40"
     },
-    "id": "45",
-    "top": 1928,
+    "delaytime": 3,
+    "left": 1418,
+    "hidetextbox": true
+  },
+  "51": {
+    "function": "__send_message__",
+    "id": "51",
+    "name": "imagen",
+    "top": 2184,
+    "responses": [
+      {
+        "entity": "image",
+        "path": "https://storage.googleapis.com/media.yexir.com/ronin/1494935552.232631.png",
+        "order": 0
+      }
+    ],
+    "next": {
+      "success": "52"
+    },
     "delaytime": 0.6,
-    "name": "Have you ever heard about *Zapier or IFTTT*?",
-    "left": 1320,
-    "hidetextbox": true,
+    "left": 757,
+    "hidetextbox": true
+  },
+  "38": {
+    "function": "__send_message__",
+    "id": "38",
+    "name": "👉🏻 You can even use my own chat to give a first-hand reply to the most interesting queries.",
+    "top": 1356,
     "responses": [
       {
-        "text": "Have you ever heard about Zapier or IFTTT?\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag10','Landbot Chat', 'Integrations');\"/>{/html}",
+        "entity": "text",
         "order": 0,
-        "entity": "button",
-        "choice_text": "*Type the number of the option you are interested in",
-        "buttons": [
-          "Sure",
-          "No"
-        ]
+        "text": "👉🏻 You can even use my own chat to *give a first-hand reply to the most interesting queries*."
       }
     ],
-    "function": "__send_message__"
-  },
-  "48": {
     "next": {
       "success": "39"
     },
-    "id": "48",
-    "top": 1926,
-    "delaytime": 0.6,
-    "name": "Landbot is *completely free* in this open Beta💃🏻",
-    "left": 2148,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "Landbot is *completely free* in this closed Beta💃🏻\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag14','Landbot Chat', 'Price');\"/>{/html}",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "53": {
-    "next": {
-      "success": "54"
-    },
-    "id": "53",
-    "top": 2019,
-    "delaytime": 2.6,
-    "name": "You can set up events on Google Analytics, Mixpanel or any other similar tool to measure the convers",
-    "left": 1031,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "You can set up events on Google Analytics, Mixpanel or any other similar tool to measure the conversion rate within the chat.",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "5": {
-    "next": {
-      "success": "6",
-      "failed": "72"
-    },
-    "id": "5",
-    "field": "custom",
-    "name": "Pick @name",
-    "overwrite": true,
-    "delaytime": 0,
-    "left": 1171,
-    "top": 576,
-    "custom_field": "username",
-    "function": "__text__"
-  },
-  "42": {
-    "next": {
-      "&": "44",
-      "talk": "47",
-      "capturing": "43",
-      "features": "41",
-      "setting": "46",
-      "signup": "9",
-      "data": "43",
-      "analytics": "44",
-      "to": "47",
-      "customer": "47",
-      "metrics": "44",
-      "up": "46",
-      "integrations": "45",
-      "pricing": "48",
-      "a": "47"
-    },
-    "id": "42",
-    "delaytime": 0,
-    "name": "Pick selected option",
-    "left": 1388,
-    "hidetextbox": true,
-    "function": "__choice__",
-    "top": 1764
-  },
-  "1": {
-    "next": {
-      "success": "2"
-    },
-    "id": "1",
-    "top": 32,
-    "delaytime": 0.8,
-    "name": "Hi, there!",
-    "left": 766,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "Hi, there! 👋\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.identifyUser('flag1a',{name: 'Anonimo'}); window.parent.trackEvent('flag1b','Landbot Start Chat');\"/>{/html}",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
+    "delaytime": 2.8,
+    "left": 1400,
+    "hidetextbox": true
   },
   "11": {
+    "function": "__email__",
+    "id": "11",
+    "name": "Pick @email",
+    "top": 628,
+    "field": "email",
+    "overwrite": true,
     "next": {
       "success": "12",
       "failed": "13"
     },
-    "id": "11",
-    "field": "email",
-    "name": "Pick @email",
-    "overwrite": true,
     "delaytime": 0,
-    "left": 380,
-    "top": 628,
-    "function": "__email__"
+    "left": 380
   },
-  "23": {
-    "next": {
-      "failed": "24"
-    },
-    "id": "23",
-    "field": "email",
-    "name": "Pick @email",
-    "overwrite": true,
-    "delaytime": 0,
-    "left": 154,
-    "top": 1773,
-    "function": "__email__"
-  },
-  "54": {
-    "next": {
-      "success": "55"
-    },
-    "id": "54",
-    "top": 2099,
-    "delaytime": 4,
-    "name": "That way, we can get to know that I've reached right now:",
-    "left": 1027,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "That way, we can get to know my humble benchmarks:",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "20": {
-    "next": {
-      "success": "21"
-    },
-    "id": "20",
-    "delaytime": 2.2,
-    "name": "They're taking some beers right n",
-    "left": 91,
+  "53": {
     "function": "__send_message__",
+    "id": "53",
+    "name": "You can set up events on Google Analytics, Mixpanel or any other similar tool to measure the convers",
+    "top": 2019,
     "responses": [
       {
-        "text": "- They're taking some beers right now, you know?, leaving me in charge of all the heavy lifting. Humans... 😎\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.addClass();\"/>{/html}",
+        "entity": "text",
         "order": 0,
-        "entity": "text"
+        "text": "You can set up events on Google Analytics, Mixpanel or any other similar tool to measure the conversion rate within the chat."
       }
     ],
-    "top": 1294
-  },
-  "43": {
     "next": {
-      "success": "49"
+      "success": "54"
     },
-    "id": "43",
-    "top": 1921,
-    "delaytime": 0.6,
-    "name": "Easy stuff...",
-    "left": 726,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "Easy stuff...\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag8','Landbot Chat', 'Capture data');\"/>{/html}",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "68": {
-    "next": {
-      "success": "69"
-    },
-    "id": "68",
-    "top": 2020,
-    "delaytime": 4,
-    "name": "The bot (_that's me_) will cease conducting the chatting and grant you full control over any convers",
-    "left": 1880,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "The bot (_that's me_) will cease conducting the chatting and grant you full control over any conversation.",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "32": {
-    "next": {
-      "success": "33"
-    },
-    "id": "32",
-    "top": 1361,
-    "delaytime": 4,
-    "name": "And that's precisely what I'm here",
-    "left": 1008,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "And that's precisely what I'm here for... Do you feel like setting up your own landbot to check it out?",
-        "order": 0,
-        "entity": "button",
-        "choice_text": "*Type the number of the option you are interested in",
-        "buttons": [
-          "Yes",
-          "How do you work?"
-        ]
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "49": {
-    "next": {
-      "success": "50"
-    },
-    "id": "49",
-    "top": 2014,
-    "delaytime": 0.4,
-    "name": "Everytime I ask a question, I can keep track of the results in my database.",
-    "left": 721,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "Everytime I ask a question, I can *keep track of the answers in my database*.",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "31": {
-    "next": {
-      "success": "32"
-    },
-    "id": "31",
-    "top": 1269,
-    "delaytime": 0,
-    "name": "Meaning that people are far *more r",
-    "left": 1006,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "Meaning that people are far *more receptive to engage in a conversation* than filling up a form. Stands to reason, doesn't it?",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "3": {
-    "next": {
-      "success": "4"
-    },
-    "id": "3",
-    "top": 404,
-    "delaytime": 0,
-    "name": "No kidding: everything you used t",
-    "left": 1144,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "No kidding: *I can do everything you used to with a form* and a landing page by *setting up a conversation with any visitor on your website*\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.identifyUser('flag2a',{name: '@username'}); window.parent.trackEvent('flag2b','Landbot Chat', 'Tell me more 01');\"/>{/html}",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "63": {
-    "next": {
-      "success": "64"
-    },
-    "id": "63",
-    "top": 2296,
-    "delaytime": 1.2,
-    "name": "📊 Saving chat data in your *CRM* or as an *Excel doc*.",
-    "left": 1258,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "📊  Saving chat data in your *CRM* or as an *Excel doc*.",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "77": {
-    "next": {
-      "success": "39"
-    },
-    "id": "77",
-    "delaytime": 4,
-    "name": "Calling your custome",
-    "left": 723,
-    "function": "__send_message__",
-    "responses": [
-      {
-        "text": "Calling your customer by his/her name, for instance, the way I just did. 🤓",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "top": 2360
-  },
-  "64": {
-    "next": {
-      "success": "65"
-    },
-    "id": "64",
-    "top": 2369,
-    "delaytime": 2,
-    "name": "🛎 Sending you a Slack (or push) notifications when needed.",
-    "left": 1259,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "🛎  Sending you a Slack (or push) notification when needed.",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "38": {
-    "next": {
-      "success": "39"
-    },
-    "id": "38",
-    "top": 1356,
-    "delaytime": 2.8,
-    "name": "👉🏻 You can even use my own chat to give a first-hand reply to the most interesting queries.",
-    "left": 1400,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "👉🏻 You can even use my own chat to *give a first-hand reply to the most interesting queries*.",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "29": {
-    "next": {
-      "success": "30"
-    },
-    "id": "29",
-    "top": 1104,
-    "delaytime": 2.2,
-    "name": "They set up a competition",
-    "left": 1006,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "They set up *a competition between a typical form and myself*, and guess who crushed his adversary to a pulp...😜",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "22": {
-    "next": {
-      "success": "75"
-    },
-    "id": "22",
-    "delaytime": 0.6,
-    "name": "See you soon @name",
-    "left": 335,
-    "function": "__send_message__",
-    "responses": [
-      {
-        "text": "See you soon! It's been a pleasure chatting with you! 🙂\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag18','Landbot Chat', 'Its done');window.parent.removeClass();\"/>{/html}",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "top": 1203
-  },
-  "60": {
-    "next": {
-      "success": "62"
-    },
-    "id": "60",
-    "top": 2092,
-    "delaytime": 0.6,
-    "name": "I'm fully integrated with such services. Thanks to that, *I've got available superpowers* like:",
-    "left": 1217,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "I'm fully integrated with such services. Thanks to that, *I've got some superpowers available* like:",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "46": {
-    "next": {
-      "success": "66"
-    },
-    "id": "46",
-    "top": 1930,
-    "delaytime": 0.6,
-    "name": "Setting up a landbot is quite easy: with just a bunch of clicks you'll get your first bot up and run",
-    "left": 1614,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "Setting up a landbot is quite easy: with just a bunch of clicks you'll get your first bot up and running! 🤓\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag12','Landbot Chat', 'How Setup');\"/>{/html}",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "13": {
-    "next": {
-      "success": "25"
-    },
-    "id": "13",
-    "top": 703,
-    "delaytime": 0.6,
-    "name": "Hmmm... I'd swear *that's n",
-    "left": 542,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "Hmmm... I'd swear *that's not a valid e-mail address*. I won't be able to sign up your landingbot account if you don't provide a real email. 😟\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag17','Landbot Chat', 'Email error');window.parent.removeClass();\"/>{/html}",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "50": {
-    "next": {
-      "success": "51"
-    },
-    "id": "50",
-    "top": 2097,
-    "delaytime": 2.4,
-    "name": "Just like this, see?",
-    "left": 723,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "Just like this, see?",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "55": {
-    "next": {
-      "success": "56"
-    },
-    "id": "55",
-    "top": 2183,
-    "delaytime": 2,
-    "name": "👉🏻 50% chat-to-lead conversion rate",
-    "left": 1030,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "⚡️ 50% chat-to-lead conversion rate",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "61": {
-    "next": {
-      "success": "60"
-    },
-    "id": "61",
-    "top": 2095,
-    "delaytime": 0.6,
-    "name": "In essence, they're tools that allow you to link another one like myself with the most common apps a",
-    "left": 1454,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "In essence, they're tools that allow you to link a bot like me with the most common apps and webs around.",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
+    "delaytime": 2.6,
+    "left": 1031,
+    "hidetextbox": true
   },
   "16": {
+    "function": "__send_message__",
+    "id": "16",
+    "name": "We'll be giving",
+    "top": 877,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "We'll be giving you access in just a few days: *you'll get an e-mail* with all the information."
+      }
+    ],
     "next": {
       "success": "17"
     },
-    "id": "16",
-    "top": 877,
     "delaytime": 0,
-    "name": "We'll be giving",
     "left": 261,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "We'll be giving you access in just a few days: *you'll get an e-mail* with all the information.",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
+    "hidetextbox": true
   },
-  "56": {
-    "next": {
-      "success": "57"
-    },
-    "id": "56",
-    "top": 2262,
-    "delaytime": 1.6,
-    "name": "👉🏻 A 0.5s average first-response time.",
-    "left": 1028,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "⚡️ A 0.5s average first-response time.",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
-  },
-  "21": {
-    "next": {
-      "success": "22"
-    },
-    "id": "21",
-    "keyword": true,
-    "field": "custom",
-    "name": "Pick @duda",
-    "overwrite": true,
-    "delaytime": 0,
-    "left": 119,
-    "top": 1377,
-    "custom_field": "duda",
-    "function": "__text__"
-  },
-  "15": {
-    "next": {
-      "success": "23"
-    },
-    "id": "15",
-    "delaytime": 0,
-    "name": "Please, write your e-mail again.",
-    "left": 109,
+  "25": {
     "function": "__send_message__",
+    "id": "25",
+    "name": "Do you want me to",
+    "top": 798,
     "responses": [
       {
-        "text": "Please, write your e-mail again.",
+        "entity": "button",
+        "buttons": [
+          "Yes, explain me",
+          "I want to sign up"
+        ],
         "order": 0,
-        "entity": "text"
+        "text": "Do you want me to explain you how I work, instead?",
+        "choice_text": "*Type the number of the option you are interested in"
       }
     ],
-    "top": 1692
-  },
-  "62": {
     "next": {
-      "success": "63"
+      "success": "26"
     },
-    "id": "62",
-    "top": 2216,
-    "delaytime": 2,
-    "name": "✉️  *Sending e-mails* to chat users.",
-    "left": 1259,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "✉️  *Sending e-mails* to chat users.\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag11','Landbot Chat', 'Integrations 02');\"/>{/html}",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
+    "delaytime": 4,
+    "left": 549,
+    "hidetextbox": true
   },
-  "35": {
+  "27": {
+    "function": "__choice__",
+    "name": "Pick selected option",
+    "top": 844,
+    "id": "27",
     "next": {
-      "success": "36"
+      "bots": "28",
+      "do": "34",
+      "how": "34",
+      "vs": "28",
+      "forms": "28",
+      "features": "41",
+      "signup": "9",
+      "you": "34",
+      "work": "34"
     },
-    "id": "35",
-    "top": 1103,
-    "delaytime": 1.2,
-    "name": "👉🏻 You set me up *in about seven minutes*...",
-    "left": 1396,
-    "hidetextbox": true,
-    "responses": [
-      {
-        "text": "👉🏻 You set me up *in about seven minutes*...",
-        "order": 0,
-        "entity": "text"
-      }
-    ],
-    "function": "__send_message__"
+    "delaytime": 0,
+    "left": 1158,
+    "hidetextbox": true
   },
   "10": {
-    "next": {
-      "success": "27"
-    },
+    "function": "__send_message__",
     "id": "10",
-    "top": 752,
-    "delaytime": 0.6,
     "name": "I'd never dare to bore",
-    "left": 1156,
-    "hidetextbox": true,
+    "top": 752,
     "responses": [
       {
-        "text": "I'd never dare to bore you, so what exactly do you want me to talk about?",
-        "order": 0,
         "entity": "button",
-        "choice_text": "*Type the number of the option you are interested in",
         "buttons": [
           "How do you work?",
           "Bots vs Forms"
-        ]
+        ],
+        "order": 0,
+        "text": "I'd never dare to bore you, so what exactly do you want me to talk about?",
+        "choice_text": "*Type the number of the option you are interested in"
       }
     ],
-    "function": "__send_message__"
-  },
-  "51": {
     "next": {
-      "success": "52"
+      "success": "27"
     },
-    "id": "51",
-    "top": 2184,
     "delaytime": 0.6,
-    "name": "imagen",
-    "left": 757,
-    "hidetextbox": true,
+    "left": 1156,
+    "hidetextbox": true
+  },
+  "65": {
+    "function": "__send_message__",
+    "id": "65",
+    "name": "And even more!",
+    "top": 2454,
     "responses": [
       {
-        "path": "https://storage.googleapis.com/media.yexir.com/ronin/1494935552.232631.png",
+        "entity": "text",
         "order": 0,
-        "entity": "image"
+        "text": "And even more! 💪🏻"
       }
     ],
-    "function": "__send_message__"
+    "next": {
+      "success": "39"
+    },
+    "delaytime": 2,
+    "left": 1280,
+    "hidetextbox": true
+  },
+  "13": {
+    "function": "__send_message__",
+    "id": "13",
+    "name": "Hmmm... I'd swear *that's n",
+    "top": 703,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Hmmm... I'd swear *that's not a valid e-mail address*. I won't be able to sign up your landingbot account if you don't provide a real email. 😟\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag17','Landbot Chat', 'Email error');removeClass();\"/>{/html}"
+      }
+    ],
+    "next": {
+      "success": "25"
+    },
+    "delaytime": 0.6,
+    "left": 542,
+    "hidetextbox": true
+  },
+  "56": {
+    "function": "__send_message__",
+    "id": "56",
+    "name": "👉🏻 A 0.5s average first-response time.",
+    "top": 2262,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "⚡️ A 0.5s average first-response time."
+      }
+    ],
+    "next": {
+      "success": "57"
+    },
+    "delaytime": 1.6,
+    "left": 1028,
+    "hidetextbox": true
+  },
+  "73": {
+    "function": "__send_message__",
+    "id": "73",
+    "name": "_I'll need your e-ma",
+    "top": 543,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "_I'll need your e-mail address to sign you up. *Type your email below, please*_\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"addClass();\"/>{/html}"
+      }
+    ],
+    "next": {
+      "success": "11"
+    },
+    "delaytime": 0.6,
+    "left": 358
+  },
+  "55": {
+    "function": "__send_message__",
+    "id": "55",
+    "name": "👉🏻 50% chat-to-lead conversion rate",
+    "top": 2183,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "⚡️ 50% chat-to-lead conversion rate"
+      }
+    ],
+    "next": {
+      "success": "56"
+    },
+    "delaytime": 2,
+    "left": 1030,
+    "hidetextbox": true
+  },
+  "35": {
+    "function": "__send_message__",
+    "id": "35",
+    "name": "👉🏻 You set me up *in about seven minutes*...",
+    "top": 1103,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "👉🏻 You set me up *in about seven minutes*..."
+      }
+    ],
+    "next": {
+      "success": "36"
+    },
+    "delaytime": 1.2,
+    "left": 1396,
+    "hidetextbox": true
+  },
+  "31": {
+    "function": "__send_message__",
+    "id": "31",
+    "name": "Meaning that people are far *more r",
+    "top": 1269,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Meaning that people are far *more receptive to engage in a conversation* than filling up a form. Stands to reason, doesn't it?"
+      }
+    ],
+    "next": {
+      "success": "32"
+    },
+    "delaytime": 0,
+    "left": 1006,
+    "hidetextbox": true
+  },
+  "19": {
+    "function": "__send_message__",
+    "id": "19",
+    "name": "Tell me about it",
+    "top": 1199,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Tell me about it and *our support team will e-mail you* in no time.\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag19','Landbot Chat', 'Leave message');\"/>{/html}"
+      }
+    ],
+    "next": {
+      "success": "20"
+    },
+    "delaytime": 0.6,
+    "left": 106,
+    "hidetextbox": true
+  },
+  "30": {
+    "function": "__send_message__",
+    "id": "30",
+    "name": "imagen",
+    "top": 1182,
+    "responses": [
+      {
+        "entity": "image",
+        "path": "https://storage.googleapis.com/media.yexir.com/ronin/1494930146.615037.png",
+        "order": 0
+      }
+    ],
+    "next": {
+      "success": "31"
+    },
+    "delaytime": 3,
+    "left": 1042,
+    "hidetextbox": true
+  },
+  "62": {
+    "function": "__send_message__",
+    "id": "62",
+    "name": "✉️  *Sending e-mails* to chat users.",
+    "top": 2216,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "✉️  *Sending e-mails* to chat users.\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag11','Landbot Chat', 'Integrations 02');\"/>{/html}"
+      }
+    ],
+    "next": {
+      "success": "63"
+    },
+    "delaytime": 2,
+    "left": 1259,
+    "hidetextbox": true
+  },
+  "20": {
+    "function": "__send_message__",
+    "id": "20",
+    "name": "They're taking some beers right n",
+    "top": 1294,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "- They're taking some beers right now, you know?, leaving me in charge of all the heavy lifting. Humans... 😎\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"addClass();\"/>{/html}"
+      }
+    ],
+    "next": {
+      "success": "21"
+    },
+    "delaytime": 2.2,
+    "left": 91
+  },
+  "50": {
+    "function": "__send_message__",
+    "id": "50",
+    "name": "Just like this, see?",
+    "top": 2097,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Just like this, see?"
+      }
+    ],
+    "next": {
+      "success": "51"
+    },
+    "delaytime": 2.4,
+    "left": 723,
+    "hidetextbox": true
+  },
+  "59": {
+    "function": "__choice__",
+    "name": "Pick selected option",
+    "top": 2010,
+    "id": "59",
+    "next": {
+      "features": "41",
+      "yes": "60",
+      "sure": "60",
+      "no": "61",
+      "signup": "9"
+    },
+    "delaytime": 0,
+    "left": 1349,
+    "hidetextbox": true
+  },
+  "15": {
+    "function": "__send_message__",
+    "id": "15",
+    "name": "Please, write your e-mail again.",
+    "top": 1692,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Please, write your e-mail again."
+      }
+    ],
+    "next": {
+      "success": "23"
+    },
+    "delaytime": 0,
+    "left": 109
+  },
+  "44": {
+    "function": "__send_message__",
+    "id": "44",
+    "name": "In many senses, *I behave just like a website*. And that brings along some nifty advantages.🤓",
+    "top": 1928,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "In many senses, *I behave just like a website*. And that brings along some nifty advantages.🤓\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag9','Landbot Chat', 'Metrics');\"/>{/html}"
+      }
+    ],
+    "next": {
+      "success": "53"
+    },
+    "delaytime": 0.6,
+    "left": 1029,
+    "hidetextbox": true
+  },
+  "77": {
+    "function": "__send_message__",
+    "id": "77",
+    "name": "Calling your custome",
+    "top": 2360,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Calling your customer by his/her name, for instance, the way I just did. 🤓"
+      }
+    ],
+    "next": {
+      "success": "39"
+    },
+    "delaytime": 4,
+    "left": 723
+  },
+  "74": {
+    "function": "__send_message__",
+    "id": "74",
+    "name": "Enviar imagen",
+    "top": 795,
+    "responses": [
+      {
+        "entity": "image",
+        "path": "https://storage.googleapis.com/media.yexir.com/ronin/1494937363.958855.gif",
+        "order": 0
+      }
+    ],
+    "next": {
+      "success": "16"
+    },
+    "delaytime": 0.6,
+    "left": 264,
+    "hidetextbox": true
+  },
+  "58": {
+    "function": "__send_message__",
+    "id": "58",
+    "name": "imagen",
+    "top": 2424,
+    "responses": [
+      {
+        "entity": "image",
+        "path": "https://storage.googleapis.com/media.yexir.com/ronin/1494521661.283529.png",
+        "order": 0
+      }
+    ],
+    "next": {
+      "success": "39"
+    },
+    "delaytime": 0,
+    "left": 1063,
+    "hidetextbox": true
+  },
+  "60": {
+    "function": "__send_message__",
+    "id": "60",
+    "name": "I'm fully integrated with such services. Thanks to that, *I've got available superpowers* like:",
+    "top": 2092,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "I'm fully integrated with such services. Thanks to that, *I've got some superpowers available* like:"
+      }
+    ],
+    "next": {
+      "success": "62"
+    },
+    "delaytime": 0.6,
+    "left": 1217,
+    "hidetextbox": true
+  },
+  "21": {
+    "function": "__text__",
+    "id": "21",
+    "name": "Pick @duda",
+    "top": 1377,
+    "field": "custom",
+    "overwrite": true,
+    "next": {
+      "success": "22"
+    },
+    "keyword": true,
+    "delaytime": 0,
+    "left": 119,
+    "custom_field": "duda"
+  },
+  "29": {
+    "function": "__send_message__",
+    "id": "29",
+    "name": "They set up a competition",
+    "top": 1104,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "They set up *a competition between a typical form and myself*, and guess who crushed his adversary to a pulp...😜"
+      }
+    ],
+    "next": {
+      "success": "30"
+    },
+    "delaytime": 2.2,
+    "left": 1006,
+    "hidetextbox": true
+  },
+  "37": {
+    "function": "__send_message__",
+    "id": "37",
+    "name": "👉🏻 When you feel like coming back, I'll",
+    "top": 1273,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "👉🏻 When you feel like coming back, I'll provide you with *a full report on everything I did*."
+      }
+    ],
+    "next": {
+      "success": "38"
+    },
+    "delaytime": 2,
+    "left": 1396,
+    "hidetextbox": true
+  },
+  "45": {
+    "function": "__send_message__",
+    "id": "45",
+    "name": "Have you ever heard about *Zapier or IFTTT*?",
+    "top": 1928,
+    "responses": [
+      {
+        "entity": "button",
+        "buttons": [
+          "Sure",
+          "No"
+        ],
+        "order": 0,
+        "text": "Have you ever heard about Zapier or IFTTT?\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag10','Landbot Chat', 'Integrations');\"/>{/html}",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "next": {
+      "success": "59"
+    },
+    "delaytime": 0.6,
+    "left": 1320,
+    "hidetextbox": true
+  },
+  "8": {
+    "function": "__choice__",
+    "name": "Pick selected option",
+    "top": 371,
+    "id": "8",
+    "next": {
+      "tell": "3",
+      "yes": "9",
+      "more": "3",
+      "signup": "9",
+      "features": "41",
+      "me": "3"
+    },
+    "delaytime": 0,
+    "left": 737,
+    "hidetextbox": true
+  },
+  "3": {
+    "function": "__send_message__",
+    "id": "3",
+    "name": "No kidding: everything you used t",
+    "top": 404,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "No kidding: *I can do everything you used to with a form* and a landing page by *setting up a conversation with any visitor on your website*\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.identifyUser('flag2a',{name: '@username'}); window.parent.trackEvent('flag2b','Landbot Chat', 'Tell me more 01');\"/>{/html}"
+      }
+    ],
+    "next": {
+      "success": "4"
+    },
+    "delaytime": 0,
+    "left": 1144,
+    "hidetextbox": true
+  },
+  "48": {
+    "function": "__send_message__",
+    "id": "48",
+    "name": "Landbot is *completely free* in this open Beta💃🏻",
+    "top": 1926,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Landbot is *completely free* in this closed Beta💃🏻\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag14','Landbot Chat', 'Price');\"/>{/html}"
+      }
+    ],
+    "next": {
+      "success": "39"
+    },
+    "delaytime": 0.6,
+    "left": 2148,
+    "hidetextbox": true
+  },
+  "17": {
+    "function": "__send_message__",
+    "id": "17",
+    "name": "Anything else I could help you with?",
+    "top": 963,
+    "responses": [
+      {
+        "entity": "button",
+        "buttons": [
+          "Leave us a message",
+          "It's done",
+          "More information"
+        ],
+        "order": 0,
+        "text": "Anything else I could help you with?",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "next": {
+      "success": "18"
+    },
+    "delaytime": 4,
+    "left": 242,
+    "hidetextbox": true
+  },
+  "69": {
+    "function": "__send_message__",
+    "id": "69",
+    "name": "That way, your customer won't have to switch channels to talk to you. That's what I call a perk! 🙂",
+    "top": 2111,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "That way, your customer won't have to switch channels to talk to you. That's what I call a perk! 🙂"
+      }
+    ],
+    "next": {
+      "success": "70"
+    },
+    "delaytime": 4,
+    "left": 1880,
+    "hidetextbox": true
+  },
+  "28": {
+    "function": "__send_message__",
+    "id": "28",
+    "name": "The guys doing all the programming",
+    "top": 1016,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Good question! The guys doing all the programming are totally data-obsessed, you know?\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"window.parent.trackEvent('flag5','Landbot Chat', 'Forms vs bots');\"/>{/html}"
+      }
+    ],
+    "next": {
+      "success": "29"
+    },
+    "delaytime": 1,
+    "left": 1007,
+    "hidetextbox": true
+  },
+  "4": {
+    "function": "__send_message__",
+    "id": "4",
+    "name": "What's your name?",
+    "top": 482,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "_What's your name? *Type your name below please*_\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"addClass();\"/>{/html}"
+      }
+    ],
+    "next": {
+      "success": "5"
+    },
+    "delaytime": 4,
+    "left": 1151
+  },
+  "68": {
+    "function": "__send_message__",
+    "id": "68",
+    "name": "The bot (_that's me_) will cease conducting the chatting and grant you full control over any convers",
+    "top": 2020,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "The bot (_that's me_) will cease conducting the chatting and grant you full control over any conversation."
+      }
+    ],
+    "next": {
+      "success": "69"
+    },
+    "delaytime": 4,
+    "left": 1880,
+    "hidetextbox": true
+  },
+  "49": {
+    "function": "__send_message__",
+    "id": "49",
+    "name": "Everytime I ask a question, I can keep track of the results in my database.",
+    "top": 2014,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Everytime I ask a question, I can *keep track of the answers in my database*."
+      }
+    ],
+    "next": {
+      "success": "50"
+    },
+    "delaytime": 0.4,
+    "left": 721,
+    "hidetextbox": true
+  },
+  "32": {
+    "function": "__send_message__",
+    "id": "32",
+    "name": "And that's precisely what I'm here",
+    "top": 1361,
+    "responses": [
+      {
+        "entity": "button",
+        "buttons": [
+          "Yes",
+          "How do you work?"
+        ],
+        "order": 0,
+        "text": "And that's precisely what I'm here for... Do you feel like setting up your own landbot to check it out?",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "next": {
+      "success": "33"
+    },
+    "delaytime": 4,
+    "left": 1008,
+    "hidetextbox": true
+  },
+  "70": {
+    "function": "__send_message__",
+    "id": "70",
+    "name": "imagen",
+    "top": 2190,
+    "responses": [
+      {
+        "entity": "image",
+        "path": "https://storage.googleapis.com/media.yexir.com/ronin/1494937254.29464.png",
+        "order": 0
+      }
+    ],
+    "next": {
+      "success": "39"
+    },
+    "delaytime": 3.2,
+    "left": 1911,
+    "hidetextbox": true
   }
 }

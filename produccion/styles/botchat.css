@@ -1,5 +1,4 @@
-
-
+@charset "UTF-8";
 div#hu-container-widget {
   width: 100%;
   padding-bottom: 117px !important; }
@@ -17,30 +16,14 @@ div#hu-container-widget {
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=0 );
     /* IE6-9 */ }
-    div#hu-container-widget div#hu-container-messenger .hu-messenger-header {
-      background-color: transparent !important;
-      height: 73px !important; }
-      div#hu-container-widget div#hu-container-messenger .hu-messenger-header.js-initial {
-        height: 200px; }
-      div#hu-container-widget div#hu-container-messenger .hu-messenger-header .hu-header-state.hu-header-initial {
-        display: none !important; }
-      div#hu-container-widget div#hu-container-messenger .hu-messenger-header .hu-header-state.hu-header-chat {
-        opacity: 1 !important;
-        padding-left: 5%;
-        padding-right: 20%;
-        padding-top: 12px; }
-      div#hu-container-widget div#hu-container-messenger .hu-messenger-header .hu-header-state .hu-header-cross.hu-header-btn {
-        display: none !important; }
-      div#hu-container-widget div#hu-container-messenger .hu-messenger-header .hu-header-state .hu-header-title.hu-header-btn {
-        display: none !important; }
-      div#hu-container-widget div#hu-container-messenger .hu-messenger-header .hu-header-state .hu-header-title p {
-        display: none !important; }
+    div#hu-container-widget div#hu-container-messenger .hu-messenger-header, div#hu-container-widget div#hu-container-messenger .hu-chatlist-header {
+      display: none; }
     div#hu-container-widget div#hu-container-messenger .hu-messenger-body {
       background-image: none !important;
       background: transparent !important;
       margin-bottom: 0px !important; }
-      div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state {
-        padding-top: 55px !important; }
+      div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages {
+        padding-bottom: 10px; }
         div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-date.hu-js-date {
           display: none !important; }
         div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content-group {
@@ -48,9 +31,9 @@ div#hu-container-widget {
           width: 100%; }
         div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content {
           padding: 12px !important;
-          -webkit-box-shadow: 0 0 9px 0px rgba(0, 0, 0, 0.08);
-          -moz-box-shadow: 0 0 9px 0px rgba(0, 0, 0, 0.08);
-          box-shadow: 0 0 9px 0px rgba(0, 0, 0, 0.08); }
+          -webkit-box-shadow: rgba(0, 0, 0, 0.08);
+          -moz-box-shadow: rgba(0, 0, 0, 0.08);
+          box-shadow: rgba(0, 0, 0, 0.08); }
           div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content p {
             font-size: 14px !important;
             line-height: 1.35em !important; }
@@ -59,14 +42,13 @@ div#hu-container-widget {
           div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content.hu-message-content-buttons {
             background: transparent !important;
             padding: 0 !important;
-            margin: 30px 0 13px;
+            margin: 10px 0 0;
             -webkit-box-shadow: none;
             -moz-box-shadow: none;
             box-shadow: none;
-            position: absolute;
+            position: relative;
             left: 0;
             width: 100%;
-            top: 43px;
             display: none; }
             div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content.hu-message-content-buttons .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink {
               float: left;
@@ -123,13 +105,14 @@ div#hu-container-widget {
           background-size: 400px;
           background-repeat: no-repeat;
           background-position: bottom;
-          margin: 0 auto; }
+          margin: 0 auto;
+          z-index: 5; }
         div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-loader:before {
-		display: none;
-          content: "Cargando chatbot...";
+          display: none;
+          content: "Loading chatbot...";
           position: fixed;
           width: 100%;
-          height: 100%;
+          height: 100vh;
           left: 0;
           top: 0;
           color: white;
@@ -158,47 +141,47 @@ div#hu-container-widget {
     display: none; }
     div#hu-container-widget #hu-container-proactive.hu-js-closed {
       display: none; }
-
-
   div#hu-container-widget[data-assigned="ronin"][data-status="pick-data"] .hu-composer-text, div#hu-container-widget[data-assigned="ronin"][data-status="pick-option"] .hu-composer-text {
     width: 368px;
     padding-bottom: 13px; }
   div#hu-container-widget[data-assigned="ronin"][data-status="pick-data"] .hu-composer-buttons, div#hu-container-widget[data-assigned="ronin"][data-status="pick-option"] .hu-composer-buttons {
-    width: 50px; }
+    width: 50px;
+    padding-top: 22px; }
   div#hu-container-widget[data-assigned="ronin"][data-status="pick-data"] .hu-composer-emoji-button, div#hu-container-widget[data-assigned="ronin"][data-status="pick-option"] .hu-composer-emoji-button {
     display: none !important; }
   div#hu-container-widget[data-assigned="ronin"][data-status="pick-data"] .hu-composer-send-button, div#hu-container-widget[data-assigned="ronin"][data-status="pick-option"] .hu-composer-send-button {
     display: inherit !important; }
   div#hu-container-widget[data-assigned="ronin"][data-status="pick-data"] .hu-composer-file-button, div#hu-container-widget[data-assigned="ronin"][data-status="pick-option"] .hu-composer-file-button {
     display: none !important; }
-  div#hu-container-widget[data-assigned="ronin"][data-status="pick-data"] .hu-composer-send-button.hu-js-hide, div#hu-container-widget[data-assigned="ronin"][data-status="pick-option"] .hu-composer-send-button.hu-js-hide {
+  div#hu-container-widget[data-assigned="ronin"][data-status="pick-data"] .hu-composer-send-button.hu-js-hide {
+    opacity: 0.5 !important;
+    pointer-events: none; }
+  div#hu-container-widget[data-assigned="ronin"][data-status="pick-option"] .hu-composer-send-button.hu-js-hide {
     opacity: 0.5 !important;
     pointer-events: none; }
 
-  div#hu-container-widget[data-assigned="ronin"][data-status="pick-option"] .hu-messenger-body-state {
-    padding-bottom: 150px !important; }
-
 @media screen and (min-width: 800px) {
+  .hu-messenger-body {
+    max-height: calc(100% - 120px); }
+
   .hu-messenger-body-state {
-    padding: 0 13%; }
+    padding: 55px 13% 0; }
 
   .hu-messenger-footer {
-    margin: 0 21% 81px;
-    width: 56.4%; } }
+    margin: 0 calc(13% + 26px) 81px calc(13% + 75px);
+    width: auto !important; } }
 @media screen and (min-width: 1044px) {
   .hu-messenger-body-state {
-    padding: 0 23%; }
+    padding: 55px 23% 0; }
 
   .hu-messenger-footer {
-    margin: 0 29.3% 81px;
-    width: 41%; } }
+    margin: 0 calc(23% + 26px) 81px calc(23% + 75px); } }
 @media screen and (min-width: 1300px) {
   .hu-messenger-body-state {
-    padding: 0 30%; }
+    padding: 55px 30% 0; }
 
   .hu-messenger-footer {
-    margin: 0 35.3% 81px;
-    width: 30%; } }
+    margin: 0 calc(30% + 26px) 81px calc(30% + 75px); } }
 @media screen and (max-width: 600px) {
   .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink {
     float: none !important; }
@@ -242,59 +225,52 @@ div#hu-container-widget {
     width: 107px;
     display: block; }
 
-
-
-
-
-
-
-
-
-
-
-div[data-assigned="ronin"] .hu-messenger-message-brand .hu-message-content:not(.hu-message-content-image):not(.hu-message-content-buttons) {
-    animation-name: example;
-    animation-duration: 1.3s;
-}
-div[data-assigned="ronin"] .hu-messenger-message-brand .hu-message-content p::before {opacity: 0;content:"";background-image:url('http://helloumi.org/typig.png');width: 40px;height: 10px;display: inline-block;position: absolute;background-size: contain;background-repeat: no-repeat;margin-top: 2px;
-
-    animation-name: example2;
-    animation-duration: 1.3s;
-}
-  @keyframes example {
-    0%   {  color: transparent!important;
-  width: 68px;
-  height: 36px;overflow: hidden;}
-    100% {   color: transparent!important;
-  width: 68px;
-  height: 36px;overflow: hidden;}
-}
-
-  @keyframes example2 {
-    0%   {opacity: 0;}
-    5% {opacity: 0.5;}
-    30% {opacity: 0.5;}
-    35% {opacity: 0;}
-    40% {opacity: 0.5;}
-    65% {opacity: 0.5;}
-    70% {opacity: 0;}
-    75% {opacity: 0.5}
-    100% {opacity: .5;}
-}
-
-
-div[data-assigned="ronin"] .hu-messenger-message-brand .hu-message-content:not(.hu-message-content-image):not(.hu-message-content-buttons) span,div[data-assigned="ronin"] .hu-messenger-message-brand .hu-message-content:not(.hu-message-content-image):not(.hu-message-content-buttons) a,div[data-assigned="ronin"] .hu-messenger-message-brand .hu-message-content:not(.hu-message-content-image):not(.hu-message-content-buttons) b,div[data-assigned="ronin"] .hu-messenger-message-brand .hu-message-content:not(.hu-message-content-image):not(.hu-message-content-buttons) p {
-      animation-name: example3;
-    animation-duration: 1.3s;
-}
-
-  @keyframes example3 {
-    0%   {  color: #f1f1f1;color: transparent;}
-    100% {   color: #f1f1f1;color: transparent;}
-}
-
+@keyframes example {
+  0% {
+    color: transparent !important;
+    width: 68px;
+    height: 36px;
+    overflow: hidden; }
+  100% {
+    color: transparent !important;
+    width: 68px;
+    height: 36px;
+    overflow: hidden; } }
+@keyframes example2 {
+  0% {
+    opacity: 0; }
+  5% {
+    opacity: 0.5; }
+  30% {
+    opacity: 0.5; }
+  35% {
+    opacity: 0; }
+  40% {
+    opacity: 0.5; }
+  65% {
+    opacity: 0.5; }
+  70% {
+    opacity: 0; }
+  75% {
+    opacity: 0.5; }
+  100% {
+    opacity: .5; } }
+@keyframes example3 {
+  0% {
+    color: white;
+    color: transparent; }
+  100% {
+    color: white;
+    color: transparent; } }
+@keyframes example4 {
+  0% {
+    opacity: 0;
+    height: 1px; }
+  100% {
+    opacity: 0;
+    height: 5px; } }
 .hu-messenger-message-brand a.hu-link:not([href*=mailto]) {
-background: #ce4b81;
+  background: #ce4b81;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -302,214 +278,170 @@ background: #ce4b81;
   display: block;
   width: 100%;
   border-radius: 6px;
-  color: white!important;
-  text-decoration: none!important;
-  padding: 17px;
-}
-
-
+  color: white !important;
+  text-decoration: none !important;
+  padding: 17px; }
 
 .hu-messenger-body {
-  -webkit-overflow-scrolling: touch;
-}
-
-div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state {
-  padding-bottom: 32px;
-}
-
-
-
+  -webkit-overflow-scrolling: touch; }
 
 /* ESTILOS NUEVOS */
-
 .hu-italic.hu-bold {
   display: block;
   background: rgba(82, 96, 178, 0.21);
   padding: 9px;
   border-radius: 8px;
-  margin: 8px 0 0;
-}
-
-
+  margin: 8px 0 0; }
 
 div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message.hu-messenger-message-brand[data-samurai^="\-"] .hu-avatar {
   position: relative;
   left: -7px;
-  box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.08);
-}
+  box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.08); }
 
 .hu-messenger-message.hu-messenger-message-brand {
   animation: appear-left;
   animation-duration: .3s;
-  position: relative;
-}
-
+  position: relative; }
 
 .hu-message-content-buttons {
   animation: appear-right2;
   animation-duration: .5s;
   position: relative;
-  transition-timing-function: ease-in-out;
-}
+  transition-timing-function: ease-in-out; }
 
 @keyframes appear-left {
   from {
     opacity: 0;
-    left: -30px;
-  }
+    left: -30px; }
   to {
     opacity: 1;
-    left: 0;
-  }
-}
-
-
-
+    left: 0; } }
 @keyframes appear-right2 {
   from {
     opacity: 0;
-    left: 30px!important;
-  }
+    left: 30px !important; }
   to {
     opacity: 1;
-    left: 0;
-  }
-}
-
+    left: 0; } }
 span.hu-italic {
-  font-style: inherit!important;
-}
-
-
-span.hu-italic {
-  font-style: inherit!important;
-}
+  font-style: inherit !important;
+  font-style: inherit !important; }
 
 .stripes {
-  background: linear-gradient(-180deg,#f6bf4e 1%,#f9d281 23%,#fffdf3 71%);
+  background: linear-gradient(-180deg, #f6bf4e 1%, #f9d281 23%, #fffdf3 71%);
   width: 100%;
   height: 100%;
   position: fixed;
   top: 0;
   left: 0;
   /* z-index: 9999999; */
-  transform: skewY(-12deg);
-}
-
-.stripes * {
+  transform: skewY(-12deg); }
+  .stripes * {
     position: absolute;
-  height: 190px;
-}
-.stripe1 {top: 0;left: 0;width: 30%;background:linear-gradient(90deg,#ffad5a,rgba(250,175,82,.25));}
+    height: 190px; }
+
+.stripe1 {
+  top: 0;
+  left: 0;
+  width: 30%;
+  background: linear-gradient(90deg, #ffad5a, rgba(250, 175, 82, 0.25)); }
 
 .stripe2 {
   top: 190px;
   left: 0;
   width: 38%;
-  background: linear-gradient(90deg,#ffcd68,rgba(255,199,107,0));
-
-}
+  background: linear-gradient(90deg, #ffcd68, rgba(255, 199, 107, 0)); }
 
 .stripe3 {
   top: 380px;
   right: 0;
   width: 36%;
-  background: linear-gradient(90deg,hsla(46,98%,78%,0),#ffda84);
-}
+  background: linear-gradient(90deg, rgba(254, 228, 144, 0), #ffda84); }
 
 div#hu-container-widget div#hu-container-messenger {
-  background: linear-gradient(to bottom, #ffad59 0%, #ffe199 100%);
-}
-
+  background: linear-gradient(to bottom, #ffad59 0%, #ffe199 100%); }
 div#hu-experiment-header {
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.03);
-  background: rgba(255, 255, 255, 0.16);
-}
-
-
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.03); }
 
 .hu-messenger-message.hu-messenger-message-brand .hu-message-content {
-  background-color: white;
-}
+  background-color: white !important; }
 
 div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message.hu-messenger-message-user .hu-message-container .hu-message-content.hu-message-content-text {
-  background: rgb(206, 75, 129) !important;
-}
+  background: #ce4b81 !important; }
 
 .hu-message-info {
-  display: none!important;
-}
+  display: none !important; }
 
 div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content.hu-message-content-buttons .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink:last-child {
   background-color: transparent;
   color: #ce4b81;
-  border-color: #ce4b81;
-}
-
-div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content.hu-message-content-buttons .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink:last-child:hover {
-  background: #ce4b81;
-  color: white;
-}
-
+  border-color: #ce4b81; }
+  div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content.hu-message-content-buttons .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink:last-child:hover {
+    background: #ce4b81;
+    color: white; }
 div#hu-container-widget div#hu-container-messenger .hu-messenger-header {
   background-color: transparent !important;
-  height: 63px !important;
-}
+  height: 63px !important; }
+div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content p {
+  font-weight: 500 !important; }
+  div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content p iframe {
+    max-width: 100%; }
 
 /* MÁS */
-
-
-div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content p, .hu-btn span, #hu-container-widget span {
-  font-weight: 500!important;
-}
+.hu-btn span, #hu-container-widget span {
+  font-weight: 500 !important; }
 
 div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content p span.hu-bold {
-  font-weight: 700!important;
-}
-
+  font-weight: 700 !important; }
 div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content p span.hu-italic {
-  font-weight: 500!important;
-}
+  font-weight: 500 !important; }
 
 span.hu-italic.hu-bold {
-  background: #fdf2d8;
-  font-style: italic!important;
-}
+  background: transparent;
+  margin-bottom: -16px;
+  margin-top: 2px;
+  padding: 0;
+  opacity: .4;
+  font-size: 12px; }
+  span.hu-italic.hu-bold:after {
+    content: "";
+    background-image: url("https://kristenbentson.com/wp-content/uploads/2015/03/hand-drawn-icons-arrow-flat.png");
+    width: 39px;
+    height: 39px;
+    display: inherit;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute; }
+
+.hu-messenger-message:not(:last-child) span.hu-italic.hu-bold {
+  display: none !important; }
 
 .hu-message-content {
-  border-radius: 3px!important;
-}
+  border-radius: 3px !important; }
 
 textarea#hu-composer-box {
-color: #4a50a8;
-}
+  color: #4a50a8; }
+  textarea#hu-composer-box::placeholder {
+    color: #b2b5de;
+    text-transform: uppercase;
+    font-weight: 500; }
 
-textarea#hu-composer-box::placeholder {
- color: #b2b5de;
+#hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Capturar"], #hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Medir"], #hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Integraciones"], #hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Configura"], #hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Chatear"], #hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Precio"] {
+  font-size: 11px !important;
   text-transform: uppercase;
-font-weight: 500;
-}
-
-#hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Capturar"],#hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Medir"],#hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Integraciones"],#hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Configura"],#hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Chatear"],#hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Precio"] {
-  font-size: 11px!important;
-  text-transform: uppercase;
-  font-weight: 700!important;
-  width: 94px!important;
+  font-weight: 700 !important;
+  width: 94px !important;
   display: inline-block;
   text-align: center;
-  margin: -7px -16px -7px -22px!important;
-}
-
-#hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Data Capturing"],#hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Metrics"],#hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Integrations"],#hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Setting up"],#hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Talk to a customer"],#hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Pricing"] {
-  font-size: 11px!important;
+  margin: -7px -16px -7px -22px !important; }
+#hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Data Capturing"], #hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Metrics"], #hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Integrations"], #hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Setting up"], #hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Talk to a customer"], #hu-container-widget .hu-btn-group-vertical .hu-btn span[data-click^="Pricing"] {
+  font-size: 11px !important;
   text-transform: uppercase;
-  font-weight: 700!important;
-  width: 115px!important;
+  font-weight: 700 !important;
+  width: 115px !important;
   display: inline-block;
   text-align: center;
-  margin: -7px -16px -7px -22px!important;
-}
-
+  margin: -7px -16px -7px -22px !important; }
 
 div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-loader:after {
   content: "Ready to talk";
@@ -526,12 +458,11 @@ div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-loader
   width: 400px;
   height: 200px;
   background-position: 0 0px;
-  padding-top: 71px;
-}
+  padding-top: 71px; }
 
-.hu-loader-1,.hu-loader-2,.hu-loader-3 {
-display: none!important;
-}
+.hu-loader-1, .hu-loader-2, .hu-loader-3 {
+  display: none !important; }
+
 div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-loader:after {
   content: "Ready! 🚀";
   display: block;
@@ -548,56 +479,97 @@ div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-loader
   height: 200px;
   background-position: 0 0px;
   top: calc(30% - 26px);
-  left: calc(50% - 211px);
-}
-
-
+  left: calc(50% - 211px); }
 div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message.hu-messenger-message-brand[data-samurai^="\-"] .hu-avatar {
-	background-image: none!important;
-  background-color: #ce4b81;
-}
-
-div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message.hu-messenger-message-brand[data-samurai^="\-"] .hu-avatar::before {
-  content: "";
-  position: relative;
-  top: 5px;
-  background-size: 100%;
-  background-image: url(http://landbot.io/avatar.png);
-  width: 26px;
-  height: 26px;
-  display: inherit;
-  background-repeat: no-repeat;
-  left: 7px;
-}
+  background-image: none !important;
+  background-color: #ce4b81; }
+  div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message.hu-messenger-message-brand[data-samurai^="\-"] .hu-avatar::before {
+    content: "";
+    position: relative;
+    top: 5px;
+    background-size: 100%;
+    background-image: url(http://landbot.io/avatar.png);
+    width: 26px;
+    height: 26px;
+    display: inherit;
+    background-repeat: no-repeat;
+    left: 7px; }
 
 @media screen and (min-width: 800px) {
   #hu-webchat-ghosts .hu-messenger-message-user .hu-message-content {
-    animation: fer .5s normal forwards;
-  }
-}
-
+    animation: fer .5s normal forwards; } }
 @keyframes fer {
   from {
     transform: translate(-315px, 100px);
-    opacity: 0;
-
-  }
-}
-
+    opacity: 0; } }
 .hu-messenger-footer {
-	-webkit-transition: transform .5s, opacity .5s!important;
-    transition: transform .5s, opacity .5s!important;
-}
+  -webkit-transition: transform 0.5s, opacity 0.5s !important;
+  transition: transform 0.5s, opacity 0.5s !important; }
 
-div#hu-container-widget[data-textbox="hidden"] .hu-messenger-footer {
-/*   display: none!important; */
+div#hu-container-widget[data-textbox="hidden"] .hu-messenger-footer, div#hu-container-widget:not([data-textbox="hidden"]):not([data-textbox="show"]) .hu-messenger-footer {
+  /*   display: none!important; */
   /* opacity: 0; */
   transform: translateY(105px);
-  opacity: 0;
-}
-
-
+  opacity: 0; }
+@media screen and (max-width: 800px) {
+  div#hu-container-widget[data-textbox="hidden"] .hu-messenger-footer, div#hu-container-widget:not([data-textbox="hidden"]):not([data-textbox="show"]) .hu-messenger-footer {
+    display: none; }
+  div#hu-container-widget[data-textbox="hidden"] div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages, div#hu-container-widget:not([data-textbox="hidden"]):not([data-textbox="show"]) div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages {
+    padding-bottom: 36px !important; } }
 div#hu-container-widget:not([data-textbox]):not([data-assigned="ronin"]) .hu-messenger-footer {
-	  transform: translateY(105px);
-	  opacity: 0;
-}
+  margin-bottom: -105px;
+  height: 0;
+  opacity: 0;
+  margin: 0 !important;
+  padding: 0; }
+
+@keyframes animabubble {
+  from {
+    max-width: 70px;
+    max-height: 39px; }
+  to {
+    max-width: 519px;
+    max-height: 120px; } }
+@keyframes animatexto {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@media screen and (min-width: 800px) {
+  .hu-messenger-message-brand .hu-message-content-text {
+    animation-name: animabubble;
+    animation-duration: 0.7s;
+    animation-timing-function: cubic-bezier(0.68, 0.01, 0.245, 1.13);
+    overflow: hidden; }
+    .hu-messenger-message-brand .hu-message-content-text p {
+      animation-name: animatexto;
+      animation-duration: .9s;
+      animation-timing-function: cubic-bezier(0.68, 0.01, 0.245, 1.13); } }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  .hu-message-avatar, .hu-avatar {
+    display: none !important; }
+
+  .hu-messenger-body-state .hu-messenger-messages {
+    margin: 0 12px !important; }
+
+  .hu-messenger-footer {
+    -webkit-transition: none !important;
+    transition: none !important; }
+
+  .hu-messenger-message .hu-message-container .hu-message-content-group {
+    max-width: 100%; }
+    .hu-messenger-message .hu-message-container .hu-message-content-group .hu-message-content:not(.hu-message-content-buttons) {
+      max-width: 82%; }
+    .hu-messenger-message .hu-message-container .hu-message-content-group .hu-message-content .hu-btn-block {
+      text-align: center; }
+
+  div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important; }
+
+  div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages {
+    padding-bottom: 0 !important; } }
+
+/*# sourceMappingURL=botchat.css.map */
