@@ -412,12 +412,12 @@ div[data-assigned="ronin"] .hu-messenger-message-brand .hu-message-content {
 
 @keyframes example3 {
   0% {
-    color: #f1f1f1;
+    color: white;
     color: transparent;
   }
 
   100% {
-    color: #f1f1f1;
+    color: white;
     color: transparent;
   }
 }
@@ -566,7 +566,7 @@ div {
 }
 
 .hu-messenger-message.hu-messenger-message-brand .hu-message-content {
-  background-color: white;
+  background-color: white!important;
 }
 
 div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message.hu-messenger-message-user .hu-message-container .hu-message-content.hu-message-content-text {
@@ -635,6 +635,10 @@ span.hu-italic.hu-bold {
     background-size: cover;
     position: absolute;
   }
+}
+
+.hu-messenger-message:not(:last-child) span.hu-italic.hu-bold {
+  display: none!important;
 }
 
 .hu-message-content {
@@ -751,15 +755,25 @@ div#hu-container-widget div#hu-container-messenger .hu-messenger-body {
 }
 
 div#hu-container-widget {
-  &[data-textbox="hidden"] .hu-messenger-footer {
-    /*   display: none!important; */
-    /* opacity: 0; */
-    // transform: translateY(105px);
-    margin-bottom: -105px;
-    height: 0;
-    opacity: 0;
-    margin: 0 !important;
-    padding: 0;
+  &[data-textbox="hidden"], &:not([data-textbox="hidden"]):not([data-textbox="show"]) {
+    .hu-messenger-footer {
+      /*   display: none!important; */
+      /* opacity: 0; */
+      transform: translateY(105px);
+      // margin-bottom: -105px;
+      // height: 0;
+      opacity: 0;
+      // margin: 0 !important;
+      // padding: 0;
+    }
+    @media screen and (max-width: 800px){
+      .hu-messenger-footer {
+        display: none;
+      }
+      div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages {
+        padding-bottom: 36px!important;
+      }
+    }
   }
   &:not([data-textbox]):not([data-assigned="ronin"]) .hu-messenger-footer {
     // transform: translateY(105px);
@@ -794,14 +808,16 @@ div#hu-container-widget {
   }
 }
 
-.hu-messenger-message-brand .hu-message-content-text {
-    animation-name: animabubble;
-    animation-duration: 0.7s;
-    animation-timing-function:  cubic-bezier(0.68, 0.01, 0.245, 1.13);
-    overflow: hidden;
-    p {
-      animation-name: prueba;
-      animation-duration: .9s;
+@media screen and (min-width:800px){
+  .hu-messenger-message-brand .hu-message-content-text {
+      animation-name: animabubble;
+      animation-duration: 0.7s;
       animation-timing-function:  cubic-bezier(0.68, 0.01, 0.245, 1.13);
-    }
+      overflow: hidden;
+      p {
+        animation-name: animatexto;
+        animation-duration: .9s;
+        animation-timing-function:  cubic-bezier(0.68, 0.01, 0.245, 1.13);
+      }
+  }
 }
