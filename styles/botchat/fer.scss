@@ -588,6 +588,9 @@ div#hu-container-widget div#hu-container-messenger {
   }
   .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content p {
     font-weight: 500 !important;
+    iframe {
+      max-width: 100%;
+    }
   }
 }
 

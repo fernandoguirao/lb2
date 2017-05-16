@@ -27,7 +27,7 @@
         //config.style = (config.style) ? config.style + " @import styles/botchat.css" : "@import styles/botchat.css";
         window.HULiveChat = new Umichat(config);
         window.HULiveChat.createLiveChat();
-        window.HULiveChat.on('render', helloumiLivechatLoaded);
+        window.HULiveChat.on('render', helloumiLivechatIframeLoaded);
       }
     </script>
     <script type="text/javascript" src="https://storage.googleapis.com/static-demo-helloumi/webchat-widget/js/main.js" onload="loadHelloumiLiveChat()" charset="UTF-8"></script>

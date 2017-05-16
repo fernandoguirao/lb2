@@ -17,8 +17,9 @@
     <meta name="twitter:description" content="Landbot.io is a tool to create conversational interfaces in substitution of forms. No coding required!">
     <meta name="twitter:image" content="http://landbot.io/ogimage.jpg">
 
-    <link rel="stylesheet" href="styles/main.css" type="text/css"/>
     <link rel="stylesheet" href="styles/botchat.css" type="text/css"/>
+    <link rel="stylesheet" href="styles/main.css" type="text/css"/>
+
     <script type="text/javascript" src="main.js" charset="UTF-8"></script>
 
     <link rel="stylesheet" href="https://storage.googleapis.com/static-demo-helloumi/webchat/css/main.css"\>
@@ -27,14 +28,11 @@
         new UmichatRequirements(function(){
           new TemplateUtils();
           var umichatCore = new UmichatCore({ "staticUrl": "https://storage.googleapis.com/static-demo-helloumi/", "channelToken": "H-55-3S9G13MZ1NB4HXU0", "brandID": "233", "version": "1.0.0.6", "apiKey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU", "authDomain": "daisho-yexir.firebaseapp.com", "databaseURL": "https://daisho-yexir.firebaseio.com", "storageBucket": "daisho-yexir.appspot.com","open":true});
-          umichatCore.on('render', function(){
-            document.querySelector(".sk-folding-cube").style.display = "none"; // TEST
-          });
+          umichatCore.on('render', helloumiLivechatLoaded);
         });
       }
     </script>
     <script src="https://storage.googleapis.com/static-demo-helloumi/webchat/js/main.js" onload="loadHelloumiLiveChat()" charset="UTF-8"></script>
-    <link rel="stylesheet" href="styles/botchat.css" type="text/css"/>
 
     <!-- <script>
       !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
