@@ -43,7 +43,7 @@ div#hu-container-widget {
       background: transparent !important;
       margin-bottom: 0px !important;
       .hu-messenger-body-state {
-        padding-top: 25px !important;
+        // padding-top: 25px !important;
         .hu-messenger-messages {
           padding-bottom: 10px;
           .hu-messenger-date.hu-js-date {
@@ -233,32 +233,36 @@ div#hu-container-widget {
 }
 
 @media screen and (min-width: 800px) {
+  .hu-messenger-body {
+    max-height: calc(100% - 120px);
+  }
   .hu-messenger-body-state {
-    padding: 0 13%;
+    padding: 55px 13% 0;
   }
   .hu-messenger-footer {
-    margin: 0 21% 81px !important;;
-    width: 56.4% !important;;
+    // margin: 0 13% 81px;
+    margin: 0 calc(13% + 26px) 81px calc(13% + 75px);
+    width: auto !important;
   }
 }
 
 @media screen and (min-width: 1044px) {
   .hu-messenger-body-state {
-    padding: 0 23%;
+    padding: 55px 23% 0;
   }
   .hu-messenger-footer {
-    margin: 0 29.3% 81px;
-    width: 41%;
+    // margin: 0 23% 81px;
+    margin: 0 calc(23% + 26px) 81px calc(23% + 75px);
   }
 }
 
 @media screen and (min-width: 1300px) {
   .hu-messenger-body-state {
-    padding: 0 30%;
+    padding: 55px 30% 0;
   }
   .hu-messenger-footer {
-    margin: 0 35.3% 81px;
-    width: 30%;
+    // margin: 0 30% 81px;
+    margin: 0 calc(30% + 26px) 81px calc(30% + 75px);
   }
 }
 
@@ -320,34 +324,34 @@ div#hu-container-widget {
 
 // Estado de loading
 div[data-assigned="ronin"] .hu-messenger-message-brand .hu-message-content {
-  &:not(.hu-message-content-image):not(.hu-message-content-buttons) {
-    animation-name: example;
-    animation-duration: 1.3s;
-  }
-  p::before {
-    opacity: 0;
-    content: "";
-    background-image: url('http://helloumi.org/typig.png');
-    width: 40px;
-    height: 10px;
-    display: inline-block;
-    position: absolute;
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-top: 2px;
-    animation-name: example2;
-    animation-duration: 1.3s;
-  }
-  &:not(.hu-message-content-image):not(.hu-message-content-buttons) {
-    span, a, b, p {
-      animation-name: example3;
-      animation-duration: 1.3s;
-    }
-    span.hu-bold {
-      animation-name: example4;
-      animation-duration: 1.3s;
-    }
-  }
+  // &:not(.hu-message-content-image):not(.hu-message-content-buttons) {
+  //   animation-name: example;
+  //   animation-duration: 1.3s;
+  // }
+  // p::before {
+  //   opacity: 0;
+  //   content: "";
+  //   background-image: url('http://helloumi.org/typig.png');
+  //   width: 40px;
+  //   height: 10px;
+  //   display: inline-block;
+  //   position: absolute;
+  //   background-size: contain;
+  //   background-repeat: no-repeat;
+  //   margin-top: 2px;
+  //   animation-name: example2;
+  //   animation-duration: 1.3s;
+  // }
+  // &:not(.hu-message-content-image):not(.hu-message-content-buttons) {
+  //   span, a, b, p {
+  //     animation-name: example3;
+  //     animation-duration: 1.3s;
+  //   }
+  //   span.hu-bold {
+  //     animation-name: example4;
+  //     animation-duration: 1.3s;
+  //   }
+  // }
 }
 
 @keyframes example {
@@ -450,7 +454,7 @@ div[data-assigned="ronin"] .hu-messenger-message-brand .hu-message-content {
 }
 
 div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state {
-  padding-bottom: 32px;
+  // padding-bottom: 32px;
 }
 
 /* ESTILOS NUEVOS */
@@ -610,9 +614,27 @@ div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messen
   }
 }
 
+// span.hu-italic.hu-bold {
+//   background: #fdf2d8;
+//   font-style: italic !important;
+// }
 span.hu-italic.hu-bold {
-  background: #fdf2d8;
-  font-style: italic !important;
+  background: transparent;
+  margin-bottom: -16px;
+  margin-top: 2px;
+  padding: 0;
+  opacity: .4;
+  font-size: 12px;
+  &:after {
+    content: "";
+    background-image: url('https://kristenbentson.com/wp-content/uploads/2015/03/hand-drawn-icons-arrow-flat.png');
+    width: 39px;
+    height: 39px;
+    display: inherit;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+  }
 }
 
 .hu-message-content {
@@ -747,4 +769,39 @@ div#hu-container-widget {
     margin: 0 !important;
     padding: 0;
   }
+}
+
+@keyframes animabubble {
+    from {
+      max-width: 70px;
+      max-height: 39px;
+    }
+    to {
+      max-width: 519px;
+      max-height: 120px;
+    }
+}
+
+@keyframes animatexto {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hu-messenger-message-brand .hu-message-content-text {
+    animation-name: animabubble;
+    animation-duration: 0.7s;
+    animation-timing-function:  cubic-bezier(0.68, 0.01, 0.245, 1.13);
+    overflow: hidden;
+    p {
+      animation-name: prueba;
+      animation-duration: .9s;
+      animation-timing-function:  cubic-bezier(0.68, 0.01, 0.245, 1.13);
+    }
 }
