@@ -43,7 +43,7 @@ div#hu-container-widget {
       background: transparent !important;
       margin-bottom: 0px !important;
       .hu-messenger-body-state {
-        padding-top: 25px !important;
+        // padding-top: 25px !important;
         .hu-messenger-messages {
           padding-bottom: 10px;
           .hu-messenger-date.hu-js-date {
@@ -232,12 +232,15 @@ div#hu-container-widget {
 }
 
 @media screen and (min-width: 800px) {
+  .hu-messenger-body {
+    max-height: calc(100% - 120px);
+  }
   .hu-messenger-body-state {
     padding: 0 13%;
   }
   .hu-messenger-footer {
-    margin: 0 21% 81px !important;;
-    width: 56.4% !important;;
+    margin: 0 21% 81px !important;
+    width: 56.4% !important;
   }
 }
 
@@ -319,34 +322,34 @@ div#hu-container-widget {
 
 // Estado de loading
 div[data-assigned="ronin"] .hu-messenger-message-brand .hu-message-content {
-  &:not(.hu-message-content-image):not(.hu-message-content-buttons) {
-    animation-name: example;
-    animation-duration: 1.3s;
-  }
-  p::before {
-    opacity: 0;
-    content: "";
-    background-image: url('http://helloumi.org/typig.png');
-    width: 40px;
-    height: 10px;
-    display: inline-block;
-    position: absolute;
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-top: 2px;
-    animation-name: example2;
-    animation-duration: 1.3s;
-  }
-  &:not(.hu-message-content-image):not(.hu-message-content-buttons) {
-    span, a, b, p {
-      animation-name: example3;
-      animation-duration: 1.3s;
-    }
-    span.hu-bold {
-      animation-name: example4;
-      animation-duration: 1.3s;
-    }
-  }
+  // &:not(.hu-message-content-image):not(.hu-message-content-buttons) {
+  //   animation-name: example;
+  //   animation-duration: 1.3s;
+  // }
+  // p::before {
+  //   opacity: 0;
+  //   content: "";
+  //   background-image: url('http://helloumi.org/typig.png');
+  //   width: 40px;
+  //   height: 10px;
+  //   display: inline-block;
+  //   position: absolute;
+  //   background-size: contain;
+  //   background-repeat: no-repeat;
+  //   margin-top: 2px;
+  //   animation-name: example2;
+  //   animation-duration: 1.3s;
+  // }
+  // &:not(.hu-message-content-image):not(.hu-message-content-buttons) {
+  //   span, a, b, p {
+  //     animation-name: example3;
+  //     animation-duration: 1.3s;
+  //   }
+  //   span.hu-bold {
+  //     animation-name: example4;
+  //     animation-duration: 1.3s;
+  //   }
+  // }
 }
 
 @keyframes example {
@@ -449,7 +452,7 @@ div[data-assigned="ronin"] .hu-messenger-message-brand .hu-message-content {
 }
 
 div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state {
-  padding-bottom: 32px;
+  // padding-bottom: 32px;
 }
 
 /* ESTILOS NUEVOS */
