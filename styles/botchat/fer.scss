@@ -242,7 +242,7 @@ div#hu-container-widget {
   .hu-messenger-footer {
     // margin: 0 13% 81px;
     margin: 0 calc(13% + 26px) 81px calc(13% + 75px);
-    width: auto;
+    width: auto !important;
   }
 }
 
