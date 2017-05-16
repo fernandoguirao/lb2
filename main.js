@@ -15,7 +15,17 @@ function identifyUser(flag, data) {
 };
 
 function helloumiLivechatLoaded() {
-  console.log('Ya he cargado');
+  document.querySelector('.hu-messenger-body').addEventListener('scroll', function(e) {
+    if (e.target.scrollTop <= 5) {
+      document.getElementById('hu-experiment-header').className = '';
+    } else {
+      document.getElementById('hu-experiment-header').className = 'hu-scrolled';
+    }
+  });
+  hideLoader();
+}
+
+function helloumiLivechatIframeLoaded() {
   window.HULiveChat.ifrWindow.document.querySelector('head').innerHTML += '<link rel="stylesheet" href="styles/botchat.css" type="text/css"/>';
   window.HULiveChat.ifrWindow.document.querySelector('.hu-messenger-body').addEventListener('scroll', function(e) {
     if (e.target.scrollTop <= 5) {
@@ -24,7 +34,7 @@ function helloumiLivechatLoaded() {
       document.getElementById('hu-experiment-header').className = 'hu-scrolled';
     }
   });
-  setTimeout(hideLoader, 600);
+  hideLoader();
 }
 
 function trackEvent(flag, eventName, stepName) {
@@ -35,18 +45,19 @@ function trackEvent(flag, eventName, stepName) {
 };
 
 // MENSAJE FAKE
-function fakeMessage(msg){
+function fakeMessage(msg, ghost){
   var umichatCore = (typeof(helloumi) != 'undefined') ? helloumi.webchat.umichatcore
                   : HULiveChat.ifrWindow.helloumi.webchat.umichatcore;
   var umichatGUI = (typeof(helloumi) != 'undefined') ? helloumi.webchat.umichatgui
                   : HULiveChat.ifrWindow.helloumi.webchat.umichatgui;
-
-  // Ghost image message
-  umichatGUI.createGhost({
-    timestamp: Date.now(),
-    type: "text",
-    message: msg,
-  });
+                  console.log(msg);
+  if (ghost === true) {
+    umichatGUI.createGhost({
+      timestamp: Date.now(),
+      type: "text",
+      message: msg,
+    });
+  }// Ghost image message
 
   // Send message
 	var formData = new FormData();

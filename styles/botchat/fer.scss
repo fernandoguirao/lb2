@@ -152,10 +152,11 @@ div#hu-container-widget {
           background-repeat: no-repeat;
           background-position: bottom;
           margin: 0 auto;
+          z-index: 5;
         }
         &:before {
           display: none;
-          content: "Cargando chatbot...";
+          content: "Loading chatbot...";
           position: fixed;
           width: 100%;
           height: 100vh;
@@ -592,6 +593,9 @@ div#hu-container-widget div#hu-container-messenger {
   }
   .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content p {
     font-weight: 500 !important;
+    iframe {
+      max-width: 100%;
+    }
   }
 }
 
