@@ -36,11 +36,21 @@ function trackEvent(flag, eventName, stepName) {
 
 // MENSAJE FAKE
 function fakeMessage(msg){
+  var umichatCore = (typeof(helloumi) != 'undefined') ? helloumi.webchat.umichatcore
+                  : HULiveChat.ifrWindow.helloumi.webchat.umichatcore;
+  var umichatGUI = (typeof(helloumi) != 'undefined') ? helloumi.webchat.umichatgui
+                  : HULiveChat.ifrWindow.helloumi.webchat.umichatgui;
+
+  // Ghost image message
+  umichatGUI.createGhost({
+    timestamp: Date.now(),
+    type: "text",
+    message: msg,
+  });
+
+  // Send message
 	var formData = new FormData();
 	formData.append('message', msg);
-
-	var umichatCore = (typeof(helloumi) != 'undefined') ? helloumi.webchat.umichatcore
-                  : HULiveChat.ifrWindow.helloumi.webchat.umichatcore;
 	umichatCore.sendMessage(
 		formData,
 		umichatCore.messageSent.bind(umichatCore)
