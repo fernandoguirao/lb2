@@ -152,10 +152,11 @@ div#hu-container-widget {
           background-repeat: no-repeat;
           background-position: bottom;
           margin: 0 auto;
+          z-index: 5;
         }
         &:before {
           display: none;
-          content: "Cargando chatbot...";
+          content: "Loading chatbot...";
           position: fixed;
           width: 100%;
           height: 100vh;
