@@ -239,8 +239,9 @@ div#hu-container-widget {
     padding: 55px 13% 0;
   }
   .hu-messenger-footer {
-    margin: 0 21% 81px !important;
-    width: 56.4% !important;
+    // margin: 0 13% 81px;
+    margin: 0 calc(13% + 26px) 81px calc(13% + 75px);
+    width: auto;
   }
 }
 
@@ -249,8 +250,8 @@ div#hu-container-widget {
     padding: 55px 23% 0;
   }
   .hu-messenger-footer {
-    margin: 0 29.3% 81px;
-    width: 41%;
+    // margin: 0 23% 81px;
+    margin: 0 calc(23% + 26px) 81px calc(23% + 75px);
   }
 }
 
@@ -259,8 +260,8 @@ div#hu-container-widget {
     padding: 55px 30% 0;
   }
   .hu-messenger-footer {
-    margin: 0 35.3% 81px;
-    width: 30%;
+    // margin: 0 30% 81px;
+    margin: 0 calc(30% + 26px) 81px calc(30% + 75px);
   }
 }
 
