@@ -614,9 +614,27 @@ div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messen
   }
 }
 
+// span.hu-italic.hu-bold {
+//   background: #fdf2d8;
+//   font-style: italic !important;
+// }
 span.hu-italic.hu-bold {
-  background: #fdf2d8;
-  font-style: italic !important;
+  background: transparent;
+  margin-bottom: -16px;
+  margin-top: 2px;
+  padding: 0;
+  opacity: .4;
+  font-size: 12px;
+  &:after {
+    content: "";
+    background-image: url('https://kristenbentson.com/wp-content/uploads/2015/03/hand-drawn-icons-arrow-flat.png');
+    width: 39px;
+    height: 39px;
+    display: inherit;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+  }
 }
 
 .hu-message-content {
@@ -751,4 +769,39 @@ div#hu-container-widget {
     margin: 0 !important;
     padding: 0;
   }
+}
+
+@keyframes animabubble {
+    from {
+      max-width: 70px;
+      max-height: 39px;
+    }
+    to {
+      max-width: 519px;
+      max-height: 120px;
+    }
+}
+
+@keyframes animatexto {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hu-messenger-message-brand .hu-message-content-text {
+    animation-name: animabubble;
+    animation-duration: 0.7s;
+    animation-timing-function:  cubic-bezier(0.68, 0.01, 0.245, 1.13);
+    overflow: hidden;
+    p {
+      animation-name: prueba;
+      animation-duration: .9s;
+      animation-timing-function:  cubic-bezier(0.68, 0.01, 0.245, 1.13);
+    }
 }
