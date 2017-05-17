@@ -643,6 +643,9 @@ span.hu-italic.hu-bold {
 
 textarea#hu-composer-box {
   color: #4a50a8;
+  min-height: 21px !important;
+  max-height: 42px !important;
+  line-height: 21px !important;
   &::placeholder {
     color: #b2b5de;
     text-transform: uppercase;
