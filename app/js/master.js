@@ -50,7 +50,7 @@ function fakeMessage(msg, ghost){
                   : HULiveChat.ifrWindow.helloumi.webchat.umichatcore;
   var umichatGUI = (typeof(helloumi) != 'undefined') ? helloumi.webchat.umichatgui
                   : HULiveChat.ifrWindow.helloumi.webchat.umichatgui;
-                  console.log(msg);
+
   if (ghost === true) {
     umichatGUI.createGhost({
       timestamp: Date.now(),
@@ -81,17 +81,11 @@ function removeClass(){
 
 // ADD CLASS REMOVE CLASS
 function showLoader(){
-  // document.getElementById("hu-live-chat").style.opacity = "0";
-	document.querySelector(".sk-folding-cube").style.opacity = "1";
+  var __loader = document.querySelector(".sk-folding-cube");
+  if (__loader) __loader.style.opacity = "1";
 }
 
 function hideLoader(){
-	document.querySelector(".sk-folding-cube").style.opacity = "0";
-  // document.getElementById("hu-live-chat").style.opacity = "1";
+  var __loader = document.querySelector(".sk-folding-cube");
+	if (__loader) __loader.style.opacity = "0";
 }
-
-// function bodyLoaded(){
-//   document.querySelector('body').addEventListener('scroll', function(e){
-//     console.log(e); e.preventDefault();
-//   })
-// }

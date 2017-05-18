@@ -22,13 +22,52 @@
 
     <link rel="stylesheet" href="https://storage.googleapis.com/static-demo-helloumi/webchat-widget/css/main.css"\>
     <script>
-      function loadHelloumiLiveChat() {
-        window.HULiveChat = new Umichat({ "staticUrl": "https://storage.googleapis.com/static-demo-helloumi/", "channelToken": "H-57-55JULQN5YLS2AFFG", "brandID": "234", "version": "1.0.0.6", "apiKey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU", "authDomain": "daisho-yexir.firebaseapp.com", "databaseURL": "https://daisho-yexir.firebaseio.com", "storageBucket": "daisho-yexir.appspot.com", "open": true, "channelid": "9"});
+      window.chatbotConfigs = {
+        "landbot": {
+          "staticUrl": "https://storage.googleapis.com/static-demo-helloumi/",
+          "channelToken": "H-54-05SUR4YA8IFUTM2S",
+          "brandID": "230",
+          "version": "1.0.0.13",
+          "apiKey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
+          "authDomain": "daisho-yexir.firebaseapp.com",
+          "databaseURL": "https://daisho-yexir.firebaseio.com",
+          "storageBucket": "daisho-yexir.appspot.com",
+          "open": true,
+          "initialMessage": ".",
+        },
+        "discorbot": {
+          "staticUrl": "https://storage.googleapis.com/static-demo-helloumi/",
+          "channelToken": "H-56-UPLZXWDID83F9F7Q",
+          "brandID": "230",
+          "version": "1.0.0.13",
+          "apiKey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
+          "authDomain": "daisho-yexir.firebaseapp.com",
+          "databaseURL": "https://daisho-yexir.firebaseio.com",
+          "storageBucket": "daisho-yexir.appspot.com",
+          "open": true,
+          "initialMessage": "No email",
+        }
+      };
+
+      function renderHelloumiLiveChat( chatbot, initialMessage ) {
+        showLoader();
+        var __chatbot = chatbot || 'landbot';
+        if ( typeof(initialMessage) == 'string' ) {
+          window.chatbotConfigs[__chatbot]["initialMessage"] = initialMessage;
+        }
+        window.HULiveChat = new Umichat( window.chatbotConfigs[__chatbot] );
         window.HULiveChat.createLiveChat();
         window.HULiveChat.on('render', helloumiLivechatIframeLoaded);
       }
+
+      function loadHelloumiLiveChat( chatbot, initialMessage ) {
+        if ( window.HULiveChat ) {
+          window.HULiveChat.destroyIframe();
+        }
+        renderHelloumiLiveChat( chatbot, initialMessage );
+      }
     </script>
-    <script src="https://storage.googleapis.com/static-demo-helloumi/webchat-widget/js/main.js" onload="loadHelloumiLiveChat()" charset="UTF-8"></script>
+    <script src="https://storage.googleapis.com/static-demo-helloumi/webchat-widget/js/main.js" onload="renderHelloumiLiveChat()" charset="UTF-8"></script>
 
     <script>
       !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
