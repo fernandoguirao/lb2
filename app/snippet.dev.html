@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="http://localhost:8000/static/webchat/css/main-1.0.0.13.css"\>
+<script>
+  function loadHelloumiLiveChat() {
+    new UmichatRequirements(function(){
+      new TemplateUtils();
+      var umichatCore = new UmichatCore({ "staticUrl": "http://localhost:8000/static/", "channelToken": "H-57-55JULQN5YLS2AFFG", "brandID": "234", "version": "1.0.0.13", "apiKey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU", "authDomain": "daisho-yexir.firebaseapp.com", "databaseURL": "https://daisho-yexir.firebaseio.com", "storageBucket": "daisho-yexir.appspot.com", "open": true});
+      umichatCore.on('render', helloumiLivechatLoaded);
+    });
+  }
+</script>
+<script src="http://localhost:8000/static/webchat/js/main-1.0.0.13.js" onload="loadHelloumiLiveChat()" charset="UTF-8"></script>

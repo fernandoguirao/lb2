@@ -5,12 +5,15 @@ body {
     width: 100%;
     height: 100%;
     min-height: 100%;
-    @include gradient(#ffad59, #ffe199);
+    // @include gradient(#ffad59, #ffe199);
+    background: linear-gradient(to bottom, #ffad59 0%, #ffe199 100%);
 }
 
 body{
-  @include display-must-flex();
-  @include flex-direction(column);
+  // @include display-must-flex();
+  display: flex !important;
+  // @include flex-direction(column);
+  flex-direction: column;
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -47,8 +50,10 @@ iframe#hu-live-chat, div#hu-container-widget {
   height: auto !important;
   max-height: initial !important;
   min-height: initial !important;
-  @include flex(1);
-  @include box-shadow(none !important);
+  // @include flex(1);
+  flex: 1;
+  // @include box-shadow(none !important);
+  box-shadow: none !important;
   position: relative !important;
   background: transparent;
 }
