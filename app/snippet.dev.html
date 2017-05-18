@@ -1,0 +1,58 @@
+<link rel="stylesheet" href="http://localhost:8000/static/webchat/css/main-1.0.0.13.css"\>
+<script>
+  window.chatbotConfigs = {
+    "landbot": {
+      "staticUrl": "http://localhost:8000/static/",
+      "channelToken": "H-57-55JULQN5YLS2AFFG",
+      "brandID": "234",
+      "version": "1.0.0.13",
+      "apiKey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
+      "authDomain": "daisho-yexir.firebaseapp.com",
+      "databaseURL": "https://daisho-yexir.firebaseio.com",
+      "storageBucket": "daisho-yexir.appspot.com",
+      "open": true,
+      "initialMessage": ".",
+    },
+    // "discorbot": {
+    //   "staticUrl": "https://storage.googleapis.com/static-demo-helloumi/",
+    //   "channelToken": "H-56-UPLZXWDID83F9F7Q",
+    //   "brandID": "234",
+    //   "version": "1.0.0.13",
+    //   "apiKey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
+    //   "authDomain": "daisho-yexir.firebaseapp.com",
+    //   "databaseURL": "https://daisho-yexir.firebaseio.com",
+    //   "storageBucket": "daisho-yexir.appspot.com",
+    //   "open": true,
+    //   "initialMessage": "No email",
+    // }
+  };
+
+  function renderHelloumiLiveChat( chatbot, initialMessage ) {
+    showLoader();
+    new UmichatRequirements(function(){
+      new TemplateUtils();
+      var __chatbot = chatbot || 'landbot';
+      if ( typeof(initialMessage) == 'string' ) {
+        window.chatbotConfigs[__chatbot]["initialMessage"] = initialMessage;
+      }
+      var __umichatCore = new UmichatCore( window.chatbotConfigs[__chatbot] );
+      __umichatCore.on('render', helloumiLivechatLoaded);
+    });
+  }
+
+  function loadHelloumiLiveChat( chatbot, initialMessage ) {
+    var __container = document.getElementById('hu-container-widget');
+    if ( __container ) {
+      __container.parentNode.removeChild(__container);
+      var firebaseApp =(helloumi.webchat.umimessageservice) ? helloumi.webchat.umimessageservice.firebaseApp : null;
+      if (firebaseApp) {
+        firebaseApp.delete().then(function(){
+          renderHelloumiLiveChat( chatbot, initialMessage );
+        })
+      } else {
+        renderHelloumiLiveChat( chatbot, initialMessage );
+      }
+    }
+  }
+</script>
+<script src="http://localhost:8000/static/webchat/js/main-1.0.0.13.js" onload="renderHelloumiLiveChat()" charset="UTF-8"></script>
