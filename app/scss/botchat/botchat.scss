@@ -1,6 +1,7 @@
-// Modules and Variables
-// @import "module/mixins";
+// Variables
+@import '../variables';
 
 // Partials
-@import 'include/fer';
-@import 'include/osama';
+@import 'include/widget';
+@import 'include/responsive';
+@import 'include/special';

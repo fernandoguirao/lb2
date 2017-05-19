@@ -115,6 +115,7 @@ gulp.task('other', () =>
 gulp.task('serve', () => {
   browserSync.init({
     notify: false,
+    logConnections: true,
     logPrefix: 'LB',
     server: {
       baseDir: `${path.dist.base}`,

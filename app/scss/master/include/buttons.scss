@@ -1,0 +1,12 @@
+.btt {
+  margin-right: 6px;
+  background-color: white !important;
+  border: 2px solid $violet;
+  color: $violet !important;
+  padding: 9px 29px !important;
+  &:hover {
+    color: $white !important;
+    background-color: $violet-0 !important;
+    border: 2px solid $violet-0;
+  }
+}

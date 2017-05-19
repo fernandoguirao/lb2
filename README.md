@@ -23,13 +23,14 @@ El proyecto compila dos archivos de estilo:
 
 Procesado de archivos:
 > Compilación SASS > Autoprefixer > Minificado* > Sourcemaps > Inyección en servidor local
+
 *: La acción de minificado está desactivada por ahora
 
 #### JavaScript
 1. `master.js`: Scripts de la página principal (contenedora).
 
 Procesado de archivos:
-> Concatenación > Uglify > Sourcemaps > Refresco de la página en servidor local
+> Concatenación > Uglify > Sourcemaps > Refrescado de la página en servidor local
 
 #### Html
 El archivo `index.html` es duplicado en `build/` para ofrecer:
@@ -38,7 +39,7 @@ El archivo `index.html` es duplicado en `build/` para ofrecer:
 2. `index.dev.html`, es la página ofrecida por el servidor local, su snippet (`snippet.dev.html`) apunta a los archivos estáticos de scripts y estilos de nuestro servidor de daisho `http://localhost:8000`
 
 Procesado de archivos:
-> Inyección de snippet > Refresco de la página en servidor local
+> Inyección de snippet > Refrescado de la página en servidor local
 
 
 ## Deploy
