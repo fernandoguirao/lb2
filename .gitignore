@@ -1,6 +1,9 @@
 ### Distribution ###
 build/
 
+### Secret ###
+ftp-test-config.json
+
 ### Sass ###
 .sass-cache/
 *.css.map

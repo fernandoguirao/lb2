@@ -94,8 +94,23 @@ gulp.task('html', () => {
     }))
     .pipe(gulp.dest(`${path.dist.base}`));
 
-    // Stream merge
-    return merge(index, index_dev);
+  // index.test.html
+  let index_test = gulp.src([`${path.app.base}index.html`])
+    .pipe($.rename({
+      suffix: '.test'
+    }))
+    .pipe($.inject(gulp.src([
+      `${path.app.base}snippet.test.html`
+    ]), {
+      starttag: '<!-- inject:snippet:{{ext}} -->',
+      transform: function(filePath, file) {
+        return file.contents.toString('utf8');
+      }
+    }))
+    .pipe(gulp.dest(`${path.dist.base}`))
+
+  // Stream merge
+  return merge(index, index_dev, index_test);
 });
 gulp.task('html-browser-sync', ['html'], (done) => {
   browserSync.reload();
