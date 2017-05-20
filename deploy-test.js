@@ -45,7 +45,7 @@ Error: FTP server options missing.
   process.exit(1);
 }
 
-const async = require('async');
+const series = require('async/series');
 const Ftp = require('jsftp');
 const ftp = new Ftp({
   host: config.host,
@@ -133,10 +133,13 @@ function uploading() {
           createPromise('put', data)
         );
       }
-      Promise.all(promises).then(() => {
-        resolve();
-      });
+      series(promises, () => { resolve(); });
+
+      // Promise.all(promises).then(() => {
+      //   resolve();
+      // });
     } else {
+      // No files to be uploaded
       resolve();
     }
   });
@@ -185,16 +188,29 @@ function createPromise(type, data) {
 
     if (!data.source || !data.dest) return Promise.resolve();
 
-    return new Promise((resolve, reject) => {
+    // Use async/series instead of Promise
+    return function(callback) {
       ftp.put(data.source, data.dest, (err) => {
         if (err) {
           console.error(`   [${err.code}] Error uploading ${data.source}`);
         } else {
           console.log(`   [200] Upload complete: ${data.dest}.`);
         }
-        resolve();
-      })
-    });
+        callback();
+      });
+    }
+
+    // // Using Promise here throw connection errors
+    // return new Promise((resolve, reject) => {
+    //   ftp.put(data.source, data.dest, (err) => {
+    //     if (err) {
+    //       console.error(`   [${err.code}] Error uploading ${data.source}`);
+    //     } else {
+    //       console.log(`   [200] Upload complete: ${data.dest}.`);
+    //     }
+    //     resolve();
+    //   })
+    // });
 
   }
   return Promise.resolve();
