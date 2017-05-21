@@ -46,7 +46,7 @@ Procesado de archivos:
 El comando `npm run build` cumple la función de construcción de los archivos de producción. Es equivalente a `npm start`, pero no activa el servidor local ni realiza *watch* de los cambios.
 
 ### landbot.io
-> Aún no implementado, consultar a Edumi.
+> Consultar a Edumi.
 
 1. Subida automática a: `https://landbot.io/`:
 ```bash
@@ -61,4 +61,4 @@ npm run deploy
 ```bash
 npm run deploy-test
 ```
-2. Subida manual: Proceder como en el caso anterior, pero es necesario renombrar **index.test.html** a **index.html**, eliminando el **index** anterior (de producción).
+2. Subida manual: Proceder como en el caso anterior, pero es necesario renombrar **index.test.html** a **index.html**, eliminando el **index** anterior (de producción). De este modo el snippet usado apunta al bot de test y no contiene analytics.

@@ -22,8 +22,8 @@
   "scripts": {
     "start": "gulp",
     "build": "gulp build",
-    "deploy": "echo 'Not implemented yet...'",
-    "deploy-test": "node deploy-test.js"
+    "deploy": "echo 'BOOOM! es broma, consulta con el encargado antes de hacer deploy.'",
+    "deploy-test": "node ftp-deploy.js deploy.test.secret.conf.json"
   },
   "path": {
     "app": {

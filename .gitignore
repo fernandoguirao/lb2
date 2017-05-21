@@ -2,7 +2,7 @@
 build/
 
 ### Secret ###
-ftp-test-config.json
+*.secret.conf.json
 
 ### Sass ###
 .sass-cache/
