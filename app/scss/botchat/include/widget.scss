@@ -33,7 +33,7 @@
   #hu-container-messenger {
     box-shadow: none !important;
     // background: linear-gradient(to bottom, $violet 0%, $blue-light 100%);
-    background: linear-gradient(to bottom, $orange 0%, $orange-light 100%);
+    background: linear-gradient(to bottom, $gradient-from 0%, $gradient-to 100%);
 
     // MESSENGER HEADER
     .hu-messenger-header, .hu-chatlist-header {
@@ -93,8 +93,8 @@
           position: fixed;
           margin: 13px auto;
           padding-top: 71px;
-          color: $white;
-          font-family: "Gotham Rounded";
+          color: $light;
+          font-family: $font;
           font-weight: 500;
           font-size: 16px;
           text-transform: uppercase;
@@ -113,19 +113,19 @@
     }
     .hu-messenger-footer {
       border-radius: 6px;
-      border: 2px solid $violet-0;
+      border: 2px solid $contrast-0;
       transition: transform 0.5s, opacity 0.5s !important;
       .hu-footer-state {
         width: 100%;
         .hu-composer .hu-composer-text {
           padding-bottom: 13px !important;
           textarea#hu-composer-box {
-            color: $violet;
+            color: $contrast;
             min-height: 21px !important;
             max-height: 42px !important;
             line-height: 21px !important;
             &::placeholder {
-              color: $violet-light;
+              color: $contrast-light;
               text-transform: uppercase;
               font-weight: 500;
             }

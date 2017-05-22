@@ -4,7 +4,7 @@ html, body {
   width: 100%;
   height: 100%;
   min-height: 100%;
-  background: linear-gradient(to bottom, $orange 0%, $orange-light 100%);
+  background: linear-gradient(to bottom, $gradient-from 0%, $gradient-to 100%);
 }
 
 body {
@@ -15,18 +15,18 @@ body {
 }
 
 .referral {
-  font-family: "Gotham Rounded", sans-serif !important;
+  font-family: $font, sans-serif !important;
   position: absolute;
   bottom: 16px;
   left: 0;
   margin-right: 5px;
-  color: $white;
+  color: $light;
   width: 100%;
   text-align: center;
   z-index: 100000000000;
   a {
-    font-family: "Gotham Rounded", sans-serif !important;
-    color: $white;
+    font-family: $font, sans-serif !important;
+    color: $light;
     font-size: 11px;
     text-decoration: none;
     img {

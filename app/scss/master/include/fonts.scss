@@ -1,23 +1,23 @@
 @font-face {
-  font-family: 'Gotham Rounded';
-  src: url(https://guidango.com/fonts/gotham/gotham-rounded-medium.eot);
+  font-family: $font;
+  src: url(#{$font-url}/#{$font-medium-slash}.eot);
   /* IE9 Compat Modes */
-  src: url(https://guidango.com/fonts/gotham/gotham-rounded-medium.eot?#iefix) format("embedded-opentype"), url(https://guidango.com/fonts/gotham/gotham-rounded-medium.woff) format("woff"), url(https://guidango.com/fonts/gotham/gotham-rounded-medium.ttf) format("truetype"), url(https://guidango.com/fonts/gotham/gotham-rounded-medium.svg#GothamRoundedMedium) format("svg");
+  src: url(#{$font-url}/#{$font-medium-slash}.eot?#iefix) format("embedded-opentype"), url(#{$font-url}/#{$font-medium-slash}.woff) format("woff"), url(#{$font-url}/#{$font-medium-slash}.ttf) format("truetype"), url(#{$font-url}/#{$font-medium-slash}.svg#{$id-medium}) format("svg");
   /* Legacy iOS */
   font-weight: 500;
 }
 @font-face {
-  font-family: 'Gotham Rounded';
-  src: url(https://guidango.com/fonts/gotham/gotham-rounded-bold.eot);
+  font-family: $font;
+  src: url(#{$font-url}/#{$font-bold-slash}.eot);
   /* IE9 Compat Modes */
-  src: url(https://guidango.com/fonts/gotham/gotham-rounded-bold.eot?#iefix) format("embedded-opentype"), url(https://guidango.com/fonts/gotham/gotham-rounded-bold.otf) format("opentype"), url(https://guidango.com/fonts/gotham/gotham-rounded-bold.svg#gotham_roundedbold) format("svg");
+  src: url(#{$font-url}/#{$font-bold-slash}.eot?#iefix) format("embedded-opentype"), url(#{$font-url}/#{$font-bold-slash}.otf) format("opentype"), url(#{$font-url}/#{$font-bold-slash}.svg#{$id-bold}) format("svg");
   /* Legacy iOS */
   font-weight: 700;
 }
 @font-face {
-  font-family: 'Gotham Rounded';
-  src: url(https://guidango.com/fonts/gotham/gotham-rounded-book.eot);
+  font-family: $font;
+  src: url(#{$font-url}/#{$font-regular-slash}.eot);
   /* IE9 Compat Modes */
-  src: url(https://guidango.com/fonts/gotham/gotham-rounded-book.eot?#iefix) format("embedded-opentype"), url(https://guidango.com/fonts/gotham/gotham-rounded-book.woff) format("woff"), url(https://guidango.com/fonts/gotham/gotham-rounded-book.ttf) format("truetype"), url(https://guidango.com/fonts/gotham/gotham-rounded-book.svg#gotham_roundedbook) format("svg");
+  src: url(#{$font-url}/#{$font-regular-slash}.eot?#iefix) format("embedded-opentype"), url(#{$font-url}/#{$font-regular-slash}.woff) format("woff"), url(#{$font-url}/#{$font-regular-slash}.ttf) format("truetype"), url(#{$font-url}/#{$font-regular-slash}.svg#{$id-regular}) format("svg");
   /* Legacy iOS */
 }

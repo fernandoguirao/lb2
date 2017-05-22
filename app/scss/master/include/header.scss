@@ -1,11 +1,11 @@
 div#hu-experiment-header {
   z-index: 100000000;
   position: relative;
-  font-family: "Gotham Rounded", sans-serif;
+  font-family: $font, sans-serif;
   line-height: 1.2;
   padding: 20px 0 30px;
   display: block;
-  background: $white;
+  background: $light;
   width: 100%;
   margin: 0;
   left: 0;
@@ -31,7 +31,7 @@ div#hu-experiment-header {
       margin-left: 13px;
       margin-bottom: -4px;
       // color: rgba(76, 85, 175, 0.89);
-      color: $violet;
+      color: $contrast;
     }
   }
   .hu-right-header {
@@ -41,8 +41,8 @@ div#hu-experiment-header {
     margin-right: 100px;
     transition: opacity .5s;
     a {
-      background-color: $violet;
-      color: $white;
+      background-color: $contrast;
+      color: $light;
       border-radius: 4px;
       text-decoration: none;
       font-size: 12px;
@@ -55,7 +55,7 @@ div#hu-experiment-header {
       &:hover {
         transform: translateY(-10px);
         box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
-        background-color: $violet-0;
+        background-color: $contrast-0;
       }
     }
   }

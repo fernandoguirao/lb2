@@ -6,7 +6,7 @@
   position: relative;
   /* z-index: 100000000; */
   background: transparent;
-  font-family: "Gotham Rounded", sans-serif !important;
+  font-family: $font, sans-serif !important;
   &:before {
     content: "Loading chatbot...";
     position: fixed;
@@ -14,7 +14,7 @@
     height: 100%;
     left: 0;
     top: 0;
-    color: $white;
+    color: $light;
     font-size: 13px;
     padding-top: 136px;
     background: transparent;
@@ -63,7 +63,7 @@
       width: 100%;
       height: 100%;
       // background-color: $pink;
-      background-color: $white;
+      background-color: $light;
       animation: sk-foldCubeAngle 2.4s infinite linear both;
       transform-origin: 100% 100%;
     }
