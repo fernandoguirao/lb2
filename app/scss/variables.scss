@@ -14,12 +14,12 @@ $blue-light: #7db9e8;
 
 // Relative colors
 $accent: $pink;
-$accent-0: $pink-0;
-$accent-1: $pink-1;
+$accent-0: lighten($accent,3%);
+$accent-1: darken(saturate($accent,20%),11%);
 $light: $white;
 $contrast: $violet;
-$contrast-0: $violet-0;
-$contrast-light: $violet-light;
+$contrast-0: lighten($contrast,10%);
+$contrast-light: lighten($contrast,30%);
 
 // URL
 $url: 'http://landbot.io';
