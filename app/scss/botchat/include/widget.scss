@@ -199,6 +199,16 @@
       // }
     }
   }
+  // Typing
+  .dotone {
+    background-color: $contrast!important;
+  }
+  .dottwo {
+    background-color: $contrast-0!important;
+  }
+  .dotthree {
+    background-color: $contrast-light!important;
+  }
 }
 
 @keyframes appear-left {
