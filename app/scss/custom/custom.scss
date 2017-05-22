@@ -4,3 +4,41 @@
   position: relative;
   top: 7px;
 }
+
+div#hu-experiment-header .hu-right-header a {
+  border-radius: 50px;
+  font-size: 13px;
+  text-transform: none;
+}
+
+#img-banner {
+  .images-banner {
+    position: fixed;
+    top: 131px;
+    z-index: 100000000;
+    pointer-events: none;
+    text-align: center;
+    @media screen and (min-width: 1000px){
+      width: 30%;
+      img {
+        max-width: 50%;
+      }
+    }
+    @media screen and (max-width: 1299px){
+      width: 23%;
+      img {
+        max-width: 80%;
+      }
+    }
+    @media screen and (max-width: 1043px){
+      display: none;
+    }
+
+    &.left-images {
+      left: 0;
+    }
+    &.right-images {
+      right: 0;
+    }
+  }
+}
