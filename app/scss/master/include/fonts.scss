@@ -1,23 +1,13 @@
-@font-face {
-  font-family: $font;
-  src: url(#{$font-url}/#{$font-medium-slash}.eot);
-  /* IE9 Compat Modes */
-  src: url(#{$font-url}/#{$font-medium-slash}.eot?#iefix) format("embedded-opentype"), url(#{$font-url}/#{$font-medium-slash}.woff) format("woff"), url(#{$font-url}/#{$font-medium-slash}.ttf) format("truetype"), url(#{$font-url}/#{$font-medium-slash}.svg#{$id-medium}) format("svg");
-  /* Legacy iOS */
-  font-weight: 500;
-}
-@font-face {
-  font-family: $font;
-  src: url(#{$font-url}/#{$font-bold-slash}.eot);
-  /* IE9 Compat Modes */
-  src: url(#{$font-url}/#{$font-bold-slash}.eot?#iefix) format("embedded-opentype"), url(#{$font-url}/#{$font-bold-slash}.otf) format("opentype"), url(#{$font-url}/#{$font-bold-slash}.svg#{$id-bold}) format("svg");
-  /* Legacy iOS */
-  font-weight: 700;
-}
-@font-face {
-  font-family: $font;
-  src: url(#{$font-url}/#{$font-regular-slash}.eot);
-  /* IE9 Compat Modes */
-  src: url(#{$font-url}/#{$font-regular-slash}.eot?#iefix) format("embedded-opentype"), url(#{$font-url}/#{$font-regular-slash}.woff) format("woff"), url(#{$font-url}/#{$font-regular-slash}.ttf) format("truetype"), url(#{$font-url}/#{$font-regular-slash}.svg#{$id-regular}) format("svg");
-  /* Legacy iOS */
+@if $embfonts {
+  @font-face {
+    @include fontface($font-medium-slash,$id-medium,500);
+  }
+  @font-face {
+    @include fontface($font-bold-slash,$id-bold,700);
+  }
+  @font-face {
+    @include fontface($font-medium-slash,$id-regular, 300);
+  }
+} @else {
+  @import url('#{$externalfonturl}');
 }

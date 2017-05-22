@@ -27,6 +27,8 @@ $contrast-light: $violet-light;
 $url: 'http://landbot.io';
 
 // Fonts
+// If embed on page
+$embfonts: true; // Set to false if external stylesheet
 $font: "Gotham Rounded";
 $font-url: "https://guidango.com/fonts/gotham";
 $font-regular-slash: "gotham-rounded-book";
@@ -35,3 +37,10 @@ $font-bold-slash: "gotham-rounded-bold";
 $id-regular: "#gotham_roundedbook";
 $id-medium: "#GothamRoundedMedium";
 $id-bold: "#gotham_roundedbold";
+$eot: true;
+$woff: true;
+$ttf: true;
+$svg: true;
+// If not embed on page (external stylesheet)
+$externalfonturl: false;
+// $externalfonturl: 'https://fonts.googleapis.com/css?family=Lato';
