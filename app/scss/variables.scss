@@ -1,5 +1,5 @@
 // FORMAS
-$containertype: 'fullscreen'; // box | fullscreen
+$containertype: 'box'; // box | fullscreen
 
 // COLORS
 
@@ -14,6 +14,7 @@ $violet: #4a50a8;
 $violet-0: #6369be;
 $violet-light: #b2b5de;
 $blue-light: #7db9e8;
+$light-gray: #f1f1f1;
 
 // Relative colors
 $accent: $pink;
@@ -55,3 +56,4 @@ $gradient-to: $orange-light;
 $background-image-url: 'https://storage.googleapis.com/media.yexir.com/channels_back/31.png';
 $background-color: transparent;
 $video-texture: gradient; // gradient | image | color
+$box-footer: $accent;
