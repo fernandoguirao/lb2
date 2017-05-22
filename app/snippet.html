@@ -31,9 +31,12 @@
     showLoader();
     new UmichatRequirements(function(){
       new TemplateUtils();
-      var __chatbot = chatbot || 'landbot';
-      if ( typeof(initialMessage) == 'string' ) {
-        window.chatbotConfigs[__chatbot]["initialMessage"] = initialMessage;
+      var __email = getEmailFromURL();
+      var __default = (__email) ? 'discorbot' : 'landbot';
+      var __chatbot = chatbot || __default;
+      var __initialMessage = __email || initialMessage;
+      if ( typeof(__initialMessage) == 'string' ) {
+        window.chatbotConfigs[__chatbot]["initialMessage"] = __initialMessage;
       }
       var __umichatCore = new UmichatCore( window.chatbotConfigs[__chatbot] );
       __umichatCore.on('render', helloumiLivechatLoaded);

@@ -89,3 +89,12 @@ function hideLoader(){
   var __loader = document.querySelector(".sk-folding-cube");
 	if (__loader) __loader.style.opacity = "0";
 }
+
+function getEmailFromURL(){
+  var url = window.location.href; // or window.location.href for current url
+  var emailRegExp = new RegExp('(\\?|\\&)(email\=)([^&]+)','gi');
+  var trashRegExp = new RegExp('^(\\?|\\&)(email\=)','i');
+  var matches = url.match(emailRegExp);
+  var result = matches ? matches[0].replace(trashRegExp, '') : false;
+  return result;
+}

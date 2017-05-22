@@ -1,40 +1,42 @@
-<link rel="stylesheet" href="http://localhost:8000/static/webchat/css/main-1.0.0.13.css"\>
+<link rel="stylesheet" href="https://muza.chickenkiller.com/static/webchat/css/main-1.0.0.13.css"\>
 <script>
   window.chatbotConfigs = {
-    // TEST BOT
     "landbot": {
-      "staticUrl": "http://localhost:8000/static/",
-      "channelToken": "H-57-55JULQN5YLS2AFFG",
-      "brandID": "234",
-      "version": "1.0.0.13",
-      "apiKey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
-      "authDomain": "daisho-yexir.firebaseapp.com",
-      "databaseURL": "https://daisho-yexir.firebaseio.com",
-      "storageBucket": "daisho-yexir.appspot.com",
+      "staticUrl": "https://muza.chickenkiller.com/static/",
+      "channelToken": "H-146-MWCHQOLA093G1V6G",
+      "brandID": "3",
+      "version": "1.0.0",
+      "apiKey": "AIzaSyD5gH0Oe5Kvnbm2ol--Md3pP0aBwTcNUT0",
+      "authDomain": "ornate-shape-146318.firebaseapp.com",
+      "databaseURL": "https://ornate-shape-146318.firebaseio.com",
+      "storageBucket": "ornate-shape-146318.appspot.com",
       "open": true,
       "initialMessage": ".",
     },
-    // "discorbot": {
-    //   "staticUrl": "https://storage.googleapis.com/static-demo-helloumi/",
-    //   "channelToken": "H-56-UPLZXWDID83F9F7Q",
-    //   "brandID": "234",
-    //   "version": "1.0.0.13",
-    //   "apiKey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
-    //   "authDomain": "daisho-yexir.firebaseapp.com",
-    //   "databaseURL": "https://daisho-yexir.firebaseio.com",
-    //   "storageBucket": "daisho-yexir.appspot.com",
-    //   "open": true,
-    //   "initialMessage": "No email",
-    // }
+    "discorbot": {
+      "staticUrl": "https://muza.chickenkiller.com/static/",
+      "channelToken": "H-147-BEJLBA311XJ710F2",
+      "brandID": "3",
+      "version": "1.0.0.13",
+      "apiKey": "AIzaSyD5gH0Oe5Kvnbm2ol--Md3pP0aBwTcNUT0",
+      "authDomain": "ornate-shape-146318.firebaseapp.com",
+      "databaseURL": "https://ornate-shape-146318.firebaseio.com",
+      "storageBucket": "ornate-shape-146318.appspot.com",
+      "open": true,
+      "initialMessage": "No email",
+    }
   };
 
   function renderHelloumiLiveChat( chatbot, initialMessage ) {
     showLoader();
     new UmichatRequirements(function(){
       new TemplateUtils();
-      var __chatbot = chatbot || 'landbot';
-      if ( typeof(initialMessage) == 'string' ) {
-        window.chatbotConfigs[__chatbot]["initialMessage"] = initialMessage;
+      var __email = getEmailFromURL();
+      var __default = (__email) ? 'discorbot' : 'landbot';
+      var __chatbot = chatbot || __default;
+      var __initialMessage = __email || initialMessage;
+      if ( typeof(__initialMessage) == 'string' ) {
+        window.chatbotConfigs[__chatbot]["initialMessage"] = __initialMessage;
       }
       var __umichatCore = new UmichatCore( window.chatbotConfigs[__chatbot] );
       __umichatCore.on('render', helloumiLivechatLoaded);
@@ -56,4 +58,4 @@
     }
   }
 </script>
-<script src="http://localhost:8000/static/webchat/js/main-1.0.0.13.js" onload="renderHelloumiLiveChat()" charset="UTF-8"></script>
+<script src="https://muza.chickenkiller.com/static/webchat/js/main-1.0.0.13.js" onload="renderHelloumiLiveChat()" charset="UTF-8"></script>
