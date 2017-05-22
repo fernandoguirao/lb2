@@ -1,11 +1,11 @@
 {
   "url": "http://landbot.io",
-  "title": "Landbot | Convert a Landing Page into a Chatbot",
-  "description": "Landbot.io is a tool to create conversational interfaces in substitution of forms. No coding required!",
-  "logo": "http://bueninvento.es/umiexp2.png",
-  "tagline": "Get more leads using chatbots 🤖",
-  "btn01Title": "Features",
+  "title": "Willowi | Conectamos personas y mejoramos su seguro",
+  "description": "Somos tu seguro personalizado, transparente y sin letra pequeña",
+  "logo": "https://cdn-willowi.s3.amazonaws.com/wp-content/uploads/2017/02/logo_dark.svg",
+  "tagline": "Tu seguro personalizado",
+  "btn01Title": "Seguros",
   "btn01Message": "features",
-  "btn02Title": "Early Access",
+  "btn02Title": "Acceder",
   "btn02Message": "signup"
 }
