@@ -11,12 +11,14 @@ const $ = require('gulp-load-plugins')({
 });
 const clientName = require('./package.json').client;
 let client;
+
 try {
   client = require(`./clients/${clientName}.conf.json`);
 } catch(e) {
   console.error(`[ERROR]: "./clients/${clientName}.conf.json" file not found`);
   process.exit(1);
 }
+
 
 /****** SCRIPTS ******/
 gulp.task('scripts', () =>
@@ -92,46 +94,48 @@ gulp.task('html', () => {
 
   // index.html
   let index = gulp.src([`${path.app.base}index.html`])
-    .pipe($.inject(gulp.src([
-      `${path.app.base}snippet.html`
-    ]), {
+    .pipe($.inject(gulp.src([ `${path.app.base}snippet.html` ]), {
       starttag: '<!-- inject:snippet:{{ext}} -->',
       transform: function(filePath, file) {
         return file.contents.toString('utf8');
-      }
-    }))
+    }}))
+    .pipe($.if(client['background-video'], $.inject(gulp.src([ `${path.app.base}video.html` ]), {
+      starttag: '<!-- inject:video:{{ext}} -->',
+      transform: function(filePath, file) {
+        return file.contents.toString('utf8');
+    }})))
     .pipe($.replace(varRegex, replaceVar))
     .pipe(gulp.dest(`${path.dist.base}`));
 
   // index.dev.html
   let index_dev = gulp.src([`${path.app.base}index.html`])
-    .pipe($.rename({
-      suffix: '.dev'
-    }))
-    .pipe($.inject(gulp.src([
-      `${path.app.base}snippet.dev.html`
-    ]), {
+    .pipe($.rename({ suffix: '.dev'}))
+    .pipe($.inject(gulp.src([`${path.app.base}snippet.dev.html`]), {
       starttag: '<!-- inject:snippet:{{ext}} -->',
       transform: function(filePath, file) {
         return file.contents.toString('utf8');
-      }
-    }))
+    }}))
+    .pipe($.if(client['background-video'], $.inject(gulp.src([ `${path.app.base}video.html` ]), {
+      starttag: '<!-- inject:video:{{ext}} -->',
+      transform: function(filePath, file) {
+        return file.contents.toString('utf8');
+    }})))
     .pipe($.replace(varRegex, replaceVar))
     .pipe(gulp.dest(`${path.dist.base}`));
 
   // index.test.html
   let index_test = gulp.src([`${path.app.base}index.html`])
-    .pipe($.rename({
-      suffix: '.test'
-    }))
-    .pipe($.inject(gulp.src([
-      `${path.app.base}snippet.test.html`
-    ]), {
+    .pipe($.rename({ suffix: '.test' }))
+    .pipe($.inject(gulp.src([ `${path.app.base}snippet.test.html` ]), {
       starttag: '<!-- inject:snippet:{{ext}} -->',
       transform: function(filePath, file) {
         return file.contents.toString('utf8');
-      }
-    }))
+    }}))
+    .pipe($.if(client['background-video'], $.inject(gulp.src([ `${path.app.base}video.html` ]), {
+      starttag: '<!-- inject:video:{{ext}} -->',
+      transform: function(filePath, file) {
+        return file.contents.toString('utf8');
+    }})))
     .pipe($.replace(varRegex, replaceVar))
     .pipe(gulp.dest(`${path.dist.base}`))
 
@@ -148,7 +152,6 @@ gulp.task('other', () =>
   gulp.src([
     `${path.app.files}**/*`
   ])
-    .pipe(gulp.dest(`${path.dist.base}`))
     .pipe(gulp.dest(`${path.dist.files}`))
 );
 
