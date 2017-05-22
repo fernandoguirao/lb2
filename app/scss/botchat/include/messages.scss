@@ -99,13 +99,16 @@
             color: $pink-0;
             border-color: $pink-0;
             &:hover {
-              background: $pink-0;
               color: $white;
             }
             &:first-child {
               background-color: $pink-0;
               color: $white;
             }
+          }
+          &:hover {
+            box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+            background-color: lighten($pink-0,2%);
           }
         }
       }
