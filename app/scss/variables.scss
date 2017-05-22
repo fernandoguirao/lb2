@@ -12,3 +12,26 @@ $violet: #4a50a8;
 $violet-0: #6369be;
 $violet-light: #b2b5de;
 $blue-light: #7db9e8;
+
+$gradient-from: $orange;
+$gradient-to: $orange-light;
+$accent: $pink;
+$accent-0: $pink-0;
+$accent-1: $pink-1;
+$light: $white;
+$contrast: $violet;
+$contrast-0: $violet-0;
+$contrast-light: $violet-light;
+
+// URL
+$url: 'http://landbot.io';
+
+// Fonts
+$font: "Gotham Rounded";
+$font-url: "https://guidango.com/fonts/gotham";
+$font-regular-slash: "gotham-rounded-book";
+$font-medium-slash: "gotham-rounded-medium";
+$font-bold-slash: "gotham-rounded-bold";
+$id-regular: "#gotham_roundedbook";
+$id-medium: "#GothamRoundedMedium";
+$id-bold: "#gotham_roundedbold";
