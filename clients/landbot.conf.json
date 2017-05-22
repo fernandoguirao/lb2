@@ -1,12 +1,12 @@
 {
-  "url": "http://landbot.io",
-  "title": "Landbot | Convert a Landing Page into a Chatbot",
-  "description": "Landbot.io is a tool to create conversational interfaces in substitution of forms. No coding required!",
-  "logo": "http://bueninvento.es/umiexp2.png",
-  "tagline": "Get more leads using chatbots 🤖",
+  "url": "http://www.improdrone.com/",
+  "title": "Improrone | Drone Pilots",
+  "description": "We will find you the perfect Licensed And Insured Drone Pilot for anything that you need! For Free!",
+  "logo": "./files/logo.png",
+  "tagline": "Drone Pilots for perfection",
   "btn01Title": "Features",
   "btn01Message": "features",
   "btn02Title": "Early Access",
   "btn02Message": "signup",
-  "background-video": false
+  "background-video": true
 }
