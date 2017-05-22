@@ -45,20 +45,5 @@ Procesado de archivos:
 ## Deploy
 El comando `npm run build` cumple la función de construcción de los archivos de producción. Es equivalente a `npm start`, pero no activa el servidor local ni realiza *watch* de los cambios.
 
-### landbot.io
-> Consultar a Edumi.
-
-1. Subida automática a: `https://landbot.io/`:
-```bash
-npm run deploy
-```
-2. Subida manual: Consiste en subir archivos de la carpeta build/ al servidor de producción.
-
-### landbot.io/test
-> Consultar a Edumi antes de usarlo.
-
-1. Subida automática a: `https://landbot.io/test/`
-```bash
-npm run deploy-test
-```
-2. Subida manual: Proceder como en el caso anterior, pero es necesario renombrar **index.test.html** a **index.html**, eliminando el **index** anterior (de producción). De este modo el snippet usado apunta al bot de test y no contiene analytics.
+#### Deploy a servidor FTP
+Ver [documentación](https://github.com/fernandoguirao/lb2/blob/master/docs/deploy.md)
