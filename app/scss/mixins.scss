@@ -1,0 +1,87 @@
+@mixin fontface($weightslash, $id-weight, $weightnumber ) {
+  font-family: $font;
+  @if $eot {
+    src: url(#{$font-url}/#{$weightslash}.eot);
+    @if $woff {
+      @if $ttf {
+        @if $svg {
+          /* IE9 Compat Modes */
+          src: url(#{$font-url}/#{$weightslash}.eot?#iefix) format("embedded-opentype"), url(#{$font-url}/#{$weightslash}.woff) format("woff"), url(#{$font-url}/#{$weightslash}.ttf) format("truetype"), url(#{$font-url}/#{$weightslash}.svg#{$id-weight}) format("svg");
+        } @else {
+          /* IE9 Compat Modes */
+          src: url(#{$font-url}/#{$weightslash}.eot?#iefix) format("embedded-opentype"), url(#{$font-url}/#{$weightslash}.woff) format("woff"), url(#{$font-url}/#{$weightslash}.ttf) format("truetype");
+        }
+      } @else {
+        @if $svg {
+          /* IE9 Compat Modes */
+          src: url(#{$font-url}/#{$weightslash}.eot?#iefix) format("embedded-opentype"), url(#{$font-url}/#{$weightslash}.woff) format("woff"), url(#{$font-url}/#{$weightslash}.svg#{$id-weight}) format("svg");
+        } @else {
+          /* IE9 Compat Modes */
+          src: url(#{$font-url}/#{$weightslash}.eot?#iefix) format("embedded-opentype"), url(#{$font-url}/#{$weightslash}.woff) format("woff");
+        }
+      }
+    } @else {
+      @if $ttf {
+        @if $svg {
+          /* IE9 Compat Modes */
+          src: url(#{$font-url}/#{$weightslash}.eot?#iefix) format("embedded-opentype"), url(#{$font-url}/#{$weightslash}.ttf) format("truetype"), url(#{$font-url}/#{$weightslash}.svg#{$id-weight}) format("svg");
+        } @else {
+          /* IE9 Compat Modes */
+          src: url(#{$font-url}/#{$weightslash}.eot?#iefix) format("embedded-opentype"), url(#{$font-url}/#{$weightslash}.ttf) format("truetype");
+        }
+      } @else {
+        @if $svg {
+          /* IE9 Compat Modes */
+          src: url(#{$font-url}/#{$weightslash}.eot?#iefix) format("embedded-opentype"), url(#{$font-url}/#{$weightslash}.svg#{$id-weight}) format("svg");
+        } @else {
+          /* IE9 Compat Modes */
+          src: url(#{$font-url}/#{$weightslash}.eot?#iefix) format("embedded-opentype");
+        }
+      }
+    }
+  } @else {
+    @if $woff {
+      src: url(#{$font-url}/#{$weightslash}.woff);
+      @if $ttf {
+        @if $svg {
+          /* IE9 Compat Modes */
+          src: url(#{$font-url}/#{$weightslash}.woff) format("woff"), url(#{$font-url}/#{$weightslash}.ttf) format("truetype"), url(#{$font-url}/#{$weightslash}.svg#{$id-weight}) format("svg");
+        } @else {
+          /* IE9 Compat Modes */
+          src: url(#{$font-url}/#{$weightslash}.woff) format("woff"), url(#{$font-url}/#{$weightslash}.ttf) format("truetype");
+        }
+      } @else {
+        @if $svg {
+          /* IE9 Compat Modes */
+          src: url(#{$font-url}/#{$weightslash}.woff) format("woff"), url(#{$font-url}/#{$weightslash}.svg#{$id-weight}) format("svg");
+        } @else {
+          /* IE9 Compat Modes */
+          src: url(#{$font-url}/#{$weightslash}.woff) format("woff");
+        }
+      }
+    } @else {
+      @if $ttf {
+        src: url(#{$font-url}/#{$weightslash}.ttf);
+        @if $svg {
+          /* IE9 Compat Modes */
+          src: url(#{$font-url}/#{$weightslash}.ttf) format("truetype"), url(#{$font-url}/#{$weightslash}.svg#{$id-weight}) format("svg");
+        } @else {
+          /* IE9 Compat Modes */
+          src: url(#{$font-url}/#{$weightslash}.ttf) format("truetype");
+        }
+      } @else {
+        @if $svg {
+          src: url(#{$font-url}/#{$weightslash}.svg#{$id-weight});
+          /* IE9 Compat Modes */
+          src: url(#{$font-url}/#{$weightslash}.svg#{$id-weight}) format("svg");
+        } @else {
+          /* IE9 Compat Modes */
+
+        }
+      }
+    }
+  }
+  @if $weightnumber {
+    font-weight: $weightnumber;
+  }
+}

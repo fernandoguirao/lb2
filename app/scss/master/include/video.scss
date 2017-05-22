@@ -1,0 +1,53 @@
+@if $background-type == 'video' {
+
+  // BCKG TEXTURE
+  @if $video-texture {
+    .bg-texture {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-size: initial;
+      background-position: center;
+      opacity: .7;
+      background-repeat: repeat;
+      @if $video-texture == 'image' {
+        background-image: url(http://galisteoaviation.com/assets/images/textures/grid.png);
+        background-color: $background-color;
+      }
+      @if $video-texture == 'color' {
+        background-color: $background-color;
+      }
+      @if $video-texture == 'gradient' {
+        background: linear-gradient(to bottom, $gradient-from 0%, $gradient-to 100%);
+      }
+    }
+  }
+
+  // VIDEO
+  video {
+    display: block;
+  }
+  video#bgvid {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background: url(files/video.jpg) no-repeat;
+    background-size: cover;
+  }
+  @media screen and (max-device-width: 800px) {
+    html {
+      background: url(files/video.jpg) #000 no-repeat center center fixed;
+    }
+    #bgvid {
+      display: none;
+    }
+  }
+}

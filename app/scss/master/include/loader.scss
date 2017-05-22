@@ -6,7 +6,7 @@
   position: relative;
   /* z-index: 100000000; */
   background: transparent;
-  font-family: $font, sans-serif !important;
+  font-family: $font, $font-type !important;
   &:before {
     content: "Loading chatbot...";
     position: fixed;
