@@ -1,3 +1,6 @@
+// FORMAS
+$container-type: box; // box | fullscreen
+
 // COLORS
 
 // Absolute colors
@@ -19,7 +22,7 @@ $accent-1: darken(saturate($accent,20%),11%);
 $light: $white;
 $contrast: #e03a65;
 $contrast-0: lighten($contrast,10%);
-$contrast-light: lighten($contrast,30%);
+$contrast-light: lighten($contrast,10%);
 
 // URL
 $url: 'http://landbot.io';
@@ -49,6 +52,6 @@ $externalfonturl: 'https://fonts.googleapis.com/css?family=Roboto';
 $background-type: 'color'; // image | gradient | color | video
 $gradient-from: $orange;
 $gradient-to: $orange-light;
-$background-image-url: 'https://storage.googleapis.com/media.yexir.com/channels_back/31.png';
-$background-color: #cccccc;
+$background-image-url: '../files/bcg.jpg';
+$background-color: $accent;
 $video-texture: gradient; // gradient | image | color
