@@ -1,9 +1,9 @@
 # Clientes
 
 ### Nuevo proyecto
-1. Crear nueva rama a partir de master con el nombre del cliente (Los nombres deben contener caracteres alfanuméricos y `-` preferiblemente).
+1. Crear nueva rama a partir de master con 'customers-' seguido del nombre del cliente (Los nombres deben contener caracteres alfanuméricos y `-` preferiblemente).
 ```bash
-git checkout -b new-client
+git checkout -b customers-name
 ```
 2. Editar propiedad `client` del archivo **package.json**.
 ```javascript
@@ -15,4 +15,4 @@ git checkout -b new-client
   "url": "https://new-client.com"
 }
 ```
-4. Hacer los cambios correspondientes de estilos en `app/scss/variables.scss`
+4. Hacer los cambios correspondientes de estilos en `app/scss/variables.scss` y `app/scss/custom/custom.scss`
