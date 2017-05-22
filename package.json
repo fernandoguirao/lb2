@@ -1,6 +1,7 @@
 {
   "name": "landbot-dev",
   "version": "1.0.0",
+  "lb-version": "1.0.0",
   "private": true,
   "devDependencies": {
     "async": "^2.4.0",
@@ -13,6 +14,7 @@
     "gulp-load-plugins": "^1.5.0",
     "gulp-postcss": "^7.0.0",
     "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-uglify": "^2.1.2",
@@ -40,5 +42,6 @@
       "img": "./build/img/",
       "files": "./build/files/"
     }
-  }
+  },
+  "client": "landbot"
 }

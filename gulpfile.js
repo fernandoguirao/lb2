@@ -9,6 +9,14 @@ const $ = require('gulp-load-plugins')({
   pattern: ['*'],
   scope: ['devDependencies']
 });
+const clientName = require('./package.json').client;
+let client;
+try {
+  client = require(`./clients/${clientName}.conf.json`);
+} catch(e) {
+  console.error(`[ERROR]: "./clients/${clientName}.conf.json" file not found`);
+  process.exit(1);
+}
 
 /****** SCRIPTS ******/
 gulp.task('scripts', () =>
@@ -67,6 +75,21 @@ gulp.task('styles', () => {
 
 /****** HTML ******/
 gulp.task('html', () => {
+
+  /**
+   * Replaces variable {{variable}} with config file value
+   * @param  {String} match {{variable}}
+   * @param  {String} var   variable
+   * @param  {Number} off   0
+   * @param  {String} str   Whole string
+   * @return {String}       Result
+   */
+  function replaceVar(match, variable, off, str) {
+    return (client[variable]) ? client[variable] : match;
+  }
+
+  let varRegex = /{{(\w+)}}/g;
+
   // index.html
   let index = gulp.src([`${path.app.base}index.html`])
     .pipe($.inject(gulp.src([
@@ -77,6 +100,7 @@ gulp.task('html', () => {
         return file.contents.toString('utf8');
       }
     }))
+    .pipe($.replace(varRegex, replaceVar))
     .pipe(gulp.dest(`${path.dist.base}`));
 
   // index.dev.html
@@ -92,6 +116,7 @@ gulp.task('html', () => {
         return file.contents.toString('utf8');
       }
     }))
+    .pipe($.replace(varRegex, replaceVar))
     .pipe(gulp.dest(`${path.dist.base}`));
 
   // index.test.html
@@ -107,6 +132,7 @@ gulp.task('html', () => {
         return file.contents.toString('utf8');
       }
     }))
+    .pipe($.replace(varRegex, replaceVar))
     .pipe(gulp.dest(`${path.dist.base}`))
 
   // Stream merge
@@ -134,7 +160,7 @@ gulp.task('serve', () => {
     logPrefix: 'LB',
     server: {
       baseDir: `${path.dist.base}`,
-      index: `index.dev.html`
+      index: `index.test.html`
     },
     port: 8080
   });
