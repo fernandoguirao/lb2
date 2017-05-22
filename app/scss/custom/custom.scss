@@ -39,6 +39,12 @@ div#hu-experiment-header .hu-right-header a {
     }
     &.right-images {
       right: 0;
+      text-align: left;
     }
   }
+}
+
+
+#hu-container-widget #hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message.hu-messenger-message-user .hu-message-container .hu-message-content.hu-message-content-text {
+  background: #00747a !important;
 }

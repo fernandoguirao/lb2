@@ -19,7 +19,7 @@ $accent-1: darken(saturate($accent,20%),11%);
 $light: $white;
 $contrast: #00747a;
 $contrast-0: lighten($contrast,10%);
-$contrast-light: lighten($contrast,30%);
+$contrast-light: rgba($contrast,.4);
 
 // URL
 $url: 'http://landbot.io';
