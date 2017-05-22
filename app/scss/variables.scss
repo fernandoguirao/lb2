@@ -30,10 +30,10 @@ $url: 'http://landbot.io';
 
 // FONTS
 // If embed on page
-$embfonts: true; // Set to false if external stylesheet
-$font: "Gotham Rounded";
+$embfonts: false; // Set to false if external stylesheet
+$font: "Open Sans";
 $font-type: sans-serif;
-$font-size: 14px;
+$font-size: 15px;
 $font-url: "https://guidango.com/fonts/gotham";
 $font-regular-slash: "gotham-rounded-book";
 $font-medium-slash: "gotham-rounded-medium";
@@ -46,7 +46,7 @@ $woff: true;
 $ttf: true;
 $svg: true;
 // If not embed on page (external stylesheet)
-$externalfonturl: false;
+$externalfonturl: 'https://fonts.googleapis.com/css?family=Open+Sans';
 // $externalfonturl: 'https://fonts.googleapis.com/css?family=Lato';
 
 // BACKGROUND

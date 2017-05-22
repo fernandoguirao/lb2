@@ -7,3 +7,20 @@ video#bgvid {
 div#hu-experiment-header .hu-left-header .more-leads {
   color: #716f71;
 }
+
+div#hu-experiment-header .hu-right-header a {
+  // border-radius: 50px;
+  font-size: 13px;
+  text-transform: none;
+  background-color: $contrast;
+  &.btt {
+    border: 2px solid $contrast;
+    color: $contrast !important;
+  }
+}
+
+
+#hu-container-widget #hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message.hu-messenger-message-user .hu-message-container .hu-message-content.hu-message-content-text,
+#hu-container-widget #hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message.hu-messenger-message-brand[data-samurai^="-"] .hu-avatar {
+  background-color: rgba(255,255,255,.2) !important;
+}
