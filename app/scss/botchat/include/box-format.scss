@@ -1,0 +1,44 @@
+@if $containertype == 'box' {
+
+  .hu-loader {
+    &:after {
+      color: $accent!important;
+    }
+  }
+  #hu-container-widget #hu-container-messenger {
+    .hu-messenger-body .hu-messenger-body-state {
+      background-color: #f1f1f1;
+      .hu-messenger-messages#hu-webchat-messages {
+        background-color: white!important;
+        box-shadow: 0 0 0px 52px white, 0 0 7px 51px rgba(0, 0, 0, 0.3),0 -2px 0 52px $accent !important;
+        min-height: 200px;
+        .hu-messenger-message.hu-messenger-message-brand {
+          .hu-message-content {
+            background-color: rgba(204, 204, 204, 0.28)!important;
+            &.hu-message-content-buttons {
+              background-color: transparent!important;
+            }
+          }
+        }
+      }
+    }
+    @media screen and (min-width: 770px){
+      .hu-messenger-footer {
+        margin-top: 20px!important;
+        margin-bottom: 60px;
+        border-color: $accent;
+      }
+    }
+    @media screen and (min-width: 1044px) {
+      .hu-messenger-footer {
+        margin: 0 calc(23% + 26px) 81px calc(23% + 17px);
+      }
+    }
+    @media screen and (max-width: 769px){
+      .hu-messenger-body {
+        border-bottom: 2px solid #e03a65;
+      }
+    }
+  }
+
+}
