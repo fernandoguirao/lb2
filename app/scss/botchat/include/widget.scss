@@ -94,7 +94,7 @@
           margin: 13px auto;
           padding-top: 71px;
           color: $light;
-          font-family: $font;
+          font-family: $font,$font-type;
           font-weight: 500;
           font-size: 16px;
           text-transform: uppercase;
@@ -120,6 +120,8 @@
         .hu-composer .hu-composer-text {
           padding-bottom: 13px !important;
           textarea#hu-composer-box {
+            font-family: $font,$font-type!important;
+            font-size: $font-size - 0.5;
             color: $contrast;
             min-height: 21px !important;
             max-height: 42px !important;
@@ -138,6 +140,9 @@
             line-height: 21px !important;
             min-height: 21px !important;
             max-height: 42px !important;
+          }
+          textarea {
+            // margin-bottom: 14 - $font-size;
           }
         }
       }
