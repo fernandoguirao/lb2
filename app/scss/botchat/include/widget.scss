@@ -32,8 +32,15 @@
   // MESSENGER
   #hu-container-messenger {
     box-shadow: none !important;
-    // background: linear-gradient(to bottom, $violet 0%, $blue-light 100%);
-    background: linear-gradient(to bottom, $gradient-from 0%, $gradient-to 100%);
+    @if $background-type == 'gradient' {
+      background: linear-gradient(to bottom, $gradient-from 0%, $gradient-to 100%);
+    }
+    @if $background-type == 'image' {
+      background-image: url($background-image-url);
+      background-size: cover;
+      background-position: center;
+      background-color: $background-color;
+    }
 
     // MESSENGER HEADER
     .hu-messenger-header, .hu-chatlist-header {
@@ -115,34 +122,34 @@
       border-radius: 6px;
       border: 2px solid $contrast-0;
       transition: transform 0.5s, opacity 0.5s !important;
+      background-color: $light;
       .hu-footer-state {
         width: 100%;
-        .hu-composer .hu-composer-text {
-          padding-bottom: 13px !important;
-          textarea#hu-composer-box {
-            font-family: $font,$font-type!important;
-            font-size: $font-size - 0.5;
-            color: $contrast;
-            min-height: 21px !important;
-            max-height: 42px !important;
-            line-height: 21px !important;
-            &::placeholder {
-              color: $contrast-light;
-              text-transform: uppercase;
-              font-weight: 500;
+        .hu-composer {
+          .hu-composer-text {
+            padding-bottom: 13px !important;
+            textarea#hu-composer-box {
+              font-family: $font,$font-type!important;
+              font-size: $font-size - 0.5;
+              color: $contrast;
+              min-height: 21px !important;
+              max-height: 42px !important;
+              line-height: 21px !important;
+              &::placeholder {
+                color: $contrast-light;
+                text-transform: uppercase;
+                font-weight: 500;
+              }
             }
-          }
-          #hu-composer-aux-box {
-            opacity: 0;
-            left: 0 !important;
-            padding-right: 71px !important; /* button width 50px + padding 19px + 2px (forces new line) */
-            padding-left: 21px !important; /* padding 19px + 2px (forces new line) */
-            line-height: 21px !important;
-            min-height: 21px !important;
-            max-height: 42px !important;
-          }
-          textarea {
-            // margin-bottom: 14 - $font-size;
+            #hu-composer-aux-box {
+              opacity: 0;
+              left: 0 !important;
+              padding-right: 71px !important; /* button width 50px + padding 19px + 2px (forces new line) */
+              padding-left: 21px !important; /* padding 19px + 2px (forces new line) */
+              line-height: 21px !important;
+              min-height: 21px !important;
+              max-height: 42px !important;
+            }
           }
         }
       }

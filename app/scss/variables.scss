@@ -1,20 +1,18 @@
 // COLORS
-$white: white;
 
+// Absolute colors
+$white: white;
 $pink: #ce4b81;
 $pink-0: #da548b;
 $pink-1: #ce2d6f;
-
 $orange: #ffad59;
 $orange-light: #ffe199;
-
 $violet: #4a50a8;
 $violet-0: #6369be;
 $violet-light: #b2b5de;
 $blue-light: #7db9e8;
 
-$gradient-from: $orange;
-$gradient-to: $orange-light;
+// Relative colors
 $accent: $pink;
 $accent-0: $pink-0;
 $accent-1: $pink-1;
@@ -46,3 +44,10 @@ $svg: true;
 // If not embed on page (external stylesheet)
 $externalfonturl: false;
 // $externalfonturl: 'https://fonts.googleapis.com/css?family=Lato';
+
+// BACKGROUND
+$background-type: 'gradient'; // image | gradient | color
+$gradient-from: $orange;
+$gradient-to: $orange-light;
+$background-image-url: 'https://storage.googleapis.com/media.yexir.com/channels_back/31.png';
+$background-color: red;
