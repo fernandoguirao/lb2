@@ -4,17 +4,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <title>Landbot | Convert a Landing Page into a Chatbot</title>
-    <meta name="description" content="Landbot.io is a tool to create conversational interfaces in substitution of forms. No coding required!">
-    <meta property="og:title" content="Landbot | Convert a Landing Page into a Chatbot"/>
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}">
+    <meta property="og:title" content="{{title}}"/>
     <meta property="og:type" content="website"/>
+    <!-- <meta property="og:image" content="{{url}}/ogimage.jpg"/> -->
     <meta property="og:image" content="./files/ogimage.jpg"/>
     <meta property="og:url" content="{{url}}"/>
-    <meta property="og:description" content="Landbot.io is a tool to create conversational interfaces in substitution of forms. No coding required!"/>
+    <meta property="og:description" content="{{description}}"/>
     <meta name="twitter:card" content="summary">
     <meta name="twitter:url" content="{{url}}">
-    <meta name="twitter:title" content="Landbot | Convert a Landing Page into a Chatbot">
-    <meta name="twitter:description" content="Landbot.io is a tool to create conversational interfaces in substitution of forms. No coding required!">
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{description}}">
+    <!-- <meta name="twitter:image" content="{{url}}/ogimage.jpg"> -->
     <meta name="twitter:image" content="./files/ogimage.jpg">
 
     <link rel="icon" href="./files/favicon.ico" type="image/x-icon"/>
@@ -27,15 +29,15 @@
   <body>
     <div id="hu-experiment-header">
       <div class="hu-left-header">
-        <img src="http://bueninvento.es/umiexp2.png" alt="">
-        <span class="more-leads">Get more leads using chatbots 🤖</span>
+        <img src="{{logo}}" alt="">
+        <span class="more-leads">{{tagline}}</span>
       </div>
       <div class="hu-right-header" id="rightheader">
-	    <a href="#" class="btt" onclick="event.preventDefault(); fakeMessage('features', true);">
-          Features
+	    <a href="#" class="btt" onclick="event.preventDefault(); fakeMessage('{{btn01Message}}', true);">
+          {{btn01Title}}
         </a>
-        <a href="#" onclick="event.preventDefault(); fakeMessage('signup', true);">
-          Early Access
+        <a href="#" onclick="event.preventDefault(); fakeMessage('{{btn02Message}}', true);">
+          {{btn02Title}}
         </a>
       </div>
     </div>

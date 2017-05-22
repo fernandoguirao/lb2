@@ -46,9 +46,9 @@ $externalfonturl: false;
 // $externalfonturl: 'https://fonts.googleapis.com/css?family=Lato';
 
 // BACKGROUND
-$background-type: 'video'; // image | gradient | color | video
+$background-type: 'gradient'; // image | gradient | color | video
 $gradient-from: $orange;
 $gradient-to: $orange-light;
 $background-image-url: 'https://storage.googleapis.com/media.yexir.com/channels_back/31.png';
 $background-color: transparent;
-$video-texture: image; // gradient | image | color
+$video-texture: gradient; // gradient | image | color

@@ -1,4 +1,12 @@
 {
   "url": "http://landbot.io",
-  "background-video": true
+  "title": "Landbot | Convert a Landing Page into a Chatbot",
+  "description": "Landbot.io is a tool to create conversational interfaces in substitution of forms. No coding required!",
+  "logo": "http://bueninvento.es/umiexp2.png",
+  "tagline": "Get more leads using chatbots 🤖",
+  "btn01Title": "Features",
+  "btn01Message": "features",
+  "btn02Title": "Early Access",
+  "btn02Message": "signup",
+  "background-video": false
 }
