@@ -99,6 +99,9 @@
           border-width: 2px;
           line-height: 1.3;
           background-color: $accent;
+          span {
+            font-family: $font,$font-type!important;
+          }
           &:last-child {
             background-color: transparent;
             color: $accent-0;

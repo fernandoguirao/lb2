@@ -26,7 +26,7 @@
     "start": "gulp",
     "build": "gulp build",
     "deploy": "echo 'BOOOM! es broma, consulta con el encargado antes de hacer deploy.'",
-    "deploy-test": "node ftp-deploy.js deploy.test.secret.conf.json"
+    "deploy-test": "node ftp-deploy.js clients/`node -p \"require('./package.json').client\"`-test.secret.conf.json"
   },
   "path": {
     "app": {

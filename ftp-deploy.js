@@ -4,9 +4,9 @@
  * Usage: node ftp-deploy.js deploy.secret.conf.json
  *
  * A config file is needed to get FTP server options.
- *    - Create 'deploy.secret.conf.json' with following properties:
+ *    - Create 'landbot.secret.conf.json' with following properties:
       {
-       "host": "landbot.io/test",
+       "host": "landbot.io",
        "user": "myuser",
        "pass": "mypass",
        "removes": [],
@@ -32,12 +32,15 @@ let config = {};
 try {
    config = require(`./${configFile}`);
 } catch(e) {
-  console.error(`
+  if (e instanceof SyntaxError)
+    console.error(`Not a valid JSON: '${configFile}'`);
+  else
+    console.error(`
 File not found: '${configFile}'
     Create a file '*.secret.conf.json' with following structure:
     ---
     {
-      "host": "landbot.io/test",
+      "host": "landbot.io",
       "user": "myuser",
       "pass": "mypass",
       "removes": [],

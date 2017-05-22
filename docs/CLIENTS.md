@@ -3,7 +3,7 @@
 ### Nuevo proyecto
 1. Crear nueva rama a partir de master con 'customers-' seguido del nombre del cliente (Los nombres deben contener caracteres alfanuméricos y `-` preferiblemente).
 ```bash
-git checkout -b customers-name
+git checkout -b customers-new-client
 ```
 2. Editar propiedad `client` del archivo **package.json**.
 ```javascript
