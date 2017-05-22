@@ -41,6 +41,12 @@
       background-position: center;
       background-color: $background-color;
     }
+    @if $background-type == 'color' {
+      background-color: $background-color;
+    }
+    @if $background-type == 'video' {
+      background-color: transparent;
+    }
 
     // MESSENGER HEADER
     .hu-messenger-header, .hu-chatlist-header {

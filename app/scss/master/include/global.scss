@@ -13,6 +13,9 @@ html, body {
     background-size: cover;
     background-position: center;
   }
+  @if $background-type == 'color' {
+    background-color: $background-color;
+  }
 }
 
 body {
