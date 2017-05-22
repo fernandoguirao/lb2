@@ -7,5 +7,6 @@
   "btn01Title": "Seguros",
   "btn01Message": "features",
   "btn02Title": "Acceder",
-  "btn02Message": "signup"
+  "btn02Message": "signup",
+  "background-video": false
 }
