@@ -47,24 +47,3 @@ El comando `npm run build` cumple la función de construcción de los archivos d
 
 #### Deploy a servidor FTP
 Ver [documentación](https://github.com/fernandoguirao/lb2/blob/master/docs/deploy.md)
-
-### Ejemplos btn
-{html}<img src="x" onerror="jsFlex(this);">
-<div class="la-flex">
-<div class="la-choices">
-    <span class="fi heart"></span>
-    <span>Wedding</span>
-</div>
-</div>{/html}
-
-{html}<img src="x" onerror="jsReferral(this);">
-<div class="la-flex js-referral">
-<div class="la-choices">
-    <span class="fi heart"></span>
-    <span>Wedding</span>
-</div>
-</div>{/html}
-
-{html}<a href="" class="hu-referral-btn">Landbot.io</a>{/html}
-
-{html}<img src="x" onerror="removeFlex();">{/html}
