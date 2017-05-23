@@ -213,8 +213,12 @@
   .dotthree {
     background-color: $contrast-light!important;
   }
-  svg#hu-send path {
-    fill: $accent;
+  svg#hu-send {
+    position: relative;
+    top: -5px;
+    path {
+      fill: $contrast;
+    }
   }
 }
 

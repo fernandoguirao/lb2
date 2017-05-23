@@ -8,5 +8,14 @@
   "btn01Message": "features",
   "btn02Title": "Early Access",
   "btn02Message": "signup",
-  "background-video": false
+  "background-video": false,
+  "prod-ID": "",
+  "prod-token": "",
+  "prod-apikey": "",
+  "test-ID": "",
+  "test-token": "",
+  "test-apikey": "",
+  "dev-ID": "",
+  "dev-token": "",
+  "dev-apikey": ""
 }
