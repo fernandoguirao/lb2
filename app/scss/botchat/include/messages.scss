@@ -177,6 +177,7 @@
       // Bot Avatar
       background-image: none !important;
       background-color: $accent;
+      overflow: hidden;
       &::before {
         content: "";
         position: relative;
