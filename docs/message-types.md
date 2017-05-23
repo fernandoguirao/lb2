@@ -1,6 +1,6 @@
 ### Ejemplos btn
 
-{html}<img src="x" onerror="jsFlex(this);">
+{html}<img src="x" style="display: none;" onerror="jsFlex(this);">
 <div class="la-flex">
 <div class="la-choices">
     <span class="fi heart"></span>
@@ -8,7 +8,7 @@
 </div>
 </div>{/html}
 
-{html}<img src="x" onerror="jsReferral(this);">
+{html}<img src="x" style="display: none;" onerror="jsReferral(this);">
 <div class="la-flex js-referral">
 <div class="la-choices">
     <span class="fi heart"></span>
@@ -18,14 +18,14 @@
 
 {html}<a href="" class="hu-referral-btn">Landbot.io</a>{/html}
 
-{html}<img src="x" onerror="removeFlex();">{/html}
+{html}<img src="x" style="display: none;" onerror="removeFlex();">{/html}
 
 
 
 This experience was created by *Landbot* 🤖
-{html}<img src="x" onerror="jsaddClass(this,'pre-referral');">{/html}
+{html}<img src="x" style="display: none;" onerror="jsaddClass(this,'pre-referral');">{/html}
 
-{html}<img src="x" onerror="jsReferral(this);">
+{html}<img src="x" style="display: none;" onerror="jsReferral(this);">
 <div class="la-flex referral">
 <div class="la-choices">
     <span class="fi heart"></span>
