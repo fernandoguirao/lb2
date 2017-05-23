@@ -1,3 +1,5 @@
+@import '../custom/flaticons';
+
 // Variables & mixins
 @import '../variables';
 @import '../mixins';
@@ -7,6 +9,7 @@
 @import 'include/responsive';
 @import 'include/special';
 @import 'include/box-format';
+@import 'include/special-messages';
 
 // Custom
 @import '../custom/custom';
