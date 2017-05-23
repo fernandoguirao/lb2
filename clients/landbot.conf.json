@@ -1,6 +1,6 @@
 {
   "url": "http://www.improdrone.com/",
-  "title": "Improrone | Drone Pilots",
+  "title": "Improdrone | Drone Pilots",
   "description": "We will find you the perfect Licensed And Insured Drone Pilot for anything that you need! For Free!",
   "logo": "./files/logo.png",
   "tagline": "Drone Pilots for perfection",
@@ -8,5 +8,11 @@
   "btn01Message": "features",
   "btn02Title": "Early Access",
   "btn02Message": "signup",
-  "background-video": true
+  "background-video": true,
+  "prodID": "236",
+  "prodToken": "H-59-V5MFK7RDZXCXWENI",
+  "prodApikey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
+  "testID": "236",
+  "testToken": "H-59-V5MFK7RDZXCXWENI",
+  "testApikey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU"
 }

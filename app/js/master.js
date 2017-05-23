@@ -71,7 +71,7 @@ function fakeMessage(msg, ghost){
 // ADD CLASS REMOVE CLASS
 function addClass(){
 	var d = document.getElementById("rightheader");
-	d.className += " notclickable";
+	d.className = "hu-right-header notclickable";
 }
 
 function removeClass(){
