@@ -8,5 +8,11 @@
   "btn01Message": "features",
   "btn02Title": "Acceder",
   "btn02Message": "signup",
-  "background-video": false
+  "background-video": false,
+  "prodID": "237",
+  "prodToken": "H-60-KDVYDFSG7VLEP8RC",
+  "prodApikey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
+  "testID": "237",
+  "testToken": "H-60-KDVYDFSG7VLEP8RC",
+  "testApikey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU"
 }
