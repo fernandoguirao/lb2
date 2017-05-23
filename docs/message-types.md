@@ -16,7 +16,7 @@
 </div>
 </div>{/html}
 
-{html}<a href="" class="hu-referral-btn">Landbot.io</a>{/html}
+{html}<a href="http://landbot.io/?utm_source=referral&utm_medium=customers&utm_campaign=willowi" target="_blank" class="hu-referral-btn">Landbot.io</a>{/html}
 
 {html}<img src="x" onerror="removeFlex();">{/html}
 
