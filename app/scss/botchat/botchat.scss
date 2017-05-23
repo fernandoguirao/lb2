@@ -1,10 +1,9 @@
-@import '../custom/flaticons';
-
 // Variables & mixins
 @import '../variables';
 @import '../mixins';
 
 // Partials
+@import 'include/flaticons';
 @import 'include/widget';
 @import 'include/responsive';
 @import 'include/special';
