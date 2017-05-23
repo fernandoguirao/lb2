@@ -47,6 +47,10 @@
     @if $background-type == 'video' {
       background-color: transparent;
     }
+    @if $containertype == 'box' {
+      background-image: none;
+      background-color: $box-footer!important;
+    }
 
     // MESSENGER HEADER
     .hu-messenger-header, .hu-chatlist-header {

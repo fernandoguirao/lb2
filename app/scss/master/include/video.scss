@@ -26,7 +26,7 @@
   }
 
   // VIDEO
-  video {
+  video#bgvid {
     display: block;
   }
   video#bgvid {
@@ -39,15 +39,16 @@
     height: auto;
     z-index: -100;
     transform: translateX(-50%) translateY(-50%);
-    background: url(files/video.jpg) no-repeat;
+    background: url('../files/video.jpg') no-repeat;
     background-size: cover;
   }
-  @media screen and (max-device-width: 800px) {
+  @media screen and (max-width: 800px) {
     html {
-      background: url(files/video.jpg) #000 no-repeat center center fixed;
+      background: url('../files/video.jpg') no-repeat center center fixed;
+      background-size: cover;
     }
-    #bgvid {
-      display: none;
+    video#bgvid {
+      display: none!important;
     }
   }
 }
