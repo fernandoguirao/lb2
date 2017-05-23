@@ -39,12 +39,23 @@ div#hu-experiment-header .hu-right-header a {
     }
     &.right-images {
       right: 0;
-      text-align: left;
+      text-align: center;
     }
   }
 }
 
-
 #hu-container-widget #hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message.hu-messenger-message-user .hu-message-container .hu-message-content.hu-message-content-text {
   background: #00747a !important;
+}
+
+#hu-container-widget #hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message.hu-messenger-message-brand[data-samurai^="-"] .hu-avatar {
+  background-color: rgba(255, 255, 255, 0.27);
+  &:before {
+    background-image: url(https://cdn-willowi.s3.amazonaws.com/wp-content/uploads/2017/02/hombre-empresa.svg);
+    width: 38px;
+    height: 40px;
+    transform: scaleX(-1);
+    filter: FlipH;
+    left: 0px;
+  }
 }
