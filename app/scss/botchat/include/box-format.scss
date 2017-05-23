@@ -33,7 +33,10 @@
         }
       }
     }
-    @media screen and (min-width: 770px){
+  }
+  div#hu-container-widget.hu-js-open {
+    @media screen and (min-width: 800px) {
+      margin-bottom: -42px;
       .hu-messenger-footer {
         margin-top: 20px!important;
         margin-bottom: 60px;
@@ -41,15 +44,26 @@
       }
     }
     @media screen and (min-width: 1044px) {
+      margin-bottom: -60px;
       .hu-messenger-footer {
         margin: 0 calc(23% + 26px) 81px calc(23% + 17px);
       }
     }
     @media screen and (max-width: 769px){
-      .hu-messenger-body {
-        border-bottom: 2px solid $box-footer;
+      .hu-messenger-footer {
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.02), 0 0 9px 0px rgba(0, 0, 0, 0.12);
+        .hu-footer-state .hu-composer {
+          background-color: $box-footer;
+          .hu-composer-text {
+            textarea#hu-composer-box {
+              color: $light!important;
+              &::placeholder {
+                color: $light!important;
+              }
+            }
+          }
+        }
       }
     }
   }
-
 }
