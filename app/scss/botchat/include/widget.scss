@@ -213,6 +213,9 @@
   .dotthree {
     background-color: $contrast-light!important;
   }
+  svg#hu-send path {
+    fill: $accent;
+  }
 }
 
 @keyframes appear-left {
