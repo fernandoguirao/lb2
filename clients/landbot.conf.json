@@ -8,5 +8,11 @@
   "btn01Message": "features",
   "btn02Title": "Early Access",
   "btn02Message": "signup",
-  "background-video": false
+  "background-video": false,
+  "prodID": "238",
+  "prodToken": "H-61-NCSSZX0SUHXDOL4H",
+  "prodApikey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
+  "testID": "238",
+  "testToken": "H-61-NCSSZX0SUHXDOL4H",
+  "testApikey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU"
 }
