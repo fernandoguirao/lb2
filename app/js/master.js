@@ -1,3 +1,26 @@
+function jsFlex(target){
+  $(target).parent().parent().addClass('js-flex');
+  $(target).parent().parent().children('.la-flex').children().click(function(){
+    var textVar = $(this).text();
+    fakeMessage(textVar, true);
+  });
+};
+
+function removeFlex(){
+  $('.js-flex').remove();
+}
+
+function jsaddClass(target,huclass){
+  $(target).parent().parent().addClass(huclass);
+}
+
+function jsReferral(target){
+  $(target).parent().parent().addClass('js-flex');
+  $(target).parent().parent().children('.la-flex').children().click(function(){
+    var textVar = $(this).text();
+    fakeMessage(textVar, true);
+  });
+};
 
 function identifyUser(flag, data) {
   if (typeof(window[flag])=='undefined'){

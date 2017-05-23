@@ -1,0 +1,109 @@
+#hu-container-widget {
+  #hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message.hu-messenger-message-brand .hu-message-content.js-flex {
+    background-color: transparent!important;
+    padding: 0!important;
+    @media screen and (min-width: 800px){
+      width: 495px;
+      max-width: 495px;
+    }
+    p img {
+      display: none;
+    }
+  }
+  .la-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    align-content: center;
+    margin: 0 -3px -22px;
+    @media screen and (max-width: 800px){
+      // display: block!important;
+      span {
+        display: block;
+      }
+    }
+    .la-choices {
+      display: flex;
+      border: 2px solid #447791;
+      border-radius: 5px;
+      padding: 11px 20px;
+      font-size: 13px;
+      flex: 1 0 0;
+      margin: 3px;
+      background: white;
+      color: #447791;
+      text-align: center;
+      position: relative;
+      z-index: 1000;
+      cursor: pointer;
+      flex-direction: column;
+      span {
+        align-self: center;
+        text-align: center;
+        width: 100%;
+        font-family: $font, $font-type!important;
+        &.fi {
+          font-size: 17px;
+        }
+      }
+      &:hover {
+        background-color: $accent;
+        span {
+          color: $light;
+        }
+      }
+    }
+    &.referral {
+      align-content: left;
+      justify-content: flex-start;
+      // margin-bottom: -104px;
+      display: block;
+      margin-bottom: -35px;
+      position: relative;
+      @media screen and (max-width: 800px){
+        display: block!important;
+      }
+      .la-choices {
+        max-width: 178px;
+        padding: 30px;
+        background-color: $accent;
+        border-color: darken($accent,10%);
+        color: $light;
+        display: block;
+        &:hover {
+          background-color: $accent-0;
+        }
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.hu-referral-btn {
+  background: $pink;
+color: $light;
+font-style: italic;
+border-radius: 3px;
+padding: 11px 47px;
+text-transform: uppercase;
+font-weight: 700;
+text-decoration: none;
+}
+
+.js-hidden {
+  display: none;
+}
+
+#hu-container-widget #hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message.hu-messenger-message-brand .hu-message-content.pre-referral {
+  background-color: transparent!important;
+  padding: 0 0 10px!important;
+  color: $light!important;
+  p img {
+    display: none;
+  }
+}
