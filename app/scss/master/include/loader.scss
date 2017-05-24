@@ -140,6 +140,7 @@
   text-align: center;
   padding-bottom: 53px;
   font-family: $font, $font-type;
+  z-index: 100;
   span {
     display: block;
     color: $accent;
@@ -157,6 +158,11 @@
       font-style: normal;
       font-size: 13px;
       font-weight: normal;
+    }
+  }
+  @if $background-type == 'video'{
+    span,a {
+      color: white;
     }
   }
 }
