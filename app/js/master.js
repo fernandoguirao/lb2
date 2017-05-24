@@ -1,3 +1,27 @@
+function jsFlex(target){
+  $(target).parent().parent().addClass('js-flex');
+  $(target).parent().parent().children('.la-flex').children().click(function(){
+    var textVar = $(this).text();
+    fakeMessage(textVar, true);
+  });
+};
+
+function removeFlex(){
+  $('.js-flex').remove();
+}
+
+function jsaddClass(target,huclass){
+  $(target).parent().parent().addClass(huclass);
+}
+
+function jsReferral(target){
+  $(target).parent().parent().parent().prev().addClass('js-referral');
+  $(target).parent().parent().addClass('js-flex');
+  $(target).parent().parent().children('.la-flex').children().click(function(){
+    var textVar = $(this).text();
+    fakeMessage(textVar, true);
+  });
+};
 
 function identifyUser(flag, data) {
   if (typeof(window[flag])=='undefined'){
@@ -71,7 +95,7 @@ function fakeMessage(msg, ghost){
 // ADD CLASS REMOVE CLASS
 function addClass(){
 	var d = document.getElementById("rightheader");
-	d.className += " notclickable";
+	d.className = "hu-right-header notclickable";
 }
 
 function removeClass(){

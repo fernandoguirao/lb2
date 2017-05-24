@@ -3,10 +3,12 @@
 @import '../mixins';
 
 // Partials
+@import 'include/flaticons';
 @import 'include/widget';
 @import 'include/responsive';
 @import 'include/special';
 @import 'include/box-format';
+@import 'include/special-messages';
 
 // Custom
 @import '../custom/custom';
