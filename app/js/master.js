@@ -15,6 +15,7 @@ function jsaddClass(target,huclass){
 }
 
 function jsReferral(target){
+  $(target).parent().parent().parent().prev().addClass('js-referral');
   $(target).parent().parent().addClass('js-flex');
   $(target).parent().parent().children('.la-flex').children().click(function(){
     var textVar = $(this).text();
