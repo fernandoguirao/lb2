@@ -37,10 +37,9 @@ willowi.com
 This experience was created by *Landbot* 🤖
 {html}<img src="x" style="display: none;" onerror="jsaddClass(this,'pre-referral');">{/html}
 
-{html}
-<img src="x" onerror="jsReferral">
+{html}<img src="x" onerror="jsReferral(this)">
 <div class="la-flex referral">
-    <a class="la-choices" href="http://landbot.io/?utm_source=referral&utm_medium=customers&utm_campaign=willowi">
+    <a target="_blank" class="la-choices" href="http://landbot.io/?utm_source=referral&utm_medium=customers&utm_campaign=willowi">
         <span class="fi heart"></span>
         <span>Crea tu propio Landbot</span>
     </a>
