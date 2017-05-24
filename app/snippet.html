@@ -27,7 +27,7 @@
     }
   };
 
-  function renderHelloumiLiveChat( chatbot, initialMessage ) {
+  function renderHelloumiLiveChat( configKey, initialMessage ) {
     showLoader();
     new UmichatRequirements(function(){
       new TemplateUtils();
@@ -56,17 +56,17 @@
     });
   }
 
-  function loadHelloumiLiveChat( chatbot, initialMessage ) {
+  function loadHelloumiLiveChat( configKey, initialMessage ) {
     var __container = document.getElementById('hu-container-widget');
     if ( __container ) {
       __container.parentNode.removeChild(__container);
       var firebaseApp =(helloumi.webchat.umimessageservice) ? helloumi.webchat.umimessageservice.firebaseApp : null;
       if (firebaseApp) {
         firebaseApp.delete().then(function(){
-          renderHelloumiLiveChat( chatbot, initialMessage );
+          renderHelloumiLiveChat( configKey, initialMessage );
         })
       } else {
-        renderHelloumiLiveChat( chatbot, initialMessage );
+        renderHelloumiLiveChat( configKey, initialMessage );
       }
     }
   }
