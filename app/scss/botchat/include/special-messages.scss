@@ -6,6 +6,16 @@
       width: 495px;
       max-width: 495px;
     }
+    @media screen and (max-width: 799px){
+      width: 100%!important;
+      max-width: 100%!important;
+      .referral {
+        .la-choices {
+          width: 100%;
+          max-width: 98%;
+        }
+      }
+    }
     p img {
       display: none;
     }
@@ -33,6 +43,7 @@
       font-size: 13px;
       flex: 1 0 0;
       margin: 3px;
+      transition: all .15s ease;
       background: white;
       color: #447791;
       text-align: center;
@@ -51,6 +62,7 @@
       }
       &:hover {
         background-color: $accent;
+        box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
         span {
           color: $light;
         }
@@ -67,12 +79,21 @@
         display: block!important;
       }
       .la-choices {
-        max-width: 178px;
+        max-width: 247px;
         padding: 30px;
         background-color: $accent;
         border-color: darken($accent,10%);
         color: $light;
         display: block;
+        span {
+          display: inline!important;
+          text-align: left;
+          vertical-align: middle;
+          &.fi {
+            margin-right: 8px;
+            margin-left: -11px;
+          }
+        }
         &:hover {
           background-color: $accent-0;
         }
@@ -84,7 +105,7 @@
   }
 }
 
-.hu-referral-btn {
+.hu-referral-btn,.hu-link-btn {
   background: $accent;
   color: $light;
   font-style: italic;
@@ -97,6 +118,29 @@
   margin-bottom: 3px;
   display: inline-block;
   margin-top: -7px;
+  transition: all .15s ease;
+  &.hu-photo {
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+    min-width: 174px;
+    max-width: 192px !important;
+    img {
+      margin-top: -21px;
+      display: inline-block;
+      max-width: none!important;
+      width: 100%;
+    }
+    span {
+      display: inline-block;
+      margin-top: -13px;
+      margin-bottom: 15px;
+    }
+  }
+  &:hover {
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    background-color: lighten($accent, 4%);
+  }
 }
 
 .js-hidden {
@@ -107,7 +151,17 @@
   background-color: transparent!important;
   padding: 0 0 10px!important;
   color: $light!important;
+  margin-top: 14px;
   p img {
     display: none;
   }
+}
+
+.js-referral .hu-avatar::before {
+  background-image: url('../files/avatar.png')!important;
+  transform: none!important;
+  filter: initial!important;
+  width: 26px!important;
+  height: 26px!important;
+  left: 7px!important;
 }
