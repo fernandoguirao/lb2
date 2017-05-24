@@ -1,20 +1,28 @@
+var flags = 0;
 function loadButtons(target,jsonURL) {
+  console.log(flags);
+  if(flags < 1){
+    console.log('empieza');
+    $.getJSON( jsonURL, function( data ) {
+      var items = [];
+      $.each( data, function( key, val ) {
+        items.push( "<div class='la-choices' data-keyword='"+val['keyword']+"'><img src='"+val['image']+"' alt=''><span>" + val['name'] + "</span></div>" );
+      });
+      $(target).parent().parent().addClass('js-flex js-thumbs');
 
-  $.getJSON( jsonURL, function( data ) {
-    var items = [];
-    $.each( data, function( key, val ) {
-      items.push( "<div class='la-choices' data-keyword='"+val['keyword']+"'><img src='"+val['image']+"' alt=''><span>" + val['name'] + "</span></div>" );
+      $(target).parent().parent().html('<div class="la-flex">'+items+'</div>');
+
+      $('.la-choices').click(function(){
+        var textVar = $(this).data('keyword');
+        fakeMessage(textVar, true);
+        $('.js-flex').parent().parent().parent().parent().remove();
+        flags = 0;
+        console.log(flags);
+      });
+      console.log('getjson');
     });
-    $(target).parent().parent().addClass('js-flex js-thumbs');
-
-    $(target).parent().parent().html('<div class="la-flex">'+items+'</div>');
-
-    $('.la-choices').click(function(){
-      var textVar = $(this).data('keyword');
-      fakeMessage(textVar, true);
-      $('.js-flex').parent().parent().parent().parent().remove();
-    });
-  });
+    flags = 1;
+  }
 
 }
 
