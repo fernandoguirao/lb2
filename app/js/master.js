@@ -1,13 +1,3 @@
-function loadSearch(target,jsonURL) {
-  // $.getJSON( jsonURL, function( data ) {
-  //   var items = [];
-  //   $.each( data, function( key, val ) {
-  //     items.push( "<li id='" + key + "'>" + val['name'] + "</li>" );
-  //   });
-  //   $(target).parent().parent().addClass('js-search');
-  // });
-}
-
 function loadButtons(target,jsonURL) {
 
   $.getJSON( jsonURL, function( data ) {
