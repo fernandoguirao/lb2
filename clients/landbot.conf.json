@@ -14,5 +14,7 @@
   "prodApikey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
   "testID": "234",
   "testToken": "H-57-55JULQN5YLS2AFFG",
-  "testApikey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU"
+  "testApikey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
+  "onInit": "landbot",
+  "onEmail": "discorbot"
 }
