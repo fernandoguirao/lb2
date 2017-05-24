@@ -165,3 +165,20 @@
   height: 26px!important;
   left: 7px!important;
 }
+
+.js-thumbs {
+  overflow: inherit!important;
+  .la-choices {
+    min-width: 30%;
+    padding: 0!important;
+    img {
+      max-width: 100%!important;
+      display: block;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+    }
+    span {
+      padding: 11px 20px;
+    }
+  }
+}
