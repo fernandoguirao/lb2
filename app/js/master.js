@@ -1,3 +1,27 @@
+function loadSearch(target,jsonURL) {
+  $.getJSON( jsonURL, function( data ) {
+    var items = [];
+    $.each( data, function( key, val ) {
+      items.push( "<li id='" + key + "'>" + val['name'] + "</li>" );
+    });
+    $(target).parent().parent().addClass('js-search');
+  });
+}
+
+function loadButtons(target,jsonURL) {
+  $.getJSON( jsonURL, function( data ) {
+    var items = [];
+    $.each( data, function( key, val ) {
+      items.push( "<div class='la-choices'><img src='"+val['image']+"' alt=''><span>" + val['name'] + "</span></div>" );
+    });
+    $(target).parent().parent().addClass('js-flex');
+
+    $(target).parent().parent().html('<div class="la-flex">'+items+'</div>');
+  });
+}
+
+
+
 function jsFlex(target){
   $(target).parent().parent().addClass('js-flex');
   $(target).parent().parent().children('.la-flex').children().click(function(){

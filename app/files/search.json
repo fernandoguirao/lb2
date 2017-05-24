@@ -1,0 +1,14 @@
+{
+  "1": {
+    "name": "nombre",
+    "cathegory": "categoría",
+    "image": "http://www.cronoshare.com/assets/ld/test/img/asistente_3-451a2fc460e277d3518b0d08cc55516a.jpg",
+    "keyword": "prueba"
+  },
+  "2": {
+    "name": "nombre2",
+    "cathegory": "categoría2",
+    "image": "http://www.cronoshare.com/assets/ld/test/img/asistente_3-451a2fc460e277d3518b0d08cc55516a.jpg",
+    "keyword": "prueba"
+  }
+}

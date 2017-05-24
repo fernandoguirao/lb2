@@ -21,6 +21,9 @@
 
     <link rel="icon" href="./files/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="css/master.css" type="text/css"/>
+    <script>
+      localStorage.clear();
+    </script>
     <script type="text/javascript" src="js/master.js" charset="UTF-8"></script>
 
     <!-- inject:snippet:html -->
@@ -33,11 +36,14 @@
         <span class="more-leads">{{tagline}}</span>
       </div>
       <div class="hu-right-header" id="rightheader">
-	    <a href="#" class="btt" onclick="event.preventDefault(); fakeMessage('{{btn01Message}}', true);">
+	    <!-- <a href="#" class="btt" onclick="event.preventDefault(); fakeMessage('{{btn01Message}}', true);">
           {{btn01Title}}
         </a>
         <a href="#" onclick="event.preventDefault(); fakeMessage('{{btn02Message}}', true);">
           {{btn02Title}}
+        </a> -->
+        <a href="http://landbot.io/?utm_source=referral&utm_medium=customers&utm_campaign=cronoshare" target="_blank" class="btt">
+          Powered by Landbot.io
         </a>
       </div>
     </div>
