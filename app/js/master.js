@@ -1,3 +1,25 @@
+function loadButtons(target,jsonURL) {
+
+  $.getJSON( jsonURL, function( data ) {
+    var items = [];
+    $.each( data, function( key, val ) {
+      items.push( "<div class='la-choices' data-keyword='"+val['keyword']+"'><img src='"+val['image']+"' alt=''><span>" + val['name'] + "</span></div>" );
+    });
+    $(target).parent().parent().addClass('js-flex js-thumbs');
+
+    $(target).parent().parent().html('<div class="la-flex">'+items+'</div>');
+
+    $('.la-choices').click(function(){
+      var textVar = $(this).data('keyword');
+      fakeMessage(textVar, true);
+      $('.js-flex').parent().parent().parent().parent().remove();
+    });
+  });
+
+}
+
+
+
 function jsFlex(target){
   $(target).parent().parent().addClass('js-flex');
   $(target).parent().parent().children('.la-flex').children().click(function(){
