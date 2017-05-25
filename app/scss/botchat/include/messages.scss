@@ -81,6 +81,162 @@
           max-width: 100%;
         }
       }
+      &.hu-message-content-search {
+        padding: 0 !important;
+        background-color: transparent !important;
+        border: 2px solid white;
+        .selectize-dropdown {
+          display: inline-block !important;
+          position: relative;
+          top: 0 !important;
+          left: 0 !important;
+          height: auto !important;
+          width: 100% !important;
+          overflow: hidden;
+          min-width: 350px;
+          border: 0 none;
+          margin: 0 !important;
+          box-shadow: none !important;
+          border-radius: 0 !important;
+        }
+        .selectize-control {
+          display: flex;
+          flex-direction: column;
+        }
+        .selectize-dropdown-content{
+          transition: all .2s ease;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          padding: 8px 12px;
+          &.hu-searching {
+            &:before {
+              display: none;
+            }
+            .hu-selectize-text {
+              .highlight {
+                color: white;
+                background-color: $accent;
+                border-radius: 2px;
+              }
+            }
+          }
+          &:before {
+            content: 'Servicios mas solicitados';
+            height: 40px;
+            line-height: 40px;
+            padding: 4px 18px;
+            margin-left: -12px;
+            margin-right: -12px;
+            margin-top: -8px;
+            margin-bottom: 8px;
+            width: 100%;
+            background-color: $light-gray;
+          }
+          &:empty{
+            padding: 0px;
+            &:before {
+              display: block !important;
+              content: 'Sigue buscando...';
+              height: 40px;
+              line-height: 40px;
+              padding: 4px 18px;
+              margin: 0;
+              width: 100%;
+              background-color: $light-gray;
+            }
+          }
+        }
+        .hu-selectize-item{
+          min-width: 50%;
+          background-color: $light !important;
+          display: flex;
+          padding: 8px;
+          flex-direction: row;
+          animation: appear-right2;
+          animation-duration: .5s;
+          position: relative;
+          transition-timing-function: ease-in-out;
+          &:hover {
+            background-color: $accent !important;
+            color: white;
+            border-radius: 4px;
+          }
+          .hu-selectize-avatar {
+            background-position: center center;
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            background-repeat: no-repeat;
+            display: inline-block;
+            position: relative;
+            background-size: cover;
+          }
+          .hu-selectize-text {
+            flex: 1;
+            line-height: 40px;
+            padding-left: 12px;
+            .highlight {
+              color: inherit;
+              background-color: inherit;
+              border-radius: 0;
+            }
+          }
+        }
+        .selectize-input {
+          background: transparent;
+          box-shadow: none;
+          border: 0 none;
+          display: flex;
+          flex-direction: row;
+          padding: 12px 18px;
+          .item {
+            flex: 1;
+          }
+          input {
+            flex: 1;
+            color: $accent;
+            &::-webkit-input-placeholder { /* WebKit browsers */
+                color: $accent-0;
+            }
+            &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+               color: $accent-0;
+            }
+            &::-moz-placeholder { /* Mozilla Firefox 19+ */
+               color: $accent-0;
+            }
+            &:-ms-input-placeholder { /* Internet Explorer 10+ */
+               color: $accent-0;
+            }
+            &:active, &:focus {
+              &::-webkit-input-placeholder { /* WebKit browsers */
+                  color: transparent;
+              }
+              &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+                 color: transparent;
+              }
+              &::-moz-placeholder { /* Mozilla Firefox 19+ */
+                 color: transparent;
+              }
+              &:-ms-input-placeholder { /* Internet Explorer 10+ */
+                 color: transparent;
+              }
+            }
+          }
+        }
+        .selectize-input:after {
+          border: 0 none;
+          content: '🔍';
+          width: initial;
+          position: relative;
+          right: 0;
+          top: 3px;
+          font-size: 17px;
+        }
+        .selectize-input:before {
+          display: none;
+        }
+      }
       &.hu-message-content-buttons {
         background: transparent !important;
         padding: 0 !important;

@@ -127,46 +127,112 @@ function getEmailFromURL(){
   return result;
 }
 
-$(function() {
-  $('#select-repo').selectize({
-    valueField: 'url',
-    labelField: 'name',
-    searchField: 'name',
-    create: false,
-    render: {
-        option: function(item, escape) {
-            return '<div>' +
-                '<span class="title">' +
-                    '<span class="name"><i class="icon ' + (item.fork ? 'fork' : 'source') + '"></i>' + escape(item.name) + '</span>' +
-                    '<span class="by">' + escape(item.username) + '</span>' +
-                '</span>' +
-                '<span class="description">' + escape(item.description) + '</span>' +
-                '<ul class="meta">' +
-                    (item.language ? '<li class="language">' + escape(item.language) + '</li>' : '') +
-                    '<li class="watchers"><span>' + escape(item.watchers) + '</span> watchers</li>' +
-                    '<li class="forks"><span>' + escape(item.forks) + '</span> forks</li>' +
-                '</ul>' +
-            '</div>';
+function loadSearch(elem, path, callback){
+  var $elem = $(elem);
+  var $container = $elem.parent().parent();
+  var $paragraph = $elem.parent();
+  $paragraph.fadeTo(0, 0);
+  if ( $elem.length > 0) {
+    $.ajax(
+      {
+        url: path,
+        type: 'GET',
+        error: function() {
+          if ( typeof(callback) == 'function' ) callback(false);
+        },
+        success: function(result) {
+          var __data;
+          if ( typeof(result) == 'object' ) __data = result;
+          if (__data) {
+
+            var $selectize = $('<select placeholder="Type here...">');
+            var __dataFormatted = $.map( __data, function( elem, index ){
+              return $.extend({}, elem );
+            });
+            $container.addClass('hu-message-content-search');
+            $container.append( $selectize );
+            $selectize.selectize({
+              maxOptions: 4,
+              valueField: 'keyword',
+              labelField: 'name',
+              searchField: ['name'],
+              sortField: [{ field: 'score', direction: 'desc' }],
+              placeholder: $paragraph.text(),
+              preload: true,
+              highlight: true,
+              openOnFocus: false,
+              create: false,
+              onItemAdd: function(keyword, $item){
+                fakeMessage(keyword, true);
+                $item.parent().parent().parent().parent().parent().parent().remove();
+                setTimeout( this.destroy.bind(this), 100);
+              },
+              onInitialize: function(){
+                $paragraph.fadeTo(200, 1);
+                helloumi.webchat.umichatgui.scrollBottom();
+              },
+              onType: function(text) {
+                if (text.length > 0) {
+                  this.$dropdown_content.addClass('hu-searching');
+                } else {
+                  this.$dropdown_content.removeClass('hu-searching');
+                }
+                helloumi.webchat.umichatgui.scrollBottom();
+              },
+              onFocus: function() {
+                this.$dropdown_content.removeClass('hu-searching');
+              },
+              onBlur: function() {
+                if (this.$dropdown_content.hasClass('hu-searching')) {
+                  this.$dropdown_content.removeClass('hu-searching');
+                  this.refreshOptions();
+                }
+              },
+              score: function(search) {
+                  if (search.length > 0) {
+                    var score = this.getScoreFunction(search);
+                    return function(item) {
+                      console.log(item.name + ': ' + (score(item) * (1 + Math.min(item.score / 100, 1))));
+                      return score(item) * (1 + Math.min(item.score / 100, 1));
+                    };
+                  } else {
+                    return function(item) {
+                      console.log(item.name + ': ' + (1 + Math.min(item.score / 100, 1)));
+                      return (1 + Math.min(item.score / 100, 1));
+                    };
+                  }
+              },
+              options: __dataFormatted,
+              render: {
+                option: function(item, escape) {
+                  return '<div class="hu-selectize-item" data-keyword="' + escape(item.keyword) + '" onclick="javascript:selectizeClick(this);">' +
+                    '<span class="hu-selectize-avatar" style="background-image: url(' + escape(item.image) + ')"></span>' +
+                    '<span class="hu-selectize-text">' + escape(item.name) + '</span></div>';
+                }
+              }
+            })
+            $paragraph.remove();
+            $container.find('.selectize-input').click(); // Foces open
+            if ( typeof(callback) == 'function' ) callback(true);
+          } else {
+            if ( typeof(callback) == 'function' ) callback(false);
+          }
         }
-    },
-    score: function(search) {
-        var score = this.getScoreFunction(search);
-        return function(item) {
-            return score(item) * (1 + Math.min(item.watchers / 100, 1));
-        };
-    },
-    load: function(query, callback) {
-        if (!query.length) return callback();
-        $.ajax({
-            url: 'https://api.github.com/legacy/repos/search/' + encodeURIComponent(query),
-            type: 'GET',
-            error: function() {
-                callback();
-            },
-            success: function(res) {
-                callback(res.repositories.slice(0, 10));
-            }
-        });
+      }
+    );
+  }
+}
+
+
+function selectizeClick( elem ){
+  var $elem = $(elem);
+  var __keyword = $elem.data('keyword');
+  if (__keyword) {
+    var $selectize = $elem.parent().parent().parent().parent().find('select.selectized');
+    if ($selectize.length > 0) {
+      fakeMessage(__keyword, true);
+      $selectize[0].selectize.destroy();
+      $selectize.parent().parent().parent().parent().parent().remove();
     }
-  });
-});
+  }
+}
