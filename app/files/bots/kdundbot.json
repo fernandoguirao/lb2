@@ -1,0 +1,1763 @@
+{
+  "5": {
+    "function": "__send_message__",
+    "id": "5",
+    "name": "Error message",
+    "top": 347,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "I'm sorry, I didn't understand. Could you try again?"
+      }
+    ],
+    "next": {
+      "success": "4"
+    },
+    "delaytime": 0,
+    "left": 700,
+    "hidetextbox": true
+  },
+  "64": {
+    "function": "__send_message__",
+    "id": "64",
+    "name": "7️⃣",
+    "top": 80,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "7️⃣ *Contribuímos*\nQueremos dar antes de recibir. Creemos que así es como se generan los buenos ecosistemas: Silicon Valley es más un estado mental que un lugar. Esta mentalidad es la base de un gran ecosistema: dar algo sin esperar nada a cambio."
+      }
+    ],
+    "next": {
+      "success": "65"
+    },
+    "delaytime": 3.4,
+    "left": 3000,
+    "hidetextbox": true
+  },
+  "32": {
+    "function": "__send_message__",
+    "id": "32",
+    "name": "Fichado! Ahora dime,",
+    "top": 1104,
+    "responses": [
+      {
+        "entity": "button",
+        "buttons": [
+          "Contacto 💬",
+          "Información 🔎"
+        ],
+        "order": 0,
+        "text": "¡Fichado! 😁 Ahora dime, *¿cómo puedo ayudarte?*",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "next": {
+      "success": "35"
+    },
+    "delaytime": 0,
+    "left": 494,
+    "hidetextbox": true
+  },
+  "47": {
+    "function": "__send_message__",
+    "id": "47",
+    "name": "Esta experiencia ha",
+    "top": 1880,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Esta experiencia ha sido creada por *Landbot* 🤖\n{html}<img src=\"x\" style=\"display: none;\" onerror=\"jsaddClass(this,'pre-referral');\">{/html}"
+      }
+    ],
+    "next": {
+      "success": "49"
+    },
+    "delaytime": 0,
+    "left": 661,
+    "hidetextbox": true
+  },
+  "94": {
+    "function": "__text__",
+    "id": "94",
+    "name": "Pick @startup",
+    "top": 835,
+    "field": "custom",
+    "overwrite": true,
+    "next": {
+      "failed": "95",
+      "success": "96"
+    },
+    "keyword": true,
+    "delaytime": 0,
+    "left": 1966,
+    "custom_field": "startup"
+  },
+  "69": {
+    "function": "__send_message__",
+    "id": "69",
+    "name": "¿Quieres que continú",
+    "top": 179,
+    "responses": [
+      {
+        "entity": "button",
+        "buttons": [
+          "Continúa",
+          "Es suficiente"
+        ],
+        "order": 0,
+        "text": "¿Quieres que continúe?",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "next": {
+      "success": "70"
+    },
+    "delaytime": 3.4,
+    "left": 2583,
+    "hidetextbox": true
+  },
+  "63": {
+    "function": "__send_message__",
+    "id": "63",
+    "name": "6️⃣",
+    "top": 79,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "6️⃣ *Equipos complementarios*\nSomos un equipo de personas que aportan experiencias muy diferentes. Hemos creado compañías, trabajado en Venture Capital y dirigido grandes empresas."
+      }
+    ],
+    "next": {
+      "success": "64"
+    },
+    "delaytime": 3.4,
+    "left": 2882,
+    "hidetextbox": true
+  },
+  "75": {
+    "function": "__send_message__",
+    "id": "75",
+    "name": "¿Quieres que continú",
+    "top": 199,
+    "responses": [
+      {
+        "entity": "button",
+        "buttons": [
+          "Continúa",
+          "Es suficiente"
+        ],
+        "order": 0,
+        "text": "¿Quieres que continúe?",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "next": {
+      "success": "76"
+    },
+    "delaytime": 3.4,
+    "left": 3072,
+    "hidetextbox": true
+  },
+  "85": {
+    "function": "__send_message__",
+    "id": "85",
+    "name": "*Años de experiencia",
+    "top": 444,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "*Años de experiencia en VC:*\n{html}<span class=\"text-big\">31</span>{/html}"
+      }
+    ],
+    "next": {
+      "success": "72"
+    },
+    "delaytime": 2.4,
+    "left": 2245,
+    "hidetextbox": true
+  },
+  "36": {
+    "function": "__send_message__",
+    "id": "36",
+    "name": "Error message",
+    "top": 1188,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "I'm sorry, I didn't understand. Could you try again?"
+      }
+    ],
+    "next": {
+      "success": "35"
+    },
+    "delaytime": 0,
+    "left": 315
+  },
+  "82": {
+    "function": "__send_message__",
+    "id": "82",
+    "name": "*Años de experiencia",
+    "top": 456,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "*Años de experiencia dirigiendo empresas:*\n{html}<span class=\"text-big\">34</span>{/html}"
+      }
+    ],
+    "next": {
+      "success": "83"
+    },
+    "delaytime": 3.4,
+    "left": 1610,
+    "hidetextbox": true
+  },
+  "57": {
+    "function": "__choice__",
+    "name": "Pick selected option",
+    "top": 72,
+    "id": "57",
+    "next": {
+      "claro": "58",
+      "momento": "72",
+      "otro": "72"
+    },
+    "delaytime": 0,
+    "left": 1937,
+    "hidetextbox": true
+  },
+  "50": {
+    "function": "__choice__",
+    "name": "Pick selected option",
+    "top": 1463,
+    "id": "50",
+    "next": {
+      "si": "52",
+      "no": "31",
+      "failed": "51"
+    },
+    "delaytime": 0,
+    "left": 1054,
+    "hidetextbox": true
+  },
+  "18": {
+    "function": "__choice__",
+    "name": "Pick selected option",
+    "top": 801,
+    "id": "18",
+    "next": {
+      "por": "20",
+      "no": "31",
+      "gracias": "31",
+      "supuesto": "20",
+      "failed": "19"
+    },
+    "delaytime": 0,
+    "left": 646,
+    "hidetextbox": true
+  },
+  "52": {
+    "function": "__send_message__",
+    "id": "52",
+    "name": "*Entonces necesito q",
+    "top": 1568,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "*Entonces necesito que escribas correctamente tu email, por favor _Escribe tu email debajo_*"
+      }
+    ],
+    "next": {
+      "success": "41"
+    },
+    "delaytime": 0,
+    "left": 1042
+  },
+  "14": {
+    "function": "__send_message__",
+    "id": "14",
+    "name": "Ey! Hola! 👋🏻",
+    "top": 26,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Ey! Hola! 👋🏻"
+      }
+    ],
+    "next": {
+      "success": "1"
+    },
+    "delaytime": 1,
+    "left": 485,
+    "hidetextbox": true
+  },
+  "97": {
+    "function": "__text__",
+    "id": "97",
+    "name": "Pick @message",
+    "top": 921,
+    "field": "custom",
+    "overwrite": true,
+    "next": {
+      "success": "43",
+      "failed": "98"
+    },
+    "keyword": true,
+    "delaytime": 0,
+    "left": 1964,
+    "custom_field": "message"
+  },
+  "34": {
+    "function": "__send_message__",
+    "id": "34",
+    "name": "Error message",
+    "top": 1191,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "I'm sorry, I didn't understand. Could you try again?"
+      }
+    ],
+    "next": {
+      "success": "33"
+    },
+    "delaytime": 0,
+    "left": 1099
+  },
+  "23": {
+    "function": "__text__",
+    "id": "23",
+    "name": "Pick @contact",
+    "top": 1006,
+    "field": "custom",
+    "overwrite": true,
+    "next": {
+      "failed": "24",
+      "success": "32"
+    },
+    "keyword": true,
+    "delaytime": 0,
+    "left": 518,
+    "custom_field": "contact"
+  },
+  "66": {
+    "function": "__send_message__",
+    "id": "66",
+    "name": "9️⃣",
+    "top": 83,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "9️⃣ *Somos conscientes del “riesgo” en el venture capital*\nPor eso tenemos el objetivo de liderar rondas en etapas tempranas, desde los €100.000 hasta varios millones de euros."
+      }
+    ],
+    "next": {
+      "success": "67"
+    },
+    "delaytime": 3.6,
+    "left": 3244,
+    "hidetextbox": true
+  },
+  "26": {
+    "function": "__choice__",
+    "name": "Pick selected option",
+    "top": 988,
+    "id": "26",
+    "next": {
+      "contacto": "28",
+      "informacion": "29",
+      "failed": "27"
+    },
+    "delaytime": 0,
+    "left": 875,
+    "hidetextbox": true
+  },
+  "17": {
+    "function": "__send_message__",
+    "id": "17",
+    "name": "¿Quieres dejarme alg",
+    "top": 708,
+    "responses": [
+      {
+        "entity": "button",
+        "buttons": [
+          "Por supuesto 👍🏻",
+          "No, gracias"
+        ],
+        "order": 0,
+        "text": "¿Quieres dejarme algún otro *dato de contacto*?",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "next": {
+      "success": "18"
+    },
+    "delaytime": 0,
+    "left": 643,
+    "hidetextbox": true
+  },
+  "77": {
+    "function": "__send_message__",
+    "id": "77",
+    "name": "Encantado de present",
+    "top": 218,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Encantado de presentarte a nuestro flamante equipo! {html}<img src=\"x\" style=\"display: none;\" onerror=\"removeFlex();\">{/html}"
+      }
+    ],
+    "next": {
+      "success": "78"
+    },
+    "delaytime": 0,
+    "left": 1445,
+    "hidetextbox": true
+  },
+  "79": {
+    "function": "__send_message__",
+    "id": "79",
+    "name": "Aquí tienes cuatro d",
+    "top": 339,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Aquí tienes cuatro de las empresas en que hemos invertido. Haz click en los enlaces para leer el caso en detalle 🤓"
+      }
+    ],
+    "next": {
+      "success": "80"
+    },
+    "delaytime": 0,
+    "left": 1399,
+    "hidetextbox": true
+  },
+  "67": {
+    "function": "__send_message__",
+    "id": "67",
+    "name": "1️⃣0️⃣",
+    "top": 88,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "1️⃣0️⃣ *El venture capital puede proporcionar grandes retornos*\nSiguiendo los anteriores principios."
+      }
+    ],
+    "next": {
+      "success": "68"
+    },
+    "delaytime": 3.2,
+    "left": 3358,
+    "hidetextbox": true
+  },
+  "89": {
+    "function": "__send_message__",
+    "id": "89",
+    "name": "Error message",
+    "top": 737,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "I'm sorry, I didn't understand. Could you try again?"
+      }
+    ],
+    "next": {
+      "success": "88"
+    },
+    "delaytime": 0,
+    "left": 2160
+  },
+  "25": {
+    "function": "__send_message__",
+    "id": "25",
+    "name": "Entonces, dime: *¿en qué puedo",
+    "top": 914,
+    "responses": [
+      {
+        "entity": "button",
+        "buttons": [
+          "Información 🔎",
+          "Contacto 💬"
+        ],
+        "order": 0,
+        "text": "*¿En qué puedo ayudarte entonces?*",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "next": {
+      "success": "26"
+    },
+    "delaytime": 0,
+    "left": 865,
+    "hidetextbox": true
+  },
+  "27": {
+    "function": "__send_message__",
+    "id": "27",
+    "name": "Error message",
+    "top": 989,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "I'm sorry, I didn't understand. Could you try again?"
+      }
+    ],
+    "next": {
+      "success": "26"
+    },
+    "delaytime": 0,
+    "left": 1123
+  },
+  "93": {
+    "function": "__send_message__",
+    "id": "93",
+    "name": "*¿Cómo se llama tu s",
+    "top": 835,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "*¿Cómo se llama tu startup? _Escribe debajo el nombre de tu startup_*"
+      }
+    ],
+    "next": {
+      "success": "94"
+    },
+    "delaytime": 0,
+    "left": 1716
+  },
+  "13": {
+    "function": "__send_message__",
+    "id": "13",
+    "name": "Muy bien, tomaré not",
+    "top": 667,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Muy bien, tomaré nota de tus datos antes de ponerte en contacto con nuestro equipo"
+      }
+    ],
+    "next": {
+      "success": "90"
+    },
+    "delaytime": 0,
+    "left": 1454
+  },
+  "51": {
+    "function": "__send_message__",
+    "id": "51",
+    "name": "Error message",
+    "top": 1460,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "I'm sorry, I didn't understand. Could you try again?"
+      }
+    ],
+    "next": {
+      "success": "50"
+    },
+    "delaytime": 0,
+    "left": 1309
+  },
+  "30": {
+    "function": "__send_message__",
+    "id": "30",
+    "name": "Entonces quizás nos",
+    "top": 415,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "¡Estupendo! Entonces quizás nos conozcamos ya 🤔"
+      }
+    ],
+    "next": {
+      "success": "7"
+    },
+    "delaytime": 0,
+    "left": 641,
+    "hidetextbox": true
+  },
+  "38": {
+    "function": "__text__",
+    "id": "38",
+    "name": "Pick @message",
+    "top": 1387,
+    "field": "custom",
+    "overwrite": true,
+    "next": {
+      "failed": "39",
+      "success": "43"
+    },
+    "keyword": true,
+    "delaytime": 0,
+    "left": 507,
+    "custom_field": "message"
+  },
+  "19": {
+    "function": "__send_message__",
+    "id": "19",
+    "name": "Error message",
+    "top": 756,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "I'm sorry, I didn't understand. Could you try again?"
+      }
+    ],
+    "next": {
+      "success": "18"
+    },
+    "delaytime": 0,
+    "left": 872
+  },
+  "43": {
+    "function": "__send_message__",
+    "id": "43",
+    "name": "Entendido, voy a pas",
+    "top": 1516,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Entendido, voy a pasarle tu consulta a nuestro equipo y en breve te responderán por email"
+      }
+    ],
+    "next": {
+      "success": "44"
+    },
+    "delaytime": 0,
+    "left": 665,
+    "hidetextbox": true
+  },
+  "98": {
+    "function": "__send_message__",
+    "id": "98",
+    "name": "Error message",
+    "top": 920,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "I'm sorry, I didn't understand. Could you try again?"
+      }
+    ],
+    "next": {
+      "success": "97"
+    },
+    "delaytime": 0,
+    "left": 2154
+  },
+  "7": {
+    "function": "__send_message__",
+    "id": "7",
+    "name": "Cómo te llamas",
+    "top": 478,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "*¿Cómo te llamas? _Escribe tu nombre y apellidos_*"
+      }
+    ],
+    "next": {
+      "success": "15"
+    },
+    "delaytime": 0,
+    "left": 657
+  },
+  "41": {
+    "function": "__email__",
+    "id": "41",
+    "name": "Pick @email",
+    "top": 1374,
+    "field": "email",
+    "overwrite": true,
+    "next": {
+      "failed": "42",
+      "success": "43"
+    },
+    "delaytime": 0,
+    "left": 824
+  },
+  "88": {
+    "function": "__text__",
+    "id": "88",
+    "name": "Pick @username",
+    "top": 742,
+    "field": "custom",
+    "overwrite": true,
+    "next": {
+      "failed": "89",
+      "success": "93"
+    },
+    "keyword": true,
+    "delaytime": 0,
+    "left": 1952,
+    "custom_field": "username"
+  },
+  "74": {
+    "function": "__send_message__",
+    "id": "74",
+    "name": "Dime qué quieres sab",
+    "top": 233,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Dime qué quieres saber concretamente, por favor"
+      }
+    ],
+    "next": {
+      "success": "9"
+    },
+    "delaytime": 0,
+    "left": 698,
+    "hidetextbox": true
+  },
+  "84": {
+    "function": "__send_message__",
+    "id": "84",
+    "name": "*Startups a las que",
+    "top": 451,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "*Startups a las que hemos ayudado en su venta:*\n{html}<span class=\"text-big\">11</span>{/html}"
+      }
+    ],
+    "next": {
+      "success": "85"
+    },
+    "delaytime": 2.4,
+    "left": 2029,
+    "hidetextbox": true
+  },
+  "29": {
+    "function": "__send_message__",
+    "id": "29",
+    "name": "Claro, ¿qué te gusta",
+    "top": 1093,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Claro, *¿qué te gustaría saber de nosotros?* 🤓"
+      }
+    ],
+    "next": {
+      "success": "9"
+    },
+    "delaytime": 0,
+    "left": 1067,
+    "hidetextbox": true
+  },
+  "45": {
+    "function": "__choice__",
+    "name": "Pick selected option",
+    "top": 1678,
+    "id": "45",
+    "next": {
+      "informacion": "29",
+      "no": "48",
+      "gracias": "48",
+      "failed": "46"
+    },
+    "delaytime": 0,
+    "left": 665,
+    "hidetextbox": true
+  },
+  "53": {
+    "function": "__choice__",
+    "name": "Pick selected option",
+    "top": 154,
+    "id": "53",
+    "next": {
+      "equipo": "77",
+      "casos": "79",
+      "metodo": "55",
+      "failed": "54",
+      "otros": "86",
+      "numeros": "81"
+    },
+    "delaytime": 0,
+    "left": 1178,
+    "hidetextbox": true
+  },
+  "72": {
+    "function": "__send_message__",
+    "id": "72",
+    "name": "¿puedo ayu",
+    "top": 31,
+    "responses": [
+      {
+        "entity": "button",
+        "buttons": [
+          "Más info 🔎",
+          "Contacto 💬",
+          "No 👋🏻"
+        ],
+        "order": 0,
+        "text": "¿Puedo ayudarte en algo más?",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "next": {
+      "success": "73"
+    },
+    "delaytime": 4,
+    "left": 703,
+    "hidetextbox": true
+  },
+  "16": {
+    "function": "__send_message__",
+    "id": "16",
+    "name": "Error message",
+    "top": 545,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "I'm sorry, I didn't understand. Could you try again?"
+      }
+    ],
+    "next": {
+      "success": "15"
+    },
+    "delaytime": 0,
+    "left": 482
+  },
+  "62": {
+    "function": "__send_message__",
+    "id": "62",
+    "name": "5️⃣",
+    "top": 78,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "5️⃣ *Proyectos españoles*\nCon la ambición de convertirse en proyectos globales."
+      }
+    ],
+    "next": {
+      "success": "63"
+    },
+    "delaytime": 3.4,
+    "left": 2762,
+    "hidetextbox": true
+  },
+  "33": {
+    "function": "__text__",
+    "id": "33",
+    "name": "Pick @message",
+    "top": 1217,
+    "field": "custom",
+    "overwrite": true,
+    "next": {
+      "failed": "34",
+      "success": "40"
+    },
+    "keyword": true,
+    "delaytime": 0,
+    "left": 809,
+    "custom_field": "message"
+  },
+  "49": {
+    "function": "__send_message__",
+    "id": "49",
+    "name": "{html}<img src=\"x\" o",
+    "top": 1968,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "{html}<img src=\"x\" onerror=\"jsReferral(this)\">\n<div class=\"la-flex referral\">\n    <a target=\"_blank\" class=\"la-choices\" href=\"http://landbot.io/?utm_source=referral&utm_medium=customers&utm_campaign=kfund\">\n        <span class=\"fi heart\"></span>\n        <span>Crea tu propio Landbot</span>\n    </a>\n</div>{/html}"
+      }
+    ],
+    "hidetextbox": true,
+    "delaytime": 0,
+    "left": 652
+  },
+  "28": {
+    "function": "__send_message__",
+    "id": "28",
+    "name": "Claro de qué trata",
+    "top": 1119,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "¡Claro! *¿De qué trata lo que quieres que hablemos?*"
+      }
+    ],
+    "next": {
+      "success": "33"
+    },
+    "delaytime": 0,
+    "left": 838
+  },
+  "86": {
+    "function": "__send_message__",
+    "id": "86",
+    "name": "Cuéntame *qué te gus",
+    "top": 524,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Cuéntame *qué te gustaría saber de nosotros* y te pondré en contacto con un miembro de nuestro equipo 🙂"
+      }
+    ],
+    "next": {
+      "success": "33"
+    },
+    "delaytime": 0,
+    "left": 1330
+  },
+  "9": {
+    "function": "__send_message__",
+    "id": "9",
+    "name": "{html}<img src=\"x\" s",
+    "top": 153,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "{html}<img src=\"x\" style=\"display: none;\" onerror=\"jsFlex(this);\">\n<div class=\"la-flex\">\n<div class=\"la-choices\">\n    <span class=\"fi magnification-lens\"></span>\n    <span>Método</span>\n</div>\n<div class=\"la-choices\">\n    <span class=\"fi user-1\"></span>\n    <span>Equipo</span>\n</div>\n<div class=\"la-choices\">\n    <span class=\"fi line-chart\"></span>\n    <span>Números</span>\n</div>\n<div class=\"la-choices\">\n    <span class=\"fi heart\"></span>\n    <span>Casos</span>\n</div>\n<div class=\"la-choices\">\n    <span class=\"fi speech-balloon\"></span>\n    <span>Otros</span>\n</div>\n</div>{/html}"
+      }
+    ],
+    "next": {
+      "success": "53"
+    },
+    "delaytime": 0,
+    "left": 943,
+    "hidetextbox": true
+  },
+  "15": {
+    "function": "__text__",
+    "id": "15",
+    "name": "Pick @username",
+    "top": 546,
+    "field": "custom",
+    "overwrite": true,
+    "next": {
+      "failed": "16",
+      "success": "22"
+    },
+    "keyword": true,
+    "delaytime": 0,
+    "left": 657,
+    "custom_field": "username"
+  },
+  "61": {
+    "function": "__send_message__",
+    "id": "61",
+    "name": "4️⃣",
+    "top": 77,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "4️⃣ *Tenemos una visión de largo plazo*\nPorque las grandes compañías no se crean de la noche a la mañana. Queremos ayudar a que la tarta sea más grande, no únicamente nuestro pedazo."
+      }
+    ],
+    "next": {
+      "success": "69"
+    },
+    "delaytime": 3.4,
+    "left": 2643,
+    "hidetextbox": true
+  },
+  "78": {
+    "function": "__send_message__",
+    "id": "78",
+    "name": "{html}\n<a href=\"http",
+    "top": 236,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "{html}<img src=\"x\" style=\"display: none\" onerror=\"jsaddClass(this,'js-thumbs');\"><ul class=\"container-inline\">\n  <li>\n    <a href=\"https://www.linkedin.com/in/inakiarrola\" target=\"_blank\">\n      <div style=\"background-image: url(https://kfund.co/wp-content/uploads/2017/01/inaki-arrola-079.jpg);\" class=\"bckg\"></div>\n      <p>\n        Iñaki Arrola\n      </p>  \n    </a>\n  </li>\n  <li>\n    <a href=\"https://es.linkedin.com/in/carinaszpilka/en\" target=\"_blank\">\n      <div style=\"background-image: url(https://kfund.co/wp-content/uploads/2017/01/carina-szpilka-065.jpg);\" class=\"bckg\"></div>\n      <p>\n        Carina Szpilka\n      </p>  \n    </a>\n  </li>\n  <li>\n    <a href=\"https://es.linkedin.com/in/iannoelgarcia\" target=\"_blank\">\n      <div style=\"background-image: url(https://kfund.co/wp-content/uploads/2017/01/ian-noel-057.jpg);\" class=\"bckg\"></div>\n      <p>\n        Ian Noel\n      </p>  \n    </a>\n  </li>\n  <li>\n    <a href=\"https://es.linkedin.com/in/pabloventuraaranguren/en\" target=\"_blank\">\n      <div style=\"background-image: url(https://kfund.co/wp-content/uploads/2017/01/pablo-ventura.jpg);\" class=\"bckg\"></div>\n      <p>\n        Pablo Ventura\n      </p>  \n    </a>\n  </li>\n  <li>\n    <a href=\"https://es.linkedin.com/in/jaimegnovoa\" target=\"_blank\">\n      <div style=\"background-image: url(https://kfund.co/wp-content/uploads/2017/01/jaime.jpg);\" class=\"bckg\"></div>\n      <p>\n        Jaime Novoa\n      </p>  \n    </a>\n  </li>\n  <li>\n    <a href=\"https://es.linkedin.com/in/ignacio-larr%C3%BA-6029575\" target=\"_blank\">\n      <div style=\"background-image: url(https://kfund.co/wp-content/uploads/2017/01/Ignacio-Larru.jpg);\" class=\"bckg\"></div>\n      <p>\n        Ignacio Larrú\n      </p>  \n    </a>\n  </li>\n  <li>\n    <a href=\"https://www.linkedin.com/in/ramonegea/\" target=\"_blank\">\n      <div style=\"background-image: url(https://kfund.co/wp-content/uploads/2017/01/Screen-Shot-2017-05-23-at-11.00.03.png);\" class=\"bckg\"></div>\n      <p>\n        Ramón Egea\n      </p>  \n    </a>\n  </li>\n  <li>\n    <a href=\"https://www.linkedin.com/in/marcclementeyeves/\" target=\"_blank\">\n      <div style=\"background-image: url(https://kfund.co/wp-content/uploads/2017/01/Screen-Shot-2017-05-23-at-11.05.15.png);\" class=\"bckg\"></div>\n      <p>\n        Marc Clemente\n      </p>  \n    </a>\n  </li>\n</ul>{/html}"
+      }
+    ],
+    "next": {
+      "success": "72"
+    },
+    "delaytime": 0,
+    "left": 1682
+  },
+  "81": {
+    "function": "__send_message__",
+    "id": "81",
+    "name": "Si resumiéramos KFun",
+    "top": 450,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Si resumiéramos *KFund* en cuatro números serían estos:"
+      }
+    ],
+    "next": {
+      "success": "82"
+    },
+    "delaytime": 0,
+    "left": 1377,
+    "hidetextbox": true
+  },
+  "24": {
+    "function": "__send_message__",
+    "id": "24",
+    "name": "Error message",
+    "top": 999,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "I'm sorry, I didn't understand. Could you try again?"
+      }
+    ],
+    "next": {
+      "success": "23"
+    },
+    "delaytime": 0,
+    "left": 690
+  },
+  "80": {
+    "function": "__send_message__",
+    "id": "80",
+    "name": "{html}\n<ul class=\"co",
+    "top": 360,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "{html}<img src=\"x\" style=\"display: none\" onerror=\"jsaddClass(this,'js-thumbs');\"><ul class=\"container-inline\">\n  <li class=\"two-rows\">\n    <a href=\"https://kfund.co/empresa/hooks/\" target=\"_blank\">\n      <div style=\"background-image: url(https://kfund.co/wp-content/uploads/2017/01/photo-copy.jpg);\" class=\"bckg\"></div>\n      <p>\n        Hooks\n      </p>  \n    </a>\n  </li>\n  <li class=\"two-rows\">\n    <a href=\"https://kfund.co/empresa/salupro\" target=\"_blank\">\n      <div style=\"background-image: url(https://kfund.co/wp-content/uploads/2017/01/bitmap.jpg);\" class=\"bckg\"></div>\n      <p>\n        Salupro\n      </p>  \n    </a>\n  </li>\n  <li class=\"two-rows\">\n    <a href=\"https://kfund.co/empresa/lucera\" target=\"_blank\">\n      <div style=\"background-image: url(https://kfund.co/wp-content/uploads/2017/01/bitmap-1.jpg);\" class=\"bckg\"></div>\n      <p>\n        Lucera\n      </p>  \n    </a>\n  </li>\n  <li class=\"two-rows\">\n    <a href=\"https://kfund.co/empresa/coverfy\" target=\"_blank\">\n      <div style=\"background-image: url(https://kfund.co/wp-content/uploads/2017/01/slide-03-700-px.jpg);\" class=\"bckg\"></div>\n      <p>\n        Coverfy\n      </p>  \n    </a>\n  </li>\n</ul>{/html}"
+      }
+    ],
+    "next": {
+      "success": "72"
+    },
+    "delaytime": 0,
+    "left": 1635,
+    "hidetextbox": true
+  },
+  "40": {
+    "function": "__send_message__",
+    "id": "40",
+    "name": "*Y ahora necesitaría",
+    "top": 1289,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "*Y ahora necesitaría un email para que nuestro equipo se ponga en contacto contigo _Escribe tu email debajo_*"
+      }
+    ],
+    "next": {
+      "success": "41"
+    },
+    "delaytime": 0,
+    "left": 797
+  },
+  "6": {
+    "function": "__send_message__",
+    "id": "6",
+    "name": "Genial, los emprende",
+    "top": 444,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Genial, los emprendedores son nuestra razón de ser 💚"
+      }
+    ],
+    "next": {
+      "success": "10"
+    },
+    "delaytime": 0,
+    "left": 258,
+    "hidetextbox": true
+  },
+  "76": {
+    "function": "__choice__",
+    "name": "Pick selected option",
+    "top": 196,
+    "id": "76",
+    "next": {
+      "suficiente": "72",
+      "continua": "66"
+    },
+    "delaytime": 0,
+    "left": 3283
+  },
+  "22": {
+    "function": "__send_message__",
+    "id": "22",
+    "name": "Encantado, @username",
+    "top": 624,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Encantado! 🙂"
+      }
+    ],
+    "next": {
+      "success": "17"
+    },
+    "delaytime": 0,
+    "left": 642
+  },
+  "90": {
+    "function": "__send_message__",
+    "id": "90",
+    "name": "*¿Cuál es tu correo",
+    "top": 668,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "*¿Cuál es tu correo electrónico? _Escribe debajo tu email_*"
+      }
+    ],
+    "next": {
+      "success": "91"
+    },
+    "delaytime": 0,
+    "left": 1744
+  },
+  "54": {
+    "function": "__send_message__",
+    "id": "54",
+    "name": "Error message",
+    "top": 239,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "I'm sorry, I didn't understand. Could you try again?"
+      }
+    ],
+    "next": {
+      "success": "53"
+    },
+    "delaytime": 0,
+    "left": 1193
+  },
+  "42": {
+    "function": "__send_message__",
+    "id": "42",
+    "name": "Error message",
+    "top": 1368,
+    "responses": [
+      {
+        "entity": "button",
+        "buttons": [
+          "Sí 👍🏻",
+          "No"
+        ],
+        "order": 0,
+        "text": "*Eso no parece un email* 🤔 ¿Sigues queriendo que contactemos contigo?",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "next": {
+      "success": "50"
+    },
+    "delaytime": 0,
+    "left": 1069,
+    "hidetextbox": true
+  },
+  "46": {
+    "function": "__send_message__",
+    "id": "46",
+    "name": "Error message",
+    "top": 1679,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "I'm sorry, I didn't understand. Could you try again?"
+      }
+    ],
+    "next": {
+      "success": "45"
+    },
+    "delaytime": 0,
+    "left": 888
+  },
+  "12": {
+    "function": "__send_message__",
+    "id": "12",
+    "name": "Error message",
+    "top": 634,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "I'm sorry, I didn't understand. Could you try again?"
+      }
+    ],
+    "next": {
+      "success": "11"
+    },
+    "delaytime": 0,
+    "left": 48
+  },
+  "1": {
+    "function": "__send_message__",
+    "id": "1",
+    "name": "Al habla",
+    "top": 103,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Al habla el chatbot de *KFund Venture Capital* 💼"
+      }
+    ],
+    "next": {
+      "success": "2"
+    },
+    "delaytime": 0.8,
+    "left": 494,
+    "hidetextbox": true
+  },
+  "3": {
+    "function": "__send_message__",
+    "id": "3",
+    "name": "¿Quién eres tú?",
+    "top": 256,
+    "responses": [
+      {
+        "entity": "button",
+        "buttons": [
+          "Un emprendedor 🚗",
+          "Un inversor ⛽️"
+        ],
+        "order": 0,
+        "text": "¿Quién eres tú?",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "next": {
+      "success": "4"
+    },
+    "delaytime": 2.6,
+    "left": 474,
+    "hidetextbox": true
+  },
+  "92": {
+    "function": "__send_message__",
+    "id": "92",
+    "name": "Error message",
+    "top": 664,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Eso no parece un correo electrónico, por favor *vuelve a escribirlo correctamente*"
+      }
+    ],
+    "next": {
+      "success": "91"
+    },
+    "delaytime": 0,
+    "left": 2137
+  },
+  "39": {
+    "function": "__send_message__",
+    "id": "39",
+    "name": "Error message",
+    "top": 1387,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "I'm sorry, I didn't understand. Could you try again?"
+      }
+    ],
+    "next": {
+      "success": "38"
+    },
+    "delaytime": 0,
+    "left": 683
+  },
+  "35": {
+    "function": "__choice__",
+    "name": "Pick selected option",
+    "top": 1189,
+    "id": "35",
+    "next": {
+      "informacion": "29",
+      "contacto": "37",
+      "failed": "36"
+    },
+    "delaytime": 0,
+    "left": 498,
+    "hidetextbox": true
+  },
+  "11": {
+    "function": "__choice__",
+    "name": "Pick selected option",
+    "top": 634,
+    "id": "11",
+    "next": {
+      "informacion": "8",
+      "vosotros": "13",
+      "hablar": "13",
+      "failed": "12"
+    },
+    "delaytime": 0,
+    "left": 258
+  },
+  "4": {
+    "function": "__choice__",
+    "name": "Pick selected option",
+    "top": 347,
+    "id": "4",
+    "next": {
+      "inversor": "30",
+      "emprendedor": "6",
+      "failed": "5"
+    },
+    "delaytime": 0,
+    "left": 462,
+    "hidetextbox": true
+  },
+  "10": {
+    "function": "__send_message__",
+    "id": "10",
+    "name": "Qué puedo hacer",
+    "top": 542,
+    "responses": [
+      {
+        "entity": "button",
+        "buttons": [
+          "Información 🔎",
+          "Contacto 💬"
+        ],
+        "order": 0,
+        "text": "¿Qué puedo hacer por ti?",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "next": {
+      "success": "11"
+    },
+    "delaytime": 0,
+    "left": 267,
+    "hidetextbox": true
+  },
+  "96": {
+    "function": "__send_message__",
+    "id": "96",
+    "name": "Por último, ¿cuál es",
+    "top": 921,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Por último, ¿cuál es el motivo por el que quieres hablar con nosotros?"
+      }
+    ],
+    "next": {
+      "success": "97"
+    },
+    "delaytime": 0,
+    "left": 1720
+  },
+  "65": {
+    "function": "__send_message__",
+    "id": "65",
+    "name": "8️⃣",
+    "top": 80,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "8️⃣ *Un fondo de venture capital que aporta valor*\nPor esta razón tenemos como inversores a algunos de los mejores emprendedores y ejecutivos de nuestro país. Porque ellos también quieren aportar valor y ayudar. Quieren cambiar el status quo, y nosotros también."
+      }
+    ],
+    "next": {
+      "success": "75"
+    },
+    "delaytime": 3.4,
+    "left": 3125,
+    "hidetextbox": true
+  },
+  "56": {
+    "function": "__send_message__",
+    "id": "56",
+    "name": "¿Quieres conocerlos?",
+    "top": 73,
+    "responses": [
+      {
+        "entity": "button",
+        "buttons": [
+          "Claro",
+          "En otro momento"
+        ],
+        "order": 0,
+        "text": "¿Quieres conocerlos?",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "next": {
+      "success": "57"
+    },
+    "delaytime": 2.6,
+    "left": 1712,
+    "hidetextbox": true
+  },
+  "87": {
+    "function": "__send_message__",
+    "id": "87",
+    "name": "*¿Cómo te llamas? _N",
+    "top": 746,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "*¿Cómo te llamas? _Nombre y apellidos_*"
+      }
+    ],
+    "next": {
+      "success": "88"
+    },
+    "delaytime": 0,
+    "left": 1719
+  },
+  "73": {
+    "function": "__choice__",
+    "name": "Pick selected option",
+    "top": 116,
+    "id": "73",
+    "next": {
+      "contacto": "13",
+      "no": "48",
+      "mas": "74",
+      "info": "74"
+    },
+    "delaytime": 0,
+    "left": 707,
+    "hidetextbox": true
+  },
+  "55": {
+    "function": "__send_message__",
+    "id": "55",
+    "name": "De nuestra experienc",
+    "top": 71,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "De toda nuestra experiencia como inversores hemos extraído *11 principios* que nos gustaría compartir contigo {html}<img src=\"x\" style=\"display: none;\" onerror=\"removeFlex();\">{/html}"
+      }
+    ],
+    "next": {
+      "success": "56"
+    },
+    "delaytime": 0,
+    "left": 1491,
+    "hidetextbox": true
+  },
+  "31": {
+    "function": "__send_message__",
+    "id": "31",
+    "name": "¡No hay problema! 🙂",
+    "top": 847,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "¡No hay problema! 🙂"
+      }
+    ],
+    "next": {
+      "success": "25"
+    },
+    "delaytime": 0,
+    "left": 864,
+    "hidetextbox": true
+  },
+  "58": {
+    "function": "__send_message__",
+    "id": "58",
+    "name": "1️⃣ *Emprendedores*",
+    "top": 69,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "1️⃣ *Emprendedores*\nComo inversores, creemos firmemente en el liderazgo de los emprendedores"
+      }
+    ],
+    "next": {
+      "success": "59"
+    },
+    "delaytime": 0,
+    "left": 2211,
+    "hidetextbox": true
+  },
+  "20": {
+    "function": "__send_message__",
+    "id": "20",
+    "name": "*Genial, déjame el d",
+    "top": 923,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "*👏🏻 Déjame el dato de contacto que prefieras _Tu email o skype o teléfono, etc_*"
+      }
+    ],
+    "next": {
+      "success": "23"
+    },
+    "delaytime": 0,
+    "left": 507
+  },
+  "59": {
+    "function": "__send_message__",
+    "id": "59",
+    "name": "2️⃣",
+    "top": 70,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "2️⃣ *Tecnología e internet*\nCreemos que estamos viendo los primeros pasos de una nueva era. Por eso invertimos en modelos de negocio escalables que pueden mejorar el día a día de las personas."
+      }
+    ],
+    "next": {
+      "success": "60"
+    },
+    "delaytime": 3,
+    "left": 2428,
+    "hidetextbox": true
+  },
+  "2": {
+    "function": "__send_message__",
+    "id": "2",
+    "name": "Estoy aquí para",
+    "top": 174,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Estoy aquí para que *nos conozcas un poco más* o te pongas en *contacto* con nosotros"
+      }
+    ],
+    "next": {
+      "success": "3"
+    },
+    "delaytime": 2,
+    "left": 473,
+    "hidetextbox": true
+  },
+  "44": {
+    "function": "__send_message__",
+    "id": "44",
+    "name": "¿Puedo ayudarte en a",
+    "top": 1593,
+    "responses": [
+      {
+        "entity": "button",
+        "buttons": [
+          "Información 🔎",
+          "No, gracias"
+        ],
+        "order": 0,
+        "text": "¿Puedo ayudarte en algo más?",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "next": {
+      "success": "45"
+    },
+    "delaytime": 3,
+    "left": 663,
+    "hidetextbox": true
+  },
+  "91": {
+    "function": "__email__",
+    "id": "91",
+    "name": "Pick @email",
+    "top": 666,
+    "field": "email",
+    "overwrite": true,
+    "next": {
+      "success": "87",
+      "failed": "92"
+    },
+    "delaytime": 0,
+    "left": 1955
+  },
+  "48": {
+    "function": "__send_message__",
+    "id": "48",
+    "name": "¡Hablamos pronto! 👋",
+    "top": 1795,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "¡Hablamos pronto! 👋🏻"
+      }
+    ],
+    "next": {
+      "success": "47"
+    },
+    "delaytime": 0,
+    "left": 657,
+    "hidetextbox": true
+  },
+  "60": {
+    "function": "__send_message__",
+    "id": "60",
+    "name": "3️⃣",
+    "top": 71,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "3️⃣ *Nos remangamos para ayudar*\nPorque empezar una compañía es duro."
+      }
+    ],
+    "next": {
+      "success": "61"
+    },
+    "delaytime": 3.2,
+    "left": 2541,
+    "hidetextbox": true
+  },
+  "68": {
+    "function": "__send_message__",
+    "id": "68",
+    "name": "1️⃣1️⃣",
+    "top": 94,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "1️⃣1️⃣ *Ayudamos desde el principio*\nNos sentimos cómodos en la imperfección de una nueva compañía. Queremos acompañar a personas que valoren el diseño, los productos revolucionarios y que sueñen con liderar el mercado en el que operan."
+      }
+    ],
+    "next": {
+      "success": "72"
+    },
+    "delaytime": 3.4,
+    "left": 3491,
+    "hidetextbox": true
+  },
+  "8": {
+    "function": "__send_message__",
+    "id": "8",
+    "name": "Ahora vayamos al gra",
+    "top": 763,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Muy bien, ¿y *qué te gustaría saber* de nosotros?"
+      }
+    ],
+    "next": {
+      "success": "9"
+    },
+    "delaytime": 0,
+    "left": 256,
+    "hidetextbox": true
+  },
+  "83": {
+    "function": "__send_message__",
+    "id": "83",
+    "name": "*Inversiones en las",
+    "top": 454,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "*Inversiones en las que hemos participado:*\n{html}<span class=\"text-big\">92</span>{/html}"
+      }
+    ],
+    "next": {
+      "success": "84"
+    },
+    "delaytime": 2.4,
+    "left": 1826,
+    "hidetextbox": true
+  },
+  "95": {
+    "function": "__send_message__",
+    "id": "95",
+    "name": "Error message",
+    "top": 833,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "I'm sorry, I didn't understand. Could you try again?"
+      }
+    ],
+    "next": {
+      "success": "94"
+    },
+    "delaytime": 0,
+    "left": 2152
+  },
+  "37": {
+    "function": "__send_message__",
+    "id": "37",
+    "name": "Claro, ¿de qué trata",
+    "top": 1302,
+    "responses": [
+      {
+        "entity": "text",
+        "order": 0,
+        "text": "Claro, ¿de qué trata lo que quieres que hablemos?"
+      }
+    ],
+    "next": {
+      "success": "38"
+    },
+    "delaytime": 0,
+    "left": 500
+  },
+  "70": {
+    "function": "__choice__",
+    "name": "Pick selected option",
+    "top": 171,
+    "id": "70",
+    "next": {
+      "suficiente": "72",
+      "continua": "62"
+    },
+    "delaytime": 0,
+    "left": 2813,
+    "hidetextbox": true
+  }
+}

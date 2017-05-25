@@ -17,11 +17,11 @@ $blue-light: #7db9e8;
 $light-gray: #f1f1f1;
 
 // Relative colors
-$accent: $pink;
+$accent: #004962;
 $accent-0: lighten($accent,3%);
 $accent-1: darken(saturate($accent,20%),11%);
 $light: $white;
-$contrast: $violet;
+$contrast: #004962;
 $contrast-0: lighten($contrast,10%);
 $contrast-light: lighten($contrast,30%);
 
@@ -30,10 +30,10 @@ $url: 'http://landbot.io';
 
 // FONTS
 // If embed on page
-$embfonts: true; // Set to false if external stylesheet
-$font: "Gotham Rounded";
+$embfonts: false; // Set to false if external stylesheet
+$font: "Lato";
 $font-type: sans-serif;
-$font-size: 14px;
+$font-size: 15px;
 $font-url: "https://guidango.com/fonts/gotham";
 $font-regular-slash: "gotham-rounded-book";
 $font-medium-slash: "gotham-rounded-medium";
@@ -46,14 +46,14 @@ $woff: true;
 $ttf: true;
 $svg: true;
 // If not embed on page (external stylesheet)
-$externalfonturl: false;
+$externalfonturl: 'https://fonts.googleapis.com/css?family=Lato';
 // $externalfonturl: 'https://fonts.googleapis.com/css?family=Lato';
 
 // BACKGROUND
-$background-type: 'gradient'; // image | gradient | color | video
+$background-type: 'video'; // image | gradient | color | video
 $gradient-from: $orange;
 $gradient-to: $orange-light;
 $background-image-url: 'https://storage.googleapis.com/media.yexir.com/channels_back/31.png';
-$background-color: transparent;
-$video-texture: gradient; // gradient | image | color
+$background-color: #004962;
+$video-texture: color; // gradient | image | color
 $box-footer: $accent;

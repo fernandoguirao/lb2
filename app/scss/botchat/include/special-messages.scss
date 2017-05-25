@@ -182,3 +182,78 @@
     }
   }
 }
+
+
+// THUMBS 2
+.container-inline li {
+  display: inline-block;
+  background: $accent;
+  text-align: center;
+  width: calc(33.33% - 4%);
+  margin: 3px 5px;
+  border-radius: 4px;
+  overflow: hidden;
+  &.two-rows {
+    width: calc(49% - 4%);
+  }
+  @media screen and (max-width: 700px) {
+    width: calc(100%);
+    margin: 0;
+    .bckg {
+      height: 143px!important;
+    }
+  }
+}
+
+ul.container-inline {
+  padding: 0;
+  // text-align: center;
+  margin: 0 0 -10px;
+}
+
+.container-inline img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+.container-inline li a {
+  color: white!important;
+  text-decoration: none;
+  font-size: 11px!important;
+  /* border-radius: 3px; */
+  /* overflow: hidden; */
+}
+
+#hu-container-widget #hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content .container-inline li a p {
+  padding: 7px 3px;
+  font-size: 12px!important;
+  text-transform: uppercase;
+    white-space: inherit;
+}
+
+.container-inline .bckg {
+  display: block;
+  height: 90px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.container-inline li:hover {
+  background-color: lighten($accent,10%);
+}
+
+#hu-container-widget #hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content.js-thumbs {
+  background-color: transparent!important;
+  padding: 0!important;
+  margin: 0 0 -10px 0!important;
+}
+
+.text-big {
+  font-size: 23px;
+  margin-top: 6px;
+  display: block;
+  font-weight: bold!important;
+  margin-bottom: 2px;
+}
