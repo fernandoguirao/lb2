@@ -1,0 +1,51 @@
+{
+  "0": {
+    "name": "yes",
+    "cathegory": "categoría",
+    "image": "http://www.cronoshare.com/assets/ld/test/img/asistente_3-451a2fc460e277d3518b0d08cc55516a.jpg",
+    "keyword": "yes",
+    "score": 100
+  },
+  "1": {
+    "name": "tell",
+    "cathegory": "categoría",
+    "image": "http://www.cronoshare.com/assets/ld/test/img/asistente_3-451a2fc460e277d3518b0d08cc55516a.jpg",
+    "keyword": "tell",
+    "score": 50
+  },
+  "2": {
+    "name": "me",
+    "cathegory": "categoría2",
+    "image": "http://www.cronoshare.com/assets/ld/test/img/asistente_3-451a2fc460e277d3518b0d08cc55516a.jpg",
+    "keyword": "me",
+    "score": 40
+  },
+  "3": {
+    "name": "more",
+    "cathegory": "categoría3",
+    "image": "http://www.cronoshare.com/assets/ld/test/img/asistente_3-451a2fc460e277d3518b0d08cc55516a.jpg",
+    "keyword": "more",
+    "score": 30
+  },
+  "4": {
+    "name": "signup",
+    "cathegory": "categoría4",
+    "image": "http://www.cronoshare.com/assets/ld/test/img/asistente_3-451a2fc460e277d3518b0d08cc55516a.jpg",
+    "keyword": "signup",
+    "score": 20
+  },
+  "5": {
+    "name": "yes sir",
+    "cathegory": "categoría5",
+    "image": "http://www.cronoshare.com/assets/ld/test/img/asistente_3-451a2fc460e277d3518b0d08cc55516a.jpg",
+    "keyword": "yes sir",
+    "score": 10
+  },
+  "6": {
+    "name": "tell me more",
+    "cathegory": "categoría6",
+    "image": "http://www.cronoshare.com/assets/ld/test/img/asistente_3-451a2fc460e277d3518b0d08cc55516a.jpg",
+    "keyword": "tell me more",
+    "score": 400
+  }
+}

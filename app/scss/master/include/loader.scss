@@ -131,3 +131,38 @@
     top: -193px;
   }
 }
+
+.loader-referral {
+  opacity: 1;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 53px;
+  font-family: $font, $font-type;
+  z-index: 100;
+  span {
+    display: block;
+    color: $accent;
+    font-size: 10px;
+    text-transform: uppercase;
+    margin-bottom: -4px;
+  }
+  a {
+    color: $accent;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    i {
+      text-transform: none;
+      font-style: normal;
+      font-size: 13px;
+      font-weight: normal;
+    }
+  }
+  @if $background-type == 'video'{
+    span,a {
+      color: white;
+    }
+  }
+}

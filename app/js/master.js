@@ -1,5 +1,58 @@
+
+var variables = [];
+
+function getVariable(variableName, variableValue){
+  variables[variableName] = variableValue;
+  console.log(variables);
+}
+
+function returnVariable(variableName) {
+  return variableName;
+}
+
+function loadVariable(variableName){
+  var variableValue = variables[variableName];
+  console.log(variableValue);
+  if(variables[variableName]){
+    var popup1 = '<div class="popup"><p class="text"><span>Confirma que tu ';
+    var popup2 = ' es <b>';
+    var popup3 = '</b></span><span class="btts"><i class="btt" onclick="fakeMessage(\'';
+    var popup4 = '\');closePopup();">Sí</i><i class="btt" onclick="closePopup();">No</i></span></p><p></p><p></p></div>';
+    var messagePopup = popup1 + variableName + popup2 + variableValue + popup3 + variableValue
+     + popup4;
+     $('.hu-composer-text').before(messagePopup);
+   }
+}
+
+function closePopup() {
+  $('.popup').remove();
+}
+
+function loadButtons(target,jsonURL) {
+
+  $.getJSON( jsonURL, function( data ) {
+    var items = [];
+    $.each( data, function( key, val ) {
+      items.push( "<div class='la-choices' data-keyword='"+val['keyword']+"'><img src='"+val['image']+"' alt=''><span>" + val['name'] + "</span></div>" );
+    });
+    $(target).parent().parent().addClass('js-flex js-thumbs');
+
+    $(target).parent().parent().html('<div class="la-flex">'+items+'</div>');
+
+    $('.la-choices').click(function(){
+      var textVar = $(this).data('keyword');
+      fakeMessage(textVar, true);
+      $('.js-flex').parent().parent().parent().parent().remove();
+    });
+  });
+
+}
+
+
+
 function jsFlex(target){
   $(target).parent().parent().addClass('js-flex');
+  $(target).parent().parent().parent().parent().parent().parent().addClass('js-flexparent');
   $(target).parent().parent().children('.la-flex').children().click(function(){
     var textVar = $(this).text();
     fakeMessage(textVar, true);
@@ -17,10 +70,10 @@ function jsaddClass(target,huclass){
 function jsReferral(target){
   $(target).parent().parent().parent().prev().addClass('js-referral');
   $(target).parent().parent().addClass('js-flex');
-  $(target).parent().parent().children('.la-flex').children().click(function(){
-    var textVar = $(this).text();
-    fakeMessage(textVar, true);
-  });
+  // $(target).parent().parent().children('.la-flex').children().click(function(){
+  //   var textVar = $(this).text();
+  //   fakeMessage(textVar, true);
+  // });
 };
 
 function identifyUser(flag, data) {
@@ -106,12 +159,16 @@ function removeClass(){
 // ADD CLASS REMOVE CLASS
 function showLoader(){
   var __loader = document.querySelector(".sk-folding-cube");
+  var __loader2 = document.querySelector(".loader-referral");
   if (__loader) __loader.style.opacity = "1";
+  if (__loader) __loader2.style.opacity = "1";
 }
 
 function hideLoader(){
   var __loader = document.querySelector(".sk-folding-cube");
+  var __loader2 = document.querySelector(".loader-referral");
 	if (__loader) __loader.style.opacity = "0";
+  if (__loader2) __loader2.style.opacity = "0";
 }
 
 function getEmailFromURL(){
@@ -121,4 +178,114 @@ function getEmailFromURL(){
   var matches = url.match(emailRegExp);
   var result = matches ? matches[0].replace(trashRegExp, '') : false;
   return result;
+}
+
+function loadSearch(elem, path, callback){
+  var $elem = $(elem);
+  var $container = $elem.parent().parent();
+  var $paragraph = $elem.parent();
+  $paragraph.fadeTo(0, 0);
+  if ( $elem.length > 0) {
+    $.ajax(
+      {
+        url: path,
+        type: 'GET',
+        error: function() {
+          if ( typeof(callback) == 'function' ) callback(false);
+        },
+        success: function(result) {
+          var __data;
+          if ( typeof(result) == 'object' ) __data = result;
+          if (__data) {
+
+            var $selectize = $('<select placeholder="Type here...">');
+            var __dataFormatted = $.map( __data, function( elem, index ){
+              return $.extend({}, elem );
+            });
+            $container.addClass('hu-message-content-search');
+            $container.append( $selectize );
+            $selectize.selectize({
+              maxOptions: 4,
+              valueField: 'keyword',
+              labelField: 'name',
+              searchField: ['name'],
+              sortField: [{ field: 'score', direction: 'desc' }],
+              placeholder: $paragraph.text(),
+              preload: true,
+              highlight: true,
+              openOnFocus: false,
+              create: false,
+              onItemAdd: function(keyword, $item){
+                fakeMessage(keyword, true);
+                $item.parent().parent().parent().parent().parent().parent().remove();
+                setTimeout( this.destroy.bind(this), 100);
+              },
+              onInitialize: function(){
+                $paragraph.fadeTo(200, 1);
+                helloumi.webchat.umichatgui.scrollBottom();
+              },
+              onType: function(text) {
+                if (text.length > 0) {
+                  this.$dropdown_content.addClass('hu-searching');
+                } else {
+                  this.$dropdown_content.removeClass('hu-searching');
+                }
+                helloumi.webchat.umichatgui.scrollBottom();
+              },
+              onFocus: function() {
+                this.$dropdown_content.removeClass('hu-searching');
+              },
+              onBlur: function() {
+                if (this.$dropdown_content.hasClass('hu-searching')) {
+                  this.$dropdown_content.removeClass('hu-searching');
+                  this.refreshOptions();
+                }
+              },
+              score: function(search) {
+                  if (search.length > 0) {
+                    var score = this.getScoreFunction(search);
+                    return function(item) {
+                      console.log(item.name + ': ' + (score(item) * (1 + Math.min(item.score / 100, 1))));
+                      return score(item) * (1 + Math.min(item.score / 100, 1));
+                    };
+                  } else {
+                    return function(item) {
+                      console.log(item.name + ': ' + (1 + Math.min(item.score / 100, 1)));
+                      return (1 + Math.min(item.score / 100, 1));
+                    };
+                  }
+              },
+              options: __dataFormatted,
+              render: {
+                option: function(item, escape) {
+                  return '<div class="hu-selectize-item" data-keyword="' + escape(item.keyword) + '" onclick="javascript:selectizeClick(this);">' +
+                    '<span class="hu-selectize-avatar" style="background-image: url(' + escape(item.image) + ')"></span>' +
+                    '<span class="hu-selectize-text">' + escape(item.name) + '</span></div>';
+                }
+              }
+            })
+            $paragraph.remove();
+            $container.find('.selectize-input').click(); // Foces open
+            if ( typeof(callback) == 'function' ) callback(true);
+          } else {
+            if ( typeof(callback) == 'function' ) callback(false);
+          }
+        }
+      }
+    );
+  }
+}
+
+
+function selectizeClick( elem ){
+  var $elem = $(elem);
+  var __keyword = $elem.data('keyword');
+  if (__keyword) {
+    var $selectize = $elem.parent().parent().parent().parent().find('select.selectized');
+    if ($selectize.length > 0) {
+      fakeMessage(__keyword, true);
+      $selectize[0].selectize.destroy();
+      $selectize.parent().parent().parent().parent().parent().remove();
+    }
+  }
 }
