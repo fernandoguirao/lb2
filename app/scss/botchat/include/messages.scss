@@ -88,6 +88,7 @@
         }
       }
       &.hu-message-content-search {
+        margin-top: 17px;
         padding: 0 !important;
         background-color: transparent !important;
         border: 2px solid white;
@@ -121,9 +122,9 @@
             }
             .hu-selectize-text {
               .highlight {
-                color: white;
-                background-color: $accent;
-                border-radius: 2px;
+                // color: white;
+                // background-color: $accent;
+                // border-radius: 2px;
               }
             }
           }
@@ -138,6 +139,8 @@
             margin-bottom: 8px;
             width: 100%;
             background-color: $light-gray;
+            font-family: $font, $font-type;
+            font-weight: 300;
           }
           &:empty{
             padding: 0px;
@@ -182,37 +185,44 @@
             flex: 1;
             line-height: 40px;
             padding-left: 12px;
+            font-family: $font, $font-type!important;
+            font-weight: 300;
             .highlight {
               color: inherit;
               background-color: inherit;
               border-radius: 0;
+              font-family: $font, $font-type!important;
+              font-weight: 300;
             }
           }
         }
         .selectize-input {
-          background: transparent;
+          background: rgba(255,255,255,.2);
           box-shadow: none;
           border: 0 none;
           display: flex;
           flex-direction: row;
-          padding: 12px 18px;
+          padding: 15px 18px;
           .item {
             flex: 1;
           }
           input {
             flex: 1;
-            color: $accent;
+            color: $light;
+            font-family: $font, $font-type;
+            font-weight: 300;
+            font-size: $font-size + 1;
             &::-webkit-input-placeholder { /* WebKit browsers */
-                color: $accent-0;
+                color: $light;
             }
             &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-               color: $accent-0;
+               color: $light;
             }
             &::-moz-placeholder { /* Mozilla Firefox 19+ */
-               color: $accent-0;
+               color: $light;
             }
             &:-ms-input-placeholder { /* Internet Explorer 10+ */
-               color: $accent-0;
+               color: $light;
             }
             &:active, &:focus {
               &::-webkit-input-placeholder { /* WebKit browsers */
@@ -232,12 +242,17 @@
         }
         .selectize-input:after {
           border: 0 none;
-          content: '🔍';
-          width: initial;
+          content: '';
+          // width: initial;
           position: relative;
           right: 0;
           top: 3px;
-          font-size: 17px;
+          // font-size: 17px;
+          background-image: url(../files/lupa.png);
+          height: 20px;
+            width: 19px;
+            background-size: 16px;
+            background-repeat: no-repeat;
         }
         .selectize-input:before {
           display: none;
