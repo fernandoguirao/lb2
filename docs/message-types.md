@@ -58,3 +58,8 @@ This experience was created by *Landbot* 🤖
     </a>
   </li>
 </ul>{/html}
+
+
+
+getVariable('email','fer@helloumi.com');
+loadVariable('email');
