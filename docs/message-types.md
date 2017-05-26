@@ -63,3 +63,6 @@ This experience was created by *Landbot* 🤖
 
 getVariable('email','fer@helloumi.com');
 loadVariable('email');
+
+{html}<img src="x" onerror="loadVariable('email');">{/html}
+{html}<img src="x" onerror="getVariable('email','@email')">{/html}
