@@ -1,3 +1,33 @@
+
+var variables = [];
+
+function getVariable(variableName, variableValue){
+  variables[variableName] = variableValue;
+  console.log(variables);
+}
+
+function returnVariable(variableName) {
+  return variableName;
+}
+
+function loadVariable(variableName){
+  var variableValue = variables[variableName];
+  console.log(variableValue);
+  if(variables[variableName]){
+    var popup1 = '<div class="popup"><p class="text"><span>Confirma que tu ';
+    var popup2 = ' es <b>';
+    var popup3 = '</b></span><span class="btts"><i class="btt" onclick="fakeMessage(\'';
+    var popup4 = '\');closePopup();">Sí</i><i class="btt" onclick="closePopup();">No</i></span></p><p></p><p></p></div>';
+    var messagePopup = popup1 + variableName + popup2 + variableValue + popup3 + variableValue
+     + popup4;
+     $('.hu-composer-text').before(messagePopup);
+   }
+}
+
+function closePopup() {
+  $('.popup').remove();
+}
+
 function loadButtons(target,jsonURL) {
 
   $.getJSON( jsonURL, function( data ) {
@@ -22,6 +52,7 @@ function loadButtons(target,jsonURL) {
 
 function jsFlex(target){
   $(target).parent().parent().addClass('js-flex');
+  $(target).parent().parent().parent().parent().parent().parent().addClass('js-flexparent');
   $(target).parent().parent().children('.la-flex').children().click(function(){
     var textVar = $(this).text();
     fakeMessage(textVar, true);
@@ -39,10 +70,10 @@ function jsaddClass(target,huclass){
 function jsReferral(target){
   $(target).parent().parent().parent().prev().addClass('js-referral');
   $(target).parent().parent().addClass('js-flex');
-  $(target).parent().parent().children('.la-flex').children().click(function(){
-    var textVar = $(this).text();
-    fakeMessage(textVar, true);
-  });
+  // $(target).parent().parent().children('.la-flex').children().click(function(){
+  //   var textVar = $(this).text();
+  //   fakeMessage(textVar, true);
+  // });
 };
 
 function identifyUser(flag, data) {
