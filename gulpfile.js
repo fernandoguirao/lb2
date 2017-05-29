@@ -137,10 +137,26 @@ gulp.task('html', () => {
         return file.contents.toString('utf8');
     }})))
     .pipe($.replace(varRegex, replaceVar))
-    .pipe(gulp.dest(`${path.dist.base}`))
+    .pipe(gulp.dest(`${path.dist.base}`));
+
+  // index.local.html
+  let index_local = gulp.src([`${path.app.base}index.html`])
+    .pipe($.rename({ suffix: '.local'}))
+    .pipe($.inject(gulp.src([`${path.app.base}snippet.local.html`]), {
+      starttag: '<!-- inject:snippet:{{ext}} -->',
+      transform: function(filePath, file) {
+        return file.contents.toString('utf8');
+    }}))
+    .pipe($.if(client['background-video'], $.inject(gulp.src([ `${path.app.base}video.html` ]), {
+      starttag: '<!-- inject:video:{{ext}} -->',
+      transform: function(filePath, file) {
+        return file.contents.toString('utf8');
+    }})))
+    .pipe($.replace(varRegex, replaceVar))
+    .pipe(gulp.dest(`${path.dist.base}`));
 
   // Stream merge
-  return merge(index, index_dev, index_test);
+  return merge(index, index_dev, index_test, index_local);
 });
 gulp.task('html-browser-sync', ['html'], (done) => {
   browserSync.reload();

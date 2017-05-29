@@ -7,7 +7,7 @@ npm install
 
 ## Desarrollo
 Ejecutar `npm start` para iniciar las tareas de automatización con *gulp*.
-Se abrirá automáticamente una página ofreciendo el servidor local de la app en `http://localhost:8000`.
+Se abrirá automáticamente una página ofreciendo el servidor local de la app en `http://localhost:8080`.
 
 #### Modus Operandi
 El flujo de trabajo se basa en la adición/edición de archivos en directorio `app/`. *Gulp* se encargará de generar los archivos finales en el directorio `build/`.

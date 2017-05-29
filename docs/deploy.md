@@ -1,6 +1,7 @@
-### Deploy a servidor FTP
+## Deploy a servidor FTP
 
 1. Subida automática a enlace principal. Ejemplo: `https://landbot.io/`
+
 Es necesario crear un archivo secreto (un archivo secreto contiene la extensión `.secret.conf.json` y está incluido en el **.gitignore**) llamado `new-client.secret.conf.json` (es importante nombrarlo exactamente como se indica, sustituyendo `new-client` por el nombre del cliente) con la siguiente estructura:
 ```javascript
 // new-client.secret.conf.json
@@ -24,9 +25,12 @@ npm run deploy
 ```
 2. Subida manual: Consiste en subir archivos de la carpeta build/ al servidor de producción mediante cualquier interfaz de cliente FTP. Ejemplo: [FileZilla](https://filezilla-project.org/)
 
-### landbot.io/test
 
-1. Subida automática a: `https://landbot.io/test/`
+### Deploy a servidor de test FTP
+
+1. Subida automática a servidor de test. Ejemplo: `https://landbot.io/test/`
+
+Crear archivo secreto de nombre `new-client-test.secret.conf.json` con los parámetros descritos en el apartado anterior.
 ```bash
 npm run deploy-test
 ```

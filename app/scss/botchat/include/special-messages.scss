@@ -317,3 +317,20 @@ ul.container-inline {
   }
 
 }
+
+#hu-container-widget .la-flex .la-choices {
+  flex-basis: 30%;
+  @media screen and (max-width: 800px) {
+    flex-basis: 33%!important;
+  }
+}
+
+.container-inline li.two-rows {
+  width: calc(33% - 3%);
+  @media screen and (max-width: 800px) {
+    width: calc(49% - 2%);
+    .bckg {
+      height: 64px !important
+    }
+  }
+}

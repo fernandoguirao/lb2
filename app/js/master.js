@@ -1,3 +1,13 @@
+function jsfakeMessage(target){
+  console.log('hola');
+  $(target).parent().parent().children('.container-inline').children('.two-rows').children('a').click(function(e){
+    e.preventDefault();
+    console.log('hola');
+    var textVar = $(this).text();
+    fakeMessage(textVar, true);
+    $('.two-rows').remove();
+  });
+}
 
 var variables = [];
 
