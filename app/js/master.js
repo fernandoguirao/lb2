@@ -109,7 +109,7 @@ function forabotTypingState( data ){
 }
 
 function forabotMessageReceived( message ) {
-  var __timestamp = window.jsbotTimestamp = (window.jsbotTimestamp) ? window.jsbotTimestamp + 1 : 1;
+  var __timestamp = window.jsbotTimestamp = (window.jsbotTimestamp) ? window.jsbotTimestamp + 0.000001 : 0.000001;
   var __datetime = new Date(__timestamp);
   var __message = {
     key: 'jsbot-' + __timestamp,
