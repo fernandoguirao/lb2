@@ -91,6 +91,38 @@ function identifyUser(flag, data) {
   }
 };
 
+function forabotTypingState( data ){
+  helloumi.webchat.umichatcore.setTypingState(-22);
+  setTimeout(function(){
+    helloumi.webchat.umichatcore.setTypingState('');
+  }, data.timeout);
+}
+
+function forabotMessageReceived( message ) {
+  var __timestamp = window.jsbotTimestamp = (window.jsbotTimestamp) ? window.jsbotTimestamp + 1 : 1;
+  var __datetime = new Date(__timestamp);
+  var __message = {
+    key: 'jsbot-' + __timestamp,
+    message: message.text,
+    title: message.text,
+    timestamp: __timestamp,
+    time: helloumi.utils.date.hhmm( __datetime ),
+    day: helloumi.utils.date.yyyymmdd( __datetime ),
+    readClass: 'hu-js-readed',
+    url: message.image,
+    samurai: -22,
+    authorClass: 'hu-messenger-message-brand',
+    type: (message.image) ? 'image' : 'dialog',
+    buttons: $.map(message.buttons, function(elem,index) {
+      return elem.caption;
+    }),
+    payloads: $.map(message.buttons, function(elem,index) {
+      return elem.caption;
+    })
+  }
+  helloumi.webchat.umichatcore.loadMessage(__message);
+}
+
 function helloumiLivechatLoaded() {
   // document.querySelector('.hu-messenger-body').addEventListener('scroll', function(e) {
   //   if (e.target.scrollTop <= 5) {
@@ -99,6 +131,15 @@ function helloumiLivechatLoaded() {
   //     document.getElementById('hu-experiment-header').className = 'hu-scrolled';
   //   }
   // });
+  if (helloumi.webchat.umichatcore.config.jsbot && helloumi.webchat.umichatcore.config.customerToken == null ) {
+    window.jsbot = new ForaBotController();
+    window.jsbot.on('message', forabotMessageReceived);
+    window.jsbot.on('typing', forabotTypingState);
+    window.jsbot.load(
+      new ForaBot(Date.now().toString(), helloumi.webchat.umichatcore.config.jsbot )
+    );
+    window.jsbot.start();
+  }
   hideLoader();
 }
 
@@ -130,7 +171,7 @@ function fakeMessage(msg, ghost){
 
   if (ghost === true) {
     umichatGUI.createGhost({
-      timestamp: Date.now(),
+      timestamp: Date.now()/1000,
       type: "text",
       message: msg,
     });

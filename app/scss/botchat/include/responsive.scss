@@ -3,7 +3,7 @@
     max-height: calc(100% - 120px);
   }
   .hu-messenger-body-state {
-    padding: 55px 13% 0;
+    padding: 55px 13% 0 !important;
   }
   .hu-messenger-footer {
     // margin: 0 13% 81px;
@@ -14,7 +14,7 @@
 
 @media screen and (min-width: 1044px) {
   .hu-messenger-body-state {
-    padding: 55px 23% 0;
+    padding: 55px 23% 0 !important;
   }
   .hu-messenger-footer {
     // margin: 0 23% 81px;
@@ -24,7 +24,7 @@
 
 @media screen and (min-width: 1300px) {
   .hu-messenger-body-state {
-    padding: 55px 30% 0;
+    padding: 55px 30% 0 !important;
   }
   .hu-messenger-footer {
     // margin: 0 30% 81px;
