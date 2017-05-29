@@ -1,3 +1,14 @@
+function jsfakeMessage(target){
+  console.log('hola');
+  $(target).parent().parent().children('.container-inline').children('.two-rows').children('a').click(function(e){
+    e.preventDefault();
+    console.log('hola');
+    var textVar = $(this).text();
+    fakeMessage(textVar, true);
+    $('.two-rows').remove();
+  });
+}
+
 
 var variables = [];
 
@@ -53,6 +64,8 @@ function loadButtons(target,jsonURL) {
 function jsFlex(target){
   $(target).parent().parent().addClass('js-flex');
   $(target).parent().parent().parent().parent().parent().parent().addClass('js-flexparent');
+  console.log('prueba');
+  setTimeout(helloumi.webchat.umichatgui.scrollBottom.bind(helloumi.webchat.umichatgui), 750);
   $(target).parent().parent().children('.la-flex').children().click(function(){
     var textVar = $(this).text();
     fakeMessage(textVar, true);
@@ -70,6 +83,9 @@ function jsaddClass(target,huclass){
 function jsReferral(target){
   $(target).parent().parent().parent().prev().addClass('js-referral');
   $(target).parent().parent().addClass('js-flex');
+  console.log('prueba');
+  setTimeout(helloumi.webchat.umichatgui.scrollBottom.bind(helloumi.webchat.umichatgui), 4000)
+
   // $(target).parent().parent().children('.la-flex').children().click(function(){
   //   var textVar = $(this).text();
   //   fakeMessage(textVar, true);
