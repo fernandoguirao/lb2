@@ -1,8 +1,6 @@
 function jsfakeMessage(target){
-  console.log('hola');
   $(target).parent().parent().children('.container-inline').children('.two-rows').children('a').click(function(e){
     e.preventDefault();
-    console.log('hola');
     var textVar = $(this).text();
     fakeMessage(textVar, true);
     $('.two-rows').remove();
@@ -149,6 +147,7 @@ function helloumiLivechatLoaded() {
       new ForaBot(Date.now().toString(), helloumi.webchat.umichatcore.config.jsbot )
     );
     window.jsbot.start();
+    document.getElementById('hu-webchat-loader').style.setProperty('display', 'none', 'important');
   }
   hideLoader();
 }
