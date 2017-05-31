@@ -14,8 +14,12 @@
       "open": true,
       "jsbot" : {
         "name": "Landbot",
-        "init": "welcome_1",
+        "init": "welcome_0",
         "status": {
+          "welcome_0": {
+            "text": "Hi there!",
+            "next": ["welcome_1"],
+          },
           "welcome_1": {
             "text": "My name is Landbot and I can help you out *turning your website into a chatbot* 🤖",
             "next": ["welcome_2"],
