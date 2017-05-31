@@ -17,7 +17,8 @@ $blue-light: #7db9e8;
 $light-gray: #f1f1f1;
 
 // Relative colors
-$accent: $pink;
+// $accent: $pink;
+$accent: #55bbfc;
 $accent-0: lighten($accent,3%);
 $accent-1: darken(saturate($accent,20%),11%);
 $light: $white;
@@ -50,10 +51,10 @@ $externalfonturl: false;
 // $externalfonturl: 'https://fonts.googleapis.com/css?family=Lato';
 
 // BACKGROUND
-$background-type: 'gradient'; // image | gradient | color | video
+$background-type: 'image'; // image | gradient | color | video
 $gradient-from: $orange;
 $gradient-to: $orange-light;
-$background-image-url: 'https://storage.googleapis.com/media.yexir.com/channels_back/31.png';
+$background-image-url: '../files/banner.jpg';
 $background-color: transparent;
 $video-texture: gradient; // gradient | image | color
 $box-footer: $accent;
