@@ -1,21 +1,18 @@
 {
   "url": "http://landbot.io",
-  "title": "Landbot | Convert a Landing Page into a Chatbot",
-  "description": "Landbot.io is a tool to create conversational interfaces in substitution of forms. No coding required!",
-  "logo": "http://bueninvento.es/umiexp2.png",
-  "tagline": "Get more leads using chatbots 🤖",
+  "title": "Tuvalum",
+  "description": "La web de segunda mano más fiable para ciclismo y triatlón",
+  "logo": "files/logo.png",
+  "tagline": " ",
   "btn01Title": "Features",
   "btn01Message": "features",
   "btn02Title": "Early Access",
   "btn02Message": "signup",
   "background-video": false,
-  "videoname": "cronoshare",
-  "prodID": "230",
-  "prodToken": "H-54-05SUR4YA8IFUTM2S",
+  "prodID": "234",
+  "prodToken": "H-57-55JULQN5YLS2AFFG",
   "prodApikey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
   "testID": "234",
   "testToken": "H-57-55JULQN5YLS2AFFG",
-  "testApikey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
-  "onInit": "landbot",
-  "onEmail": "discorbot"
+  "testApikey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU"
 }
