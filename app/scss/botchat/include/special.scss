@@ -2,7 +2,7 @@
 // Estilos específicos de unos botones concretos (cuando son más de 3 para que aparezcan más pequeños), habría que pensar una forma de hacerlo escalable
 #hu-container-widget .hu-btn-group-vertical .hu-btn span {
   &[data-click^="Capturar"], &[data-click^="Medir"], &[data-click^="Integraciones"], &[data-click^="Configura"], &[data-click^="Chatear"], &[data-click^="Precio"] {
-    font-size: 11px !important;
+    font-size: $font-size - 3 !important;
     text-transform: uppercase;
     font-weight: 700 !important;
     width: 94px !important;
@@ -11,7 +11,7 @@
     margin: -7px -16px -7px -22px !important;
   }
   &[data-click^="Data Capturing"], &[data-click^="Metrics"], &[data-click^="Integrations"], &[data-click^="Setting up"], &[data-click^="Talk to a customer"], &[data-click^="Pricing"] {
-    font-size: 11px !important;
+    font-size: $font-size - 3 !important;
     text-transform: uppercase;
     font-weight: 700 !important;
     width: 115px !important;
@@ -22,14 +22,19 @@
 }
 
 @media screen and (min-width: 800px) {
+  #hu-webchat-ghosts {
+    margin-top: -22px;
+  }
   #hu-webchat-ghosts .hu-messenger-message-user .hu-message-content {
-    animation: fer .5s normal forwards;
+    animation: translateGhost .4s normal forwards;
+    animation-timing-function: cubic-bezier(0.68, 0.01, 0.245, 1.13) 0s;
   }
 }
 
-@keyframes fer {
+@keyframes translateGhost {
   from {
-    transform: translate(-315px, 100px);
+    transform: translate(-215px, 50px);
+    // transform: translate(20px, 0);
     opacity: 0;
   }
 }

@@ -1,9 +1,122 @@
+function uploadLogo(logo) {
+  console.log(logo);
+  $('.hu-left-header img,.logo').remove();
+  $('.hu-left-header').prepend('<span class="logo">'+logo+'</span>');
+}
+
+var flagColor = 0;
+function addColorPicker(){
+  var colors = ['#1abc9c','#2ecc71','#3498db','#9b59b6','#34495e','#f1c40f','#e67e22','#e74c3c','#ecf0f1','#bdc3c7','#95a5a6'];
+  if (flagColor < 1){
+    var colorsHTML = "";
+    $.each(colors, function(i){
+      colorsHTML += '<li style="background-color:'+colors[i]+';" onclick="fakeMessage(\''+colors[i]+'\')"></li>';
+    });
+    var colorPicker = '<div class="color-picker"><ul>'+ colorsHTML +'</ul></div>';
+    $('.hu-footer-state').prepend(colorPicker);
+    flagColor = 1;
+  }
+}
+
+function removeColorPicker(){
+  $('.color-picker').remove();
+  flagColor = 0;
+}
+
+
+
+
+var vars = {
+  containertype:'fullscreen',
+  accent: '#ce4b81',
+  contrast: '#4a50a8',
+  light: 'white',
+  dark: '#000',
+  font: 'Gotham Rounded',
+  fonttype: 'sans-serif',
+  fontsize: '14px',
+  embfonts: 'true',
+  fonturl: 'https://fonts.googleapis.com/css?family=Lato',
+  backgroundtype: 'gradient',
+  gradientfrom: '#ffad59',
+  gradientto: '#ffe199',
+  backgroundimageurl: 'https://storage.googleapis.com/media.yexir.com/channels_back/31.png',
+  backgroundcolor: 'transparent',
+  videotexture: 'color',
+  boxfooter: '#ce4b81',
+  videoname: 'video',
+  videoupload: 'false',
+  videourl: 'files/video.mp4'
+};
+
+function getCSS(variables){
+
+  if (variables['containertype']) { vars['containertype'] = variables['containertype']; }
+  if (variables['accent']) { vars['accent'] = variables['accent']; }
+  if (variables['contrast']) { vars['contrast'] = variables['contrast']; }
+  if (variables['light']) { vars['light'] = variables['light']; }
+  if (variables['dark']) { vars['dark'] = variables['dark']; }
+  if (variables['font']) { vars['font'] = variables['font']; }
+  if (variables['fonttype']) { vars['fonttype'] = variables['fonttype']; }
+  if (variables['fontsize']) { vars['fontsize'] = variables['fontsize']; }
+  if (variables['embfonts']) { vars['embfonts'] = variables['embfonts']; }
+  if (variables['fonturl']) { vars['fonturl'] = variables['fonturl']; }
+  if (variables['backgroundtype']) { vars['backgroundtype'] = variables['backgroundtype']; }
+  if (variables['gradientfrom']) { vars['gradientfrom'] = variables['gradientfrom']; }
+  if (variables['gradientto']) { vars['gradientto'] = variables['gradientto']; }
+  if (variables['backgroundimageurl']) { vars['backgroundimageurl'] = variables['backgroundimageurl']; }
+  if (variables['backgroundcolor']) { vars['backgroundcolor'] = variables['backgroundcolor']; }
+  if (variables['videotexture']) { vars['videotexture'] = variables['videotexture']; }
+  if (variables['boxfooter']) { vars['boxfooter'] = variables['boxfooter']; }
+  if (variables['videourl']) { vars['videourl'] = variables['videourl']; }
+  if (variables['videoname']) { vars['videoname'] = variables['videoname']; }
+  if (variables['videoupload']) { vars['videoupload'] = variables['videoupload']; }
+  console.log(vars);
+
+  var urlPar = '?containertype=' + vars['containertype'] +
+  '&accent='+ encodeURIComponent(vars['accent']) +
+  '&contrast=' + encodeURIComponent(vars['contrast']) +
+  '&light='+ encodeURIComponent(vars['light']) +
+  '&dark='+ encodeURIComponent(vars['dark']) +
+  '&font=' + encodeURI(vars['font']) +
+  '&font-type=' + encodeURI(vars['fonttype']) +
+  '&font-size=' + vars['fontsize'] +
+  '&embfonts=' + vars['embfonts'] +
+  '&font-url=' + encodeURIComponent(vars['fonturl']) +
+  '&background-type=' + vars['backgroundtype'] +
+  '&gradient-from=' + encodeURIComponent(vars['gradientfrom']) +
+  '&gradient-to=' + encodeURIComponent(vars['gradientto']) +
+  '&background-image-url=' + encodeURI(vars['backgroundimageurl']) +
+  '&background-color=' + encodeURIComponent(vars['backgroundcolor']) +
+  '&video-texture=' + encodeURI(vars['videotexture']) +
+  '&box-footer=' + encodeURIComponent(vars['boxfooter']);
+
+  var urls = "http://landbot.io/sasscompiler/index.css.php" + urlPar;
+
+  $.when($.get(urls))
+  .done(function(response) {
+      $('.bg-texture,video,#tempstyles').remove();
+      $('<style id="tempstyles" />').text(response).appendTo($('body'));
+      if (vars['backgroundtype'] == 'video'){
+        var videoupload = vars['videoupload'];
+        if (videoupload == 'false'){
+          var videoname = vars['videoname'];
+          var htmlcontent = '<div class="bg-texture"></div><video playsinline autoplay muted loop poster="files/'+videoname+'.jpg" id="bgvid"><source src="files/'+videoname+'.webm" type="video/webm"><source src="files/'+videoname+'.mp4" type="video/mp4"></video>';
+        } else {
+          var videourl = vars['videourl'];
+          var htmlcontent = '<div class="bg-texture"></div><video playsinline autoplay muted loop poster="files/video.jpg" id="bgvid"><source src="' + videourl + '" type="video/mp4"></video>';
+        }
+
+        $('body').append(htmlcontent);
+      }
+  });
+}
+
 function jsfakeMessage(target){
   $(target).parent().parent().children('.container-inline').children('.two-rows').children('a').click(function(e){
     e.preventDefault();
     var textVar = $(this).text();
     fakeMessage(textVar, true);
-    $('.two-rows').remove();
   });
 }
 
@@ -50,7 +163,6 @@ function loadButtons(target,jsonURL) {
     $('.la-choices').click(function(){
       var textVar = $(this).data('keyword');
       fakeMessage(textVar, true);
-      $('.js-flex').parent().parent().parent().parent().remove();
     });
   });
 
@@ -68,6 +180,7 @@ function jsFlex(target){
 };
 
 function removeFlex(){
+  $('.js-flex').parent().parent().parent().parent().addClass('jsflex-hide');
   $('.js-flex').remove();
 }
 
@@ -173,6 +286,8 @@ function trackEvent(flag, eventName, stepName) {
 
 // MENSAJE FAKE
 function fakeMessage(msg, ghost){
+  $('.two-rows,.la-flex').parent().parent().parent().parent().addClass('jsflex-hide');
+  $('.two-rows,.la-flex').remove();
   var umichatCore = (typeof(helloumi) != 'undefined') ? helloumi.webchat.umichatcore
                   : HULiveChat.ifrWindow.helloumi.webchat.umichatcore;
   var umichatGUI = (typeof(helloumi) != 'undefined') ? helloumi.webchat.umichatgui
