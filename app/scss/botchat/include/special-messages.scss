@@ -37,15 +37,15 @@
     }
     .la-choices {
       display: flex;
-      border: 2px solid #447791;
+      border: 2px solid $contrast;
       border-radius: 5px;
       padding: 11px 20px;
-      font-size: 13px;
+      font-size: $font-size - 1;
       flex: 1 0 0;
       margin: 3px;
       transition: all .15s ease;
       background: white;
-      color: #447791;
+      color: $contrast;
       text-align: center;
       position: relative;
       z-index: 1000;
@@ -57,7 +57,7 @@
         width: 100%;
         font-family: $font, $font-type!important;
         &.fi {
-          font-size: 17px;
+          font-size: $font-size + 3;
         }
       }
       &:hover {
@@ -114,7 +114,7 @@
   text-transform: uppercase;
   font-weight: 700;
   text-decoration: none;
-  font-size: 12px;
+  font-size: $font-size - 2;
   margin-bottom: 3px;
   display: inline-block;
   margin-top: -7px;
@@ -220,14 +220,14 @@ ul.container-inline {
 .container-inline li a {
   color: white!important;
   text-decoration: none;
-  font-size: 11px!important;
+  font-size: $font-size - 3!important;
   /* border-radius: 3px; */
   /* overflow: hidden; */
 }
 
 #hu-container-widget #hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content .container-inline li a p {
   padding: 7px 3px;
-  font-size: 12px!important;
+  font-size: $font-size - 2!important;
   text-transform: uppercase;
     white-space: inherit;
 }
@@ -251,7 +251,7 @@ ul.container-inline {
 }
 
 .text-big {
-  font-size: 23px;
+  font-size: $font-size + 9;
   margin-top: 6px;
   display: block;
   font-weight: bold!important;
@@ -285,13 +285,13 @@ ul.container-inline {
     &.text {
       margin-right: 15px;
       margin-bottom: 7px;
-      font-size: 14px;
+      font-size: $font-size;
     }
     b {
       color: $accent!important;
     }
     font-family: $font, $font-type!important;
-    font-size: 14px;
+    font-size: $font-size;
   }
   .btts {
     display: block;
@@ -301,16 +301,16 @@ ul.container-inline {
       border-radius: 4px;
       padding-left: 41px!important;
       padding-right: 41px!important;
-      font-size: 12px;
+      font-size: $font-size - 2;
       text-transform: uppercase;
       font-style: normal;
       cursor: pointer;
       &:first-child {
-        background-color: #006f96!important;
+        background-color: $contrast!important;
         color: white!important;
       }
       &:hover {
-        background: #0c85af!important;
+        background: $contrast-0!important;
         box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
       }
     }
@@ -325,12 +325,38 @@ ul.container-inline {
   }
 }
 
-.container-inline li.two-rows {
-  width: calc(33% - 3%);
-  @media screen and (max-width: 800px) {
-    width: calc(49% - 2%);
-    .bckg {
-      height: 64px !important
+.hu-messenger-message .hu-message-container .hu-message-content-group .hu-message-content .container-inline {
+  li.two-rows {
+    width: calc(33% - 3%);
+    &.back {
+      background: lighten($contrast,30%);
+      text-align: center;
+      display: block!important;
+      position: absolute;
+      border: 2px solid $contrast;
+      a p {
+        color: $contrast!important;
+      }
+      &:hover {
+        background: lighten($contrast,35%);
+      }
+    }
+    @media screen and (max-width: 800px) {
+      width: calc(49% - 2%);
+      .bckg {
+        height: 64px !important
+      }
+    }
+  }
+  &.cols-4 {
+    li.two-rows {
+      width: calc(25% - 4%);
+      .bckg {
+        height: 65px;
+      }
+      @media screen and (max-width: 800px) {
+        width: calc(49% - 2%);
+      }
     }
   }
 }

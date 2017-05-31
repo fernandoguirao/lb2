@@ -10,12 +10,10 @@
   "btn02Message": "signup",
   "background-video": false,
   "videoname": "cronoshare",
-  "prodID": "230",
-  "prodToken": "H-54-05SUR4YA8IFUTM2S",
+  "prodID": "234",
+  "prodToken": "H-71-FPWS30QCUAG8GDEI",
   "prodApikey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
-  "testID": "234",
-  "testToken": "H-57-55JULQN5YLS2AFFG",
-  "testApikey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
-  "onInit": "landbot",
-  "onEmail": "discorbot"
+  "testID": "244",
+  "testToken": "H-73-R4NCECCQ3FS060H8",
+  "testApikey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU"
 }
