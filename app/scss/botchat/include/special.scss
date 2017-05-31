@@ -21,9 +21,14 @@
   }
 }
 
+#hu-webchat-ghosts {
+  top: -48px;
+  position: relative;
+}
+
 @media screen and (min-width: 800px) {
   #hu-webchat-ghosts {
-    margin-top: -22px;
+    top: -22px;
   }
   #hu-webchat-ghosts .hu-messenger-message-user .hu-message-content {
     animation: translateGhost .4s normal forwards;

@@ -153,5 +153,7 @@ div[data-assigned="ronin"] .hu-messenger-message.hu-messenger-message-user .hu-m
 }
 
 .container-inline {
-  min-width: 500px;
+  @media screen and (min-width:550px){
+    min-width: 500px;
+  }
 }
