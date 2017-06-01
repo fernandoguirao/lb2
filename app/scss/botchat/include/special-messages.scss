@@ -190,6 +190,7 @@
   background: $accent;
   text-align: center;
   width: calc(33.33% - 4%);
+  min-width: 120px;
   margin: 3px 5px;
   border-radius: 4px;
   overflow: hidden;

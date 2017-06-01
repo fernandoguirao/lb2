@@ -324,9 +324,9 @@
       @if $background-type == 'video' {
         background-color: rgba(255,255,255,.2) !important;
       }
-      // @if $background-type == 'image' {
-      //   background-color: rgba(255,255,255,.2) !important;
-      // }
+      @if $background-type == 'image' {
+        background-color: rgba(255,255,255,.2) !important;
+      }
     }
     .hu-message-info {
       display: none !important;
