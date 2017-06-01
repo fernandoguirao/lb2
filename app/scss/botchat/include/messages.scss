@@ -247,11 +247,15 @@
         background: transparent !important;
         padding: 0 !important;
         // margin: 30px 0 13px;
-        margin: 10px 0 0;
         box-shadow: none;
         position: relative;
         left: 0;
         width: 100%;
+        .hu-btn-group-vertical{
+          &:not(:empty) {
+            margin: 10px 0 0;
+          }
+        }
         // top: -20px;
         display: none;
         .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink {
@@ -272,7 +276,7 @@
             font-family: $font,$font-type!important;
           }
           &:last-child {
-            background-color: transparent;
+            background-color: rgba(0,0,0,.2);
             color: $accent-0;
             border-color: $accent-0;
             @if $background-type == 'video' {
@@ -358,7 +362,7 @@
         position: relative;
         top: 5px;
         background-size: 100%;
-        background-image: url(#{$url}/avatar.png);
+        background-image: url(#{$url}/files/avatar.png);
         width: 26px;
         height: 26px;
         display: inherit;
