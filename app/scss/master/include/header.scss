@@ -21,7 +21,10 @@ div#hu-experiment-header {
     float: left;
     margin-left: 100px;
     img {
-      width: 103px;
+      // width: 103px;
+      width: 180px;
+      margin-top: -10px;
+      margin-bottom: -14px;
     }
     .more-leads {
       font-size: $font-size - 1;
