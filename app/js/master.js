@@ -126,7 +126,8 @@ function forabotMessageReceived( message ) {
     }),
     payloads: $.map(message.buttons, function(elem,index) {
       return elem.caption;
-    })
+    }),
+    extra_data: message.extra_data,
   }
   helloumi.webchat.umichatcore.loadMessage(__message);
 }
