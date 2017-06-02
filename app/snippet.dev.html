@@ -16,18 +16,15 @@
         "init": "welcome_0",
         "status": {
           "welcome_0": {
-            "text": "Hola, mi nombre es *Niara*",
+            "text": "Hello, welcome to *Debatrix* ",
             "next": ["welcome_1"],
           },
           "welcome_1": {
-            "text": "Me gustaría contarte una historia",
-            "next": ["welcome_2"],
-          },
-          "welcome_2": {
-            "text": "Antes de empezar, ¿cómo te llamas tú?",
-            "extra_data": {
-              "hidetextbox": false,
-            }
+            "text": "Do you want to know what makes us *unique*?",
+            "buttons": [
+              { caption: "Plese, tell me", next: false },
+              { caption: "No need, I know you", next: false }
+            ]
           },
         }
       },
