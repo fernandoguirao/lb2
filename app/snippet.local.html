@@ -1,17 +1,19 @@
 <link rel="stylesheet" href="http://localhost:8000/static/webchat/css/main-1.0.0.css"\>
 <script>
-  // TEST BOT
+  // LOCAL BOT
   window.chatbotConfigs = {
     "landbot": {
       "staticUrl": "http://localhost:8000/static/",
-      "channelToken": "{{testToken}}",
-      "brandID": "{{testID}}",
+      "serverUrl": "http://localhost:8000",
+      "channelToken": "H-5-W5WY6V4NABEGL0MN",
+      // "brandID": "1",
       "version": "1.0.0",
-      "apiKey": "{{testApikey}}",
-      "authDomain": "daisho-yexir.firebaseapp.com",
-      "databaseURL": "https://daisho-yexir.firebaseio.com",
-      "storageBucket": "daisho-yexir.appspot.com",
+      "apiKey": "AIzaSyBJ5t8IbcJSCcUS-AkFGdLZkqn-MjaQkrc",
+      "authDomain": "burning-torch-9912.firebaseapp.com",
+      "databaseURL": "https://burning-torch-9912.firebaseio.com",
+      "storageBucket": "burning-torch-9912.appspot.com",
       "open": true,
+      "platform": "landbot",
       "jsbot": {
         "name": "Landbot",
         "init": "welcome_0",
@@ -84,5 +86,28 @@
       }
     }
   }
+
+  ////// TEST PURPOSES ///////
+
+  var timestamp = 0;
+  function renderMessage(type, author) {
+    var data = {
+      timestamp: timestamp++,
+      type: (type) ? type : 'text',
+      samurai: (author) ? author : undefined,
+      message: 'Este mensaje se autodestruirá en 5 segundos...',
+      title: 'Este mensaje se autodestruirá en 5 segundos...',
+      buttons: ['Este mensaje', 'se autodestruirá', 'en 5 segundos'],
+      payloads: ['Este mensaje', 'se autodestruirá', 'en 5 segundos'],
+      url: 'media/1490772031.162174.jpg',
+      key: '-kaer'+timestamp,
+      incoming: true,
+      features: {
+        hide_textbox: (type === 'dialog') ? true : false
+      }
+    };
+    helloumi.webchat.umichatcore.loadMessage(data);
+  }
+
 </script>
 <script src="http://localhost:8000/static/webchat/js/main-1.0.0.js" onload="renderHelloumiLiveChat()" charset="UTF-8"></script>
