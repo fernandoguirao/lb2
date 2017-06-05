@@ -85,17 +85,22 @@ function jsReferral(target){
 };
 
 function identifyUser(flag, data) {
-  if (typeof(window[flag])=='undefined'){
-    var analyticsUserId = window.analytics.user().id();
-    if( analyticsUserId == null ) {
-      var distinctId = window.mixpanel.get_distinct_id();
-      window.analytics.identify(distinctId, data );
-    } else {
-      if (analyticsUserId.substr(0,6) != 'brand_') {
-        window.analytics.identify(analyticsUserId, data );
+  if ( !localStorage.getItem('landbot_'+flag) ){
+    try {
+      var analyticsUserId = window.analytics.user().id();
+      if( analyticsUserId == null ) {
+        var distinctId = window.mixpanel.get_distinct_id();
+        window.analytics.identify(distinctId, data );
+      } else {
+        if (analyticsUserId.substr(0,6) != 'brand_') {
+          window.analytics.identify(analyticsUserId, data );
+        }
       }
+      localStorage.setItem('landbot_'+flag, 1);
+    } catch(e) {
+      var __data = (typeof(data) == 'object') ?  JSON.stringify(data) : ''
+      console.log('Landbot Analytics: error identifying user '+ __data);
     }
-    window[flag]=1;
   }
 };
 
@@ -142,13 +147,20 @@ function helloumiLivechatLoaded() {
   // });
   if (helloumi.webchat.umichatcore.config.jsbot && helloumi.webchat.umichatcore.config.customerToken == null ) {
     window.jsbot = new ForaBotController();
-    window.jsbot.on('message', forabotMessageReceived);
+    window.jsbot.on('output', forabotMessageReceived);
     window.jsbot.on('typing', forabotTypingState);
     window.jsbot.load(
       new ForaBot(Date.now().toString(), helloumi.webchat.umichatcore.config.jsbot )
     );
     window.jsbot.start();
+
+    helloumi.webchat.umichatcore.on('messageSent', function( messageData ){
+      trackEvent('firstMessage', 'Landbot Chat', 'Starts conversation');
+      helloumi.webchat.umichatcore.off('messageSent');
+    })
+
     document.getElementById('hu-webchat-loader').style.setProperty('display', 'none', 'important');
+    trackEvent('start', 'Load Landbot');
   }
   hideLoader();
 }
@@ -166,9 +178,13 @@ function helloumiLivechatIframeLoaded() {
 }
 
 function trackEvent(flag, eventName, stepName) {
-  if (typeof(window[flag])=='undefined'){
-    window.analytics.track(eventName, {step: stepName});
-    window[flag]=1;
+  if ( !localStorage.getItem('landbot_'+flag) ){
+    try {
+      window.analytics.track(eventName, {step: stepName});
+      localStorage.setItem('landbot_'+flag, 1);
+    } catch (e) {
+      console.log('Landbot Analytics: error tracking event '+ eventName + ' ' + (stepName||''));
+    }
   }
 };
 
