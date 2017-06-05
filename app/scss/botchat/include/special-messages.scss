@@ -264,8 +264,11 @@ ul.container-inline {
 
 @media screen and (max-width: 600px){
   .js-flexparent {
-    overflow-y: hidden;
-    overflow-x: scroll;
+    // overflow-y: hidden;
+    // overflow-x: scroll;
+    // &.jsflex-hide {
+    //   overflow: inherit!important;
+    // }
   }
   .la-flex {
     justify-content: left!important;
