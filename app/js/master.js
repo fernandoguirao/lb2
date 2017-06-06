@@ -85,7 +85,7 @@ function jsReferral(target){
 };
 
 function identifyUser(flag, data) {
-  if ( !localStorage.getItem('landbot_'+flag) ){
+  if ( !localStorage.getItem('landbot_'+helloumi.webchat.umichatcore.config.channelToken+'_'+flag) ){
     try {
       var analyticsUserId = window.analytics.user().id();
       if( analyticsUserId == null ) {
@@ -96,7 +96,7 @@ function identifyUser(flag, data) {
           window.analytics.identify(analyticsUserId, data );
         }
       }
-      localStorage.setItem('landbot_'+flag, 1);
+      localStorage.setItem('landbot_'+helloumi.webchat.umichatcore.config.channelToken+'_'+flag, 1);
     } catch(e) {
       var __data = (typeof(data) == 'object') ?  JSON.stringify(data) : ''
       console.log('Landbot Analytics: error identifying user '+ __data);
@@ -178,10 +178,10 @@ function helloumiLivechatIframeLoaded() {
 }
 
 function trackEvent(flag, eventName, stepName) {
-  if ( !localStorage.getItem('landbot_'+flag) ){
+  if ( !localStorage.getItem('landbot_'+helloumi.webchat.umichatcore.config.channelToken+'_'+flag) ){
     try {
       window.analytics.track(eventName, {step: stepName});
-      localStorage.setItem('landbot_'+flag, 1);
+      localStorage.setItem('landbot_'+helloumi.webchat.umichatcore.config.channelToken+'_'+flag, 1);
     } catch (e) {
       console.log('Landbot Analytics: error tracking event '+ eventName + ' ' + (stepName||''));
     }
