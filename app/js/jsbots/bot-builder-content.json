@@ -1,0 +1,249 @@
+{
+  "name": "Bot Builder - Content",
+  "init": "welcome_0",
+  "status": {
+    "welcome_0": {
+      "text": "¡Estupendo! Te ayudaré a editar los diálogos de tu propio Landbot 🤓",
+      "next": ["welcome_1"]
+    },
+    "welcome_1": {
+      "text": "Cuando creas que tu bot está listo haz click en el botón “PUBLICAR BOT“",
+      "buttons": [
+        { "caption": "Empezar", "next": "welcome_2" },
+      ]
+    },
+    "welcome_2": {
+      "text": "¡Perfecto! Empezaremos diseñando la bienvenida del bot a tus usuarios 🙂",
+      "next": "welcome_message_1"
+    },
+
+
+
+    "welcome_message_1": {
+      "text": "Escribe una primera frase para saludar y presentar tu marca",
+      "next": "welcome_message_1_pick"
+    },
+    "welcome_message_1_pick": {
+      "text": "*Ejemplo: “Hola y bienvenido a hamburguesaonline.com 👋” _Escribe una frase similar debajo_*",
+      "input": {
+        "store": "welcome_1",
+        "next": "welcome_message_1_check"
+      }
+    },
+    "welcome_message_1_check": {
+      "text": "Has escrito:\n@welcome_1\n¿Es correcto?",
+      "buttons": [
+        { "caption": "Sí", "next": "welcome_message_1_end", "flag": "crea_bot"},
+        { "caption": "No", "next": "welcome_message_1_repeat", "unstore": "welcome_1" },
+      ]
+    },
+    "welcome_message_1_repeat": {
+      "text": "Vuelve a escribir una frase de saludo",
+      "input": {
+        "store": "welcome_1",
+        "next": "welcome_message_1_check"
+      }
+    },
+    "welcome_message_1_end": {
+      "text": "¡Muy bien! 👏",
+      "next": "welcome_message_2"
+    },
+
+
+
+    "welcome_message_2": {
+      "text": "Ahora describe el propósito de tu chatbot para que el usuario sepa qué puedes hacer por él",
+      "next": "welcome_message_2_pick"
+    },
+    "welcome_message_2_pick": {
+      "text": "*Ejemplo: “Soy un chatbot que te ayudará a pedir tu hamburguesa en tres minutos” _Escribe una frase similar debajo_*",
+      "input": {
+        "store": "welcome_2",
+        "next": "welcome_message_2_check"
+      }
+    },
+    "welcome_message_2_check": {
+      "text": "Has escrito:\n@welcome_2\n¿Es correcto?",
+      "buttons": [
+        { "caption": "Sí", "next": "welcome_message_2_end" },
+        { "caption": "No", "next": "welcome_message_2_repeat", "unstore": "welcome_2" },
+      ]
+    },
+    "welcome_message_2_repeat": {
+      "text": "Vuelve a escribir una frase de presentación de tus servicios o producto",
+      "input": {
+        "store": "welcome_2",
+        "next": "welcome_message_2_check"
+      }
+    },
+    "welcome_message_2_end": {
+      "text": "Perfecto, continuaremos con la sección de cuestionario 👍",
+      "next": "custom_form_0"
+    },
+
+
+    "custom_form_0": {
+      "text": "En esta sección vamos a definir una serie de preguntas que haré a tus usuarios (como si se tratara de un formulario conversacional) 🤓",
+      "next": "custom_form_1"
+    },
+    "custom_form_1": {
+      "text": "Puedes imaginarte qué usos puedes darle a estas preguntas, ¿no?",
+      "buttons": [
+        { "caption": "Sí, continúa", "next": "custom_form_question" },
+        { "caption": "Ponme ejemplos", "next": "custom_form_examples_0" }
+      ]
+    },
+
+
+    "custom_form_examples_0": {
+      "text": "Capturar leads, registrar a tus usuarios, tramitar pedidos, etc.",
+      "next": "custom_form_examples_1"
+    },
+    "custom_form_examples_1": {
+      "text": "El límite es tu imaginación 😉",
+      "next": "custom_form_question"
+    },
+
+
+    "custom_form_question": {
+      "text": "¿Quieres añadir un cuestionario a tu bot?",
+      "buttons": [
+        { "caption": "Sí", "next": "custom_form_name" },
+        { "caption": "No", "next": "custom_form_question_end" }
+      ]
+    },
+    "custom_form_question_end": {
+      "text": "Pasemos entonces a la sección de FAQs",
+      "next": false
+    },
+
+
+    "custom_form_name": {
+      "text": "Lo primero que necesito saber es el propósito de este cuestionario\n\n(Usaremos este texto en el botón que inicia el cuestionario)",
+      "next": "custom_form_name_pick"
+    },
+    "custom_form_name_pick": {
+      "text": "*Ejemplos: “registro”, “hacer un pedido”, etc _Escribe debajo_*",
+      "input": {
+        "store": "form_name",
+        "next": "custom_form_name_end"
+      }
+    },
+    "custom_form_name_end": {
+      "text": "¡Genial! 👏 Empecemos con las primeras preguntas:",
+      "next": "form_fields"
+    },
+
+
+
+    "form_fields": {
+      "text": "¿Quieres que pida datos personales al usuario? (email, etc)",
+      "buttons": [
+        { "caption": "Sí", "next": "form_fields_pick" },
+        { "caption": "No", "next": "form_questions" }
+      ]
+    },
+    "form_fields_pick": {
+      "text": "Puedo pedir todos estos datos personales (selecciona los que te interesen)",
+      "values": {
+        "name": "Nombre",
+        "email": "Email",
+        "phone": "Teléfono",
+        "postal_code": "Código postal",
+        "address": "Dirección",
+        "city": "Ciudad",
+        "country": "País",
+        "company": "Empresa",
+        "birthday": "Fecha de nacimiento",
+      },
+      "input": {
+        "store": "form_user_fields",
+        "validate": "values",
+        "next": "form_fields_check_0"
+      }
+    },
+    "form_fields_check_0": {
+      "text": "Perfecto, preguntaré estos datos:",
+      "next": "form_fields_check_1"
+    },
+    "form_fields_check_1": {
+      "text": "@form_user_fields",
+      "next": "form_fields_check_2"
+    },
+    "form_fields_check_2": {
+      "text": "¿Es correcto?",
+      "buttons": [
+        { "caption": "Sí", "next": "form_questions", "flag": ["form", "form_user"] },
+        { "caption": "No", "next": "form_fields_pick" }
+      ]
+    },
+
+
+    "form_questions": {
+      "text": "¿Quieres que añadamos preguntas de otro tipo? (Ejemplo: preguntas sobre tu servicio, etc.)",
+      "buttons": [
+        { "caption": "Sí", "next": "form_questions_pick_type" },
+        { "caption": "No", "next": false }
+      ]
+    },
+    "form_questions_pick_type": {
+      "text": "Elige el formato de respuesta para la pregunta que harás",
+      "counter": "COUNTER",
+      "buttons": [
+        { "caption": "Elegir una opción (entre varias)", "next": "form_questions_pick_text", "value": "option", "store": "form_custom_~COUNTER~_type"},
+        { "caption": "Elegir varias opciones", "next": "form_questions_pick_text", "value": "options", "store": "form_custom_~COUNTER~_type"},
+        { "caption": "Respuesta de texto", "next": "form_questions_pick_question", "value": "text", "store": "form_custom_~COUNTER~_type" }
+      ]
+    },
+    "form_questions_pick_text": {
+      "text": "Escribe el texto de la pregunta Ejemplo: ¿cómo te gusta la carne?",
+      "input": {
+        "store": "form_custom_~COUNTER~_text",
+        "next": "form_questions_pick_answer",
+      }
+    },
+    "form_questions_pick_answer": {
+      "text": "Ahora añade las diferentes opciones de respuesta (ejemplo: “al punto”, “poco hecha”, etc)",
+      "input": {
+        "store": "form_custom_~COUNTER~_answer",
+        "next": "form_questions_check_0",
+      }
+    },
+    "form_questions_pick_question": {
+      "text": "Escribe el texto de la pregunta Ejemplo: ¿cómo te gusta la carne?",
+      "input": {
+        "store": "form_custom_~COUNTER~_text",
+        "next": "form_questions_check_0",
+      }
+    },
+    "form_questions_check_0": {
+      "text": "Así quedaría esta pregunta:\n@form_custom_~COUNTER~_text\n@form_custom_~COUNTER~_answer",
+      "next": "form_questions_check_1"
+    },
+    "form_questions_check_1": {
+      "text": "¿Es correcto?",
+      "buttons": [
+        { "caption": "Sí", "next": "form_another", "flag": "form"},
+        { "caption": "No", "next": "form_repeat", "decrease": "COUNTER", "unstore": "form_custom_~COUNTER~_answer"}
+      ]
+    },
+
+
+
+    "form_repeat": {
+      "text": "Empecemos entonces de nuevo",
+      "next": "form_questions_pick_type"
+    },
+    "form_another": {
+      "text": "¡Genial! ¿Quieres añadir otra pregunta?",
+      "buttons": [
+        { "caption": "Sí", "next": "form_questions_pick_type"},
+        { "caption": "No", "next": "form_end" }
+      ]
+    },
+    "form_end": {
+      "text": "Perfecto, continuemos",
+      "next": false
+    }
+  }
+}
