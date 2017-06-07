@@ -155,8 +155,24 @@ gulp.task('html', () => {
     .pipe($.replace(varRegex, replaceVar))
     .pipe(gulp.dest(`${path.dist.base}`));
 
+  // index.stable.html
+  let index_stable = gulp.src([`${path.app.base}index.html`])
+    .pipe($.rename({ suffix: '.stable'}))
+    .pipe($.inject(gulp.src([`${path.app.base}snippet.stable.html`]), {
+      starttag: '<!-- inject:snippet:{{ext}} -->',
+      transform: function(filePath, file) {
+        return file.contents.toString('utf8');
+    }}))
+    .pipe($.if(client['background-video'], $.inject(gulp.src([ `${path.app.base}video.html` ]), {
+      starttag: '<!-- inject:video:{{ext}} -->',
+      transform: function(filePath, file) {
+        return file.contents.toString('utf8');
+    }})))
+    .pipe($.replace(varRegex, replaceVar))
+    .pipe(gulp.dest(`${path.dist.base}`));
+
   // Stream merge
-  return merge(index, index_dev, index_test, index_local);
+  return merge(index, index_dev, index_test, index_local, index_stable);
 });
 gulp.task('html-browser-sync', ['html'], (done) => {
   browserSync.reload();
