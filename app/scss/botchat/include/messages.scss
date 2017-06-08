@@ -276,7 +276,7 @@
             font-family: $font,$font-type!important;
           }
           &:last-child {
-            background-color: rgba(0,0,0,.2);
+            background-color: rgba($contrast, 0.08);
             color: $accent-0;
             border-color: $accent-0;
             @if $background-type == 'video' {
