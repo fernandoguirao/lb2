@@ -23,8 +23,8 @@ $accent-0: lighten($accent,3%);
 $accent-1: darken(saturate($accent,20%),11%);
 $light: $white;
 $contrast: #11905d;
-$contrast-0: lighten($contrast,10%);
-$contrast-light: lighten($contrast,30%);
+$contrast-0: lighten($contrast,5%);
+$contrast-light: lighten($contrast,10%);
 
 // URL
 $url: 'http://landbot.io/customers/bnp-cardif';
