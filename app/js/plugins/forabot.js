@@ -34,6 +34,7 @@ function ForaBot( id, data ) {
     this.init = undefined;
     this.status = {};
     this.keywords = {};
+    this.storage = {};
     if ( typeof(data) === 'object' ) {
       this.name = data.name || undefined;
       this.init = data.init || undefined;
@@ -48,11 +49,15 @@ function ForaBot( id, data ) {
           this.keywords[__key] = new ForaBotKeyword( __key, data.keywords[__key], this);
         }
       }
+      if ( typeof(data.storage) === 'object' ) {
+        for ( var __key in data.storage ) {
+          this.storage[__key] = data.storage[__key];
+        }
+      }
     } else {
       this.name = undefined;
       this.init = undefined;
       this.autotypingTimeout = 0;
-      this.status = {};
     }
   } else {
     throw new ForaBotError('ForaBot : Bot ID must be a valid string')
@@ -71,7 +76,7 @@ function ForaBotController() {
   this.currentStatus = null;
   this.listeners = {};
   this.currentBot = null;
-  this.storage = null;
+  this.storage = new ForaBotStorage();
   console.info(this.getTime() + 'ForaBotController : Instance created');
 }
 
@@ -153,7 +158,11 @@ ForaBotController.prototype.trigger = function trigger(eventType, data) {
 
 ForaBotController.prototype.load = function load( bot ) {
   if (bot instanceof ForaBot) {
+    this.reset();
     this.currentBot = bot;
+    if ( Object.keys(this.currentBot.storage).length > 0 ) {
+      this.storage.load( this.currentBot.storage );
+    }
     console.info(this.getTime() + 'ForaBotController[load] : Bot successfully loaded');
   } else {
     throw new ForaBotError('ForaBotController[load] : Cannot load received bot, must be a valid ForaBot instance')
@@ -164,11 +173,12 @@ ForaBotController.prototype.reset = function reset() {
   this.storage = new ForaBotStorage();
 }
 
-ForaBotController.prototype.start = function start() {
-  if (this.botStatus === 0 && this.currentBot.init) {
+ForaBotController.prototype.start = function start( status ) {
+  if (this.botStatus === 0 && (status || this.currentBot.init) ) {
     console.info(this.getTime() + 'ForaBotController[start] : Starting bot...');
-    this.reset();
-    if ( typeof(this.currentBot.init) == 'string' ) {
+    if ( typeof(status) == 'string' ) {
+      this.currentStatus = status;
+    } else if ( typeof(this.currentBot.init) == 'string' ) {
       this.currentStatus = this.currentBot.init;
     } else if ( this.currentBot.init.length ) {
       var __random = Math.floor(Math.random() * (this.currentBot.init.length));
@@ -208,13 +218,17 @@ ForaBotController.prototype.checkCurrent = function checkCurrent() {
     var __status = this.currentBot.status[ this.currentStatus ];
     var __message = this.extend( { id: Date.now() }, this.currentBot.status[ this.currentStatus ] );
     // Check for counter attribute
-    if (__status.counter) {
+    if (__status && __status.counter) {
       var __actual = this.storage.getItem(__status.counter);
       if ( parseFloat(__actual) > 0 ) {
         this.storage.setItem(__status.counter, __actual+1);
       } else {
         this.storage.setItem(__status.counter, 1);
       }
+    }
+    // Check for UNSTORE action
+    if ( __status && __status.unstore ) {
+      this.storage.removeItem(__status.unstore);
     }
     if (__message.text) {
       __message.text = this.storage.replace(__message.text); // Replace stored values
@@ -279,11 +293,7 @@ ForaBotController.prototype.send = function send( value ) {
         }
         // Checking if an event must be thrown
         if (__keyword.event) {
-          this.trigger( 'custom.'+ __keyword.event, {
-            currentStatus: this.currentStatus,
-            nextStatus: __newCurrentStatus,
-            valueReceived: value
-          });
+          this.trigger( 'custom.'+ __keyword.event, this);
         }
         // Setup next status
         this.next( __newCurrentStatus );
@@ -296,57 +306,59 @@ ForaBotController.prototype.send = function send( value ) {
     if (__status.buttons.length > 0) {
       for (var i=0; i<__status.buttons.length; i++){
         var __regexp = new RegExp(value, 'gi');
-        if ( __status.buttons[i].caption == value || __status.buttons[i].value == value ) {
+        var __button = __status.buttons[i];
+        if ( __button.caption == value || __button.value == value ) {
           this.timeoutOverwrite = 0;
           // Throw INPUT event
           this.trigger('input', {
             currentStatus: this.currentStatus,
-            nextStatus:  __status.buttons[i].next,
+            nextStatus:  __button.next,
             valueReceived: value
           });
           // Check for UNSTORE action
-          if ( __status.buttons[i].unstore ) {
-            this.storage.removeItem(__status.buttons[i].unstore);
+          if ( __button.unstore ) {
+            this.storage.removeItem(__button.unstore);
           }
           // Check for DECREASE action
-          if ( __status.buttons[i].decrease ) {
-            var __counter = this.storage.getItem(__status.buttons[i].decrease);
+          if ( __button.decrease ) {
+            var __counter = this.storage.getItem(__button.decrease);
             if (typeof(__counter) == "number") {
-              this.storage.setItem(__status.buttons[i].decrease, __counter-1);
+              this.storage.setItem(__button.decrease, __counter-1);
             }
           }
           // Check for STORE action
-          var __buttonStore = __status.buttons[i].store;
-          if ( __buttonStore ) {
-            if (typeof(__buttonStore) == 'string') {
-              var __value = __status.buttons[i].value || __status.buttons[i].caption;
-              this.storage.setItem(__buttonStore, __value);
+          if ( __button.store ) {
+            if (typeof(__button.store) == 'string') {
+              var __value = __button.value || __button.caption;
+              this.storage.setItem(__button.store, __value);
             }
           }
           // Check for FLAG action
-          var __buttonFlag = __status.buttons[i].flag;
-          if ( __buttonFlag && __buttonFlag.length ) {
-            if (typeof(__buttonFlag) == 'string') {
-              this.storage.setItem(__buttonFlag, true);
+          if ( __button.flag && __button.flag.length ) {
+            if (typeof(__button.flag) == 'string') {
+              this.storage.setItem(__button.flag, true);
             } else {
-              for (var j=0; j<__buttonFlag.length; j++) {
-                this.storage.setItem(__buttonFlag[i], true);
+              for (var j=0; j<__button.flag.length; j++) {
+                this.storage.setItem(__button.flag[i], true);
               }
             }
           }
           // Check for UNFLAG action
-          var __buttonUnflag = __status.buttons[i].unflag;
-          if ( __buttonUnflag && __buttonUnflag.length ) {
-            if (typeof(__buttonUnflag) == 'string') {
-              this.storage.setItem(__buttonUnflag, false);
+          if ( __button.unflag && __button.unflag.length ) {
+            if (typeof(__button.unflag) == 'string') {
+              this.storage.setItem(__button.unflag, false);
             } else {
-              for (var j=0; j<__buttonUnflag.length; j++) {
-                this.storage.setItem(__buttonUnflag[i], false);
+              for (var j=0; j<__button.unflag.length; j++) {
+                this.storage.setItem(__button.unflag[i], false);
               }
             }
           }
+          // Checking if an event must be thrown
+          if ( typeof(__button.event) == 'string' ) {
+            this.trigger( 'custom.'+ __button.event, this);
+          }
           // Points next status
-          this.next( __status.buttons[i].next );
+          this.next( __button.next );
           return true;
         }
       }
@@ -361,7 +373,9 @@ ForaBotController.prototype.send = function send( value ) {
         nextStatus: __status.input.next,
         valueReceived: value
       });
-      this.storage.setItem(__status.input.store, value);
+      if (__status.input.store) {
+        this.storage.setItem(__status.input.store, value);
+      }
       this.next( __status.input.next );
       return true;
     }
@@ -376,7 +390,10 @@ ForaBotController.prototype.send = function send( value ) {
 ForaBotController.prototype.wait = function wait() {
   this.botStatus = 2; // Waiting
   console.info(this.getTime() + 'ForaBotController[wait] : Bot is waiting for a message (status=' + this.botStatus + ')');
-  this.trigger('waiting', this.currentBot.status[ this.currentStatus ] );
+  var __currentStatus = this.currentBot.status[ this.currentStatus ];
+  if (__currentStatus.input) {
+    this.trigger('waiting', __currentStatus );
+  }
 }
 
 ForaBotController.prototype.next = function next( value ) {
@@ -419,6 +436,9 @@ ForaBotController.prototype.next = function next( value ) {
     } else {
       throw new ForaBotError('ForaBotController[next] : Incorrect status keyword (' + this.currentStatus + ')');
     }
+  } else {
+    console.info(this.getTime() + 'ForaBotController[next] : Bot says goodbye!');
+    this.trigger('finish');
   }
 };
 
@@ -503,7 +523,6 @@ function ForaBotStatus( id, data, bot ) {
 }
 
 ForaBotStatus.prototype.getReadTime = function getReadTime() {
-  return 10;
   var __time = 0;
   if (this.super.autotypingTimeout) {
     var __lastTime = localStorage.getItem('ForaBotStatus-' + this.super.id + '-' + this.id);
@@ -551,7 +570,7 @@ ForaBotStatus.prototype.getReadTime = function getReadTime() {
 function ForaBotStorage() {
   this.storage = {};
   this.insideRegExp = new RegExp('~([a-zA-Z0-9_\]+)~','g');
-  this.outsideRegExp = new RegExp('@([a-zA-Z0-9_\~]+)','g');
+  this.outsideRegExp = new RegExp('\\$([a-zA-Z0-9_\~]+)','g');
 }
 
 ForaBotStorage.prototype.setItem = function setItem( key, value) {
@@ -562,16 +581,45 @@ ForaBotStorage.prototype.setItem = function setItem( key, value) {
   }
 }
 
+ForaBotStorage.prototype.load = function load( data ) {
+  if ( typeof(data) == 'object') {
+    for (var key in data) {
+      this.setItem(key, data[key]);
+    }
+  } else {
+    throw new ForaBotError('ForaBotStorage[load] : Storage data must be a valid JSON')
+  }
+}
+
 ForaBotStorage.prototype.getItem = function getItem( key ) {
   return this.storage[ this.replace(key, true) ];
 }
 
 ForaBotStorage.prototype.removeItem = function removeItem( key ) {
-  if (typeof(this.storage[ this.replace(key, true) ]) != "undefined") {
-    delete this.storage[ this.replace(key, true) ];
-    return true;
+  if ( this.outsideRegExp.test(key) ) {
+    if (typeof(this.storage[ this.replace(key, true) ]) != "undefined") {
+      delete this.storage[ this.replace(key, true) ];
+      return true;
+    } else {
+      return false;
+    }
   } else {
-    return false;
+    // RegExp
+    var __customRegExp = new RegExp(this.replace(key, true), 'g');
+    var __keysToDelete = [];
+    for (var __key in this.storage) {
+      if ( __customRegExp.test( __key ) ) {
+        __keysToDelete.push(__key);
+      }
+    }
+    if (__keysToDelete.length > 0) {
+      for (var i=0; i<__keysToDelete.length; i++){
+        delete this.storage[ __keysToDelete[i] ];
+      }
+      return true;
+    } else {
+      return false;
+    }
   }
 }
 
@@ -582,10 +630,8 @@ ForaBotStorage.prototype.replace = function replace( value, inside){
     if (__matches) {
       for (var i=0; i<__matches.length; i++){
         var __match = __matches[i].replace(__regexp, '$1');
-        var __storedValue = this.getItem(__match);
-        if (__storedValue) {
-          value = value.replace(__matches[i], __storedValue, 'g');
-        }
+        var __storedValue = this.getItem(__match) || '';
+        value = value.replace(__matches[i], __storedValue, 'g');
       }
     }
   }

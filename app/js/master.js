@@ -105,9 +105,218 @@ function forabotTypingState( data ){
     helloumi.webchat.umichatcore.setTypingState('');
   }, data.timeout);
 }
+function forabotPreviewBot( controller ){
+  var storage = controller.storage.storage;
+  if (storage.crea_bot === true) {
+    var __previewData = {};
+    __previewData.name = 'preview';
+    __previewData.init = 'welcome_1';
+    __previewData.status = {};
+
+    // welcome_1
+    __previewData.status['welcome_1'] = {
+      text: storage.welcome_1,
+      next: 'welcome_2'
+    };
+
+    // welcome_2
+    __previewData.status['welcome_2'] = {
+      text: storage.welcome_2,
+      next: 'menu'
+    };
+
+    // menu (static)
+    __previewData.status['menu'] = {
+      text: '¿En qué puedo ayudarte?',
+      buttons: []
+    };
+    if (storage.form === true) {
+      __previewData.status['menu'].buttons.push({
+        caption: storage.form_name,
+        next: 'form_user_1'
+      })
+    }
+    if (storage.faqs === true) {
+      __previewData.status['menu'].buttons.push({
+        caption: 'FAQS',
+        next: 'faqs'
+      })
+    }
+
+    // form_user
+    if (storage.form_user === true) {
+      var __index = 1;
+      var __nextStatus = (storage.form_custom === true) ? 'form_custom_1' : 'another';
+      var __fields = storage.form_user_fields.split(',');
+      for (var i=0; i<__fields.length; i++) {
+        var TEXTS = {
+          name: '¿Cómo te llamas?',
+          email: '¿Cuál es tu email?',
+          zip: '¿Puedes indicarme tu código postal?',
+          address: '¿Cuál es tu dirección?',
+          city: '¿Cuál es tu ciudad?',
+          country: '¿Cuál es tu país?',
+          company: '¿Cómo se llama tu empresa?',
+          birthdate: '¿Cuál es tu fecha de nacimiento?'
+        };
+        var __text = TEXTS[ __fields[i] ] || '¿Puedes indicarme tu ' + __fields[i] + '?';
+        var __next = (i == __fields.length-1) ? __nextStatus : 'form_user_'+(__index+1);
+        __previewData.status['form_user_'+__index] = {
+          text: __text,
+          input: {
+            next: __next
+          }
+        };
+        __index += 1;
+      }
+    }
+
+    // form_custom
+    if (storage.form_custom === true) {
+      var __nextStatus = 'another';
+      for (var i=1; i<100; i++) {
+        var __type = storage['form_custom_' + i + '_type'] ;
+        var __text = storage['form_custom_' + i + '_text'] ;
+        var __answer = storage['form_custom_' + i + '_answer'] ;
+        var __nextType = storage['form_custom_' + (i+1) + '_type'] ;
+        var __next = (!__nextType) ? __nextStatus : 'form_custom_'+(i+1);
+        if ( __type == 'option') {
+          __previewData.status['form_custom_'+i] = {
+            text: __text,
+            buttons: []
+          };
+          var __answerArr = __answer.split(',');
+          for (var j=0; j<__answerArr.length; j++) {
+            __previewData.status['form_custom_'+i].buttons.push({
+              caption: __answerArr[j],
+              next: __next
+            })
+          }
+        } else if ( __type == 'options') {
+          __previewData.status['form_custom_'+i] = {
+            text: __text,
+            values: {},
+            input: {
+              next: __next,
+              validate: 'values'
+            }
+          };
+          var __answerArr = __answer.split(',');
+          for (var j=0; j<__answerArr.length; j++) {
+            __previewData.status['form_custom_'+i].values[ __answerArr[i] ] = __answerArr[i];
+          }
+        } else if ( __type == 'text') {
+          __previewData.status['form_custom_'+i] = {
+            text: __text,
+            input: {
+              next: __next
+            }
+          };
+        }
+        if (!__nextType) break;
+      }
+    }
+
+    // form_farewell
+    // TODO
+
+    // Another question (static)
+    __previewData.status['another'] = {
+      text: '¿Tienes alguna otra consulta?',
+      buttons: [
+        { caption: 'Sí', next: 'menu' },
+        { caption: 'No', next: 'end_form' }
+      ]
+    };
+
+    // end form (static)
+    __previewData.status['end_form'] = {
+      text: 'Genial, ¡Hasta pronto! 👋',
+      next: false
+    };
+
+    // faqs
+    if (storage.faqs === true) {
+      // faqs menu
+      __previewData.status['faqs'] = {
+        text: 'Por supuesto, selecciona un tema',
+        buttons: []
+      };
+      for (var i=1; i<100; i++) {
+        // New button
+        var __name = storage['faqs_' + i + '_name'] ;
+        var __nextName = storage['faqs_' + (i+1) + '_name'] ;
+        __previewData.status['faqs'].buttons.push({
+          caption: __name,
+          next: 'faqs_'+ i + '_messages_1'
+        })
+
+        // New faqs
+        for (var j=1; j<100; j++) {
+          var __message = storage['faqs_' + i + '_messages_' + j] ;
+          var __nextMessage = storage['faqs_' + i + '_messages_' + (j+1)] ;
+          var __next = (!__nextMessage) ? 'another_faq' : 'faqs_'+i+'_messages_'+(j+1);
+          __previewData.status['faqs_'+i+'_messages_'+j] = {
+            text: __message,
+            next: __next
+          }
+          if (!__nextMessage) break;
+        }
+
+        if (!__nextName) break;
+      }
+    }
+
+    // Another faq (static)
+    __previewData.status['another_faq'] = {
+      text: '¿Tienes alguna otra consulta?',
+      buttons: [
+        { caption: 'Sí', next: 'faqs' },
+        { caption: 'Terminar', next: 'end_faq' }
+      ]
+    };
+
+    // end faq (static)
+    __previewData.status['end_faq'] = {
+      text: 'Gracias, espero haberte servido de ayuda. ¡Hasta pronto!',
+      next: false
+    };
+    console.log(__previewData);
+    window.jsbot = new ForaBotController();
+    window.jsbot.on('output', forabotMessageReceived);
+    window.jsbot.on('input', forabotMessageSent);
+    window.jsbot.on('waiting', forabotWaitingMessage);
+    window.jsbot.on('typing', forabotTypingState);
+    window.jsbot.load(
+      new ForaBot(Date.now().toString(), __previewData )
+    );
+    helloumi.webchat.umichatcore.redirectMesssages( window.jsbot.send.bind(window.jsbot) );
+    $('#hu-webchat-messages').empty();
+    window.jsbot.start();
+    document.getElementById('hu-webchat-loader').style.setProperty('display', 'none', 'important');
+
+  }
+
+}
+
+function forabotWaitingMessage() {
+  $('#hu-container-widget').attr('data-textbox', 'show');
+  $('#hu-composer-box').focus();
+}
+function forabotMessageSent() {
+  $('#hu-container-widget').attr('data-textbox', 'hidden');
+}
 
 function forabotMessageReceived( message ) {
-  var __timestamp = window.jsbotTimestamp = (window.jsbotTimestamp) ? window.jsbotTimestamp + 0.000001 : 0.000001;
+  var __timestamp;
+  var $lastMessage = $('#hu-webchat-messages .hu-messenger-message:last-child');
+  if ($lastMessage.length != 0) {
+    __timestamp = window.jsbotTimestamp = parseFloat(
+      $('#hu-webchat-messages .hu-messenger-message:last-child').data('timestamp')
+    ) + 0.0001;
+  } else {
+    __timestamp = window.jsbotTimestamp = (window.jsbotTimestamp) ? window.jsbotTimestamp + 0.000001 : 0.000001;
+  }
   var __datetime = new Date(__timestamp);
   var __message = {
     key: 'jsbot-' + __timestamp,
@@ -133,6 +342,10 @@ function forabotMessageReceived( message ) {
 }
 
 function helloumiLivechatLoaded() {
+  // getStaticBot('files/jsbots/bot-builder-content.json')
+  // hideLoader();
+  // return;
+
   // document.querySelector('.hu-messenger-body').addEventListener('scroll', function(e) {
   //   if (e.target.scrollTop <= 5) {
   //     document.getElementById('hu-experiment-header').className = '';
@@ -140,9 +353,10 @@ function helloumiLivechatLoaded() {
   //     document.getElementById('hu-experiment-header').className = 'hu-scrolled';
   //   }
   // });
+
   if (helloumi.webchat.umichatcore.config.jsbot && helloumi.webchat.umichatcore.config.customerToken == null ) {
     window.jsbot = new ForaBotController();
-    window.jsbot.on('message', forabotMessageReceived);
+    window.jsbot.on('output', forabotMessageReceived);
     window.jsbot.on('typing', forabotTypingState);
     window.jsbot.load(
       new ForaBot(Date.now().toString(), helloumi.webchat.umichatcore.config.jsbot )
@@ -296,12 +510,12 @@ function loadSearch(elem, path, callback){
                   if (search.length > 0) {
                     var score = this.getScoreFunction(search);
                     return function(item) {
-                      console.log(item.name + ': ' + (score(item) * (1 + Math.min(item.score / 100, 1))));
+                      //console.log(item.name + ': ' + (score(item) * (1 + Math.min(item.score / 100, 1))));
                       return score(item) * (1 + Math.min(item.score / 100, 1));
                     };
                   } else {
                     return function(item) {
-                      console.log(item.name + ': ' + (1 + Math.min(item.score / 100, 1)));
+                      //console.log(item.name + ': ' + (1 + Math.min(item.score / 100, 1)));
                       return (1 + Math.min(item.score / 100, 1));
                     };
                   }
@@ -339,4 +553,40 @@ function selectizeClick( elem ){
       $selectize.parent().parent().parent().parent().parent().remove();
     }
   }
+}
+
+
+function getStaticBot(path) {
+  var xhr = new XMLHttpRequest();
+  xhr.overrideMimeType("application/json");
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState == XMLHttpRequest.DONE) {
+      loadStaticBot(xhr.responseText);
+    }
+  }
+  xhr.open('GET', path, true);
+  xhr.setRequestHeader("Accept","application/json");
+  xhr.send(null);
+}
+
+function loadStaticBot( data ) {
+  var __data;
+  try {
+    __data = JSON.parse(data);
+  } catch(err) {
+    console.log('Error parsing jsbot data to JSON');
+    throw err;
+  }
+  window.jsbot = new ForaBotController();
+  window.jsbot.on('output', forabotMessageReceived);
+  window.jsbot.on('input', forabotMessageSent);
+  window.jsbot.on('waiting', forabotWaitingMessage);
+  window.jsbot.on('typing', forabotTypingState);
+  window.jsbot.on('custom.preview', forabotPreviewBot);
+  window.jsbot.load(
+    new ForaBot(Date.now().toString(), __data )
+  );
+  helloumi.webchat.umichatcore.redirectMesssages( window.jsbot.send.bind(window.jsbot) );
+  window.jsbot.start();
+  document.getElementById('hu-webchat-loader').style.setProperty('display', 'none', 'important');
 }

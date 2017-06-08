@@ -1,6 +1,10 @@
 {
   "name": "Bot Builder - Content",
   "init": "welcome_0",
+  "storage": {
+    "quote_init": "*",
+    "quote_end": "*"
+  },
   "status": {
     "welcome_0": {
       "text": "¡Estupendo! Te ayudaré a editar los diálogos de tu propio Landbot 🤓",
@@ -9,7 +13,7 @@
     "welcome_1": {
       "text": "Cuando creas que tu bot está listo haz click en el botón “PUBLICAR BOT“",
       "buttons": [
-        { "caption": "Empezar", "next": "welcome_2" },
+        { "caption": "Empezar", "next": "welcome_2" }
       ]
     },
     "welcome_2": {
@@ -27,21 +31,25 @@
       "text": "*Ejemplo: “Hola y bienvenido a hamburguesaonline.com 👋” _Escribe una frase similar debajo_*",
       "input": {
         "store": "welcome_1",
-        "next": "welcome_message_1_check"
+        "next": "welcome_message_1_check_0"
       }
     },
-    "welcome_message_1_check": {
-      "text": "Has escrito:\n@welcome_1\n¿Es correcto?",
+    "welcome_message_1_check_0": {
+      "text": "Has escrito:\n\n$quote_init$welcome_1$quote_end",
+      "next": "welcome_message_1_check_1"
+    },
+    "welcome_message_1_check_1": {
+      "text": "¿Es correcto?",
       "buttons": [
         { "caption": "Sí", "next": "welcome_message_1_end", "flag": "crea_bot"},
-        { "caption": "No", "next": "welcome_message_1_repeat", "unstore": "welcome_1" },
+        { "caption": "No", "next": "welcome_message_1_repeat", "unstore": "welcome_1" }
       ]
     },
     "welcome_message_1_repeat": {
       "text": "Vuelve a escribir una frase de saludo",
       "input": {
         "store": "welcome_1",
-        "next": "welcome_message_1_check"
+        "next": "welcome_message_1_check_0"
       }
     },
     "welcome_message_1_end": {
@@ -59,21 +67,25 @@
       "text": "*Ejemplo: “Soy un chatbot que te ayudará a pedir tu hamburguesa en tres minutos” _Escribe una frase similar debajo_*",
       "input": {
         "store": "welcome_2",
-        "next": "welcome_message_2_check"
+        "next": "welcome_message_2_check_0"
       }
     },
-    "welcome_message_2_check": {
-      "text": "Has escrito:\n@welcome_2\n¿Es correcto?",
+    "welcome_message_2_check_0": {
+      "text": "Has escrito:\n\n$quote_init$welcome_2$quote_end",
+      "next": "welcome_message_2_check_1"
+    },
+    "welcome_message_2_check_1": {
+      "text": "¿Es correcto?",
       "buttons": [
         { "caption": "Sí", "next": "welcome_message_2_end" },
-        { "caption": "No", "next": "welcome_message_2_repeat", "unstore": "welcome_2" },
+        { "caption": "No", "next": "welcome_message_2_repeat", "unstore": "welcome_2" }
       ]
     },
     "welcome_message_2_repeat": {
       "text": "Vuelve a escribir una frase de presentación de tus servicios o producto",
       "input": {
         "store": "welcome_2",
-        "next": "welcome_message_2_check"
+        "next": "welcome_message_2_check_0"
       }
     },
     "welcome_message_2_end": {
@@ -114,7 +126,7 @@
     },
     "custom_form_question_end": {
       "text": "Pasemos entonces a la sección de FAQs",
-      "next": false
+      "next": "faqs_0"
     },
 
 
@@ -123,7 +135,7 @@
       "next": "custom_form_name_pick"
     },
     "custom_form_name_pick": {
-      "text": "*Ejemplos: “registro”, “hacer un pedido”, etc _Escribe debajo_*",
+      "text": "*Ejemplos: “registro”, “hacer un pedido”, etc. _Escribe debajo_*",
       "input": {
         "store": "form_name",
         "next": "custom_form_name_end"
@@ -137,9 +149,9 @@
 
 
     "form_fields": {
-      "text": "¿Quieres que pida datos personales al usuario? (email, etc)",
+      "text": "¿Quieres que pida datos personales al usuario? (email, etc.)",
       "buttons": [
-        { "caption": "Sí", "next": "form_fields_pick" },
+        { "caption": "Sí", "next": "form_fields_pick", "flag": "form_user" },
         { "caption": "No", "next": "form_questions" }
       ]
     },
@@ -154,7 +166,7 @@
         "city": "Ciudad",
         "country": "País",
         "company": "Empresa",
-        "birthday": "Fecha de nacimiento",
+        "birthday": "Fecha de nacimiento"
       },
       "input": {
         "store": "form_user_fields",
@@ -167,7 +179,7 @@
       "next": "form_fields_check_1"
     },
     "form_fields_check_1": {
-      "text": "@form_user_fields",
+      "text": "$quote_init$form_user_fields$quote_end",
       "next": "form_fields_check_2"
     },
     "form_fields_check_2": {
@@ -180,51 +192,51 @@
 
 
     "form_questions": {
-      "text": "¿Quieres que añadamos preguntas de otro tipo? (Ejemplo: preguntas sobre tu servicio, etc.)",
+      "text": "¿Quieres que añadamos preguntas de otro tipo?\n*Ejemplo: preguntas sobre tu servicio, etc.*",
       "buttons": [
-        { "caption": "Sí", "next": "form_questions_pick_type" },
-        { "caption": "No", "next": false }
+        { "caption": "Sí", "next": "form_questions_pick_type", "flag": "form_custom"},
+        { "caption": "No", "next": "faqs_0" }
       ]
     },
     "form_questions_pick_type": {
       "text": "Elige el formato de respuesta para la pregunta que harás",
-      "counter": "COUNTER",
+      "counter": "FORM_INDEX",
       "buttons": [
-        { "caption": "Elegir una opción (entre varias)", "next": "form_questions_pick_text", "value": "option", "store": "form_custom_~COUNTER~_type"},
-        { "caption": "Elegir varias opciones", "next": "form_questions_pick_text", "value": "options", "store": "form_custom_~COUNTER~_type"},
-        { "caption": "Respuesta de texto", "next": "form_questions_pick_question", "value": "text", "store": "form_custom_~COUNTER~_type" }
+        { "caption": "Elegir una opción (entre varias)", "next": "form_questions_pick_text", "value": "option", "store": "form_custom_~FORM_INDEX~_type"},
+        { "caption": "Elegir varias opciones", "next": "form_questions_pick_text", "value": "options", "store": "form_custom_~FORM_INDEX~_type"},
+        { "caption": "Respuesta de texto", "next": "form_questions_pick_question", "value": "text", "store": "form_custom_~FORM_INDEX~_type" }
       ]
     },
     "form_questions_pick_text": {
-      "text": "Escribe el texto de la pregunta Ejemplo: ¿cómo te gusta la carne?",
+      "text": "Escribe el texto de la pregunta\n*Ejemplo: ¿cómo te gusta la carne? _Escribe debajo_*",
       "input": {
-        "store": "form_custom_~COUNTER~_text",
-        "next": "form_questions_pick_answer",
+        "store": "form_custom_~FORM_INDEX~_text",
+        "next": "form_questions_pick_answer"
       }
     },
     "form_questions_pick_answer": {
-      "text": "Ahora añade las diferentes opciones de respuesta (ejemplo: “al punto”, “poco hecha”, etc)",
+      "text": "Ahora añade las diferentes opciones de respuesta\n*Ejemplo: “al punto”, “poco hecha”, etc. _Escribe debajo_*",
       "input": {
-        "store": "form_custom_~COUNTER~_answer",
-        "next": "form_questions_check_0",
+        "store": "form_custom_~FORM_INDEX~_answer",
+        "next": "form_questions_check_0"
       }
     },
     "form_questions_pick_question": {
-      "text": "Escribe el texto de la pregunta Ejemplo: ¿cómo te gusta la carne?",
+      "text": "Escribe el texto de la pregunta\n*Ejemplo: ¿cómo te gusta la carne? _Escribe debajo_*",
       "input": {
-        "store": "form_custom_~COUNTER~_text",
-        "next": "form_questions_check_0",
+        "store": "form_custom_~FORM_INDEX~_text",
+        "next": "form_questions_check_0"
       }
     },
     "form_questions_check_0": {
-      "text": "Así quedaría esta pregunta:\n@form_custom_~COUNTER~_text\n@form_custom_~COUNTER~_answer",
+      "text": "Así quedaría esta pregunta:\n\n$quote_init$form_custom_~FORM_INDEX~_text$quote_end\n$quote_init$form_custom_~FORM_INDEX~_answer$quote_end",
       "next": "form_questions_check_1"
     },
     "form_questions_check_1": {
       "text": "¿Es correcto?",
       "buttons": [
         { "caption": "Sí", "next": "form_another", "flag": "form"},
-        { "caption": "No", "next": "form_repeat", "decrease": "COUNTER", "unstore": "form_custom_~COUNTER~_answer"}
+        { "caption": "No", "next": "form_repeat", "decrease": "FORM_INDEX", "unstore": "form_custom_~FORM_INDEX~_.*"}
       ]
     },
 
@@ -243,6 +255,116 @@
     },
     "form_end": {
       "text": "Perfecto, continuemos",
+      "next": "faqs_0"
+    },
+
+
+    "faqs_0": {
+      "text": "Ahora vamos a añadir la sección de FAQs 🤔",
+      "next": "faqs_1"
+    },
+    "faqs_1": {
+      "text": "Las FAQS son temas sobre los que puedes dar información a tus usuarios",
+      "next": "faqs_2"
+    },
+    "faqs_2": {
+      "text": "*Ejemplos: “precios, tiempo de entrega, etc.”*",
+      "buttons": [
+        { "caption": "Añadir FAQs", "next": "faqs_pick_name_0"},
+        { "caption": "No añadir FAQs", "next": "form_end" }
+      ]
+    },
+
+
+
+    "faqs_pick_name_0": {
+      "counter": "FAQS_INDEX",
+      "unstore": "FAQS_MSG_INDEX",
+      "text": "Muy bien, dime el nombre del tema (de la manera más breve posible)",
+      "next": "faqs_pick_name_1"
+    },
+    "faqs_pick_name_1": {
+      "text": "*Ejemplo: “precios”*",
+      "input": {
+        "store": "faqs_~FAQS_INDEX~_name",
+        "next": "faqs_pick_messages_0"
+      }
+    },
+    "faqs_pick_messages_0": {
+      "text": "Ahora escribe la explicación de este tema para tu usuario",
+      "next": "faqs_pick_messages_1"
+    },
+    "faqs_pick_messages_1": {
+      "counter": "FAQS_MSG_INDEX",
+      "text": "Puedes escribir varios mensajes pulsando Enter. Cuando acabes haz click en “Guardar”",
+      "input": {
+        "store": "faqs_~FAQS_INDEX~_messages_~FAQS_MSG_INDEX~",
+        "next": "faqs_pick_messages_2"
+      }
+    },
+    "faqs_pick_messages_2": {
+      "text": "Pulsa “Guardar” para terminar o escribe otro mensaje",
+      "buttons": [
+        { "caption": "Guardar", "next": "faqs_pick_messages_check_0"}
+      ],
+      "counter": "FAQS_MSG_INDEX",
+      "input": {
+        "store": "faqs_~FAQS_INDEX~_messages_~FAQS_MSG_INDEX~",
+        "next": "faqs_pick_messages_2"
+      }
+    },
+
+    "faqs_pick_messages_check_0": {
+      "text": "Así quedaría este tema:\n\n$quote_init$faqs_~FAQS_INDEX~_name$quote_end\n$faqs_~FAQS_INDEX~_messages_1\n$faqs_~FAQS_INDEX~_messages_2\n$faqs_~FAQS_INDEX~_messages_3\n$faqs_~FAQS_INDEX~_messages_4\n$faqs_~FAQS_INDEX~_messages_5",
+      "next": "faqs_pick_messages_check_1"
+    },
+    "faqs_pick_messages_check_1": {
+      "text": "¿Es correcto?",
+      "buttons": [
+        { "caption": "Sí", "flag": "faqs", "next": "faqs_pick_messages_another"},
+        { "caption": "No", "next": "faqs_pick_messages_repeat", "decrease": "FAQS_INDEX", "unstore": "faqs_~FAQS_INDEX~_.*"}
+      ]
+    },
+    "faqs_pick_messages_repeat" : {
+      "text": "Empecemos entonces de nuevo",
+      "next": "faqs_pick_name_0"
+    },
+    "faqs_pick_messages_another" : {
+      "text": "¿Quieres añadir otro tema?",
+      "buttons": [
+        { "caption": "Sí", "next": "faqs_pick_name_0"},
+        { "caption": "No", "next": "preview_0"}
+      ]
+    },
+
+
+    "preview_0": {
+      "text": "¡Genial! ¡Ya lo tenemos todo! 👏",
+      "next": "preview_1"
+    },
+    "preview_1": {
+      "text": "¿Quieres previualizar tu bot?",
+      "buttons": [
+        { "caption": "Sí", "event": "preview", "next": false},
+        { "caption": "No", "next": "finish_0"}
+      ]
+    },
+
+
+    "finish_0": {
+      "text": "Perfecto, ahora sólo tenemos que hacer algunos ajustes técnicos al bot y podrás utilizarlo",
+      "next": "finish_1"
+    },
+    "finish_1": {
+      "text": "En 24 horas recibirás un email con los datos de acceso para poder probarlo",
+      "next": "finish_2"
+    },
+    "finish_2": {
+      "text": "Si quieres hacer alguna corrección escríbelo aquí ahora y la tendremos en cuenta",
+      "next": "finish_3"
+    },
+    "finish_3": {
+      "text": "¡Hasta pronto!",
       "next": false
     }
   }
