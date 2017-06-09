@@ -24,7 +24,7 @@ div#hu-experiment-header {
       // width: 103px;
       width: 155px;
       margin-top: -10px;
-      margin-bottom: -22px;
+      margin-bottom: -14px;
     }
     .more-leads {
       font-size: $font-size - 1;
@@ -58,7 +58,7 @@ div#hu-experiment-header {
       &:hover {
         transform: translateY(-10px);
         box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
-        background-color: $contrast-0;
+        background-color: $accent;
       }
     }
   }

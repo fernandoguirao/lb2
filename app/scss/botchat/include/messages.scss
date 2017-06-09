@@ -275,26 +275,26 @@
           span {
             font-family: $font,$font-type!important;
           }
-          // &:last-child {
-          //   background-color: rgba($accent-0, 0.08);
-          //   color: $contrast-0;
-          //   border-color: $contrast-0;
-          //   @if $background-type == 'video' {
-          //     color: $light;
-          //     border-color: $light;
-          //   }
-          //   &:hover {
-          //     color: $light;
-          //   }
-          //   &:first-child {
-          //     background-color: $accent-0;
-          //     color: $light;
-          //   }
-          // }
+          &:last-child {
+            background-color: rgba($light, 0.2);
+            color: $light;
+            border-color: $contrast-0;
+            @if $background-type == 'video' {
+              color: $light;
+              border-color: $light;
+            }
+            &:hover {
+              color: $light;
+            }
+            &:first-child {
+              background-color: $accent-0;
+              color: $light;
+            }
+          }
           &:hover {
             box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
-            background-color: lighten($contrast-0,2%);
-            border-color: lighten($contrast-0,2%);
+            background-color: $accent;
+            border-color: $accent;
           }
         }
       }
@@ -330,7 +330,7 @@
         background-color: rgba(255,255,255,.2) !important;
       }
       @if $background-type == 'image' {
-        background-color: rgba($contrast,.75) !important;
+        background-color: rgba(255,255,255,.2) !important;
       }
     }
     .hu-message-info {

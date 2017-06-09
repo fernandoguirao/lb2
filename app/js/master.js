@@ -150,7 +150,7 @@ function helloumiLivechatLoaded() {
     window.jsbot.start();
     document.getElementById('hu-webchat-loader').style.setProperty('display', 'none', 'important');
   }
-  $('#hu-composer-box').prop('placeholder', 'Digite aqui');
+  $('#hu-composer-box').prop('placeholder', 'Escribe aquí');
   hideLoader();
 }
 
