@@ -328,10 +328,64 @@ function forabotPreviewBot( controller ){
 
 }
 
-function forabotWaitingMessage() {
-  $('#hu-container-widget').attr('data-textbox', 'show');
-  $('#hu-composer-box').focus();
+function forabotWaitingMessage( status ) {
+  if (status.input) {
+    $('#hu-container-widget').attr('data-textbox', 'show');
+    $('#hu-composer-box').focus();
+  }
 }
+function forabotCreateChecklist( controller ) {
+  var __data = {};
+  try {
+    __data = controller.currentBot.status[ controller.currentStatus ].checklist;
+  } catch(error) {
+    console.log('Error creating checklist');
+    throw error;
+  }
+
+  var $container = $('#hu-webchat-messages .hu-messenger-message:last-child .hu-message-content-buttons .hu-btn-group-vertical');
+  var $clonedContainer = $container.clone();
+  var $continueBtn = $('<div class="hu-btn hu-btn-sm hu-btn-block hu-btn-pink"><span data-click="' + __data.caption + '">' + __data.caption + '</span></div>')
+  var __min = (typeof(__data.min) == 'number') ? __data.min : 0;
+
+  //
+  // Create check buttons
+  //
+  $.each( __data.values, function( key, elem ){
+    var $checkItem = $('<div class="hu-btn hu-btn-sm hu-btn-block hu-btn-pink hu-btn-unchecked"><span class="fi check"></span><span data-click="' + key + '">' + elem + '</span></div>')
+    $checkItem.on('click', function(){
+      $(this).toggleClass('hu-btn-unchecked hu-btn-checked');
+      var $checks = $container.find('.hu-btn-pink:not(.hu-btn-unchecked)');
+      if ($checks.length >= __min) {
+        $continueBtn.removeClass('hu-btn-disabled');
+      } else {
+        $continueBtn.addClass('hu-btn-disabled');
+      }
+    })
+    $container.append($checkItem)
+  });
+
+  //
+  // SEND button
+  //
+  $continueBtn.on('click', function(){
+    var $checks = $container.find('.hu-btn-pink:not(.hu-btn-unchecked)');
+    var __value = $checks.map(function(index, elem){
+      return $(elem).find('span:last-child').data('click');
+    }).get().join(',');
+    if ($checks.length >= __min) {
+      fakeMessage(__value, true);
+      $container.parent().empty();
+    }
+  });
+  if (__min > 0) {
+    $continueBtn.addClass('hu-btn-disabled');
+  }
+  $clonedContainer.append($continueBtn);
+
+  $container.parent().append($clonedContainer)
+}
+
 function forabotMessageSent() {
   $('#hu-container-widget').attr('data-textbox', 'hidden');
 }
@@ -617,6 +671,7 @@ function loadStaticBot( data, step ) {
   window.jsbot.on('input', forabotMessageSent);
   window.jsbot.on('waiting', forabotWaitingMessage);
   window.jsbot.on('typing', forabotTypingState);
+  window.jsbot.on('custom.checklist', forabotCreateChecklist);
   window.jsbot.on('custom.clear', function(){
     $('#hu-webchat-messages').empty();
   });

@@ -157,22 +157,24 @@
     },
     "form_fields_pick": {
       "text": "Puedo pedir todos estos datos personales (selecciona los que te interesen)",
-      "values": {
-        "name": "Nombre",
-        "email": "Email",
-        "phone": "Teléfono",
-        "postal_code": "Código postal",
-        "address": "Dirección",
-        "city": "Ciudad",
-        "country": "País",
-        "company": "Empresa",
-        "birthday": "Fecha de nacimiento"
-      },
-      "input": {
+      "checklist": {
+        "values": {
+          "name": "Nombre",
+          "email": "Email",
+          "phone": "Teléfono",
+          "zip": "Código postal",
+          "address": "Dirección",
+          "city": "Ciudad",
+          "country": "País",
+          "company": "Empresa",
+          "birthdate": "Fecha de nacimiento"
+        },
+        "min": 1,
+        "caption": "Siguiente",
         "store": "form_user_fields",
-        "validate": "values",
         "next": "form_fields_check_0"
-      }
+      },
+      "event": "checklist"
     },
     "form_fields_check_0": {
       "text": "Perfecto, preguntaré estos datos:",

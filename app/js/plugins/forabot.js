@@ -279,13 +279,14 @@ ForaBotController.prototype.checkCurrent = function checkCurrent() {
     if (__message.text) {
       __message.text = this.storage.replace(__message.text); // Replace stored values
     }
+    this.botStatus = 1; // Running
+    // Throw OUTPUT event
+    console.info(this.getTime() + 'ForaBotController[checkCurrent] : Bot sends a message (' + this.currentStatus + ')');
+    this.trigger('output',  __message );
     // Checking if an event must be thrown
     if ( __status && __status.event ) {
       this.trigger( 'custom.'+ __status.event, this);
     }
-    this.botStatus = 1; // Running
-    console.info(this.getTime() + 'ForaBotController[checkCurrent] : Bot sends a message (' + this.currentStatus + ')');
-    this.trigger('output',  __message ); // Throw OUTPUT event
     this.next(); // Points to next status
   }
 };
@@ -429,6 +430,22 @@ ForaBotController.prototype.send = function send( value ) {
       this.next( __status.input.next );
       return true;
     }
+    //
+    // CHECKLIST CHECK
+    //
+    if ( typeof(__status.checklist) == "object" ) {
+      // TODO: Validation (email, name, phone, ...)
+      this.trigger('input', {
+        currentStatus: this.currentStatus,
+        nextStatus: __status.checklist.next,
+        valueReceived: value
+      });
+      if (__status.checklist.store) {
+        this.storage.setItem(__status.checklist.store, value);
+      }
+      this.next( __status.checklist.next );
+      return true;
+    }
     console.info(this.getTime() + 'ForaBotController[send] : Received message doesn\'t match any path');
     return false;
   } else {
@@ -447,7 +464,7 @@ ForaBotController.prototype.wait = function wait() {
     console.info(this.getTime() + 'ForaBotController[wait] : Bot is waiting for a message (status=' + this.botStatus + ')');
   }
 
-  if (__currentStatus && __currentStatus.input) {
+  if (__currentStatus && (__currentStatus.input || __currentStatus.checklist) ) {
     this.trigger('waiting', __currentStatus );
   }
 }
@@ -567,27 +584,20 @@ function ForaBotStatus( id, data, bot ) {
   if ( typeof(id) === 'string' && __idValidator.test(id) ) {
     this.id = id;
     this.super = bot;
+    this.text = undefined;
+    this.next = undefined;
+    this.images = undefined;
+    this.buttons = undefined;
+    this.download = undefined;
+    this.code = undefined;
+    this.link = undefined;
+    this.input = undefined;
+    this.checklist = undefined;
     if ( typeof(data) === 'object' ) {
       for(var __key in data) {
         this[__key] = data[__key];
       }
-      this.text = data.text || null;
       this.next = (data.next || data.next === false) ? data.next : null;
-      this.images = data.images || null;
-      this.buttons = data.buttons || null;
-      this.download = data.download || null;
-      this.code = data.code || null;
-      this.link = data.link || null;
-      this.input = data.input || null;
-    } else {
-      this.text = null;
-      this.next = null;
-      this.images = null;
-      this.buttons = null;
-      this.download = null;
-      this.code = null;
-      this.link = null;
-      this.input = null;
     }
   } else {
     throw new ForaBotError('ForaBotStatus : Status ID must be a valid string')
@@ -599,6 +609,7 @@ ForaBotStatus.prototype.getData = function getData() {
     text: this.text,
     next: this.next,
     input: this.input,
+    checklist: this.checklist,
     images: this.images,
     buttons: this.buttons,
     download: this.download,
