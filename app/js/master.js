@@ -106,8 +106,9 @@ function forabotTypingState( data ){
   }, data.timeout);
 }
 function forabotPreviewBot( controller ){
-  var storage = controller.storage.storage;
-  if (storage.crea_bot === true) {
+  var __data = controller.getCurrentData();
+  var __storage = __data.storage;
+  if (__storage.crea_bot === true) {
     var __previewData = {};
     __previewData.name = 'preview';
     __previewData.init = 'welcome_1';
@@ -115,43 +116,48 @@ function forabotPreviewBot( controller ){
 
     // welcome_1
     __previewData.status['welcome_1'] = {
-      text: storage.welcome_1,
-      next: 'welcome_2'
+      text: __storage.welcome_1,
+      next: (__storage.welcome_2) ? 'welcome_2' : false
     };
 
-    // welcome_2
-    __previewData.status['welcome_2'] = {
-      text: storage.welcome_2,
-      next: 'menu'
-    };
+    if (__storage.welcome_2) {
+      // welcome_2
+      __previewData.status['welcome_2'] = {
+        text: __storage.welcome_2,
+        next: (__storage.form === true || __storage.faqs === true) ? 'menu' : false
+      };
+    }
 
     // menu (static)
-    __previewData.status['menu'] = {
-      text: '¿En qué puedo ayudarte?',
-      buttons: []
-    };
-    if (storage.form === true) {
-      __previewData.status['menu'].buttons.push({
-        caption: storage.form_name,
-        next: 'form_user_1'
-      })
-    }
-    if (storage.faqs === true) {
-      __previewData.status['menu'].buttons.push({
-        caption: 'FAQS',
-        next: 'faqs'
-      })
+    if (__storage.form === true || __storage.faqs === true) {
+      __previewData.status['menu'] = {
+        text: '¿En qué puedo ayudarte?',
+        buttons: []
+      };
+      if (__storage.form === true) {
+        __previewData.status['menu'].buttons.push({
+          caption: __storage.form_name,
+          next: (__storage.form_user === true) ? 'form_user_1' : 'form_custom_1'
+        })
+      }
+      if (__storage.faqs === true) {
+        __previewData.status['menu'].buttons.push({
+          caption: 'FAQS',
+          next: 'faqs'
+        })
+      }
     }
 
     // form_user
-    if (storage.form_user === true) {
+    if (__storage.form_user === true) {
       var __index = 1;
-      var __nextStatus = (storage.form_custom === true) ? 'form_custom_1' : 'another';
-      var __fields = storage.form_user_fields.split(',');
+      var __nextStatus = (__storage.form_custom === true) ? 'form_custom_1' : 'form_farewell';
+      var __fields = __storage.form_user_fields.split(',');
       for (var i=0; i<__fields.length; i++) {
         var TEXTS = {
           name: '¿Cómo te llamas?',
           email: '¿Cuál es tu email?',
+          phone: '¿Cuál es tu número de teléfono?',
           zip: '¿Puedes indicarme tu código postal?',
           address: '¿Cuál es tu dirección?',
           city: '¿Cuál es tu ciudad?',
@@ -172,13 +178,13 @@ function forabotPreviewBot( controller ){
     }
 
     // form_custom
-    if (storage.form_custom === true) {
-      var __nextStatus = 'another';
+    if (__storage.form_custom === true) {
+      var __nextStatus = 'form_farewell';
       for (var i=1; i<100; i++) {
-        var __type = storage['form_custom_' + i + '_type'] ;
-        var __text = storage['form_custom_' + i + '_text'] ;
-        var __answer = storage['form_custom_' + i + '_answer'] ;
-        var __nextType = storage['form_custom_' + (i+1) + '_type'] ;
+        var __type = __storage['form_custom_' + i + '_type'] ;
+        var __text = __storage['form_custom_' + i + '_text'] ;
+        var __answer = __storage['form_custom_' + i + '_answer'] ;
+        var __nextType = __storage['form_custom_' + (i+1) + '_type'] ;
         var __next = (!__nextType) ? __nextStatus : 'form_custom_'+(i+1);
         if ( __type == 'option') {
           __previewData.status['form_custom_'+i] = {
@@ -217,26 +223,33 @@ function forabotPreviewBot( controller ){
       }
     }
 
-    // form_farewell
-    // TODO
 
-    // Another question (static)
-    __previewData.status['another'] = {
-      text: '¿Tienes alguna otra consulta?',
-      buttons: [
-        { caption: 'Sí', next: 'menu' },
-        { caption: 'No', next: 'end_form' }
-      ]
-    };
 
-    // end form (static)
-    __previewData.status['end_form'] = {
-      text: 'Genial, ¡Hasta pronto! 👋',
-      next: false
-    };
+    if (__storage.form === true) {
+      // form_farewell
+      __previewData.status['form_farewell'] = {
+        text: __storage.form_farewell,
+        next: 'another'
+      };
+
+      // Another question (static)
+      __previewData.status['another'] = {
+        text: '¿Tienes alguna otra consulta?',
+        buttons: [
+          { caption: 'Sí', next: 'menu' },
+          { caption: 'No', next: 'end_form' }
+        ]
+      };
+
+      // end form (static)
+      __previewData.status['end_form'] = {
+        text: 'Genial, ¡Hasta pronto! 👋',
+        next: false
+      };
+    }
 
     // faqs
-    if (storage.faqs === true) {
+    if (__storage.faqs === true) {
       // faqs menu
       __previewData.status['faqs'] = {
         text: 'Por supuesto, selecciona un tema',
@@ -244,8 +257,8 @@ function forabotPreviewBot( controller ){
       };
       for (var i=1; i<100; i++) {
         // New button
-        var __name = storage['faqs_' + i + '_name'] ;
-        var __nextName = storage['faqs_' + (i+1) + '_name'] ;
+        var __name = __storage['faqs_' + i + '_name'] ;
+        var __nextName = __storage['faqs_' + (i+1) + '_name'] ;
         __previewData.status['faqs'].buttons.push({
           caption: __name,
           next: 'faqs_'+ i + '_messages_1'
@@ -253,8 +266,8 @@ function forabotPreviewBot( controller ){
 
         // New faqs
         for (var j=1; j<100; j++) {
-          var __message = storage['faqs_' + i + '_messages_' + j] ;
-          var __nextMessage = storage['faqs_' + i + '_messages_' + (j+1)] ;
+          var __message = __storage['faqs_' + i + '_messages_' + j] ;
+          var __nextMessage = __storage['faqs_' + i + '_messages_' + (j+1)] ;
           var __next = (!__nextMessage) ? 'another_faq' : 'faqs_'+i+'_messages_'+(j+1);
           __previewData.status['faqs_'+i+'_messages_'+j] = {
             text: __message,
@@ -267,34 +280,50 @@ function forabotPreviewBot( controller ){
       }
     }
 
-    // Another faq (static)
-    __previewData.status['another_faq'] = {
-      text: '¿Tienes alguna otra consulta?',
-      buttons: [
-        { caption: 'Sí', next: 'faqs' },
-        { caption: 'Terminar', next: 'end_faq' }
-      ]
-    };
+    if (__storage.faqs === true) {
+      // Another faq (static)
+      __previewData.status['another_faq'] = {
+        text: '¿Tienes alguna otra consulta?',
+        buttons: [
+          { caption: 'Sí', next: 'menu' },
+          { caption: 'Terminar', next: 'end_faq' }
+        ]
+      };
 
-    // end faq (static)
-    __previewData.status['end_faq'] = {
-      text: 'Gracias, espero haberte servido de ayuda. ¡Hasta pronto!',
-      next: false
-    };
-    console.log(__previewData);
+      // end faq (static)
+      __previewData.status['end_faq'] = {
+        text: 'Gracias, espero haberte servido de ayuda. ¡Hasta pronto!',
+        next: false
+      };
+    }
+
+    __previewData.keywords = {
+      'salir': {
+        'next': false
+      }
+    }
+
     window.jsbot = new ForaBotController();
     window.jsbot.on('output', forabotMessageReceived);
     window.jsbot.on('input', forabotMessageSent);
     window.jsbot.on('waiting', forabotWaitingMessage);
     window.jsbot.on('typing', forabotTypingState);
+    window.jsbot.on('custom.clear start', function(){
+      $('#hu-webchat-messages').empty();
+    });
+    window.jsbot.on('finish custom.end_preview', function(){
+      loadStaticBot(__data, 'preview_end');
+    });
+
     window.jsbot.load(
       new ForaBot(Date.now().toString(), __previewData )
     );
     helloumi.webchat.umichatcore.redirectMesssages( window.jsbot.send.bind(window.jsbot) );
-    $('#hu-webchat-messages').empty();
     window.jsbot.start();
     document.getElementById('hu-webchat-loader').style.setProperty('display', 'none', 'important');
 
+  } else {
+    window.jsbot.go('preview_no_data');
   }
 
 }
@@ -342,9 +371,11 @@ function forabotMessageReceived( message ) {
 }
 
 function helloumiLivechatLoaded() {
-  // getStaticBot('files/jsbots/bot-builder-content.json')
-  // hideLoader();
-  // return;
+  // getStaticBot('files/jsbots/test.json');
+  getStaticBot('files/jsbots/bot-builder-content.json');
+  // getStaticBot('files/jsbots/bot-example-traemebirra.json')
+  hideLoader();
+  return;
 
   // document.querySelector('.hu-messenger-body').addEventListener('scroll', function(e) {
   //   if (e.target.scrollTop <= 5) {
@@ -569,24 +600,36 @@ function getStaticBot(path) {
   xhr.send(null);
 }
 
-function loadStaticBot( data ) {
+function loadStaticBot( data, step ) {
   var __data;
-  try {
-    __data = JSON.parse(data);
-  } catch(err) {
-    console.log('Error parsing jsbot data to JSON');
-    throw err;
+  if (typeof(data) == 'object') {
+    __data = data;
+  } else if (typeof(data) == 'string') {
+    try {
+      __data = JSON.parse(data);
+    } catch(err) {
+      console.log('Error parsing jsbot data to JSON');
+      throw err;
+    }
   }
   window.jsbot = new ForaBotController();
   window.jsbot.on('output', forabotMessageReceived);
   window.jsbot.on('input', forabotMessageSent);
   window.jsbot.on('waiting', forabotWaitingMessage);
   window.jsbot.on('typing', forabotTypingState);
+  window.jsbot.on('custom.clear', function(){
+    $('#hu-webchat-messages').empty();
+  });
   window.jsbot.on('custom.preview', forabotPreviewBot);
+  window.jsbot.on('finish', function(){
+    helloumi.webchat.umichatcore.redirectMesssages( false );
+    $('#hu-container-widget').attr('data-textbox', 'show');
+    $('#hu-composer-box').focus();
+  });
   window.jsbot.load(
     new ForaBot(Date.now().toString(), __data )
   );
   helloumi.webchat.umichatcore.redirectMesssages( window.jsbot.send.bind(window.jsbot) );
-  window.jsbot.start();
+  window.jsbot.start(step);
   document.getElementById('hu-webchat-loader').style.setProperty('display', 'none', 'important');
 }

@@ -126,7 +126,7 @@
     },
     "custom_form_question_end": {
       "text": "Pasemos entonces a la sección de FAQs",
-      "next": "faqs_0"
+      "next": "faqs_1"
     },
 
 
@@ -255,8 +255,71 @@
     },
     "form_end": {
       "text": "Perfecto, continuemos",
+      "next": "form_farewell"
+    },
+
+
+    "form_farewell": {
+      "text": "Ahora escribe el texto que quieras usar para agradecer al usuario que haya respondido a tus preguntas",
+      "next": "form_farewell_pick"
+    },
+    "form_farewell_pick": {
+      "text": "*Ejemplo: “Gracias por pedir tu hamburguesa, en quince minutos estará en tu casa” _Escribe una frase similar debajo_* ",
+      "input": {
+        "store": "form_farewell",
+        "next": "form_farewell_check_0"
+      }
+    },
+    "form_farewell_check_0": {
+      "text": "Así quedaría esta despedida:\n\n$quote_init$form_farewell$quote_end",
+      "next": "form_farewell_check_1"
+    },
+    "form_farewell_check_1": {
+      "text": "¿Es correcto?",
+      "buttons": [
+        { "caption": "Sí", "next": "form_send_0"},
+        { "caption": "No", "next": "form_farewell_repeat" }
+      ]
+    },
+    "form_farewell_repeat": {
+      "text": "Empecemos entonces de nuevo",
+      "next": "form_farewell"
+    },
+
+
+
+    "form_send_0": {
+      "text": "Y ahora una última pregunta:",
+      "next": "form_send_1"
+    },
+    "form_send_1": {
+      "text": "¿Quieres que cuando el usuario complete el formulario te enviemos las respuestas?",
+      "buttons": [
+        { "caption": "Por email", "next": "form_send_email"},
+        { "caption": "En una petición API", "next": "form_send_api"},
+        { "caption": "No hace falta", "next": "form_send_end"}
+      ]
+    },
+    "form_send_email": {
+      "text": "¿A qué email debemos enviar las respuestas de los usuarios?",
+      "input": {
+        "store": "form_send_email",
+        "next": "form_send_end"
+      }
+    },
+    "form_send_api": {
+      "text": "Escribe aquí un ejemplo de llamada a tu API para que enviemos los datos",
+      "input": {
+        "store": "form_send_api",
+        "next": "form_send_end"
+      }
+    },
+    "form_send_end": {
+      "text": "Perfecto, continuemos",
       "next": "faqs_0"
     },
+
+
 
 
     "faqs_0": {
@@ -271,7 +334,7 @@
       "text": "*Ejemplos: “precios, tiempo de entrega, etc.”*",
       "buttons": [
         { "caption": "Añadir FAQs", "next": "faqs_pick_name_0"},
-        { "caption": "No añadir FAQs", "next": "form_end" }
+        { "caption": "No añadir FAQs", "next": "preview_0" }
       ]
     },
 
@@ -338,17 +401,26 @@
     },
 
 
+
     "preview_0": {
       "text": "¡Genial! ¡Ya lo tenemos todo! 👏",
       "next": "preview_1"
     },
     "preview_1": {
-      "text": "¿Quieres previualizar tu bot?",
+      "text": "¿Quieres previsualizar tu bot?",
       "buttons": [
-        { "caption": "Sí", "event": "preview", "next": false},
+        { "caption": "Sí", "event": "preview"},
         { "caption": "No", "next": "finish_0"}
       ]
     },
+    "preview_end": {
+      "text": "Aquí termina la previsualización, ¿quieres repetirla?",
+      "buttons": [
+        { "caption": "Sí",  "event": "preview"},
+        { "caption": "No", "next": "finish_0", "event": "clear" }
+      ]
+    },
+
 
 
     "finish_0": {

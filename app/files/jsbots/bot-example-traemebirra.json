@@ -1,0 +1,236 @@
+{
+   "id":"1496944586145",
+   "init":"welcome_1",
+   "name":"preview",
+   "autotypingTimeout":0,
+   "status":{
+      "welcome_1":{
+         "id":"welcome_1",
+         "text":"¡Hola! ¡Bienvenido a traemebirra.com! 👋",
+         "next":"welcome_2"
+      },
+      "welcome_2":{
+         "id":"welcome_2",
+         "text":"Soy un chatbot que te ayudará a pedir tu cerveza fresquita en tres minutos 😎🍺",
+         "next":"menu"
+      },
+      "menu":{
+         "id":"menu",
+         "text":"¿En qué puedo ayudarte?",
+         "buttons":[
+            {
+               "caption":"Pedir cerveza",
+               "next":"form_user_1"
+            },
+            {
+               "caption":"FAQS",
+               "next":"faqs"
+            }
+         ]
+      },
+      "form_user_1":{
+         "id":"form_user_1",
+         "text":"¿Cómo te llamas?",
+         "input":{
+            "next":"form_user_2"
+         }
+      },
+      "form_user_2":{
+         "id":"form_user_2",
+         "text":"¿Cuál es tu dirección?",
+         "input":{
+            "next":"form_user_3"
+         }
+      },
+      "form_user_3":{
+         "id":"form_user_3",
+         "text":"¿Puedes indicarme tu código postal?",
+         "input":{
+            "next":"form_user_4"
+         }
+      },
+      "form_user_4":{
+         "id":"form_user_4",
+         "text":"¿Cuál es tu número de teléfono?",
+         "input":{
+            "next":"form_custom_1"
+         }
+      },
+      "form_custom_1":{
+         "id":"form_custom_1",
+         "text":"¿Te lo enviamos a casa?",
+         "buttons":[
+            {
+               "caption":"Por supuesto",
+               "next":"form_custom_2"
+            },
+            {
+               "caption":"Voy a recogerlo",
+               "next":"form_custom_2"
+            }
+         ]
+      },
+      "form_custom_2":{
+         "id":"form_custom_2",
+         "text":"A continuación, haz tu pedido. Tenemos Mahou Clásica, Alhambra Reserva, San Miguel y Franziskaner Weissbier",
+         "input":{
+            "next":"another"
+         }
+      },
+      "another":{
+         "id":"another",
+         "text":"¿Tienes alguna otra consulta?",
+         "buttons":[
+            {
+               "caption":"Sí",
+               "next":"menu"
+            },
+            {
+               "caption":"No",
+               "next":"end_form"
+            }
+         ]
+      },
+      "end_form":{
+         "id":"end_form",
+         "text":"Genial, ¡Hasta pronto! 👋",
+         "next":"end"
+      },
+      "faqs":{
+         "id":"faqs",
+         "text":"Por supuesto, selecciona un tema",
+         "buttons":[
+            {
+               "caption":"Mahou Clásica",
+               "next":"faqs_1_messages_1"
+            },
+            {
+               "caption":"Alhambra Reserva",
+               "next":"faqs_2_messages_1"
+            },
+            {
+               "caption":"San Miguel",
+               "next":"faqs_3_messages_1"
+            },
+            {
+               "caption":"Franziskaner Weissbier",
+               "next":"faqs_4_messages_1"
+            },
+            {
+               "caption":"Precios",
+               "next":"faqs_5_messages_1"
+            }
+         ]
+      },
+      "faqs_1_messages_1":{
+         "id":"faqs_1_messages_1",
+         "text":"Se trata de la cerveza Mahou original de 1890 que pasó a denominarse Mahou Clásica en 1993",
+         "next":"faqs_1_messages_2"
+      },
+      "faqs_1_messages_2":{
+         "id":"faqs_1_messages_2",
+         "text":"Refrescante amargor suave, es la compañera perfecta para unas tapas y unos aperitivos",
+         "next":"faqs_1_messages_3"
+      },
+      "faqs_1_messages_3":{
+         "id":"faqs_1_messages_3",
+         "text":"La cerveza Mahou Clásica, con su color oro brillante y su aroma ligeramente afrutado, es una cerveza sabrosa, con buen equilibrio entre el alcohol que contiene y su acidez",
+         "next":"another_faq"
+      },
+      "faqs_2_messages_1":{
+         "id":"faqs_2_messages_1",
+         "text":"Reservada para los paladares más exigentes, Alhambra Reserva 1925 es la cerveza de calidad extra elaborada artesanalmente",
+         "next":"faqs_2_messages_2"
+      },
+      "faqs_2_messages_2":{
+         "id":"faqs_2_messages_2",
+         "text":"Con un sabor profundo y exquisito y un envase exclusivo. Reserva 1925: Toda nuestra larga experiencia cervecera para deleite de los amantes de la cerveza con Mayúsculas",
+         "next":"another_faq"
+      },
+      "faqs_3_messages_1":{
+         "id":"faqs_3_messages_1",
+         "text":"Fue la primera cerveza especial en España y se ha convertido en la marca española de mayor exportación, con reconocido éxito nacional e internacional por su calidad y buen sabor.",
+         "next":"faqs_3_messages_2"
+      },
+      "faqs_3_messages_2":{
+         "id":"faqs_3_messages_2",
+         "text":"Una cerveza, especial por su color amarillo oro brillante, que al probarla destaca por su equilibrio, su frescura y su ligero amargor",
+         "next":"faqs_3_messages_3"
+      },
+      "faqs_3_messages_3":{
+         "id":"faqs_3_messages_3",
+         "text":"Sus levaduras y maltas le dan una serie de matices al cuerpo y aroma que le otorgan un perfecto equilibrio entre suave y amargo",
+         "next":"another_faq"
+      },
+      "faqs_4_messages_1":{
+         "id":"faqs_4_messages_1",
+         "text":"Cerveza blanca de trigo, color brillante y claro, aroma cautivador y buena corona de espuma",
+         "next":"faqs_4_messages_2"
+      },
+      "faqs_4_messages_2":{
+         "id":"faqs_4_messages_2",
+         "text":"Aroma de frutas maduras, cítricos y plátano, textura cremosa, nos deja un primer impacto intenso para dejar paso luego a un punto amargo suave y muy refrescante",
+         "next":"another_faq"
+      },
+      "faqs_5_messages_1":{
+         "id":"faqs_5_messages_1",
+         "text":"Mahou Clásica: 1€",
+         "next":"faqs_5_messages_2"
+      },
+      "faqs_5_messages_2":{
+         "id":"faqs_5_messages_2",
+         "text":"Alhambra Reserva: 2€",
+         "next":"faqs_5_messages_3"
+      },
+      "faqs_5_messages_3":{
+         "id":"faqs_5_messages_3",
+         "text":"San Miguel: 0,90€",
+         "next":"faqs_5_messages_4"
+      },
+      "faqs_5_messages_4":{
+         "id":"faqs_5_messages_4",
+         "text":"Franziskaner Weissbier: 2€",
+         "next":"another_faq"
+      },
+      "another_faq":{
+         "id":"another_faq",
+         "text":"¿Tienes alguna otra consulta?",
+         "buttons":[
+            {
+               "caption":"Sí",
+               "next":"menu"
+            },
+            {
+               "caption":"Terminar",
+               "next":"end_faq"
+            }
+         ]
+      },
+      "end_faq":{
+         "id":"end_faq",
+         "text":"Gracias, espero haberte servido de ayuda. ¡Hasta pronto!",
+         "next":"end"
+      },
+      "end":{
+         "id":"end",
+         "text":"Aquí termina la previsualización, ¿quieres repetirla?",
+         "buttons":[
+            {
+               "caption":"Sí",
+               "next":"welcome_1",
+               "event":"clear"
+            },
+            {
+               "caption":"No",
+               "next":false
+            }
+         ]
+      }
+   },
+   "keywords":{
+
+   },
+   "storage":{
+
+   }
+}
