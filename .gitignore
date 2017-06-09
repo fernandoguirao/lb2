@@ -1,5 +1,6 @@
 ### Distribution ###
 build/
+dynamic/
 
 ### Secret ###
 *.secret.conf.json
