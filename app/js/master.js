@@ -147,6 +147,7 @@ function helloumiLivechatLoaded() {
     window.jsbot.load(
       new ForaBot(Date.now().toString(), helloumi.webchat.umichatcore.config.jsbot )
     );
+    $('#hu-composer-box').prop('placeholder', 'Escribe tu mensaje aquí');
     window.jsbot.start();
     document.getElementById('hu-webchat-loader').style.setProperty('display', 'none', 'important');
   }

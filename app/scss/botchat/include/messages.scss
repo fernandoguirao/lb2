@@ -271,22 +271,22 @@
           span {
             font-family: $font,$font-type!important;
           }
-          &:last-child {
-            background-color: transparent;
-            color: $accent-0;
-            border-color: $accent-0;
-            @if $background-type == 'video' {
-              color: $light;
-              border-color: $light;
-            }
-            &:hover {
-              color: $light;
-            }
-            &:first-child {
-              background-color: $accent-0;
-              color: $light;
-            }
-          }
+          // &:last-child {
+          //   background-color: transparent;
+          //   color: $accent-0;
+          //   border-color: $accent-0;
+          //   @if $background-type == 'video' {
+          //     color: $light;
+          //     border-color: $light;
+          //   }
+          //   &:hover {
+          //     color: $light;
+          //   }
+          //   &:first-child {
+          //     background-color: $accent-0;
+          //     color: $light;
+          //   }
+          // }
           &:hover {
             box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
             background-color: lighten($accent-0,2%);
@@ -321,12 +321,12 @@
     .hu-message-content.hu-message-content-text {
       // background: rgba(255, 255, 255, 0.13) !important;
       background: $accent !important;
-      @if $background-type == 'video' {
-        background-color: rgba(255,255,255,.2) !important;
-      }
-      @if $background-type == 'image' {
-        background-color: rgba(255,255,255,.2) !important;
-      }
+      // @if $background-type == 'video' {
+      //   background-color: rgba(255,255,255,.2) !important;
+      // }
+      // @if $background-type == 'image' {
+      //   background-color: rgba(255,255,255,.2) !important;
+      // }
     }
     .hu-message-info {
       display: none !important;
@@ -346,19 +346,19 @@
       // Bot Avatar
       background-image: none !important;
       background-color: $accent;
-      @if $background-type == 'video' {
-        background-color: rgba(255,255,255,.2) !important;
-      }
-      @if $background-type == 'image' {
-        background-color: rgba(255,255,255,.2) !important;
-      }
+      // @if $background-type == 'video' {
+      //   background-color: rgba(255,255,255,.2) !important;
+      // }
+      // @if $background-type == 'image' {
+      //   background-color: rgba(255,255,255,.2) !important;
+      // }
       overflow: hidden;
       &::before {
         content: "";
         position: relative;
         top: 5px;
         background-size: 100%;
-        background-image: url(#{$url}/avatar.png);
+        background-image: url(#{$url}/files/avatar.png);
         width: 26px;
         height: 26px;
         display: inherit;
