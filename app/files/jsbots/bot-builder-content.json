@@ -11,7 +11,7 @@
       "next": ["welcome_1"]
     },
     "welcome_1": {
-      "text": "Cuando creas que tu bot está listo haz click en el botón “PUBLICAR BOT“",
+      "text": "Cuando creas que tu bot está listo haz click en el botón “PUBLICAR BOT”",
       "buttons": [
         { "caption": "Empezar", "next": "welcome_2" }
       ]

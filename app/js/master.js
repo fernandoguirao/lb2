@@ -200,16 +200,19 @@ function forabotPreviewBot( controller ){
           }
         } else if ( __type == 'options') {
           __previewData.status['form_custom_'+i] = {
-            text: __text,
-            values: {},
-            input: {
-              next: __next,
-              validate: 'values'
+            "text": __text,
+            "event": "checklist",
+            "checklist": {
+              "values": {},
+              "min": 1,
+              "caption": "Siguiente",
+              "next": __next
             }
           };
+          console.log(__previewData.status['form_custom_'+i]);
           var __answerArr = __answer.split(',');
           for (var j=0; j<__answerArr.length; j++) {
-            __previewData.status['form_custom_'+i].values[ __answerArr[i] ] = __answerArr[i];
+            __previewData.status['form_custom_'+i].checklist.values[ __answerArr[j] ] = __answerArr[j];
           }
         } else if ( __type == 'text') {
           __previewData.status['form_custom_'+i] = {
@@ -308,6 +311,7 @@ function forabotPreviewBot( controller ){
     window.jsbot.on('input', forabotMessageSent);
     window.jsbot.on('waiting', forabotWaitingMessage);
     window.jsbot.on('typing', forabotTypingState);
+    window.jsbot.on('custom.checklist', forabotCreateChecklist);
     window.jsbot.on('custom.clear start', function(){
       $('#hu-webchat-messages').empty();
     });
@@ -347,6 +351,13 @@ function forabotCreateChecklist( controller ) {
   var $clonedContainer = $container.clone();
   var $continueBtn = $('<div class="hu-btn hu-btn-sm hu-btn-block hu-btn-pink"><span data-click="' + __data.caption + '">' + __data.caption + '</span></div>')
   var __min = (typeof(__data.min) == 'number') ? __data.min : 0;
+
+  //
+  // Create check buttons
+  //
+  var $title = $('<p style="display: block; color: #ce4b81 !important; padding-bottom: 8px;">');
+  $title.text('Selecciona al menos una opción:');
+  $container.append($title);
 
   //
   // Create check buttons
@@ -489,6 +500,9 @@ function fakeMessage(msg, ghost){
   // Send message
 	var formData = new FormData();
 	formData.append('message', msg);
+  if (!helloumi.utils.environment['formDataGet']) {
+    formData.message = msg; // Hack for iOS/IE
+  }
 	umichatCore.sendMessage(
 		formData,
 		umichatCore.messageSent.bind(umichatCore)
