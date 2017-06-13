@@ -217,7 +217,8 @@ Landbot.prototype.generateDocument = function generateDocument() {
   this.generateTag('script', head, {
     src: 'https://code.jquery.com/ui/1.12.1/jquery-ui.min.js',
     integrity: 'sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=',
-    crossOrigin: 'anonymous'
+    crossOrigin: 'anonymous',
+    async: 'async'
   });
   // selectize.js
   this.generateTag('meta', head, {
