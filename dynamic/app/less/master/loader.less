@@ -160,7 +160,9 @@
       font-weight: normal;
     }
   }
-  span,a when (@background-type = 'video') {
+  & when (@background-type = 'video') {
+    span,a {
       color: white;
     }
+  }
 }
