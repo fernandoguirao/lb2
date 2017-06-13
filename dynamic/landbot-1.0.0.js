@@ -380,8 +380,8 @@ Landbot.prototype.generateDocument = function generateDocument() {
 
   // Botchat css
   this.generateTag('link', body, {
-    rel: 'stylesheet',
-    href: this.config.staticUrl + 'landbot/css/botchat.css',
+    rel: 'stylesheet/less',
+    href: this.config.staticUrl + 'landbot/css/botchat.less',
     type: 'text/css'
   });
 
