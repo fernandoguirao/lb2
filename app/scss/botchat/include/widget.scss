@@ -45,11 +45,20 @@
       background-size: cover;
       background-position: center;
       background-color: $background-color;
+      &:before {
+        content: "";
+        width: 100%;
+        position: fixed;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.46);
+      }
     }
     @if $background-type == 'color' {
+      background: $background-color;
       background-color: $background-color;
     }
     @if $background-type == 'video' {
+      background: transparent;
       background-color: transparent;
     }
     @if $containertype == 'box' {
@@ -120,7 +129,7 @@
           color: $light;
           font-family: $font,$font-type;
           font-weight: 500;
-          font-size: 16px;
+          font-size: $font-size + 2;
           text-transform: uppercase;
           background-image: none;
           background-repeat: no-repeat;
@@ -232,11 +241,21 @@
 @keyframes appear-left {
   from {
     opacity: 0;
-    left: -30px;
+    transform: translateX(-30px);
   }
   to {
     opacity: 1;
-    left: 0;
+    transform: translateX(0);
+  }
+}
+@keyframes appear-top {
+  from {
+
+    transform: translateY(30px);
+  }
+  to {
+
+    transform: translateY(0);
   }
 }
 @keyframes appear-right2 {

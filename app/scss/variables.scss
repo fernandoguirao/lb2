@@ -5,6 +5,7 @@ $containertype: 'fullscreen'; // box | fullscreen
 
 // Absolute colors
 $white: white;
+$black: #000;
 $pink: #ce4b81;
 $pink-0: #da548b;
 $pink-1: #ce2d6f;
@@ -21,6 +22,7 @@ $accent: $pink;
 $accent-0: lighten($accent,3%);
 $accent-1: darken(saturate($accent,20%),11%);
 $light: $white;
+$dark: $black;
 $contrast: $violet;
 $contrast-0: lighten($contrast,10%);
 $contrast-light: lighten($contrast,30%);
