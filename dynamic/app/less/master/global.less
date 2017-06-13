@@ -8,7 +8,7 @@ html, body {
     background: linear-gradient(to bottom, @gradient-from 0%, @gradient-to 100%);
   }
   & when (@background-type = 'image') {
-    background-image: url(@background-image-url);
+    background-image: url("@{background-image-url}");
     background-color: @background-color;
     background-size: cover;
     background-position: center;

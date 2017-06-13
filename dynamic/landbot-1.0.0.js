@@ -71,9 +71,11 @@ function Landbot(config) {
       "background-image-url": "\"https://storage.googleapis.com/media.yexir.com/channels_back/31.png\"",
       "background-color": "transparent",
       "video-texture": "gradient",
-      "box-footer": "@accent"
+      "box-footer": "@accent",
+      "url": ''
     }
   };
+  
   this.config = this.extend( config );
 }
 
