@@ -64,7 +64,14 @@ function Landbot(config) {
       "woff": "true",
       "ttf": "true",
       "svg": "true",
-      "externalfonturl": "false"
+      "externalfonturl": "false",
+      "background-type": "\"gradient\"",
+      "gradient-from": "@orange",
+      "gradient-to": "@orange-light",
+      "background-image-url": "\"https://storage.googleapis.com/media.yexir.com/channels_back/31.png\"";
+      "background-color": "transparent",
+      "video-texture": "gradient",
+      "box-footer": "@accent"
     }
   };
   this.config = this.extend( config );
