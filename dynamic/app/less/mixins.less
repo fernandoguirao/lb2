@@ -1,3 +1,59 @@
+.animation(@animation) {
+  -webkit-animation: @animation;
+  -moz-animation: @animation;
+  -o-animation: @animation;
+  animation: @animation;
+}
+.animation-name(@name) {
+  -webkit-animation-name: @name;
+  -moz-animation-name: @name;
+  -o-animation-name: @name;
+  animation-name: @name;
+}
+.animation-duration(@duration) {
+  -webkit-animation-duration: @duration;
+  -moz-animation-duration: @duration;
+  -o-animation-duration: @duration;
+  animation-duration: @duration;
+}
+.animation-timing-function(@function) {
+  -webkit-animation-timing-function: @function;
+  -moz-animation-timing-function: @function;
+  -o-animation-timing-function: @function;
+  animation-timing-function: @function;
+}
+
+.keyframes(@name, @content) {
+  @-webkit-keyframes @name {
+    @content();
+  }
+  @-moz-keyframes @name {
+    @content();
+  }
+  @-o-keyframes @name {
+    @content();
+  }
+  @keyframes @name {
+    @content();
+  }
+}
+
+.filter(@filter) {
+  -webkit-filter: @filter;
+  filter: @filter;
+}
+
+.display-flex() {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.display-flex-important() {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
 .fontface_fn(@weightslash, @id-weight, @weightnumber ) {
   font-family: @font;
   & when (@eot) {
@@ -7,46 +63,46 @@
         & when (@svg) {
           /* IE9 Compat Modes */
           src: url("@{font-url}/@{weightslash}.eot?#iefix") format("embedded-opentype"), url("@{font-url}/@{weightslash}.woff") format("woff"), url(@{font-url}/@{weightslash}.ttf) format("truetype"), url("@{font-url}/@{weightslash}.svg@{id-weight}") format("svg");
-        } 
+        }
         & when (@svg = false) {
           /* IE9 Compat Modes */
           src: url("@{font-url}/@{weightslash}.eot?#iefix") format("embedded-opentype"), url("@{font-url}/@{weightslash}.woff") format("woff"), url("@{font-url}/@{weightslash}.ttf") format("truetype");
         }
-      } 
+      }
       & when (@ttf = false) {
         & when (@svg) {
           /* IE9 Compat Modes */
           src: url("@{font-url}/@{weightslash}.eot?#iefix") format("embedded-opentype"), url("@{font-url}/@{weightslash}.woff") format("woff"), url("@{font-url}/@{weightslash}.svg@{id-weight}") format("svg");
-        } 
+        }
         & when (@svg = false) {
           /* IE9 Compat Modes */
           src: url("@{font-url}/@{weightslash}.eot?#iefix") format("embedded-opentype"), url("@{font-url}/@{weightslash}.woff") format("woff");
         }
       }
-    } 
+    }
     & when (@woff = false) {
       & when (@ttf) {
         & when (@svg) {
           /* IE9 Compat Modes */
           src: url("@{font-url}/@{weightslash}.eot?#iefix") format("embedded-opentype"), url("@{font-url}/@{weightslash}.ttf") format("truetype"), url("@{font-url}/@{weightslash}.svg@{id-weight}") format("svg");
-        } 
+        }
         & when (@svg = false) {
           /* IE9 Compat Modes */
           src: url("@{font-url}/@{weightslash}.eot?#iefix") format("embedded-opentype"), url("@{font-url}/@{weightslash}.ttf") format("truetype");
         }
-      } 
+      }
       & when (@ttf = false) {
         & when (@svg) {
           /* IE9 Compat Modes */
           src: url("@{font-url}/@{weightslash}.eot?#iefix") format("embedded-opentype"), url("@{font-url}/@{weightslash}.svg@{id-weight}") format("svg");
-        } 
+        }
         & when (@svg = false) {
           /* IE9 Compat Modes */
           src: url("@{font-url}/@{weightslash}.eot?#iefix") format("embedded-opentype");
         }
       }
     }
-  } 
+  }
   & when (@eot = false) {
     & when (@woff) {
       src: url("@{font-url}/@{weightslash}.woff");
@@ -54,23 +110,23 @@
         & when (@svg) {
           /* IE9 Compat Modes */
           src: url("@{font-url}/@{weightslash}.woff") format("woff"), url("@{font-url}/@{weightslash}.ttf") format("truetype"), url("@{font-url}/@{weightslash}.svg@{id-weight}") format("svg");
-        } 
+        }
         & when (@svg = false) {
           /* IE9 Compat Modes */
           src: url("@{font-url}/@{weightslash}.woff") format("woff"), url("@{font-url}/@{weightslash}.ttf") format("truetype");
         }
-      } 
+      }
       & when (@ttf = false) {
         & when (@svg) {
           /* IE9 Compat Modes */
           src: url("@{font-url}/@{weightslash}.woff") format("woff"), url("@{font-url}/@{weightslash}.svg@{id-weight}") format("svg");
-        } 
+        }
         & when (@svg = false) {
           /* IE9 Compat Modes */
           src: url("@{font-url}/@{weightslash}.woff") format("woff");
         }
       }
-    } 
+    }
     & when (@woff = false) {
       & when (@ttf) {
         src: url("@{font-url}/@{weightslash}.ttf");
@@ -81,13 +137,13 @@
           /* IE9 Compat Modes */
           src: url("@{font-url}/@{weightslash}.ttf") format("truetype");
         }
-      } 
+      }
       & when (@ttf = false) {
         & when (@svg) {
           src: url("@{font-url}/@{weightslash}.svg@{id-weight}");
           /* IE9 Compat Modes */
           src: url("@{font-url}/@{weightslash}.svg@{id-weight}") format("svg");
-        } 
+        }
         & when (@svg = false) {
           /* IE9 Compat Modes */
 

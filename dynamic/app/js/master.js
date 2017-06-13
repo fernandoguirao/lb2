@@ -1,3 +1,48 @@
+function renderHelloumiLiveChat( configKey, initialMessage ) {
+  showLoader();
+  new UmichatRequirements(function(){
+    new TemplateUtils();
+
+    // Default snippet config load
+    var __configKeys = Object.keys(window.chatbotConfigs);
+    if (__configKeys.length > 0) {
+      var __config, __email = getEmailFromURL();
+      if (configKey && window.chatbotConfigs[configKey] ) {
+        __config = window.chatbotConfigs[configKey];
+      } else {
+        var __onInit = window.chatbotConfigs[ HULandbot.config.onInit ] || window.chatbotConfigs[ __configKeys[0] ];
+        var __onEmail = (__email) ? window.chatbotConfigs[ HULandbot.config.onEmail ] : false;
+        __config = __onEmail || __onInit;
+      }
+      if (__config) {
+        var __initialMessage = initialMessage || __email;
+        if ( typeof(__initialMessage) == 'string' ) {
+          __config["initialMessage"] = __initialMessage;
+        }
+        var __umichatCore = new UmichatCore( __config );
+        __umichatCore.on('render', helloumiLivechatLoaded);
+      }
+    }
+
+  });
+}
+
+function loadHelloumiLiveChat( configKey, initialMessage ) {
+  var __container = document.getElementById('hu-container-widget');
+  if ( __container ) {
+    __container.parentNode.removeChild(__container);
+    var firebaseApp =(helloumi.webchat.umimessageservice) ? helloumi.webchat.umimessageservice.firebaseApp : null;
+    if (firebaseApp) {
+      firebaseApp.delete().then(function(){
+        renderHelloumiLiveChat( configKey, initialMessage );
+      })
+    } else {
+      renderHelloumiLiveChat( configKey, initialMessage );
+    }
+  }
+}
+
+
 function jsfakeMessage(target){
   $(target).parent().parent().children('.container-inline').children('.two-rows').children('a').click(function(e){
     e.preventDefault();

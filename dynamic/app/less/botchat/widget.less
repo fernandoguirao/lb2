@@ -103,8 +103,8 @@
           width: 400px;
           height: 200px;
           background-position: 0 0px;
-          top: calc(30% - 26px);
-          left: calc(50% - 211px);
+          top: ~"calc(30% - 26px)";
+          left: ~"calc(50% - 211px)";
         }
         .hu-loader-1, .hu-loader-2, .hu-loader-3 {
           display: none !important;
@@ -215,7 +215,27 @@
     left: 0;
   }
 }
+@-webkit-keyframes appear-left {
+  from {
+    opacity: 0;
+    left: -30px;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
 @keyframes appear-right2 {
+  from {
+    opacity: 0;
+    left: 30px !important;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+@-webkit-keyframes appear-right2 {
   from {
     opacity: 0;
     left: 30px !important;

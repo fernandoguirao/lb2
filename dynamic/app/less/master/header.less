@@ -1,5 +1,5 @@
 div#hu-experiment-header {
-  z-index: 100000000;
+  z-index: 1000;
   position: relative;
   font-family: @font, @font-type;
   line-height: 1.2;
@@ -71,6 +71,16 @@ div#hu-experiment-header {
     margin-top: -70px;
   }
 }
+@-webkit-keyframes hide-header {
+  0% {
+    opacity: 1;
+    margin-top: 0%;
+  }
+  100% {
+    opacity: 0;
+    margin-top: -70px;
+  }
+}
 
 //////// RESPONSIVE ////////
 
@@ -99,7 +109,7 @@ div#hu-experiment-header {
   }
   .hu-left-header {
     float: none !important;
-    margin: 0 calc(50% - 65px);
+    margin: 0 ~"calc(50% - 65px)";
     display: inline-block;
     margin-left: 0!important;
     text-align: center;

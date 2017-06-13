@@ -36,6 +36,7 @@ gulp.task('styles', () => {
     .pipe(gulp.dest(`${path.dist2.css}`))
 
   let botchat = gulp.src([
+    `${path.app2.less}mixins.less`,
     `${path.app2.less}botchat/*.less`
   ])
     .pipe($.concat(`botchat.less`))

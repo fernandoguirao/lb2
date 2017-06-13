@@ -49,7 +49,7 @@ function Landbot(config) {
       "contrast": "@violet",
       "contrast-0": "lighten(@contrast,10%)",
       "contrast-light": "lighten(@contrast,30%)",
-      "embfonts": true,
+      "embfonts": false,
       "font": "\"Gotham Rounded\"",
       "font-type": "sans-serif",
       "font-size": "14px",
@@ -72,10 +72,10 @@ function Landbot(config) {
       "background-color": "transparent",
       "video-texture": "gradient",
       "box-footer": "@accent",
-      "url": ''
+      "url": ""
     }
   };
-  
+
   this.config = this.extend( config );
 }
 
@@ -102,7 +102,22 @@ Landbot.prototype.extend = function extend( options ) {
 };
 
 Landbot.prototype.createLandbot = function createLandbot() {
+  this.showOverlay();
   this.generateDocument();
+};
+
+Landbot.prototype.showOverlay = function showOverlay() {
+  var body = document.getElementsByTagName('BODY')[0];
+  this.generateTag('div', body, {
+    id: 'loading-overlay',
+  }, {
+    style: 'background: linear-gradient(to bottom, #ffad59 0%, #ffe199 100%); z-index: 9999; width: 100%; height: 100%; position: absolute; left: 0; top: 0;'
+  });
+};
+
+Landbot.prototype.hideOverlay = function hideOver() {
+  var overlay = document.getElementById('loading-overlay');
+  overlay.parentNode.removeChild(overlay);
 };
 
 Landbot.prototype.generateDocument = function generateDocument() {
@@ -188,16 +203,18 @@ Landbot.prototype.generateDocument = function generateDocument() {
   });
 
   // LESS
-  
+
   window.less = {
+    env: "development", // Values: development | production
     globalVars: this.config.custom
   };
-  console.log(window.less);
   // this.generateTag('script', head, {
   //   src: '//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js'
   // });
   this.generateTag('script', head, {
     src: 'less.min.js'
+  }, {
+    onload: 'window.less.pageLoadFinished.then(function() { HULandbot.hideOverlay(); });'
   });
   // master.less
   this.generateTag('link', head, {
@@ -216,14 +233,19 @@ Landbot.prototype.generateDocument = function generateDocument() {
     src: 'https://code.jquery.com/jquery-2.2.4.min.js',
     integrity: 'sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=',
     crossOrigin: 'anonymous'
+  }, {
+    onload: "HULandbot.generateJQueryUI()"
   });
-  // JQuery UI
-  this.generateTag('script', head, {
-    src: 'https://code.jquery.com/ui/1.12.1/jquery-ui.min.js',
-    integrity: 'sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=',
-    crossOrigin: 'anonymous',
-    async: 'async'
-  });
+
+  this.generateJQueryUI = function generateJQueryUI() {
+    // JQuery UI
+    this.generateTag('script', head, {
+      src: 'https://code.jquery.com/ui/1.12.1/jquery-ui.min.js',
+      integrity: 'sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=',
+      crossOrigin: 'anonymous'
+    });
+  }
+
   // selectize.js
   this.generateTag('meta', head, {
     type: 'text/javascript',
@@ -242,6 +264,8 @@ Landbot.prototype.generateDocument = function generateDocument() {
     type: 'text/javascript',
     src: this.config.staticUrl + 'landbot/js/master.js',
     charset: 'UTF-8'
+  }, {
+    onload: 'HULandbot.generateLivechatJS()'
   });
 
 
@@ -323,13 +347,15 @@ Landbot.prototype.generateDocument = function generateDocument() {
     // }
   };
 
-  // Livechat js
-  this.generateTag('script', head, {
-    src: this.config.staticUrl + 'webchat/js/main-' + this.config.livechatVersion + '.js',
-    charset: 'UTF-8'
-  }, {
-    onload: 'renderHelloumiLiveChat()'
-  });
+  this.generateLivechatJS = function generateLivechatJS() {
+    // Livechat js
+    this.generateTag('script', head, {
+      src: this.config.staticUrl + 'webchat/js/main-' + this.config.livechatVersion + '.js',
+      charset: 'UTF-8'
+    }, {
+      onload: 'renderHelloumiLiveChat()'
+    });
+  }
 
 
   ///////////////// ANALYTICS /////////////////
@@ -390,7 +416,13 @@ Landbot.prototype.generateDocument = function generateDocument() {
     </div>'
   });
 
-  // Botchat css
+  // // Botchat css
+  // this.generateTag('link', body, {
+  //   rel: 'stylesheet',
+  //   href: this.config.staticUrl + 'landbot/css/botchat.css',
+  //   type: 'text/css'
+  // });
+  // Botchat less
   this.generateTag('link', body, {
     rel: 'stylesheet/less',
     href: this.config.staticUrl + 'landbot/css/botchat.less',
@@ -429,47 +461,3 @@ Landbot.prototype.generateTag = function generateTag(tag, appendTo, data, attrs)
   }
   appendTo.appendChild( t );
 };
-
-function renderHelloumiLiveChat( configKey, initialMessage ) {
-  showLoader();
-  new UmichatRequirements(function(){
-    new TemplateUtils();
-
-    // Default snippet config load
-    var __configKeys = Object.keys(window.chatbotConfigs);
-    if (__configKeys.length > 0) {
-      var __config, __email = getEmailFromURL();
-      if (configKey && window.chatbotConfigs[configKey] ) {
-        __config = window.chatbotConfigs[configKey];
-      } else {
-        var __onInit = window.chatbotConfigs[ HULandbot.config.onInit ] || window.chatbotConfigs[ __configKeys[0] ];
-        var __onEmail = (__email) ? window.chatbotConfigs[ HULandbot.config.onEmail ] : false;
-        __config = __onEmail || __onInit;
-      }
-      if (__config) {
-        var __initialMessage = initialMessage || __email;
-        if ( typeof(__initialMessage) == 'string' ) {
-          __config["initialMessage"] = __initialMessage;
-        }
-        var __umichatCore = new UmichatCore( __config );
-        __umichatCore.on('render', helloumiLivechatLoaded);
-      }
-    }
-
-  });
-}
-
-function loadHelloumiLiveChat( configKey, initialMessage ) {
-  var __container = document.getElementById('hu-container-widget');
-  if ( __container ) {
-    __container.parentNode.removeChild(__container);
-    var firebaseApp =(helloumi.webchat.umimessageservice) ? helloumi.webchat.umimessageservice.firebaseApp : null;
-    if (firebaseApp) {
-      firebaseApp.delete().then(function(){
-        renderHelloumiLiveChat( configKey, initialMessage );
-      })
-    } else {
-      renderHelloumiLiveChat( configKey, initialMessage );
-    }
-  }
-}

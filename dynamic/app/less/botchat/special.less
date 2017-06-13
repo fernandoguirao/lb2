@@ -27,25 +27,25 @@
   }
 }
 
-@keyframes fer {
+.keyframes(fer, {
   from {
     transform: translate(-315px, 100px);
     opacity: 0;
   }
-}
+});
 
-@keyframes animabubble {
-    from {
-      max-width: 70px;
-      max-height: 39px;
-    }
-    to {
-      max-width: 519px;
-      max-height: 120px;
-    }
-}
+.keyframes(animabubble, {
+  from {
+    max-width: 70px;
+    max-height: 39px;
+  }
+  to {
+    max-width: 519px;
+    max-height: 120px;
+  }
+});
 
-@keyframes animatexto {
+.keyframes(animatexto, {
   0% {
     opacity: 0;
   }
@@ -55,18 +55,18 @@
   100% {
     opacity: 1;
   }
-}
+});
 
 @media screen and (min-width:800px){
   .hu-messenger-message-brand .hu-message-content-text {
-      animation-name: animabubble;
-      animation-duration: 0.7s;
-      animation-timing-function:  cubic-bezier(0.68, 0.01, 0.245, 1.13);
-      overflow: hidden;
-      p {
-        animation-name: animatexto;
-        animation-duration: .9s;
-        animation-timing-function:  cubic-bezier(0.68, 0.01, 0.245, 1.13);
-      }
+    .animation-name(animabubble);
+    .animation-duration(0.7s);
+    .animation-timing-function(cubic-bezier(0.68, 0.01, 0.245, 1.13));
+    overflow: hidden;
+    p {
+      .animation-name(animatexto);
+      .animation-duration(0.9s);
+      .animation-timing-function(cubic-bezier(0.68, 0.01, 0.245, 1.13));
+    }
   }
 }
