@@ -1,0 +1,86 @@
+@media screen and (min-width: 800px) {
+  .hu-messenger-body {
+    max-height: calc(100% - 120px);
+  }
+  .hu-messenger-body-state {
+    padding: 55px 13% 0 !important;
+  }
+  .hu-messenger-footer {
+    // margin: 0 13% 81px;
+    margin: 0 calc(13% + 26px) 81px calc(13% + 75px);
+    width: auto !important;
+  }
+}
+
+@media screen and (min-width: 1044px) {
+  .hu-messenger-body-state {
+    padding: 55px 23% 0 !important;
+  }
+  .hu-messenger-footer {
+    // margin: 0 23% 81px;
+    margin: 0 calc(23% + 26px) 81px calc(23% + 75px);
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .hu-messenger-body-state {
+    padding: 55px 30% 0 !important;
+  }
+  .hu-messenger-footer {
+    // margin: 0 30% 81px;
+    margin: 0 calc(30% + 26px) 81px calc(30% + 75px);
+  }
+}
+
+@media screen and (max-width: 799px) {
+  .hu-messenger-footer {
+    border-radius: 0 !important;
+    border: none !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink {
+    float: none !important;
+  }
+  .hu-loader {
+    transform: scale(0.5);
+    margin-top: -109px;
+    &:before {
+      background: transparent !important;
+      font-size: 26px;
+      top: -193px;
+    }
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  .hu-message-avatar, .hu-avatar {
+    display: none !important;
+  }
+  .hu-messenger-body-state .hu-messenger-messages {
+    margin: 0 12px !important;
+  }
+  .hu-messenger-footer {
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+  .hu-messenger-message .hu-message-container .hu-message-content-group {
+    max-width: 100%;
+    .hu-message-content{
+      &:not(.hu-message-content-buttons) {
+        max-width: 82%;
+      }
+      .hu-btn-block {
+        text-align: center;
+      }
+    }
+  }
+  div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+  div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages {
+    padding-bottom: 0 !important;
+  }
+}

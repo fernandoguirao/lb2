@@ -1,0 +1,72 @@
+
+// Estilos específicos de unos botones concretos (cuando son más de 3 para que aparezcan más pequeños), habría que pensar una forma de hacerlo escalable
+#hu-container-widget .hu-btn-group-vertical .hu-btn span {
+  &[data-click^="Capturar"], &[data-click^="Medir"], &[data-click^="Integraciones"], &[data-click^="Configura"], &[data-click^="Chatear"], &[data-click^="Precio"] {
+    font-size: 11px !important;
+    text-transform: uppercase;
+    font-weight: 700 !important;
+    width: 94px !important;
+    display: inline-block;
+    text-align: center;
+    margin: -7px -16px -7px -22px !important;
+  }
+  &[data-click^="Data Capturing"], &[data-click^="Metrics"], &[data-click^="Integrations"], &[data-click^="Setting up"], &[data-click^="Talk to a customer"], &[data-click^="Pricing"] {
+    font-size: 11px !important;
+    text-transform: uppercase;
+    font-weight: 700 !important;
+    width: 115px !important;
+    display: inline-block;
+    text-align: center;
+    margin: -7px -16px -7px -22px !important;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  #hu-webchat-ghosts .hu-messenger-message-user .hu-message-content {
+    animation: fer .5s normal forwards;
+  }
+}
+
+@keyframes fer {
+  from {
+    transform: translate(-315px, 100px);
+    opacity: 0;
+  }
+}
+
+@keyframes animabubble {
+    from {
+      max-width: 70px;
+      max-height: 39px;
+    }
+    to {
+      max-width: 519px;
+      max-height: 120px;
+    }
+}
+
+@keyframes animatexto {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width:800px){
+  .hu-messenger-message-brand .hu-message-content-text {
+      animation-name: animabubble;
+      animation-duration: 0.7s;
+      animation-timing-function:  cubic-bezier(0.68, 0.01, 0.245, 1.13);
+      overflow: hidden;
+      p {
+        animation-name: animatexto;
+        animation-duration: .9s;
+        animation-timing-function:  cubic-bezier(0.68, 0.01, 0.245, 1.13);
+      }
+  }
+}
