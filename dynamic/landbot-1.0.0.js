@@ -49,7 +49,7 @@ function Landbot(config) {
       "contrast": "@violet",
       "contrast-0": "lighten(@contrast,10%)",
       "contrast-light": "lighten(@contrast,30%)",
-      "embfonts": "true",
+      "embfonts": true,
       "font": "\"Gotham Rounded\"",
       "font-type": "sans-serif",
       "font-size": "14px",
@@ -60,11 +60,11 @@ function Landbot(config) {
       "id-regular": "\"#gotham_roundedbook\"",
       "id-medium": "\"#GothamRoundedMedium\"",
       "id-bold": "\"#gotham_roundedbold\"",
-      "eot": "true",
-      "woff": "true",
-      "ttf": "true",
-      "svg": "true",
-      "externalfonturl": "false",
+      "eot": true,
+      "woff": true,
+      "ttf": true,
+      "svg": true,
+      "externalfonturl": false,
       "background-type": "\"gradient\"",
       "gradient-from": "@orange",
       "gradient-to": "@orange-light",
@@ -186,9 +186,11 @@ Landbot.prototype.generateDocument = function generateDocument() {
   });
 
   // LESS
+  
   window.less = {
     globalVars: this.config.custom
   };
+  console.log(window.less);
   // this.generateTag('script', head, {
   //   src: '//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js'
   // });
