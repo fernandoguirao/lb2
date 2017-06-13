@@ -75,6 +75,10 @@
       border-radius: 3px !important;
       padding: 12px !important;
       box-shadow: rgba(0, 0, 0, 0.08);
+      .hu-btn-group-vertical {
+        display: inline-block;
+        margin-top: 4px;
+      }
       p {
         font-size: $font-size !important;
         font-weight: 500 !important;
@@ -288,9 +292,38 @@
               color: $light;
             }
           }
+          &.hu-btn-disabled {
+            opacity: 0.5;
+          }
+          &.hu-btn-checked {
+            background-color: $accent;
+            border-color: $accent;
+            color: $light;
+          }
+          &.hu-btn-unchecked {
+            background-color: transparent;
+            color: $accent-0;
+            border-color: $accent-0;
+            span.check {
+              opacity: 0;
+              margin-right: -15px;
+            }
+            &:hover {
+              color: $light;
+            }
+          }
           &:hover {
-            box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
-            background-color: lighten($accent-0,2%);
+            &:not(.hu-btn-disabled){
+              box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+              background-color: lighten($accent-0,2%);
+            }
+            &.hu-btn-disabled {
+              cursor: not-allowed;
+            }
+          }
+          span.check {
+            margin-right: 5px;
+            transition: all .2s ease;
           }
         }
       }
