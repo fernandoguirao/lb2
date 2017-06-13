@@ -68,7 +68,7 @@ function Landbot(config) {
       "background-type": "\"gradient\"",
       "gradient-from": "@orange",
       "gradient-to": "@orange-light",
-      "background-image-url": "\"https://storage.googleapis.com/media.yexir.com/channels_back/31.png\"";
+      "background-image-url": "\"https://storage.googleapis.com/media.yexir.com/channels_back/31.png\"",
       "background-color": "transparent",
       "video-texture": "gradient",
       "box-footer": "@accent"
