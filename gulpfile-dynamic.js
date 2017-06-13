@@ -34,7 +34,13 @@ gulp.task('styles', () => {
     .pipe($.concat(`master.less`))
     .pipe(gulp.dest(`${path.dist2.css}`))
 
-  return merge(master);
+  let botchat = gulp.src([
+    `${path.app2.less}botchat/*.less`
+  ])
+    .pipe($.concat(`botchat.less`))
+    .pipe(gulp.dest(`${path.dist2.css}`))
+
+  return merge(master, botchat);
 });
 
 /****** SERVE & WATCH ******/
