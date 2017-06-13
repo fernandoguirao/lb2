@@ -1,0 +1,68 @@
+html, body {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  & when (@background-type = 'gradient') {
+    background: linear-gradient(to bottom, @gradient-from 0%, @gradient-to 100%);
+  }
+  & when (@background-type = 'image') {
+    background-image: url(@background-image-url);
+    background-color: @background-color;
+    background-size: cover;
+    background-position: center;
+  }
+  & when (@background-type = 'color') {
+    background-color: @background-color;
+  }
+}
+
+body {
+  display: flex !important;
+  flex-direction: column;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.referral {
+  font-family: @font, @font-type !important;
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  margin-right: 5px;
+  color: @light;
+  width: 100%;
+  text-align: center;
+  z-index: 100000000000;
+  a {
+    font-family: @font, @font-type !important;
+    color: @light;
+    font-size: 11px;
+    text-decoration: none;
+    img {
+      width: 24px;
+      position: relative;
+      top: 5px;
+      margin-right: 4px;
+    }
+  }
+}
+
+.notclickable {
+  opacity: .2;
+  pointer-events: none;
+}
+
+iframe#hu-live-chat, div#hu-container-widget {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  min-width: auto !important;
+  height: auto !important;
+  max-height: initial !important;
+  min-height: initial !important;
+  flex: 1;
+  box-shadow: none !important;
+  position: relative !important;
+  background: transparent;
+}

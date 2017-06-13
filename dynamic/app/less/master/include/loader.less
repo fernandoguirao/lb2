@@ -1,0 +1,166 @@
+.hu-loader {
+  top: 165px !important;
+  text-align: center;
+  width: 100%;
+  height: 48px;
+  position: relative;
+  /* z-index: 100000000; */
+  background: transparent;
+  font-family: @font, @font-type !important;
+  &:before {
+    content: "Loading chatbot...";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    color: @light;
+    font-size: 13px;
+    padding-top: 136px;
+    background: transparent;
+  }
+  &:after {
+    content: "";
+    display: block;
+    width: 400px;
+    position: relative;
+    top: -106px;
+    background-image: url(http://helloumi.org/botchat/preloader.gif);
+    height: 400px;
+    background-size: 400px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    margin: 0 auto;
+  }
+}
+
+/* Usage:
+  <div class="sk-folding-cube">
+    <div class="sk-cube1 sk-cube"></div>
+    <div class="sk-cube2 sk-cube"></div>
+    <div class="sk-cube4 sk-cube"></div>
+    <div class="sk-cube3 sk-cube"></div>
+  </div> */
+.sk-folding-cube {
+  top: 40%;
+  left: calc((100% - 40px) / 2);
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  z-index: 999999999;
+  transform: rotateZ(45deg) scale(1.5);
+  .sk-cube {
+    float: left;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    transform: scale(1.1);
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      // background-color: @pink;
+      background-color: @light;
+      animation: sk-foldCubeAngle 2.4s infinite linear both;
+      transform-origin: 100% 100%;
+    }
+  }
+  .sk-cube2 {
+    transform: scale(1.1) rotateZ(90deg);
+    &:before {
+      animation-delay: 0.3s;
+    }
+  }
+  .sk-cube3 {
+    transform: scale(1.1) rotateZ(180deg);
+    &:before {
+      animation-delay: 0.6s;
+    }
+  }
+  .sk-cube4 {
+    transform: scale(1.1) rotateZ(270deg);
+    &:before {
+      animation-delay: 0.9s;
+    }
+  }
+}
+@-webkit-keyframes sk-foldCubeAngle {
+  0%, 10% {
+    transform: perspective(140px) rotateX(-180deg);
+    opacity: 0;
+  }
+  25%, 75% {
+    transform: perspective(140px) rotateX(0deg);
+    opacity: 1;
+  }
+  90%, 100% {
+    transform: perspective(140px) rotateY(180deg);
+    opacity: 0;
+  }
+}
+@keyframes sk-foldCubeAngle {
+  0%, 10% {
+    transform: perspective(140px) rotateX(-180deg);
+    opacity: 0;
+  }
+  25%, 75% {
+    transform: perspective(140px) rotateX(0deg);
+    opacity: 1;
+  }
+  90%, 100% {
+    transform: perspective(140px) rotateY(180deg);
+    opacity: 0;
+  }
+}
+
+//////// RESPONSIVE ////////
+
+@media screen and (max-width: 600px) {
+  .hu-loader {
+    transform: scale(0.5);
+    margin-top: -109px;
+    margin-left: -4px;
+    top: 252px !important;
+  }
+  .hu-loader:before {
+    background: transparent !important;
+    font-size: 26px;
+    top: -193px;
+  }
+}
+
+.loader-referral {
+  opacity: 1;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 53px;
+  font-family: @font, @font-type;
+  z-index: 100;
+  span {
+    display: block;
+    color: @accent;
+    font-size: 10px;
+    text-transform: uppercase;
+    margin-bottom: -4px;
+  }
+  a {
+    color: @accent;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    i {
+      text-transform: none;
+      font-style: normal;
+      font-size: 13px;
+      font-weight: normal;
+    }
+  }
+  span,a when (@background-type = 'video') {
+      color: white;
+    }
+}

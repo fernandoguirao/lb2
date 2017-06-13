@@ -1,0 +1,59 @@
+// FORMAS
+@containertype: 'fullscreen'; // box | fullscreen
+
+// COLORS
+
+// Absolute colors
+@white: white;
+@pink: #ce4b81;
+@pink-0: #da548b;
+@pink-1: #ce2d6f;
+@orange: #ffad59;
+@orange-light: #ffe199;
+@violet: #4a50a8;
+@violet-0: #6369be;
+@violet-light: #b2b5de;
+@blue-light: #7db9e8;
+@light-gray: #f1f1f1;
+
+// Relative colors
+@accent: @pink;
+@accent-0: lighten(@accent,3%);
+@accent-1: darken(saturate(@accent,20%),11%);
+@light: @white;
+@contrast: @violet;
+@contrast-0: lighten(@contrast,10%);
+@contrast-light: lighten(@contrast,30%);
+
+// URL
+@url: 'http://landbot.io';
+
+// FONTS
+// If embed on page
+@embfonts: true; // Set to false if external stylesheet
+@font: "Gotham Rounded";
+@font-type: sans-serif;
+@font-size: 14px;
+@font-url: "https://guidango.com/fonts/gotham";
+@font-regular-slash: "gotham-rounded-book";
+@font-medium-slash: "gotham-rounded-medium";
+@font-bold-slash: "gotham-rounded-bold";
+@id-regular: "#gotham_roundedbook";
+@id-medium: "#GothamRoundedMedium";
+@id-bold: "#gotham_roundedbold";
+@eot: true;
+@woff: true;
+@ttf: true;
+@svg: true;
+// If not embed on page (external stylesheet)
+@externalfonturl: false;
+// @externalfonturl: 'https://fonts.googleapis.com/css?family=Lato';
+
+// BACKGROUND
+@background-type: 'gradient'; // image | gradient | color | video
+@gradient-from: @orange;
+@gradient-to: @orange-light;
+@background-image-url: 'https://storage.googleapis.com/media.yexir.com/channels_back/31.png';
+@background-color: transparent;
+@video-texture: gradient; // gradient | image | color
+@box-footer: @accent;

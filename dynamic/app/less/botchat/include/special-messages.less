@@ -1,0 +1,336 @@
+#hu-container-widget {
+  #hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message.hu-messenger-message-brand .hu-message-content.js-flex {
+    background-color: transparent!important;
+    padding: 0!important;
+    @media screen and (min-width: 800px){
+      width: 495px;
+      max-width: 495px;
+    }
+    @media screen and (max-width: 799px){
+      width: 100%!important;
+      max-width: 100%!important;
+      .referral {
+        .la-choices {
+          width: 100%;
+          max-width: 98%;
+        }
+      }
+    }
+    p img {
+      display: none;
+    }
+  }
+  .la-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    align-content: center;
+    margin: 0 -3px -22px;
+    @media screen and (max-width: 800px){
+      // display: block!important;
+      span {
+        display: block;
+      }
+    }
+    .la-choices {
+      display: flex;
+      border: 2px solid #447791;
+      border-radius: 5px;
+      padding: 11px 20px;
+      font-size: 13px;
+      flex: 1 0 0;
+      margin: 3px;
+      transition: all .15s ease;
+      background: white;
+      color: #447791;
+      text-align: center;
+      position: relative;
+      z-index: 1000;
+      cursor: pointer;
+      flex-direction: column;
+      span {
+        align-self: center;
+        text-align: center;
+        width: 100%;
+        font-family: @font, @font-type!important;
+        &.fi {
+          font-size: 17px;
+        }
+      }
+      &:hover {
+        background-color: @accent;
+        box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+        span {
+          color: @light;
+        }
+      }
+    }
+    &.referral {
+      align-content: left;
+      justify-content: flex-start;
+      // margin-bottom: -104px;
+      display: block;
+      margin-bottom: -35px;
+      position: relative;
+      @media screen and (max-width: 800px){
+        display: block!important;
+      }
+      .la-choices {
+        max-width: 247px;
+        padding: 30px;
+        background-color: @accent;
+        border-color: darken(@accent,10%);
+        color: @light;
+        display: block;
+        span {
+          display: inline!important;
+          text-align: left;
+          vertical-align: middle;
+          &.fi {
+            margin-right: 8px;
+            margin-left: -11px;
+          }
+        }
+        &:hover {
+          background-color: @accent-0;
+        }
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.hu-referral-btn,.hu-link-btn {
+  background: @accent;
+  color: @light;
+  font-style: italic;
+  border-radius: 3px;
+  padding: 11px 47px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 12px;
+  margin-bottom: 3px;
+  display: inline-block;
+  margin-top: -7px;
+  transition: all .15s ease;
+  &.hu-photo {
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+    min-width: 174px;
+    max-width: 192px !important;
+    img {
+      margin-top: -21px;
+      display: inline-block;
+      max-width: none!important;
+      width: 100%;
+    }
+    span {
+      display: inline-block;
+      margin-top: -13px;
+      margin-bottom: 15px;
+    }
+  }
+  &:hover {
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    background-color: lighten(@accent, 4%);
+  }
+}
+
+.js-hidden {
+  display: none;
+}
+
+#hu-container-widget #hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message.hu-messenger-message-brand .hu-message-content.pre-referral {
+  background-color: transparent!important;
+  padding: 0 0 10px!important;
+  color: @light!important;
+  margin-top: 14px;
+  p img {
+    display: none;
+  }
+}
+
+.js-referral .hu-avatar::before {
+  background-image: url('../files/avatar.png')!important;
+  transform: none!important;
+  filter: initial!important;
+  width: 26px!important;
+  height: 26px!important;
+  left: 7px!important;
+}
+
+.js-thumbs {
+  overflow: inherit!important;
+  .la-choices {
+    min-width: 30%;
+    padding: 0!important;
+    img {
+      max-width: 100%!important;
+      display: block;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+    }
+    span {
+      padding: 11px 20px;
+    }
+  }
+}
+
+
+// THUMBS 2
+.container-inline li {
+  display: inline-block;
+  background: @accent;
+  text-align: center;
+  width: calc(33.33% - 4%);
+  margin: 3px 5px;
+  border-radius: 4px;
+  overflow: hidden;
+  &.two-rows {
+    width: calc(49% - 4%);
+  }
+  @media screen and (max-width: 700px) {
+    width: calc(50% - 8px);
+    margin: 2px 2px;
+    .bckg {
+      height: 91px !important;
+    }
+  }
+}
+
+ul.container-inline {
+  padding: 0;
+  // text-align: center;
+  margin: 0 0 -10px;
+}
+
+.container-inline img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+.container-inline li a {
+  color: white!important;
+  text-decoration: none;
+  font-size: 11px!important;
+  /* border-radius: 3px; */
+  /* overflow: hidden; */
+}
+
+#hu-container-widget #hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content .container-inline li a p {
+  padding: 7px 3px;
+  font-size: 12px!important;
+  text-transform: uppercase;
+    white-space: inherit;
+}
+
+.container-inline .bckg {
+  display: block;
+  height: 90px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.container-inline li:hover {
+  background-color: lighten(@accent,10%);
+}
+
+#hu-container-widget #hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages .hu-messenger-message .hu-message-container .hu-message-content.js-thumbs {
+  background-color: transparent!important;
+  padding: 0!important;
+  margin: 0 0 -10px 0!important;
+}
+
+.text-big {
+  font-size: 23px;
+  margin-top: 6px;
+  display: block;
+  font-weight: bold!important;
+  margin-bottom: 2px;
+}
+
+@media screen and (max-width: 600px){
+  .js-flexparent {
+    overflow-y: hidden;
+    overflow-x: scroll;
+  }
+  .la-flex {
+    justify-content: left!important;
+  }
+}
+
+
+// POPUP
+
+#hu-container-widget .popup {
+  position: absolute;
+  margin-top: 0;
+  background: @light;
+  width: 100%;
+  z-index: 10;
+  border-radius: 4px;
+  padding: 4px 27px 3px;
+  bottom: 0;
+  border: 2px solid @accent;
+  span {
+    &.text {
+      margin-right: 15px;
+      margin-bottom: 7px;
+      font-size: 14px;
+    }
+    b {
+      color: @accent!important;
+    }
+    font-family: @font, @font-type!important;
+    font-size: 14px;
+  }
+  .btts {
+    display: block;
+    margin-top: 7px;
+    .btt {
+      display: inline-block;
+      border-radius: 4px;
+      padding-left: 41px!important;
+      padding-right: 41px!important;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-style: normal;
+      cursor: pointer;
+      &:first-child {
+        background-color: #006f96!important;
+        color: white!important;
+      }
+      &:hover {
+        background: #0c85af!important;
+        box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+      }
+    }
+  }
+
+}
+
+#hu-container-widget .la-flex .la-choices {
+  flex-basis: 30%;
+  @media screen and (max-width: 800px) {
+    flex-basis: 33%!important;
+  }
+}
+
+.container-inline li.two-rows {
+  width: calc(33% - 3%);
+  @media screen and (max-width: 800px) {
+    width: calc(49% - 2%);
+    .bckg {
+      height: 64px !important
+    }
+  }
+}
