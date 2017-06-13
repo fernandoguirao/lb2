@@ -23,8 +23,8 @@
     "merge-stream": "^1.0.1"
   },
   "scripts": {
-    "start": "gulp",
-    "build": "gulp build",
+    "start": "gulp --gulpfile \"gulpfile-dynamic.js\"",
+    "build": "gulp build --gulpfile \"gulpfile-dynamic.js\"",
     "deploy": "echo 'BOOOM! es broma, consulta con el encargado antes de hacer deploy.'",
     "deploy-test": "echo 'BOOOM! es broma, consulta con el encargado antes de hacer deploy.'",
     "deploy-stable": "node ftp-deploy.js clients/`node -p \"require('./package.json').client\"`-stable.secret.conf.json"
@@ -43,6 +43,16 @@
       "js": "./build/js/",
       "img": "./build/img/",
       "files": "./build/files/"
+    },
+    "app2": {
+      "base": "./dynamic/app/",
+      "less": "./dynamic/app/less/",
+      "js": "./dynamic/app/js/"
+    },
+    "dist2": {
+      "base": "./dynamic/",
+      "css": "./dynamic/landbot/css/",
+      "js": "./dynamic/landbot/js/"
     }
   },
   "client": "landbot"
