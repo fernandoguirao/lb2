@@ -1,26 +1,26 @@
 .fontface_fn(@weightslash, @id-weight, @weightnumber ) {
   font-family: @font;
   & when (@eot) {
-    src: url(#{@font-url}/#{@weightslash}.eot);
+    src: url("@{font-url}/@{weightslash}.eot");
     & when (@woff) {
       & when (@ttf) {
         & when (@svg) {
           /* IE9 Compat Modes */
-          src: url(#{@font-url}/#{@weightslash}.eot?#iefix) format("embedded-opentype"), url(#{@font-url}/#{@weightslash}.woff) format("woff"), url(#{@font-url}/#{@weightslash}.ttf) format("truetype"), url(#{@font-url}/#{@weightslash}.svg#{@id-weight}) format("svg");
+          src: url("@{font-url}/@{weightslash}.eot?#iefix") format("embedded-opentype"), url("@{font-url}/@{weightslash}.woff") format("woff"), url(@{font-url}/@{weightslash}.ttf) format("truetype"), url("@{font-url}/@{weightslash}.svg@{id-weight}") format("svg");
         } 
         & when (@svg = false) {
           /* IE9 Compat Modes */
-          src: url(#{@font-url}/#{@weightslash}.eot?#iefix) format("embedded-opentype"), url(#{@font-url}/#{@weightslash}.woff) format("woff"), url(#{@font-url}/#{@weightslash}.ttf) format("truetype");
+          src: url("@{font-url}/@{weightslash}.eot?#iefix") format("embedded-opentype"), url("@{font-url}/@{weightslash}.woff") format("woff"), url("@{font-url}/@{weightslash}.ttf") format("truetype");
         }
       } 
       & when (@ttf = false) {
         & when (@svg) {
           /* IE9 Compat Modes */
-          src: url(#{@font-url}/#{@weightslash}.eot?#iefix) format("embedded-opentype"), url(#{@font-url}/#{@weightslash}.woff) format("woff"), url(#{@font-url}/#{@weightslash}.svg#{@id-weight}) format("svg");
+          src: url("@{font-url}/@{weightslash}.eot?#iefix") format("embedded-opentype"), url("@{font-url}/@{weightslash}.woff") format("woff"), url("@{font-url}/@{weightslash}.svg@{id-weight}") format("svg");
         } 
         & when (@svg = false) {
           /* IE9 Compat Modes */
-          src: url(#{@font-url}/#{@weightslash}.eot?#iefix) format("embedded-opentype"), url(#{@font-url}/#{@weightslash}.woff) format("woff");
+          src: url("@{font-url}/@{weightslash}.eot?#iefix") format("embedded-opentype"), url("@{font-url}/@{weightslash}.woff") format("woff");
         }
       }
     } 
@@ -28,65 +28,65 @@
       & when (@ttf) {
         & when (@svg) {
           /* IE9 Compat Modes */
-          src: url(#{@font-url}/#{@weightslash}.eot?#iefix) format("embedded-opentype"), url(#{@font-url}/#{@weightslash}.ttf) format("truetype"), url(#{@font-url}/#{@weightslash}.svg#{@id-weight}) format("svg");
+          src: url("@{font-url}/@{weightslash}.eot?#iefix") format("embedded-opentype"), url("@{font-url}/@{weightslash}.ttf") format("truetype"), url("@{font-url}/@{weightslash}.svg@{id-weight}") format("svg");
         } 
         & when (@svg = false) {
           /* IE9 Compat Modes */
-          src: url(#{@font-url}/#{@weightslash}.eot?#iefix) format("embedded-opentype"), url(#{@font-url}/#{@weightslash}.ttf) format("truetype");
+          src: url("@{font-url}/@{weightslash}.eot?#iefix") format("embedded-opentype"), url("@{font-url}/@{weightslash}.ttf") format("truetype");
         }
       } 
       & when (@ttf = false) {
         & when (@svg) {
           /* IE9 Compat Modes */
-          src: url(#{@font-url}/#{@weightslash}.eot?#iefix) format("embedded-opentype"), url(#{@font-url}/#{@weightslash}.svg#{@id-weight}) format("svg");
+          src: url("@{font-url}/@{weightslash}.eot?#iefix") format("embedded-opentype"), url("@{font-url}/@{weightslash}.svg@{id-weight}") format("svg");
         } 
         & when (@svg = false) {
           /* IE9 Compat Modes */
-          src: url(#{@font-url}/#{@weightslash}.eot?#iefix) format("embedded-opentype");
+          src: url("@{font-url}/@{weightslash}.eot?#iefix") format("embedded-opentype");
         }
       }
     }
   } 
   & when (@eot = false) {
     & when (@woff) {
-      src: url(#{@font-url}/#{@weightslash}.woff);
+      src: url("@{font-url}/@{weightslash}.woff");
       & when (@ttf) {
         & when (@svg) {
           /* IE9 Compat Modes */
-          src: url(#{@font-url}/#{@weightslash}.woff) format("woff"), url(#{@font-url}/#{@weightslash}.ttf) format("truetype"), url(#{@font-url}/#{@weightslash}.svg#{@id-weight}) format("svg");
+          src: url("@{font-url}/@{weightslash}.woff") format("woff"), url("@{font-url}/@{weightslash}.ttf") format("truetype"), url("@{font-url}/@{weightslash}.svg@{id-weight}") format("svg");
         } 
         & when (@svg = false) {
           /* IE9 Compat Modes */
-          src: url(#{@font-url}/#{@weightslash}.woff) format("woff"), url(#{@font-url}/#{@weightslash}.ttf) format("truetype");
+          src: url("@{font-url}/@{weightslash}.woff") format("woff"), url("@{font-url}/@{weightslash}.ttf") format("truetype");
         }
       } 
       & when (@ttf = false) {
         & when (@svg) {
           /* IE9 Compat Modes */
-          src: url(#{@font-url}/#{@weightslash}.woff) format("woff"), url(#{@font-url}/#{@weightslash}.svg#{@id-weight}) format("svg");
+          src: url("@{font-url}/@{weightslash}.woff") format("woff"), url("@{font-url}/@{weightslash}.svg@{id-weight}") format("svg");
         } 
         & when (@svg = false) {
           /* IE9 Compat Modes */
-          src: url(#{@font-url}/#{@weightslash}.woff) format("woff");
+          src: url("@{font-url}/@{weightslash}.woff") format("woff");
         }
       }
     } 
     & when (@woff = false) {
       & when (@ttf) {
-        src: url(#{@font-url}/#{@weightslash}.ttf);
+        src: url("@{font-url}/@{weightslash}.ttf");
         & when (@svg) {
           /* IE9 Compat Modes */
-          src: url(#{@font-url}/#{@weightslash}.ttf) format("truetype"), url(#{@font-url}/#{@weightslash}.svg#{@id-weight}) format("svg");
+          src: url("@{font-url}/@{weightslash}.ttf") format("truetype"), url("@{font-url}/@{weightslash}.svg@{id-weight}") format("svg");
         } & when (@svg = false) {
           /* IE9 Compat Modes */
-          src: url(#{@font-url}/#{@weightslash}.ttf) format("truetype");
+          src: url("@{font-url}/@{weightslash}.ttf") format("truetype");
         }
       } 
       & when (@ttf = false) {
         & when (@svg) {
-          src: url(#{@font-url}/#{@weightslash}.svg#{@id-weight});
+          src: url("@{font-url}/@{weightslash}.svg@{id-weight}");
           /* IE9 Compat Modes */
-          src: url(#{@font-url}/#{@weightslash}.svg#{@id-weight}) format("svg");
+          src: url("@{font-url}/@{weightslash}.svg@{id-weight}") format("svg");
         } 
         & when (@svg = false) {
           /* IE9 Compat Modes */
