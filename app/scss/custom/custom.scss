@@ -157,3 +157,22 @@ div[data-assigned="ronin"] .hu-messenger-message.hu-messenger-message-user .hu-m
     min-width: 500px;
   }
 }
+
+
+// PARA CALENDARIO
+.fi.hu-calendar {
+  margin-top: 5px;
+  margin-bottom: -3px;
+}
+.fi.empty {
+  margin-top: 15px;
+}
+
+.fixbtn+div .hu-btn {
+  background: #ce4b81!important;
+  color: white!important;
+  width: 100%!important;
+  @media screen and (min-width:800px ){
+    width: 47% !important;
+  }
+}

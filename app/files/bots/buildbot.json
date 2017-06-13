@@ -1,0 +1,1666 @@
+{
+  "88": {
+    "overwrite": true,
+    "field": "custom",
+    "hidetextbox": true,
+    "name": "Pick @typo",
+    "next": {
+      "success": "35"
+    },
+    "id": "88",
+    "delaytime": 0,
+    "function": "__text__",
+    "top": 944,
+    "left": 993,
+    "custom_field": "typo"
+  },
+  "62": {
+    "top": 894,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "62",
+    "name": "Loading template",
+    "next": {
+      "success": "51"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "Loading template... {html}<img src=\"x\" style=\"display: none\" onerror=\"getCSS({\n  accent: '#de4561',\n  contrast: '#00747a',\n  font: 'Lato',\n  fonttype: 'sans-serif',\n  fontsize: '16px',\n  embfonts: 'false',\n  fonturl: 'https://fonts.googleapis.com/css?family=Lato',\n  backgroundtype: 'video',\n  backgroundcolor: '#004962',\n  videotexture: 'image',\n  videoname: 'video'\n  });\">{/html}",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 2142
+  },
+  "63": {
+    "top": 769,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "63",
+    "name": "{html}<img src=\"x\" s",
+    "next": {
+      "success": "9"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "{html}<img src=\"x\" style=\"display: none\" onerror=\"jsaddClass(this,'js-thumbs');jsfakeMessage(this);\"><ul class=\"container-inline cols-4\">\n  <li class=\"two-rows\">\n    <a href=\"\" target=\"_blank\">\n      <div style=\"background-image: url(files/botimg/bg-gradient.jpg);\" class=\"bckg\"></div>\n      <p>\n        Gradient\n      </p>  \n    </a>\n  </li>\n  <li class=\"two-rows\">\n    <a href=\"\" target=\"_blank\">\n      <div style=\"background-image: url(files/botimg/bg-video.jpg);\" class=\"bckg\"></div>\n      <p>\n        Video\n      </p>  \n    </a>\n  </li>\n  <li class=\"two-rows\">\n    <a href=\"\" target=\"_blank\">\n      <div style=\"background-image: url(files/botimg/bg-picture.jpg);\" class=\"bckg\"></div>\n      <p>\n        Picture\n      </p>  \n    </a>\n  </li>\n  <li class=\"two-rows\">\n    <a href=\"\" target=\"_blank\">\n      <div style=\"background-image: url(files/botimg/bg-colour.jpg);\" class=\"bckg\"></div>\n      <p>\n        Colour\n      </p>  \n    </a>\n  </li>\n  <li class=\"two-rows back\">\n    <a href=\"\" target=\"_blank\">\n      <p>\n        Back\n      </p>  \n    </a>\n  </li>\n</ul>{/html}",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 454
+  },
+  "37": {
+    "top": 971,
+    "next": {
+      "texts": "78",
+      "other": "39",
+      "back": "5",
+      "bubbles": "79",
+      "buttons": "38"
+    },
+    "delaytime": 0,
+    "id": "37",
+    "name": "Pick selected option",
+    "function": "__choice__",
+    "left": 1184
+  },
+  "100": {
+    "top": 826,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "100",
+    "name": "{html}<img src=\"x\" s",
+    "next": {
+      "success": "91"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "{html}<img src=\"x\" style=\"display: none;\" onerror=\"jsFlex(this);\">\n<div class=\"la-flex la-flex-small\">\n<div class=\"la-choices\">\n    <span class=\"fi newspaper-page\"></span>\n    <span>Font</span>\n</div>\n<div class=\"la-choices\">\n    <span class=\"fi crop-tool\"></span>\n    <span>Size</span>\n</div>\n<div class=\"la-choices la-choice-back\">\n    <span class=\"fi left-arrow-1\"></span>\n    <span>Back</span>\n</div>\n</div>{/html}",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 660
+  },
+  "28": {
+    "top": 1239,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "28",
+    "name": "Ok! {html}<img style",
+    "next": {
+      "success": "64"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "buttons": [
+          "Yes",
+          "No"
+        ],
+        "text": "Do you like it? {html}<img src=\"x\" style=\"display:none\" onerror=\"removeColorPicker(); getCSS({backgroundtype: 'color',backgroundcolor: '@bckg_color'});\n\">{/html}",
+        "order": 0,
+        "entity": "button",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "left": 199
+  },
+  "2": {
+    "top": 126,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "2",
+    "name": "Where do you want",
+    "next": {
+      "success": "52"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "Where do you want to start? {html}<img src=\"x\" style=\"display: none;\" onerror=\"removeFlex();\">{/html}",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 1727
+  },
+  "94": {
+    "top": 1923,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "94",
+    "name": "Do you like it?",
+    "next": {
+      "success": "99"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "buttons": [
+          "Yes",
+          "No"
+        ],
+        "text": "Do you like it? {html}<img src=\"x\" style=\"display:none\" onerror=\"getCSS({\nfontsize:'10px'\n})\">{/html}",
+        "order": 0,
+        "entity": "button",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "left": 587
+  },
+  "52": {
+    "top": 204,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "52",
+    "name": "{html}<img src=\"x\" s",
+    "next": {
+      "success": "3"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "{html}<img src=\"x\" style=\"display: none;\" onerror=\"jsFlex(this);\">\n<div class=\"la-flex la-flex-small\">\n<div class=\"la-choices\">\n    <span class=\"fi picture\"></span>\n    <span>Look & feel</span>\n</div>\n<div class=\"la-choices\">\n    <span class=\"fi speech-balloon\"></span>\n    <span>Contents</span>\n</div>\n</div>{/html}",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 1714
+  },
+  "73": {
+    "top": 1539,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "73",
+    "name": "Let me load your vid",
+    "next": {
+      "success": "74"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "Let me load your video... {html}<img src=\"x\" style=\"display:none\" onerror=\"getCSS({\nbackgroundtype: 'video',\nvideoupload: 'true',\nvideourl: 'http://landbot.io/customers/improdrone/files/video.mp4',\nvideotexture: 'image',\nbackgroundcolor: 'rgba(0, 0, 0, 0.4)'\n});\n\">{/html}",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 983
+  },
+  "19": {
+    "overwrite": true,
+    "field": "custom",
+    "next": {
+      "success": "65"
+    },
+    "name": "Pick @bckg_grad_2",
+    "id": "19",
+    "delaytime": 0,
+    "function": "__text__",
+    "top": 1340,
+    "left": 392,
+    "custom_field": "bckg_grad_2",
+    "keyword": true
+  },
+  "75": {
+    "top": 883,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "75",
+    "name": "{html}<img src=\"x\" s",
+    "next": {
+      "success": "37"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "{html}<img src=\"x\" style=\"display: none\" onerror=\"jsaddClass(this,'js-thumbs');jsfakeMessage(this);\"><ul class=\"container-inline cols-4\">\n  <li class=\"two-rows\">\n    <a href=\"\" target=\"_blank\">\n      <div style=\"background-image: url(files/botimg/col-buttons.jpg);\" class=\"bckg\"></div>\n      <p>\n        Buttons\n      </p>  \n    </a>\n  </li>\n  <li class=\"two-rows\">\n    <a href=\"\" target=\"_blank\">\n      <div style=\"background-image: url(files/botimg/col-bubbles.jpg);\" class=\"bckg\"></div>\n      <p>\n        Bubbles\n      </p>  \n    </a>\n  </li>\n  <li class=\"two-rows\">\n    <a href=\"\" target=\"_blank\">\n      <div style=\"background-image: url(files/botimg/col-texts.jpg);\" class=\"bckg\"></div>\n      <p>\n        Texts\n      </p>  \n    </a>\n  </li>\n  <li class=\"two-rows\">\n    <a href=\"\" target=\"_blank\">\n      <div style=\"background-image: url(files/botimg/bg-colour.jpg);\" class=\"bckg\"></div>\n      <p>\n        Other\n      </p>  \n    </a>\n  </li>\n  <li class=\"two-rows back\">\n    <a href=\"\" target=\"_blank\">\n      <p>\n        Back\n      </p>  \n    </a>\n  </li>\n</ul>{/html}",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 1181
+  },
+  "15": {
+    "top": 1062,
+    "next": {
+      "success": "16"
+    },
+    "delaytime": 0,
+    "id": "15",
+    "name": "Color 1",
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "{html}<img src=\"x\" style=\"display:none;\" onerror=\"addColorPicker()\">{/html}*Choose the first colour _Examples: #333, red, rgba(125,50,59,1)_*",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 429
+  },
+  "14": {
+    "top": 1681,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "14",
+    "name": "Prefecto, sigue:",
+    "next": {
+      "success": "59"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "What do you want to *customize now?* {html}<img src=\"x\" style=\"display: none;\" onerror=\"removeFlex();\">{/html}",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 384
+  },
+  "30": {
+    "top": 1248,
+    "next": {
+      "success": "14"
+    },
+    "delaytime": 0,
+    "id": "30",
+    "name": "Ok! {html}<img src=\"",
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "Ok! {html}<img src=\"x\" style=\"display:none\" onerror=\"$('.hu-messenger-footer').removeClass('hu-file-show'); getCSS({\nbackgroundtype: 'image',\nbackgroundimageurl: '@bg_foto'\n})\">{/html}",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 15
+  },
+  "71": {
+    "top": 1352,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "71",
+    "name": "{html}<img src=\"x\" s",
+    "next": {
+      "success": "31"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "{html}<img src=\"x\" style=\"display: none\" onerror=\"jsaddClass(this,'js-thumbs');jsfakeMessage(this);\"><ul class=\"container-inline\">\n  <li class=\"two-rows\">\n    <a href=\"\" target=\"_blank\">\n      <div style=\"background-image: url(files/video.jpg);\" class=\"bckg\"></div>\n      <p>\n        Office\n      </p>  \n    </a>\n  </li>\n  <li class=\"two-rows\">\n    <a href=\"\" target=\"_blank\">\n      <div style=\"background-image: url(http://landbot.io/customers/improdrone/files/video.jpg);\" class=\"bckg\"></div>\n      <p>\n        Clouds\n      </p>  \n    </a>\n  </li>\n</ul>{/html}",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 774
+  },
+  "46": {
+    "top": 965,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "46",
+    "name": "Ok! {html}<img src=\"",
+    "next": {
+      "success": "86"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "buttons": [
+          "Yes",
+          "No"
+        ],
+        "text": "Is it correct? {html}<img src=\"x\" style=\"display:none\" onerror=\"uploadLogo('@logo');\">{/html}",
+        "order": 0,
+        "entity": "button",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "left": 1511
+  },
+  "60": {
+    "top": 890,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "60",
+    "name": "Loading template",
+    "next": {
+      "success": "51"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "Loading template... {html}<img src=\"x\" style=\"display: none\" onerror=\"getCSS({\n  accent: '#de4561',\n  contrast: '#00747a',\n  font: 'Lato',\n  fonttype: 'sans-serif',\n  fontsize: '16px',\n  embfonts: 'false',\n  fonturl: 'https://fonts.googleapis.com/css?family=Lato',\n  backgroundtype: 'gradient',\n  gradientfrom: '#00b2a9',\n  gradientto: '#55e2ba'\n  });\">{/html}",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 1679
+  },
+  "96": {
+    "top": 1953,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "96",
+    "name": "Do you like it? {htm",
+    "next": {
+      "success": "99"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "buttons": [
+          "Yes",
+          "No"
+        ],
+        "text": "Do you like it? {html}<img src=\"x\" style=\"display:none\" onerror=\"getCSS({\nfontsize:'14px'\n})\">{/html}",
+        "order": 0,
+        "entity": "button",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "left": 1074
+  },
+  "92": {
+    "top": 1728,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "92",
+    "name": "Choose the size for",
+    "next": {
+      "success": "93"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "buttons": [
+          "XS",
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "text": "Choose the size for the texts:",
+        "order": 0,
+        "entity": "button",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "left": 879
+  },
+  "56": {
+    "top": 1080,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "56",
+    "name": "Do you want to custo",
+    "next": {
+      "success": "57"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "buttons": [
+          "Customize",
+          "End editing"
+        ],
+        "text": "Do you want to *customize* this template or *finish* editing the styles?",
+        "order": 0,
+        "entity": "button",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "left": 1804
+  },
+  "95": {
+    "top": 1948,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "95",
+    "name": "Do you like it? {htm",
+    "next": {
+      "success": "99"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "buttons": [
+          "Yes",
+          "No"
+        ],
+        "text": "Do you like it? {html}<img src=\"x\" style=\"display:none\" onerror=\"getCSS({\nfontsize:'12px'\n})\">{/html}",
+        "order": 0,
+        "entity": "button",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "left": 848
+  },
+  "81": {
+    "overwrite": true,
+    "field": "custom",
+    "next": {
+      "success": "83"
+    },
+    "name": "Pick @light",
+    "id": "81",
+    "delaytime": 0,
+    "function": "__text__",
+    "top": 1207,
+    "left": 1484,
+    "custom_field": "light",
+    "keyword": true
+  },
+  "76": {
+    "top": 1412,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "76",
+    "name": "Pick selected option",
+    "next": {
+      "yes": "36",
+      "no": "38"
+    },
+    "function": "__choice__",
+    "left": 973
+  },
+  "21": {
+    "overwrite": true,
+    "field": "custom",
+    "next": {
+      "success": "30"
+    },
+    "name": "Pick @BG_FOTO",
+    "id": "21",
+    "delaytime": 0,
+    "function": "__text__",
+    "top": 1146,
+    "left": 21,
+    "custom_field": "bg_foto"
+  },
+  "93": {
+    "top": 1819,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "93",
+    "name": "Pick selected option",
+    "next": {
+      "xl": "98",
+      "m": "96",
+      "xs": "94",
+      "s": "95",
+      "l": "97"
+    },
+    "function": "__choice__",
+    "left": 877
+  },
+  "38": {
+    "top": 1153,
+    "next": {
+      "success": "40"
+    },
+    "delaytime": 0,
+    "id": "38",
+    "name": "Choose a color",
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "{html}<img src=\"x\" style=\"display:none;\" onerror=\"addColorPicker()\">{/html}*Choose a color or type its name _Examples: #333, red, rgba(125,50,59,1)_*",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 980
+  },
+  "40": {
+    "overwrite": true,
+    "field": "custom",
+    "next": {
+      "success": "42"
+    },
+    "name": "Pick @accent",
+    "id": "40",
+    "delaytime": 0,
+    "function": "__text__",
+    "top": 1228,
+    "left": 967,
+    "custom_field": "accent",
+    "keyword": true
+  },
+  "68": {
+    "overwrite": true,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "68",
+    "keyword": true,
+    "custom_field": "bg_type",
+    "left": 452,
+    "virtual": true,
+    "top": 999,
+    "field": "custom",
+    "next": {
+      "success": "15"
+    },
+    "name": "Pick @bg_type",
+    "function": "__text__"
+  },
+  "78": {
+    "top": 1153,
+    "next": {
+      "success": "80"
+    },
+    "delaytime": 0,
+    "id": "78",
+    "name": "Choose a color",
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "{html}<img src=\"x\" style=\"display:none;\" onerror=\"addColorPicker()\">{/html}*Choose a color or type its name _Examples: #333, red, rgba(125,50,59,1)_*",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 1157
+  },
+  "65": {
+    "top": 1418,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "65",
+    "name": "Do you like it? {htm",
+    "next": {
+      "success": "64"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "buttons": [
+          "Yes",
+          "No"
+        ],
+        "text": "Do you like it? {html}<img src=\"x\" style=\"display:none\" onerror=\"removeColorPicker();getCSS({backgroundtype: 'gradient',gradientfrom: '@bckg_grad_1',gradientto: '@bckg_grad_2'});\n\">{/html}",
+        "order": 0,
+        "entity": "button",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "left": 391
+  },
+  "18": {
+    "top": 1250,
+    "next": {
+      "success": "19"
+    },
+    "delaytime": 0,
+    "id": "18",
+    "name": "Color 2",
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "*Choose the last colour of the gradient _Examples: #333, red, rgba(125,50,59,1)_*",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 425
+  },
+  "97": {
+    "top": 1954,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "97",
+    "name": "Do you like it? {htm",
+    "next": {
+      "success": "99"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "buttons": [
+          "Yes",
+          "No"
+        ],
+        "text": "Do you like it? {html}<img src=\"x\" style=\"display:none\" onerror=\"getCSS({\nfontsize:'16px'\n})\">{/html}",
+        "order": 0,
+        "entity": "button",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "left": 1348
+  },
+  "49": {
+    "top": 513,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "49",
+    "name": "Click on a template",
+    "next": {
+      "success": "54"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "Click on a template to *preview it* 🔎",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 1338
+  },
+  "35": {
+    "top": 1008,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "35",
+    "name": "Ok",
+    "next": {
+      "success": "89"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "buttons": [
+          "Yes",
+          "No"
+        ],
+        "text": "Do you like it? {html}<img src=\"x\" style=\"display:none\" onerror=\"getCSS({\nembfonts: 'false',\nfont: '@typo',\nfonturl: 'https://fonts.googleapis.com/css?family=@typo',\nfontsize:'15px'\n})\">{/html}",
+        "order": 0,
+        "entity": "button",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "left": 903
+  },
+  "99": {
+    "top": 2060,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "99",
+    "name": "Pick selected option",
+    "next": {
+      "yes": "90",
+      "no": "92"
+    },
+    "function": "__choice__",
+    "left": 886
+  },
+  "69": {
+    "overwrite": true,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "69",
+    "keyword": true,
+    "custom_field": "bg_type",
+    "left": 680,
+    "virtual": true,
+    "top": 983,
+    "field": "custom",
+    "next": {
+      "success": "22"
+    },
+    "name": "Pick @bg_type",
+    "function": "__text__"
+  },
+  "70": {
+    "top": 1405,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "70",
+    "name": "Do you like it?",
+    "next": {
+      "success": "64"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "buttons": [
+          "Yes",
+          "No"
+        ],
+        "text": "Do you like it? {html}<img src=\"x\" style=\"display:none\" onerror=\"getCSS({\nbackgroundtype: 'video',\nvideoupload: 'true',\nvideourl: '@video',\nvideotexture: 'image',\nbackgroundcolor: 'rgba(0, 0, 0, 0.4)'\n});\n\">{/html}",
+        "order": 0,
+        "entity": "button",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "left": 575
+  },
+  "54": {
+    "top": 612,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "54",
+    "name": "{html}<img src=\"x\" s",
+    "next": {
+      "success": "50"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "{html}<img src=\"x\" style=\"display: none\" onerror=\"jsaddClass(this,'js-thumbs');jsfakeMessage(this);\"><ul class=\"container-inline\">\n  <li class=\"two-rows\">\n    <a href=\"\" target=\"_blank\">\n      <div style=\"background-image: url(files/botimg/tmpl-gradient.jpg);\" class=\"bckg\"></div>\n      <p>\n        Gradient\n      </p>  \n    </a>\n  </li>\n  <li class=\"two-rows\">\n    <a href=\"\" target=\"_blank\">\n      <div style=\"background-image: url(files/botimg/tmpl-video.jpg);\" class=\"bckg\"></div>\n      <p>\n        Video\n      </p>  \n    </a>\n  </li>\n  <li class=\"two-rows\">\n    <a href=\"\" target=\"_blank\">\n      <div style=\"background-image: url(files/botimg/tmpl-default.jpg);\" class=\"bckg\"></div>\n      <p>\n        Default\n      </p>  \n    </a>\n  </li>\n <li class=\"two-rows back\">\n    <a href=\"\" target=\"_blank\">\n      <p>\n        Back\n      </p>  \n    </a>\n  </li>\n</ul>{/html}",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 1809
+  },
+  "42": {
+    "top": 1325,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "42",
+    "name": "Ok! {html}<img src=\"",
+    "next": {
+      "success": "76"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "buttons": [
+          "Yes",
+          "No"
+        ],
+        "text": "Do you like it? {html}<img src=\"x\" style=\"display:none\" onerror=\"removeColorPicker();getCSS({\naccent: '@accent'\n})\">{/html}",
+        "order": 0,
+        "entity": "button",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "left": 949
+  },
+  "90": {
+    "top": 716,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "90",
+    "name": "What do you want to",
+    "next": {
+      "success": "100"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "buttons": [
+          "Font",
+          "Size",
+          "Back"
+        ],
+        "text": "What do you want to change?{html}<img src=\"x\" style=\"display: none;\" onerror=\"removeFlex();\">{/html}",
+        "order": 0,
+        "entity": "button",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "left": 693
+  },
+  "82": {
+    "top": 1320,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "82",
+    "name": "Do you like it? {htm",
+    "next": {
+      "success": "84"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "buttons": [
+          "Yes",
+          "No"
+        ],
+        "text": "Do you like it? {html}<img src=\"x\" style=\"display:none\" onerror=\"removeColorPicker();getCSS({\ndark: '@dark'\n})\">{/html}",
+        "order": 0,
+        "entity": "button",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "left": 1137
+  },
+  "53": {
+    "top": 243,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "53",
+    "name": "{html}<img src=\"x\" s",
+    "next": {
+      "success": "48"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "{html}<img src=\"x\" style=\"display: none;\" onerror=\"jsFlex(this);\">\n<div class=\"la-flex la-flex-small\">\n<div class=\"la-choices\">\n    <span class=\"fi picture\"></span>\n    <span>Templates</span>\n</div>\n<div class=\"la-choices\">\n    <span class=\"fi paint-brush\"></span>\n    <span>Customize</span>\n</div>\n<div class=\"la-choices la-choice-back\">\n    <span class=\"fi left-arrow-1\"></span>\n    <span>Back</span>\n</div>\n</div>{/html}",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 1160
+  },
+  "72": {
+    "top": 1527,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "72",
+    "name": "Let me load your vid",
+    "next": {
+      "success": "74"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "Let me load your video... {html}<img src=\"x\" style=\"display:none\" onerror=\"getCSS({\nbackgroundtype: 'video',\nvideoupload: 'false',\nvideoname: 'video',\nvideotexture: 'image',\nbackgroundcolor: 'rgba(0, 0, 0, 0.4)'\n});\n\">{/html}",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 647
+  },
+  "58": {
+    "top": 1282,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "58",
+    "name": "What do you want to",
+    "next": {
+      "success": "52"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "What do you want to do now?",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 1825
+  },
+  "79": {
+    "top": 1128,
+    "next": {
+      "success": "81"
+    },
+    "delaytime": 0,
+    "id": "79",
+    "name": "Choose a color",
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "{html}<img src=\"x\" style=\"display:none;\" onerror=\"addColorPicker()\">{/html}*Choose a color or type its name _Examples: #333, red, rgba(125,50,59,1)_*",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 1492
+  },
+  "61": {
+    "top": 894,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "61",
+    "name": "Loading template...",
+    "next": {
+      "success": "51"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "Loading template... {html}<img src=\"x\" style=\"display: none\" onerror=\"getCSS({\n  containertype:'fullscreen',\n  accent: '#ce4b81',\n  contrast: '#4a50a8',\n  font: 'Gotham Rounded',\n  fonttype: 'sans-serif',\n  fontsize: '14px',\n  embfonts: 'true',\n  backgroundtype: 'gradient',\n  gradientfrom: '#ffad59',\n  gradientto: '#ffe199',\n  });\">{/html}",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 1886
+  },
+  "6": {
+    "top": 640,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "6",
+    "name": "Pick selected option",
+    "next": {
+      "background": "8",
+      "back": "47",
+      "success": "90",
+      "logo": "44",
+      "colours": "36",
+      "typography": "90"
+    },
+    "function": "__choice__",
+    "left": 895
+  },
+  "39": {
+    "top": 1123,
+    "next": {
+      "success": "41"
+    },
+    "delaytime": 0,
+    "id": "39",
+    "name": "Choose a color",
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "{html}<img src=\"x\" style=\"display:none;\" onerror=\"addColorPicker()\">{/html}*Choose a color or type its name _Examples: #333, red, rgba(125,50,59,1)_*",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 1325
+  },
+  "55": {
+    "top": 1075,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "55",
+    "name": "Pick selected option",
+    "next": {
+      "like": "56",
+      "choose": "49",
+      "other": "49"
+    },
+    "function": "__choice__",
+    "left": 2082
+  },
+  "57": {
+    "top": 1170,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "57",
+    "name": "Pick selected option",
+    "next": {
+      "success": "5",
+      "end": "58",
+      "customize": "5"
+    },
+    "function": "__choice__",
+    "left": 1804
+  },
+  "20": {
+    "top": 1053,
+    "next": {
+      "success": "21"
+    },
+    "delaytime": 0,
+    "id": "20",
+    "name": "Sube tu foto",
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "Upload your picture, please {html}<img style=\"display: none;\" src=\"x\" onerror=\"$('.hu-messenger-footer').addClass('hu-file-show');\">{/html}",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 48
+  },
+  "43": {
+    "top": 1319,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "43",
+    "name": "Ok! {html}<img src=\"",
+    "next": {
+      "success": "77"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "buttons": [
+          "Yes",
+          "No"
+        ],
+        "text": "Do you like it? {html}<img src=\"x\" style=\"display:none\" onerror=\"removeColorPicker();getCSS({\ncontrast: '@contrast'\n})\">{/html}",
+        "order": 0,
+        "entity": "button",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "left": 1317
+  },
+  "64": {
+    "top": 1607,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "64",
+    "name": "Pick selected option",
+    "next": {
+      "yes": "14",
+      "no": "8"
+    },
+    "function": "__choice__",
+    "left": 363
+  },
+  "25": {
+    "top": 1239,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "25",
+    "name": "Click on a video",
+    "next": {
+      "success": "71"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "Click on a video to *preview it* 🔎",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 786
+  },
+  "87": {
+    "top": 860,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "87",
+    "name": "{html}<img src=\"x\" s",
+    "next": {
+      "success": "88"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "{html}<img src=\"x\" style=\"display: none\" onerror=\"jsaddClass(this,'js-thumbs');jsfakeMessage(this);\"><ul class=\"container-inline\">\n<li class=\"two-rows\">\n<a href=\"\" target=\"_blank\">\n<div style=\"background-image: url(files/botimg/ty-droidserif.png);\" class=\"bckg\"></div>\n<p>\n  Droid+Serif\n</p>  \n</a>\n</li>\n<li class=\"two-rows\">\n<a href=\"\" target=\"_blank\">\n<div style=\"background-image: url(files/botimg/ty-inconsolata.png);\" class=\"bckg\"></div>\n<p>\n  Inconsolata\n</p>  \n</a>\n</li>\n<li class=\"two-rows\">\n<a href=\"\" target=\"_blank\">\n<div style=\"background-image: url(files/botimg/ty-montserrat.png);\" class=\"bckg\"></div>\n<p>\n  Montserrat\n</p>  \n</a>\n</li>\n<li class=\"two-rows\">\n<a href=\"\" target=\"_blank\">\n<div style=\"background-image: url(files/botimg/ty-open.png);\" class=\"bckg\"></div>\n<p>\n  Open+Sans\n</p>  \n</a>\n</li>\n<li class=\"two-rows\">\n<a href=\"\" target=\"_blank\">\n<div style=\"background-image: url(files/botimg/ty-oswald.png);\" class=\"bckg\"></div>\n<p>\n  Oswald\n</p>  \n</a>\n</li>\n<li class=\"two-rows\">\n<a href=\"\" target=\"_blank\">\n<div style=\"background-image: url(files/botimg/ty-raleway.png);\" class=\"bckg\"></div>\n<p>\n  Raleway\n</p>  \n</a>\n</li>\n<li class=\"two-rows\">\n<a href=\"\" target=\"_blank\">\n<div style=\"background-image: url(files/botimg/ty-roboto.png);\" class=\"bckg\"></div>\n<p>\n  Roboto\n</p>  \n</a>\n</li>\n<li class=\"two-rows\">\n<a href=\"\" target=\"_blank\">\n<div style=\"background-image: url(files/botimg/ty-robotoslab.png);\" class=\"bckg\"></div>\n<p>\n  Roboto+Slab\n</p>  \n</a>\n</li>\n<li class=\"two-rows\">\n<a href=\"\" target=\"_blank\">\n<div style=\"background-image: url(files/botimg/ty-lato.png);\" class=\"bckg\"></div>\n<p>\n  Lato\n</p>  \n</a>\n</li>\n</ul>{/html}",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 930
+  },
+  "5": {
+    "top": 414,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "5",
+    "name": "What do you want to",
+    "next": {
+      "success": "59"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "What do you want to *customize?*",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 881
+  },
+  "12": {
+    "overwrite": true,
+    "field": "custom",
+    "next": {
+      "success": "28"
+    },
+    "name": "Pick @bckg_color",
+    "id": "12",
+    "delaytime": 0,
+    "function": "__text__",
+    "top": 1152,
+    "left": 216,
+    "custom_field": "bckg_color"
+  },
+  "83": {
+    "top": 1321,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "83",
+    "name": "Do you like it? {htm",
+    "next": {
+      "success": "85"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "buttons": [
+          "Yes",
+          "No"
+        ],
+        "text": "Do you like it? {html}<img src=\"x\" style=\"display:none\" onerror=\"removeColorPicker();getCSS({\nlight: '@light'\n})\">{/html}",
+        "order": 0,
+        "entity": "button",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "left": 1492
+  },
+  "91": {
+    "top": 915,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "91",
+    "name": "Pick selected option",
+    "next": {
+      "font": "33",
+      "back": "5",
+      "size": "92"
+    },
+    "function": "__choice__",
+    "left": 679
+  },
+  "47": {
+    "top": 120,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "47",
+    "name": "You can start by using one",
+    "next": {
+      "success": "53"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "Choose an option:",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 1162
+  },
+  "1": {
+    "top": 41,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "1",
+    "name": "Vamos a configurar",
+    "next": {
+      "success": "2"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "Let's set up your Landbot! 🤓",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 1717
+  },
+  "36": {
+    "top": 784,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "36",
+    "name": "Choose the element",
+    "next": {
+      "success": "75"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "Choose the element you do want to customize:{html}<img src=\"x\" style=\"display: none;\" onerror=\"removeFlex();\">{/html}",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 1194
+  },
+  "85": {
+    "top": 1420,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "85",
+    "name": "Pick selected option",
+    "next": {
+      "yes": "36",
+      "no": "79"
+    },
+    "function": "__choice__",
+    "left": 1522
+  },
+  "50": {
+    "top": 722,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "50",
+    "name": "Pick selected option",
+    "next": {
+      "gradient": "60",
+      "video": "62",
+      "back": "47",
+      "default": "61"
+    },
+    "function": "__choice__",
+    "left": 1811
+  },
+  "59": {
+    "top": 527,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "59",
+    "name": "{html}<img src=\"x\" s",
+    "next": {
+      "success": "6"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "{html}<img src=\"x\" style=\"display: none;\" onerror=\"jsFlex(this);\">\n<div class=\"la-flex la-flex-small\">\n<div class=\"la-choices\">\n    <span class=\"fi picture\"></span>\n    <span>Background</span>\n</div>\n<div class=\"la-choices\">\n    <span class=\"fi paint-brush\"></span>\n    <span>Colours</span>\n</div>\n<div class=\"la-choices\">\n    <span class=\"fi star\"></span>\n    <span>Logo</span>\n</div>\n<div class=\"la-choices\">\n    <span class=\"fi newspaper-page\"></span>\n    <span>Typography</span>\n</div>\n<div class=\"la-choices la-choice-back\">\n    <span class=\"fi left-arrow-1\"></span>\n    <span>Back</span>\n</div>\n</div>{/html}",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 737
+  },
+  "24": {
+    "top": 1242,
+    "next": {
+      "success": "27"
+    },
+    "delaytime": 0,
+    "id": "24",
+    "name": "Súbelo",
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "*Write the url of your video _With mp4 extension_*",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 600
+  },
+  "16": {
+    "overwrite": true,
+    "field": "custom",
+    "next": {
+      "success": "18"
+    },
+    "name": "Pick @bckg_grad_1",
+    "id": "16",
+    "delaytime": 0,
+    "function": "__text__",
+    "top": 1152,
+    "left": 396,
+    "custom_field": "bckg_grad_1"
+  },
+  "41": {
+    "overwrite": true,
+    "field": "custom",
+    "next": {
+      "success": "43"
+    },
+    "name": "Pick @contrast",
+    "id": "41",
+    "delaytime": 0,
+    "function": "__text__",
+    "top": 1214,
+    "left": 1307,
+    "custom_field": "contrast",
+    "keyword": true
+  },
+  "11": {
+    "top": 1079,
+    "next": {
+      "success": "12"
+    },
+    "delaytime": 0,
+    "id": "11",
+    "name": "Choose a color",
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "{html}<img src=\"x\" style=\"display:none;\" onerror=\"addColorPicker()\">{/html}*Choose a color or type its name _Examples: #333, red, rgba(125,50,59,1)_*",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 229
+  },
+  "74": {
+    "top": 1602,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "74",
+    "name": "Do you like it?",
+    "next": {
+      "success": "64"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "buttons": [
+          "Yes",
+          "No"
+        ],
+        "text": "Do you like it?",
+        "order": 0,
+        "entity": "button",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "left": 794
+  },
+  "23": {
+    "top": 1155,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "23",
+    "name": "Pick selected option",
+    "next": {
+      "upload": "24",
+      "default": "25"
+    },
+    "function": "__choice__",
+    "left": 669
+  },
+  "31": {
+    "top": 1430,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "31",
+    "name": "Pick selected option",
+    "next": {
+      "office": "72",
+      "clouds": "73"
+    },
+    "function": "__choice__",
+    "left": 777
+  },
+  "67": {
+    "overwrite": true,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "67",
+    "keyword": true,
+    "custom_field": "bg_type",
+    "left": 223,
+    "virtual": true,
+    "top": 1010,
+    "field": "custom",
+    "next": {
+      "success": "11"
+    },
+    "name": "Pick @bg_type",
+    "function": "__text__"
+  },
+  "84": {
+    "top": 1410,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "84",
+    "name": "Pick selected option",
+    "next": {
+      "yes": "36",
+      "no": "78"
+    },
+    "function": "__choice__",
+    "left": 1159
+  },
+  "3": {
+    "top": 280,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "3",
+    "name": "Pick selected option",
+    "next": {
+      "feel": "47",
+      "look": "47"
+    },
+    "function": "__choice__",
+    "left": 1718
+  },
+  "98": {
+    "top": 1965,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "98",
+    "name": "Do you like it? {htm",
+    "next": {
+      "success": "99"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "buttons": [
+          "Yes",
+          "No"
+        ],
+        "text": "Do you like it? {html}<img src=\"x\" style=\"display:none\" onerror=\"getCSS({\nfontsize:'20px'\n})\">{/html}",
+        "order": 0,
+        "entity": "button",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "left": 1632
+  },
+  "8": {
+    "top": 667,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "8",
+    "name": "Elige el tipo de fon",
+    "next": {
+      "success": "63"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "Choose a type of background:  {html}<img src=\"x\" style=\"display: none;\" onerror=\"removeFlex();\">{/html}",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 342
+  },
+  "33": {
+    "top": 788,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "33",
+    "name": "Elige una tipografía",
+    "next": {
+      "success": "87"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "Choose a font to preview it:",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 942
+  },
+  "44": {
+    "top": 768,
+    "next": {
+      "success": "45"
+    },
+    "delaytime": 0,
+    "id": "44",
+    "name": "Sube tu logo",
+    "function": "__send_message__",
+    "responses": [
+      {
+        "text": "Write down your company or *brand name*{html}<img src=\"x\" style=\"display: none;\" onerror=\"removeFlex();\">{/html}",
+        "order": 0,
+        "entity": "text"
+      }
+    ],
+    "left": 1506
+  },
+  "86": {
+    "top": 1048,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "86",
+    "name": "Pick selected option",
+    "next": {
+      "yes": "5",
+      "no": "44"
+    },
+    "function": "__choice__",
+    "left": 1490
+  },
+  "9": {
+    "top": 862,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "9",
+    "name": "Pick selected option",
+    "next": {
+      "colour": "67",
+      "gradient": "68",
+      "video": "69",
+      "picture": "66",
+      "back": "5"
+    },
+    "function": "__choice__",
+    "left": 475
+  },
+  "22": {
+    "top": 1065,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "22",
+    "name": "Elige una opción",
+    "next": {
+      "success": "23"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "buttons": [
+          "default videos",
+          "upload video"
+        ],
+        "text": "Upload your own video *from an url* or pick one of our *default videos*",
+        "order": 0,
+        "entity": "button",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "left": 678
+  },
+  "48": {
+    "top": 402,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "48",
+    "name": "Pick selected option",
+    "next": {
+      "templates": "49",
+      "back": "2",
+      "customize": "5"
+    },
+    "function": "__choice__",
+    "left": 1158
+  },
+  "80": {
+    "overwrite": true,
+    "field": "custom",
+    "next": {
+      "success": "82"
+    },
+    "name": "Pick @dark",
+    "id": "80",
+    "delaytime": 0,
+    "function": "__text__",
+    "top": 1230,
+    "left": 1151,
+    "custom_field": "dark",
+    "keyword": true
+  },
+  "89": {
+    "top": 1091,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "89",
+    "name": "Pick selected option",
+    "next": {
+      "yes": "90",
+      "no": "33"
+    },
+    "function": "__choice__",
+    "left": 851
+  },
+  "66": {
+    "overwrite": true,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "66",
+    "keyword": true,
+    "custom_field": "bg_type",
+    "left": 40,
+    "virtual": true,
+    "top": 977,
+    "field": "custom",
+    "next": {
+      "success": "20"
+    },
+    "name": "Pick @bg_type",
+    "function": "__text__"
+  },
+  "51": {
+    "top": 1008,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "51",
+    "name": "Do you want to use it",
+    "next": {
+      "success": "55"
+    },
+    "function": "__send_message__",
+    "responses": [
+      {
+        "buttons": [
+          "I like it 👍🏻",
+          "Choose other 🤔"
+        ],
+        "text": "Do you want to use it or choose another one?",
+        "order": 0,
+        "entity": "button",
+        "choice_text": "*Type the number of the option you are interested in"
+      }
+    ],
+    "left": 1850
+  },
+  "27": {
+    "overwrite": true,
+    "field": "custom",
+    "next": {
+      "success": "70"
+    },
+    "name": "Pick @video",
+    "id": "27",
+    "delaytime": 0,
+    "function": "__text__",
+    "top": 1324,
+    "left": 583,
+    "custom_field": "video",
+    "keyword": true
+  },
+  "45": {
+    "overwrite": true,
+    "field": "custom",
+    "next": {
+      "success": "46"
+    },
+    "name": "Pick @logo",
+    "id": "45",
+    "delaytime": 0,
+    "function": "__text__",
+    "top": 876,
+    "left": 1539,
+    "custom_field": "logo"
+  },
+  "77": {
+    "top": 1416,
+    "hidetextbox": true,
+    "delaytime": 0,
+    "id": "77",
+    "name": "Pick selected option",
+    "next": {
+      "yes": "36",
+      "no": "39"
+    },
+    "function": "__choice__",
+    "left": 1346
+  }
+}
