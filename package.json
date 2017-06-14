@@ -27,7 +27,8 @@
     "build": "gulp build --gulpfile \"gulpfile-dynamic.js\"",
     "deploy": "echo 'BOOOM! es broma, consulta con el encargado antes de hacer deploy.'",
     "deploy-test": "echo 'BOOOM! es broma, consulta con el encargado antes de hacer deploy.'",
-    "deploy-stable": "node ftp-deploy.js clients/`node -p \"require('./package.json').client\"`-stable.secret.conf.json"
+    "deploy-stable": "echo 'BOOOM! es broma, consulta con el encargado antes de hacer deploy.'",
+    "deploy-dynamic": "node ftp-deploy.js clients/`node -p \"require('./package.json').client\"`-dynamic.secret.conf.json"
   },
   "path": {
     "app": {
