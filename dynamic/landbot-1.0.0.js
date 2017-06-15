@@ -42,6 +42,7 @@ function Landbot(config) {
       "violet-light": "#b2b5de",
       "blue-light": "#7db9e8",
       "light-gray": "#f1f1f1",
+      // Relative colors
       "accent": "@pink",
       "accent-0": "lighten(@accent,3%)",
       "accent-1": "darken(saturate(@accent,20%),11%)",
@@ -49,6 +50,7 @@ function Landbot(config) {
       "contrast": "@violet",
       "contrast-0": "lighten(@contrast,10%)",
       "contrast-light": "lighten(@contrast,30%)",
+      // Fonts
       "embfonts": false,
       "font": "\"Gotham Rounded\"",
       "font-type": "sans-serif",
@@ -65,12 +67,13 @@ function Landbot(config) {
       "ttf": true,
       "svg": true,
       "externalfonturl": false,
-      "background-type": "\"gradient\"",
+      // Background
+      "background-type": "\"gradient\"", // gradient | image | color | video
       "gradient-from": "@orange",
       "gradient-to": "@orange-light",
       "background-image-url": "\"https://storage.googleapis.com/media.yexir.com/channels_back/31.png\"",
       "background-color": "transparent",
-      "video-texture": "gradient",
+      "video-texture": "gradient", // gradient | image | color
       "box-footer": "@accent",
       "url": ""
     }
