@@ -32,6 +32,7 @@ function Landbot(config) {
     'custom': {
       "containertype": "fullscreen",
       "white": "white",
+      "black": "black",
       "pink": "#ce4b81",
       "pink-0": "#da548b",
       "pink-1": "#ce2d6f",
@@ -51,7 +52,8 @@ function Landbot(config) {
       "contrast-0": "lighten(@contrast,10%)",
       "contrast-light": "lighten(@contrast,30%)",
       // Fonts
-      "embfonts": false,
+      "embfonts": true,
+      "light-text": "@black",
       "font": "\"Gotham Rounded\"",
       "font-type": "sans-serif",
       "font-size": "14px",
@@ -66,7 +68,7 @@ function Landbot(config) {
       "woff": true,
       "ttf": true,
       "svg": true,
-      "externalfonturl": false,
+      "externalfonturl": true,
       // Background
       "background-type": "\"gradient\"", // gradient | image | color | video
       "gradient-from": "@orange",
