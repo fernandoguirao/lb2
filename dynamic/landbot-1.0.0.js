@@ -41,6 +41,7 @@ function Landbot(config) {
       "violet": "#4a50a8",
       "violet-0": "#6369be",
       "violet-light": "#b2b5de",
+      "externalfonturl": '',
       "embfonts": true,
       "blue-light": "#7db9e8",
       "light-gray": "#f1f1f1",
@@ -66,7 +67,6 @@ function Landbot(config) {
       "woff": true,
       "ttf": true,
       "svg": true,
-      "externalfonturl": true,
       "background-type": "\"gradient\"",
       "gradient-from": "@orange",
       "gradient-to": "@orange-light",
@@ -204,6 +204,13 @@ Landbot.prototype.generateDocument = function generateDocument() {
     type: 'image/x-icon'
   });
 
+  if(!this.config.custom.embfonts){
+    this.generateTag('link', head, {
+        rel: 'stylesheet',
+        href: this.config.custom.externalfonturl,
+        type: 'text/css'
+    });    
+  }
   // LESS
 
   window.less = {
