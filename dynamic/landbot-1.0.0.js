@@ -32,6 +32,7 @@ function Landbot(config) {
     'custom': {
       "containertype": "fullscreen",
       "white": "white",
+      "black": "black",
       "pink": "#ce4b81",
       "pink-0": "#da548b",
       "pink-1": "#ce2d6f",
@@ -49,6 +50,7 @@ function Landbot(config) {
       "contrast": "@violet",
       "contrast-0": "lighten(@contrast,10%)",
       "contrast-light": "lighten(@contrast,30%)",
+      "light-text": "@black",
       "embfonts": false,
       "font": "\"Gotham Rounded\"",
       "font-type": "sans-serif",
