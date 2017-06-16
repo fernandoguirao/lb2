@@ -62,7 +62,7 @@
       & when (@ttf) {
         & when (@svg) {
           /* IE9 Compat Modes */
-          src: url("@{font-url}/@{weightslash}.eot?#iefix") format("embedded-opentype"), url("@{font-url}/@{weightslash}.woff") format("woff"), url(@{font-url}/@{weightslash}.ttf) format("truetype"), url("@{font-url}/@{weightslash}.svg@{id-weight}") format("svg");
+          src: url("@{font-url}/@{weightslash}.eot?#iefix") format("embedded-opentype"), url("@{font-url}/@{weightslash}.woff") format("woff"), url("@{font-url}/@{weightslash}.ttf") format("truetype"), url("@{font-url}/@{weightslash}.svg@{id-weight}") format("svg");
         }
         & when (@svg = false) {
           /* IE9 Compat Modes */
