@@ -1,0 +1,68 @@
+#hu-container-widget{
+    .hu-messenger-footer{
+        display:none;
+    }
+    #landbot-textbox{
+        .hu-messenger-footer{
+            position:relative;
+            .animation-name(fadeinbottom);
+            .animation-duration(0.5s);
+            display: inherit;
+            width: 70%;
+            margin-left:75px;
+            border-top: none;
+            background:transparent;
+            .hu-footer-state{
+                .hu-composer{
+                    border-bottom: 2px solid white;
+                    .hu-composer-text{
+                        padding:0px;
+                        #hu-composer-box{
+                            color: white;
+                        }
+                        .placeholder-custom-color(white);
+                    }
+                }
+            }
+            .hu-composer-send-button svg path{
+                fill:white;
+            }
+
+            #hu-composer-aux-box{
+                display: none;
+            }
+        }
+    }
+}
+
+#hu-container-widget[data-textbox='custom']{
+    .hu-messenger-footer{
+        display:none;
+    }
+    #landbot-textbox .hu-messenger-footer{
+        display: inherit;
+        width: initial;
+        margin-left:75px;
+        border-top: none;
+        background: white;
+        .border-radius();
+        .hu-footer-state{
+            .hu-composer{
+                border-bottom:inherit;
+                .hu-composer-text{
+                    padding:0px;
+                    #hu-composer-box{
+                        color: black;
+                    }
+                    .placeholder-custom-color(magenta);
+                }
+            }
+        }
+        .hu-composer-send-button svg path{
+            fill:magenta;
+        }
+        #hu-composer-aux-box{
+            display: none;
+        }
+    }
+}

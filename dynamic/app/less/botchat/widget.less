@@ -7,14 +7,8 @@
     font-weight: 500;
   }
   &[data-textbox="hidden"]:not([data-assigned="agent"]), &:not([data-textbox="hidden"]):not([data-textbox="show"]) {
-    .hu-messenger-footer {
-      transform: translateY(105px);
-      opacity: 0;
-    }
     @media screen and (max-width: 800px){
-      .hu-messenger-footer {
-        display: none;
-      }
+
       div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages {
         padding-bottom: 36px!important;
       }
@@ -24,14 +18,6 @@
     svg#hu-send {
       top: 0!important;
     }
-  }
-  &:not([data-textbox]):not([data-assigned="ronin"]) .hu-messenger-footer {
-    // transform: translateY(105px);
-    margin-bottom: -105px;
-    height: 0;
-    opacity: 0;
-    margin: 0 !important;
-    padding: 0;
   }
 
   // MESSENGER
@@ -108,42 +94,6 @@
         }
         .hu-loader-1, .hu-loader-2, .hu-loader-3 {
           display: none !important;
-        }
-      }
-    }
-    .hu-messenger-footer {
-      border-radius: 6px;
-      border: 2px solid @contrast-0;
-      transition: transform 0.5s, opacity 0.5s !important;
-      background-color: @light;
-      .hu-footer-state {
-        width: 100%;
-        .hu-composer {
-          .hu-composer-text {
-            padding-bottom: 13px !important;
-            textarea#hu-composer-box {
-              font-family: @font,@font-type!important;
-              font-size: @font-size - 0.5;
-              color: @contrast;
-              min-height: 21px !important;
-              max-height: 42px !important;
-              line-height: 21px !important;
-              &::placeholder {
-                color: @contrast-light;
-                text-transform: uppercase;
-                font-weight: 500;
-              }
-            }
-            #hu-composer-aux-box {
-              opacity: 0;
-              // left: 0 !important;
-              padding-right: 71px !important; /* button width 50px + padding 19px + 2px (forces new line) */
-              padding-left: 21px !important; /* padding 19px + 2px (forces new line) */
-              line-height: 21px !important;
-              min-height: 21px !important;
-              max-height: 42px !important;
-            }
-          }
         }
       }
     }

@@ -21,6 +21,10 @@ function renderHelloumiLiveChat( configKey, initialMessage ) {
         }
         var __umichatCore = new UmichatCore( __config );
         __umichatCore.on('render', helloumiLivechatLoaded);
+        __umichatCore.on('render', customizeTextbox);
+        __umichatCore.on('showtextbox', showTextBox);
+        __umichatCore.on('hidetextbox', hideTextBox);
+        __umichatCore.on('sendmessage', hideTextBox);
       }
     }
 
@@ -101,7 +105,38 @@ function loadButtons(target,jsonURL) {
 
 }
 
+function customizeTextbox(){
+  var a = document.querySelector("#hu-webchat-ghosts");
+  var b = document.querySelector(".hu-messenger-footer");
+  var c = document.createElement('div');
+  c.id = "landbot-textbox";
+  a.before(c);
+}
 
+function showTextBox(messageData){
+  var a = document.querySelector("#hu-container-widget");
+  var b = document.querySelector(".hu-messenger-footer");
+  var c = document.querySelector("#landbot-textbox");
+  c.appendChild(b);
+  console.log(messageData.features.textarea);
+  c.querySelector('.hu-composer-send-button').classList.remove('hu-js-hide');
+  if(messageData.features.textarea.field !== 'custom'){
+      a.dataset.textbox = messageData.features.textarea.field;
+      c.querySelector('.hu-composer-file-button').classList.add('hu-js-hide');
+      c.querySelector('.hu-composer-emoji-button').classList.add('hu-js-hide');
+  }
+  else{
+     a.dataset.textbox = 'custom';  
+     c.querySelector('.hu-composer-file-button').classList.remove('hu-js-hide');
+     c.querySelector('.hu-composer-emoji-button').classList.remove('hu-js-hide'); 
+  }
+}
+function hideTextBox(messageData){
+  console.log("ocultando textbox");
+  var a = document.querySelector("#hu-container-widget");
+  var b = document.querySelector(".hu-messenger-footer");
+  a.appendChild(b);
+}
 
 function jsFlex(target){
   $(target).parent().parent().addClass('js-flex');
