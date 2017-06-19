@@ -857,7 +857,7 @@ function forabotCreateChecklist( controller ) {
 }
 
 function forabotMessageSent() {
-  // $('#hu-container-widget').attr('data-textbox', 'hidden');
+  $('#hu-container-widget').attr('data-textbox', 'hidden');
 }
 
 function forabotMessageReceived( message ) {
