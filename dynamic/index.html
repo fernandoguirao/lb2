@@ -10,6 +10,7 @@
       function loadHelloumiLandbot() {
         HULandbot = new Landbot({
           'staticUrl': './',
+<<<<<<< HEAD
     'channelToken': "H-120-5E4E3L3UGEPC8W6B",
     'brandID': 1,
     'apiKey': "AIzaSyD4wTyIVAW_KXbgCFMUpbj-CwGpc3VRp5g",
@@ -18,8 +19,46 @@
     'storageBucket': "daisho-debug-5e803.appspot.com",
           'background-video': false,
           // custom content MUST be JSON parseable
+=======
+          'channelToken': "H-57-55JULQN5YLS2AFFG",
+          'brandID': 234,
+          'apiKey': "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
+          'authDomain': "daisho-yexir.firebaseapp.com",
+          'databaseURL': "https://daisho-yexir.firebaseio.com",
+          'storageBucket': "daisho-yexir.appspot.com",
+          'background-video': true,
+          'videoname': 'video',
+>>>>>>> 3f58e1de50c7f674bf4396ab413ea955f10ef89f
           'custom': {
-            // Here goes style variables
+            "background-type": "\"video\"",
+            "video-texture": 'none',
+          },
+          'welcome': {
+            'init': '0',
+            'messages': {
+              '0': {
+                'type': 'dialog',
+                'title': 'Who are you?',
+                'buttons': ['Just a boy', 'Just a girl'],
+                'payloads': ['Just a boy', 'Just a girl'],
+                'features': {
+                  hide_textbox: true
+                },
+                'timestamp': '1',
+                'readed': false,
+                'samurai': 0,
+                'next': false,
+                'isLastMessage': true,
+              },
+              // '1': {
+              //   'type': 'text',
+              //   'message': 'Just a boy',
+              //   'timestamp': '2',
+              //   'readed': false,
+              //   'isLastMessage': true,
+              //   'next': false
+              // }
+            }
           }
         });
         HULandbot.createLandbot();

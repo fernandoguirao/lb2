@@ -309,6 +309,8 @@ function showLoader(){
   var __loader2 = document.querySelector(".loader-referral");
   if (__loader) __loader.style.opacity = "1";
   if (__loader) __loader2.style.opacity = "1";
+  if (__loader) __loader.style.zIndex = "99999";
+  if (__loader) __loader2.style.zIndex = "99999";
 }
 
 function hideLoader(){
@@ -316,6 +318,8 @@ function hideLoader(){
   var __loader2 = document.querySelector(".loader-referral");
 	if (__loader) __loader.style.opacity = "0";
   if (__loader2) __loader2.style.opacity = "0";
+  if (__loader) __loader.style.zIndex = "-1";
+  if (__loader) __loader2.style.zIndex = "-1";
 }
 
 function getEmailFromURL(){

@@ -25,15 +25,16 @@ function Landbot(config) {
     'btn02Title': 'Early Access',
     'btn02Message': 'signup',
     'background-video': false,
-    'videoname': 'cronoshare',
+    'videoname': 'video',
     'onInit': 'landbot',
     'onEmail': 'discorbot',
+    'welcome': {},
     // custom content MUST be JSON parseable
     'custom': {
       "containertype": "fullscreen",
       "white": "white",
       "black": "black",
-      "pink": "#ce4b81",
+      "pink": "#F61152",
       "pink-0": "#da548b",
       "pink-1": "#ce2d6f",
       "orange": "#ffad59",
@@ -76,7 +77,7 @@ function Landbot(config) {
       "gradient-to": "@orange-light",
       "background-image-url": "\"https://storage.googleapis.com/media.yexir.com/channels_back/31.png\"",
       "background-color": "transparent",
-      "video-texture": "gradient", // gradient | image | color
+      "video-texture": "\"gradient\"", // gradient | image | color
       "box-footer": "@accent",
       "url": ""
     }
@@ -213,7 +214,7 @@ Landbot.prototype.generateDocument = function generateDocument() {
         rel: 'stylesheet',
         href: this.config.custom.externalfonturl,
         type: 'text/css'
-    });    
+    });
   }
   // LESS
 
@@ -221,14 +222,16 @@ Landbot.prototype.generateDocument = function generateDocument() {
     env: "development", // Values: development | production
     globalVars: this.config.custom
   };
-  // this.generateTag('script', head, {
-  //   src: '//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js'
-  // });
   this.generateTag('script', head, {
-    src: 'less.min.js'
+    src: '//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js'
   }, {
     onload: 'window.less.pageLoadFinished.then(function() { HULandbot.hideOverlay(); });'
   });
+  // this.generateTag('script', head, {
+  //   src: 'less.min.js'
+  // }, {
+  //   onload: 'window.less.pageLoadFinished.then(function() { HULandbot.hideOverlay(); });'
+  // });
   // master.less
   this.generateTag('link', head, {
     rel: 'stylesheet/less',
@@ -302,48 +305,7 @@ Landbot.prototype.generateDocument = function generateDocument() {
       "storageBucket": this.config.storageBucket,
       "open": this.config.open,
       "platform": this.config.platform,
-      "welcome": {
-        "init": "0",
-        "messages": {
-          "0": {
-            "message": "Hi there!",
-            "type": "text",
-            "read": true,
-            "timestamp": 0.00001,
-            "samurai": -26,
-            "next": "1"
-          },
-          "1": {
-            "message": "My name is Landbot and I can help you out *turning your website into a chatbot* 🤖",
-            "type": "text",
-            "read": true,
-            "timestamp": 0.00001,
-            "samurai": -26,
-            "next": "2"
-          },
-          "2": {
-            "message": "",
-            "type": "image",
-            "read": true,
-            "timestamp": 0.00001,
-            "samurai": -26,
-            "url": "https://storage.googleapis.com/media.yexir.com/ronin/1494935124.953778.gif",
-            "next": "3"
-          },
-          "3": {
-            "message": "",
-            "type": "dialog",
-            "title": "Do you want to sign up to get early access?",
-            "buttons": ["Yes", "Tell me more"],
-            "payloads": ["Yes", "Tell me more"],
-            "read": true,
-            "timestamp": 0.00001,
-            "samurai": -26,
-            "isLastMessage": true,
-            "next": false
-          }
-        }
-      }
+      "welcome": this.config.welcome
     },
     // "discorbot": {
     //   "staticUrl": "https://storage.googleapis.com/static-demo-helloumi/",

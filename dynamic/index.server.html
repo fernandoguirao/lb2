@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <!-- SNIPPET STARTS HERE -->
+    <script type="text/javascript">
+      function loadHelloumiLandbot() {
+        HULandbot = new Landbot({
+          'staticUrl': 'https://storage.googleapis.com/static.yexir.com/',
+          'channelToken': "H-57-55JULQN5YLS2AFFG",
+          'brandID': 234,
+          'apiKey': "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
+          'authDomain': "daisho-yexir.firebaseapp.com",
+          'databaseURL': "https://daisho-yexir.firebaseio.com",
+          'storageBucket': "daisho-yexir.appspot.com",
+          'background-video': true,
+          'videoname': 'video',
+          'custom': {
+            "background-type": "\"video\"",
+          }
+        });
+        HULandbot.createLandbot();
+      }
+    </script>
+    <script src="https://storage.googleapis.com/static.yexir.com/landbot/js/landbot-1.0.0.js" onload="loadHelloumiLandbot()" charset="UTF-8"></script>
+    <!-- SNIPPET ENDS HERE -->
+  </body>
+</html>
