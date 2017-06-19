@@ -28,12 +28,13 @@ function Landbot(config) {
     'videoname': 'video',
     'onInit': 'landbot',
     'onEmail': 'discorbot',
+    'welcome': {},
     // custom content MUST be JSON parseable
     'custom': {
       "containertype": "fullscreen",
       "white": "white",
       "black": "black",
-      "pink": "#ce4b81",
+      "pink": "#F61152",
       "pink-0": "#da548b",
       "pink-1": "#ce2d6f",
       "orange": "#ffad59",
@@ -304,6 +305,7 @@ Landbot.prototype.generateDocument = function generateDocument() {
       "storageBucket": this.config.storageBucket,
       "open": this.config.open,
       "platform": this.config.platform,
+      "welcome": this.config.welcome
     },
     // "discorbot": {
     //   "staticUrl": "https://storage.googleapis.com/static-demo-helloumi/",

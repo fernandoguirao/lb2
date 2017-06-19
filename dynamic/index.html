@@ -16,10 +16,38 @@
           'authDomain': "daisho-yexir.firebaseapp.com",
           'databaseURL': "https://daisho-yexir.firebaseio.com",
           'storageBucket': "daisho-yexir.appspot.com",
-          'background-video': false,
-          // custom content MUST be JSON parseable
+          'background-video': true,
+          'videoname': 'video',
           'custom': {
-            // Here goes style variables
+            "background-type": "\"video\"",
+            "video-texture": 'none',
+          },
+          'welcome': {
+            'init': '0',
+            'messages': {
+              '0': {
+                'type': 'dialog',
+                'title': 'Who are you?',
+                'buttons': ['Just a boy', 'Just a girl'],
+                'payloads': ['Just a boy', 'Just a girl'],
+                'features': {
+                  hide_textbox: true
+                },
+                'timestamp': '1',
+                'readed': false,
+                'samurai': 0,
+                'next': false,
+                'isLastMessage': true,
+              },
+              // '1': {
+              //   'type': 'text',
+              //   'message': 'Just a boy',
+              //   'timestamp': '2',
+              //   'readed': false,
+              //   'isLastMessage': true,
+              //   'next': false
+              // }
+            }
           }
         });
         HULandbot.createLandbot();
