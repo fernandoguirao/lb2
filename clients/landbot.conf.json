@@ -14,9 +14,9 @@
   "prodTokenLandbot": "H-54-05SUR4YA8IFUTM2S",
   "prodTokenBuildbot": "TODO",
   "prodApikey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
-  "testID": "234",
-  "testTokenLandbot": "H-57-55JULQN5YLS2AFFG",
-  "testTokenBuildbot": "H-71-FPWS30QCUAG8GDEI",
+  "testID": "251",
+  "testTokenLandbot": "H-91-VMD37U2F2B7A0CDL",
+  "testTokenBuildbot": "H-92-CJ5AGAH0FTGYDQSK",
   "testApikey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
   "onInit": "buildbot",
   "onEmail": "buildbot"
