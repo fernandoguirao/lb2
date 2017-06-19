@@ -79,7 +79,8 @@ function Landbot(config) {
       "background-color": "transparent",
       "video-texture": "\"gradient\"", // gradient | image | color
       "box-footer": "@accent",
-      "url": ""
+      "url": "",
+      "staticUrl": "\"https://storage.googleapis.com/static-demo-helloumi/\""
     }
   };
 
