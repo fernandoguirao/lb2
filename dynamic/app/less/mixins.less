@@ -53,6 +53,12 @@
   display: -ms-flexbox !important;
   display: flex !important;
 }
+.flex(@num) {
+  -webkit-box-flex: @num;
+  -webkit-flex: @num;
+  -ms-flex: @num;
+  flex: @num;
+}
 
 .fontface_fn(@weightslash, @id-weight, @weightnumber ) {
   font-family: @font;

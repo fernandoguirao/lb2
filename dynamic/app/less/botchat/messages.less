@@ -70,6 +70,7 @@
     &:not(.first-not-last):not(.not-first-not-last) {
       .hu-message-info {
         display: inherit;
+        position: absolute;
       }
     }
     .hu-message-container {
@@ -272,7 +273,7 @@
           left: 0;
           width: 100%;
           // top: -20px;
-          // display: none;
+          display: none;
           &::before {
             position: relative;
             top: -8px;
@@ -301,6 +302,14 @@
                 //   color: @light;
                 // }
               }
+            }
+          }
+          .hu-piled-up {
+            .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink {
+              float: none;
+              text-align: center;
+              padding: 11px 31px;
+              max-width: 260px;
             }
           }
           .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink {
@@ -412,7 +421,7 @@
         color:@light-text ;
       }
       // Estilos para que los links parezcan botones
-      a.hu-link:not([href*=mailto]) {
+      div:not(.hu-btn) > span > a.hu-link:not([href*=mailto]) {
         background-color: @accent;
         overflow: hidden;
         white-space: nowrap;
