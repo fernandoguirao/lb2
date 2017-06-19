@@ -234,11 +234,10 @@ ForaBotController.prototype.start = function start( status ) {
     this.botStatus = 1; // Running
     var __status = this.currentBot.status[ this.currentStatus ];
     if ( __status ) {
-      // var __timeout = 500;
-      // console.info(this.getTime() + 'ForaBotController[start] : Bot is typing (' + __timeout + ' ms)');
-      // this.trigger('typing', { timeout: __timeout } );
-      // this.timeout = setTimeout(this.checkCurrent.bind(this), __timeout);
-      this.checkCurrent();
+      var __timeout = 500;
+      console.info(this.getTime() + 'ForaBotController[start] : Bot is typing (' + __timeout + ' ms)');
+      this.trigger('typing', { timeout: __timeout } );
+      this.timeout = setTimeout(this.checkCurrent.bind(this), __timeout);
     } else {
       throw new ForaBotError('ForaBotController[start] : Bot\'s initial status error, "' + this.currentStatus + '" doesn\'t exist!');
     }

@@ -1,10 +1,10 @@
-<link rel="stylesheet" href="https://storage.googleapis.com/static-demo-helloumi/webchat/css/main-1.0.0.13.css"\>
+<link rel="stylesheet" href="main-1.0.0.13.css"\>
 <script>
   // TEST BOT
   window.chatbotConfigs = {
     "landbot": {
       "staticUrl": "https://storage.googleapis.com/static-demo-helloumi/",
-      "channelToken": "{{testToken}}",
+      "channelToken": "{{testTokenLandbot}}",
       "brandID": "{{testID}}",
       "version": "1.0.0.13",
       "apiKey": "{{testApikey}}",
@@ -12,29 +12,60 @@
       "databaseURL": "https://daisho-yexir.firebaseio.com",
       "storageBucket": "daisho-yexir.appspot.com",
       "open": true,
-      "initialMessage": ".",
-      // "jsbot" : {
-      //   "name": "Landbot",
-      //   "init": "welcome_1",
-      //   "status": {
-      //     "welcome_1": {
-      //       "text": "My name is Landbot and I can help you out *turning your website into a chatbot* 🤖",
-      //       "next": ["welcome_2"],
-      //     },
-      //     "welcome_2": {
-      //       "image": "https://storage.googleapis.com/media.yexir.com/ronin/1494935124.953778.gif",
-      //       "next": ["welcome_3"],
-      //     },
-      //     "welcome_3": {
-      //       "text": "Do you want to sign up to get early access?",
-      //       "buttons": [
-      //         { "caption": "Yes", "next": false },
-      //         { "caption": "Tell me more", "next": false },
-      //       ],
-      //     },
-      //   }
-      // },
+      // "initialMessage": ".",
+      "jsbot" : {
+        "name": "landbot",
+        "init": "welcome_1",
+        "status": {
+          "welcome_1": {
+            "text": "My name is Landbot and I can help you out *turning your website into a chatbot* 🤖",
+            "next": ["welcome_2"],
+          },
+          "welcome_2": {
+            "image": "https://storage.googleapis.com/media.yexir.com/ronin/1494935124.953778.gif",
+            "next": ["welcome_3"],
+          },
+          "welcome_3": {
+            "text": "Do you want to sign up to get early access?",
+            "buttons": [
+              { "caption": "Yes", "next": false },
+              { "caption": "Tell me more", "next": false },
+            ],
+          }
+        }
+      }
     },
+    "buildbot": {
+      "staticUrl": "https://storage.googleapis.com/static-demo-helloumi/",
+      "channelToken": "{{testTokenBuildbot}}",
+      "brandID": "{{testID}}",
+      "version": "1.0.0.13",
+      "apiKey": "{{testApikey}}",
+      "authDomain": "daisho-yexir.firebaseapp.com",
+      "databaseURL": "https://daisho-yexir.firebaseio.com",
+      "storageBucket": "daisho-yexir.appspot.com",
+      "open": true,
+      "reset": true, // Used in master.js
+      "platform": "landbot",
+      // "initialMessage": "."
+      "jsbot" : {
+        "name": "buildbot",
+        "init": "welcome_1",
+        "status": {
+          "welcome_1": {
+            "text": "Let's set up your Landbot! 🤓",
+            "next": ["welcome_2"],
+          },
+          "welcome_2": {
+            "text": "Do you want to customize the look & feel of your Landbot?",
+            "buttons": [
+              { "caption": "Yes", "next": false },
+              { "caption": "Not now", "next": false },
+            ],
+          }
+        }
+      }
+    }
   };
 
   function renderHelloumiLiveChat( configKey, initialMessage ) {
@@ -57,6 +88,9 @@
           var __initialMessage = initialMessage || __email;
           if ( typeof(__initialMessage) == 'string' ) {
             __config["initialMessage"] = __initialMessage;
+          }
+          if (__config.reset === true) { // Hack to reset customer
+            localStorage.removeItem('helloumi-webchat-customer-' + __config.channelToken)
           }
           var __umichatCore = new UmichatCore( __config );
           __umichatCore.on('render', helloumiLivechatLoaded);
@@ -81,4 +115,4 @@
     }
   }
 </script>
-<script src="https://storage.googleapis.com/static-demo-helloumi/webchat/js/main-1.0.0.13.js" onload="renderHelloumiLiveChat()" charset="UTF-8"></script>
+<script src="main-1.0.0.13.js" onload="renderHelloumiLiveChat()" charset="UTF-8"></script>

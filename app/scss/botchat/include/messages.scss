@@ -78,6 +78,10 @@
       .hu-btn-group-vertical {
         display: inline-block;
         margin-top: 4px;
+        &.hu-checklist {
+          display: flex;
+          flex-wrap: wrap;
+        }
       }
       p {
         font-size: $font-size !important;
@@ -286,6 +290,7 @@
             }
             &:hover {
               color: $light;
+              background-color: $accent-0 !important;
             }
             &:first-child {
               background-color: $accent-0;
@@ -295,21 +300,53 @@
           &.hu-btn-disabled {
             opacity: 0.5;
           }
-          &.hu-btn-checked {
-            background-color: $accent;
-            border-color: $accent;
-            color: $light;
+          &.hu-btn-checkbox.hu-btn-checked {
+            background-color: $accent !important;
+            border-color: $accent !important;
+            color: $light !important;
+            span.check {
+              border-color: $light;
+              &:before {
+                opacity: 1;
+              }
+            }
           }
-          &.hu-btn-unchecked {
+          &.hu-btn-checkbox {
+            border-width: 1px;
+            flex-grow: 1;
+            width: 48%;
+            max-width: 48%;
+            padding-left: 15px;
+            padding-right: 15px;
             background-color: transparent;
             color: $accent-0;
             border-color: $accent-0;
+            background-color: $light !important;
+            display: flex;
             span.check {
-              opacity: 0;
-              margin-right: -15px;
+              border: 1px solid $accent-0;
+              border-radius: 100%;
+              width: 20px;
+              height: 20px;
+              text-align: center;
+              margin-right: 5px;
+              // transition: all .2s ease;
+              &:before {
+                font-size: 12px;
+                opacity: 0;
+              }
+            }
+            span:last-child {
+              flex: 1;
+              text-align: center;
+              line-height: 22px;
             }
             &:hover {
               color: $light;
+              background-color: $accent-0 !important;
+              span.check {
+                border-color: $light;
+              }
             }
           }
           &:hover {
@@ -320,10 +357,6 @@
             &.hu-btn-disabled {
               cursor: not-allowed;
             }
-          }
-          span.check {
-            margin-right: 5px;
-            transition: all .2s ease;
           }
         }
       }
@@ -502,6 +535,9 @@
         font-weight: 500 !important;
         line-height: 1.35em !important;
         font-family: $font,$font-type!important;
+        &:empty {
+          display: none;
+        }
         span {
           font-family: $font,$font-type!important;
         }

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://muza.chickenkiller.com/static/webchat/css/main-1.0.0.13.css"\>
+<link rel="stylesheet" href="main-1.0.0.13.css"\>
 <script>
   window.chatbotConfigs = {
     "landbot": {
@@ -38,18 +38,34 @@
         }
       },
     },
-    "discorbot": {
+    "buildbot": {
       "staticUrl": "https://muza.chickenkiller.com/static/",
-      "channelToken": "H-147-BEJLBA311XJ710F2",
+      "channelToken": "H-149-WZ921E5FP7MZMFRG",
       "brandID": "3",
       "version": "1.0.0.13",
       "apiKey": "AIzaSyD5gH0Oe5Kvnbm2ol--Md3pP0aBwTcNUT0",
       "authDomain": "ornate-shape-146318.firebaseapp.com",
       "databaseURL": "https://ornate-shape-146318.firebaseio.com",
       "storageBucket": "ornate-shape-146318.appspot.com",
+      "reset": true,
       "open": true,
       "platform": "landbot",
-      "initialMessage": "No email",
+      "jsbot" : {
+        "name": "buildbot",
+        "init": "welcome_1",
+        "status": {
+          "welcome_1": {
+            "text": "Let's set up your Landbot! 🤓",
+            "next": ["welcome_2"],
+          },
+          "welcome_2": {
+            "text": "What's your email?",
+            "extra_data": {
+              "hidetextbox": false,
+            }
+          }
+        }
+      }
     }
   };
 
@@ -71,8 +87,11 @@
         }
         if (__config) {
           var __initialMessage = initialMessage || __email;
-          if ( !__config.jsbot && typeof(__initialMessage) == 'string' ) {
+          if ( typeof(__initialMessage) == 'string' ) {
             __config["initialMessage"] = __initialMessage;
+          }
+          if (__config.reset === true) { // Hack to reset customer
+            localStorage.removeItem('helloumi-webchat-customer-' + __config.channelToken)
           }
           var __umichatCore = new UmichatCore( __config );
           __umichatCore.on('render', helloumiLivechatLoaded);
@@ -97,4 +116,4 @@
     }
   }
 </script>
-<script src="https://muza.chickenkiller.com/static/webchat/js/main-1.0.0.13.js" onload="renderHelloumiLiveChat()" charset="UTF-8"></script>
+<script src="main-1.0.0.13.js" onload="renderHelloumiLiveChat()" charset="UTF-8"></script>

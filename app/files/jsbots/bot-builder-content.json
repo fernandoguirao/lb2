@@ -1,6 +1,6 @@
 {
   "name": "Bot Builder - Content",
-  "init": "welcome_0",
+  "init": "welcome_2",
   "storage": {
     "quote_init": "*",
     "quote_end": "*"
@@ -162,7 +162,7 @@
           "name": "Nombre",
           "email": "Email",
           "phone": "Teléfono",
-          "zip": "Código postal",
+          "postal_code": "Código postal",
           "address": "Dirección",
           "city": "Ciudad",
           "country": "País",
@@ -197,7 +197,7 @@
       "text": "¿Quieres que añadamos preguntas de otro tipo?\n*Ejemplo: preguntas sobre tu servicio, etc.*",
       "buttons": [
         { "caption": "Sí", "next": "form_questions_pick_type", "flag": "form_custom"},
-        { "caption": "No", "next": "faqs_0" }
+        { "caption": "No", "next": "form_farewell" }
       ]
     },
     "form_questions_pick_type": {
@@ -412,15 +412,37 @@
       "text": "¿Quieres previsualizar tu bot?",
       "buttons": [
         { "caption": "Sí", "event": "preview"},
-        { "caption": "No", "next": "finish_0"}
+        { "caption": "No", "next": "finish_request"}
       ]
     },
     "preview_end": {
       "text": "Aquí termina la previsualización, ¿quieres repetirla?",
       "buttons": [
         { "caption": "Sí",  "event": "preview"},
-        { "caption": "No", "next": "finish_0", "event": "clear" }
+        { "caption": "No", "next": "finish_request", "event": "clear" }
       ]
+    },
+
+
+
+    "finish_request": {
+      "text": "Creando Landbot...",
+      "event": "publish"
+    },
+    "finish_error": {
+      "text": "Ha ocurrido un error 🙁",
+      "next": "finish_retry"
+    },
+    "finish_retry": {
+      "text": "¿Reintentar?",
+      "buttons": [
+        { "caption": "Sí",  "event": "finish_request"},
+        { "caption": "No", "next": "finish_bad"}
+      ]
+    },
+    "finish_bad": {
+      "text": "Disculpa las molestias",
+      "next": false
     },
 
 
