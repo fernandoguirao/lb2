@@ -91,7 +91,7 @@ function getCSS(variables){
   '&video-texture=' + encodeURI(vars['videotexture']) +
   '&box-footer=' + encodeURIComponent(vars['boxfooter']);
 
-  var urls = "http://landbot.io/sasscompiler/index.css.php" + urlPar;
+  var urls = "https://bueninvento.es/sasscompiler/index.css.php" + urlPar;
 
   $.when($.get(urls))
   .done(function(response) {
