@@ -1,80 +1,39 @@
+
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <title>{{title}}</title>
-    <meta name="description" content="{{description}}">
-    <meta property="og:title" content="{{title}}"/>
-    <meta property="og:type" content="website"/>
-    <!-- <meta property="og:image" content="{{url}}/ogimage.jpg"/> -->
-    <meta property="og:image" content="./files/ogimage.jpg"/>
-    <meta property="og:url" content="{{url}}"/>
-    <meta property="og:description" content="{{description}}"/>
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:url" content="{{url}}">
-    <meta name="twitter:title" content="{{title}}">
-    <meta name="twitter:description" content="{{description}}">
-    <!-- <meta name="twitter:image" content="{{url}}/ogimage.jpg"> -->
-    <meta name="twitter:image" content="./files/ogimage.jpg">
-
-    <link rel="icon" href="./files/favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="css/master.css" type="text/css"/>
-
-    <script>localStorage.clear();</script>
-    <script
-    src="https://code.jquery.com/jquery-2.2.4.min.js"
-    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-    crossorigin="anonymous"></script>
-
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-    integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-    crossorigin="anonymous"></script>
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/css/selectize.min.css" type="text/css"/>
-
-    <script type="text/javascript" src="js/forabot.js" charset="UTF-8"></script>
-
-    <script type="text/javascript" src="js/master.js" charset="UTF-8"></script>
-
-    <!-- inject:snippet:html -->
-    <!-- endinject -->
+    <meta charset="utf-8">
+    <title></title>
   </head>
   <body>
-    <div id="hu-experiment-header">
-      <div class="hu-left-header">
-        <img src="{{logo}}" alt="">
-        <span class="more-leads">{{tagline}}</span>
-      </div>
-      <div class="hu-right-header" id="rightheader">
-	    <a href="#" class="btt" onclick="event.preventDefault(); fakeMessage('{{btn01Message}}', true);">
-          {{btn01Title}}
-        </a>
-        <a href="#" onclick="event.preventDefault(); fakeMessage('{{btn02Message}}', true);">
-          {{btn02Title}}
-        </a>
-        <!-- <a href="http://landbot.io/?utm_source=referral&utm_medium=customers&utm_campaign=improdrone" target="_blank" class="btt">
-          Powered by Landbot.io
-        </a> -->
-      </div>
-    </div>
+    <!-- SNIPPET STARTS HERE -->
 
-    <!-- LOADER -->
-    <div class="sk-folding-cube">
-      <div class="sk-cube1 sk-cube"></div>
-      <div class="sk-cube2 sk-cube"></div>
-      <div class="sk-cube4 sk-cube"></div>
-      <div class="sk-cube3 sk-cube"></div>
-    </div>
-    <div class="loader-referral">
-      <span>Powered by</span>
-      <a href="/">Landbot<i>.io</i> 🤖</a>
-    </div>
-
-    <link rel="stylesheet" href="css/botchat.css" type="text/css"/>
-    <!-- inject:video:html -->
-    <!-- endinject -->
+    <script type="text/javascript">
+      function loadHelloumiLandbot() {
+        HULandbot = new Landbot({
+          'staticUrl': 'https://storage.googleapis.com/static.yexir.com/',
+          'channelToken': "H-90-73W0PNFIBW5EMKFY",
+          'brandID': 1,
+          'brandName': 'landbot',
+          'logo': 'http://localhost:8080/files/avatar2.png',
+          'apiKey': "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
+          'authDomain': "daisho-yexir.firebaseapp.com",
+          'databaseURL': "https://daisho-yexir.firebaseio.com",
+          'storageBucket': "daisho-yexir.appspot.com",
+          'background-video': true,
+          'videoname': 'video',
+          'custom': {
+            "background-type": "\"video\"",
+            "background-color": "rgba(0,0,0,.4)",
+            "video-texture": "\"color\"",
+            "staticUrl": "\"https://storage.googleapis.com/static.yexir.com/\""
+          }
+        });
+        HULandbot.createLandbot();
+      }
+    </script>
+    <script src="https://storage.googleapis.com/static.yexir.com/landbot/js/landbot-1.0.0.js" onload="loadHelloumiLandbot()" charset="UTF-8"></script>
+    <!-- SNIPPET ENDS HERE -->
+    <link rel="stylesheet" href="css/yexir.css" type="text/css"/>
   </body>
 </html>

@@ -56,6 +56,21 @@ gulp.task('styles', () => {
     .pipe(gulp.dest(`${path.dist.css}`))
     .pipe(browserSync.stream());
 
+    // yexir.css
+    let yexir = gulp.src([
+      `${path.app.scss}yexir/yexir.scss`
+    ])
+      .pipe($.sourcemaps.init())
+      .pipe($.sass({
+        sourceComments: 'map'
+      }).on('error', $.sass.logError))
+      .pipe($.postcss( processors ))
+      .pipe($.sourcemaps.write('./'), {
+  			destPath: `${path.dist.css}`
+  		})
+      .pipe(gulp.dest(`${path.dist.css}`))
+      .pipe(browserSync.stream());
+
   // botchat.css
   let botchat = gulp.src([
     `${path.app.scss}botchat/botchat.scss`
@@ -72,7 +87,7 @@ gulp.task('styles', () => {
     .pipe(browserSync.stream());
 
   // Stream merge
-  return merge(master, botchat);
+  return merge(master, botchat, yexir);
 });
 
 /****** HTML ******/
