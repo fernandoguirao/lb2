@@ -225,7 +225,7 @@ Landbot.prototype.generateDocument = function generateDocument() {
     globalVars: this.config.custom
   };
   this.generateTag('script', head, {
-    src: '//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js'
+    src: 'https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js'
   }, {
     onload: 'window.less.pageLoadFinished.then(function() { HULandbot.hideOverlay(); });'
   });
@@ -365,7 +365,7 @@ Landbot.prototype.generateDocument = function generateDocument() {
       <img class="brand-logo" src="' + this.config.logo + '" alt="">\
       <h1 class="brand-name">' + this.config.brandName + '&trade;</h1>\
       <span class="more-leads">' + this.config.tagline + '</span>\
-      <a href="http://landbot.io/?utm_source=referral&utm_medium=customers&utm_campaign=' + this.config.brandName + '" target="_blank" class="btt">\
+      <a href="http://landbot.io/?utm_source=referral&utm_medium=customers&utm_campaign=' + this.config.brandName + '" target="_blank" class="btt" id="rightheader">\
       <span class="btt-content">Powered by <b class="hu-bold">Landbot.io</b></span>\
       <span class="btt-on-hover">Get your Landbot 🤖</span>\
       </a>\

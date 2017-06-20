@@ -23,6 +23,19 @@
   animation-timing-function: @function;
 }
 
+.transition(@content) {
+  transition: @content;
+  -moz-transition: @content;
+  -ms-transition: @content;
+  -o-transition: @content;
+  -webkit-transition: @content;
+}
+.transform(@content) {
+  -ms-transform: @content;
+  -webkit-transform: @content;
+  transform: @content;
+}
+
 .keyframes(@name, @content) {
   @-webkit-keyframes @name {
     @content();

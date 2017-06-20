@@ -61,8 +61,28 @@
         border-color: darken(@accent,10%);
         color: @light;
       }
-      .hu-piled-up .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink {
+      .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink {
+        width: 100%;
         max-width: 100%;
+        float: none;
+        text-align: left;
+        &[data-include="icon"], &[data-include="image"] {
+          .display-flex();
+          align-items: center;
+          i.fi {
+            display: inline-block;
+            margin: 0 20px 0 0;
+          }
+          .hu-btn-image {
+            width: 40px;
+            height: 40px;
+            margin: 0 20px 0 20px;
+            border-radius: 50%;
+          }
+          span {
+            width: auto;
+          }
+        }
       }
     }
   }
