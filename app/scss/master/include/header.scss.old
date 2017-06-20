@@ -1,0 +1,131 @@
+div#hu-experiment-header {
+  z-index: 100000000;
+  position: relative;
+  font-family: $font, $font-type;
+  line-height: 1.2;
+  padding: 20px 0 30px;
+  display: block;
+  background: $light;
+  width: 100%;
+  margin: 0;
+  left: 0;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.03);
+  // &.hu-scrolled {
+  //   animation-name: hide-header;
+  //   animation-duration: 0.3s;
+  //   animation-fill-mode: forwards;
+  // }
+  .hu-left-header {
+    position: relative;
+    top: 5px;
+    float: left;
+    margin-left: 100px;
+    img {
+      width: 103px;
+    }
+    .more-leads {
+      font-size: $font-size - 1;
+      top: -1px;
+      position: relative;
+      display: inline-block;
+      margin-left: 13px;
+      margin-bottom: -4px;
+      // color: rgba(76, 85, 175, 0.89);
+      color: $contrast;
+    }
+  }
+  .hu-right-header {
+    top: 8px;
+    position: relative;
+    float: right;
+    margin-right: 100px;
+    transition: opacity .5s;
+    a {
+      background-color: $contrast;
+      color: $light;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: $font-size - 2;
+      font-weight: 500;
+      position: relative;
+      top: -4px;
+      padding: 11px 31px;
+      transition: all .15s ease;
+      text-transform: uppercase;
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+        background-color: $contrast-0;
+      }
+    }
+  }
+}
+
+@keyframes hide-header {
+  0% {
+    opacity: 1;
+    margin-top: 0%;
+  }
+  100% {
+    opacity: 0;
+    margin-top: -70px;
+  }
+}
+
+//////// RESPONSIVE ////////
+
+@media screen and (max-width: 890px) {
+  div#hu-experiment-header .hu-right-header {
+    margin-right: 60px;
+  }
+  div#hu-experiment-header .hu-left-header {
+    margin-left: 60px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .hu-left-header {
+    margin-left: 30px;
+  }
+  .hu-right-header {
+    margin-right: 30px;
+  }
+  .referral {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 770px) {
+  .hu-right-header a {
+    display: none !important;
+  }
+  .hu-left-header {
+    float: none !important;
+    margin: 0 calc(50% - 65px);
+    display: inline-block;
+    margin-left: 0!important;
+    text-align: center;
+    width: 100%;
+  }
+  .more-leads {
+    display: none!important;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  div#hu-experiment-header {
+    &.hu-scrolled {
+      // display: none;
+      animation-name: hide-header;
+      animation-duration: 0.2s;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+span.logo {
+  color: $contrast;
+  font-weight: bold;
+  letter-spacing: -1px;
+  font-size: $font-size + 9;
+  line-height: 0;
+  position: relative;
+  top: 0;
+}

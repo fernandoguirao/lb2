@@ -1,88 +1,25 @@
-<link rel="stylesheet" href="http://localhost:8000/static/webchat/css/main-1.0.0.css"\>
-<script>
-  // TEST BOT
-  window.chatbotConfigs = {
-    "landbot": {
-      "staticUrl": "http://localhost:8000/static/",
-      "channelToken": "{{testToken}}",
-      "brandID": "{{testID}}",
-      "version": "1.0.0.13",
-      "apiKey": "{{testApikey}}",
-      "authDomain": "daisho-yexir.firebaseapp.com",
-      "databaseURL": "https://daisho-yexir.firebaseio.com",
-      "storageBucket": "daisho-yexir.appspot.com",
-      "open": true,
-      "jsbot": {
-        "name": "Landbot",
-        "init": "welcome_0",
-        "status": {
-          "welcome_0": {
-            "text": "Hi there!",
-            "next": ["welcome_1"],
-          },
-          "welcome_1": {
-            "text": "My name is Landbot and I can help you out *turning your website into a chatbot* 🤖",
-            "next": ["welcome_2"],
-          },
-          "welcome_2": {
-            "image": "https://storage.googleapis.com/media.yexir.com/ronin/1494935124.953778.gif",
-            "next": ["welcome_3"],
-          },
-          "welcome_3": {
-            "text": "Do you want to sign up to get early access?",
-            "buttons": [
-              { "caption": "Yes", "next": false },
-              { "caption": "Tell me more", "next": false },
-            ],
-          },
-        }
-      },
-      'id':'landbot',
-    },
-  };
-
-  function renderHelloumiLiveChat( configKey, initialMessage ) {
-    showLoader();
-    new UmichatRequirements(function(){
-      new TemplateUtils();
-
-      // Default snippet config load
-      var __configKeys = Object.keys(window.chatbotConfigs);
-      if (__configKeys.length > 0) {
-        var __config, __email = getEmailFromURL();
-        if (configKey && window.chatbotConfigs[configKey] ) {
-          __config = window.chatbotConfigs[configKey];
-        } else {
-          var __onInit = window.chatbotConfigs[ '{{onInit}}' ] || window.chatbotConfigs[ __configKeys[0] ];
-          var __onEmail = (__email) ? window.chatbotConfigs[ '{{onEmail}}' ] : false;
-          __config = __onEmail || __onInit;
-        }
-        if (__config) {
-          var __initialMessage = initialMessage || __email;
-          if ( typeof(__initialMessage) == 'string' ) {
-            __config["initialMessage"] = __initialMessage;
-          }
-          var __umichatCore = new UmichatCore( __config );
-          __umichatCore.on('render', helloumiLivechatLoaded);
-        }
+<script type="text/javascript">
+  function loadHelloumiLandbot() {
+    HULandbot = new Landbot({
+      'staticUrl': 'https://storage.googleapis.com/static.yexir.com/',
+      'channelToken': "H-90-73W0PNFIBW5EMKFY",
+      'brandID': 1,
+      'brandName': 'landbot',
+      'logo': './files/avatar2.png',
+      'apiKey': "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
+      'authDomain': "daisho-yexir.firebaseapp.com",
+      'databaseURL': "https://daisho-yexir.firebaseio.com",
+      'storageBucket': "daisho-yexir.appspot.com",
+      'background-video': true,
+      'videoname': 'video',
+      'custom': {
+        "background-type": "\"video\"",
+        "background-color": "rgba(0,0,0,.4)",
+        "video-texture": "\"color\"",
+        "staticUrl": "\"https://storage.googleapis.com/static.yexir.com/\""
       }
-
     });
-  }
-
-  function loadHelloumiLiveChat( configKey, initialMessage ) {
-    var __container = document.getElementById('hu-container-widget');
-    if ( __container ) {
-      __container.parentNode.removeChild(__container);
-      var firebaseApp =(helloumi.webchat.umimessageservice) ? helloumi.webchat.umimessageservice.firebaseApp : null;
-      if (firebaseApp) {
-        firebaseApp.delete().then(function(){
-          renderHelloumiLiveChat( configKey, initialMessage );
-        })
-      } else {
-        renderHelloumiLiveChat( configKey, initialMessage );
-      }
-    }
+    HULandbot.createLandbot();
   }
 </script>
-<script src="http://localhost:8000/static/webchat/js/main-1.0.0.13.js" onload="renderHelloumiLiveChat()" charset="UTF-8"></script>
+<script src="https://storage.googleapis.com/static.yexir.com/landbot/js/landbot-1.0.0.js" onload="loadHelloumiLandbot()" charset="UTF-8"></script>

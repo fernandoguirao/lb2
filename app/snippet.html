@@ -1,92 +1,25 @@
-<link rel="stylesheet" href="https://storage.googleapis.com/static-demo-helloumi/webchat/css/main-1.0.0.13.css?version=20170531"\>
-<script>
-  window.chatbotConfigs = {
-    "landbot": {
-      "staticUrl": "https://storage.googleapis.com/static-demo-helloumi/",
-      "channelToken": "{{prodToken}}",
-      "brandID": "{{prodID}}",
-      "version": "1.0.0.13",
-      "apiKey": "{{prodApikey}}",
-      "authDomain": "daisho-yexir.firebaseapp.com",
-      "databaseURL": "https://daisho-yexir.firebaseio.com",
-      "storageBucket": "daisho-yexir.appspot.com",
-      "open": true,
-      "initialMessage": "."
-    },
-    "discorbot": {
-      "staticUrl": "https://storage.googleapis.com/static-demo-helloumi/",
-      "channelToken": "H-56-UPLZXWDID83F9F7Q",
-      "brandID": "230",
-      "version": "1.0.0.13",
-      "apiKey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
-      "authDomain": "daisho-yexir.firebaseapp.com",
-      "databaseURL": "https://daisho-yexir.firebaseio.com",
-      "storageBucket": "daisho-yexir.appspot.com",
-      "open": true,
-      "initialMessage": "No email",
-    }
-  };
-
-  function renderHelloumiLiveChat( configKey, initialMessage ) {
-    showLoader();
-    new UmichatRequirements(function(){
-      new TemplateUtils();
-
-      // Default snippet config load
-      var __configKeys = Object.keys(window.chatbotConfigs);
-      if (__configKeys.length > 0) {
-        var __config, __email = getEmailFromURL();
-        if (configKey && window.chatbotConfigs[configKey] ) {
-          __config = window.chatbotConfigs[configKey];
-        } else {
-          var __onInit = window.chatbotConfigs[ '{{onInit}}' ] || window.chatbotConfigs[ __configKeys[0] ];
-          var __onEmail = (__email) ? window.chatbotConfigs[ '{{onEmail}}' ] : false;
-          __config = __onEmail || __onInit;
-        }
-        if (__config) {
-          var __initialMessage = initialMessage || __email;
-          if ( typeof(__initialMessage) == 'string' ) {
-            __config["initialMessage"] = __initialMessage;
-          }
-          var __umichatCore = new UmichatCore( __config );
-          __umichatCore.on('render', helloumiLivechatLoaded);
-        }
+<script type="text/javascript">
+  function loadHelloumiLandbot() {
+    HULandbot = new Landbot({
+      'staticUrl': 'https://storage.googleapis.com/static.yexir.com/',
+      'channelToken': "H-90-73W0PNFIBW5EMKFY",
+      'brandID': 1,
+      'brandName': 'landbot',
+      'logo': './files/avatar2.png',
+      'apiKey': "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
+      'authDomain': "daisho-yexir.firebaseapp.com",
+      'databaseURL': "https://daisho-yexir.firebaseio.com",
+      'storageBucket': "daisho-yexir.appspot.com",
+      'background-video': true,
+      'videoname': 'video',
+      'custom': {
+        "background-type": "\"video\"",
+        "background-color": "rgba(0,0,0,.4)",
+        "video-texture": "\"color\"",
+        "staticUrl": "\"https://storage.googleapis.com/static.yexir.com/\""
       }
-
     });
-  }
-
-  function loadHelloumiLiveChat( configKey, initialMessage ) {
-    var __container = document.getElementById('hu-container-widget');
-    if ( __container ) {
-      __container.parentNode.removeChild(__container);
-      var firebaseApp =(helloumi.webchat.umimessageservice) ? helloumi.webchat.umimessageservice.firebaseApp : null;
-      if (firebaseApp) {
-        firebaseApp.delete().then(function(){
-          renderHelloumiLiveChat( configKey, initialMessage );
-        })
-      } else {
-        renderHelloumiLiveChat( configKey, initialMessage );
-      }
-    }
+    HULandbot.createLandbot();
   }
 </script>
-<script src="https://storage.googleapis.com/static-demo-helloumi/webchat/js/main-1.0.0.13.js?version=20170531" onload="renderHelloumiLiveChat()" charset="UTF-8"></script>
-
-<!-- ANALYTICS SNIPPET -->
-<script>
-  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
-  analytics.load("sSnmeJKKUKWb3nCNyHTINdMkD7niGFwk");
-  analytics.page();
-  }}();
-</script>
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-99032280-1', 'auto');
-ga('send', 'pageview');
-
-</script>
+<script src="https://storage.googleapis.com/static.yexir.com/landbot/js/landbot-1.0.0.js" onload="loadHelloumiLandbot()" charset="UTF-8"></script>
