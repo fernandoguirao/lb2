@@ -12,6 +12,7 @@ function Landbot(config) {
     'staticUrl': 'https://storage.googleapis.com/static-demo-helloumi/',
     'channelToken': null,
     'brandID': null,
+    'brandName': null,
     'apiKey': null,
     'authDomain': null,
     'databaseURL': null,
@@ -20,10 +21,10 @@ function Landbot(config) {
     'platform': 'landbot',
     'tagline': 'Get more leads using chatbots 🤖',
     'logo': 'http://bueninvento.es/umiexp2.png',
-    'btn01Title': 'Features',
-    'btn01Message': 'features',
-    'btn02Title': 'Early Access',
-    'btn02Message': 'signup',
+    // 'btn01Title': 'Features',
+    // 'btn01Message': 'features',
+    // 'btn02Title': 'Early Access',
+    // 'btn02Message': 'signup',
     'background-video': false,
     'videoname': 'video',
     'onInit': 'landbot',
@@ -79,7 +80,8 @@ function Landbot(config) {
       "background-color": "transparent",
       "video-texture": "\"gradient\"", // gradient | image | color
       "box-footer": "@accent",
-      "url": ""
+      "url": "",
+      "staticUrl": "\"https://storage.googleapis.com/static-demo-helloumi/\""
     }
   };
 
@@ -223,7 +225,7 @@ Landbot.prototype.generateDocument = function generateDocument() {
     globalVars: this.config.custom
   };
   this.generateTag('script', head, {
-    src: '//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js'
+    src: 'https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js'
   }, {
     onload: 'window.less.pageLoadFinished.then(function() { HULandbot.hideOverlay(); });'
   });
@@ -359,22 +361,35 @@ Landbot.prototype.generateDocument = function generateDocument() {
   this.generateTag('div', body, {
     id: 'hu-experiment-header',
     innerHTML: '\
-    <div class="hu-left-header">\
-      <img src="' + this.config.logo + '" alt="">\
+    <div class="hu-header-content">\
+      <img class="brand-logo" src="' + this.config.logo + '" alt="">\
+      <h1 class="brand-name">' + this.config.brandName + '&trade;</h1>\
       <span class="more-leads">' + this.config.tagline + '</span>\
-    </div>\
-    <div class="hu-right-header" id="rightheader">\
-    <a href="#" class="btt" onclick="event.preventDefault(); fakeMessage("' + this.config.btn01Message + '", true);">\
-        ' + this.config.btn01Title + '\
+      <a href="http://landbot.io/?utm_source=referral&utm_medium=customers&utm_campaign=' + this.config.brandName + '" target="_blank" class="btt" id="rightheader">\
+      <span class="btt-content">Powered by <b class="hu-bold">Landbot.io</b></span>\
+      <span class="btt-on-hover">Get your Landbot 🤖</span>\
       </a>\
-      <a href="#" onclick="event.preventDefault(); fakeMessage("' + this.config.btn02Message + '", true);">\
-        ' + this.config.btn02Title + '\
-      </a>\
-      <!-- <a href="http://landbot.io/?utm_source=referral&utm_medium=customers&utm_campaign=improdrone" target="_blank" class="btt">\
-        Powered by Landbot.io\
-      </a> -->\
     </div>'
   });
+  // this.generateTag('div', body, {
+  //   id: 'hu-experiment-header',
+  //   innerHTML: '\
+  //   <div class="hu-left-header">\
+  //     <img src="' + this.config.logo + '" alt="">\
+  //     <span class="more-leads">' + this.config.tagline + '</span>\
+  //   </div>\
+  //   <div class="hu-right-header" id="rightheader">\
+  //   <a href="#" class="btt" onclick="event.preventDefault(); fakeMessage("' + this.config.btn01Message + '", true);">\
+  //     ' + this.config.btn01Title + '\
+  //   </a>\
+  //   <a href="#" onclick="event.preventDefault(); fakeMessage("' + this.config.btn02Message + '", true);">\
+  //     ' + this.config.btn02Title + '\
+  //   </a>\
+  //     <!-- <a href="http://landbot.io/?utm_source=referral&utm_medium=customers&utm_campaign=improdrone" target="_blank" class="btt">\
+  //       Powered by Landbot.io\
+  //     </a> -->\
+  //   </div>'
+  // });
 
   // Loader
   this.generateTag('div', body, {

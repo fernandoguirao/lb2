@@ -12,6 +12,8 @@
           'staticUrl': './',
           'channelToken': "H-5-W5WY6V4NABEGL0MN",
           'brandID': 1,
+          'brandName': 'landbot',
+          'logo': 'https://osrg.github.io/ryu/css/images/LogoSet02.png',
           'apiKey': "AIzaSyBJ5t8IbcJSCcUS-AkFGdLZkqn-MjaQkrc",
           'authDomain': "burning-torch-9912.firebaseapp.com",
           'databaseURL': "https://burning-torch-9912.firebaseio.com",
@@ -20,7 +22,9 @@
           'videoname': 'video',
           'custom': {
             "background-type": "\"video\"",
-            "video-texture": 'none',
+            "background-color": "rgba(0,0,0,.3)",
+            "video-texture": "\"color\"",
+            "staticUrl": "\"http://localhost:8000/static/\""
           },
           'welcome': {
             'init': '0',
@@ -31,7 +35,12 @@
                 'buttons': ['Just a boy', 'Just a girl'],
                 'payloads': ['Just a boy', 'Just a girl'],
                 'features': {
-                  hide_textbox: true
+                  'hide_textbox': true,
+                  'buttons': {
+                    'includes': ['image', 'icon', 'none'],
+                    'images': ['http://img05.deviantart.net/0cb3/i/2017/170/1/7/bot_by_mrgreenlight-dbdcfzg.png', '', ''],
+                    'icons': ['none', 'check', 'none']
+                  }
                 },
                 'timestamp': '1',
                 'readed': false,

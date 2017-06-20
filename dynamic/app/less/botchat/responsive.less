@@ -26,6 +26,9 @@
 }
 
 @media screen and (max-width: 799px) {
+  .hu-messenger-message.hu-messenger-message-user .hu-message-info {
+    display: none !important;
+  }
   .hu-messenger-footer {
     .hu-composer-emoji-button, .hu-composer-file-button{
         position:initial !important;
@@ -36,8 +39,48 @@
 }
 
 @media screen and (max-width: 600px) {
-  .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink {
-    float: none !important;
+  .hu-messenger-body-state {
+    padding-bottom: 150px;
+  }
+  #hu-container-messenger .hu-messenger-body .hu-messenger-message .hu-message-container {
+    .hu-message-content.hu-message-content-buttons {
+      max-height: 205px;
+      overflow: scroll;
+      position: fixed;
+      bottom: 0;
+      margin: 0;
+      padding: 20px !important;
+      background-color: white !important;
+      &::before { content: none; }
+      .hu-dual-buttons .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink:last-child {
+        background-color: @accent;
+        border-color: darken(@accent,10%);
+        color: @light;
+      }
+      .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink {
+        width: 100%;
+        max-width: 100%;
+        float: none;
+        text-align: left;
+        &[data-include="icon"], &[data-include="image"] {
+          .display-flex();
+          align-items: center;
+          i.fi {
+            display: inline-block;
+            margin: 0 20px 0 0;
+          }
+          .hu-btn-image {
+            width: 40px;
+            height: 40px;
+            margin: 0 20px 0 20px;
+            border-radius: 50%;
+          }
+          span {
+            width: auto;
+          }
+        }
+      }
+    }
   }
   .hu-loader {
     transform: scale(0.5);

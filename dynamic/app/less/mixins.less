@@ -51,6 +51,19 @@
     background-clip:         padding-box;
 }
 
+.transition(@content) {
+  transition: @content;
+  -moz-transition: @content;
+  -ms-transition: @content;
+  -o-transition: @content;
+  -webkit-transition: @content;
+}
+.transform(@content) {
+  -ms-transform: @content;
+  -webkit-transform: @content;
+  transform: @content;
+}
+
 .keyframes(@name, @content) {
   @-webkit-keyframes @name {
     @content();
@@ -80,6 +93,12 @@
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
+}
+.flex(@num) {
+  -webkit-box-flex: @num;
+  -webkit-flex: @num;
+  -ms-flex: @num;
+  flex: @num;
 }
 
 .fontface_fn(@weightslash, @id-weight, @weightnumber ) {

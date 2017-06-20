@@ -1,27 +1,59 @@
 div#hu-experiment-header {
   z-index: 1000;
-  position: relative;
+  height: 65px;
   font-family: @font, @font-type;
   line-height: 1.2;
-  padding: 20px 0 30px;
-  display: block;
-  background: @light;
-  width: 100%;
-  margin: 0;
-  left: 0;
+  background: transparent;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.03);
+  // position: relative;
+  // padding: 20px 0 13px;
+  // display: block;
+  // border-bottom: 1px solid rgba(255,255,255,.2);
+  // width: 100%;
+  // margin: 0;
+  // left: 0;
+  & when (@background-type = 'gradient') or (@background-type = 'color') {
+    border-bottom: 1px solid fade(@accent, 40%);
+    .more-leads, a, .btt, h1 {
+      color: @accent;
+      &.btt {
+        border: 1px solid fade(@accent, 40%);
+        &:hover {
+          background-color: @light;
+        }
+      }
+    }
+  }
+  & when (@background-type = 'image') or (@background-type = 'video') {
+    // Todos los elementos a @light
+    border-bottom: 1px solid fade(@light, 40%);
+    .more-leads, a, .btt, h1 {
+      color: fade(@light, 100%);
+      &.btt {
+        border: 1px solid fade(@light, 40%);
+        &:hover {
+          background-color: @accent;
+        }
+      }
+    }
+  }
   // &.hu-scrolled {
   //   animation-name: hide-header;
   //   animation-duration: 0.3s;
   //   animation-fill-mode: forwards;
   // }
-  .hu-left-header {
-    position: relative;
-    top: 5px;
-    float: left;
-    margin-left: 100px;
+  .hu-header-content {
+    .display-flex();
+    align-items: center;
+    height: 100%;
+    margin: 0 110px;
     img {
-      width: 103px;
+      max-width: 103px;
+      max-height: 45px;
+      margin-right: 12px;
+    }
+    .brand-name {
+      font-size: 20px;
     }
     .more-leads {
       font-size: @font-size - 1;
@@ -30,32 +62,17 @@ div#hu-experiment-header {
       display: inline-block;
       margin-left: 13px;
       margin-bottom: -4px;
+      .flex(1);
       // color: rgba(76, 85, 175, 0.89);
-      color: @contrast;
     }
-  }
-  .hu-right-header {
-    top: 8px;
-    position: relative;
-    float: right;
-    margin-right: 100px;
-    transition: opacity .5s;
     a {
-      background-color: @contrast;
-      color: @light;
-      border-radius: 4px;
       text-decoration: none;
       font-size: @font-size - 2;
       font-weight: 500;
-      position: relative;
-      top: -4px;
       padding: 11px 31px;
       transition: all .15s ease;
-      text-transform: uppercase;
       &:hover {
-        transform: translateY(-10px);
         box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
-        background-color: @contrast-0;
       }
     }
   }
@@ -85,38 +102,27 @@ div#hu-experiment-header {
 //////// RESPONSIVE ////////
 
 @media screen and (max-width: 890px) {
-  div#hu-experiment-header .hu-right-header {
-    margin-right: 60px;
-  }
-  div#hu-experiment-header .hu-left-header {
-    margin-left: 60px;
+  div#hu-experiment-header .hu-header-content {
+    margin: 0 60px;
   }
 }
 @media screen and (max-width: 800px) {
-  .hu-left-header {
-    margin-left: 30px;
-  }
-  .hu-right-header {
-    margin-right: 30px;
+  div#hu-experiment-header .hu-header-content {
+    margin: 0 30px;
   }
   .referral {
     display: none !important;
   }
 }
 @media screen and (max-width: 770px) {
-  .hu-right-header a {
-    display: none !important;
-  }
-  .hu-left-header {
-    float: none !important;
-    margin: 0 ~"calc(50% - 65px)";
-    display: inline-block;
-    margin-left: 0!important;
-    text-align: center;
-    width: 100%;
-  }
-  .more-leads {
-    display: none!important;
+  .hu-header-content {
+    justify-content: center;
+    .btt {
+      display: none !important;
+    }
+    .more-leads {
+      display: none!important;
+    }
   }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
