@@ -106,36 +106,52 @@ function loadButtons(target,jsonURL) {
 }
 
 function customizeTextbox(){
-  var a = document.querySelector("#hu-webchat-ghosts");
-  var b = document.querySelector(".hu-messenger-footer");
-  var c = document.createElement('div');
-  c.id = "landbot-textbox";
-  a.before(c);
+  var landbottextbox = document.createElement('div');
+  landbottextbox.id = "landbot-textbox";
+  document.querySelector("#hu-webchat-ghosts").before(landbottextbox);
+  if(screen.width >= 800) document.querySelector('.hu-composer-send-button').classList.remove('hu-js-hide');
+  helloumi.webchat.umichatgui.setVisibleSendButtonBackUp = helloumi.webchat.umichatgui.setVisibleSendButton;
+  helloumi.webchat.umichatgui.setVisibleSendButton = setVisibleSendButtonWrapper;
+}
+
+function setVisibleSendButtonWrapper(visible){
+  if( screen.width < 800 ){
+    helloumi.webchat.umichatgui.setVisibleSendButtonBackUp(visible);
+  }
+  if(document.querySelector("#hu-container-widget").dataset.textbox){
+    return true;
+  }
+  helloumi.webchat.umichatgui.setVisibleSendButtonBackUp(visible);
 }
 
 function showTextBox(messageData){
-  var a = document.querySelector("#hu-container-widget");
-  var b = document.querySelector(".hu-messenger-footer");
-  var c = document.querySelector("#landbot-textbox");
-  c.appendChild(b);
-  console.log(messageData.features.textarea);
-  c.querySelector('.hu-composer-send-button').classList.remove('hu-js-hide');
-  if(messageData.features.textarea.field !== 'custom'){
-      a.dataset.textbox = messageData.features.textarea.field;
-      c.querySelector('.hu-composer-file-button').classList.add('hu-js-hide');
-      c.querySelector('.hu-composer-emoji-button').classList.add('hu-js-hide');
+  var containerwidget = document.querySelector("#hu-container-widget");
+  if(messageData.features.textarea.field){
+    document.querySelector("#hu-composer-box").placeholder = "Type your " + messageData.features.textarea.field + " here ...";
+    containerwidget.dataset.textboxplaceholder = 'prefixed';
   }
   else{
-     a.dataset.textbox = 'custom';  
-     c.querySelector('.hu-composer-file-button').classList.remove('hu-js-hide');
-     c.querySelector('.hu-composer-emoji-button').classList.remove('hu-js-hide'); 
+    document.querySelector("#hu-composer-box").placeholder = "Type here ...";
+     containerwidget.dataset.textboxplaceholder = 'custom';
   }
+  
+  if(screen.width < 800) return true;
+  /* Move textbox next last message; hide emoji and file buttons; and show send button*/
+  var landbottextbox = document.querySelector("#landbot-textbox");
+  landbottextbox.appendChild(document.querySelector(".hu-messenger-footer"));
+  document.querySelector('.hu-composer-send-button').classList.remove('hu-js-hide');
+  document.querySelector('.hu-composer-file-button').classList.add('hu-js-hide');
+  document.querySelector('.hu-composer-emoji-button').classList.add('hu-js-hide');
 }
 function hideTextBox(messageData){
-  console.log("ocultando textbox");
-  var a = document.querySelector("#hu-container-widget");
-  var b = document.querySelector(".hu-messenger-footer");
-  a.appendChild(b);
+  /* For mobile never hide */ 
+  if(screen.width < 800) return true;
+  /* Reset values */
+  document.querySelector("#hu-composer-box").placeholder = "Type here ...";
+  document.querySelector('.hu-composer-file-button').classList.remove('hu-js-hide');
+  document.querySelector('.hu-composer-emoji-button').classList.remove('hu-js-hide');
+  /* Return textbox to original position */
+  document.querySelector("#hu-container-widget").appendChild(document.querySelector(".hu-messenger-footer"));
 }
 
 function jsFlex(target){
