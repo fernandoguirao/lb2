@@ -1,3 +1,43 @@
+.hu-back-btn {
+  z-index: 21100000;
+  position: fixed;
+  bottom: 6px;
+  text-align: center;
+  left: 20px;
+  width: 36px;
+  cursor: pointer;
+  display: inline-block;
+  height: 46px;
+  padding: 11px;
+  .fi {
+    background-color: #F61152;
+    border-radius: 100%;
+    padding: 6px 7px;
+    color: white;
+    height: 20px;
+    &:before {
+      position: relative;
+      top: 1px;
+    }
+  }
+  span {
+    font-size: 9px !important;
+      font-weight: 500 !important;
+      line-height: 1.35em !important;
+      font-family: "Gotham Rounded", sans-serif !important;
+      color: white;
+      text-transform: uppercase;
+      display: block;
+      margin-top: 16px;
+      opacity: 0;
+  }
+  &:hover {
+    span {
+      opacity: 1;
+    }
+  }
+}
+
 #hu-container-widget[data-platform="landbot"] .hu-js-open {
 
   .hu-messenger-body {
@@ -21,4 +61,4 @@
         // End brand avatar
       }
   }
-} 
+}

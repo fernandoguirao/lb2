@@ -1,0 +1,27 @@
+.js-logo {
+
+  div#hu-experiment-header .hu-header-content img {
+    max-width: 103px;
+    max-height: 45px;
+    margin-right: 12px;
+    height: 100%;
+    width: auto;
+    margin-top: -8px;
+  }
+  #hu-container-widget[data-platform="landbot"] .hu-js-open .hu-messenger-body .hu-messenger-message.hu-messenger-message-brand[data-samurai^="-"] .hu-avatar {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    &:before {
+      width: 29px;
+      height: 31px;
+      background-size: cover;
+      top: 4px;
+      left: 4px;
+    }
+  }
+}
+
+.js-novideo {
+  .bg-texture, video {
+    display: none!important;
+  }
+}
