@@ -173,8 +173,7 @@
         "caption": "Siguiente",
         "store": "form_user_fields",
         "next": "form_fields_check_0"
-      },
-      "event": "checklist"
+      }
     },
     "form_fields_check_0": {
       "text": "Perfecto, preguntaré estos datos:",

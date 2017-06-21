@@ -101,7 +101,6 @@ function forabotPreviewBot( controller ){
         } else if ( __type == 'options') {
           __previewData.status['form_custom_'+i] = {
             "text": __text,
-            "event": "checklist",
             "checklist": {
               "values": {},
               "min": 1,
@@ -211,7 +210,6 @@ function forabotPreviewBot( controller ){
     window.jsbot.on('input', forabotMessageSent);
     window.jsbot.on('waiting', forabotWaitingMessage);
     window.jsbot.on('typing', forabotTypingState);
-    window.jsbot.on('custom.checklist', forabotCreateChecklist);
     window.jsbot.on('custom.clear start', function(){
       $('#hu-webchat-messages').empty();
     });
@@ -240,65 +238,6 @@ function forabotWaitingMessage( status ) {
     $('#hu-container-widget').attr('data-textbox', 'show');
     $('#hu-composer-box').focus();
   }
-}
-
-function forabotCreateChecklist( controller ) {
-  var __data = {};
-  try {
-    __data = controller.currentBot.status[ controller.currentStatus ].checklist;
-  } catch(error) {
-    console.log('Error creating checklist');
-    throw error;
-  }
-
-  var $container = $('#hu-webchat-messages .hu-messenger-message:last-child .hu-message-content-buttons .hu-btn-group-vertical');
-  var $clonedContainer = $container.clone();
-  var $continueBtn = $('<div class="hu-btn hu-btn-sm hu-btn-block hu-btn-pink"><span data-click="' + __data.caption + '">' + __data.caption + '</span></div>')
-  var __min = (typeof(__data.min) == 'number') ? __data.min : 0;
-
-  //
-  // Create check buttons
-  //
-  var $title = $('<p style="display: block; color: #ce4b81 !important; padding-bottom: 8px;">');
-  $title.text('Selecciona al menos una opción:');
-  $container.append($title);
-
-  //
-  // Create check buttons
-  //
-  $.each( __data.values, function( key, elem ){
-    var $checkItem = $('<div class="hu-btn hu-btn-sm hu-btn-block hu-btn-pink hu-btn-unchecked"><span class="fi check"></span><span data-click="' + key + '">' + elem + '</span></div>')
-    $checkItem.on('click', function(){
-      $(this).toggleClass('hu-btn-unchecked hu-btn-checked');
-      var $checks = $container.find('.hu-btn-pink:not(.hu-btn-unchecked)');
-      if ($checks.length >= __min) {
-        $continueBtn.removeClass('hu-btn-disabled');
-      } else {
-        $continueBtn.addClass('hu-btn-disabled');
-      }
-    })
-    $container.append($checkItem)
-  });
-
-  //
-  // SEND button
-  //
-  $continueBtn.on('click', function(){
-    var $checks = $container.find('.hu-btn-pink:not(.hu-btn-unchecked)');
-    var __value = $checks.map(function(index, elem){
-      return $(elem).find('span:last-child').data('click');
-    }).get().join(',');
-    if ($checks.length >= __min) {
-      fakeMessage(__value, true);
-      $container.parent().empty();
-    }
-  });
-  if (__min > 0) {
-    $continueBtn.addClass('hu-btn-disabled');
-  }
-  $clonedContainer.append($continueBtn);
-
-  $container.parent().append($clonedContainer)
 }
 
 function forabotMessageSent( message ) {
@@ -334,17 +273,28 @@ function forabotMessageReceived( message ) {
     url: message.image,
     samurai: -22,
     authorClass: 'hu-messenger-message-brand',
-    type: (message.image) ? 'image' : (message.buttons && message.buttons.length > 0) ? 'dialog' : 'text',
-    buttons: $.map(message.buttons, function(elem,index) {
-      return elem.caption;
-    }),
-    payloads: $.map(message.buttons, function(elem,index) {
-      return elem.caption;
-    }),
+    type: (message.image) ? 'image' : (message.buttons && message.buttons.length > 0) || (message.checklist) ? 'dialog' : 'text',
     incoming: true,
     features: {
       hide_textbox: true
     },
+  }
+  if (message.buttons && message.buttons.length > 0) {
+    var __captions = $.map(message.buttons, function(elem,index) {
+      return elem.caption;
+    });
+    __message['buttons'] = __captions;
+    __message['payloads'] = __captions;
+  } else if (message.checklist && message.checklist.values) {
+    __message['buttons'] = $.map(message.checklist.values, function(elem,key) {
+      return elem;
+    });
+    __message['payloads'] = $.map(message.checklist.values, function(elem,key) {
+      return key;
+    });
+    // __message.features['buttons'] = {
+    //   "multi": true,
+    // };
   }
   helloumi.webchat.umichatcore.loadMessage(__message);
 }
@@ -379,7 +329,6 @@ function loadStaticBot( data, step ) {
   window.jsbot.on('input', forabotMessageSent);
   window.jsbot.on('waiting', forabotWaitingMessage);
   window.jsbot.on('typing', forabotTypingState);
-  window.jsbot.on('custom.checklist', forabotCreateChecklist);
   window.jsbot.on('custom.clear', function(){
     $('#hu-webchat-messages').empty();
   });
