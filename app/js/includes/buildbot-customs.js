@@ -1,3 +1,7 @@
+// ===========================
+// BUILDBOT COMPILAR VARIABLES
+// ===========================
+
 var lessVars = {};
 var videourl = "";
 
@@ -10,7 +14,6 @@ changeStyles = function(obj){
   if(obj['type'] == 'logo') {
 
     if(obj['props']['logo'] !== '@logo') {
-      // lessVars["logo"] = obj['props']['logo'];
       $('body').addClass('js-logo');
       $('.brand-logo').attr('src',obj['props']['logo']);
       $('body').append('<style>.js-logo #hu-container-widget[data-platform="landbot"] .hu-js-open .hu-messenger-body .hu-messenger-message.hu-messenger-message-brand[data-samurai^="-"] .hu-avatar:before { background-image: url('+obj['props']['logo']+')!important; }</style>');
@@ -97,7 +100,6 @@ changeStyles = function(obj){
       lessVars["font"] = obj['props']['font'];
       lessVars["font-url"] = "https://fonts.googleapis.com/css?family=";
       lessVars["embfonts"] = false;
-      // console.log(lessVars);
     }
     if(obj['props']['fontsize'] !== '@fontsize') {
       if(obj['props']['fontsize'] === 'XS') {
@@ -123,6 +125,11 @@ changeStyles = function(obj){
 
 }
 
+
+// ==============
+// MENÚ BACK NEXT
+// ==============
+
 document.addEventListener("DOMContentLoaded", function(event) {
   document.getElementById("back-btn").onclick = function(){
      fakeMessage('back');
@@ -146,4 +153,28 @@ var fadeOutBtn = function(){
 
 var hideFooter = function(){
   $('body').removeClass('show-footer');
+}
+
+
+// ============
+// COLOR PICKER
+// ============
+
+var flagColor = 0;
+function addColorPicker(){
+  var colors = ['#1abc9c','#2ecc71','#3498db','#9b59b6','#34495e','#f1c40f','#e67e22','#e74c3c','#ecf0f1','#bdc3c7','#95a5a6'];
+  if (flagColor < 1){
+    var colorsHTML = "";
+    $.each(colors, function(i){
+      colorsHTML += '<li style="background-color:'+colors[i]+';" onclick="fakeMessage(\''+colors[i]+'\')"></li>';
+    });
+    var colorPicker = '<div class="color-picker"><ul>'+ colorsHTML +'</ul></div>';
+    $('.hu-footer-state').prepend(colorPicker);
+    flagColor = 1;
+  }
+}
+
+function removeColorPicker(){
+  $('.color-picker').remove();
+  flagColor = 0;
 }
