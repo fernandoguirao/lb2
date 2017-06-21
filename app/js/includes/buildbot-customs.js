@@ -168,6 +168,19 @@ var showFooter = function(){
   $('body').addClass('show-footer');
 }
 
+var changeFooter = function(){
+  $('.foot-container .description b').html("EDITING BOT");
+  $('.foot-container .back-btn').remove();
+  $('.foot-container .publish-btn').attr('id','publish-btn2');
+  $('<div class="back-btn" style="margin-right: 7px;" id="preview-btn"><span style="margin-left: 0!important;">Preview</span></div>').insertBefore('.foot-container .publish-btn');
+  document.getElementById("publish-btn2").onclick = function(){
+     fakeMessage('#publish');
+  }
+  document.getElementById("preview-btn").onclick = function(){
+    fakeMessage('#preview');
+  }
+}
+
 var fadeBtn = function(){
   $('body').addClass('fade-btn');
 }
