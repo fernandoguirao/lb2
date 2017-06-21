@@ -23,6 +23,34 @@
   animation-timing-function: @function;
 }
 
+.placeholder-custom-color(@color){
+    *::-webkit-input-placeholder {
+        color: @color;
+    }
+    *:-moz-placeholder {
+        /* FF 4-18 */
+        color: @color;
+    }
+    *::-moz-placeholder {
+        /* FF 19+ */
+        color: @color;
+    }
+    *:-ms-input-placeholder {
+        /* IE 10+ */
+        color: @color;
+    }
+}
+
+.border-radius (@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius:    @radius;
+    border-radius:         @radius;
+
+    -moz-background-clip:    padding;
+    -webkit-background-clip: padding-box;
+    background-clip:         padding-box;
+}
+
 .transition(@content) {
   transition: @content;
   -moz-transition: @content;

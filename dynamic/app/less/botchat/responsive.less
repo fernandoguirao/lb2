@@ -1,14 +1,9 @@
 @media screen and (min-width: 800px) {
-  .hu-messenger-body {
-    max-height: ~"calc(100% - 120px)";
-  }
   .hu-messenger-body-state {
     padding: 55px 13% 0 !important;
   }
   .hu-messenger-footer {
-    // margin: 0 13% 81px;
-    margin: 0 ~"calc(13% + 26px) 81px calc(13% + 75px)";
-    width: auto !important;
+    margin: 0 13% 30px 13%;
   }
 }
 
@@ -17,8 +12,7 @@
     padding: 55px 23% 0 !important;
   }
   .hu-messenger-footer {
-    // margin: 0 23% 81px;
-    margin: 0 ~"calc(23% + 26px) 81px calc(23% + 75px)";
+    margin: 0 23% 30px 23%;
   }
 }
 
@@ -27,8 +21,7 @@
     padding: 55px 30% 0 !important;
   }
   .hu-messenger-footer {
-    // margin: 0 30% 81px;
-    margin: 0 ~"calc(30% + 26px) 81px calc(30% + 75px)";
+    margin: 0 30% 30px 30%;
   }
 }
 
@@ -37,8 +30,11 @@
     display: none !important;
   }
   .hu-messenger-footer {
-    border-radius: 0 !important;
-    border: none !important;
+    .hu-composer-emoji-button, .hu-composer-file-button{
+        position:initial !important;
+        left: initial !important;
+        bottom: initial !important;
+    }
   }
 }
 
@@ -106,8 +102,7 @@
     margin: 0 12px !important;
   }
   .hu-messenger-footer {
-    -webkit-transition: none !important;
-    transition: none !important;
+
   }
   .hu-messenger-message .hu-message-container .hu-message-content-group {
     max-width: 100%;
