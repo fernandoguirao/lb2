@@ -124,38 +124,47 @@ changeStyles = function(obj){
       }
 
       if(obj['props']['backgroundtype'] === 'video') {
+        if(obj['props']['videotemplate'] !== '@videotemplate') {
+          $('body').removeClass('js-novideo');
+          lessVars["video-texture"] = 'color';
+          lessVars["background-color"] = "rgba(0,0,0,.3)";
+          videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/"+obj['props']['videotemplate'];
 
-        $('body').removeClass('js-novideo');
-        lessVars["video-texture"] = 'color';
-        lessVars["background-color"] = "rgba(0,0,0,.3)";
-        videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/"+obj['props']['videotemplate'];
+          // if(obj['props']['videotemplate'] === 'video_1') {
+          //   videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/video";
+          // }
+          // if(obj['props']['videotemplate'] === 'video_2') {
+          //   videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/video02";
+          // }
+          // if(obj['props']['videotemplate'] === 'video_3') {
+          //   videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/video03";
+          // }
 
-        // if(obj['props']['videotemplate'] === 'video_1') {
-        //   videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/video";
-        // }
-        // if(obj['props']['videotemplate'] === 'video_2') {
-        //   videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/video02";
-        // }
-        // if(obj['props']['videotemplate'] === 'video_3') {
-        //   videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/video03";
-        // }
-
-        var videobg = $('video');
-        videobg.html('<source src="'+videourl+'.mp4" type="video/mp4"></source><source src="'+videourl+'.webm" type="video/webm"></source>' );
-        videobg.attr('poster',videourl+'.jpg');
-        videobg[0].load();
-        videobg[0].play();
+          var videobg = $('video');
+          videobg.html('<source src="'+videourl+'.mp4" type="video/mp4"></source><source src="'+videourl+'.webm" type="video/webm"></source>' );
+          videobg.attr('poster',videourl+'.jpg');
+          videobg[0].load();
+          videobg[0].play();
+        }
       }
 
       if(obj['props']['backgroundtype'] === 'image') {
         $('body').addClass('js-novideo');
-        lessVars["background-image-url"] = obj['props']['backgroundimageurl'];
-        lessVars["background-color"] = "rgba(0,0,0,.3)";
+        if(obj['props']['backgroundimageurl'] !== '@backgroundimageurl') {
+          lessVars["background-image-url"] = obj['props']['backgroundimageurl'];
+          lessVars["backgroundimageurl"] = obj['props']['backgroundimageurl'];
+          lessVars["background-color"] = "rgba(0,0,0,.4)";
+          lessVars["backgroundcolor"] = "rgba(0,0,0,.4)";
+        }
       }
 
       if(obj['props']['backgroundtype'] === 'color') {
         $('body').addClass('js-novideo');
-        lessVars["background-color"] = obj['props']['backgroundcolor'];
+        if(obj['props']['backgroundcolor'] !== '@backgroundcolor') {
+          lessVars["background-color"] = obj['props']['backgroundcolor'];
+          lessVars["backgroundcolor"] = obj['props']['backgroundcolor'];
+          console.log(obj['props']['backgroundcolor']);
+        }
       }
 
     }
