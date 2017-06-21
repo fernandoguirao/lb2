@@ -1,22 +1,56 @@
 <script type="text/javascript">
   function loadHelloumiLandbot() {
     HULandbot = new Landbot({
-      'staticUrl': 'https://storage.googleapis.com/static.yexir.com/',
-      'channelToken': "H-92-CJ5AGAH0FTGYDQSK",
-      'brandID': 251,
-      'brandName': 'landbot',
-      'logo': './files/avatar2.png',
-      'apiKey': "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
-      'authDomain': "daisho-yexir.firebaseapp.com",
-      'databaseURL': "https://daisho-yexir.firebaseio.com",
-      'storageBucket': "daisho-yexir.appspot.com",
-      'background-video': true,
-      'videoname': 'video',
+      "staticUrl": "https://storage.googleapis.com/static.yexir.com/",
+      "channelToken": "H-92-CJ5AGAH0FTGYDQSK",
+      "brandID": 251,
+      "brandName": "landbot",
+      "logo": "./files/avatar2.png",
+      "apiKey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
+      "authDomain": "daisho-yexir.firebaseapp.com",
+      "databaseURL": "https://daisho-yexir.firebaseio.com",
+      "storageBucket": "daisho-yexir.appspot.com",
+      "background-video": true,
+      "videoname": "video",
       'custom': {
         "background-type": "\"video\"",
         "background-color": "rgba(0,0,0,.4)",
         "video-texture": "\"color\"",
         "staticUrl": "\"https://storage.googleapis.com/static.yexir.com/\""
+      },
+      "welcome": {
+        "init": "0",
+        "messages": {
+          "0": {
+            "type": "text",
+            "message": "Aquí te doy la bienvenida",
+            "features": {
+            },
+            "timestamp": "1",
+            "readed": false,
+            "samurai": -22,
+            "next": "1",
+            "isLastMessage": false
+          },
+          "1": {
+            "type": "text",
+            "message": "Dime tu email",
+            // "buttons": ["Just a boy", "Just a girl"],
+            // "payloads": ["Just a boy", "Just a girl"],
+            // "features": {
+            //   "buttons": {
+            //     "includes": ["image", "icon", "none"],
+            //     "images": ["http://img05.deviantart.net/0cb3/i/2017/170/1/7/bot_by_mrgreenlight-dbdcfzg.png", ", "],
+            //     "icons": ["none", "check", "none"]
+            //   }
+            // },
+            "timestamp": "11",
+            "readed": false,
+            "samurai": -22,
+            "next": false, // "1"
+            "isLastMessage": true, // false if "1"
+          }
+        }
       }
     });
     HULandbot.createLandbot();
