@@ -22,7 +22,7 @@
           'videoname': 'video',
           'custom': {
             "background-type": "\"video\"",
-            "background-color": "rgba(0,0,0,.3)",
+            "background-color": "rgba(0,0,0,.4)",
             "video-texture": "\"color\"",
             "staticUrl": "\"http://localhost:8000/static/\""
           },
@@ -31,32 +31,23 @@
             'messages': {
               '0': {
                 'type': 'dialog',
-                'title': 'Who are you?',
-                'buttons': ['Just a boy', 'Just a girl'],
-                'payloads': ['Just a boy', 'Just a girl'],
+                'title': 'Press START',
+                'buttons': ['START'],
+                'payloads': ['start'],
                 'features': {
                   'hide_textbox': true,
                   'buttons': {
-                    'multi': true,
-                    'includes': ['image', 'icon', 'none'],
-                    'images': ['http://img05.deviantart.net/0cb3/i/2017/170/1/7/bot_by_mrgreenlight-dbdcfzg.png', '', ''],
-                    'icons': ['none', 'check', 'none']
+                    'includes': ['none', 'none', 'none'],
+                    'images': ['', '', ''],
+                    'icons': ['none', 'none', 'none']
                   }
                 },
                 'timestamp': '1',
                 'readed': false,
-                'samurai': 0,
+                'samurai': -1,
                 'next': false,
                 'isLastMessage': true,
-              },
-              // '1': {
-              //   'type': 'text',
-              //   'message': 'Just a boy',
-              //   'timestamp': '2',
-              //   'readed': false,
-              //   'isLastMessage': true,
-              //   'next': false
-              // }
+              }
             }
           }
         });
