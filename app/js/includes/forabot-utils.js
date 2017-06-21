@@ -336,6 +336,7 @@ function loadStaticBot( data, step ) {
   window.jsbot.on('finish', function(){
     helloumi.webchat.umichatcore.sendMessage = window.sendMessageBackup;
     window.sendMessageBackup = false;
+    hideFooter();
     $('#hu-container-widget').attr('data-textbox', 'show');
     $('#hu-composer-box').focus();
   });
@@ -347,6 +348,8 @@ function loadStaticBot( data, step ) {
     window.jsbot.send(formData.get('message'));
   };
   $('#hu-container-widget').attr('data-textbox', 'hidden');
+  showFooter();
+  changeFooter();
   window.jsbot.start(step);
   document.getElementById('hu-webchat-loader').style.setProperty('display', 'none', 'important');
 }
@@ -354,4 +357,565 @@ function loadStaticBot( data, step ) {
 function loadContentBuilder(elem){
   getStaticBot('files/jsbots/bot-builder-content.json');
   $(elem).parent().remove();
+}
+
+function forabotSaveBot( controller ){
+  helloumi.webchat.umichatcore.setTypingState(-22);
+
+  var __data = controller.getCurrentData();
+  var __storage = __data.storage;
+  var __left = 200;
+  var __top = 200;
+  if (__storage.crea_bot === true) {
+    var __roninStatus = {};
+
+    // welcome_1
+    __roninStatus['welcome_1'] = {
+      name: 'Welcome',
+      function: '__send_message__',
+      responses: [{
+        order: 0,
+        entity: 'text',
+        text: __storage.welcome_1
+      }],
+      next: {
+        success: (__storage.welcome_2) ? 'welcome_2' : null
+      },
+      hidetextbox: true,
+      left: __left,
+      top: __top
+    };
+    __top += 100;
+
+    if (__storage.welcome_2) {
+      // welcome_2
+      __roninStatus['welcome_2'] = {
+        name: 'Purpose',
+        function: '__send_message__',
+        responses: [{
+          order: 0,
+          entity: 'text',
+          text: __storage.welcome_2
+        }],
+        next: {
+          success: (__storage.form === true || __storage.faqs === true) ? 'menu' : null
+        },
+        hidetextbox: true,
+        left: __left,
+        top: __top
+      };
+      __top += 100;
+    }
+
+    // menu (static)
+    if (__storage.form === true || __storage.faqs === true) {
+      __roninStatus['menu'] = {
+        name: 'Menu',
+        function: '__send_message__',
+        responses: [{
+          "order": 0,
+          "entity": "button",
+          "text": "¿En qué puedo ayudarte?",
+          "buttons": [],
+          "choice_text": "*Type the number of the option you are interested in"
+        }],
+        next: {
+          success: 'menu_pick'
+        },
+        hidetextbox: true,
+        left: __left + 400,
+        top: __top
+      };
+      __top += 100;
+
+      __roninStatus['menu_pick'] = {
+        name: 'Pick selected option',
+        function: '__choice__',
+        next: {},
+        hidetextbox: true,
+        left: __left + 200,
+        top: __top
+      };
+      __top += 100;
+
+      if (__storage.form === true) {
+        __roninStatus['menu'].responses[0].buttons.push(__storage.form_name);
+        var __keywords = __storage.form_name.split(' ');
+        for (var i=0; i<__keywords.length; i++) {
+          var __key = __keywords[i].toLowerCase().replace(/[^a-z0-9_]/g,'');
+          __roninStatus['menu_pick'].next[__key] = (__storage.form_user === true) ? 'form_user_1' : 'form_custom_1';
+        }
+      }
+      if (__storage.faqs === true) {
+        __roninStatus['menu'].responses[0].buttons.push('FAQS');
+        __roninStatus['menu_pick'].next['faqs'] = 'faqs';
+      }
+    }
+
+    var __topAux = __top;
+    var __formFields = {};
+
+    // form_user
+    if (__storage.form_user === true) {
+      var __index = 1;
+      var __nextStatus = (__storage.form_custom === true) ? 'form_custom_1' : 'form_farewell';
+      var __fields = __storage.form_user_fields.split(',');
+      var FIELDS = {
+        name: {
+          text: '¿Cómo te llamas?'
+        },
+        email: {
+          text: '¿Cuál es tu email?',
+          error: 'Eso no parece un email válido'
+        },
+        phone: {
+          text: '¿Cuál es tu número de teléfono?',
+          error: 'Eso no parece un número de teléfono válido'
+        },
+        postal_code: {
+          text: '¿Puedes indicarme tu código postal?'
+        },
+        address: {
+          text: '¿Cuál es tu dirección?'
+        },
+        city: {
+          text: '¿Cuál es tu ciudad?',
+          custom: true
+        },
+        country: {
+          text: '¿Cuál es tu país?',
+          custom: true
+        },
+        company: {
+          text: '¿Cómo se llama tu empresa?',
+          custom: true
+        },
+        birthdate: {
+          text: '¿Cuál es tu fecha de nacimiento?'
+        },
+      }
+      for (var i=0; i<__fields.length; i++) {
+        var __text = (FIELDS[ __fields[i] ]) ? FIELDS[ __fields[i] ].text : '¿Puedes indicarme tu ' + __fields[i] + '?';
+        var __next = (i == __fields.length-1) ? __nextStatus : 'form_user_'+(__index+1);
+        __roninStatus['form_user_'+__index] = {
+          name: __text.substr(0,20),
+          function: '__send_message__',
+          responses: [{
+            order: 0,
+            entity: 'text',
+            text: __text
+          }],
+          next: {
+            success: 'form_user_'+__index + '_pick'
+          },
+          hidetextbox: false,
+          left: __left,
+          top: __top
+        };
+
+        __roninStatus['form_user_'+__index + '_pick'] = {
+          name: 'Pick @'+ __fields[i],
+          function: '__text__',
+          field: __fields[i],
+          overwrite: true,
+          next: {
+            success: __next
+          },
+          left: __left,
+          top: __top + 75
+        };
+
+        if ( FIELDS[ __fields[i] ] && FIELDS[ __fields[i] ].error ) {
+          __roninStatus['form_user_'+__index + '_pick'].next.failed = 'form_user_'+__index + '_error';
+          __roninStatus['form_user_'+__index + '_error'] = {
+            name: 'Error @'+ __fields[i],
+            function: '__send_message__',
+            responses: [{
+              order: 0,
+              entity: 'text',
+              text: FIELDS[ __fields[i] ].error
+            }],
+            next: {
+              success: 'form_user_'+__index
+            },
+            hidetextbox: true,
+            left: 10,
+            top: __top + 75
+          };
+        }
+
+        if ( FIELDS[ __fields[i] ] && FIELDS[ __fields[i] ].custom ) {
+          __roninStatus['form_user_'+__index + '_pick'].field = 'custom';
+          __roninStatus['form_user_'+__index + '_pick'].custom_field = __fields[i];
+        }
+
+        __formFields[__fields[i]] = '@' + __fields[i];
+
+        __index += 1;
+        __top += 150;
+      }
+    }
+
+    // form_custom
+    if (__storage.form_custom === true) {
+      __left += 200;
+      __top = __topAux
+      var __nextStatus = 'form_farewell';
+      for (var i=1; i<100; i++) {
+        var __type = __storage['form_custom_' + i + '_type'] ;
+        var __text = __storage['form_custom_' + i + '_text'] ;
+        var __answer = __storage['form_custom_' + i + '_answer'] ;
+        var __nextType = __storage['form_custom_' + (i+1) + '_type'] ;
+        var __next = (!__nextType) ? __nextStatus : 'form_custom_'+(i+1);
+        if ( __type == 'option') {
+          __roninStatus['form_custom_'+i] = {
+            name: __text.substr(0,20),
+            function: '__send_message__',
+            responses: [{
+              order: 0,
+              entity: 'button',
+              text: __text,
+              buttons: [],
+              choice_text: '*Type the number of the option you are interested in'
+            }],
+            next: {
+              success: 'form_custom_'+i+'_pick'
+            },
+            hidetextbox: true,
+            left: __left,
+            top: __top
+          };
+
+
+          var __answerArr = __answer.split(',');
+          for (var j=0; j<__answerArr.length; j++) {
+            __roninStatus['form_custom_'+i].responses[0].buttons.push(__answerArr[j]);
+            // var __keyword = __answerArr[j].split(' ')[0].replace(/[^a-z0-9_]/gi,'');
+            // __roninStatus['form_custom_'+i].next[__keyword] = __next;
+          }
+        } else if ( __type == 'options') {
+          __roninStatus['form_custom_'+i] = {
+            name: __text.substr(0,20),
+            function: '__send_message__',
+            responses: [{
+              order: 0,
+              entity: 'button',
+              text: __text,
+              buttons: [],
+              choice_text: '*Type the number of the option you are interested in'
+            }],
+            next: {
+              success: 'form_custom_'+i+'_pick'
+            },
+            hidetextbox: true,
+            left: __left,
+            top: __top
+          };
+          var __answerArr = __answer.split(',');
+          for (var j=0; j<__answerArr.length; j++) {
+            __roninStatus['form_custom_'+i].responses[0].buttons.push(__answerArr[j]);
+          }
+        } else { // if ( __type == 'text') {
+          __roninStatus['form_custom_'+i] = {
+            name: __text.substr(0,20),
+            function: '__send_message__',
+            responses: [{
+              order: 0,
+              entity: 'text',
+              text: __text
+            }],
+            next: {
+              success: 'form_custom_'+i+'_pick'
+            },
+            hidetextbox: false,
+            left: __left,
+            top: __top
+          };
+        }
+        __top += 100;
+
+        __roninStatus['form_custom_'+i+'_pick'] = {
+          name: 'Pick response' ,
+          function: '__text__',
+          field: 'custom',
+          custom_field: 'question'+i,
+          overwrite: true,
+          next: {
+            success: __next
+          },
+          left: __left,
+          top: __top
+        };
+        __top += 100;
+
+        __formFields['question' + i] = '@' + 'question' + i;
+
+        if (!__nextType) break;
+      }
+    }
+
+    if (__storage.form === true) {
+      // form_farewell
+      __roninStatus['form_farewell'] = {
+        name: 'Farewell',
+        function: '__send_message__',
+        responses: [{
+          order: 0,
+          entity: 'text',
+          text: __storage.form_farewell
+        }],
+        next: {
+          success: (__storage.form_send_api) ? 'form_send_api' :
+                   (__storage.form_send_email) ? 'form_send_email' : 'another'
+        },
+        hidetextbox: true,
+        left: __left,
+        top: __top
+      };
+      __top += 100;
+
+      if (__storage.form_send_api ) {
+        __roninStatus['form_send_api'] = {
+          name: 'API Request',
+          function: '__send_request__',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          delaytime: 0,
+          method: 'POST',
+          url: __storage.form_send_api,
+          next: {
+            success: 'another',
+            // TODO: Controlar error en API request
+          },
+          data: __formFields,
+          left: __left,
+          top: __top
+        };
+        __top += 100;
+      }
+
+      if (__storage.form_send_email ) {
+        __roninStatus['form_send_email'] = {
+          name: 'Send email',
+          function: '__send_request__',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          delaytime: 0,
+          method: 'POST',
+          url: __storage.form_send_email,
+          next: {
+            success: 'another',
+            // TODO: Controlar error en envio de email?
+          },
+          data: __formFields,
+          left: __left,
+          top: __top
+        };
+        __top += 100;
+      }
+
+      // Another question (static)
+      __roninStatus['another'] = {
+        name: 'Another question',
+        function: '__send_message__',
+        responses: [{
+          order: 0,
+          entity: 'button',
+          text: '¿Tienes alguna otra consulta?',
+          buttons: ['Sí', 'No'],
+          choice_text: '*Type the number of the option you are interested in'
+        }],
+        next: {
+          success: 'another_pick'
+        },
+        hidetextbox: true,
+        left: __left,
+        top: __top
+      };
+      __top += 100;
+
+      __roninStatus['another_pick'] = {
+        name: 'Pick selected option',
+        function: '__choice__',
+        next: {
+          'si': 'menu',
+          'no': 'end_form'
+        },
+        hidetextbox: true,
+        left: __left + 100,
+        top: __top
+      };
+      __top += 100;
+
+      // end form (static)
+      __roninStatus['end_form'] = {
+        name: 'Form Farewell',
+        function: '__send_message__',
+        responses: [{
+          order: 0,
+          entity: 'text',
+          text: 'Genial, ¡Hasta pronto! 👋'
+        }],
+        next: {},
+        hidetextbox: false,
+        left: __left,
+        top: __top
+      };
+      __top += 100;
+    }
+
+    // faqs
+    if (__storage.faqs === true) {
+      __top = __topAux;
+      __left += 200;
+      // faqs menu
+      __roninStatus['faqs'] = {
+        name: 'FAQS',
+        function: '__send_message__',
+        responses: [{
+          order: 0,
+          entity: 'button',
+          text: 'Por supuesto, selecciona un tema',
+          buttons: [],
+          choice_text: '*Type the number of the option you are interested in'
+        }],
+        next: {
+          success: 'faqs_pick'
+        },
+        hidetextbox: true,
+        left: __left,
+        top: __top
+      };
+      __top += 100;
+
+      __roninStatus['faqs_pick'] = {
+        name: 'Pick selected option',
+        function: '__choice__',
+        next: {},
+        hidetextbox: true,
+        left: __left,
+        top: __top
+      };
+
+      for (var i=1; i<100; i++) {
+        // New button
+        var __name = __storage['faqs_' + i + '_name'] ;
+        var __nextName = __storage['faqs_' + (i+1) + '_name'] ;
+        __roninStatus['faqs'].responses[0].buttons.push(__name);
+
+        var __keywords = __name.split(' ');
+        for (var j=0; j<__keywords.length; j++) {
+          var __key = __keywords[j].toLowerCase().replace(/[^a-z0-9_]/g,'');
+          __roninStatus['faqs_pick'].next[__key] = 'faqs_'+ i + '_messages_1';
+        }
+
+        // New faqs
+        for (var j=1; j<100; j++) {
+          var __message = __storage['faqs_' + i + '_messages_' + j] ;
+          var __nextMessage = __storage['faqs_' + i + '_messages_' + (j+1)] ;
+          var __next = (!__nextMessage) ? 'another_faq' : 'faqs_'+i+'_messages_'+(j+1);
+          __roninStatus['faqs_'+i+'_messages_'+j] = {
+            name: 'FAQ '+ __name +  ' ' + j,
+            function: '__send_message__',
+            responses: [{
+              order: 0,
+              entity: 'text',
+              text: __message
+            }],
+            next: {
+              success: __next
+            },
+            hidetextbox: false,
+            left: __left + (200 * i),
+            top: __top + (100 * j)
+          }
+          if (!__nextMessage) break;
+        }
+
+        if (!__nextName) break;
+      }
+
+      // Another faq (static)
+      __roninStatus['another_faq'] = {
+        name: 'Another question',
+        function: '__send_message__',
+        responses: [{
+          order: 0,
+          entity: 'button',
+          text: '¿Tienes alguna otra consulta?',
+          buttons: [ 'Sí', 'Terminar' ],
+          choice_text: '*Type the number of the option you are interested in'
+        }],
+        next: {
+          success: 'another_faq_pick'
+        },
+        hidetextbox: true,
+        left: __left + 100,
+        top: __top + 500
+      };
+
+      __roninStatus['another_faq_pick'] = {
+        name: 'Pick selected option',
+        function: '__choice__',
+        next: {
+          'si': 'menu',
+          'terminar': 'end_faq'
+        },
+        hidetextbox: true,
+        left: __left + 200,
+        top: __top + 600
+      };
+
+      // end faq (static)
+      __roninStatus['end_faq'] = {
+        name: 'FAQS Farewell',
+        function: '__send_message__',
+        responses: [{
+          order: 0,
+          entity: 'text',
+          text: 'Gracias, espero haberte servido de ayuda. ¡Hasta pronto!',
+        }],
+        next: {},
+        hidetextbox: false,
+        left: __left + 100,
+        top: __top + 700
+      };
+    }
+
+
+    // transform status IDs
+    var __statusArray = [];
+    for (var __key in __roninStatus) {
+      __statusArray.push( __key );
+    }
+    for (var __key in __roninStatus) {
+      if ( __roninStatus[__key].next) {
+        for (var __nextKey in __roninStatus[__key].next) {
+          var __newId = __statusArray.indexOf( __roninStatus[__key].next[__nextKey] );
+          if (__newId >= 0) {
+            __roninStatus[__key].next[__nextKey] = (__newId + 1).toString();
+          }
+        }
+      }
+    }
+    for (var i=0; i<__statusArray.length; i++) {
+      var __newId = ( i+1 ).toString();
+      __roninStatus[__newId] = $.extend({}, __roninStatus[ __statusArray[i] ]);
+      delete __roninStatus[ __statusArray[i] ];
+    }
+
+    console.log(JSON.stringify(__roninStatus));
+
+    // TODO: POST to backend
+
+    setTimeout(function(){
+      helloumi.webchat.umichatcore.setTypingState('');
+      window.jsbot.go('finish_0')
+    },2000)
+  } else {
+    return undefined;
+  }
+
 }
