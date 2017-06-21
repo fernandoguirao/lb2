@@ -1,0 +1,1798 @@
+{
+  "209": {
+    "left": 7186,
+    "top": 840,
+    "id": "209",
+    "features": {
+      "hide_textbox": false
+    },
+    "name": "Pick selected option",
+    "next": {
+      "fonts": "214",
+      "back": "172",
+      "next": "161",
+      "size": "210"
+    },
+    "function": "__choice__"
+  },
+  "159": {
+    "left": 4166,
+    "top": 184,
+    "id": "159",
+    "features": {
+      "hide_textbox": false
+    },
+    "name": "Pick selected option",
+    "next": {
+      "next": "161",
+      "back": "147",
+      "customize": "160"
+    },
+    "function": "__choice__"
+  },
+  "180": {
+    "left": 3888,
+    "top": 1240,
+    "id": "180",
+    "features": {
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": false
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "text",
+        "text": "I'm sorry, I didn't understand. Could you try again?"
+      }
+    ],
+    "name": "Error message",
+    "next": {
+      "success": "179"
+    },
+    "function": "__send_message__"
+  },
+  "170": {
+    "left": 2818,
+    "top": 1111,
+    "id": "170",
+    "features": {
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": true
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "text",
+        "text": "Perfecto"
+      }
+    ],
+    "name": "Perfecto",
+    "next": {
+      "success": "161"
+    },
+    "function": "__send_message__"
+  },
+  "151": {
+    "left": 220,
+    "top": 684,
+    "id": "151",
+    "field": "name",
+    "overwrite": true,
+    "name": "Pick @name",
+    "next": {
+      "success": "156"
+    },
+    "function": "__text__"
+  },
+  "187": {
+    "left": 4188,
+    "top": 1103,
+    "id": "187",
+    "features": {
+      "hide_textbox": false
+    },
+    "function": "__text__",
+    "field": "custom",
+    "overwrite": true,
+    "name": "Pick @accent",
+    "next": {
+      "success": "218"
+    },
+    "custom_field": "accent",
+    "keyword": true
+  },
+  "198": {
+    "left": 5203,
+    "top": 1141,
+    "function": "__text__",
+    "features": {
+      "hide_textbox": false
+    },
+    "field": "custom",
+    "overwrite": true,
+    "name": "Pick @gradientfrom",
+    "custom_field": "gradientfrom",
+    "next": {
+      "success": "199"
+    },
+    "id": "198"
+  },
+  "181": {
+    "left": 4480,
+    "top": 739,
+    "id": "181",
+    "features": {
+      "buttons": {
+        "pile_up": true,
+        "includes": [
+          "none",
+          "none",
+          "none",
+          "none"
+        ],
+        "images": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "icons": [
+          "none",
+          "none",
+          "none",
+          "none"
+        ],
+        "dual_buttons": false
+      },
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": true
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "button",
+        "buttons": [
+          "accent",
+          "light",
+          "contrast",
+          "dark"
+        ],
+        "choice_text": "*Type the number of the option you are interested in",
+        "text": "Elige qué color quieres cambiar:"
+      }
+    ],
+    "name": "Elige qué color quie",
+    "next": {
+      "success": "182"
+    },
+    "function": "__send_message__"
+  },
+  "185": {
+    "left": 4676,
+    "top": 999,
+    "id": "185",
+    "features": {
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": false
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "text",
+        "text": "Escribe el color\n{html}<img src=\"x\" onerror=\"hideFooter();addColorPicker();\">{/html}"
+      }
+    ],
+    "name": "Escribe el color",
+    "next": {
+      "success": "189"
+    },
+    "function": "__send_message__"
+  },
+  "157": {
+    "method": "POST",
+    "data": {
+      "accent_color": "@accent",
+      "gradient_from": "@gradientfrom",
+      "font_size": "@fontsize",
+      "customer_token": "@umichat_id",
+      "video_template": "@videotemplate",
+      "gradient_to": "@gradientto",
+      "template": "@template",
+      "contrast": "@contrast",
+      "background_type": "@backgroundtype",
+      "token": "77HDVK45enAkzkmC",
+      "background_image_url": "@backgroundimageurl",
+      "presence_name": "@brandname",
+      "tagline": "@tagline",
+      "image_url": "@logo",
+      "back_color": "@backgroundcolor",
+      "dark": "@dark",
+      "light": "@light",
+      "font": "@font"
+    },
+    "id": "157",
+    "features": {
+      "hide_textbox": false
+    },
+    "top": 84,
+    "name": "API Request",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "url": "https://daisho.yexir.com/register/landbot/",
+    "next": {
+      "success": "101"
+    },
+    "function": "__send_request__",
+    "left": 4758
+  },
+  "208": {
+    "left": 7188,
+    "top": 693,
+    "id": "208",
+    "features": {
+      "textarea": {
+        "field": false
+      },
+      "buttons": {
+        "pile_up": false,
+        "includes": [
+          "none",
+          "none"
+        ],
+        "images": [
+          "",
+          ""
+        ],
+        "icons": [
+          "none",
+          "none"
+        ],
+        "dual_buttons": true
+      },
+      "hide_textbox": true
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "button",
+        "buttons": [
+          "Fonts",
+          "Size"
+        ],
+        "choice_text": "*Type the number of the option you are interested in",
+        "text": "Elige una opción\n{html}<img src=\"x\" onerror='\nchangeStyles({\ntype: \"font\",\nprops: {\nfontsize: \"@fontsize\",\nfont: \"@font\"\n} } );\n'>{/html}"
+      }
+    ],
+    "name": "Elige una opción",
+    "next": {
+      "success": "209"
+    },
+    "function": "__send_message__"
+  },
+  "212": {
+    "left": 6846,
+    "top": 1266,
+    "function": "__text__",
+    "features": {
+      "hide_textbox": false
+    },
+    "field": "custom",
+    "overwrite": true,
+    "name": "Pick @fontsize",
+    "custom_field": "fontsize",
+    "next": {
+      "success": "213"
+    },
+    "id": "212",
+    "virtual": true
+  },
+  "171": {
+    "left": 3203,
+    "top": 1115,
+    "function": "__text__",
+    "features": {
+      "hide_textbox": false
+    },
+    "field": "custom",
+    "overwrite": true,
+    "name": "Pick @template",
+    "custom_field": "template",
+    "next": {
+      "success": "162"
+    },
+    "id": "171",
+    "virtual": true
+  },
+  "207": {
+    "left": 6296,
+    "top": 1158,
+    "id": "207",
+    "features": {
+      "hide_textbox": false
+    },
+    "name": "Pick selected option",
+    "next": {
+      "back": "191",
+      "video_1": "206",
+      "next": "161",
+      "video_2": "206",
+      "video_3": "206"
+    },
+    "function": "__choice__"
+  },
+  "155": {
+    "left": 196,
+    "top": 906,
+    "id": "155",
+    "features": {
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": true
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "text",
+        "text": "Ahora te explico que vamos a crear tu landbot, y que primero empezaremos con el diseño"
+      }
+    ],
+    "name": "Ahora te explico que",
+    "next": {
+      "success": "158"
+    },
+    "function": "__send_message__"
+  },
+  "176": {
+    "left": 3501,
+    "top": 1048,
+    "id": "176",
+    "features": {
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": false
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "text",
+        "text": "¿Qué nombre quieres que aparezca en la barra de arriba?\n{html}<img src=\"x\" onerror=\"hideFooter();\">{/html}"
+      }
+    ],
+    "name": "¿Qué nombre quieres",
+    "next": {
+      "success": "177"
+    },
+    "function": "__send_message__"
+  },
+  "160": {
+    "left": 5178,
+    "top": 268,
+    "id": "160",
+    "features": {
+      "buttons": {
+        "pile_up": false,
+        "includes": [
+          "icon",
+          "icon"
+        ],
+        "images": [
+          "",
+          ""
+        ],
+        "icons": [
+          "1",
+          "2"
+        ],
+        "dual_buttons": true
+      },
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": true
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "button",
+        "buttons": [
+          "Plantillas",
+          "Desde cero"
+        ],
+        "choice_text": "*Type the number of the option you are interested in",
+        "text": "¿Quieres usar una de nuestras plantillas o personalizarlo desde cero?"
+      }
+    ],
+    "name": "¿Quieres usar una de",
+    "next": {
+      "success": "163"
+    },
+    "function": "__send_message__"
+  },
+  "177": {
+    "left": 3509,
+    "top": 1138,
+    "id": "177",
+    "features": {
+      "hide_textbox": false
+    },
+    "function": "__text__",
+    "field": "custom",
+    "overwrite": true,
+    "name": "Pick @brandName",
+    "next": {
+      "success": "174"
+    },
+    "custom_field": "brandname",
+    "keyword": true
+  },
+  "193": {
+    "left": 5199,
+    "top": 968,
+    "function": "__text__",
+    "features": {
+      "hide_textbox": false
+    },
+    "field": "custom",
+    "overwrite": true,
+    "name": "Pick @backgroundtype",
+    "custom_field": "backgroundtype",
+    "next": {
+      "success": "197"
+    },
+    "id": "193",
+    "virtual": true
+  },
+  "188": {
+    "left": 4463,
+    "top": 1121,
+    "id": "188",
+    "features": {
+      "hide_textbox": false
+    },
+    "function": "__text__",
+    "field": "custom",
+    "overwrite": true,
+    "name": "Pick @dark",
+    "next": {
+      "success": "218"
+    },
+    "custom_field": "dark",
+    "keyword": true
+  },
+  "220": {
+    "left": 3713,
+    "top": 1165,
+    "function": "__text__",
+    "features": {
+      "hide_textbox": false
+    },
+    "field": "custom",
+    "overwrite": true,
+    "name": "Pick @tagline",
+    "custom_field": "tagline",
+    "next": {
+      "success": "174"
+    },
+    "id": "220"
+  },
+  "206": {
+    "left": 6273,
+    "top": 1326,
+    "function": "__text__",
+    "features": {
+      "hide_textbox": false
+    },
+    "field": "custom",
+    "overwrite": true,
+    "name": "Pick @videotemplate",
+    "custom_field": "videotemplate",
+    "next": {
+      "success": "201"
+    },
+    "id": "206",
+    "virtual": true
+  },
+  "192": {
+    "left": 5728,
+    "top": 815,
+    "id": "192",
+    "features": {
+      "hide_textbox": false
+    },
+    "name": "Pick selected option",
+    "next": {
+      "video": "196",
+      "back": "172",
+      "gradient": "193",
+      "next": "161",
+      "image": "194",
+      "color": "195"
+    },
+    "function": "__choice__"
+  },
+  "186": {
+    "left": 4898,
+    "top": 1015,
+    "id": "186",
+    "features": {
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": false
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "text",
+        "text": "Escribe el color\n{html}<img src=\"x\" onerror=\"hideFooter();addColorPicker();\">{/html}"
+      }
+    ],
+    "name": "Escribe el color",
+    "next": {
+      "success": "190"
+    },
+    "function": "__send_message__"
+  },
+  "154": {
+    "left": 496,
+    "top": 254,
+    "id": "154",
+    "features": {
+      "textarea": {
+        "field": "email"
+      }
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "text",
+        "text": "I'm sorry, I didn't understand. Could you try again?"
+      }
+    ],
+    "name": "Error message",
+    "next": {
+      "success": "153"
+    },
+    "function": "__send_message__"
+  },
+  "203": {
+    "left": 5971,
+    "top": 1103,
+    "id": "203",
+    "features": {
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": false
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "text",
+        "text": "Elige el color\n{html}<img src=\"x\" onerror=\"addColorPicker();hideFooter();\">{/html}"
+      }
+    ],
+    "name": "Elige el color",
+    "next": {
+      "success": "204"
+    },
+    "function": "__send_message__"
+  },
+  "147": {
+    "left": 198,
+    "top": 68,
+    "id": "147",
+    "features": {
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": true
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "text",
+        "text": "Aquí te doy la bienvenida"
+      }
+    ],
+    "name": "Aquí te doy la bienv",
+    "next": {
+      "success": "152"
+    },
+    "function": "__send_message__"
+  },
+  "153": {
+    "left": 220,
+    "top": 257,
+    "id": "153",
+    "features": {
+      "hide_textbox": false
+    },
+    "overwrite": true,
+    "field": "email",
+    "name": "Pick @email",
+    "next": {
+      "failed": "154",
+      "success": "148"
+    },
+    "function": "__email__"
+  },
+  "165": {
+    "left": 3019,
+    "top": 926,
+    "id": "165",
+    "features": {
+      "buttons": {
+        "pile_up": false,
+        "includes": [
+          "icon",
+          "icon"
+        ],
+        "images": [
+          "",
+          ""
+        ],
+        "icons": [
+          "1",
+          "2"
+        ],
+        "dual_buttons": true
+      },
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": true
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "button",
+        "buttons": [
+          "Sí",
+          "No"
+        ],
+        "choice_text": "*Type the number of the option you are interested in",
+        "text": "¿Te gusta?\n{html}<img src=\"x\" onerror='showFooter(); changeStyles({\ntype: \"template\",\nprops: {\ntemplatename: \"@template\"\n} } ); '>{/html}"
+      }
+    ],
+    "name": "¿Te gusta?",
+    "next": {
+      "success": "169"
+    },
+    "function": "__send_message__"
+  },
+  "162": {
+    "left": 3023,
+    "top": 500,
+    "id": "162",
+    "features": {
+      "buttons": {
+        "pile_up": true,
+        "includes": [
+          "none",
+          "none",
+          "none",
+          "none"
+        ],
+        "images": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "icons": [
+          "none",
+          "none",
+          "none",
+          "none"
+        ],
+        "dual_buttons": false
+      },
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": true
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "button",
+        "buttons": [
+          "Default",
+          "Chivito",
+          "Sobrasada",
+          "Mojito"
+        ],
+        "choice_text": "*Type the number of the option you are interested in",
+        "text": "Elige la plantilla:"
+      }
+    ],
+    "name": "Elige la plantilla:",
+    "next": {
+      "success": "164"
+    },
+    "function": "__send_message__"
+  },
+  "216": {
+    "left": 7588,
+    "id": "216",
+    "overwrite": true,
+    "field": "custom",
+    "custom_field": "font",
+    "virtual": true,
+    "top": 1313,
+    "function": "__text__",
+    "features": {
+      "hide_textbox": false
+    },
+    "name": "Pick @font",
+    "next": {
+      "success": "213"
+    },
+    "keyword": true
+  },
+  "169": {
+    "left": 2991,
+    "top": 1008,
+    "id": "169",
+    "features": {
+      "hide_textbox": false
+    },
+    "name": "Pick selected option",
+    "next": {
+      "no": "171",
+      "back": "162",
+      "next": "161",
+      "si": "170"
+    },
+    "function": "__choice__"
+  },
+  "179": {
+    "left": 3893,
+    "top": 1148,
+    "id": "179",
+    "features": {
+      "hide_textbox": false
+    },
+    "function": "__text__",
+    "field": "custom",
+    "overwrite": true,
+    "name": "Pick @logo",
+    "next": {
+      "failed": "180",
+      "success": "174"
+    },
+    "custom_field": "logo",
+    "keyword": true
+  },
+  "210": {
+    "left": 6864,
+    "top": 954,
+    "id": "210",
+    "features": {
+      "buttons": {
+        "pile_up": true,
+        "includes": [
+          "none",
+          "none",
+          "none",
+          "none",
+          "none"
+        ],
+        "images": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "icons": [
+          "none",
+          "none",
+          "none",
+          "none",
+          "none"
+        ],
+        "dual_buttons": false
+      },
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": true
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "button",
+        "buttons": [
+          "XS",
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "choice_text": "*Type the number of the option you are interested in",
+        "text": "Elige una opción"
+      }
+    ],
+    "name": "Elige una opción",
+    "next": {
+      "success": "211"
+    },
+    "function": "__send_message__"
+  },
+  "173": {
+    "left": 5186,
+    "top": 598,
+    "id": "173",
+    "features": {
+      "hide_textbox": false
+    },
+    "name": "Pick selected option",
+    "next": {
+      "back": "160",
+      "fondo": "191",
+      "logo": "174",
+      "tipografia": "208",
+      "next": "161",
+      "colores": "181"
+    },
+    "function": "__choice__"
+  },
+  "152": {
+    "left": 216,
+    "top": 158,
+    "id": "152",
+    "features": {
+      "textarea": {
+        "field": "email"
+      }
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "text",
+        "text": "Dime tu email"
+      }
+    ],
+    "name": "Dime tu email",
+    "next": {
+      "success": "153"
+    },
+    "function": "__send_message__"
+  },
+  "197": {
+    "left": 5205,
+    "top": 1058,
+    "id": "197",
+    "features": {
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": false
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "text",
+        "text": "Elige el primer color del degradado\n{html}<img src=\"x\" onerror=\"addColorPicker();hideFooter();\">{/html}"
+      }
+    ],
+    "name": "Elige el primer colo",
+    "next": {
+      "success": "198"
+    },
+    "function": "__send_message__"
+  },
+  "148": {
+    "left": 198,
+    "top": 358,
+    "id": "148",
+    "responses": [
+      {
+        "order": 0,
+        "entity": "text",
+        "text": "Dime el nombre de tu empresa"
+      }
+    ],
+    "name": "Dime el nombre de tu",
+    "next": {
+      "success": "149"
+    },
+    "function": "__send_message__"
+  },
+  "175": {
+    "left": 3723,
+    "top": 895,
+    "id": "175",
+    "features": {
+      "hide_textbox": false
+    },
+    "name": "Pick selected option",
+    "next": {
+      "tagline": "219",
+      "back": "172",
+      "icono": "178",
+      "next": "157",
+      "nombre": "176"
+    },
+    "function": "__choice__"
+  },
+  "174": {
+    "left": 3723,
+    "top": 784,
+    "id": "174",
+    "features": {
+      "buttons": {
+        "pile_up": true,
+        "includes": [
+          "none",
+          "none",
+          "none"
+        ],
+        "images": [
+          "",
+          "",
+          ""
+        ],
+        "icons": [
+          "none",
+          "none",
+          "none"
+        ],
+        "dual_buttons": false
+      },
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": true
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "button",
+        "buttons": [
+          "nombre",
+          "icono",
+          "tagline"
+        ],
+        "choice_text": "*Type the number of the option you are interested in",
+        "text": "Elige qué quieres cambiar\n{html}<img src=\"x\" onerror='showFooter(); changeStyles({\ntype: \"logo\",\nprops: {\nbrandName: \"@brandname\",\nlogo: \"@logo\",\ntagline: \"@tagline\"\n} } ); '>{/html}"
+      }
+    ],
+    "name": "Elige qué quieres ca",
+    "next": {
+      "success": "175"
+    },
+    "function": "__send_message__"
+  },
+  "213": {
+    "left": 7239,
+    "top": 1440,
+    "id": "213",
+    "features": {
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": true
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "text",
+        "text": "Perfecto"
+      }
+    ],
+    "name": "Perfecto",
+    "next": {
+      "success": "208"
+    },
+    "function": "__send_message__"
+  },
+  "149": {
+    "left": 198,
+    "top": 456,
+    "id": "149",
+    "function": "__text__",
+    "overwrite": true,
+    "field": "custom",
+    "name": "Pick @brand_name",
+    "next": {
+      "success": "150"
+    },
+    "custom_field": "brand_name",
+    "keyword": true
+  },
+  "195": {
+    "left": 5943,
+    "top": 985,
+    "function": "__text__",
+    "features": {
+      "hide_textbox": false
+    },
+    "field": "custom",
+    "overwrite": true,
+    "name": "Pick @backgroundtype",
+    "custom_field": "backgroundtype",
+    "next": {
+      "success": "203"
+    },
+    "id": "195",
+    "virtual": true
+  },
+  "214": {
+    "left": 7539,
+    "top": 950,
+    "id": "214",
+    "features": {
+      "buttons": {
+        "pile_up": true,
+        "includes": [
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none"
+        ],
+        "images": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "icons": [
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none"
+        ],
+        "dual_buttons": false
+      },
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": true
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "button",
+        "buttons": [
+          "Droid+Serif",
+          "Inconsolata",
+          "Montserrat",
+          "Open+Sans",
+          "Oswald",
+          "Raleway",
+          "Roboto",
+          "Roboto+Slab",
+          "Lato"
+        ],
+        "choice_text": "*Type the number of the option you are interested in",
+        "text": "Elige una opción"
+      }
+    ],
+    "name": "Elige una opción",
+    "next": {
+      "success": "215"
+    },
+    "function": "__send_message__"
+  },
+  "215": {
+    "left": 7546,
+    "top": 1042,
+    "id": "215",
+    "features": {
+      "hide_textbox": false
+    },
+    "name": "Pick selected option",
+    "next": {
+      "montserrat": "216",
+      "raleway": "216",
+      "back": "208",
+      "droid": "216",
+      "open": "216",
+      "inconsolata": "216",
+      "lato": "216",
+      "roboto": "216",
+      "next": "161",
+      "oswald": "216"
+    },
+    "function": "__choice__"
+  },
+  "150": {
+    "left": 208,
+    "top": 572,
+    "id": "150",
+    "responses": [
+      {
+        "order": 0,
+        "entity": "text",
+        "text": "Dime tu nombre"
+      }
+    ],
+    "name": "Dime tu nombre",
+    "next": {
+      "success": "151"
+    },
+    "function": "__send_message__"
+  },
+  "205": {
+    "left": 6313,
+    "top": 1066,
+    "id": "205",
+    "features": {
+      "buttons": {
+        "pile_up": true,
+        "includes": [
+          "none",
+          "none",
+          "none",
+          "none"
+        ],
+        "images": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "icons": [
+          "none",
+          "none",
+          "none",
+          "none"
+        ],
+        "dual_buttons": false
+      },
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": false
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "button",
+        "buttons": [
+          "video_1",
+          "video_2",
+          "video_3",
+          "video_4"
+        ],
+        "choice_text": "*Type the number of the option you are interested in",
+        "text": "Elige un vídeo"
+      }
+    ],
+    "name": "Elige un vídeo",
+    "next": {
+      "success": "207"
+    },
+    "function": "__send_message__"
+  },
+  "199": {
+    "left": 5198,
+    "top": 1226,
+    "id": "199",
+    "features": {
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": false
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "text",
+        "text": "Elige el segundo color del degradado"
+      }
+    ],
+    "name": "Elige el segundo col",
+    "next": {
+      "success": "200"
+    },
+    "function": "__send_message__"
+  },
+  "217": {
+    "left": 5624,
+    "top": 1250,
+    "function": "__text__",
+    "features": {
+      "hide_textbox": false
+    },
+    "field": "custom",
+    "overwrite": true,
+    "name": "Pick @backgroundimageurl",
+    "custom_field": "backgroundimageurl",
+    "next": {
+      "success": "201"
+    },
+    "id": "217"
+  },
+  "172": {
+    "left": 5183,
+    "top": 479,
+    "id": "172",
+    "features": {
+      "buttons": {
+        "pile_up": true,
+        "includes": [
+          "none",
+          "none",
+          "none",
+          "none"
+        ],
+        "images": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "icons": [
+          "none",
+          "none",
+          "none",
+          "none"
+        ],
+        "dual_buttons": false
+      },
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": true
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "button",
+        "buttons": [
+          "Logo",
+          "Colores",
+          "Fondo",
+          "Tipografía"
+        ],
+        "choice_text": "*Type the number of the option you are interested in",
+        "text": "Elige que quieres personalizar, cuando todo esté listo haz click en PUBLICAR"
+      }
+    ],
+    "name": "Elige que quieres pe",
+    "next": {
+      "success": "173"
+    },
+    "function": "__send_message__"
+  },
+  "189": {
+    "left": 4673,
+    "top": 1118,
+    "id": "189",
+    "features": {
+      "hide_textbox": false
+    },
+    "function": "__text__",
+    "field": "custom",
+    "overwrite": true,
+    "name": "Pick @contrast",
+    "next": {
+      "success": "218"
+    },
+    "custom_field": "contrast",
+    "keyword": true
+  },
+  "101": {
+    "left": 4948,
+    "top": 84,
+    "id": "101",
+    "features": {
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": true
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "text",
+        "text": "Empecemos con los contenidos 🤓\n{html}<img src=\"x\" style=\"display: none\" onerror=\"getStaticBot('files/jsbots/bot-builder-content.json');\">{/html}"
+      }
+    ],
+    "name": "Add some content",
+    "function": "__send_message__"
+  },
+  "178": {
+    "left": 3886,
+    "top": 1060,
+    "id": "178",
+    "features": {
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": false
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "text",
+        "text": "Sube tu icono\n{html}<img src=\"x\" onerror=\"hideFooter();\">{/html}"
+      }
+    ],
+    "name": "Sube tu icono",
+    "next": {
+      "success": "179"
+    },
+    "function": "__send_message__"
+  },
+  "161": {
+    "left": 4203,
+    "top": 295,
+    "id": "161",
+    "features": {
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": true
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "text",
+        "text": "Perfecto\n{html}<img src=\"x\" onerror=\"hideFooter();\">{/html}"
+      }
+    ],
+    "name": "Perfecto",
+    "next": {
+      "success": "157"
+    },
+    "function": "__send_message__"
+  },
+  "182": {
+    "left": 4488,
+    "top": 843,
+    "id": "182",
+    "features": {
+      "hide_textbox": false
+    },
+    "name": "Pick selected option",
+    "next": {
+      "contrast": "185",
+      "back": "172",
+      "accent": "183",
+      "dark": "184",
+      "next": "161",
+      "light": "186"
+    },
+    "function": "__choice__"
+  },
+  "202": {
+    "left": 5648,
+    "top": 1096,
+    "id": "202",
+    "features": {
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": false
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "text",
+        "text": "Sube una imagen de fondo\n{html}<img src=\"x\" onerror=\"hideFooter();\">{/html}"
+      }
+    ],
+    "name": "Sube una imagen de f",
+    "next": {
+      "success": "217"
+    },
+    "function": "__send_message__"
+  },
+  "196": {
+    "left": 6290,
+    "top": 969,
+    "function": "__text__",
+    "features": {
+      "hide_textbox": false
+    },
+    "field": "custom",
+    "overwrite": true,
+    "name": "Pick @backgroundtype",
+    "custom_field": "backgroundtype",
+    "next": {
+      "success": "205"
+    },
+    "id": "196",
+    "virtual": true
+  },
+  "168": {
+    "left": 3003,
+    "id": "168",
+    "overwrite": true,
+    "field": "custom",
+    "custom_field": "template",
+    "virtual": true,
+    "top": 791,
+    "function": "__text__",
+    "features": {
+      "hide_textbox": false
+    },
+    "name": "Pick @template",
+    "next": {
+      "success": "165"
+    },
+    "keyword": true
+  },
+  "156": {
+    "method": "POST",
+    "data": {
+      "customer_token": "@umichat_id",
+      "email": "@email",
+      "token": "77HDVK45enAkzkmC",
+      "brand_name": "@brand_name"
+    },
+    "id": "156",
+    "top": 792,
+    "name": "API Request",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "url": "https://daisho.yexir.com/register/buildbot/",
+    "next": {
+      "success": "155"
+    },
+    "function": "__send_request__",
+    "left": 220
+  },
+  "183": {
+    "left": 4184,
+    "top": 988,
+    "id": "183",
+    "features": {
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": false
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "text",
+        "text": "Escribe el color\n{html}<img src=\"x\" onerror=\"hideFooter();addColorPicker();\">{/html}"
+      }
+    ],
+    "name": "Escribe el color",
+    "next": {
+      "success": "187"
+    },
+    "function": "__send_message__"
+  },
+  "158": {
+    "left": 4164,
+    "top": 80,
+    "id": "158",
+    "features": {
+      "buttons": {
+        "pile_up": false,
+        "includes": [
+          "none",
+          "none"
+        ],
+        "images": [
+          "",
+          ""
+        ],
+        "icons": [
+          "none",
+          "none"
+        ],
+        "dual_buttons": true
+      },
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": true
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "button",
+        "buttons": [
+          "Customize",
+          "Next"
+        ],
+        "choice_text": "*Type the number of the option you are interested in",
+        "text": "¿Quieres personalizar el diseño?\n(Una vez creado el bot podrás también)\n{html}<img src=\"x\" onerror=\"showFooter();\">{/html}"
+      }
+    ],
+    "name": "¿Quieres personaliza",
+    "next": {
+      "success": "159"
+    },
+    "function": "__send_message__"
+  },
+  "190": {
+    "left": 4935,
+    "top": 1117,
+    "id": "190",
+    "features": {
+      "hide_textbox": false
+    },
+    "function": "__text__",
+    "field": "custom",
+    "overwrite": true,
+    "name": "Pick @light",
+    "next": {
+      "success": "218"
+    },
+    "custom_field": "light",
+    "keyword": true
+  },
+  "204": {
+    "left": 5941,
+    "top": 1218,
+    "function": "__text__",
+    "features": {
+      "hide_textbox": false
+    },
+    "field": "custom",
+    "overwrite": true,
+    "name": "Pick @backgroundcolor",
+    "custom_field": "backgroundcolor",
+    "next": {
+      "success": "201"
+    },
+    "id": "204"
+  },
+  "211": {
+    "left": 6846,
+    "top": 1090,
+    "id": "211",
+    "features": {
+      "hide_textbox": false
+    },
+    "name": "Pick selected option",
+    "next": {
+      "back": "208",
+      "m": "212",
+      "xs": "212",
+      "l": "212",
+      "next": "161",
+      "s": "212",
+      "xl": "212"
+    },
+    "function": "__choice__"
+  },
+  "163": {
+    "left": 5181,
+    "top": 368,
+    "id": "163",
+    "features": {
+      "hide_textbox": false
+    },
+    "name": "Pick selected option",
+    "next": {
+      "back": "158",
+      "plantillas": "162",
+      "next": "161",
+      "cero": "172"
+    },
+    "function": "__choice__"
+  },
+  "201": {
+    "left": 5785,
+    "top": 1503,
+    "id": "201",
+    "features": {
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": false
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "text",
+        "text": "Perfecto\n{html}<img src=\"x\" onerror=\"removeColorPicker();\" style=\"display: none\">{/html}"
+      }
+    ],
+    "name": "Perfecto",
+    "next": {
+      "success": "191"
+    },
+    "function": "__send_message__"
+  },
+  "200": {
+    "left": 5208,
+    "top": 1304,
+    "function": "__text__",
+    "features": {
+      "hide_textbox": false
+    },
+    "field": "custom",
+    "overwrite": true,
+    "name": "Pick @gradientto",
+    "custom_field": "gradientto",
+    "next": {
+      "success": "201"
+    },
+    "id": "200"
+  },
+  "219": {
+    "left": 3705,
+    "top": 1050,
+    "id": "219",
+    "features": {
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": false
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "text",
+        "text": "Escribe el tagline\n{html}<img src=\"x\" onerror=\"hideFooter();\">{/html}"
+      }
+    ],
+    "name": "Escribe el tagline",
+    "next": {
+      "success": "220"
+    },
+    "function": "__send_message__"
+  },
+  "218": {
+    "left": 4533,
+    "top": 1258,
+    "id": "218",
+    "features": {
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": true
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "text",
+        "text": "Ok\n{html}<img src=\"@light\" onerror='removeColorPicker();showFooter(); changeStyles({\ntype: \"colours\",\nprops: {\nlight: \"@light\",\naccent: \"@accent\",\ndark: \"@dark\",\ncontrast: \"@contrast\"\n} } )'>{/html}"
+      }
+    ],
+    "name": "Ok",
+    "next": {
+      "success": "181"
+    },
+    "function": "__send_message__"
+  },
+  "164": {
+    "left": 2991,
+    "top": 596,
+    "id": "164",
+    "features": {
+      "hide_textbox": false
+    },
+    "name": "Pick selected option",
+    "next": {
+      "chivito": "168",
+      "back": "158",
+      "sobrasada": "168",
+      "mojito": "168",
+      "next": "161",
+      "default": "168"
+    },
+    "function": "__choice__"
+  },
+  "191": {
+    "left": 5728,
+    "top": 709,
+    "id": "191",
+    "features": {
+      "textarea": {
+        "field": false
+      },
+      "buttons": {
+        "pile_up": true,
+        "includes": [
+          "none",
+          "none",
+          "none",
+          "none"
+        ],
+        "images": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "icons": [
+          "none",
+          "none",
+          "none",
+          "none"
+        ],
+        "dual_buttons": false
+      },
+      "hide_textbox": true
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "button",
+        "buttons": [
+          "gradient",
+          "image",
+          "color",
+          "video"
+        ],
+        "choice_text": "*Type the number of the option you are interested in",
+        "text": "Elige un tipo de fondo\n{html}<img src=\"x\" onerror='showFooter();\nchangeStyles({\ntype: \"background\",\nprops: {\ntype: \"@backgroundtype\",\ngradientfrom: \"@gradientfrom\",\ngradientto: \"@gradientto\",\nbackgroundimageurl: \"@backgroundimageurl\",\nbakgroundcolor: \"@backgroundcolor\",\nvideotemplate: \"@videotemplate\"\n} } );'>{/html}"
+      }
+    ],
+    "name": "Elige un tipo de fon",
+    "next": {
+      "success": "192"
+    },
+    "function": "__send_message__"
+  },
+  "194": {
+    "left": 5656,
+    "top": 973,
+    "function": "__text__",
+    "features": {
+      "hide_textbox": false
+    },
+    "field": "custom",
+    "overwrite": true,
+    "name": "Pick @backgroundtype",
+    "custom_field": "backgroundtype",
+    "next": {
+      "success": "202"
+    },
+    "id": "194",
+    "virtual": true
+  },
+  "184": {
+    "left": 4449,
+    "top": 993,
+    "id": "184",
+    "features": {
+      "textarea": {
+        "field": false
+      },
+      "hide_textbox": false
+    },
+    "responses": [
+      {
+        "order": 0,
+        "entity": "text",
+        "text": "Escribe el color\n{html}<img src=\"x\" onerror=\"hideFooter();addColorPicker();\">{/html}"
+      }
+    ],
+    "name": "Escribe el color",
+    "next": {
+      "success": "188"
+    },
+    "function": "__send_message__"
+  }
+}

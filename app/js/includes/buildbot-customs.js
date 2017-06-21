@@ -12,25 +12,66 @@ changeStyles = function(obj){
 
     if(obj['props']['templatename'] !== '@template') {
 
-      if(obj['props']['templatename'] === 'Sobrasada') {
-        lessVars["light"] = "red";
-        lessVars["dark"] = "yellow";
-        lessVars["accent"] = "blue";
+        if(obj['props']['templatename'] === 'Kashmir') {
+        $('body').addClass('js-novideo');
+        lessVars["font"] = "Lato";
+        lessVars["font-url"] = "https://fonts.googleapis.com/css?family=";
+        lessVars["embfonts"] = false;
+        lessVars["background-type"] = "\'gradient\'";
+        lessVars["accent"] = "#de4561";
+        lessVars["contrast"] = "#00b2a9";
+        lessVars["gradientto"] = "#55e2ba";
+        lessVars["gradientfrom"] = "#00b2a9";
+        lessVars["fontsize"] = "16px";
       }
-      if(obj['props']['templatename'] === 'Chivito') {
-        lessVars["light"] = "red";
-        lessVars["dark"] = "yellow";
-        lessVars["accent"] = "blue";
+      if(obj['props']['templatename'] === 'Reflektor') {
+        $('body').addClass('js-novideo');
+        lessVars["font"] = "Raleway";
+        lessVars["font-url"] = "https://fonts.googleapis.com/css?family=";
+        lessVars["embfonts"] = false;
+        lessVars["background-type"] = "\'gradient\'";
+        lessVars["accent"] = "#F11952";
+        lessVars["contrast"] = "#F11952";
+        lessVars["gradientto"] = "#F11952";
+        lessVars["gradientfrom"] = "#FF575B";
+        lessVars["fontsize"] = "16px";
       }
-      if(obj['props']['templatename'] === 'Mojito') {
-        lessVars["light"] = "red";
-        lessVars["dark"] = "yellow";
-        lessVars["accent"] = "blue";
+      if(obj['props']['templatename'] === 'Starman') {
+        $('body').addClass('js-novideo');
+        lessVars["font"] = "Montserrat";
+        lessVars["font-url"] = "https://fonts.googleapis.com/css?family=";
+        lessVars["embfonts"] = false;
+        lessVars["background-type"] = "\'gradient\'";
+        lessVars["accent"] = "#d35f8f";
+        lessVars["contrast"] = "#464fac";
+        lessVars["gradientto"] = "#ffe199";
+        lessVars["gradientfrom"] = "#ffad59";
+        lessVars["fontsize"] = "14px";
       }
-      if(obj['props']['templatename'] === 'Default') {
+      if(obj['props']['templatename'] === 'Caribou') {
+        lessVars["background-type"] = "\'gradient\'";
+        $('body').addClass('js-novideo');
+        lessVars["font"] = "Open+Sans";
+        lessVars["font-url"] = "https://fonts.googleapis.com/css?family=";
+        lessVars["embfonts"] = false;
+        lessVars["accent"] = "#f72b65";
+        lessVars["contrast"] = "#f72b65";
+        lessVars["fontsize"] = "16px";
+      }
+      if(obj['props']['templatename'] === 'Grace') {
+        lessVars["background-type"] = "\'video\'";
         lessVars["light"] = "white";
         lessVars["dark"] = "black";
         lessVars["accent"] = "#f72b65";
+        $('body').removeClass('js-novideo');
+        lessVars["video-texture"] = 'color';
+        lessVars["background-color"] = "rgba(0,0,0,.3)";
+        videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/video_1";
+        var videobg = $('video');
+        videobg.html('<source src="'+videourl+'.mp4" type="video/mp4"></source><source src="'+videourl+'.webm" type="video/webm"></source>' );
+        videobg.attr('poster',videourl+'.jpg');
+        videobg[0].load();
+        videobg[0].play();
       }
 
     }
@@ -72,31 +113,32 @@ changeStyles = function(obj){
 
   if(obj['type'] == 'background') {
 
-    if(obj['props']['type'] !== '@backgroundtype') {
+    if(obj['props']['backgroundtype'] !== '@backgroundtype') {
 
-      lessVars["background-type"] = obj['props']['backgroundtype'];
+      lessVars["background-type"] = "\'" + obj['props']['backgroundtype'] + "\'";
 
-      if(obj['props']['type'] === 'gradient') {
+      if(obj['props']['backgroundtype'] === 'gradient') {
         $('body').addClass('js-novideo');
         lessVars["gradient-from"] = obj['props']['gradientfrom'];
         lessVars["gradient-to"] = obj['props']['gradientto'];
       }
 
-      if(obj['props']['type'] === 'video') {
+      if(obj['props']['backgroundtype'] === 'video') {
 
         $('body').removeClass('js-novideo');
         lessVars["video-texture"] = 'color';
         lessVars["background-color"] = "rgba(0,0,0,.3)";
+        videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/"+obj['props']['videotemplate'];
 
-        if(obj['props']['videotemplate'] === 'video_1') {
-          videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/video";
-        }
-        if(obj['props']['videotemplate'] === 'video_2') {
-          videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/video02";
-        }
-        if(obj['props']['videotemplate'] === 'video_3') {
-          videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/video03";
-        }
+        // if(obj['props']['videotemplate'] === 'video_1') {
+        //   videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/video";
+        // }
+        // if(obj['props']['videotemplate'] === 'video_2') {
+        //   videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/video02";
+        // }
+        // if(obj['props']['videotemplate'] === 'video_3') {
+        //   videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/video03";
+        // }
 
         var videobg = $('video');
         videobg.html('<source src="'+videourl+'.mp4" type="video/mp4"></source><source src="'+videourl+'.webm" type="video/webm"></source>' );
@@ -105,13 +147,13 @@ changeStyles = function(obj){
         videobg[0].play();
       }
 
-      if(obj['props']['type'] === 'image') {
+      if(obj['props']['backgroundtype'] === 'image') {
         $('body').addClass('js-novideo');
         lessVars["background-image-url"] = obj['props']['backgroundimageurl'];
         lessVars["background-color"] = "rgba(0,0,0,.3)";
       }
 
-      if(obj['props']['type'] === 'color') {
+      if(obj['props']['backgroundtype'] === 'color') {
         $('body').addClass('js-novideo');
         lessVars["background-color"] = obj['props']['backgroundcolor'];
       }
@@ -146,6 +188,8 @@ changeStyles = function(obj){
 
   }
 
+  console.log('less');
+  console.log(lessVars);
   less.modifyVars(lessVars);
 
 }
