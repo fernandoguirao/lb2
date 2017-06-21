@@ -10,6 +10,31 @@ changeStyles = function(obj){
 
   if(obj['type'] == "template") {
 
+    if(obj['props']['templatename'] !== '@template') {
+
+      if(obj['props']['templatename'] === 'Sobrasada') {
+        lessVars["light"] = "red";
+        lessVars["dark"] = "yellow";
+        lessVars["accent"] = "blue";
+      }
+      if(obj['props']['templatename'] === 'Chivito') {
+        lessVars["light"] = "red";
+        lessVars["dark"] = "yellow";
+        lessVars["accent"] = "blue";
+      }
+      if(obj['props']['templatename'] === 'Mojito') {
+        lessVars["light"] = "red";
+        lessVars["dark"] = "yellow";
+        lessVars["accent"] = "blue";
+      }
+      if(obj['props']['templatename'] === 'Default') {
+        lessVars["light"] = "white";
+        lessVars["dark"] = "black";
+        lessVars["accent"] = "#f72b65";
+      }
+
+    }
+
   }
   if(obj['type'] == 'logo') {
 
