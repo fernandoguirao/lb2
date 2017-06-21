@@ -181,6 +181,21 @@ var changeFooter = function(){
   }
 }
 
+var previewFooter = function(){
+  $('.foot-container .description b').html("PREVIEWING BOT");
+  $('<div class="back-btn" style="margin-right: 7px;" id="preview-btn2"><span style="margin-left: 0!important;">End Preview</span></div>').insertBefore('.foot-container .publish-btn');
+  $('#preview-btn').hide();
+  document.getElementById("preview-btn2").onclick = function(){
+     fakeMessage('#finish');
+  }
+}
+
+var endPreviewFooter = function(){
+  $('.foot-container .description b').html("EDITING BOT");
+  $('#preview-btn').show();
+  $('#preview-btn2').remove();
+}
+
 var fadeBtn = function(){
   $('body').addClass('fade-btn');
 }
