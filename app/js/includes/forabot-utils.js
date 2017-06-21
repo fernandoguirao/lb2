@@ -6,6 +6,7 @@ function forabotTypingState( data ){
 }
 
 function forabotPreviewBot( controller ){
+  previewFooter();
   var __data = controller.getCurrentData();
   var __storage = __data.storage;
   if (__storage.crea_bot === true) {
@@ -200,7 +201,7 @@ function forabotPreviewBot( controller ){
     }
 
     __previewData.keywords = {
-      'salir': {
+      'finish': {
         'next': false
       }
     }
@@ -214,6 +215,7 @@ function forabotPreviewBot( controller ){
       $('#hu-webchat-messages').empty();
     });
     window.jsbot.on('finish custom.end_preview', function(){
+      endPreviewFooter()
       loadStaticBot(__data, 'preview_end');
     });
 
@@ -329,6 +331,7 @@ function loadStaticBot( data, step ) {
   window.jsbot.on('input', forabotMessageSent);
   window.jsbot.on('waiting', forabotWaitingMessage);
   window.jsbot.on('typing', forabotTypingState);
+  window.jsbot.on('custom.publish', forabotSaveBot.bind(this, window.jsbot));
   window.jsbot.on('custom.clear', function(){
     $('#hu-webchat-messages').empty();
   });
@@ -915,7 +918,8 @@ function forabotSaveBot( controller ){
       window.jsbot.go('finish_0')
     },2000)
   } else {
-    return undefined;
+    helloumi.webchat.umichatcore.setTypingState('');
+    window.jsbot.go('finish_bad')
   }
 
 }
