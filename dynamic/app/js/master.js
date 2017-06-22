@@ -25,6 +25,7 @@ function renderHelloumiLiveChat( configKey, initialMessage ) {
         __umichatCore.on('showtextbox', showTextBox);
         __umichatCore.on('hidetextbox', hideTextBox);
         __umichatCore.on('sendmessage', hideTextBox);
+        __umichatCore.on('option-click', fadeOutButtons);
       }
     }
 
@@ -134,7 +135,7 @@ function showTextBox(messageData){
     document.querySelector("#hu-composer-box").placeholder = "Type here ...";
      containerwidget.dataset.textboxplaceholder = 'custom';
   }
-  
+
   if(screen.width < 800) return true;
   /* Move textbox next last message; hide emoji and file buttons; and show send button*/
   var landbottextbox = document.querySelector("#landbot-textbox");
@@ -144,7 +145,7 @@ function showTextBox(messageData){
   document.querySelector('.hu-composer-emoji-button').classList.add('hu-js-hide');
 }
 function hideTextBox(messageData){
-  /* For mobile never hide */ 
+  /* For mobile never hide */
   if(screen.width < 800) return true;
   /* Reset values */
   document.querySelector("#hu-composer-box").placeholder = "Type here ...";
@@ -152,6 +153,10 @@ function hideTextBox(messageData){
   document.querySelector('.hu-composer-emoji-button').classList.remove('hu-js-hide');
   /* Return textbox to original position */
   document.querySelector("#hu-container-widget").appendChild(document.querySelector(".hu-messenger-footer"));
+}
+
+function fadeOutButtons(element) {
+  // element.parentNode.parentNode.classList.
 }
 
 function jsFlex(target){
