@@ -57,7 +57,7 @@ function Landbot(config) {
       "contrast-light": "lighten(@contrast,30%)",
       // Fonts
       "embfonts": true,
-      "light-text": "@black",
+      "dark": "@black",
       "font": "\"Gotham Rounded\"",
       "font-type": "sans-serif",
       "font-size": "14px",
@@ -228,13 +228,6 @@ Landbot.prototype.generateDocument = function generateDocument() {
     type: 'image/x-icon'
   });
 
-  if(!this.config.custom.embfonts){
-    this.generateTag('link', head, {
-        rel: 'stylesheet',
-        href: this.config.custom.externalfonturl,
-        type: 'text/css'
-    });
-  }
   // LESS
 
   window.less = {
@@ -438,7 +431,6 @@ Landbot.prototype.generateDocument = function generateDocument() {
 
 
   ///////////////// VIDEO /////////////////
-
   if (this.config['background-video'] === true)
     this.generateTag('div', body, {
       innerHTML: '\
