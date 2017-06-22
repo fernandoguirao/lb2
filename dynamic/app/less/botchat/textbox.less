@@ -1,3 +1,8 @@
+#hu-composer-box{
+    font-family: @font,@font-type!important;
+    font-size: @font-size;
+}
+
 #hu-container-widget{
     #landbot-textbox{
         .hu-messenger-footer{
@@ -11,18 +16,19 @@
             background:transparent;
             .hu-footer-state{
                 .hu-composer{
-                    border-bottom: 2px solid white;
+                    border-bottom: 2px solid @light;
                     .hu-composer-text{
                         padding:0px;
                         #hu-composer-box{
-                            color: white;
+                            color: @light;
+                            overflow: hidden;
                         }
-                        .placeholder-custom-color(white);
+                        .placeholder-custom-color(@light);
                     }
                 }
             }
             .hu-composer-send-button svg path{
-                fill:white;
+                fill:@light;
             }
 
             #hu-composer-aux-box{
@@ -38,7 +44,7 @@
         width: initial;
         margin-left:75px;
         border-top: none;
-        background: white;
+        background: @light;
         .border-radius();
         .hu-footer-state{
             padding:12px;
@@ -46,7 +52,7 @@
             .hu-composer-buttons{
                 padding:0;
                 .hu-composer-send-button svg path{
-                    fill:magenta;
+                    fill:@pink;
                 }        
                 .hu-composer-emoji-button{
                     position: absolute;
@@ -67,9 +73,9 @@
                 .hu-composer-text{
                     padding:0px;
                     #hu-composer-box{
-                        color: black;
+                        color: @dark;
                     }
-                    .placeholder-custom-color(magenta);
+                    .placeholder-custom-color(@pink);
                 }
             }
         }
@@ -82,7 +88,7 @@
         display:inherit;
         width: initial;
         border-top: none;
-        background: white;
+        background: @light;
         
         .border-radius();
         .hu-footer-state{
@@ -92,7 +98,7 @@
             .hu-composer-buttons{
                 padding:0;
                 .hu-composer-send-button svg path{
-                    fill:magenta;
+                    fill:@pink;
                 }        
                 .hu-composer-emoji-button{
                     position: absolute;
@@ -119,12 +125,12 @@
                 .hu-composer-text{
                     padding:0px;
                     #hu-composer-box{
-                        color: black;
+                        color: @dark;
                     }
                     #hu-composer-aux-box{
                         display: none;
                     }
-                    .placeholder-custom-color(magenta);
+                    .placeholder-custom-color(@pink);
                 }
             }
         }

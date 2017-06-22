@@ -9,3 +9,6 @@
     .fontface_fn(@font-medium-slash,@id-regular, 300);
   }
 }
+& when (@embfonts = false){
+  @import (css) "@{externalfonturl}";
+}
