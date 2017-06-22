@@ -9,7 +9,7 @@ function Landbot(config) {
     'description': 'Landbot.io is a tool to create conversational interfaces in substitution of forms. No coding required!',
     'url': document.location.origin,
     'livechatVersion': '1.0.1',
-    'staticUrl': 'https://storage.googleapis.com/static-demo-helloumi/',
+    'staticUrl': 'https://storage.googleapis.com/static-yexir-helloumi/',
     'channelToken': null,
     'brandID': null,
     'brandName': null,
@@ -81,7 +81,7 @@ function Landbot(config) {
       "video-texture": "\"gradient\"", // gradient | image | color
       "box-footer": "@accent",
       "url": "",
-      "staticUrl": "\"https://storage.googleapis.com/static-demo-helloumi/\""
+      "staticUrl": "\"https://storage.googleapis.com/static-yexir-helloumi/\""
     }
   };
 
