@@ -454,6 +454,7 @@
             &[data-include="image"] {
               padding: 0;
               width: 175px;
+              overflow: visible;
               .hu-btn-image {
                 border-top-left-radius: 4px;
                 border-top-right-radius: 4px;
@@ -485,9 +486,15 @@
                 display: block;
                 font-size: 30px;
                 margin-bottom: 5px;
+                .transition(all .2s ease-in-out);
               }
               span {
                 white-space: normal;
+              }
+              &:hover {
+                i.fi {
+                  .transform(translateY(-4px));
+                }
               }
             }
           }
