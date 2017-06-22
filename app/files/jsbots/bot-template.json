@@ -1,0 +1,23 @@
+{
+   "id":"template",
+   "init":"welcome_1",
+   "name":"Template",
+   "autotypingTimeout":0,
+   "status":{
+      "welcome_1":{
+         "id":"welcome_1",
+         "text":"Hola, bienvenido a $brand",
+         "next":"welcome_2"
+      },
+      "welcome_2":{
+         "id":"welcome_2",
+         "text":"Mi nombre es $name",
+         "next":"welcome_3"
+      },
+      "welcome_3":{
+         "id":"welcome_2",
+         "text":"También puedes escribirme un correo a $email",
+         "next": false
+      }
+   }
+}

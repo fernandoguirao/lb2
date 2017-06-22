@@ -1,6 +1,6 @@
 {
   "name": "Bot Builder - Content",
-  "init": "welcome_2",
+  "init": "welcome",
   "keywords": {
     "preview": {
       "next": "preview_1"
@@ -14,6 +14,16 @@
     "quote_end": "*"
   },
   "status": {
+    "welcome": {
+      "text": "¡Estupendo! Elije una de las plantillas disponibles\n*(Más tarde podrás editarlas)*",
+      "buttons": [
+        { "caption": "Template 1", "next": "preview_0", "value": "files/jsbots/bot-template.json", "store": "tmpl_selected" },
+        { "caption": "Template 2", "next": "preview_0", "value": "files/jsbots/bot-template.json", "store": "tmpl_selected" },
+        { "caption": "Template 3", "next": "preview_0", "value": "files/jsbots/bot-template.json", "store": "tmpl_selected" },
+        { "caption": "Template 4", "next": "preview_0", "value": "files/jsbots/bot-template.json", "store": "tmpl_selected" }
+      ]
+    },
+
     "welcome_0": {
       "text": "¡Estupendo! Te ayudaré a editar los diálogos de tu propio Landbot 🤓",
       "next": ["welcome_1"]
