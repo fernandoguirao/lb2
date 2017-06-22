@@ -80,9 +80,10 @@ function Landbot(config) {
       "background-color": "white",
       "video-texture": "\"gradient\"", // gradient | image | color
       "box-footer": "@accent",
-      "url": "",
-      "staticUrl": "\"https://storage.googleapis.com/static-yexir-helloumi/\"",
-      "jeje": (function(){console.log(this.HULandbot.config);return 'jeje';})()
+      // "url": window.LandbotConfig.url ? window.LandbotConfig.url : document.location.origin,
+      "staticUrl": window.LandbotConfig.staticUrl ? window.LandbotConfig.staticUrl : "\"https://storage.googleapis.com/static-yexir-helloumi/\"",
+      // Avatar
+      "logo": window.LandbotConfig.logo ? "\""+window.LandbotConfig.logo+"\"" : "\"http://bueninvento.es/umiexp2.png\"",
     }
   };
 

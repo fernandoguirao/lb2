@@ -325,11 +325,11 @@
               padding: 11px 31px;
               margin-bottom: 2px;
               background-color: @light;
-              color: @light-text;
+              color: @dark;
               border-width: 2px;
               border-color: @light;
               span {
-                color: @light-text;
+                color: @dark;
                 padding-left: 15px;
               }
               &:hover {
@@ -568,15 +568,15 @@
         overflow: hidden;
         &::before {
           content: "";
-          position: relative;
-          top: 5px;
+          // position: relative;
+          // top: 5px;
           background-size: 100%;
-          background-image: url("@{staticUrl}/landbot/files/avatar.png");
-          width: 26px;
-          height: 26px;
+          background-image: url("@{logo}");
+          width: 40px;
+          height: 40px;
           display: inherit;
           background-repeat: no-repeat;
-          left: 7px;
+          // left: 7px;
         }
       }
       .hu-message-content {

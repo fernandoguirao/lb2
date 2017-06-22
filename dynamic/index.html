@@ -7,24 +7,25 @@
   <body>
     <!-- SNIPPET STARTS HERE -->
     <script type="text/javascript">
+      window.LandbotConfig = {
+        'staticUrl': './',
+        'channelToken': "H-57-55JULQN5YLS2AFFG",
+        'brandID': 234,
+        'brandName': 'landbot',
+        // 'logo':
+        'apiKey': "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
+        'authDomain': "daisho-yexir.firebaseapp.com",
+        'databaseURL': "https://daisho-yexir.firebaseio.com",
+        'storageBucket': "daisho-yexir.appspot.com",
+        'background-video': true,
+        'videoname': 'video',
+        'custom': {
+          "background-type": "\"video\"",
+          "video-texture": 'none',
+        }
+      };
       function loadHelloumiLandbot() {
-        HULandbot = new Landbot({
-          'staticUrl': './',
-          'channelToken': "H-57-55JULQN5YLS2AFFG",
-          'brandID': 234,
-          'brandName': 'landbot',
-          // 'logo':
-          'apiKey': "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
-          'authDomain': "daisho-yexir.firebaseapp.com",
-          'databaseURL': "https://daisho-yexir.firebaseio.com",
-          'storageBucket': "daisho-yexir.appspot.com",
-          'background-video': true,
-          'videoname': 'video',
-          'custom': {
-            "background-type": "\"video\"",
-            "video-texture": 'none',
-          }
-        });
+        HULandbot = new Landbot(LandbotConfig);
         HULandbot.createLandbot();
       }
     </script>
