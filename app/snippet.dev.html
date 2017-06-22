@@ -2,7 +2,7 @@
   function loadHelloumiLandbot() {
     HULandbot = new Landbot({
       "staticUrl": "https://storage.googleapis.com/static.yexir.com/",
-      "channelToken": "H-92-CJ5AGAH0FTGYDQSK",
+      "channelToken": "H-91-VMD37U2F2B7A0CDL",
       "brandID": 251,
       "brandName": "landbot",
       "logo": "./files/avatar2.png",
@@ -33,8 +33,17 @@
             "isLastMessage": false
           },
           "1": {
-            "type": "text",
-            "message": "Dime tu email",
+            "type": "dialog",
+            "title": "Dime",
+            "buttons": ["Just a boy", "Just a girl"],
+            "payloads": ["Just a boy", "Just a girl"],
+            "features": {
+              "buttons": {
+                "includes": ["image", "icon", "none"],
+                "images": ["http://img05.deviantart.net/0cb3/i/2017/170/1/7/bot_by_mrgreenlight-dbdcfzg.png", ", "],
+                "icons": ["none", "check", "none"]
+              }
+            },
             "timestamp": "11",
             "readed": false,
             "samurai": -22,
