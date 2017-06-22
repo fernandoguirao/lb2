@@ -6,13 +6,14 @@ var lessVars = {};
 var videourl = "";
 
 changeStyles = function(obj){
+
   console.log(obj);
 
   if(obj['type'] == "template") {
 
-    if(obj['props']['templatename'] !== '@template') {
+    if(obj['templatename'] !== '@template') {
 
-        if(obj['props']['templatename'] === 'Kashmir') {
+        if(obj['templatename'] === 'Kashmir') {
         $('body').addClass('js-novideo');
         lessVars["font"] = "Lato";
         lessVars["font-url"] = "https://fonts.googleapis.com/css?family=";
@@ -24,7 +25,7 @@ changeStyles = function(obj){
         lessVars["gradientfrom"] = "#00b2a9";
         lessVars["fontsize"] = "16px";
       }
-      if(obj['props']['templatename'] === 'Reflektor') {
+      if(obj['templatename'] === 'Reflektor') {
         $('body').addClass('js-novideo');
         lessVars["font"] = "Raleway";
         lessVars["font-url"] = "https://fonts.googleapis.com/css?family=";
@@ -36,7 +37,7 @@ changeStyles = function(obj){
         lessVars["gradientfrom"] = "#FF575B";
         lessVars["fontsize"] = "16px";
       }
-      if(obj['props']['templatename'] === 'Starman') {
+      if(obj['templatename'] === 'Starman') {
         $('body').addClass('js-novideo');
         lessVars["font"] = "Montserrat";
         lessVars["font-url"] = "https://fonts.googleapis.com/css?family=";
@@ -48,7 +49,7 @@ changeStyles = function(obj){
         lessVars["gradientfrom"] = "#ffad59";
         lessVars["fontsize"] = "14px";
       }
-      if(obj['props']['templatename'] === 'Caribou') {
+      if(obj['templatename'] === 'Caribou') {
         lessVars["background-type"] = "\'gradient\'";
         $('body').addClass('js-novideo');
         lessVars["font"] = "Open+Sans";
@@ -58,7 +59,7 @@ changeStyles = function(obj){
         lessVars["contrast"] = "#f72b65";
         lessVars["fontsize"] = "16px";
       }
-      if(obj['props']['templatename'] === 'Grace') {
+      if(obj['templatename'] === 'Grace') {
         lessVars["background-type"] = "\'video\'";
         lessVars["light"] = "white";
         lessVars["dark"] = "black";
@@ -79,67 +80,58 @@ changeStyles = function(obj){
   }
   if(obj['type'] == 'logo') {
 
-    if(obj['props']['logo'] !== '@logo') {
+    if(obj['logo'] !== '@logo') {
       $('body').addClass('js-logo');
-      $('.brand-logo').attr('src',obj['props']['logo']);
-      $('body').append('<style>.js-logo #hu-container-widget[data-platform="landbot"] .hu-js-open .hu-messenger-body .hu-messenger-message.hu-messenger-message-brand[data-samurai^="-"] .hu-avatar:before { background-image: url('+obj['props']['logo']+')!important; }</style>');
+      $('.brand-logo').attr('src',obj['logo']);
+      $('body').append('<style>.js-logo #hu-container-widget[data-platform="landbot"] .hu-js-open .hu-messenger-body .hu-messenger-message.hu-messenger-message-brand[data-samurai^="-"] .hu-avatar:before { background-image: url('+obj['logo']+')!important; }</style>');
     }
-    if(obj['props']['tagline'] !== '@tagline') {
-      // lessVars["tagline"] = obj['props']['tagline'];
-      $('.more-leads').html(obj['props']['tagline']);
+    if(obj['tagline'] !== '@tagline') {
+      // lessVars["tagline"] = obj['tagline'];
+      $('.more-leads').html(obj['tagline']);
     }
-    if(obj['props']['brandName'] !== '@brandname') {
-      // lessVars["brandName"] = obj['props']['brandName'];
-      $('.brand-name').html(obj['props']['brandName']);
+    if(obj['brandName'] !== '@brandname') {
+      // lessVars["brandName"] = obj['brandName'];
+      $('.brand-name').html(obj['brandName']);
     }
 
   }
   if(obj['type'] == 'colours') {
 
-    if(obj['props']['light'] !== '@light') {
-      lessVars["light"] = obj['props']['light'];
+    if(obj['light'] !== '@light') {
+      lessVars["light"] = obj['light'];
     }
-    if(obj['props']['accent'] !== '@accent') {
-      lessVars["accent"] = obj['props']['accent'];
+    if(obj['accent'] !== '@accent') {
+      lessVars["accent"] = obj['accent'];
     }
-    if(obj['props']['dark'] !== '@dark') {
-      lessVars["dark"] = obj['props']['dark'];
+    if(obj['dark'] !== '@dark') {
+      lessVars["dark"] = obj['dark'];
     }
-    if(obj['props']['contrast'] !== '@contrast') {
-      lessVars["contrast"] = obj['props']['contrast'];
+    if(obj['contrast'] !== '@contrast') {
+      lessVars["contrast"] = obj['contrast'];
     }
 
   }
 
   if(obj['type'] == 'background') {
 
-    if(obj['props']['backgroundtype'] !== '@backgroundtype') {
+    if(obj['backgroundtype'] !== '@backgroundtype') {
 
-      lessVars["background-type"] = "\'" + obj['props']['backgroundtype'] + "\'";
+      lessVars["background-type"] = "\'" + obj['backgroundtype'] + "\'";
 
-      if(obj['props']['backgroundtype'] === 'gradient') {
+      // GRAD / OK
+      if(obj['backgroundtype'] === 'gradient') {
         $('body').addClass('js-novideo');
-        lessVars["gradient-from"] = obj['props']['gradientfrom'];
-        lessVars["gradient-to"] = obj['props']['gradientto'];
+        lessVars["gradient-from"] = obj['gradientfrom'];
+        lessVars["gradient-to"] = obj['gradientto'];
       }
 
-      if(obj['props']['backgroundtype'] === 'video') {
-        if(obj['props']['videotemplate'] !== '@videotemplate') {
+      // VIDEO OK
+      if(obj['backgroundtype'] === 'video') {
+        if(obj['videotemplate'] !== '@videotemplate') {
           $('body').removeClass('js-novideo');
-          lessVars["video-texture"] = 'color';
-          lessVars["background-color"] = "rgba(0,0,0,.3)";
-          videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/"+obj['props']['videotemplate'];
-
-          // if(obj['props']['videotemplate'] === 'video_1') {
-          //   videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/video";
-          // }
-          // if(obj['props']['videotemplate'] === 'video_2') {
-          //   videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/video02";
-          // }
-          // if(obj['props']['videotemplate'] === 'video_3') {
-          //   videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/video03";
-          // }
-
+          lessVars["video-texture"] = '\'color\'';
+          lessVars["background-color"] = "rgba(0,0,0,.4)";
+          videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/"+obj['videotemplate'];
           var videobg = $('video');
           videobg.html('<source src="'+videourl+'.mp4" type="video/mp4"></source><source src="'+videourl+'.webm" type="video/webm"></source>' );
           videobg.attr('poster',videourl+'.jpg');
@@ -148,49 +140,53 @@ changeStyles = function(obj){
         }
       }
 
-      if(obj['props']['backgroundtype'] === 'image') {
+      // IMG / PROGRESS
+      if(obj['backgroundtype'] === 'image') {
         $('body').addClass('js-novideo');
-        if(obj['props']['backgroundimageurl'] !== '@backgroundimageurl') {
-          lessVars["background-image-url"] = obj['props']['backgroundimageurl'];
-          lessVars["backgroundimageurl"] = obj['props']['backgroundimageurl'];
+        if(obj['backgroundimageurl'] !== '@backgroundimageurl') {
+          lessVars["background-image-url"] = "\'" + obj['backgroundimageurl'] + "\'";
           lessVars["background-color"] = "rgba(0,0,0,.4)";
-          lessVars["backgroundcolor"] = "rgba(0,0,0,.4)";
         }
       }
 
-      if(obj['props']['backgroundtype'] === 'color') {
+      // COLOR / OK
+      if(obj['backgroundtype'] === 'color') {
         $('body').addClass('js-novideo');
-        if(obj['props']['backgroundcolor'] !== '@backgroundcolor') {
-          lessVars["background-color"] = obj['props']['backgroundcolor'];
-          lessVars["backgroundcolor"] = obj['props']['backgroundcolor'];
-          console.log(obj['props']['backgroundcolor']);
+        if(obj['backgroundcolor'] !== '@backgroundcolor') {
+          lessVars["background-color"] = obj['backgroundcolor'];
+          lessVars["backgroundcolor"] = obj['backgroundcolor'];
+          console.log(obj['backgroundcolor']);
         }
       }
 
     }
 
   }
+
   if(obj['type'] == 'font') {
 
-    if(obj['props']['font'] !== '@font') {
-      lessVars["font"] = obj['props']['font'];
-      lessVars["font-url"] = "https://fonts.googleapis.com/css?family=";
-      lessVars["embfonts"] = false;
+
+    if(obj['font'] !== '@font') {
+      lessVars["font"] = "\'" + obj['font'] + "\'";
+      lessVars["externalfonturl"] = "\'" + "https://fonts.googleapis.com/css?family="+ obj['font']+"\'";
+      lessVars["embfonts"] = "false";
     }
-    if(obj['props']['fontsize'] !== '@fontsize') {
-      if(obj['props']['fontsize'] === 'XS') {
+
+    // SIZE OK
+    if(obj['fontsize'] !== '@fontsize') {
+      if(obj['fontsize'] === 'XS') {
         lessVars["font-size"] = "11px";
       }
-      if(obj['props']['fontsize'] === 'S') {
+      if(obj['fontsize'] === 'S') {
         lessVars["font-size"] = "12px";
       }
-      if(obj['props']['fontsize'] === 'M') {
+      if(obj['fontsize'] === 'M') {
         lessVars["font-size"] = "14px";
       }
-      if(obj['props']['fontsize'] === 'L') {
+      if(obj['fontsize'] === 'L') {
         lessVars["font-size"] = "16px";
       }
-      if(obj['props']['fontsize'] === 'XL') {
+      if(obj['fontsize'] === 'XL') {
         lessVars["font-size"] = "19px";
       }
     }
@@ -198,7 +194,7 @@ changeStyles = function(obj){
   }
 
   console.log('less');
-  console.log(lessVars);
+  console.log("less.modifyVars(" + JSON.stringify(lessVars) + ")");
   less.modifyVars(lessVars);
 
 }
