@@ -435,7 +435,9 @@
             line-height: 1.3;
             background-color: @accent;
             border-color: darken(@accent,10%);
-            color: @light;
+            * {
+              color: @light;
+            }
             text-align: center;
             // & when (@background-type = 'video') {
             //   color: @light;
@@ -527,7 +529,9 @@
       .hu-message-content.hu-message-content-text {
         // background: rgba(255, 255, 255, 0.13) !important;
         background: @accent !important;
-        color: @light;
+        * {
+          color: @light !important;
+        }
         // & when (@background-type = 'video') {
         //   background-color: rgba(255,255,255,.2) !important;
         // }
@@ -581,7 +585,7 @@
       }
       .hu-message-content {
         background-color: @light !important;
-        color:@dark ;
+        color: @dark;
       }
       // Estilos para que los links parezcan botones
       div:not(.hu-btn) > span > a.hu-link:not([href*=mailto]) {
