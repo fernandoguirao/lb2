@@ -25,6 +25,9 @@ div#hu-experiment-header {
       }
     }
   }
+  & when (@background-type = 'image'){
+    background-color: @background-color;
+  }
   & when (@background-type = 'image') or (@background-type = 'video') {
     // Todos los elementos a @light
     border-bottom: 1px solid fade(@light, 40%);
