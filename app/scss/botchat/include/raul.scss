@@ -1,0 +1,20 @@
+$light: white;
+
+div#hu-experiment-header .more-leads.btt, div#hu-experiment-header a.btt, div#hu-experiment-header .btt.btt, div#hu-experiment-header h1.btt {
+  border: 1px solid rgba(red($light), green($light), blue($light), 0.7)!important;
+}
+
+.btt .hu-bold {
+  font-weight: bolder!important;
+}
+
+div#hu-experiment-header .hu-header-content a {
+  font-weight: normal!important;
+  padding: 12px 28px!important;
+}
+
+.hu-messenger-body .hu-messenger-message .hu-message-content:not(.hu-message-content-buttons) {
+  background-color: white !important;
+  color: black;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.1)!important;
+}

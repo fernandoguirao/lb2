@@ -6,66 +6,91 @@ var lessVars = {};
 var videourl = "";
 
 changeStyles = function(obj){
+
   console.log(obj);
 
+  // OK
   if(obj['type'] == "template") {
 
-    if(obj['props']['templatename'] !== '@template') {
+    if(obj['templatename'] !== '') {
 
-        if(obj['props']['templatename'] === 'Kashmir') {
+      // OK
+      if(obj['templatename'] === 'Kashmir') {
         $('body').addClass('js-novideo');
+        $('body').addClass('js-template');
+        $('body').removeClass('js-template2');
         lessVars["font"] = "Lato";
-        lessVars["font-url"] = "https://fonts.googleapis.com/css?family=";
+        lessVars["externalfonturl"] = "\'" + "https://fonts.googleapis.com/css?family="+ lessVars['font']+"\'";
         lessVars["embfonts"] = false;
         lessVars["background-type"] = "\'gradient\'";
         lessVars["accent"] = "#de4561";
         lessVars["contrast"] = "#00b2a9";
-        lessVars["gradientto"] = "#55e2ba";
-        lessVars["gradientfrom"] = "#00b2a9";
-        lessVars["fontsize"] = "16px";
+        lessVars["gradient-to"] = "#55e2ba";
+        lessVars["gradient-from"] = "#00b2a9";
+        lessVars["font-size"] = "16px";
       }
-      if(obj['props']['templatename'] === 'Reflektor') {
+      // OK
+      if(obj['templatename'] === 'Reflektor') {
         $('body').addClass('js-novideo');
-        lessVars["font"] = "Raleway";
-        lessVars["font-url"] = "https://fonts.googleapis.com/css?family=";
+        $('body').addClass('js-template');
+        $('body').removeClass('js-template2');
+        lessVars["font"] = "Lato";
+        lessVars["externalfonturl"] = "\'" + "https://fonts.googleapis.com/css?family="+ lessVars['font']+"\'";
         lessVars["embfonts"] = false;
         lessVars["background-type"] = "\'gradient\'";
         lessVars["accent"] = "#F11952";
-        lessVars["contrast"] = "#F11952";
-        lessVars["gradientto"] = "#F11952";
-        lessVars["gradientfrom"] = "#FF575B";
-        lessVars["fontsize"] = "16px";
+        lessVars["dark"] = "#34495e";
+        lessVars["contrast"] = "white";
+        lessVars["gradient-to"] = "#F11952";
+        lessVars["gradient-from"] = "#FF575B";
+        lessVars["font-size"] = "16px";
       }
-      if(obj['props']['templatename'] === 'Starman') {
+      // OK
+      if(obj['templatename'] === 'Starman') {
         $('body').addClass('js-novideo');
+        $('body').removeClass('js-template');
+        $('body').addClass('js-template2');
         lessVars["font"] = "Montserrat";
-        lessVars["font-url"] = "https://fonts.googleapis.com/css?family=";
+        lessVars["externalfonturl"] = "\'" + "https://fonts.googleapis.com/css?family="+ lessVars['font']+"\'";
         lessVars["embfonts"] = false;
         lessVars["background-type"] = "\'gradient\'";
         lessVars["accent"] = "#d35f8f";
         lessVars["contrast"] = "#464fac";
-        lessVars["gradientto"] = "#ffe199";
-        lessVars["gradientfrom"] = "#ffad59";
-        lessVars["fontsize"] = "14px";
+        lessVars["gradient-to"] = "#ffe199";
+        lessVars["gradient-from"] = "#ffad59";
+        lessVars["font-size"] = "14px";
       }
-      if(obj['props']['templatename'] === 'Caribou') {
-        lessVars["background-type"] = "\'gradient\'";
+      // OK
+      if(obj['templatename'] === 'Caribou') {
         $('body').addClass('js-novideo');
-        lessVars["font"] = "Open+Sans";
-        lessVars["font-url"] = "https://fonts.googleapis.com/css?family=";
+        $('body').addClass('js-template');
+        $('body').removeClass('js-template2');
+        lessVars["background-type"] = "\'color\'";
+        lessVars["background-color"] = "#34495e";
+        lessVars["font"] = "Inconsolata";
+        lessVars["externalfonturl"] = "\'" + "https://fonts.googleapis.com/css?family="+ "Inconsolata"+"\'";
         lessVars["embfonts"] = false;
-        lessVars["accent"] = "#f72b65";
-        lessVars["contrast"] = "#f72b65";
-        lessVars["fontsize"] = "16px";
+        lessVars["light"] = "#ecf0f1";
+        lessVars["accent"] = "#213446";
+        lessVars["contrast"] = "#ecf0f1";
+        lessVars["font-size"] = "16px";
+        lessVars["dark"] = "#213446";
       }
-      if(obj['props']['templatename'] === 'Grace') {
+      // OK
+      if(obj['templatename'] === 'Grace') {
+        $('body').removeClass('js-template2');
+        $('body').removeClass('js-template');
+        $('body').removeClass('js-novideo');
+        lessVars["embfonts"] = true;
+        lessVars["font"] = "Gotham Rounded";
+        lessVars["font-size"] = "15px";
         lessVars["background-type"] = "\'video\'";
         lessVars["light"] = "white";
         lessVars["dark"] = "black";
         lessVars["accent"] = "#f72b65";
-        $('body').removeClass('js-novideo');
-        lessVars["video-texture"] = 'color';
-        lessVars["background-color"] = "rgba(0,0,0,.3)";
+        lessVars["contrast"] = "white";
+        lessVars["video-texture"] = '\'color\'';
+        lessVars["background-color"] = "rgba(0,0,0,.4)";
         videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/video_1";
         var videobg = $('video');
         videobg.html('<source src="'+videourl+'.mp4" type="video/mp4"></source><source src="'+videourl+'.webm" type="video/webm"></source>' );
@@ -77,120 +102,122 @@ changeStyles = function(obj){
     }
 
   }
+
+  // LOGO OK
   if(obj['type'] == 'logo') {
 
-    if(obj['props']['logo'] !== '@logo') {
+    // Logo img OK
+    if(obj['logo'] !== '') {
       $('body').addClass('js-logo');
-      $('.brand-logo').attr('src',obj['props']['logo']);
-      $('body').append('<style>.js-logo #hu-container-widget[data-platform="landbot"] .hu-js-open .hu-messenger-body .hu-messenger-message.hu-messenger-message-brand[data-samurai^="-"] .hu-avatar:before { background-image: url('+obj['props']['logo']+')!important; }</style>');
+      $('.bracd-logo').attr('src',obj['logo']);
+      $('body').append('<style>.js-logo #hu-container-widget[data-platform="landbot"] .hu-js-open .hu-messenger-body .hu-messenger-message.hu-messenger-message-brand[data-samurai^="-"] .hu-avatar:before { background-image: url('+obj['logo']+')!important; }</style>');
     }
-    if(obj['props']['tagline'] !== '@tagline') {
-      // lessVars["tagline"] = obj['props']['tagline'];
-      $('.more-leads').html(obj['props']['tagline']);
+
+    // Tagline OK
+    if(obj['tagline'] !== '') {
+      $('.more-leads').html(obj['tagline']);
     }
-    if(obj['props']['brandName'] !== '@brandname') {
-      // lessVars["brandName"] = obj['props']['brandName'];
-      $('.brand-name').html(obj['props']['brandName']);
+
+    // Brandname OK
+    if(obj['brandName'] !== '') {
+      $('.brand-name').html(obj['brandName']);
     }
 
   }
+
+  // COLOURS OK
   if(obj['type'] == 'colours') {
 
-    if(obj['props']['light'] !== '@light') {
-      lessVars["light"] = obj['props']['light'];
+    if(obj['light'] !== '') {
+      lessVars["white"] = obj['light'];
     }
-    if(obj['props']['accent'] !== '@accent') {
-      lessVars["accent"] = obj['props']['accent'];
+    if(obj['accent'] !== '') {
+      lessVars["accent"] = obj['accent'];
     }
-    if(obj['props']['dark'] !== '@dark') {
-      lessVars["dark"] = obj['props']['dark'];
+    if(obj['dark'] !== '') {
+      lessVars["dark"] = obj['dark'];
     }
-    if(obj['props']['contrast'] !== '@contrast') {
-      lessVars["contrast"] = obj['props']['contrast'];
+    if(obj['contrast'] !== '') {
+      lessVars["contrast"] = obj['contrast'];
     }
 
   }
 
+  // BG OK
   if(obj['type'] == 'background') {
 
-    if(obj['props']['backgroundtype'] !== '@backgroundtype') {
+    if(obj['backgroundtype'] !== '') {
 
-      lessVars["background-type"] = "\'" + obj['props']['backgroundtype'] + "\'";
+      lessVars["background-type"] = "\'" + obj['backgroundtype'] + "\'";
 
-      if(obj['props']['backgroundtype'] === 'gradient') {
+      // GRAD / OK
+      if(obj['backgroundtype'] === 'gradient') {
         $('body').addClass('js-novideo');
-        lessVars["gradient-from"] = obj['props']['gradientfrom'];
-        lessVars["gradient-to"] = obj['props']['gradientto'];
+        $('body').removeClass('js-image');
+        lessVars["gradient-from"] = obj['gradientfrom'];
+        lessVars["gradient-to"] = obj['gradientto'];
       }
 
-      if(obj['props']['backgroundtype'] === 'video') {
-        if(obj['props']['videotemplate'] !== '@videotemplate') {
-          $('body').removeClass('js-novideo');
-          lessVars["video-texture"] = 'color';
-          lessVars["background-color"] = "rgba(0,0,0,.3)";
-          videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/"+obj['props']['videotemplate'];
-
-          // if(obj['props']['videotemplate'] === 'video_1') {
-          //   videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/video";
-          // }
-          // if(obj['props']['videotemplate'] === 'video_2') {
-          //   videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/video02";
-          // }
-          // if(obj['props']['videotemplate'] === 'video_3') {
-          //   videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/video03";
-          // }
-
-          var videobg = $('video');
-          videobg.html('<source src="'+videourl+'.mp4" type="video/mp4"></source><source src="'+videourl+'.webm" type="video/webm"></source>' );
-          videobg.attr('poster',videourl+'.jpg');
-          videobg[0].load();
-          videobg[0].play();
-        }
+      // VIDEO OK
+      if(obj['backgroundtype'] === 'video') {
+        $('body').removeClass('js-novideo');
+        $('body').removeClass('js-image');
+        lessVars["video-texture"] = '\'color\'';
+        lessVars["background-color"] = "rgba(0,0,0,.4)";
+        videourl = "https://storage.googleapis.com/static.yexir.com/landbot/video/"+obj['videotemplate'];
+        var videobg = $('video');
+        videobg.html('<source src="'+videourl+'.mp4" type="video/mp4"></source><source src="'+videourl+'.webm" type="video/webm"></source>' );
+        videobg.attr('poster',videourl+'.jpg');
+        videobg[0].load();
+        videobg[0].play();
       }
 
-      if(obj['props']['backgroundtype'] === 'image') {
+      // IMG / OK
+      if(obj['backgroundtype'] === 'image') {
         $('body').addClass('js-novideo');
-        if(obj['props']['backgroundimageurl'] !== '@backgroundimageurl') {
-          lessVars["background-image-url"] = obj['props']['backgroundimageurl'];
-          lessVars["backgroundimageurl"] = obj['props']['backgroundimageurl'];
-          lessVars["background-color"] = "rgba(0,0,0,.4)";
-          lessVars["backgroundcolor"] = "rgba(0,0,0,.4)";
-        }
+        $('body').addClass('js-image');
+        lessVars["background-image-url"] = "\'" + obj['backgroundimageurl'] + "\'";
+        lessVars["background-color"] = "rgba(0,0,0,.4)";
       }
 
-      if(obj['props']['backgroundtype'] === 'color') {
+      // COLOR / OK
+      if(obj['backgroundtype'] === 'color') {
         $('body').addClass('js-novideo');
-        if(obj['props']['backgroundcolor'] !== '@backgroundcolor') {
-          lessVars["background-color"] = obj['props']['backgroundcolor'];
-          lessVars["backgroundcolor"] = obj['props']['backgroundcolor'];
-          console.log(obj['props']['backgroundcolor']);
-        }
+        $('body').removeClass('js-image');
+        lessVars["background-color"] = obj['backgroundcolor'];
+        lessVars["backgroundcolor"] = obj['backgroundcolor'];
+        lessVars["contrast"] = "white";
       }
 
     }
 
   }
+
+  // FOnT OK
   if(obj['type'] == 'font') {
 
-    if(obj['props']['font'] !== '@font') {
-      lessVars["font"] = obj['props']['font'];
-      lessVars["font-url"] = "https://fonts.googleapis.com/css?family=";
-      lessVars["embfonts"] = false;
+    // FAMILY OK
+    if(obj['font'] !== '') {
+      lessVars["font"] = "\'" + obj['font'].replace(/\+/g,' ') + "\'";
+      lessVars["externalfonturl"] = "\'" + "https://fonts.googleapis.com/css?family="+ obj['font']+"\'";
+      lessVars["embfonts"] = "false";
     }
-    if(obj['props']['fontsize'] !== '@fontsize') {
-      if(obj['props']['fontsize'] === 'XS') {
+
+    // SIZE OK
+    if(obj['fontsize'] !== '') {
+      if(obj['fontsize'] === 'XS') {
         lessVars["font-size"] = "11px";
       }
-      if(obj['props']['fontsize'] === 'S') {
+      if(obj['fontsize'] === 'S') {
         lessVars["font-size"] = "12px";
       }
-      if(obj['props']['fontsize'] === 'M') {
+      if(obj['fontsize'] === 'M') {
         lessVars["font-size"] = "14px";
       }
-      if(obj['props']['fontsize'] === 'L') {
+      if(obj['fontsize'] === 'L') {
         lessVars["font-size"] = "16px";
       }
-      if(obj['props']['fontsize'] === 'XL') {
+      if(obj['fontsize'] === 'XL') {
         lessVars["font-size"] = "19px";
       }
     }
@@ -198,7 +225,7 @@ changeStyles = function(obj){
   }
 
   console.log('less');
-  console.log(lessVars);
+  console.log("less.modifyVars(" + JSON.stringify(lessVars) + ")");
   less.modifyVars(lessVars);
 
 }
@@ -283,4 +310,14 @@ function addColorPicker(){
 function removeColorPicker(){
   $('.color-picker').remove();
   flagColor = 0;
+}
+
+
+// BT UPLOAD
+function showBtnUpload() {
+  $('.hu-composer-file-button').addClass('btn-upload');
+}
+
+function hideBtnUpload() {
+  $('.btn-upload').removeClass('btn-upload');
 }

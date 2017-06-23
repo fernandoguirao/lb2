@@ -6,9 +6,12 @@ function forabotTypingState( data ){
 }
 
 function forabotPreviewBot( controller ){
-  previewFooter();
   var __data = controller.getCurrentData();
-  var __storage = __data.storage;
+  previewFooter()
+  getStaticBot(__storage.tmpl_selected, __data.storage.getData() );
+
+  return;
+
   if (__storage.crea_bot === true) {
     var __previewData = {};
     __previewData.name = 'preview';
@@ -301,12 +304,12 @@ function forabotMessageReceived( message ) {
   helloumi.webchat.umichatcore.loadMessage(__message);
 }
 
-function getStaticBot(path) {
+function getStaticBot(path, optStorage) {
   var xhr = new XMLHttpRequest();
   xhr.overrideMimeType("application/json");
   xhr.onreadystatechange = function() {
     if (xhr.readyState == XMLHttpRequest.DONE) {
-      loadStaticBot(xhr.responseText);
+      loadStaticBot(xhr.responseText, null, optStorage);
     }
   }
   xhr.open('GET', path, true);
@@ -314,7 +317,7 @@ function getStaticBot(path) {
   xhr.send(null);
 }
 
-function loadStaticBot( data, step ) {
+function loadStaticBot( data, step, optStorage ) {
   var __data;
   if (typeof(data) == 'object') {
     __data = data;
@@ -325,6 +328,9 @@ function loadStaticBot( data, step ) {
       console.log('Error parsing jsbot data to JSON');
       throw err;
     }
+  }
+  if (optStorage) {
+    __data.storage = $.extend( __data.storage, optStorage);
   }
   window.jsbot = new ForaBotController();
   window.jsbot.on('output', forabotMessageReceived);

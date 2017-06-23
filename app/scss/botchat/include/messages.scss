@@ -45,11 +45,14 @@
 
         // BRAND AVATAR
         &.hu-messenger-message-brand[data-samurai^="\-"] {
+
           .hu-avatar {
+
             &:before {
               top: -8px;
               background-image: url(../files/avatar2.png)!important;
               width: 74px;
+              position: relative;
               height: 70px;
               left: -14px;
             }
@@ -90,4 +93,49 @@
   &:hover {
     opacity: .6;
   }
+}
+
+
+// ============
+// UPLOAD FILES
+// ============
+
+// Btn UPLOAD
+.hu-composer-file-button.hu-composer-btn.btn-upload {
+  img {
+    display: none;
+  }
+  &:before {
+    content: "Upload your file";
+    background-color: #f61152;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Gotham Rounded';
+    text-transform: uppercase;
+    font-size: 12px;
+    text-align: center;
+    padding: 12px;
+    border: 2px solid #d80a45;
+    position: absolute;
+    width: 183px;
+    top: -81px;
+    left: 9px;
+
+  }
+  &:hover {
+    transform: none!important;
+    &:before {
+        background-color: #ff2c68;
+        box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+// File close
+.hu-messenger-footer .hu-footer-state .hu-composer-files .hu-composer-file span.hu-composer-fileclose img {
+  width: 9px!important;
+  position: relative;
+  top: -9px;
+  left: -1px;
 }
