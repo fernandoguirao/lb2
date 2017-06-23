@@ -80,6 +80,7 @@ function Landbot(config) {
       "background-color": "white",
       "video-texture": "\"gradient\"", // gradient | image | color
       "box-footer": "@accent",
+      "header-background":"transparent",
       // "url": window.LandbotConfig.url ? window.LandbotConfig.url : document.location.origin,
       "staticUrl": window.LandbotConfig.staticUrl ? window.LandbotConfig.staticUrl : "\"https://storage.googleapis.com/static-yexir-helloumi/\"",
       // Avatar
