@@ -1,5 +1,9 @@
 $light: white;
+$dark: black;
+$accent: #F61152;
 
+// HEADER
+//
 div#hu-experiment-header .more-leads.btt, div#hu-experiment-header a.btt, div#hu-experiment-header .btt.btt, div#hu-experiment-header h1.btt {
   border: 1px solid rgba(red($light), green($light), blue($light), 0.7)!important;
 }
@@ -13,8 +17,125 @@ div#hu-experiment-header .hu-header-content a {
   padding: 12px 28px!important;
 }
 
+
+
+span.more-leads {
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: pre-wrap;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+span.btt-content {
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: pre-wrap;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1.brand-name {
+  word-break: break-word;
+  white-space: pre-wrap;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+
+// BOTOS
 .hu-messenger-body .hu-messenger-message .hu-message-content:not(.hu-message-content-buttons) {
-  background-color: white !important;
-  color: black;
+  background-color: $light !important;
+  color: $dark;
   box-shadow: 0 1px 4px 0 rgba(0,0,0,.1)!important;
+}
+
+
+// TEXTAREA
+textarea#hu-composer-box {
+  min-height: 49px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-y: auto;
+  resize: none;
+  padding: 16px 10px 0;
+}
+
+.hu-composer-send-button.hu-composer-btn {
+  left: -21px;
+  top: 12px!important;
+  &.hu-js-hide {
+    display: inherit!important;
+    opacity: .3;
+    pointer-events: none;
+  }
+}
+.hu-composer-file-button.hu-composer-btn {
+  left: -11px!important;
+}
+
+.hu-composer-emoji-button.hu-composer-btn {
+  left: 15px!important;
+}
+
+@media screen and (min-width:800px){
+
+  .hu-composer-send-button.hu-composer-btn {
+    &:after {
+      content: "Press enter to send";
+      position: absolute;
+      bottom: -75px;
+      right: -36px;
+      color: $light;
+      text-transform: uppercase;
+      font-family: "Gotham Rounded";
+      font-weight: 300;
+      font-size: 11px;
+      width: 133px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    &.hu-js-hide {
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  textarea#hu-composer-box {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    padding: 22px;
+    background-color: $light!important;
+    border-radius: 4px;
+    border: 7px solid $light!important;
+    border-bottom-width: 20px!important;
+    transition: all, .25s;
+    overflow-y: auto;
+    background: $light!important;
+    resize: none;
+  }
+
+  textarea#hu-composer-box:focus {
+    padding-bottom: 35px!important;
+    box-shadow: 0 0 0px 3px $accent!important;
+  }
+
+  .hu-messenger-footer {
+    background-color: transparent!important;
+  }
+
+  .hu-composer-send-button.hu-composer-btn {
+    left: -61px;
+    top: 23px!important;
+  }
+  .hu-composer-file-button.hu-composer-btn, .hu-composer-emoji-button.hu-composer-btn {
+    bottom: -31px!important;
+  }
 }

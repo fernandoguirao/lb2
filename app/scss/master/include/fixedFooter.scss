@@ -118,6 +118,9 @@
     box-shadow: 0 0 9px -1px rgba(0,0,0,.2);
 
   }
+  .fixedFooterBg {
+    display: none;
+  }
   .fixedFooter .logo,.fixedFooter .description {
     display: none;
   }
@@ -147,7 +150,11 @@
   }
 
   body.show-footer .hu-messenger-footer,body.show-footer #hu-container-messenger .hu-messenger-body .hu-messenger-message .hu-message-container .hu-message-content.hu-message-content-buttons {
-    transform: translateY(-43px);
+    transform: translateY(-46px);
+    border-radius: 0!important;
+  }
+  body.show-footer div#hu-container-widget.hu-js-open {
+    padding-bottom: 29px!important;
   }
 }
 
