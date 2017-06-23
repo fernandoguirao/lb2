@@ -24,7 +24,7 @@ changeStyles = function(obj){
         lessVars["embfonts"] = false;
         lessVars["background-type"] = "\'gradient\'";
         lessVars["accent"] = "#de4561";
-        lessVars["contrast"] = "#00b2a9";
+        lessVars["contrast"] = "white";
         lessVars["gradient-to"] = "#55e2ba";
         lessVars["gradient-from"] = "#00b2a9";
         lessVars["font-size"] = "16px";
@@ -53,9 +53,10 @@ changeStyles = function(obj){
         lessVars["font"] = "Montserrat";
         lessVars["externalfonturl"] = "\'" + "https://fonts.googleapis.com/css?family="+ lessVars['font']+"\'";
         lessVars["embfonts"] = false;
+        lessVars["header-background"] = "white";
         lessVars["background-type"] = "\'gradient\'";
         lessVars["accent"] = "#d35f8f";
-        lessVars["contrast"] = "#464fac";
+        lessVars["contrast"] = "#d35f8f";
         lessVars["gradient-to"] = "#ffe199";
         lessVars["gradient-from"] = "#ffad59";
         lessVars["font-size"] = "14px";
@@ -109,7 +110,7 @@ changeStyles = function(obj){
     // Logo img OK
     if(obj['logo'] !== '') {
       $('body').addClass('js-logo');
-      $('.bracd-logo').attr('src',obj['logo']);
+      $('.brand-logo').attr('src',obj['logo']);
       $('body').append('<style>.js-logo #hu-container-widget[data-platform="landbot"] .hu-js-open .hu-messenger-body .hu-messenger-message.hu-messenger-message-brand[data-samurai^="-"] .hu-avatar:before { background-image: url('+obj['logo']+')!important; }</style>');
     }
 
@@ -129,7 +130,7 @@ changeStyles = function(obj){
   if(obj['type'] == 'colours') {
 
     if(obj['light'] !== '') {
-      lessVars["white"] = obj['light'];
+      lessVars["light"] = obj['light'];
     }
     if(obj['accent'] !== '') {
       lessVars["accent"] = obj['accent'];

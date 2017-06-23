@@ -1,11 +1,11 @@
-$light: white;
-$accent: #f61152;
-$dark: #1f1f1f;
-$font: "Gotham Rounded";
+@light: white;
+@accent: #f61152;
+@dark: #1f1f1f;
+@font: "Gotham Rounded";
 
 .fixedFooterBg {
   position: fixed;
-  background: $light!important;
+  background: @light!important;
   width: 100%;
   bottom: -16px;
   left: 0;
@@ -28,7 +28,7 @@ $font: "Gotham Rounded";
       display: inline-block;
     }
     span {
-      font-family: $font;
+      font-family: @font;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
@@ -44,18 +44,18 @@ $font: "Gotham Rounded";
       span {
         font-size: 13px;
         font-weight: lighter;
-        color: $dark;
+        color: @dark;
         b {
           text-transform: uppercase;
-          color: $accent;
+          color: @accent;
         }
       }
     }
     .buttons {
       i {
-        background: $accent;
+        background: @accent;
         position: absolute;
-        color: $light;
+        color: @light;
         border-radius: 100%;
         width: 33px;
         overflow: hidden;
@@ -71,7 +71,7 @@ $font: "Gotham Rounded";
       }
       div {
         position: relative;
-        border: 2px solid $accent;
+        border: 2px solid @accent;
         border-radius: 30px;
         padding: 10px 22px;
         cursor: pointer;
@@ -85,18 +85,18 @@ $font: "Gotham Rounded";
         font-size: 12px;
       }
       .back-btn {
-        background-color: $light;
+        background-color: @light;
         span {
-          color: $accent;
+          color: @accent;
           margin-left: 24px;
         }
       }
       .publish-btn {
-        background-color: $accent;
-        color: $light;
+        background-color: @accent;
+        color: @light;
         padding: 10px 42px;
         &:hover {
-          background-color: lighten($accent,5%);
+          background-color: lighten(@accent,5%);
         }
       }
     }
@@ -110,7 +110,7 @@ $font: "Gotham Rounded";
 
 @media screen and (max-width: 800px){
   .fixedFooter {
-    background-color: $light;
+    background-color: @light;
     bottom: 0;
     text-align: left;
     padding-left: 0;
@@ -141,7 +141,7 @@ $font: "Gotham Rounded";
   .fixedFooter .foot-container .description, .fixedFooter .foot-container .buttons {
     position: relative;
     top: 0;
-    background-color: $light;
+    background-color: @light;
   }
   .fixedFooter .foot-container {
     padding: 3px 0 6px;
