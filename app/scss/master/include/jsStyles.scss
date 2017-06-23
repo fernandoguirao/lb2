@@ -1,38 +1,40 @@
+// OK
 .js-logo {
 
-  div#hu-experiment-header .hu-header-content img {
-    max-width: 103px;
-    max-height: 45px;
-    margin-right: 12px;
-    height: 100%;
-    width: auto;
-    margin-top: -8px;
+  div#hu-experiment-header .hu-header-content img.brand-logo {
+    max-width: 103px!important;
+    max-height: 45px!important;
+    height: 100%!important;
+    width: auto!important;
+    margin-top: -8px!important;
+    margin-right: 12px!important;
   }
   #hu-container-widget[data-platform="landbot"] .hu-js-open .hu-messenger-body .hu-messenger-message.hu-messenger-message-brand[data-samurai^="-"] .hu-avatar {
     background-color: rgba(255, 255, 255, 0.2) !important;
     &:before {
-      width: 27px;
-      height: 27px;
-      background-size: contain;
-      top: 6px;
-      left: 6px;
-      background-position: center;
+      width: 27px!important;
+      height: 27px!important;
+      top: 6px!important;
+      left: 25px!important;
     }
   }
 }
 
+// OK
 .js-novideo {
   .bg-texture, video {
     display: none!important;
   }
 }
 
+// OK
 .js-image {
   #hu-experiment-header,#hu-container-widget {
     background-color: rgba(0,0,0,.4);
   }
 }
 
+// OK
 .js-template {
   div#hu-experiment-header .more-leads, div#hu-experiment-header a, div#hu-experiment-header .btt, div#hu-experiment-header h1 {
     color: white;

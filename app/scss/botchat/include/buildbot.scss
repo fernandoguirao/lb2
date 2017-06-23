@@ -1,3 +1,25 @@
+// BRAND AVATAR
+#hu-container-widget[data-platform="landbot"] .hu-js-open {
+  .hu-messenger-body {
+      .hu-messenger-message {
+        &.hu-messenger-message-brand[data-samurai^="\-"] {
+          .hu-avatar {
+            &:before {
+              background-image: url(../files/avatar2.png)!important;
+              width: 70px!important;
+              height: 70px!important;
+              margin: -20px -19px;
+              top: -10px;
+            }
+            background-color: transparent!important;
+          }
+        }
+      }
+  }
+}
+// End brand avatar
+
+
 #hu-container-widget {
   .hu-messenger-body .hu-messenger-message .hu-message-container .hu-message-content p {
     font-size: 15px!important;
@@ -13,5 +35,45 @@ textarea#hu-composer-box {
 @media screen and (min-width:800px){
   textarea#hu-composer-box {
     padding-top: 21px;
+  }
+}
+
+// LOGO
+div#hu-experiment-header .hu-header-content img.brand-logo {
+  width: 72px;
+  max-height: inherit;
+  margin: -3px -6px -8px -8px;
+}
+
+
+// Botón de upload
+.hu-composer-file-button.hu-composer-btn.btn-upload {
+  img {
+    display: none;
+  }
+  &:before {
+    content: "Upload your file";
+    background-color: #f61152;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Gotham Rounded';
+    text-transform: uppercase;
+    font-size: 12px;
+    text-align: center;
+    padding: 12px;
+    border: 2px solid #d80a45;
+    position: absolute;
+    width: 183px;
+    top: -91px;
+    left: 18px;
+
+  }
+  &:hover {
+    transform: none!important;
+    &:before {
+        background-color: #ff2c68;
+        box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.3);
+    }
   }
 }

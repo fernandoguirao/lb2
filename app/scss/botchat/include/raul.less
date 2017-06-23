@@ -1,22 +1,22 @@
-$light: white;
-$contrast: white;
-$dark: black;
-$accent: #F61152;
-$header-background: transparent;
-$font-size: 14px;
-$font: "Gotham Rounded";
+@light: white;
+@contrast: white;
+@dark: black;
+@accent: #F61152;
+@header-background: transparent;
+@font-size: 14px;
+@font: "Gotham Rounded";
 
 // HEADER
 
 div#hu-experiment-header  {
- background-color: $header-background!important;
+ background-color: @header-background!important;
 }
 div#hu-experiment-header .more-leads.btt, div#hu-experiment-header a.btt, div#hu-experiment-header .btt.btt, div#hu-experiment-header h1.btt {
-  border: 1px solid rgba(red($light), green($light), blue($light), 0.7)!important;
+  border: 1px solid rgba(red(@light), green(@light), blue(@light), 0.7)!important;
 }
 
 div#hu-experiment-header {
-  border-bottom-color: rgba(red($contrast), green($contrast), blue($contrast), 0.4);
+  border-bottom-color: rgba(red(@contrast), green(@contrast), blue(@contrast), 0.4);
 }
 
 .btt .hu-bold {
@@ -60,8 +60,8 @@ h1.brand-name {
 
 // BOTONES
 .hu-messenger-body .hu-messenger-message .hu-message-content:not(.hu-message-content-buttons) {
-  background-color: $light !important;
-  color: $dark;
+  background-color: @light !important;
+  color: @dark;
   box-shadow: 0 1px 4px 0 rgba(0,0,0,.1)!important;
 }
 
@@ -103,11 +103,11 @@ textarea#hu-composer-box {
       position: absolute;
       bottom: -75px;
       right: -36px;
-      color: $light;
+      color: @light;
       text-transform: uppercase;
-      font-family: $font;
+      font-family: @font;
       font-weight: 300;
-      font-size: $font-size -3;
+      font-size: @font-size -3;
       width: 133px;
       word-wrap: break-word;
       white-space: pre-wrap;
@@ -127,19 +127,19 @@ textarea#hu-composer-box {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     padding: 22px 61px 22px 22px;
-    background-color: $light!important;
+    background-color: @light!important;
     border-radius: 4px;
-    border: 7px solid $light!important;
+    border: 7px solid @light!important;
     border-bottom-width: 20px!important;
     transition: all, .25s;
     overflow-y: auto;
-    background: $light!important;
+    background: @light!important;
     resize: none;
   }
 
   textarea#hu-composer-box:focus {
     padding-bottom: 35px!important;
-    box-shadow: 0 0 0px 3px $accent!important;
+    box-shadow: 0 0 0px 3px @accent!important;
   }
 
   .hu-messenger-footer {
@@ -203,7 +203,7 @@ textarea#hu-composer-box {
 
 // COLOR PICKER
 .color-picker {
-  background: $light;
+  background: @light;
   width: calc(100% - 32px);
   height: 55px !important;
   margin: 0 0 -29px;
@@ -238,7 +238,7 @@ textarea#hu-composer-box {
 
 // Captura imágenes
 .hu-messenger-footer .hu-footer-state .hu-composer-files {
-  background: $light!important;
+  background: @light!important;
   border-radius: 6px!important;
   @media screen and (max-width:800px){
     padding: 9px 19px 20px!important;
@@ -250,7 +250,6 @@ textarea#hu-composer-box {
     left: -1px;
   }
 }
-
 
 // Mensajes imagen
 .hu-message-content.hu-message-content-image {
