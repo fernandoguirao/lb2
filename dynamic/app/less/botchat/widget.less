@@ -9,8 +9,8 @@
   &[data-textbox="hidden"]:not([data-assigned="agent"]), &:not([data-textbox="hidden"]):not([data-textbox="show"]) {
     @media screen and (max-width: 800px){
 
-      div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages {
-        padding-bottom: 36px!important;
+      div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages#hu-webchat-messages {
+        // padding-bottom: 36px!important;
       }
     }
   }
@@ -29,7 +29,7 @@
     & when (@background-type = 'image') {
       background-size: cover;
       background-position: center;
-      background-color: @background-color;
+      background-color: transparent;
     }
     & when (@background-type = 'color') {
       background-color: @background-color;
@@ -58,8 +58,8 @@
       .hu-messenger-body-state {
         padding-top: 10px;
         // padding-top: 25px !important;
-        .hu-messenger-messages {
-          padding-bottom: 10px;
+        .hu-messenger-messages#hu-webchat-messages {
+          padding-bottom: 36px;
           .hu-messenger-date.hu-js-date {
             display: none !important;
           }

@@ -77,11 +77,13 @@ function Landbot(config) {
       "gradient-from": "@orange",
       "gradient-to": "@orange-light",
       "background-image-url": "\"https://storage.googleapis.com/media.yexir.com/channels_back/31.png\"",
-      "background-color": "transparent",
+      "background-color": "white",
       "video-texture": "\"gradient\"", // gradient | image | color
       "box-footer": "@accent",
-      "url": "",
-      "staticUrl": "\"https://storage.googleapis.com/static-yexir-helloumi/\""
+      // "url": window.LandbotConfig.url ? window.LandbotConfig.url : document.location.origin,
+      "staticUrl": window.LandbotConfig.staticUrl ? window.LandbotConfig.staticUrl : "\"https://storage.googleapis.com/static-yexir-helloumi/\"",
+      // Avatar
+      "logo": window.LandbotConfig.logo ? "\""+window.LandbotConfig.logo+"\"" : "\"http://bueninvento.es/umiexp2.png\"",
     }
   };
 
@@ -117,10 +119,26 @@ Landbot.prototype.createLandbot = function createLandbot() {
 
 Landbot.prototype.showOverlay = function showOverlay() {
   var body = document.getElementsByTagName('BODY')[0];
+  var bg, config = this.config;
+  if (config.custom['background-type'] === '\"gradient\"')
+    bg = 'linear-gradient(to bottom, '+ config.custom['gradient-from'] +' 0%, '+ config.custom['gradient-to'] +' 100%)';
+  else if (config.custom['background-type'] === '\"image\"')
+    bg = 'url('+ config.custom['background-image-url'] +')';
+  else if (config.custom['background-type'] === '\"color\"')
+    bg = config.custom['background-color'];
+  else if (config.custom['background-type'] === '\"video\"')
+    if (config.custom['video-texture'] === '\"gradient\"')
+      bg = 'linear-gradient(to bottom, '+ config.custom['gradient-from'] +' 0%, '+ config.custom['gradient-to'] +' 100%)';
+    else if (config.custom['video-texture'] === '\"image\"')
+      bg = 'url('+ config.custom['background-image-url'] +')';
+    else if (config.custom['video-texture'] === '\"color\"')
+      bg = config.custom['background-color'];
+
+
   this.generateTag('div', body, {
     id: 'loading-overlay',
   }, {
-    style: 'background: linear-gradient(to bottom, #ffad59 0%, #ffe199 100%); z-index: 9999; width: 100%; height: 100%; position: absolute; left: 0; top: 0;'
+    style: 'background: '+bg+'; z-index: 9999; width: 100%; height: 100%; position: absolute; left: 0; top: 0;'
   });
 };
 
