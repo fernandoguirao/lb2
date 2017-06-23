@@ -28,6 +28,7 @@ changeStyles = function(obj){
         lessVars["gradient-to"] = "#55e2ba";
         lessVars["gradient-from"] = "#00b2a9";
         lessVars["font-size"] = "16px";
+        lessVars["header-background"] = "transparent";
       }
       // OK
       if(obj['templatename'] === 'Reflektor') {
@@ -44,6 +45,7 @@ changeStyles = function(obj){
         lessVars["gradient-to"] = "#F11952";
         lessVars["gradient-from"] = "#FF575B";
         lessVars["font-size"] = "16px";
+        lessVars["header-background"] = "transparent";
       }
       // OK
       if(obj['templatename'] === 'Starman') {
@@ -65,6 +67,7 @@ changeStyles = function(obj){
       if(obj['templatename'] === 'Caribou') {
         $('body').addClass('js-novideo');
         $('body').addClass('js-template');
+        lessVars["header-background"] = "transparent";
         $('body').removeClass('js-template2');
         lessVars["background-type"] = "\'color\'";
         lessVars["background-color"] = "#34495e";
@@ -82,6 +85,7 @@ changeStyles = function(obj){
         $('body').removeClass('js-template2');
         $('body').removeClass('js-template');
         $('body').removeClass('js-novideo');
+        lessVars["header-background"] = "transparent";
         lessVars["embfonts"] = true;
         lessVars["font"] = "Gotham Rounded";
         lessVars["font-size"] = "15px";
