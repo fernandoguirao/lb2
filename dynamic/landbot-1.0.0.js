@@ -53,7 +53,7 @@ function Landbot(config) {
       "accent-0": "lighten(@accent,3%)",
       "accent-1": "darken(saturate(@accent,20%),11%)",
       "light": "@white",
-      "contrast": "@violet",
+      "contrast": "white",
       "contrast-0": "lighten(@contrast,10%)",
       "contrast-light": "lighten(@contrast,30%)",
       // Fonts
@@ -81,6 +81,7 @@ function Landbot(config) {
       "background-color": "white",
       "video-texture": "\"gradient\"", // gradient | image | color
       "box-footer": "@accent",
+      "header-background":"transparent",
       // "url": window.LandbotConfig.url ? window.LandbotConfig.url : document.location.origin,
       "staticUrl": window.LandbotConfig.staticUrl ? window.LandbotConfig.staticUrl : "\"https://storage.googleapis.com/static-yexir-helloumi/\"",
       // Avatar
@@ -89,6 +90,7 @@ function Landbot(config) {
   };
 
   this.config = this.extend( config );
+  this.config.custom.font = this.config.custom.font.replace(/\+/g,' ');
 }
 
 /**

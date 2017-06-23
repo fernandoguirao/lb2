@@ -30,7 +30,8 @@ gulp.task('js-browser-sync', ['scripts'], (done) => {
 gulp.task('styles', () => {
   let master = gulp.src([
     `${path.app2.less}mixins.less`,
-    `${path.app2.less}master/*.less`
+    `${path.app2.less}master/*.less`,
+    `${path.app2.less}lastmakeup.less`,
   ])
     .pipe($.concat(`master.less`))
     .pipe(gulp.dest(`${path.dist2.css}`))
