@@ -1,0 +1,17 @@
+#hu-container-widget {
+  .hu-messenger-body .hu-messenger-message .hu-message-container .hu-message-content p {
+    font-size: 15px!important;
+    letter-spacing: -.1px;
+  }
+}
+
+textarea#hu-composer-box {
+  font-size: 15px!important;
+  letter-spacing: -.1px;
+}
+
+@media screen and (min-width:800px){
+  textarea#hu-composer-box {
+    padding-top: 21px;
+  }
+}
