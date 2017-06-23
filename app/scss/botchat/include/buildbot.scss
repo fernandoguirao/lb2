@@ -77,3 +77,9 @@ div#hu-experiment-header .hu-header-content img.brand-logo {
     }
   }
 }
+
+// OCULTAR EMOJI E IMAGEN
+//
+.hu-composer-file-button img, .hu-composer-emoji-button img {
+  opacity: 0;
+}
