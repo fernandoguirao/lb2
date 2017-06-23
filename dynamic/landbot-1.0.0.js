@@ -88,6 +88,7 @@ function Landbot(config) {
   };
 
   this.config = this.extend( config );
+  this.config.custom.font = this.config.custom.font.replace(/\+/g,' ');
 }
 
 /**

@@ -13,12 +13,14 @@ div#hu-experiment-header {
   // width: 100%;
   // margin: 0;
   // left: 0;
+  
+
   & when (@background-type = 'gradient') or (@background-type = 'color') {
-    border-bottom: 1px solid fade(@accent, 40%);
+    border-bottom: 1px solid fade(@contrast, 40%);
     .more-leads, a, .btt, h1 {
-      color: @accent;
+      color: @contrast;
       &.btt {
-        border: 1px solid fade(@accent, 40%);
+        border: 1px solid fade(@contrast, 40%);
         &:hover {
           background-color: @light;
         }
