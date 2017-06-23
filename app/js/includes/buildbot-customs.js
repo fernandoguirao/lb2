@@ -9,9 +9,10 @@ changeStyles = function(obj){
 
   console.log(obj);
 
+  // OK
   if(obj['type'] == "template") {
 
-    if(obj['templatename'] !== '@template') {
+    if(obj['templatename'] !== '') {
 
       // OK
       if(obj['templatename'] === 'Kashmir') {
