@@ -54,4 +54,18 @@
    div#hu-experiment-header  {
     background-color: white;
   }
+  #hu-container-widget[data-platform="landbot"] .hu-js-open {
+    .hu-messenger-body {
+        .hu-messenger-message {
+          &.hu-messenger-message-brand[data-samurai^="\-"] {
+            .hu-avatar {
+              &:before {
+                margin: -8px -15px;
+              }
+            }
+          }
+        }
+    }
+  }
+  // End brand avatar
 }

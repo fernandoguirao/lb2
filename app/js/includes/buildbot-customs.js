@@ -130,7 +130,7 @@ changeStyles = function(obj){
   if(obj['type'] == 'colours') {
 
     if(obj['light'] !== '') {
-      lessVars["white"] = obj['light'];
+      lessVars["light"] = obj['light'];
     }
     if(obj['accent'] !== '') {
       lessVars["accent"] = obj['accent'];
