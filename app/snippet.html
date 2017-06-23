@@ -1,6 +1,6 @@
 <script type="text/javascript">
   function loadHelloumiLandbot() {
-    HULandbot = new Landbot({
+    window.LandbotConfig = {
       "staticUrl": "https://storage.googleapis.com/static.yexir.com/",
       "channelToken": "H-91-VMD37U2F2B7A0CDL",
       "brandID": 251,
@@ -23,36 +23,55 @@
         "messages": {
           "0": {
             "type": "text",
-            "message": "Aquí te doy la bienvenida",
-            "features": {
-            },
-            "timestamp": "1",
+            "message": "Hi there *Hunter*! 😻",
+            "timestamp": "00000001",
             "readed": false,
             "samurai": -22,
             "next": "1",
             "isLastMessage": false
           },
           "1": {
-            "type": "dialog",
-            "title": "Dime",
-            "buttons": ["Just a boy", "Just a girl"],
-            "payloads": ["Just a boy", "Just a girl"],
-            "features": {
-              "buttons": {
-                "includes": ["image", "icon", "none"],
-                "images": ["http://img05.deviantart.net/0cb3/i/2017/170/1/7/bot_by_mrgreenlight-dbdcfzg.png", ", "],
-                "icons": ["none", "check", "none"]
-              }
-            },
-            "timestamp": "11",
+            "type": "text",
+            "message": "You thought you would find a Landing Page here, uh?",
+            "timestamp": "00000002",
             "readed": false,
             "samurai": -22,
-            "next": false, // "1"
-            "isLastMessage": true, // false if "1"
-          }
+            "next": "2",
+            "isLastMessage": false
+          },
+          "2": {
+            "type": "image",
+            "url": "files/botimg/welcome.gif",
+            "timestamp": "00000003",
+            "readed": false,
+            "samurai": -22,
+            "next": "3",
+            "isLastMessage": false
+          },
+          "3": {
+            "type": "text",
+            "message": "Well, the problem with Landing Pages is that they hardly engage... 🤖",
+            "timestamp": "00000004",
+            "readed": false,
+            "samurai": -22,
+            "next": "4",
+            "isLastMessage": false
+          },
+          "4": {
+            "type": "dialog",
+            "title": "And you might think _“Well, you’re a chatbot, I’ve seen thousands like you...”_",
+            "timestamp": "00000005",
+            "buttons": ["Nah, I like you 🙂", "Yes you’re right… 😒"],
+            "payloads": ["Nah, I like you", "Yes you’re right..."],
+            "readed": false,
+            "samurai": -22,
+            "next": false,
+            "isLastMessage": true
+          },
         }
       }
-    });
+    };
+    HULandbot = new Landbot(window.LandbotConfig);
     HULandbot.createLandbot();
   }
 </script>
