@@ -52,7 +52,7 @@ function Landbot(config) {
       "accent-0": "lighten(@accent,3%)",
       "accent-1": "darken(saturate(@accent,20%),11%)",
       "light": "@white",
-      "contrast": "@violet",
+      "contrast": "white",
       "contrast-0": "lighten(@contrast,10%)",
       "contrast-light": "lighten(@contrast,30%)",
       // Fonts
