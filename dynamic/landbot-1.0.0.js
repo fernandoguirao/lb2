@@ -10,7 +10,7 @@ function Landbot(config) {
     'url': document.location.origin,
     'livechatVersion': '1.0.1',
     'staticUrl': 'https://storage.googleapis.com/static-yexir-helloumi/',
-    'serverUrl': 'https://daisho.yexir.com',
+    'serverUrl': null,
     'channelToken': null,
     'brandID': null,
     'brandName': null,

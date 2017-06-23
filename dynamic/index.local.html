@@ -9,6 +9,7 @@
     <script type="text/javascript">
       window.LandbotConfig = {
         'staticUrl': './',
+        'serverUrl' : 'http://localhost:8000',
         'channelToken': "H-5-W5WY6V4NABEGL0MN",
         'brandID': 1,
         'brandName': 'landbot',
@@ -33,7 +34,7 @@
               'title': 'Press START',
               'buttons': ['START'],
               'payloads': ['start'],
-              'features': {
+              'extra': {
                 'hide_textbox': true,
                 'buttons': {
                   'includes': ['none', 'none', 'none'],
