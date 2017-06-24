@@ -9,7 +9,7 @@ function Landbot(config) {
     'description': 'Landbot.io is a tool to create conversational interfaces in substitution of forms. No coding required!',
     'url': document.location.origin,
     'livechatVersion': '1.0.1',
-    'staticUrl': 'https://storage.googleapis.com/static-yexir-helloumi/',
+    'staticUrl': null,
     'serverUrl': null,
     'channelToken': null,
     'brandID': null,
@@ -238,16 +238,16 @@ Landbot.prototype.generateDocument = function generateDocument() {
     env: "development", // Values: development | production
     globalVars: this.config.custom
   };
-  this.generateTag('script', head, {
-    src: 'https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js'
-  }, {
-    onload: 'window.less.pageLoadFinished.then(function() { HULandbot.hideOverlay(); });'
-  });
   // this.generateTag('script', head, {
-  //   src: 'less.min.js'
+  //   src: 'https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js'
   // }, {
   //   onload: 'window.less.pageLoadFinished.then(function() { HULandbot.hideOverlay(); });'
   // });
+  this.generateTag('script', head, {
+    src: this.config.staticUrl + 'landbot/js/less.min.js'
+  }, {
+    onload: 'window.less.pageLoadFinished.then(function() { HULandbot.hideOverlay(); });'
+  });
   // master.less
   this.generateTag('link', head, {
     rel: 'stylesheet/less',
