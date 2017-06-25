@@ -4,49 +4,20 @@ div#hu-experiment-header {
   font-family: @font, @font-type;
   line-height: 1.2;
   background: @header-background;
-  // background-color: @background-color;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.03);
-  // position: relative;
-  // padding: 20px 0 13px;
-  // display: block;
-  // border-bottom: 1px solid rgba(255,255,255,.2);
-  // width: 100%;
-  // margin: 0;
-  // left: 0;
-  
-  .more-leads, a, .btt, h1 {
+
+  .more-leads, a, h1 {
+    & when (@background-type = 'gradient'), (@background-type = 'color') {
       color: @accent;
       &.btt {
         border: 1px solid fade(@accent, 40%);
         &:hover {
           background-color: @light;
-
         }
       }
     }
-
-  
-  & when (@background-type = 'gradient') or (@background-type = 'color') {
-    border-bottom: 1px solid fade(@contrast, 40%);
-    .more-leads, a, .btt, h1 {
-      color: @contrast;
-      &.btt {
-        border: 1px solid fade(@contrast, 40%);
-        &:hover {
-          background-color: @light;
-
-        }
-      }
-    }
-  }
-  & when (@background-type = 'image'){
-    background-color: @background-color;
-  }
-  & when (@background-type = 'image') or (@background-type = 'video') {
-    // Todos los elementos a @light
-    border-bottom: 1px solid fade(@light, 40%);
-    .more-leads, a, .btt, h1 {
-      color: fade(@light, 100%);
+    & when (@background-type = 'image'), (@background-type = 'video') {
+      color: @light;
       &.btt {
         border: 1px solid fade(@light, 40%);
         &:hover {
@@ -54,6 +25,10 @@ div#hu-experiment-header {
         }
       }
     }
+  }
+
+  & when (@background-type = 'image'){
+    background-color: @background-color;
   }
   // &.hu-scrolled {
   //   animation-name: hide-header;
