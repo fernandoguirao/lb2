@@ -110,3 +110,25 @@ div#hu-experiment-header {
 .color-picker {
   width: calc(100% - 32px)!important;
 }
+
+// PH
+div#hu-experiment-header .hu-header-content a.ph {
+  width: inherit!important;
+  padding: 0!important;
+  max-width: inherit!important;
+  max-height: inherit!important;
+  margin: 0 0 0 5px!important;
+  position: relative;
+}
+
+div#hu-experiment-header .hu-header-content a.ph:hover {
+  box-shadow: none!important;
+}
+
+div#hu-experiment-header .hu-header-content a.ph img {
+  margin-top: 12px;
+  width: 52px;
+  height: auto!important;
+  max-width: inherit;
+  max-height: inherit;
+}
