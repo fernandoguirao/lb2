@@ -1,93 +1,181 @@
 <script type="text/javascript">
+  window.LandbotConfig = {
+    "staticUrl": "https://storage.googleapis.com/static.yexir.com/",
+    "serverUrl": "https://daisho.yexir.com",
+    "channelToken": "H-91-VMD37U2F2B7A0CDL",
+    "brandID": 251,
+    "brandName": "landbot",
+    "logo": "./files/avatar2.png",
+    "apiKey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
+    "authDomain": "daisho-yexir.firebaseapp.com",
+    "databaseURL": "https://daisho-yexir.firebaseio.com",
+    "storageBucket": "daisho-yexir.appspot.com",
+    "background-video": true,
+    "videoname": "video",
+    'custom': {
+      "background-type": "\"video\"",
+      "background-color": "rgba(0,0,0,.4)",
+      "video-texture": "\"color\"",
+      "staticUrl": "\"https://storage.googleapis.com/static.yexir.com/\""
+    },
+    "onloadLivechatJS": "dynamicWelcome()"
+  };
+
+  window.STORAGE_KEY = 'helloumi-webchat-customer-' + window.LandbotConfig.channelToken;
+  window.CST_BACKUP = localStorage.getItem( window.STORAGE_KEY );
+
   function loadHelloumiLandbot() {
-    window.LandbotConfig = {
-      "staticUrl": "https://storage.googleapis.com/static.yexir.com/",
-      "channelToken": "H-91-VMD37U2F2B7A0CDL",
-      "brandID": 251,
-      "brandName": "landbot",
-      "logo": "./files/avatar2.png",
-      "apiKey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
-      "authDomain": "daisho-yexir.firebaseapp.com",
-      "databaseURL": "https://daisho-yexir.firebaseio.com",
-      "storageBucket": "daisho-yexir.appspot.com",
-      "background-video": true,
-      "videoname": "video",
-      'custom': {
-        "background-type": "\"video\"",
-        "background-color": "rgba(0,0,0,.4)",
-        "video-texture": "\"color\"",
-        "staticUrl": "\"https://storage.googleapis.com/static.yexir.com/\""
-      },
-      "welcome": {
-        "init": "0",
-        "messages": {
-          "0": {
-            "type": "text",
-            "message": "Hi there *Hunter*! 😻",
-            "timestamp": "00000001",
-            "readed": false,
-            "samurai": -22,
-            "next": "1",
-            "isLastMessage": false,
-            "features": {
-              "hide_textbox": true
-            }
-          },
-          "1": {
-            "type": "text",
-            "message": "You thought you would find a Landing Page here, uh?",
-            "timestamp": "00000002",
-            "readed": false,
-            "samurai": -22,
-            "next": "2",
-            "isLastMessage": false,
-            "features": {
-              "hide_textbox": true
-            }
-          },
-          "2": {
-            "type": "image",
-            "url": "files/botimg/welcome.gif",
-            "timestamp": "00000003",
-            "readed": false,
-            "samurai": -22,
-            "next": "3",
-            "isLastMessage": false,
-            "features": {
-              "hide_textbox": true
-            }
-          },
-          "3": {
-            "type": "text",
-            "message": "Well, the problem with Landing Pages is that they hardly engage... 🤖",
-            "timestamp": "00000004",
-            "readed": false,
-            "samurai": -22,
-            "next": "4",
-            "isLastMessage": false,
-            "features": {
-              "hide_textbox": true
-            }
-          },
-          "4": {
-            "type": "dialog",
-            "title": "And you might think _“Well, you’re a chatbot, I’ve seen thousands like you...”_",
-            "timestamp": "00000005",
-            "buttons": ["Nah, I like you 🙂", "Yes you’re right… 😒"],
-            "payloads": ["Nah, I like you", "Yes you’re right..."],
-            "readed": false,
-            "samurai": -22,
-            "next": false,
-            "isLastMessage": true,
-            "features": {
-              "hide_textbox": true
-            }
-          },
+    HULandbot = new Landbot(window.LandbotConfig);
+    HULandbot.createLandbot();
+  }
+
+  function dynamicWelcome() {
+    if ( localStorage.getItem(window.STORAGE_KEY) ) {
+      localStorage.removeItem(window.STORAGE_KEY)
+    }
+
+    renderHelloumiLiveChat( false, loadStaticWelcome);
+    // document.getElementById('hu-webchat-loader').style.setProperty('display', 'none', 'important');
+  }
+
+  function loadStaticWelcome() {
+    var firstTimeBot = {
+      "name": "Welcome",
+      "init": "welcome_0",
+      "status": {
+        "welcome_0": {
+          "text": "Hi there *Hunter*! 😻",
+          "next": "welcome_1",
+          "extra": {
+            "hide_textbox": true
+          }
+        },
+        "welcome_1": {
+          "text": "You thought you would find a Landing Page here, uh?",
+          "next": "welcome_2",
+          "extra": {
+            "hide_textbox": true
+          }
+        },
+        "welcome_2": {
+          "image": "files/botimg/welcome.gif",
+          "next": "welcome_3",
+          "extra": {
+            "hide_textbox": true
+          }
+        },
+        "welcome_3": {
+          "text": "Well, the problem with Landing Pages is that they hardly engage... 🤖",
+          "next": "welcome_4",
+          "extra": {
+            "hide_textbox": true
+          }
+        },
+        "welcome_4": {
+          "text": "And you might think _“Well, you’re a chatbot, I’ve seen thousands like you...”_",
+          "buttons": [
+            { "caption": "Nah, I like you 🙂", "next": false },
+            { "caption": "Yes you’re right… 😒", "next": false }
+          ],
+          "next": false,
+          "extra": {
+            "hide_textbox": true
+          }
         }
       }
     };
-    HULandbot = new Landbot(window.LandbotConfig);
-    HULandbot.createLandbot();
+    var welcomeBackBot = {
+      "name": "Welcome",
+      "init": "welcome_0",
+      "status": {
+        "welcome_0": {
+          "text": "Welcome back!",
+          "next": ["welcome_1"],
+          "extra": {
+            "hide_textbox": true
+          }
+        },
+        "welcome_1": {
+          "text": "So good to see you around again 😙",
+          "next": "welcome_2",
+          "extra": {
+            "hide_textbox": true
+          }
+        },
+        "welcome_2": {
+          "text": "Please tell me, do you want to start the conversation again or continue right where you left it?",
+          "buttons": [
+            { "caption": "Start again", "event": "restart", "next": false },
+            { "caption": "Continue", "event": "continue", "next": false }
+          ],
+          "extra": {
+            "hide_textbox": true
+          }
+        }
+      }
+    }
+
+    if ( window.CST_BACKUP ) {
+      __data = welcomeBackBot;
+    } else {
+      __data = firstTimeBot;
+    }
+
+    window.jsbot = new ForaBotController();
+    window.jsbot.on('output', forabotMessageReceived);
+    window.jsbot.on('input', forabotMessageSent);
+    window.jsbot.on('typing', forabotTypingState);
+    window.jsbot.on('finish', function(){
+      if (window.sendMessageBackup) {
+        helloumi.webchat.umichatcore.sendMessage = window.sendMessageBackup;
+        window.sendMessageBackup = false;
+      }
+      // $('#hu-container-widget').attr('data-textbox', 'show');
+    });
+
+    //
+    // Custom events
+    //
+    window.jsbot.on('custom.clear', function(){
+      $('#hu-webchat-messages').empty();
+    });
+
+    window.jsbot.on('custom.continue', function(){
+      if ( window.CST_BACKUP ) {
+        localStorage.setItem(window.STORAGE_KEY, window.CST_BACKUP);
+      }
+      helloumi.webchat.umichatcore.off('render', loadStaticWelcome) // Don't load this static welcome again
+      loadHelloumiLiveChat();
+    });
+
+    window.jsbot.on('custom.restart', function(){
+      if ( localStorage.getItem(window.STORAGE_KEY) ) {
+        localStorage.removeItem(window.STORAGE_KEY)
+        window.CST_BACKUP = null;
+      }
+      loadHelloumiLiveChat();
+    });
+
+    //
+    // JsBot load
+    //
+    window.jsbot.load(
+      new ForaBot(Date.now().toString(), __data )
+    );
+
+    if ( window.CST_BACKUP ) {
+      window.sendMessageBackup = window.sendMessageBackup || helloumi.webchat.umichatcore.sendMessage;
+      helloumi.webchat.umichatcore.sendMessage = function( formData ) {
+        var __message = helloumi.webchat.umichatgui.container.querySelector('#hu-composer-box').value;
+        window.jsbot.send(__message);
+      };
+    }
+
+    window.jsbot.start();
+
+    if ( window.CST_BACKUP ) {
+      localStorage.setItem(window.STORAGE_KEY, window.CST_BACKUP);
+    }
   }
 </script>
 <script src="https://storage.googleapis.com/static.yexir.com/landbot/js/landbot-1.0.0.js" onload="loadHelloumiLandbot()" charset="UTF-8"></script>
