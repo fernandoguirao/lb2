@@ -5,11 +5,16 @@
         &.hu-messenger-message-brand[data-samurai^="\-"] {
           .hu-avatar {
             &:before {
-              background-image: url(../files/avatar2.png)!important;
-              width: 70px!important;
-              height: 70px!important;
-              margin: -20px -19px;
-              top: -10px!important;
+              // background-image: url(../files/avatar2.png)!important;
+              // width: 70px!important;
+              // height: 70px!important;
+              // margin: -20px -19px;
+              // top: -10px!important;
+                // background-image: url(https://storage.googleapis.com/media.yexir.com/receive/10016/W.png)!important;
+                width: 35px !important;
+                height: 35px !important;
+                top: 4px !important;
+                margin-left: -1px;
             }
             background-color: transparent!important;
           }
@@ -38,11 +43,19 @@ textarea#hu-composer-box {
   }
 }
 
-// LOGO
-div#hu-experiment-header .hu-header-content img.brand-logo {
-  width: 72px;
-  max-height: inherit;
-  margin: -3px -6px -8px -8px;
+// HEADER
+div#hu-experiment-header {
+  .hu-header-content img.brand-logo {
+    width: 41px;
+    max-height: inherit;
+    margin: -3px 17px -8px -8px;
+    height: auto;
+    display: none;
+  }
+  h1.brand-name,span.more-leads,.btt span.btt-content {
+    color: white;
+  }
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 
@@ -65,7 +78,7 @@ div#hu-experiment-header .hu-header-content img.brand-logo {
     border: 2px solid #d80a45;
     position: absolute;
     width: 183px;
-    top: -91px;
+    top: -73px;;
     left: 18px;
 
   }
@@ -80,6 +93,18 @@ div#hu-experiment-header .hu-header-content img.brand-logo {
 
 // OCULTAR EMOJI E IMAGEN
 //
-.hu-composer-file-button img, .hu-composer-emoji-button img {
+.hu-composer-file-button svg, .hu-composer-emoji-button svg {
   opacity: 0;
+}
+
+.hu-messenger-body .hu-messenger-message .hu-message-container .hu-message-content.hu-message-content-buttons .hu-dual-buttons .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink:last-child {
+  border-color: white!important;
+}
+
+
+// FIXED FOOTER
+.fixedFooter .foot-container .logo img {
+  width: 44px!important;
+  top: -19px!important;
+  left: -21px!important;
 }
