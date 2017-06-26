@@ -1,54 +1,181 @@
 <script type="text/javascript">
-  function loadHelloumiLandbot() {
-    window.LandbotConfig = {
-      "staticUrl": "https://storage.googleapis.com/static.yexir.com/",
-      "serverUrl": "https://daisho.yexir.com",
-      "channelToken": "H-92-CJ5AGAH0FTGYDQSK",
-      "brandID": 251,
-      "brandName": "Landbot.io",
-      "logo": "https://storage.googleapis.com/media.yexir.com/receive/10145/W.png",
-      "tagline": "Turn a landing page into a chatbot",
-      "apiKey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
-      "authDomain": "daisho-yexir.firebaseapp.com",
-      "databaseURL": "https://daisho-yexir.firebaseio.com",
-      "storageBucket": "daisho-yexir.appspot.com",
-      "background-video": true,
-      "videoname": "video",
-      'custom': {
-        "background-type": "\"gradient\"",
-        "gradient-from": "#ff0051",
-        "gradient-to": "#ffb389",
-        "contrast": "white",
-        "staticUrl": "\"https://storage.googleapis.com/static.yexir.com/\""
-      },
-      "welcome": {
-        "init": "0",
-        "messages": {
-          "0": {
-            "type": "text",
-            "message": "Aquí te doy la bienvenida",
-            "features": {
-            },
-            "timestamp": "0.000001",
-            "readed": false,
-            "samurai": -22,
-            "next": "1",
-            "isLastMessage": false
+  window.LandbotConfig = {
+    "staticUrl": "https://storage.googleapis.com/static.yexir.com/",
+    "serverUrl": "https://daisho.yexir.com",
+    "channelToken": "H-92-CJ5AGAH0FTGYDQSK",
+    "brandID": 251,
+    "brandName": "Landbot.io",
+    "logo": "https://storage.googleapis.com/media.yexir.com/receive/10145/W.png",
+    "tagline": "Turn a landing page into a chatbot",
+    "apiKey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
+    "authDomain": "daisho-yexir.firebaseapp.com",
+    "databaseURL": "https://daisho-yexir.firebaseio.com",
+    "storageBucket": "daisho-yexir.appspot.com",
+    "background-video": false,
+    "videoname": "video",
+    'custom': {
+      "background-type": "\"gradient\"",
+      "gradient-from": "#ff0051",
+      "gradient-to": "#ffb389",
+      "contrast": "white",
+      "staticUrl": "\"https://storage.googleapis.com/static.yexir.com/\""
+    },
+    "onloadLivechatJS": 'dynamicWelcome()',
+    "welcomes": {
+      "init": "0",
+      "messages": {
+        "0": {
+          "type": "text",
+          "message": "Aquí te doy la bienvenida",
+          "features": {
           },
-          "1": {
-            "type": "text",
-            "message": "Dime tu email",
-            "timestamp": "0.000002",
-            "readed": false,
-            "samurai": -22,
-            "next": false, // "1"
-            "isLastMessage": true, // false if "1"
-          }
+          "timestamp": "0.000001",
+          "readed": false,
+          "samurai": -22,
+          "next": "1",
+          "isLastMessage": false
+        },
+        "1": {
+          "type": "text",
+          "message": "Dime tu email",
+          "timestamp": "0.000002",
+          "readed": false,
+          "samurai": -22,
+          "next": false, // "1"
+          "isLastMessage": true, // false if "1"
+        }
+      }
+    }
+  };
+
+  window.STORAGE_KEY = 'helloumi-webchat-customer-' + window.LandbotConfig.channelToken;
+  window.CST_BACKUP = localStorage.getItem( window.STORAGE_KEY );
+
+  function loadHelloumiLandbot() {
+    HULandbot = new Landbot(window.LandbotConfig);
+    HULandbot.createLandbot();
+  }
+
+  function dynamicWelcome() {
+    if ( localStorage.getItem(window.STORAGE_KEY) ) {
+      localStorage.removeItem(window.STORAGE_KEY)
+    }
+
+    renderHelloumiLiveChat( false, loadStaticWelcome);
+    // document.getElementById('hu-webchat-loader').style.setProperty('display', 'none', 'important');
+  }
+
+  function loadStaticWelcome() {
+    var firstTimeBot = {
+      "name": "Welcome",
+      "init": "welcome_0",
+      "status": {
+        "welcome_0": {
+          "text": "Hello and welcome to Lanbdot! 💃🤖🏃 ",
+          "next": "welcome_1"
+        },
+        "welcome_1": {
+          "text": "I’ll create your account while you configure your bot so I first need your *email* to send you the password to your inbox",
+          "next": "welcome_2"
+        },
+        "welcome_2": {
+          "text": "Type your email, please",
+          "next": false
         }
       }
     };
-    HULandbot = new Landbot(window.LandbotConfig);
-    HULandbot.createLandbot();
+    var welcomeBackBot = {
+      "name": "Welcome",
+      "init": "welcome_0",
+      "status": {
+        "welcome_0": {
+          "text": "Welcome back!",
+          "next": ["welcome_1"],
+          "extra": {
+            "hide_textbox": true
+          }
+        },
+        "welcome_1": {
+          "text": "So good to see you around again 😙",
+          "next": "welcome_2",
+          "extra": {
+            "hide_textbox": true
+          }
+        },
+        "welcome_2": {
+          "text": "Please tell me, do you want to start the conversation again or continue right where you left it?",
+          "buttons": [
+            { "caption": "Start again", "event": "restart", "next": false },
+            { "caption": "Continue", "event": "continue", "next": false }
+          ],
+          "extra": {
+            "hide_textbox": true
+          }
+        }
+      }
+    }
+
+    if ( window.CST_BACKUP ) {
+      __data = welcomeBackBot;
+    } else {
+      __data = firstTimeBot;
+    }
+
+    window.jsbot = new ForaBotController();
+    window.jsbot.on('output', forabotMessageReceived);
+    window.jsbot.on('input', forabotMessageSent);
+    window.jsbot.on('typing', forabotTypingState);
+    window.jsbot.on('finish', function(){
+      if (window.sendMessageBackup) {
+        helloumi.webchat.umichatcore.sendMessage = window.sendMessageBackup;
+        window.sendMessageBackup = false;
+      }
+      // $('#hu-container-widget').attr('data-textbox', 'show');
+    });
+
+    //
+    // Custom events
+    //
+    window.jsbot.on('custom.clear', function(){
+      $('#hu-webchat-messages').empty();
+    });
+
+    window.jsbot.on('custom.continue', function(){
+      if ( window.CST_BACKUP ) {
+        localStorage.setItem(window.STORAGE_KEY, window.CST_BACKUP);
+      }
+      helloumi.webchat.umichatcore.off('render', loadStaticWelcome) // Don't load this static welcome again
+      loadHelloumiLiveChat();
+    });
+
+    window.jsbot.on('custom.restart', function(){
+      if ( localStorage.getItem(window.STORAGE_KEY) ) {
+        localStorage.removeItem(window.STORAGE_KEY)
+        window.CST_BACKUP = null;
+      }
+      loadHelloumiLiveChat();
+    });
+
+    //
+    // JsBot load
+    //
+    window.jsbot.load(
+      new ForaBot(Date.now().toString(), __data )
+    );
+
+    if ( window.CST_BACKUP ) {
+      window.sendMessageBackup = window.sendMessageBackup || helloumi.webchat.umichatcore.sendMessage;
+      helloumi.webchat.umichatcore.sendMessage = function( formData ) {
+        var __message = helloumi.webchat.umichatgui.container.querySelector('#hu-composer-box').value;
+        window.jsbot.send(__message);
+      };
+    }
+
+    window.jsbot.start();
+
+    if ( window.CST_BACKUP ) {
+      localStorage.setItem(window.STORAGE_KEY, window.CST_BACKUP);
+    }
   }
 </script>
 <script src="https://storage.googleapis.com/static.yexir.com/landbot/js/landbot-1.0.0.js" onload="loadHelloumiLandbot()" charset="UTF-8"></script>
