@@ -8,6 +8,7 @@
     width: auto!important;
     margin-top: -8px!important;
     margin-right: 12px!important;
+    display: inherit;
   }
   #hu-container-widget[data-platform="landbot"] .hu-js-open .hu-messenger-body .hu-messenger-message.hu-messenger-message-brand[data-samurai^="-"] .hu-avatar {
     background-color: rgba(255, 255, 255, 0.2) !important;
@@ -15,7 +16,7 @@
       width: 27px!important;
       height: 27px!important;
       top: 6px!important;
-      left: 25px!important;
+      left: 8px!important;
     }
   }
 }
@@ -68,4 +69,27 @@
     }
   }
   // End brand avatar
+}
+
+
+.js-bg {
+  .hu-js-open {
+  background: transparent!important;
+  }
+
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB)!important;
+  background-size: 400% 400%!important;
+	animation: Gradient 15s ease infinite!important;
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
 }
