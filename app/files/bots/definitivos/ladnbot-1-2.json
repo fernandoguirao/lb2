@@ -1,0 +1,1850 @@
+{
+  "4": {
+    "name": "Before we start, you",
+    "responses": [
+      {
+        "text": "Before we start, you see those buttons on the top right of the screen? 👆 👉",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          }
+        }
+      }
+    ],
+    "top": 46,
+    "id": "4",
+    "function": "__send_message__",
+    "next": {
+      "success": "5"
+    },
+    "left": 643
+  },
+  "15": {
+    "name": "Do you feel like set",
+    "responses": [
+      {
+        "choice_text": "*Type the number of the option you are interested in",
+        "extra": {
+          "buttons": {
+            "pile_up": false,
+            "icons": [
+              "none",
+              "none"
+            ],
+            "dual_buttons": true,
+            "images": [
+              "",
+              ""
+            ],
+            "includes": [
+              "none",
+              "none"
+            ],
+            "multi": false
+          },
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        },
+        "text": "Do you feel like setting up *your own landbot* to check it out?",
+        "buttons": [
+          "Start now",
+          "Learn more"
+        ],
+        "entity": "button",
+        "order": 0
+      }
+    ],
+    "top": 219,
+    "id": "15",
+    "function": "__send_message__",
+    "next": {
+      "success": "16"
+    },
+    "left": 68
+  },
+  "8": {
+    "name": "So, as you know, *La",
+    "responses": [
+      {
+        "text": "Great! So.... As you know, *Landing Pages* are everywhere it's hard to engage users with them",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 130,
+    "id": "8",
+    "function": "__send_message__",
+    "next": {
+      "success": "9"
+    },
+    "left": 1274
+  },
+  "65": {
+    "name": "You can always reach",
+    "responses": [
+      {
+        "text": "You can always reach them at *hi@landbot.io*, they'll be more than happy to help 👨‍💻",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 682,
+    "id": "65",
+    "function": "__send_message__",
+    "next": {
+      "success": "66"
+    },
+    "left": 1354
+  },
+  "70": {
+    "name": "Pick selected option",
+    "top": 4,
+    "id": "70",
+    "function": "__choice__",
+    "next": {
+      "failed": "1"
+    },
+    "left": 74
+  },
+  "13": {
+    "name": "Send Image",
+    "responses": [
+      {
+        "path": "https://storage.googleapis.com/media.yexir.com/ronin/1498495811.268085.png",
+        "entity": "image",
+        "order": 0,
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 133,
+    "id": "13",
+    "function": "__send_message__",
+    "next": {
+      "success": "14"
+    },
+    "left": 271
+  },
+  "18": {
+    "name": "Click on the followi",
+    "responses": [
+      {
+        "text": "Click here to create your own Conversational Experience:\n\n{html}<ahref=\"http://www.landbot.io/customers/buildbot\" target=\"_blank\" style=\"<br>  text-align: center;<br>\">Text of the button</a>{/html}\n\nIt takes minutes and will change forever the way you think of Landing Pages!",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 221,
+    "id": "18",
+    "function": "__send_message__",
+    "next": {
+      "success": "19"
+    },
+    "left": 669
+  },
+  "54": {
+    "name": "Landbots are simple",
+    "responses": [
+      {
+        "text": "Landbots are simple yet *efficient and powerful*, and allows you to integrate hundreds of apps through *Zapier*",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 682,
+    "id": "54",
+    "function": "__send_message__",
+    "next": {
+      "success": "56"
+    },
+    "left": 880
+  },
+  "2": {
+    "name": "My name is *Landbot*",
+    "responses": [
+      {
+        "text": "My name is *Landbot* and I *transform websites into Conversational Experiences*",
+        "order": 0,
+        "entity": "text",
+        "extra": {}
+      }
+    ],
+    "top": 47,
+    "id": "2",
+    "function": "__send_message__",
+    "next": {
+      "success": "3"
+    },
+    "left": 248
+  },
+  "28": {
+    "name": "And now I'm going to",
+    "responses": [
+      {
+        "choice_text": "*Type the number of the option you are interested in",
+        "extra": {
+          "buttons": {
+            "pile_up": false,
+            "icons": [
+              "none",
+              "none"
+            ],
+            "dual_buttons": true,
+            "images": [
+              "",
+              ""
+            ],
+            "includes": [
+              "none",
+              "none"
+            ],
+            "multi": false
+          },
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        },
+        "text": "Now I'm going to let you drive this conversation. What do you want to do now?",
+        "buttons": [
+          "More information",
+          "Create your landbot"
+        ],
+        "entity": "button",
+        "order": 0
+      }
+    ],
+    "top": 390,
+    "id": "28",
+    "function": "__send_message__",
+    "next": {
+      "success": "29"
+    },
+    "left": 878
+  },
+  "20": {
+    "name": "Pick selected option",
+    "top": 219,
+    "id": "20",
+    "function": "__choice__",
+    "next": {
+      "finish": "21",
+      "learn": "69"
+    },
+    "left": 1086
+  },
+  "51": {
+    "name": "So, what do you want",
+    "responses": [
+      {
+        "choice_text": "*Type the number of the option you are interested in",
+        "extra": {
+          "buttons": {
+            "pile_up": true,
+            "icons": [
+              "none",
+              "none",
+              "none"
+            ],
+            "dual_buttons": false,
+            "images": [
+              "",
+              "",
+              ""
+            ],
+            "includes": [
+              "none",
+              "none",
+              "none"
+            ],
+            "multi": false
+          },
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        },
+        "text": "So, what do you want to do next?",
+        "buttons": [
+          "Start now",
+          "More info",
+          "Finish"
+        ],
+        "entity": "button",
+        "order": 0
+      }
+    ],
+    "top": 978,
+    "id": "51",
+    "function": "__send_message__",
+    "next": {
+      "success": "29"
+    },
+    "left": 286
+  },
+  "21": {
+    "name": "It's been a pleasure",
+    "responses": [
+      {
+        "choice_text": "*Type the number of the option you are interested in",
+        "extra": {
+          "buttons": {
+            "pile_up": false,
+            "icons": [
+              "none",
+              "none"
+            ],
+            "dual_buttons": true,
+            "images": [
+              "",
+              ""
+            ],
+            "includes": [
+              "none",
+              "none"
+            ],
+            "multi": false
+          },
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        },
+        "text": "It's been a pleasure chatting with you, come back at any time! 😌 ❤️ 🤖",
+        "buttons": [
+          "Leave a message",
+          "Bye bye!!"
+        ],
+        "entity": "button",
+        "order": 0
+      }
+    ],
+    "top": 221,
+    "id": "21",
+    "function": "__send_message__",
+    "next": {
+      "success": "73"
+    },
+    "left": 1312
+  },
+  "44": {
+    "name": "Send Image",
+    "responses": [
+      {
+        "path": "https://storage.googleapis.com/media.yexir.com/ronin/1498415536.753954.gif",
+        "entity": "image",
+        "order": 0,
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 756,
+    "id": "44",
+    "function": "__send_message__",
+    "next": {
+      "success": "43"
+    },
+    "left": 618
+  },
+  "14": {
+    "name": "And that's precisely",
+    "responses": [
+      {
+        "text": "That's exactly what I'm here for... *Get leads!*",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 136,
+    "id": "14",
+    "function": "__send_message__",
+    "next": {
+      "success": "15"
+    },
+    "left": 67
+  },
+  "9": {
+    "name": "That leads to a poor",
+    "responses": [
+      {
+        "text": "That means poor conversion (2.35% on avg) and low time on page 😓",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 132,
+    "id": "9",
+    "function": "__send_message__",
+    "next": {
+      "success": "10"
+    },
+    "left": 1062
+  },
+  "59": {
+    "name": "Then, the monthly co",
+    "responses": [
+      {
+        "text": "Then, the cost per account is *50€/month* with the *Professional Plan* and includes what shown below:",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 752,
+    "id": "59",
+    "function": "__send_message__",
+    "next": {
+      "success": "60"
+    },
+    "left": 1154
+  },
+  "63": {
+    "name": "Started back in 2015",
+    "responses": [
+      {
+        "text": "Started back in 2015 with world's first concierge in WhatsApp, *Instant Messaging* is what they love and *experiences* what they love creating",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 607,
+    "id": "63",
+    "function": "__send_message__",
+    "next": {
+      "success": "65"
+    },
+    "left": 1353
+  },
+  "72": {
+    "name": "Pick selected option",
+    "top": 532,
+    "id": "72",
+    "function": "__choice__",
+    "next": {
+      "failed": "33"
+    },
+    "left": 69
+  },
+  "61": {
+    "name": "Do you want us to de",
+    "responses": [
+      {
+        "text": "And talk to us if you have special needs! 🦄",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 898,
+    "id": "61",
+    "function": "__send_message__",
+    "next": {
+      "success": "62"
+    },
+    "left": 1156
+  },
+  "10": {
+    "name": "By creating *Convers",
+    "responses": [
+      {
+        "choice_text": "*Type the number of the option you are interested in",
+        "extra": {
+          "buttons": {
+            "pile_up": false,
+            "icons": [
+              "none",
+              "none"
+            ],
+            "dual_buttons": true,
+            "images": [
+              "",
+              ""
+            ],
+            "includes": [
+              "none",
+              "none"
+            ],
+            "multi": false
+          },
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        },
+        "text": "Creating *Conversational Experiences*, visitors engage with your story and provide data in a natural way",
+        "buttons": [
+          "Sounds good!",
+          "Meh..."
+        ],
+        "entity": "button",
+        "order": 0
+      }
+    ],
+    "top": 132,
+    "id": "10",
+    "function": "__send_message__",
+    "next": {
+      "success": "11"
+    },
+    "left": 844
+  },
+  "33": {
+    "name": "💬 *TALK TO ME* 💬",
+    "responses": [
+      {
+        "text": "💬  *Talk to me and customize me*\n\nClick *Create your own Landbot* and start the conversation. You take care of the design I create an account for you",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 608,
+    "id": "33",
+    "function": "__send_message__",
+    "next": {
+      "success": "35"
+    },
+    "left": 72
+  },
+  "50": {
+    "name": "When you're ready, s",
+    "responses": [
+      {
+        "text": "When ready, share the URL or host it yourself to start providing *Conversational Experiences*! 💬",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 903,
+    "id": "50",
+    "function": "__send_message__",
+    "next": {
+      "success": "51"
+    },
+    "left": 290
+  },
+  "64": {
+    "name": "Send Image",
+    "responses": [
+      {
+        "path": "https://storage.googleapis.com/media.yexir.com/ronin/1498419803.934223.gif",
+        "entity": "image",
+        "order": 0,
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 534,
+    "id": "64",
+    "function": "__send_message__",
+    "next": {
+      "success": "63"
+    },
+    "left": 1374
+  },
+  "25": {
+    "name": "Pleased to meet you,",
+    "responses": [
+      {
+        "text": "Pleased to meet you, @name 🙂",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 393,
+    "id": "25",
+    "function": "__send_message__",
+    "next": {
+      "success": "26"
+    },
+    "left": 430
+  },
+  "69": {
+    "name": "Great! 🙂",
+    "responses": [
+      {
+        "text": "Great! 🙂",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 308,
+    "id": "69",
+    "function": "__send_message__",
+    "next": {
+      "success": "28"
+    },
+    "left": 1117
+  },
+  "53": {
+    "name": "It's been a pleasure",
+    "responses": [
+      {
+        "choice_text": "*Type the number of the option you are interested in",
+        "extra": {
+          "buttons": {
+            "pile_up": false,
+            "icons": [
+              "none",
+              "none"
+            ],
+            "dual_buttons": true,
+            "images": [
+              "",
+              ""
+            ],
+            "includes": [
+              "none",
+              "none"
+            ],
+            "multi": false
+          },
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        },
+        "text": "It's been a pleasure talking with you, come back anytime! 🙋🏻",
+        "buttons": [
+          "Leave a message",
+          "Bye bye!"
+        ],
+        "entity": "button",
+        "order": 0
+      }
+    ],
+    "top": 391,
+    "id": "53",
+    "function": "__send_message__",
+    "next": {
+      "success": "73"
+    },
+    "left": 1354
+  },
+  "81": {
+    "name": "Pick @email",
+    "top": 741,
+    "id": "81",
+    "function": "__email__",
+    "overwrite": true,
+    "field": "email",
+    "next": {
+      "failed": "82",
+      "success": "83"
+    },
+    "left": 1572
+  },
+  "48": {
+    "name": "Then you can access",
+    "responses": [
+      {
+        "text": "Then access the *Bot Builder* to create something strong, like myself 😎",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 759,
+    "id": "48",
+    "function": "__send_message__",
+    "next": {
+      "success": "49"
+    },
+    "left": 293
+  },
+  "39": {
+    "name": "As I told you, getting data from visitors and turning them into leads is one of my best skills",
+    "responses": [
+      {
+        "text": "As I told you, getting data from visitors and turning them into leads is one of my best skills:",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 684,
+    "id": "39",
+    "function": "__send_message__",
+    "next": {
+      "success": "44"
+    },
+    "left": 591
+  },
+  "82": {
+    "name": "That didn't look lik",
+    "responses": [
+      {
+        "text": "That didn't look like an email but... Have a good one! 👋🏽",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 840,
+    "id": "82",
+    "function": "__send_message__",
+    "left": 1459
+  },
+  "22": {
+    "name": "Oh I'm sorry, must'v",
+    "responses": [
+      {
+        "text": "Oh I'm sorry, must've left my manners over some other repository....",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 308,
+    "id": "22",
+    "function": "__send_message__",
+    "next": {
+      "success": "23"
+    },
+    "left": 66
+  },
+  "29": {
+    "name": "Pick selected option",
+    "top": 461,
+    "id": "29",
+    "function": "__choice__",
+    "next": {
+      "start": "17",
+      "now": "17",
+      "information": "31",
+      "info": "31",
+      "finish": "67",
+      "create": "17"
+    },
+    "left": 881
+  },
+  "75": {
+    "name": "Sure! *Type your mes",
+    "responses": [
+      {
+        "text": "Sure! *Type your message* below, please:",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": false
+        }
+      }
+    ],
+    "top": 342,
+    "id": "75",
+    "function": "__send_message__",
+    "next": {
+      "success": "76"
+    },
+    "left": 1528
+  },
+  "58": {
+    "name": "What else can a dig",
+    "responses": [
+      {
+        "choice_text": "*Type the number of the option you are interested in",
+        "extra": {
+          "buttons": {
+            "pile_up": true,
+            "icons": [
+              "none",
+              "none",
+              "none"
+            ],
+            "dual_buttons": false,
+            "images": [
+              "",
+              "",
+              ""
+            ],
+            "includes": [
+              "none",
+              "none",
+              "none"
+            ],
+            "multi": false
+          },
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        },
+        "text": "What else can a dig into?",
+        "buttons": [
+          "Start now",
+          "More info",
+          "Finish"
+        ],
+        "entity": "button",
+        "order": 0
+      }
+    ],
+    "top": 973,
+    "id": "58",
+    "function": "__send_message__",
+    "next": {
+      "success": "29"
+    },
+    "left": 908
+  },
+  "3": {
+    "name": "Send Image",
+    "responses": [
+      {
+        "path": "https://storage.googleapis.com/media.yexir.com/ronin/1498389051.576473.gif",
+        "entity": "image",
+        "order": 0,
+        "extra": {}
+      }
+    ],
+    "top": 47,
+    "id": "3",
+    "function": "__send_message__",
+    "next": {
+      "success": "4"
+    },
+    "left": 477
+  },
+  "23": {
+    "name": "How can I call you?",
+    "responses": [
+      {
+        "text": "How can I call you? Please type your *name* below:",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": "name"
+          },
+          "hide_textbox": false
+        }
+      }
+    ],
+    "top": 396,
+    "id": "23",
+    "function": "__send_message__",
+    "next": {
+      "success": "24"
+    },
+    "left": 68
+  },
+  "35": {
+    "name": "⚙️ *IMPLEMENT* ⚙️\n\nW",
+    "responses": [
+      {
+        "text": "⚙️  *Implement and get leads*\n\nPublish your Landbot and it'll start giving and picking information from your visitors. Download it all from the app!",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 759,
+    "id": "35",
+    "function": "__send_message__",
+    "next": {
+      "success": "52"
+    },
+    "left": 66
+  },
+  "77": {
+    "name": "Thanks!",
+    "responses": [
+      {
+        "text": "Thanks!",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 469,
+    "id": "77",
+    "function": "__send_message__",
+    "next": {
+      "success": "78"
+    },
+    "left": 1600
+  },
+  "62": {
+    "name": "Let's move forward!",
+    "responses": [
+      {
+        "choice_text": "*Type the number of the option you are interested in",
+        "extra": {
+          "buttons": {
+            "pile_up": true,
+            "icons": [
+              "none",
+              "none",
+              "none"
+            ],
+            "dual_buttons": false,
+            "images": [
+              "",
+              "",
+              ""
+            ],
+            "includes": [
+              "none",
+              "none",
+              "none"
+            ],
+            "multi": false
+          },
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        },
+        "text": "Let's move forward! What now?",
+        "buttons": [
+          "Start now",
+          "More info",
+          "Finish"
+        ],
+        "entity": "button",
+        "order": 0
+      }
+    ],
+    "top": 971,
+    "id": "62",
+    "function": "__send_message__",
+    "next": {
+      "success": "29"
+    },
+    "left": 1160
+  },
+  "26": {
+    "name": "Well, just the way I",
+    "responses": [
+      {
+        "text": "Well, just the way I got your name 👉  *@name*, I can do it with emails, feedback, preferences... You name it!",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 391,
+    "id": "26",
+    "function": "__send_message__",
+    "next": {
+      "success": "71"
+    },
+    "left": 629
+  },
+  "32": {
+    "name": "We're a team of 15 people, techy and freaky at equal parts, based in ☀️ Valencia that aims to simpli",
+    "responses": [
+      {
+        "text": "They're a family of 15 people, techy and freaky at equal parts, based in ☀️  Valencia that aims to simplify the communication between companies and users",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 463,
+    "id": "32",
+    "function": "__send_message__",
+    "next": {
+      "success": "64"
+    },
+    "left": 1346
+  },
+  "12": {
+    "name": "The folks who create",
+    "responses": [
+      {
+        "text": "The folks behind me ran a *Landing VS Landbot* experiment, and guess what happened... 😎",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 132,
+    "id": "12",
+    "function": "__send_message__",
+    "next": {
+      "success": "13"
+    },
+    "left": 429
+  },
+  "57": {
+    "name": "Receive *leads in yo",
+    "responses": [
+      {
+        "text": "*Leads in your inbox*, *up to date Google Sheet* or *Slack notifications* once someone answers the right thing! 🛎",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 900,
+    "id": "57",
+    "function": "__send_message__",
+    "next": {
+      "success": "58"
+    },
+    "left": 881
+  },
+  "31": {
+    "name": "Please, select a top",
+    "responses": [
+      {
+        "choice_text": "*Type the number of the option you are interested in",
+        "extra": {
+          "buttons": {
+            "pile_up": true,
+            "icons": [
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "dual_buttons": false,
+            "images": [
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "includes": [
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "multi": false
+          },
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        },
+        "text": "Please, select a topic:",
+        "buttons": [
+          "Creation",
+          "Data capturing",
+          "Integrations",
+          "Pricing",
+          "Team"
+        ],
+        "entity": "button",
+        "order": 0
+      }
+    ],
+    "top": 537,
+    "id": "31",
+    "function": "__send_message__",
+    "next": {
+      "success": "37"
+    },
+    "left": 883
+  },
+  "74": {
+    "name": "🚀",
+    "responses": [
+      {
+        "text": "🚀",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 217,
+    "id": "74",
+    "function": "__send_message__",
+    "left": 1510
+  },
+  "17": {
+    "name": "🚀 *Great!* 🚀",
+    "responses": [
+      {
+        "text": "🚀 *Great!* 🚀",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 221,
+    "id": "17",
+    "function": "__send_message__",
+    "next": {
+      "success": "18"
+    },
+    "left": 512
+  },
+  "76": {
+    "name": "Pick @message",
+    "top": 406,
+    "id": "76",
+    "function": "__text__",
+    "overwrite": true,
+    "custom_field": "message",
+    "field": "custom",
+    "next": {
+      "success": "77"
+    },
+    "left": 1560
+  },
+  "1": {
+    "name": "Hi there! 👋🏽",
+    "responses": [
+      {
+        "text": "Hi there! 👋🏽",
+        "order": 0,
+        "entity": "text",
+        "extra": {}
+      }
+    ],
+    "top": 48,
+    "id": "1",
+    "function": "__send_message__",
+    "next": {
+      "success": "2"
+    },
+    "left": 77
+  },
+  "6": {
+    "name": "Pick selected option",
+    "top": 46,
+    "id": "6",
+    "function": "__choice__",
+    "next": {
+      "got": "8",
+      "it": "8"
+    },
+    "left": 1067
+  },
+  "47": {
+    "name": "Send Image",
+    "responses": [
+      {
+        "path": "https://storage.googleapis.com/media.yexir.com/ronin/1498498264.148912.png",
+        "entity": "image",
+        "order": 0,
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 683,
+    "id": "47",
+    "function": "__send_message__",
+    "next": {
+      "success": "48"
+    },
+    "left": 316
+  },
+  "78": {
+    "name": "One of my creators w",
+    "responses": [
+      {
+        "text": "One of my creators will review it ASAP 🤓",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 537,
+    "id": "78",
+    "function": "__send_message__",
+    "next": {
+      "success": "79"
+    },
+    "left": 1540
+  },
+  "19": {
+    "name": "Do you need anything",
+    "responses": [
+      {
+        "choice_text": "*Type the number of the option you are interested in",
+        "extra": {
+          "buttons": {
+            "pile_up": false,
+            "icons": [
+              "none",
+              "none"
+            ],
+            "dual_buttons": true,
+            "images": [
+              "",
+              ""
+            ],
+            "includes": [
+              "none",
+              "none"
+            ],
+            "multi": false
+          },
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        },
+        "text": "Do you need anything else?",
+        "buttons": [
+          "Learn more",
+          "Finish"
+        ],
+        "entity": "button",
+        "order": 0
+      }
+    ],
+    "top": 220,
+    "id": "19",
+    "function": "__send_message__",
+    "next": {
+      "success": "20"
+    },
+    "left": 878
+  },
+  "24": {
+    "name": "Pick @name",
+    "top": 394,
+    "id": "24",
+    "keyword": true,
+    "overwrite": true,
+    "function": "__text__",
+    "field": "name",
+    "next": {
+      "success": "25"
+    },
+    "left": 269
+  },
+  "60": {
+    "name": "Send Image",
+    "responses": [
+      {
+        "path": "https://storage.googleapis.com/media.yexir.com/ronin/1498555938.231868.png",
+        "entity": "image",
+        "order": 0,
+        "extra": {}
+      }
+    ],
+    "top": 826,
+    "id": "60",
+    "function": "__send_message__",
+    "next": {
+      "success": "61"
+    },
+    "left": 1181
+  },
+  "38": {
+    "name": "Creating a Landbot is as easy as taking to a friend.",
+    "responses": [
+      {
+        "text": "As easy as taking to a friend... You first customize the design:",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 533,
+    "id": "38",
+    "function": "__send_message__",
+    "next": {
+      "success": "47"
+    },
+    "left": 291
+  },
+  "45": {
+    "name": "Not bad I think! 😌",
+    "responses": [
+      {
+        "choice_text": "*Type the number of the option you are interested in",
+        "extra": {
+          "buttons": {
+            "pile_up": true,
+            "icons": [
+              "none",
+              "none",
+              "none"
+            ],
+            "dual_buttons": false,
+            "images": [
+              "",
+              "",
+              ""
+            ],
+            "includes": [
+              "none",
+              "none",
+              "none"
+            ],
+            "multi": false
+          },
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        },
+        "text": "Not bad I think! 😌  What do you want to do now?",
+        "buttons": [
+          "Start now",
+          "More info",
+          "Finish"
+        ],
+        "entity": "button",
+        "order": 0
+      }
+    ],
+    "top": 908,
+    "id": "45",
+    "function": "__send_message__",
+    "next": {
+      "success": "29"
+    },
+    "left": 599
+  },
+  "67": {
+    "name": "OK, @name!",
+    "responses": [
+      {
+        "text": "OK, @name!",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": false
+        }
+      }
+    ],
+    "top": 391,
+    "id": "67",
+    "function": "__send_message__",
+    "next": {
+      "success": "53"
+    },
+    "left": 1143
+  },
+  "37": {
+    "name": "Pick selected option",
+    "top": 603,
+    "id": "37",
+    "function": "__choice__",
+    "next": {
+      "integrations": "54",
+      "behind": "32",
+      "pricing": "41",
+      "data": "39",
+      "team": "32",
+      "capturing": "39",
+      "creation": "38"
+    },
+    "left": 881
+  },
+  "56": {
+    "name": "Send Image",
+    "responses": [
+      {
+        "path": "https://storage.googleapis.com/media.yexir.com/ronin/1498417628.17667.png",
+        "entity": "image",
+        "order": 0,
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 826,
+    "id": "56",
+    "function": "__send_message__",
+    "next": {
+      "success": "57"
+    },
+    "left": 904
+  },
+  "16": {
+    "name": "Pick selected option",
+    "top": 218,
+    "id": "16",
+    "function": "__choice__",
+    "next": {
+      "start": "17",
+      "learn": "22"
+    },
+    "left": 267
+  },
+  "49": {
+    "name": "Send Image",
+    "responses": [
+      {
+        "path": "https://storage.googleapis.com/media.yexir.com/ronin/1498417210.163439.png",
+        "entity": "image",
+        "order": 0,
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 838,
+    "id": "49",
+    "function": "__send_message__",
+    "next": {
+      "success": "50"
+    },
+    "left": 316
+  },
+  "5": {
+    "name": "You can use them to",
+    "responses": [
+      {
+        "choice_text": "*Type the number of the option you are interested in",
+        "extra": {
+          "buttons": {
+            "pile_up": false,
+            "icons": [
+              "none"
+            ],
+            "dual_buttons": false,
+            "images": [
+              ""
+            ],
+            "includes": [
+              "none"
+            ],
+            "multi": false
+          },
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": false
+        },
+        "text": "You can use them to *Create your own Landbot* or *Support us on Product Hunt* 😻  at any time",
+        "buttons": [
+          "Got it!"
+        ],
+        "entity": "button",
+        "order": 0
+      }
+    ],
+    "top": 46,
+    "id": "5",
+    "function": "__send_message__",
+    "next": {
+      "success": "6"
+    },
+    "left": 858
+  },
+  "66": {
+    "name": "Now you know the tea",
+    "responses": [
+      {
+        "choice_text": "*Type the number of the option you are interested in",
+        "extra": {
+          "buttons": {
+            "pile_up": true,
+            "icons": [
+              "none",
+              "none",
+              "none"
+            ],
+            "dual_buttons": false,
+            "images": [
+              "",
+              "",
+              ""
+            ],
+            "includes": [
+              "none",
+              "none",
+              "none"
+            ],
+            "multi": false
+          },
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        },
+        "text": "Now you know the team, what else can I do for you?",
+        "buttons": [
+          "Start now",
+          "More info",
+          "Finish"
+        ],
+        "entity": "button",
+        "order": 0
+      }
+    ],
+    "top": 750,
+    "id": "66",
+    "function": "__send_message__",
+    "next": {
+      "success": "29"
+    },
+    "left": 1352
+  },
+  "11": {
+    "name": "Pick selected option",
+    "top": 132,
+    "id": "11",
+    "function": "__choice__",
+    "next": {
+      "failed": "12"
+    },
+    "left": 636
+  },
+  "71": {
+    "name": "And all that will on",
+    "responses": [
+      {
+        "choice_text": "*Type the number of the option you are interested in",
+        "extra": {
+          "buttons": {
+            "pile_up": false,
+            "icons": [
+              "none"
+            ],
+            "dual_buttons": false,
+            "images": [
+              ""
+            ],
+            "includes": [
+              "none"
+            ],
+            "multi": false
+          },
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        },
+        "text": "And you set it all up in 2 simple steps:",
+        "buttons": [
+          "Tell me!"
+        ],
+        "entity": "button",
+        "order": 0
+      }
+    ],
+    "top": 461,
+    "id": "71",
+    "function": "__send_message__",
+    "next": {
+      "success": "72"
+    },
+    "left": 456
+  },
+  "52": {
+    "name": "Quite simple, right?",
+    "responses": [
+      {
+        "choice_text": "*Type the number of the option you are interested in",
+        "extra": {
+          "buttons": {
+            "pile_up": false,
+            "icons": [
+              "none",
+              "none"
+            ],
+            "dual_buttons": true,
+            "images": [
+              "",
+              ""
+            ],
+            "includes": [
+              "none",
+              "none"
+            ],
+            "multi": false
+          },
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        },
+        "text": "Quite simple, right? 😁",
+        "buttons": [
+          "More information",
+          "Create your landbot"
+        ],
+        "entity": "button",
+        "order": 0
+      }
+    ],
+    "top": 900,
+    "id": "52",
+    "function": "__send_message__",
+    "next": {
+      "success": "29"
+    },
+    "left": 71
+  },
+  "73": {
+    "name": "Pick selected option",
+    "top": 296,
+    "id": "73",
+    "function": "__choice__",
+    "next": {
+      "leave": "75",
+      "bye": "74"
+    },
+    "left": 1343
+  },
+  "83": {
+    "name": "Awesome, thanks. Hav",
+    "responses": [
+      {
+        "text": "Awesome, thanks. Have a good one! 👋🏽",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 862,
+    "id": "83",
+    "function": "__send_message__",
+    "left": 1669
+  },
+  "79": {
+    "name": "Can you leave me you",
+    "responses": [
+      {
+        "text": "Can you leave me your *email* so we can reach out? Type it below, please:",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": "email"
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 597,
+    "id": "79",
+    "function": "__send_message__",
+    "next": {
+      "success": "81"
+    },
+    "left": 1551
+  },
+  "43": {
+    "name": "Here are some exampl",
+    "responses": [
+      {
+        "text": "- *Personal data* like name, email, address or phone number.\n- *Custom fields* like feedback, comments, queries...\n- *Single / multiple choice* questions in form of lists, images...\n\nAnd make them all conditional!",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 836,
+    "id": "43",
+    "function": "__send_message__",
+    "next": {
+      "success": "45"
+    },
+    "left": 590
+  },
+  "41": {
+    "name": "Landbot is *free* (no credit card required) for up to 100 interactions",
+    "responses": [
+      {
+        "text": "Landbot is *free* (no credit card required) for up to 100 interactions 😻",
+        "order": 0,
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": false
+          },
+          "hide_textbox": true
+        }
+      }
+    ],
+    "top": 681,
+    "id": "41",
+    "function": "__send_message__",
+    "next": {
+      "success": "59"
+    },
+    "left": 1150
+  }
+}
