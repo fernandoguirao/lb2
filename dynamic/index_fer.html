@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <script type="text/javascript">
+      window.LandbotConfig = {
+        "staticUrl": "https://storage.googleapis.com/static.yexir.com/",
+        "serverUrl": "https://daisho.yexir.com",
+        "channelToken": "H-158-PG6OY29U639CSUED",
+        "brandID": "344",
+        "brandName": "Landbot.io",
+        "apiKey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
+        "authDomain": "daisho-yexir.firebaseapp.com",
+        "databaseURL": "https://daisho-yexir.firebaseio.com",
+        "storageBucket": "daisho-yexir.appspot.com",
+        "tagline": "Turn a landing page into a chatbot",
+        "logo": "https://storage.googleapis.com/media.yexir.com/channels/158.png",
+        "background-video": false,
+        "videoname": "",
+        "custom": {
+          "staticUrl": "\'" + "https://storage.googleapis.com/static.yexir.com/"+"\'",
+          "accent": "#F11952",
+          "light": "white",
+          "contrast": "white",
+          "dark": "#34495e",
+          "embfonts": true,
+          "font-size": "14px",
+          "externalfonturl": "\'" + "https://fonts.googleapis.com/css?family=Lato"+"\'",
+          "background-type": "\"gradient\"",
+          "gradient-from": "#ff0051",
+          "gradient-to": "#ffb389",
+          "background-image-url": "\'" + "https://storage.googleapis.com/media.yexir.com/"+"\'",
+          "background-color": "#8ed3ff",
+          "video-texture": '\'color\''
+        }
+      };
+      function loadHelloumiLandbot(){
+        HULandbot=new Landbot(LandbotConfig);
+        HULandbot.createLandbot();
+      }
+    </script>
+    <script src="https://storage.googleapis.com/static.yexir.com/landbot/js/landbot-1.0.0.js" onload="loadHelloumiLandbot()" charset="UTF-8"></script>
+
+    <script>
+      var b = 0;
+      var reloadLess = function() {
+        if (b < 1){
+          $('link[href="https://storage.googleapis.com/static.yexir.com/landbot/css/botchat.less"').attr('href',"landbot/css/botchat.less");
+          $('link[href="https://storage.googleapis.com/static.yexir.com/landbot/css/master.less"').attr('href',"landbot/css/master.less");
+        } else {
+          $('link[href="landbot/css/botchat.less"').attr('href',"landbot/css/botchat2.less");
+          $('link[href="landbot/css/botchat2.less"').attr('href',"landbot/css/botchat.less");
+          $('link[href="landbot/css/master.less"').attr('href',"landbot/css/master2.less");
+          $('link[href="landbot/css/master2.less"').attr('href',"landbot/css/master.less");
+
+        }
+        $('style').not('.style').remove();
+        less.modifyVars();
+      }
+    </script>
+    <div onclick="reloadLess()" class="reload">
+      Reload
+    </div>
+    <style class="style">
+      .reload {
+        position: fixed;
+        background: white;
+        padding: 10px;
+        cursor: pointer;
+        text-transform: uppercase;
+        z-index: 1000000000;
+        font-family: Gotham Rounded;
+        font-size: 13px;
+        bottom: 0;
+        left: 0;
+      }
+      .reload.red {
+        background-color: yellow;
+      }
+    </style>
+  </body>
+</html>
