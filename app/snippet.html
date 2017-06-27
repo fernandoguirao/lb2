@@ -22,32 +22,7 @@
       "contrast": "white",
       "staticUrl": "\"https://storage.googleapis.com/static.yexir.com/\""
     },
-    "onloadLivechatJS": 'dynamicWelcome()',
-    "welcomes": {
-      "init": "0",
-      "messages": {
-        "0": {
-          "type": "text",
-          "message": "Aquí te doy la bienvenida",
-          "features": {
-          },
-          "timestamp": "0.000001",
-          "readed": false,
-          "samurai": -22,
-          "next": "1",
-          "isLastMessage": false
-        },
-        "1": {
-          "type": "text",
-          "message": "Dime tu email",
-          "timestamp": "0.000002",
-          "readed": false,
-          "samurai": -22,
-          "next": false, // "1"
-          "isLastMessage": true, // false if "1"
-        }
-      }
-    }
+    "onloadLivechatJS": 'dynamicWelcome()'
   };
 
   window.STORAGE_KEY = 'helloumi-webchat-customer-' + window.LandbotConfig.channelToken;
@@ -73,16 +48,25 @@
       "init": "welcome_0",
       "status": {
         "welcome_0": {
-          "text": "Hello and welcome to Lanbdot! 💃🤖🏃 ",
-          "next": "welcome_1"
+          "text": "Hello and welcome to Landbot! 💃🤖🏃 ",
+          "next": "welcome_1",
+          "extra": {
+            "hide_textbox": true
+          }
         },
         "welcome_1": {
           "text": "I’ll create your account while you configure your bot so I first need your *email* to send you the password to your inbox",
-          "next": "welcome_2"
+          "next": "welcome_2",
+          "extra": {
+            "hide_textbox": true
+          }
         },
         "welcome_2": {
           "text": "Type your email, please",
-          "next": false
+          "next": false,
+          "extra": {
+            "hide_textbox": false
+          }
         }
       }
     };
