@@ -84,7 +84,7 @@ function Landbot(config) {
       "header-background":"transparent",
 
       // "url": window.LandbotConfig.url ? window.LandbotConfig.url : document.location.origin,
-      "staticUrl": window.LandbotConfig.staticUrl ? window.LandbotConfig.staticUrl : "\"https://storage.googleapis.com/static-yexir-helloumi/\"",
+      "staticUrl": window.LandbotConfig.staticUrl ? '"' + window.LandbotConfig.staticUrl + '"' : "\"https://storage.googleapis.com/static-yexir-helloumi/\"",
       //
       // Avatar
       "logo": window.LandbotConfig.logo ? "\""+window.LandbotConfig.logo+"\"" : "\"http://bueninvento.es/umiexp2.png\"",
