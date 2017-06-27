@@ -38,6 +38,9 @@
       localStorage.removeItem(window.STORAGE_KEY)
     }
 
+    $('.btt').remove();
+    $('.more-leads').after('<a href="http://landbot.io/customers/buildbot?utm_source=referral&amp;utm_medium=customers&amp;utm_campaign=Landbot.io" target="_blank" class="btt" id="rightheader"><span class="btt-content">Create your <b class="hu-bold">Landbot</b></span><span class="btt-on-hover">Start now ⚡️</span></a><a href="http://landbot.io/?utm_source=referral&amp;utm_medium=customers&amp;utm_campaign=Landbot.io" target="_blank" class="ph" id=""><img src="https://s3.producthunt.com/static/kitty_265x244%402x.png"></a>');
+
     renderHelloumiLiveChat( false, loadStaticWelcome);
     // document.getElementById('hu-webchat-loader').style.setProperty('display', 'none', 'important');
   }
