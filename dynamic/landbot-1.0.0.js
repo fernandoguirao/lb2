@@ -44,8 +44,6 @@ function Landbot(config) {
       "violet": "#4a50a8",
       "violet-0": "#6369be",
       "violet-light": "#b2b5de",
-      "externalfonturl": '',
-      "embfonts": true,
       "blue-light": "#7db9e8",
       "light-gray": "#f1f1f1",
       // Relative colors
@@ -58,6 +56,7 @@ function Landbot(config) {
       "contrast-light": "lighten(@contrast,30%)",
       // Fonts
       "embfonts": true,
+      "externalfonturl": '',
       "dark": "@black",
       "font": "\"Gotham Rounded\"",
       "font-type": "sans-serif",
@@ -237,7 +236,7 @@ Landbot.prototype.generateDocument = function generateDocument() {
   // LESS
 
   window.less = {
-    env: "development", // Values: development | production
+    env: "production", // Values: development | production
     globalVars: this.config.custom
   };
   // this.generateTag('script', head, {
