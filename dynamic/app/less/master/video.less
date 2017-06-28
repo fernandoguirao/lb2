@@ -26,16 +26,17 @@ video#bgvid{
     background-position: center;
     opacity: .3;
     background-repeat: repeat;
-    & when ( @video-texture = 'image' ){
-      background-image: url(http://galisteoaviation.com/assets/images/textures/grid.png);
-      // background-color: @background-color;
-    }
-    & when ( @video-texture = 'color' ) {
-      background-color: @background-color;
-    }
-    & when ( @video-texture = 'gradient' ) {
-      background: linear-gradient(to bottom, @gradient-from 0%, @gradient-to 100%);
-    }
+    background-color: black;
+    // & when ( @video-texture = 'image' ){
+    //   background-image: url(http://galisteoaviation.com/assets/images/textures/grid.png);
+    //   // background-color: @background-color;
+    // }
+    // & when ( @video-texture = 'color' ) {
+    //   background-color: black;
+    // }
+    // & when ( @video-texture = 'gradient' ) {
+    //   background: linear-gradient(to bottom, @gradient-from 0%, @gradient-to 100%);
+    // }
   }
 
   @media screen and (max-width: 800px) {
