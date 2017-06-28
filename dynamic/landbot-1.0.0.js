@@ -28,8 +28,8 @@ function Landbot(config) {
     // 'btn02Message': 'signup',
     'background-video': false,
     'videoname': 'video',
-    'onInit': 'landbot',
-    'onEmail': 'discorbot',
+    'onloadLivechatJS': 'renderHelloumiLiveChat()',
+    'messageLimit': 100,
     'welcome': {},
     // custom content MUST be JSON parseable
     'custom': {
@@ -237,7 +237,7 @@ Landbot.prototype.generateDocument = function generateDocument() {
   // LESS
 
   window.less = {
-    env: "development", // Values: development | production
+    env: "production", // Values: development | production
     globalVars: this.config.custom
   };
   // this.generateTag('script', head, {
@@ -324,7 +324,8 @@ Landbot.prototype.generateDocument = function generateDocument() {
       "storageBucket": this.config.storageBucket,
       "open": this.config.open,
       "platform": this.config.platform,
-      "welcome": this.config.welcome
+      "welcome": this.config.welcome,
+      "messageLimit": this.config.messageLimit
     },
     // "discorbot": {
     //   "staticUrl": "https://storage.googleapis.com/static-demo-helloumi/",
@@ -347,7 +348,7 @@ Landbot.prototype.generateDocument = function generateDocument() {
       src: this.config.staticUrl + 'webchat/js/main-' + this.config.livechatVersion + '.js',
       charset: 'UTF-8'
     }, {
-      onload: 'renderHelloumiLiveChat()'
+      onload: this.config.onloadLivechatJS
     });
   }
 
