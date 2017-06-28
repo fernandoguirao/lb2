@@ -22,7 +22,8 @@
       "contrast": "white",
       "staticUrl": "\"https://storage.googleapis.com/static.yexir.com/\""
     },
-    "onloadLivechatJS": 'dynamicWelcome()'
+    "onloadLivechatJS": "dynamicWelcome()",
+    "messageLimit": 0
   };
 
   window.STORAGE_KEY = 'helloumi-webchat-customer-' + window.LandbotConfig.channelToken;
@@ -55,14 +56,14 @@
           }
         },
         "welcome_1": {
-          "text": "Here you can customize your own landbot. I’ll first need your email to send you the access details once you’re done with editing",
+          "text": "I need your email to give you access to the app once you’re done",
           "next": "welcome_2",
           "extra": {
             "hide_textbox": true
           }
         },
         "welcome_2": {
-          "text": "Type your email, please",
+          "text": "Type it below, please 🤓",
           "next": false,
           "extra": {
             "hide_textbox": false
