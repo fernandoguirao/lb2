@@ -16,6 +16,11 @@ function renderHelloumiLiveChat( configKey, callback ) {
         __umichatCore.on('render', helloumiLivechatLoaded);
         if ( typeof(callback) == 'function' ) {
           __umichatCore.on('render', callback);
+          __umichatCore.on('render', customizeTextbox);
+          __umichatCore.on('showtextbox', showTextBox);
+          __umichatCore.on('hidetextbox', hideTextBox);
+          __umichatCore.on('sendmessage', hideTextBox);
+          __umichatCore.on('option-click', fadeOutButtons);
         }
       }
     }
@@ -251,10 +256,10 @@ function removeClass(){
 function showLoader(){
   var __loader = document.querySelector(".sk-folding-cube");
   var __loader2 = document.querySelector(".loader-referral");
+  if (__loader) __loader.style.display = "block";
+  if (__loader2) __loader2.style.display = "block";
   if (__loader) __loader.style.opacity = "1";
-  if (__loader) __loader2.style.opacity = "1";
-  if (__loader) __loader.style.zIndex = "99999";
-  if (__loader) __loader2.style.zIndex = "99999";
+  if (__loader2) __loader2.style.opacity = "1";
 }
 
 function hideLoader(){
@@ -262,8 +267,8 @@ function hideLoader(){
   var __loader2 = document.querySelector(".loader-referral");
 	if (__loader) __loader.style.opacity = "0";
   if (__loader2) __loader2.style.opacity = "0";
-  if (__loader) __loader.style.zIndex = "-1";
-  if (__loader) __loader2.style.zIndex = "-1";
+  if (__loader) __loader.style.display = "none";
+  if (__loader2) __loader2.style.display = "none";
 }
 
 function getEmailFromURL(){
