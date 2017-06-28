@@ -471,3 +471,44 @@ span.lg-font {
   top: -73px;
   left: 18px;
 }
+
+// FIX TEXTAREA
+.hu-composer-text textarea#hu-composer-box {
+  padding: 0!important;
+  border: 0!important;
+  background: white!important;
+  height: 18px!important;
+  max-height: 18px!important;
+  color: black!important;
+  box-shadow: none!important;
+  min-height: 18px!important;
+  transition: max-height .5s!important;
+}
+
+.hu-composer-text {
+  background: white;
+  padding: 26px!important;
+  border-radius: 6px;
+}
+
+.hu-composer-text.focus {
+  border: 2px solid red!important;
+}
+
+.hu-composer-text.focus textarea#hu-composer-box {
+  max-height: 50px!important;
+  height: 38px!important;
+}
+
+@media screen and (max-width:800px){
+  .hu-composer-text {
+    padding: 16px 27px!important;
+  }
+  .hu-composer-text.focus {
+    border: none!important;
+  }
+  .hu-composer-text.focus textarea#hu-composer-box {
+    max-height: 18px!important;
+    height: 18px!important;
+  }
+}
