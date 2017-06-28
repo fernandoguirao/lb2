@@ -14,13 +14,13 @@ function renderHelloumiLiveChat( configKey, callback ) {
       if (__config) {
         var __umichatCore = new UmichatCore( __config );
         __umichatCore.on('render', helloumiLivechatLoaded);
+        __umichatCore.on('render', customizeTextbox);
+        __umichatCore.on('showtextbox', showTextBox);
+        __umichatCore.on('hidetextbox', hideTextBox);
+        __umichatCore.on('sendmessage', hideTextBox);
+        __umichatCore.on('option-click', fadeOutButtons);
         if ( typeof(callback) == 'function' ) {
           __umichatCore.on('render', callback);
-          __umichatCore.on('render', customizeTextbox);
-          __umichatCore.on('showtextbox', showTextBox);
-          __umichatCore.on('hidetextbox', hideTextBox);
-          __umichatCore.on('sendmessage', hideTextBox);
-          __umichatCore.on('option-click', fadeOutButtons);
         }
       }
     }
