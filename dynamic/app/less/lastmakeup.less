@@ -3,6 +3,9 @@
 div#hu-experiment-header  {
  background-color: @header-background!important;
  border-bottom: 1px solid fade(@contrast,40%);
+ & when (@background-type = 'image'){
+   background-color: fade(black,20%)!important;
+ }
 }
 
 div#hu-experiment-header .hu-header-content .brand-name, div#hu-experiment-header .hu-header-content .more-leads, div#hu-experiment-header .hu-header-content .btt span {
@@ -437,5 +440,11 @@ body.fade-btn .publish-btn {
 @media screen and (min-width: 601px ){
   body.show-footer .hu-messenger-footer, body.show-footer #hu-container-messenger .hu-messenger-body .hu-messenger-message .hu-message-container .hu-message-content.hu-message-content-buttons {
       transform: translateY(0)!important;
+  }
+}
+
+#hu-container-widget .hu-js-open {
+  .dotone,.dottwo,.dotthree {
+    background-color: @accent !important;
   }
 }

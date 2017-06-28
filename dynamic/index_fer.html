@@ -16,23 +16,24 @@
         "storageBucket": "daisho-yexir.appspot.com",
         "tagline": "Turn a landing page into a chatbot",
         "logo": "https://storage.googleapis.com/media.yexir.com/channels/158.png",
-        "background-video": false,
-        "videoname": "",
+        "background-video": false, // true: hay vídeo; false: no hay vídeo
+        "videoname": "video_1",
         "custom": {
           "staticUrl": "\'" + "https://storage.googleapis.com/static.yexir.com/"+"\'",
           "accent": "#F11952",
           "light": "white",
           "contrast": "white",
           "dark": "#34495e",
-          "embfonts": true,
+          "embfonts": false, // false: si usamos Google Font; true: si usamos Gotham
+          "font": "Lato", // nombre de la fuente sustituyendo el "+" en caso de haberlo por espacio. Ejemplo: "Droid+Sans" sería "Droid Sans"
           "font-size": "14px",
-          "externalfonturl": "\'" + "https://fonts.googleapis.com/css?family=Lato"+"\'",
-          "background-type": "\"gradient\"",
+          "externalfonturl": "\'" + "https://fonts.googleapis.com/css?family=Lato"+"\'", // Si hay fuente de Google, su URL
+          "background-type": "\"video\"", // video / gradient / color / image
           "gradient-from": "#ff0051",
           "gradient-to": "#ffb389",
-          "background-image-url": "\'" + "https://storage.googleapis.com/media.yexir.com/"+"\'",
-          "background-color": "#8ed3ff",
-          "video-texture": '\'color\''
+          "background-image-url": "\'" + "http://landbot.io/buildbot/files/botimg/bg-picture.jpg"+"\'", // Si hay imagen de fondo
+          "background-color": "black", // Usado en background-type: image, video y color
+          "video-texture": '\'color\'' // Tipo de textura del vídeo
         }
       };
       function loadHelloumiLandbot(){

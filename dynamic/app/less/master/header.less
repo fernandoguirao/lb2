@@ -3,7 +3,10 @@ div#hu-experiment-header {
   height: 65px;
   font-family: @font, @font-type;
   line-height: 1.2;
-  background: @header-background;
+  background-color: @header-background;
+  & when (@background-type = 'image'){
+    background-color: fade(@background-color,20%)!important;
+  }
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.03);
   color: @contrast;
   .more-leads, a, h1 {
