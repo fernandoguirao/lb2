@@ -1,8 +1,7 @@
-function renderHelloumiLiveChat( configKey, initialMessage ) {
+function renderHelloumiLiveChat( configKey, callback ) {
   showLoader();
   new UmichatRequirements(function(){
     new TemplateUtils();
-
     // Default snippet config load
     var __configKeys = Object.keys(window.chatbotConfigs);
     if (__configKeys.length > 0) {
@@ -10,43 +9,33 @@ function renderHelloumiLiveChat( configKey, initialMessage ) {
       if (configKey && window.chatbotConfigs[configKey] ) {
         __config = window.chatbotConfigs[configKey];
       } else {
-        var __onInit = window.chatbotConfigs[ HULandbot.config.onInit ] || window.chatbotConfigs[ __configKeys[0] ];
-        var __onEmail = (__email) ? window.chatbotConfigs[ HULandbot.config.onEmail ] : false;
-        __config = __onEmail || __onInit;
+        __config = window.chatbotConfigs[ __configKeys[0] ];
       }
       if (__config) {
-        var __initialMessage = initialMessage || __email;
-        if ( typeof(__initialMessage) == 'string' ) {
-          __config["initialMessage"] = __initialMessage;
-        }
         var __umichatCore = new UmichatCore( __config );
         __umichatCore.on('render', helloumiLivechatLoaded);
-        __umichatCore.on('render', customizeTextbox);
-        __umichatCore.on('showtextbox', showTextBox);
-        __umichatCore.on('hidetextbox', hideTextBox);
-        __umichatCore.on('sendmessage', hideTextBox);
-        __umichatCore.on('option-click', fadeOutButtons);
+        if ( typeof(callback) == 'function' ) {
+          __umichatCore.on('render', callback);
+        }
       }
     }
-
   });
 }
 
-function loadHelloumiLiveChat( configKey, initialMessage ) {
+function loadHelloumiLiveChat( configKey ) {
   var __container = document.getElementById('hu-container-widget');
   if ( __container ) {
     __container.parentNode.removeChild(__container);
     var firebaseApp =(helloumi.webchat.umimessageservice) ? helloumi.webchat.umimessageservice.firebaseApp : null;
     if (firebaseApp) {
       firebaseApp.delete().then(function(){
-        renderHelloumiLiveChat( configKey, initialMessage );
+        renderHelloumiLiveChat( configKey );
       })
     } else {
-      renderHelloumiLiveChat( configKey, initialMessage );
+      renderHelloumiLiveChat( configKey );
     }
   }
 }
-
 
 function jsfakeMessage(target){
   $(target).parent().parent().children('.container-inline').children('.two-rows').children('a').click(function(e){
@@ -205,76 +194,10 @@ function identifyUser(flag, data) {
   }
 };
 
-function forabotTypingState( data ){
-  helloumi.webchat.umichatcore.setTypingState(-22);
-  setTimeout(function(){
-    helloumi.webchat.umichatcore.setTypingState('');
-  }, data.timeout);
-}
-
-function forabotMessageReceived( message ) {
-  var __timestamp = window.jsbotTimestamp = (window.jsbotTimestamp) ? window.jsbotTimestamp + 0.000001 : 0.000001;
-  var __datetime = new Date(__timestamp);
-  var __message = {
-    key: 'jsbot-' + __timestamp,
-    message: message.text,
-    title: message.text,
-    timestamp: __timestamp,
-    time: helloumi.utils.date.hhmm( __datetime ),
-    day: helloumi.utils.date.yyyymmdd( __datetime ),
-    readClass: 'hu-js-readed',
-    url: message.image,
-    samurai: -22,
-    authorClass: 'hu-messenger-message-brand',
-    type: (message.image) ? 'image' : 'dialog',
-    buttons: $.map(message.buttons, function(elem,index) {
-      return elem.caption;
-    }),
-    payloads: $.map(message.buttons, function(elem,index) {
-      return elem.caption;
-    }),
-    extra_data: message.extra_data,
-  }
-  helloumi.webchat.umichatcore.loadMessage(__message);
-}
-
 function helloumiLivechatLoaded() {
-  // document.querySelector('.hu-messenger-body').addEventListener('scroll', function(e) {
-  //   if (e.target.scrollTop <= 5) {
-  //     document.getElementById('hu-experiment-header').className = '';
-  //   } else {
-  //     document.getElementById('hu-experiment-header').className = 'hu-scrolled';
-  //   }
-  // });
-  if (helloumi.webchat.umichatcore.config.jsbot && helloumi.webchat.umichatcore.config.customerToken == null ) {
-    window.jsbot = new ForaBotController();
-    window.jsbot.on('output', forabotMessageReceived);
-    window.jsbot.on('typing', forabotTypingState);
-    window.jsbot.load(
-      new ForaBot(Date.now().toString(), helloumi.webchat.umichatcore.config.jsbot )
-    );
-    window.jsbot.start();
-
-    helloumi.webchat.umichatcore.on('messageSent', function( messageData ){
-      trackEvent('firstMessage', 'Landbot Chat', 'Starts conversation');
-      helloumi.webchat.umichatcore.off('messageSent');
-    })
-
-    document.getElementById('hu-webchat-loader').style.setProperty('display', 'none', 'important');
-    trackEvent('start', 'Load Landbot');
+  if ( HULandbot && typeof(HULandbot.config.initialMessage) == 'string' && helloumi.webchat.umichatcore.config.customerToken == null ) {
+    fakeMessage(HULandbot.config.initialMessage)
   }
-  hideLoader();
-}
-
-function helloumiLivechatIframeLoaded() {
-  window.HULiveChat.ifrWindow.document.querySelector('head').innerHTML += '<link rel="stylesheet" href="css/botchat.css" type="text/css"/>';
-  // window.HULiveChat.ifrWindow.document.querySelector('.hu-messenger-body').addEventListener('scroll', function(e) {
-  //   if (e.target.scrollTop <= 5) {
-  //     document.getElementById('hu-experiment-header').className = '';
-  //   } else {
-  //     document.getElementById('hu-experiment-header').className = 'hu-scrolled';
-  //   }
-  // });
   hideLoader();
 }
 
