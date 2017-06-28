@@ -2,15 +2,25 @@
 
 div#hu-experiment-header  {
  background-color: @header-background!important;
- border-bottom: 1px solid rgba(red(@contrast), green(@contrast), blue(@contrast), 0.4);
+ border-bottom: 1px solid fade(@contrast,40%);
+ & when (@background-type = 'image'){
+   background-color: fade(black,20%)!important;
+ }
+}
+
+div#hu-experiment-header .hu-header-content .brand-name, div#hu-experiment-header .hu-header-content .more-leads, div#hu-experiment-header .hu-header-content .btt span {
+  color: @contrast;
 }
 
 div#hu-experiment-header .more-leads.btt, div#hu-experiment-header a.btt, div#hu-experiment-header .btt.btt, div#hu-experiment-header h1.btt {
-  border: 1px solid rgba(red(@light), green(@light), blue(@light), 0.7)!important;
+  border: 1px solid fade(@contrast,70%)!important;
+  &:hover {
+    background-color: @accent;
+  }
 }
 
 div#hu-experiment-header {
-  border-bottom-color: rgba(red(@contrast), green(@contrast), blue(@contrast), 0.4);
+  border-bottom-color: fade(@contrast, 40%);
 }
 
 .btt .hu-bold {
@@ -120,7 +130,7 @@ textarea#hu-composer-box {
     white-space: pre-wrap;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    padding: 22px 61px 22px 22px;
+    padding: 21px 61px 22px 22px;
     background-color: @light!important;
     border-radius: 4px;
     border: 7px solid @light!important;
@@ -172,22 +182,28 @@ textarea#hu-composer-box {
 }
 
 
-  div#hu-experiment-header .hu-header-content img {
-    max-width: 103px;
-    max-height: 45px;
-    margin-right: 12px;
-    height: 100%;
-    width: auto;
-    margin-top: -8px;
-  }
+  // div#hu-experiment-header .hu-header-content img {
+  //   max-width: 103px;
+  //   max-height: 45px;
+  //   margin-right: 12px;
+  //   height: 100%;
+  //   width: auto;
+  //   margin-top: -8px;
+  // }
 
   #hu-container-widget[data-platform="landbot"] .hu-js-open .hu-messenger-body .hu-messenger-message.hu-messenger-message-brand[data-samurai^="-"] .hu-avatar {
     &:before {
-      width: 27px;
-      height: 27px;
+      // width: 27px;
+      // height: 27px;
+      // background-size: contain;
+      // top: 6px;
+      // left: 6px;
+      // background-position: center;
+      width: 23px;
+      height: 25px;
       background-size: contain;
-      top: 6px;
-      left: 6px;
+      top: 8px;
+      left: 8px;
       background-position: center;
     }
   }
@@ -427,3 +443,8 @@ body.fade-btn .publish-btn {
   }
 }
 
+#hu-container-widget .hu-js-open {
+  .dotone,.dottwo,.dotthree {
+    background-color: @accent !important;
+  }
+}
