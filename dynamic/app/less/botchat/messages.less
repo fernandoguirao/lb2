@@ -311,8 +311,8 @@
             .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink {
               &:last-child {
                 background-color: transparent;
-                color: @accent-0;
-                border-color: @accent-0;
+                color: @contrast;
+                border-color: @contrast;
                 & when (@background-type = 'video') {
                   color: @light;
                   border-color: @light;
@@ -584,7 +584,8 @@
         box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.08);
         // Bot Avatar
         background-image: none !important;
-        background-color: @accent;
+        // background-color: @accent;
+        background-color: rgba(255,255,255,.2);
         & when (@background-type = 'video') {
           background-color: rgba(255,255,255,.2) !important;
         }
