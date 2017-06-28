@@ -31,6 +31,7 @@ function Landbot(config) {
     'onloadLivechatJS': 'renderHelloumiLiveChat()',
     'messageLimit': 100,
     'welcome': {},
+    'initialMessage': '#start',
     // custom content MUST be JSON parseable
     'custom': {
       "containertype": "fullscreen",
