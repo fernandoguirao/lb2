@@ -107,6 +107,13 @@ function customizeTextbox(){
   if(screen.width >= 800) document.querySelector('.hu-composer-send-button').classList.remove('hu-js-hide');
   helloumi.webchat.umichatgui.setVisibleSendButtonBackUp = helloumi.webchat.umichatgui.setVisibleSendButton;
   helloumi.webchat.umichatgui.setVisibleSendButton = setVisibleSendButtonWrapper;
+  $('.hu-footer-state').click(function(){ 
+    $('.hu-composer-text textarea').trigger('focus');
+    $('.hu-composer-text').toggleClass('focus'); 
+  });
+  $('.hu-composer-text textarea').focusout(function(){
+     $('.hu-composer-text').removeClass('focus');
+  })
 }
 
 function setVisibleSendButtonWrapper(visible){
