@@ -454,6 +454,8 @@ span.lg-font {
   font-weight: bolder!important;
 }
 
+// UPLOAD BUTTON
+
 .hu-composer-file-button.hu-composer-btn.btn-upload:before {
   content: "Upload your file";
   background-color: @accent!important;
@@ -472,43 +474,52 @@ span.lg-font {
   left: 18px;
 }
 
-// FIX TEXTAREA
-.hu-composer-text textarea#hu-composer-box {
-  padding: 0!important;
-  border: 0!important;
-  background: white!important;
-  height: 18px!important;
-  max-height: 18px!important;
-  color: black!important;
-  box-shadow: none!important;
-  min-height: 18px!important;
-  transition: max-height .5s!important;
+.hu-messenger-footer .hu-footer-state .hu-composer-files .hu-composer-file span.hu-composer-fileclose:hover {
+  transform: scale(1.07)!important;
 }
+
+// FIX TEXTAREA
 
 .hu-composer-text {
-  background: white;
+  background: @light;
   padding: 26px!important;
   border-radius: 6px;
-}
-
-.hu-composer-text.focus {
-  border: 2px solid red!important;
-}
-
-.hu-composer-text.focus textarea#hu-composer-box {
-  max-height: 50px!important;
-  height: 38px!important;
+  border: 2px solid @light;
+  textarea#hu-composer-box {
+    padding: 0!important;
+    border: 0!important;
+    background: @light!important;
+    height: 18px!important;
+    max-height: 18px!important;
+    color: @dark!important;
+    box-shadow: none!important;
+    min-height: 18px!important;
+    transition: all .2s!important;
+  }
+  &.focus {
+    border: 2px solid @accent!important;
+    textarea#hu-composer-box {
+      max-height: 35px!important;
+      height: 36px!important;
+    }
+  }
 }
 
 @media screen and (max-width:800px){
   .hu-composer-text {
-    padding: 16px 27px!important;
-  }
-  .hu-composer-text.focus {
+    padding: 13px 27px!important;
     border: none!important;
-  }
-  .hu-composer-text.focus textarea#hu-composer-box {
-    max-height: 18px!important;
-    height: 18px!important;
+    textarea#hu-composer-box {
+      max-height: 18px!important;
+      height: 18px!important;
+    }
+    &.focus {
+      border: none!important;
+      padding: 13px 27px!important;
+      textarea#hu-composer-box {
+        max-height: 18px!important;
+        height: 18px!important;
+      }
+    }
   }
 }
