@@ -109,6 +109,13 @@
       __data = firstTimeBot;
     }
 
+    //
+    // HACK: Hide textbox on sendmessage
+    //
+    helloumi.webchat.umichatcore.on('sendmessage',
+      helloumi.webchat.umichatgui.hideTextbox.bind(helloumi.webchat.umichatgui)
+    );
+
     window.jsbot = new ForaBotController();
     window.jsbot.on('output', forabotMessageReceived);
     window.jsbot.on('input', forabotMessageSent);
