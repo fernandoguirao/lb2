@@ -24,7 +24,6 @@ function renderHelloumiLiveChat( configKey, callback ) {
         }
 
         __umichatCore.on('showtextbox', function(){
-          console.log('delete');
           var styleHide = document.getElementById('hideChatbox');
           if (styleHide) styleHide.parentNode.removeChild(styleHide);
         });
@@ -46,6 +45,10 @@ function loadHelloumiLiveChat( configKey ) {
       renderHelloumiLiveChat( configKey );
     }
   }
+}
+
+var jsReferral = function(jsDiv){
+  $(jsDiv).parent().parent().parent().parent().addClass('js-referral');
 }
 
 function jsfakeMessage(target){
@@ -106,21 +109,26 @@ function loadButtons(target,jsonURL) {
 
 }
 
-function customizeTextbox(){
-  // var landbottextbox = document.createElement('div');
-  // landbottextbox.id = "landbot-textbox";
-  // document.querySelector("#hu-webchat-ghosts").before(landbottextbox);
-  // if(screen.width >= 800) document.querySelector('.hu-composer-send-button').classList.remove('hu-js-hide');
-  // helloumi.webchat.umichatgui.setVisibleSendButtonBackUp = helloumi.webchat.umichatgui.setVisibleSendButton;
-  // helloumi.webchat.umichatgui.setVisibleSendButton = setVisibleSendButtonWrapper;
-  $('.hu-footer-state').click(function(){
-    $('.hu-composer-text textarea').trigger('focus');
-    $('.hu-composer-text').toggleClass('focus');
-  });
-  $('.hu-composer-text textarea').focusout(function(){
-     $('.hu-composer-text').removeClass('focus');
-  })
+function customizeTextbox() {
+    // var landbottextbox = document.createElement('div');
+    // landbottextbox.id = "landbot-textbox";
+    // document.querySelector("#hu-webchat-ghosts").before(landbottextbox);
+    // if(screen.width >= 800) document.querySelector('.hu-composer-send-button').classList.remove('hu-js-hide');
+    // helloumi.webchat.umichatgui.setVisibleSendButtonBackUp = helloumi.webchat.umichatgui.setVisibleSendButton;
+    // helloumi.webchat.umichatgui.setVisibleSendButton = setVisibleSendButtonWrapper;
+    $('.hu-footer-state:not(".focus")').click(function() {
+        $('.hu-composer-text textarea').trigger('focus');
+        $('.hu-composer-text').addClass('focus');
+    });
+
+    $('.hu-composer-text.focus textarea').focusout(function() {
+        $('.hu-composer-text').removeClass('focus');
+    });
+    $('.hu-composer-emoji-button,.hu-composer-file-button').click(function(e) {
+        e.stopPropagation();
+    });
 }
+
 
 function setVisibleSendButtonWrapper(visible){
   if( screen.width < 800 ){
