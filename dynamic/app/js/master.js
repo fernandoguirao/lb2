@@ -22,6 +22,12 @@ function renderHelloumiLiveChat( configKey, callback ) {
         if ( typeof(callback) == 'function' ) {
           __umichatCore.on('render', callback);
         }
+
+        __umichatCore.on('showtextbox', function(){
+          console.log('delete');
+          var styleHide = document.getElementById('hideChatbox');
+          if (styleHide) styleHide.parentNode.removeChild(styleHide);
+        });
       }
     }
   });
@@ -107,7 +113,7 @@ function customizeTextbox(){
   // if(screen.width >= 800) document.querySelector('.hu-composer-send-button').classList.remove('hu-js-hide');
   // helloumi.webchat.umichatgui.setVisibleSendButtonBackUp = helloumi.webchat.umichatgui.setVisibleSendButton;
   // helloumi.webchat.umichatgui.setVisibleSendButton = setVisibleSendButtonWrapper;
-  $('.hu-footer-state').click(function(){ 
+  $('.hu-footer-state').click(function(){
     $('.hu-composer-text textarea').trigger('focus');
     $('.hu-composer-text').toggleClass('focus');
   });

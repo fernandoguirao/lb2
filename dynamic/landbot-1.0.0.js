@@ -234,6 +234,17 @@ Landbot.prototype.generateDocument = function generateDocument() {
     type: 'image/x-icon'
   });
 
+  /////////// HIDE TEXTBOX ONLOAD ///////////
+
+  this.generateTag('style', head, {
+    id: 'hideChatbox',
+    innerHTML: '\
+    .hu-messenger-footer {\
+      display: none !important;\
+      opacity: 0 !important;\
+    }'
+  });
+
   // LESS
 
   window.less = {
@@ -300,16 +311,6 @@ Landbot.prototype.generateDocument = function generateDocument() {
     charset: 'UTF-8'
   }, {
     onload: 'HULandbot.generateLivechatJS()'
-  });
-
-  /////////// HIDE TEXTBOX ONLOAD ///////////
-
-  this.generateTag('style', head, {
-    id: 'hideChatbox',
-    innerHTML: '\
-    .hu-messenger-footer {\
-      display: none !important;\
-    }'
   });
 
   ///////////////// SNIPPET /////////////////
