@@ -525,3 +525,34 @@ span.lg-font {
     }
   }
 }
+
+// REFERRAL
+
+.hu-messenger-body .hu-messenger-message.hu-messenger-message-brand .js-referral {
+  .hu-message-content {
+    background-color: transparent!important;
+    padding: 0!important;
+    box-shadow: none!important;
+    p {
+      color: white!important;
+    }
+    b {
+      margin-left: 6px;
+    }
+    a {
+      display: inline-block!important;
+      text-decoration: none;
+      background-color: @accent;
+      margin-top: 12px;
+      padding: 18px 29px 19px 14px;
+      text-align: center;
+      color: @contrast;
+      border-radius: 3px;
+      border: 2px solid darken(@accent,10%);
+      &:hover {
+        background-color: lighten(@accent,10%);
+        box-shadow: 0 0 10px 0px rgba(0,0,0,.2);
+      }
+    }
+  }
+}
