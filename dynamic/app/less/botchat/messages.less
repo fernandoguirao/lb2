@@ -584,8 +584,10 @@
     }
     // AUTHOR SPECIFIC: BRAND
     &.hu-messenger-message-brand {
-      .animation(appear-left);
-      .animation-duration(.3s);
+      &[data-key='typing'] {
+        .animation(appear-left);
+        .animation-duration(.3s);
+      }
       position: relative;
       &[data-samurai^="\-"] .hu-avatar {
         position: relative;
