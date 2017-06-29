@@ -13,7 +13,7 @@ function Landbot(config) {
     'serverUrl': null,
     'channelToken': null,
     'brandID': null,
-    'brandName': null,
+    'brandName': "Landbot",
     'apiKey': null,
     'authDomain': null,
     'databaseURL': null,
