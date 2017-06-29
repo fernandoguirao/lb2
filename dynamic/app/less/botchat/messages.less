@@ -1,8 +1,8 @@
 /*#hu-container-messenger*/ .hu-messenger-body {
   .hu-btn-group-vertical {
-    @include display-flex();
-    @include flex-direction(row);
-    @include flex-wrap();
+    .display-flex();
+    .flex-direction-row();
+    .flex-wrap();
   }
   .hu-bold {
     font-weight: 700 !important;
@@ -289,7 +289,11 @@
             display: none;
           }
         }
+        // BUTTONS
         &.hu-message-content-buttons {
+          &.multi .hu-btn-send span {
+            font-weight: 300!important;
+          }
           background: transparent !important;
           // padding: 0 !important;
           padding: 15px 0 0 0 !important;
