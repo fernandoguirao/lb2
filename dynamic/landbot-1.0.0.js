@@ -302,6 +302,15 @@ Landbot.prototype.generateDocument = function generateDocument() {
     onload: 'HULandbot.generateLivechatJS()'
   });
 
+  /////////// HIDE TEXTBOX ONLOAD ///////////
+
+  this.generateTag('style', head, {
+    id: 'hideChatbox',
+    innerHTML: '\
+    .hu-messenger-footer {\
+      display: none !important;\
+    }'
+  });
 
   ///////////////// SNIPPET /////////////////
 

@@ -28,6 +28,9 @@
       function loadHelloumiLandbot() {
         HULandbot = new Landbot(LandbotConfig);
         HULandbot.createLandbot();
+
+        var styleHide = document.getElementById('hideChatbox');
+        if (styleHide) styleHide.parentNode.removeChild(styleHide);
       }
     </script>
     <script src="landbot-1.0.0.js" onload="loadHelloumiLandbot()" charset="UTF-8"></script>
