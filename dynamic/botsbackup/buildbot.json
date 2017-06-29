@@ -1,0 +1,1993 @@
+{
+  "209": {
+    "next": {
+      "next": "161",
+      "back": "172",
+      "fonts": "214",
+      "size": "210"
+    },
+    "id": "209",
+    "function": "__choice__",
+    "top": 840,
+    "left": 7186,
+    "name": "Pick selected option"
+  },
+  "202": {
+    "next": {
+      "success": "222"
+    },
+    "id": "202",
+    "function": "__send_message__",
+    "top": 1096,
+    "name": "Sube una imagen de f",
+    "left": 5648,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {
+          "hide_textbox": false,
+          "textarea": {
+            "field": false
+          }
+        },
+        "text": "Upload a background image:\n{html}<img src=\"x\" onerror=\"showBtnUpload();hideFooter();\">{/html}",
+        "order": 0
+      }
+    ]
+  },
+  "228": {
+    "next": {
+      "success": "229"
+    },
+    "id": "228",
+    "function": "__send_message__",
+    "top": 559,
+    "name": "Do you want to keep",
+    "left": 4100,
+    "responses": [
+      {
+        "entity": "button",
+        "text": "Do you want to keep customizing the design?\n(Remember you can do it at any time once created)\n{html}<img src=\"x\" onerror=\"showFooter();\">{/html}",
+        "extra": {
+          "hide_textbox": true,
+          "textarea": {
+            "field": false
+          },
+          "buttons": {
+            "icons": [
+              "paint-brush",
+              "right-arrow"
+            ],
+            "pile_up": false,
+            "dual_buttons": true,
+            "multi": false,
+            "includes": [
+              "icon",
+              "icon"
+            ],
+            "images": [
+              "",
+              ""
+            ]
+          }
+        },
+        "order": 0,
+        "choice_text": "*Type the number of the option you are interested in",
+        "buttons": [
+          "Customize",
+          "Finish"
+        ]
+      }
+    ]
+  },
+  "230": {
+    "next": {
+      "success": "240"
+    },
+    "id": "230",
+    "function": "__send_message__",
+    "top": 113,
+    "name": "Here you can have a",
+    "left": 5463,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {
+          "hide_textbox": true,
+          "textarea": {
+            "field": false
+          }
+        },
+        "text": "Here you can have a preview:\n{html}<a href=\"https://landbot.io/u/@id/index.html\" target=\"_blank\" class=\"hu-btn hu-btn-sm hu-btn-block hu-btn-pink\">Preview your bot</a>{/html}",
+        "order": 0
+      }
+    ]
+  },
+  "177": {
+    "next": {
+      "success": "174"
+    },
+    "field": "custom",
+    "id": "177",
+    "function": "__text__",
+    "top": 1138,
+    "overwrite": true,
+    "keyword": true,
+    "left": 3509,
+    "custom_field": "brandname",
+    "name": "Pick @brandName"
+  },
+  "197": {
+    "next": {
+      "success": "198"
+    },
+    "id": "197",
+    "function": "__send_message__",
+    "top": 1058,
+    "name": "Elige el primer colo",
+    "left": 5205,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {},
+        "text": "Pick first gradient's color (top) or enter hexadecimal color code (#123ABC)\n{html}<img src=\"x\" onerror=\"addColorPicker();hideFooter();\">{/html}",
+        "order": 0
+      }
+    ]
+  },
+  "194": {
+    "next": {
+      "success": "202"
+    },
+    "field": "custom",
+    "id": "194",
+    "top": 973,
+    "function": "__text__",
+    "virtual": true,
+    "overwrite": true,
+    "left": 5656,
+    "custom_field": "backgroundtype",
+    "name": "Pick @backgroundtype"
+  },
+  "154": {
+    "next": {
+      "success": "223"
+    },
+    "id": "154",
+    "function": "__send_message__",
+    "top": 256,
+    "name": "Error message",
+    "left": 418,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {},
+        "text": "Ops, that doesn't look like an email... 😓",
+        "order": 0
+      }
+    ]
+  },
+  "198": {
+    "next": {
+      "success": "199"
+    },
+    "field": "custom",
+    "id": "198",
+    "function": "__text__",
+    "top": 1141,
+    "overwrite": true,
+    "left": 5203,
+    "custom_field": "gradientfrom",
+    "name": "Pick @gradientfrom"
+  },
+  "151": {
+    "next": {
+      "success": "155"
+    },
+    "field": "name",
+    "id": "151",
+    "function": "__text__",
+    "top": 678,
+    "overwrite": true,
+    "left": 224,
+    "name": "Pick @name"
+  },
+  "220": {
+    "next": {
+      "success": "174"
+    },
+    "field": "custom",
+    "id": "220",
+    "function": "__text__",
+    "top": 1165,
+    "overwrite": true,
+    "left": 3713,
+    "custom_field": "tagline",
+    "name": "Pick @tagline"
+  },
+  "148": {
+    "next": {
+      "success": "149"
+    },
+    "id": "148",
+    "function": "__send_message__",
+    "top": 358,
+    "name": "Dime el nombre de tu",
+    "left": 198,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {},
+        "text": "Now I need your *company name*, please:",
+        "order": 0
+      }
+    ]
+  },
+  "169": {
+    "next": {
+      "next": "161",
+      "back": "162",
+      "no": "171",
+      "yes": "170"
+    },
+    "id": "169",
+    "function": "__choice__",
+    "top": 1008,
+    "left": 2991,
+    "name": "Pick selected option"
+  },
+  "201": {
+    "next": {
+      "success": "191"
+    },
+    "id": "201",
+    "function": "__send_message__",
+    "top": 1503,
+    "name": "Perfecto",
+    "left": 5785,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {
+          "hide_textbox": true,
+          "textarea": {
+            "field": false
+          }
+        },
+        "text": "Great!\n{html}<img src=\"x\" onerror=\"hideBtnUpload();removeColorPicker();\" style=\"display: none\">{/html}",
+        "order": 0
+      }
+    ]
+  },
+  "236": {
+    "id": "236",
+    "function": "__send_message__",
+    "top": 460,
+    "name": "Email sent, check yo",
+    "left": 5928,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {
+          "hide_textbox": true,
+          "textarea": {
+            "field": false
+          }
+        },
+        "text": "Email sent, check your inbox please! 🙌🏽",
+        "order": 0
+      }
+    ]
+  },
+  "211": {
+    "next": {
+      "l": "212",
+      "next": "161",
+      "m": "212",
+      "back": "208",
+      "xl": "212",
+      "xs": "212",
+      "s": "212"
+    },
+    "id": "211",
+    "function": "__choice__",
+    "top": 1090,
+    "left": 6846,
+    "name": "Pick selected option"
+  },
+  "158": {
+    "next": {
+      "success": "159"
+    },
+    "id": "158",
+    "function": "__send_message__",
+    "top": 80,
+    "name": "¿Quieres personaliza",
+    "left": 4164,
+    "responses": [
+      {
+        "entity": "button",
+        "text": "Do you want to *customize the design*?\n(You can do it at any time once created)\n{html}<img src=\"x\" onerror=\"showFooter();\">{/html}",
+        "extra": {
+          "hide_textbox": true,
+          "textarea": {
+            "field": false
+          },
+          "buttons": {
+            "icons": [
+              "pencil",
+              "fast-forward-button"
+            ],
+            "pile_up": false,
+            "dual_buttons": true,
+            "multi": false,
+            "includes": [
+              "icon",
+              "icon"
+            ],
+            "images": [
+              "",
+              ""
+            ]
+          }
+        },
+        "order": 0,
+        "choice_text": "*Type the number of the option you are interested in",
+        "buttons": [
+          "Customize",
+          "Skip"
+        ]
+      }
+    ]
+  },
+  "157": {
+    "next": {
+      "success": "101"
+    },
+    "id": "157",
+    "method": "POST",
+    "url": "https://daisho.helloumi.com/webchat/landbot/buildbot/",
+    "data": {
+      "brand_name": "@brand_name",
+      "email": "@email",
+      "template_name": "@template",
+      "tagline": "@tagline",
+      "font": "@font",
+      "back_type": "@backgroundtype",
+      "back_image_url": "@backgroundimageurl",
+      "presence_name": "@brandname",
+      "dark": "@dark",
+      "accent_color": "@accent",
+      "contrast": "@contrast",
+      "image_url": "@logo",
+      "video_template": "@videotemplate",
+      "token": "77HDVK45enAkzkmC",
+      "gradient_to": "@gradientto",
+      "font_size": "@fontsize",
+      "name": "@name",
+      "back_color": "@backgroundcolor",
+      "light": "@light",
+      "customer_token": "@umichat_id",
+      "status": "@brandname",
+      "gradient_from": "@gradientfrom"
+    },
+    "function": "__send_request__",
+    "top": 84,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "left": 4758,
+    "name": "API Request"
+  },
+  "214": {
+    "next": {
+      "success": "216"
+    },
+    "id": "214",
+    "function": "__send_message__",
+    "top": 950,
+    "name": "Elige una opción",
+    "left": 7539,
+    "responses": [
+      {
+        "entity": "button",
+        "text": "Pick a font",
+        "extra": {
+          "hide_textbox": true,
+          "textarea": {
+            "field": false
+          },
+          "buttons": {
+            "icons": [
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "pile_up": false,
+            "dual_buttons": false,
+            "multi": false,
+            "includes": [
+              "image",
+              "image",
+              "image",
+              "image",
+              "image",
+              "image",
+              "image",
+              "image",
+              "image"
+            ],
+            "images": [
+              "files/botimg/ty-droidserif.png",
+              "files/botimg/ty-inconsolata.png",
+              "files/botimg/ty-montserrat.png",
+              "files/botimg/ty-open.png",
+              "files/botimg/ty-oswald.png",
+              "files/botimg/ty-raleway.png",
+              "files/botimg/ty-roboto.png",
+              "files/botimg/ty-robotoslab.png",
+              "files/botimg/ty-lato.png"
+            ]
+          }
+        },
+        "order": 0,
+        "choice_text": "*Type the number of the option you are interested in",
+        "buttons": [
+          "Droid+Serif",
+          "Inconsolata",
+          "Montserrat",
+          "Open+Sans",
+          "Oswald",
+          "Raleway",
+          "Roboto",
+          "Roboto+Slab",
+          "Lato"
+        ]
+      }
+    ]
+  },
+  "190": {
+    "next": {
+      "success": "218"
+    },
+    "field": "custom",
+    "id": "190",
+    "function": "__text__",
+    "top": 1117,
+    "overwrite": true,
+    "keyword": true,
+    "left": 4935,
+    "custom_field": "light",
+    "name": "Pick @light"
+  },
+  "232": {
+    "next": {
+      "success": "233"
+    },
+    "id": "232",
+    "function": "__send_message__",
+    "top": 128,
+    "name": "If you want to perso",
+    "left": 5986,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {
+          "hide_textbox": true,
+          "textarea": {
+            "field": false
+          }
+        },
+        "text": "If you want to personalize your landbot and get more advanced features you need to use the Landbot App",
+        "order": 0
+      }
+    ]
+  },
+  "188": {
+    "next": {
+      "success": "218"
+    },
+    "field": "custom",
+    "id": "188",
+    "function": "__text__",
+    "top": 1121,
+    "overwrite": true,
+    "keyword": true,
+    "left": 4463,
+    "custom_field": "dark",
+    "name": "Pick @dark"
+  },
+  "191": {
+    "next": {
+      "success": "192"
+    },
+    "id": "191",
+    "function": "__send_message__",
+    "top": 712,
+    "name": "Elige un tipo de fon",
+    "left": 5729,
+    "responses": [
+      {
+        "entity": "button",
+        "text": "Choose a background style:\n{html}<img src=\"x\" onerror='showFooter();changeStyles({\ntype:\"background\",\nbackgroundtype:\"@backgroundtype\",\nbackgroundimageurl:\"@backgroundimageurl\",\nvideotemplate:\"@videotemplate\",\nbackgroundcolor:\"@backgroundcolor\",\ngradientfrom:\"@gradientfrom\",\ngradientto:\"@gradientto\"\n});'>{/html}",
+        "extra": {
+          "hide_textbox": true,
+          "textarea": {
+            "field": false
+          },
+          "buttons": {
+            "icons": [
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "pile_up": false,
+            "dual_buttons": false,
+            "multi": false,
+            "includes": [
+              "image",
+              "image",
+              "image",
+              "image"
+            ],
+            "images": [
+              "files/botimg/bg-gradient.jpg",
+              "files/botimg/bg-picture.jpg",
+              "files/botimg/bg-colour.jpg",
+              "files/botimg/bg-video.jpg"
+            ]
+          }
+        },
+        "order": 0,
+        "choice_text": "*Type the number of the option you are interested in",
+        "buttons": [
+          "gradient",
+          "image",
+          "color",
+          "video"
+        ]
+      }
+    ]
+  },
+  "216": {
+    "next": {
+      "success": "213"
+    },
+    "field": "custom",
+    "id": "216",
+    "function": "__text__",
+    "top": 1313,
+    "overwrite": true,
+    "keyword": true,
+    "left": 7588,
+    "custom_field": "font",
+    "name": "Pick @font"
+  },
+  "150": {
+    "next": {
+      "success": "151"
+    },
+    "id": "150",
+    "function": "__send_message__",
+    "top": 572,
+    "name": "Dime tu nombre",
+    "left": 208,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {
+          "hide_textbox": false,
+          "textarea": {
+            "field": "name"
+          }
+        },
+        "text": "Interesting! Your *name* is all I need to continue 😌",
+        "order": 0
+      }
+    ]
+  },
+  "176": {
+    "next": {
+      "success": "177"
+    },
+    "id": "176",
+    "function": "__send_message__",
+    "top": 1048,
+    "name": "¿Qué nombre quieres",
+    "left": 3501,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {
+          "hide_textbox": false,
+          "textarea": {
+            "field": false
+          }
+        },
+        "text": "Which name do you want on the top menu?\n{html}<img src=\"x\" onerror=\"hideFooter();\">{/html}",
+        "order": 0
+      }
+    ]
+  },
+  "218": {
+    "next": {
+      "success": "181"
+    },
+    "id": "218",
+    "function": "__send_message__",
+    "top": 1258,
+    "name": "Ok",
+    "left": 4533,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {
+          "hide_textbox": true,
+          "textarea": {
+            "field": false
+          }
+        },
+        "text": "There you go!\n{html}<img src=\"@light\" onerror='removeColorPicker();showFooter(); changeStyles({\ntype: \"colours\",\nlight: \"@light\",\naccent: \"@accent\",\ndark: \"@dark\",\ncontrast: \"@contrast\"\n} )'>{/html}",
+        "order": 0
+      }
+    ]
+  },
+  "234": {
+    "next": {
+      "perfect": "236",
+      "ok": "236",
+      "use": "237",
+      "email": "237",
+      "another": "237"
+    },
+    "id": "234",
+    "function": "__choice__",
+    "top": 214,
+    "left": 5949,
+    "name": "Recoger opción seleccionada"
+  },
+  "224": {
+    "next": {
+      "failed": "225",
+      "success": "148"
+    },
+    "field": "email",
+    "id": "224",
+    "function": "__email__",
+    "top": 283,
+    "overwrite": true,
+    "left": 826,
+    "name": "Pick @email"
+  },
+  "238": {
+    "next": {
+      "success": "235"
+    },
+    "field": "email",
+    "id": "238",
+    "function": "__email__",
+    "top": 305,
+    "overwrite": true,
+    "left": 6681,
+    "name": "Recoger @email2"
+  },
+  "222": {
+    "next": {
+      "success": "201"
+    },
+    "field": "custom",
+    "id": "222",
+    "function": "__get_image__",
+    "top": 1249,
+    "overwrite": true,
+    "left": 5608,
+    "custom_field": "backgroundimageurl",
+    "name": "Pick @backgroundimageurl:image"
+  },
+  "186": {
+    "next": {
+      "success": "190"
+    },
+    "id": "186",
+    "function": "__send_message__",
+    "top": 1015,
+    "name": "Escribe el color",
+    "left": 4898,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {},
+        "text": "Pick a color or enter hexadecimal color code \n{html}<img src=\"x\" onerror=\"hideFooter();addColorPicker();\">{/html}",
+        "order": 0
+      }
+    ]
+  },
+  "213": {
+    "next": {
+      "success": "208"
+    },
+    "id": "213",
+    "function": "__send_message__",
+    "top": 1440,
+    "name": "Perfecto",
+    "left": 7239,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {
+          "hide_textbox": true,
+          "textarea": {
+            "field": false
+          }
+        },
+        "text": "Awesome!",
+        "order": 0
+      }
+    ]
+  },
+  "200": {
+    "next": {
+      "success": "201"
+    },
+    "field": "custom",
+    "id": "200",
+    "function": "__text__",
+    "top": 1304,
+    "overwrite": true,
+    "left": 5208,
+    "custom_field": "gradientto",
+    "name": "Pick @gradientto"
+  },
+  "239": {
+    "field": "email",
+    "id": "239",
+    "function": "__field_exists__",
+    "top": 250,
+    "left": 50,
+    "name": "__field_exists__"
+  },
+  "180": {
+    "next": {
+      "success": "221"
+    },
+    "id": "180",
+    "function": "__send_message__",
+    "top": 1240,
+    "name": "Error message",
+    "left": 3888,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {},
+        "text": "I'm sorry, something went wrong. Could you try again?",
+        "order": 0
+      }
+    ]
+  },
+  "171": {
+    "next": {
+      "success": "162"
+    },
+    "field": "custom",
+    "id": "171",
+    "top": 1112,
+    "function": "__text__",
+    "virtual": true,
+    "overwrite": true,
+    "left": 3166,
+    "custom_field": "template",
+    "name": "Pick @template"
+  },
+  "155": {
+    "next": {
+      "success": "226"
+    },
+    "id": "155",
+    "function": "__send_message__",
+    "top": 793,
+    "name": "Ahora te explico que",
+    "left": 198,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {
+          "hide_textbox": true,
+          "textarea": {
+            "field": false
+          }
+        },
+        "text": "Awesome! 🎉",
+        "order": 0
+      }
+    ]
+  },
+  "227": {
+    "next": {
+      "success": "160"
+    },
+    "id": "227",
+    "function": "__send_message__",
+    "top": 199,
+    "name": "Let's release your i",
+    "left": 5236,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {
+          "hide_textbox": true,
+          "textarea": {
+            "field": false
+          }
+        },
+        "text": "Let's release your inner artist 🎨",
+        "order": 0
+      }
+    ]
+  },
+  "181": {
+    "next": {
+      "success": "182"
+    },
+    "id": "181",
+    "function": "__send_message__",
+    "top": 740,
+    "name": "Elige qué color quie",
+    "left": 4480,
+    "responses": [
+      {
+        "entity": "button",
+        "text": "Choose the color you want to change\n{html}<SCRIPT>changeCaption({'accent':'Buttons background', 'light': 'Messages background', 'contrast': 'Header text color', 'dark': 'Text color'})</SCRIPT>{/html}",
+        "extra": {
+          "hide_textbox": true,
+          "textarea": {
+            "field": false
+          },
+          "buttons": {
+            "icons": [
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "pile_up": false,
+            "dual_buttons": false,
+            "multi": false,
+            "includes": [
+              "image",
+              "image",
+              "image",
+              "image"
+            ],
+            "images": [
+              "files/botimg/col-accent.jpg",
+              "files/botimg/col-light.jpg",
+              "files/botimg/col-contrast.jpg",
+              "files/botimg/col-dark.jpg"
+            ]
+          }
+        },
+        "order": 0,
+        "choice_text": "*Type the number of the option you are interested in",
+        "buttons": [
+          "Accent",
+          "Light",
+          "Contrast",
+          "Dark"
+        ]
+      }
+    ]
+  },
+  "205": {
+    "next": {
+      "success": "207"
+    },
+    "id": "205",
+    "function": "__send_message__",
+    "top": 1066,
+    "name": "Elige un vídeo",
+    "left": 6313,
+    "responses": [
+      {
+        "entity": "button",
+        "text": "Choose a video from the ones below",
+        "extra": {
+          "hide_textbox": true,
+          "textarea": {
+            "field": false
+          },
+          "buttons": {
+            "icons": [
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "pile_up": false,
+            "dual_buttons": false,
+            "multi": false,
+            "includes": [
+              "image",
+              "image",
+              "image",
+              "image",
+              "image",
+              "image"
+            ],
+            "images": [
+              "https://storage.googleapis.com/static.helloumi.com/landbot/video/video_1.jpg",
+              "https://storage.googleapis.com/static.helloumi.com/landbot/video/video_2.jpg",
+              "https://storage.googleapis.com/static.helloumi.com/landbot/video/video_3.jpg",
+              "https://storage.googleapis.com/static.helloumi.com/landbot/video/video_4.jpg",
+              "https://storage.googleapis.com/static.helloumi.com/landbot/video/video_5.jpg",
+              "https://storage.googleapis.com/static.helloumi.com/landbot/video/video_6.jpg"
+            ]
+          }
+        },
+        "order": 0,
+        "choice_text": "*Type the number of the option you are interested in",
+        "buttons": [
+          "video_1",
+          "video_2",
+          "video_3",
+          "video_4",
+          "video_5",
+          "video_6"
+        ]
+      }
+    ]
+  },
+  "240": {
+    "next": {
+      "success": "232"
+    },
+    "id": "240",
+    "method": "POST",
+    "url": "https://daisho.helloumi.com/webchat/landbot/welcome_mail/",
+    "data": {
+      "customer_token": "@umichat_id",
+      "email": "@email",
+      "token": "77HDVK45enAkzkmC"
+    },
+    "function": "__send_request__",
+    "top": 184,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "left": 5744,
+    "name": "API Request"
+  },
+  "187": {
+    "next": {
+      "success": "218"
+    },
+    "field": "custom",
+    "id": "187",
+    "function": "__text__",
+    "top": 1103,
+    "overwrite": true,
+    "keyword": true,
+    "left": 4188,
+    "custom_field": "accent",
+    "name": "Pick @accent"
+  },
+  "229": {
+    "next": {
+      "finish": "161",
+      "customize": "172"
+    },
+    "id": "229",
+    "function": "__choice__",
+    "top": 519,
+    "left": 4367,
+    "name": "Q2345678YIOP0QBlock #229"
+  },
+  "153": {
+    "next": {
+      "failed": "154",
+      "success": "148"
+    },
+    "field": "email",
+    "id": "153",
+    "function": "__email__",
+    "top": 257,
+    "overwrite": true,
+    "left": 220,
+    "name": "Pick @email"
+  },
+  "178": {
+    "next": {
+      "success": "221"
+    },
+    "id": "178",
+    "function": "__send_message__",
+    "top": 1068,
+    "name": "Sube tu icono",
+    "left": 3893,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {
+          "hide_textbox": false,
+          "textarea": {
+            "field": false
+          }
+        },
+        "text": "Upload your icon\n{html}<img src=\"x\" onerror=\"showBtnUpload();hideFooter();\">{/html}",
+        "order": 0
+      }
+    ]
+  },
+  "225": {
+    "next": {
+      "success": "148"
+    },
+    "id": "225",
+    "function": "__send_message__",
+    "top": 383,
+    "name": "Error message",
+    "left": 826,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {},
+        "text": "Well, I assume you don't want your own Landbot but might feel curious about the customization, I'll let you continue!",
+        "order": 0
+      }
+    ]
+  },
+  "164": {
+    "next": {
+      "reflektor": "168",
+      "next": "161",
+      "back": "158",
+      "starman": "168",
+      "grace": "168",
+      "caribou": "168",
+      "kashmir": "168"
+    },
+    "id": "164",
+    "function": "__choice__",
+    "top": 596,
+    "left": 2991,
+    "name": "Pick selected option"
+  },
+  "189": {
+    "next": {
+      "success": "218"
+    },
+    "field": "custom",
+    "id": "189",
+    "function": "__text__",
+    "top": 1118,
+    "overwrite": true,
+    "keyword": true,
+    "left": 4673,
+    "custom_field": "contrast",
+    "name": "Pick @contrast"
+  },
+  "223": {
+    "next": {
+      "success": "224"
+    },
+    "id": "223",
+    "function": "__send_message__",
+    "top": 257,
+    "name": "I'll send you the pa",
+    "left": 621,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {
+          "textarea": {
+            "field": "email"
+          }
+        },
+        "text": "I'll send you the password to access the platform so I need a valid one! Try again, please:",
+        "order": 0
+      }
+    ]
+  },
+  "233": {
+    "next": {
+      "success": "234"
+    },
+    "id": "233",
+    "function": "__send_message__",
+    "top": 123,
+    "name": "We will send the log",
+    "left": 6301,
+    "responses": [
+      {
+        "entity": "button",
+        "text": "We will send the login access to @email",
+        "extra": {
+          "hide_textbox": true,
+          "textarea": {
+            "field": false
+          },
+          "buttons": {
+            "icons": [
+              "none",
+              "none"
+            ],
+            "pile_up": false,
+            "dual_buttons": true,
+            "multi": false,
+            "includes": [
+              "none",
+              "none"
+            ],
+            "images": [
+              "",
+              ""
+            ]
+          }
+        },
+        "order": 0,
+        "choice_text": "*Escribe el número de la opción que te interese",
+        "buttons": [
+          "Ok perfect",
+          "Change email"
+        ]
+      }
+    ]
+  },
+  "175": {
+    "next": {
+      "next": "157",
+      "back": "172",
+      "nombre": "176",
+      "icono": "178",
+      "tagline": "219",
+      "icon": "178",
+      "name": "176"
+    },
+    "id": "175",
+    "function": "__choice__",
+    "top": 895,
+    "left": 3723,
+    "name": "Pick selected option"
+  },
+  "165": {
+    "next": {
+      "success": "169"
+    },
+    "id": "165",
+    "function": "__send_message__",
+    "top": 926,
+    "name": "¿Te gusta?",
+    "left": 3019,
+    "responses": [
+      {
+        "entity": "button",
+        "text": "Do you like it?\n{html}<img src=\"x\" onerror='showFooter(); changeStyles({\ntype: \"template\",\ntemplatename: \"@template\"\n} ); '>{/html}",
+        "extra": {
+          "hide_textbox": true,
+          "textarea": {
+            "field": false
+          },
+          "buttons": {
+            "icons": [
+              "check",
+              "cross"
+            ],
+            "pile_up": false,
+            "dual_buttons": true,
+            "multi": false,
+            "includes": [
+              "icon",
+              "icon"
+            ],
+            "images": [
+              "",
+              ""
+            ]
+          }
+        },
+        "order": 0,
+        "choice_text": "*Type the number of the option you are interested in",
+        "buttons": [
+          "Yes",
+          "No"
+        ]
+      }
+    ]
+  },
+  "173": {
+    "next": {
+      "next": "161",
+      "back": "160",
+      "colors": "181",
+      "fonts": "208",
+      "background": "191",
+      "colours": "181",
+      "logo": "174"
+    },
+    "id": "173",
+    "function": "__choice__",
+    "top": 601,
+    "left": 5201,
+    "name": "Pick selected option"
+  },
+  "161": {
+    "next": {
+      "success": "157"
+    },
+    "id": "161",
+    "function": "__send_message__",
+    "top": 295,
+    "name": "Perfecto",
+    "left": 4203,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {
+          "hide_textbox": true,
+          "textarea": {
+            "field": false
+          }
+        },
+        "text": "Perfect! 👏🏼\n{html}<img src=\"x\" onerror=\"hideFooter();\">{/html}",
+        "order": 0
+      }
+    ]
+  },
+  "170": {
+    "next": {
+      "success": "228"
+    },
+    "id": "170",
+    "function": "__send_message__",
+    "top": 1125,
+    "name": "Perfecto",
+    "left": 2902,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {
+          "hide_textbox": true,
+          "textarea": {
+            "field": false
+          }
+        },
+        "text": "Great!",
+        "order": 0
+      }
+    ]
+  },
+  "210": {
+    "next": {
+      "success": "211"
+    },
+    "id": "210",
+    "function": "__send_message__",
+    "top": 954,
+    "name": "Elige una opción",
+    "left": 6864,
+    "responses": [
+      {
+        "entity": "button",
+        "text": "Pick a size",
+        "extra": {
+          "hide_textbox": true,
+          "textarea": {
+            "field": false
+          },
+          "buttons": {
+            "icons": [
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "pile_up": true,
+            "dual_buttons": false,
+            "multi": false,
+            "includes": [
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "images": [
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          }
+        },
+        "order": 0,
+        "choice_text": "*Type the number of the option you are interested in",
+        "buttons": [
+          "XS",
+          "S",
+          "M",
+          "L",
+          "XL"
+        ]
+      }
+    ]
+  },
+  "226": {
+    "next": {
+      "success": "158"
+    },
+    "id": "226",
+    "function": "__send_message__",
+    "top": 542,
+    "name": "Now, let's configure",
+    "left": 2230,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {
+          "hide_textbox": true,
+          "textarea": {
+            "field": false
+          }
+        },
+        "text": "Here comes the best part",
+        "order": 0
+      }
+    ]
+  },
+  "159": {
+    "next": {
+      "back": "158",
+      "customize": "227",
+      "scratch": "227",
+      "skip": "161"
+    },
+    "id": "159",
+    "function": "__choice__",
+    "top": 184,
+    "left": 4166,
+    "name": "Pick selected option"
+  },
+  "215": {
+    "next": {
+      "next": "161",
+      "back": "208",
+      "oswald": "216",
+      "inconsolata": "216",
+      "roboto": "216",
+      "raleway": "216",
+      "droid": "216",
+      "lato": "216",
+      "slab": "216",
+      "open": "216",
+      "montserrat": "216"
+    },
+    "id": "215",
+    "function": "__choice__",
+    "top": 1050,
+    "left": 7537,
+    "name": "Pick selected option"
+  },
+  "196": {
+    "next": {
+      "success": "205"
+    },
+    "field": "custom",
+    "id": "196",
+    "top": 969,
+    "function": "__text__",
+    "virtual": true,
+    "overwrite": true,
+    "left": 6290,
+    "custom_field": "backgroundtype",
+    "name": "Pick @backgroundtype"
+  },
+  "219": {
+    "next": {
+      "success": "220"
+    },
+    "id": "219",
+    "function": "__send_message__",
+    "top": 1050,
+    "name": "Escribe el tagline",
+    "left": 3705,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {
+          "hide_textbox": false,
+          "textarea": {
+            "field": false
+          }
+        },
+        "text": "Type your tagline\n{html}<img src=\"x\" onerror=\"hideFooter();\">{/html}",
+        "order": 0
+      }
+    ]
+  },
+  "207": {
+    "next": {
+      "next": "161",
+      "back": "191",
+      "video_1": "206",
+      "video_2": "206",
+      "video_3": "206",
+      "video": "206"
+    },
+    "id": "207",
+    "function": "__choice__",
+    "top": 1158,
+    "left": 6296,
+    "name": "Pick selected option"
+  },
+  "101": {
+    "next": {
+      "success": "230"
+    },
+    "id": "101",
+    "function": "__send_message__",
+    "top": 84,
+    "name": "Add some content",
+    "left": 4948,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {
+          "hide_textbox": true,
+          "textarea": {
+            "field": false
+          }
+        },
+        "text": "Creating your landbot...{html}<img src=\"x\" onerror=\"hideFooter();\">{/html}",
+        "order": 0
+      }
+    ]
+  },
+  "163": {
+    "next": {
+      "next": "161",
+      "back": "158",
+      "template": "162",
+      "cero": "172",
+      "plantillas": "162",
+      "scratch": "172"
+    },
+    "id": "163",
+    "function": "__choice__",
+    "top": 368,
+    "left": 5181,
+    "name": "Pick selected option"
+  },
+  "149": {
+    "next": {
+      "success": "150"
+    },
+    "field": "custom",
+    "id": "149",
+    "function": "__text__",
+    "top": 456,
+    "overwrite": true,
+    "left": 198,
+    "custom_field": "brand_name",
+    "name": "Pick @brand_name"
+  },
+  "203": {
+    "next": {
+      "success": "204"
+    },
+    "id": "203",
+    "function": "__send_message__",
+    "top": 1103,
+    "name": "Elige el color",
+    "left": 5971,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {},
+        "text": "Pick a color or enter hexadecimal color code (#123ABC)\n{html}<img src=\"x\" onerror=\"addColorPicker();hideFooter();\">{/html}",
+        "order": 0
+      }
+    ]
+  },
+  "172": {
+    "next": {
+      "success": "173"
+    },
+    "id": "172",
+    "function": "__send_message__",
+    "top": 479,
+    "name": "Elige que quieres pe",
+    "left": 5183,
+    "responses": [
+      {
+        "entity": "button",
+        "text": "Select what you want to customize. Whenever you're done click *PUBLISH*.",
+        "extra": {
+          "hide_textbox": true,
+          "textarea": {
+            "field": false
+          },
+          "buttons": {
+            "icons": [
+              "star",
+              "paint-brush",
+              "picture",
+              "document"
+            ],
+            "pile_up": false,
+            "dual_buttons": false,
+            "multi": false,
+            "includes": [
+              "icon",
+              "icon",
+              "icon",
+              "icon"
+            ],
+            "images": [
+              "",
+              "",
+              "",
+              ""
+            ]
+          }
+        },
+        "order": 0,
+        "choice_text": "*Type the number of the option you are interested in",
+        "buttons": [
+          "Logo",
+          "Colors",
+          "Background",
+          "Fonts"
+        ]
+      }
+    ]
+  },
+  "221": {
+    "next": {
+      "failed": "180",
+      "success": "174"
+    },
+    "field": "custom",
+    "id": "221",
+    "function": "__get_image__",
+    "top": 1154,
+    "overwrite": true,
+    "left": 3868,
+    "custom_field": "logo",
+    "name": "Pick @logo:image"
+  },
+  "184": {
+    "next": {
+      "success": "188"
+    },
+    "id": "184",
+    "function": "__send_message__",
+    "top": 993,
+    "name": "Escribe el color",
+    "left": 4449,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {},
+        "text": "Pick a color or enter hexadecimal color code \n{html}<img src=\"x\" onerror=\"hideFooter();addColorPicker();\">{/html}",
+        "order": 0
+      }
+    ]
+  },
+  "193": {
+    "next": {
+      "success": "197"
+    },
+    "field": "custom",
+    "id": "193",
+    "top": 968,
+    "function": "__text__",
+    "virtual": true,
+    "overwrite": true,
+    "left": 5199,
+    "custom_field": "backgroundtype",
+    "name": "Pick @backgroundtype"
+  },
+  "206": {
+    "next": {
+      "success": "201"
+    },
+    "field": "custom",
+    "id": "206",
+    "top": 1326,
+    "function": "__text__",
+    "virtual": true,
+    "overwrite": true,
+    "left": 6273,
+    "custom_field": "videotemplate",
+    "name": "Pick @videotemplate"
+  },
+  "185": {
+    "next": {
+      "success": "189"
+    },
+    "id": "185",
+    "function": "__send_message__",
+    "top": 999,
+    "name": "Escribe el color",
+    "left": 4676,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {},
+        "text": "Pick a color or enter hexadecimal color code \n{html}<img src=\"x\" onerror=\"hideFooter();addColorPicker();\">{/html}",
+        "order": 0
+      }
+    ]
+  },
+  "195": {
+    "next": {
+      "success": "203"
+    },
+    "field": "custom",
+    "id": "195",
+    "top": 985,
+    "function": "__text__",
+    "virtual": true,
+    "overwrite": true,
+    "left": 5943,
+    "custom_field": "backgroundtype",
+    "name": "Pick @backgroundtype"
+  },
+  "237": {
+    "next": {
+      "success": "238"
+    },
+    "id": "237",
+    "function": "__send_message__",
+    "top": 239,
+    "name": "Add your email:",
+    "left": 6368,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {
+          "hide_textbox": false,
+          "textarea": {
+            "field": "email"
+          }
+        },
+        "text": "Add the new email below:",
+        "order": 0
+      }
+    ]
+  },
+  "235": {
+    "next": {
+      "success": "236"
+    },
+    "id": "235",
+    "method": "POST",
+    "url": "https://daisho.helloumi.com/webchat/landbot/welcome_mail/",
+    "data": {
+      "customer_token": "@umichat_id",
+      "email": "@email",
+      "token": "77HDVK45enAkzkmC"
+    },
+    "function": "__send_request__",
+    "top": 449,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "left": 6278,
+    "name": "API Request"
+  },
+  "168": {
+    "next": {
+      "success": "165"
+    },
+    "field": "custom",
+    "id": "168",
+    "top": 791,
+    "function": "__text__",
+    "virtual": true,
+    "overwrite": true,
+    "keyword": true,
+    "left": 2984,
+    "custom_field": "template",
+    "name": "Pick @template"
+  },
+  "160": {
+    "next": {
+      "success": "163"
+    },
+    "id": "160",
+    "function": "__send_message__",
+    "top": 268,
+    "name": "¿Quieres usar una de",
+    "left": 5178,
+    "responses": [
+      {
+        "entity": "button",
+        "text": "First, do you want to use a template or start from scratch?",
+        "extra": {
+          "hide_textbox": true,
+          "textarea": {
+            "field": false
+          },
+          "buttons": {
+            "icons": [
+              "star",
+              "paint-brush"
+            ],
+            "pile_up": false,
+            "dual_buttons": true,
+            "multi": false,
+            "includes": [
+              "icon",
+              "icon"
+            ],
+            "images": [
+              "",
+              ""
+            ]
+          }
+        },
+        "order": 0,
+        "choice_text": "*Type the number of the option you are interested in",
+        "buttons": [
+          "Pick a template",
+          "Start from scratch"
+        ]
+      }
+    ]
+  },
+  "162": {
+    "next": {
+      "success": "164"
+    },
+    "id": "162",
+    "function": "__send_message__",
+    "top": 500,
+    "name": "Elige la plantilla:",
+    "left": 3023,
+    "responses": [
+      {
+        "entity": "button",
+        "text": "Pick a template\n{html}<img src=\"x\" onerror='showFooter(); changeStyles({\ntype: \"template\",\ntemplatename: \"grace\"\n} ); '>{/html}",
+        "extra": {
+          "hide_textbox": true,
+          "textarea": {
+            "field": false
+          },
+          "buttons": {
+            "icons": [
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "pile_up": false,
+            "dual_buttons": false,
+            "multi": false,
+            "includes": [
+              "image",
+              "image",
+              "image",
+              "image",
+              "image"
+            ],
+            "images": [
+              "files/tp-1.jpg",
+              "files/tp-2.jpg",
+              "files/tp-3.jpg",
+              "files/tp-4.jpg",
+              "files/tp-5.jpg"
+            ]
+          }
+        },
+        "order": 0,
+        "choice_text": "*Type the number of the option you are interested in",
+        "buttons": [
+          "Kashmir",
+          "Reflektor",
+          "Starman",
+          "Caribou",
+          "Grace"
+        ]
+      }
+    ]
+  },
+  "204": {
+    "next": {
+      "success": "201"
+    },
+    "field": "custom",
+    "id": "204",
+    "function": "__text__",
+    "top": 1218,
+    "overwrite": true,
+    "left": 5941,
+    "custom_field": "backgroundcolor",
+    "name": "Pick @backgroundcolor"
+  },
+  "192": {
+    "next": {
+      "next": "161",
+      "back": "172",
+      "gradient": "193",
+      "image": "194",
+      "color": "195",
+      "video": "196"
+    },
+    "id": "192",
+    "function": "__choice__",
+    "top": 815,
+    "left": 5728,
+    "name": "Pick selected option"
+  },
+  "199": {
+    "next": {
+      "success": "200"
+    },
+    "id": "199",
+    "function": "__send_message__",
+    "top": 1226,
+    "name": "Elige el segundo col",
+    "left": 5198,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {},
+        "text": "Pick second gradient's color (bottom) or enter hexadecimal color code (#123ABC)",
+        "order": 0
+      }
+    ]
+  },
+  "182": {
+    "next": {
+      "next": "161",
+      "back": "172",
+      "dark": "184",
+      "light": "186",
+      "contrast": "185",
+      "accent": "183"
+    },
+    "id": "182",
+    "function": "__choice__",
+    "top": 843,
+    "left": 4488,
+    "name": "Pick selected option"
+  },
+  "183": {
+    "next": {
+      "success": "187"
+    },
+    "id": "183",
+    "function": "__send_message__",
+    "top": 988,
+    "name": "Escribe el color",
+    "left": 4184,
+    "responses": [
+      {
+        "entity": "text",
+        "extra": {},
+        "text": "Pick a color or enter hexadecimal color code (#123ABC)\n{html}<img src=\"x\" onerror=\"hideFooter();addColorPicker();\">{/html}",
+        "order": 0
+      }
+    ]
+  },
+  "174": {
+    "next": {
+      "success": "175"
+    },
+    "id": "174",
+    "function": "__send_message__",
+    "top": 784,
+    "name": "Elige qué quieres ca",
+    "left": 3723,
+    "responses": [
+      {
+        "entity": "button",
+        "text": "What do you want to change?\n{html}<img src=\"x\" onerror='hideBtnUpload(); showFooter(); changeStyles({\ntype: \"logo\",\nbrandName: \"@brandname\",\nlogo: \"@logo\",\ntagline: \"@tagline\"\n} ); '>{/html}",
+        "extra": {
+          "hide_textbox": true,
+          "textarea": {
+            "field": false
+          },
+          "buttons": {
+            "icons": [
+              "pencil",
+              "star",
+              "document"
+            ],
+            "pile_up": false,
+            "dual_buttons": false,
+            "multi": false,
+            "includes": [
+              "icon",
+              "icon",
+              "icon"
+            ],
+            "images": [
+              "",
+              "",
+              ""
+            ]
+          }
+        },
+        "order": 0,
+        "choice_text": "*Type the number of the option you are interested in",
+        "buttons": [
+          "Name",
+          "Icon",
+          "Tagline"
+        ]
+      }
+    ]
+  },
+  "212": {
+    "next": {
+      "success": "213"
+    },
+    "field": "custom",
+    "id": "212",
+    "top": 1266,
+    "function": "__text__",
+    "virtual": true,
+    "overwrite": true,
+    "left": 6846,
+    "custom_field": "fontsize",
+    "name": "Pick @fontsize"
+  },
+  "208": {
+    "next": {
+      "success": "209"
+    },
+    "id": "208",
+    "function": "__send_message__",
+    "top": 693,
+    "name": "Elige una opción",
+    "left": 7188,
+    "responses": [
+      {
+        "entity": "button",
+        "text": "Do you want to change the font or its size?\n{html}<img src=\"x\" onerror='\nchangeStyles({\ntype: \"font\",\nfont: \"@font\",\nfontsize: \"@fontsize\"\n} );\n'>{/html}",
+        "extra": {
+          "hide_textbox": true,
+          "textarea": {
+            "field": false
+          },
+          "buttons": {
+            "icons": [
+              "document",
+              "crop-tool"
+            ],
+            "pile_up": false,
+            "dual_buttons": true,
+            "multi": false,
+            "includes": [
+              "icon",
+              "icon"
+            ],
+            "images": [
+              "",
+              ""
+            ]
+          }
+        },
+        "order": 0,
+        "choice_text": "*Type the number of the option you are interested in",
+        "buttons": [
+          "Fonts",
+          "Size"
+        ]
+      }
+    ]
+  }
+}
