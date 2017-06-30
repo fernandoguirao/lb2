@@ -549,6 +549,9 @@ span.lg-font {
       padding: 18px 29px 19px 14px;
       text-align: center;
       color: @contrast;
+      & when (@contrast = @accent) {
+        color: @light;
+      }
       border-radius: 3px;
       border: 2px solid darken(@accent,10%);
       &:hover {
