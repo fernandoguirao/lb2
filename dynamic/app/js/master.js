@@ -23,6 +23,14 @@ function renderHelloumiLiveChat( configKey, callback ) {
           __umichatCore.on('render', callback);
         }
 
+        __umichatCore.on('sendmessage', function(){
+          var messages = document.getElementById('hu-webchat-messages');
+          var container = messages.querySelector('.hu-messenger-message:last-child .hu-message-content-buttons');
+          if (container) {
+            container.style.setProperty('display', 'none' , 'important');
+          }
+        });
+
         __umichatCore.on('showtextbox', function(){
           var styleHide = document.getElementById('hideChatbox');
           if (styleHide) styleHide.parentNode.removeChild(styleHide);
