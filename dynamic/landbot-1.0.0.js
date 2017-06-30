@@ -124,21 +124,31 @@ Landbot.prototype.createLandbot = function createLandbot() {
 
 Landbot.prototype.showOverlay = function showOverlay() {
   var body = document.getElementsByTagName('BODY')[0];
-  var bg, config = this.config;
-  if (config.custom['background-type'] === '\"gradient\"')
-    bg = 'linear-gradient(to bottom, '+ config.custom['gradient-from'] +' 0%, '+ config.custom['gradient-to'] +' 100%)';
-  else if (config.custom['background-type'] === '\"image\"')
-    bg = 'url('+ config.custom['background-image-url'] +')';
-  else if (config.custom['background-type'] === '\"color\"')
-    bg = config.custom['background-color'];
-  else if (config.custom['background-type'] === '\"video\"')
-    if (config.custom['video-texture'] === '\"gradient\"')
-      bg = 'linear-gradient(to bottom, '+ config.custom['gradient-from'] +' 0%, '+ config.custom['gradient-to'] +' 100%)';
-    else if (config.custom['video-texture'] === '\"image\"')
-      bg = 'url('+ config.custom['background-image-url'] +')';
-    else if (config.custom['video-texture'] === '\"color\"')
-      bg = config.custom['background-color'];
+  var bg, config = this.config, bgType = getType();
+  ////////////////////////////////////////////////////
+  // ENABLE WHEN FIXED LESS GLITCH
+  ////////////////////////////////////////////////////
+  // if ( bgType == 'gradient' )
+  //   bg = 'linear-gradient(to bottom, '+ config.custom['gradient-from'] +' 0%, '+ config.custom['gradient-to'] +' 100%)';
+  // else if ( bgType == 'image' )
+  //   bg = 'url('+ config.custom['background-image-url'] +')';
+  // else if ( bgType == 'color' )
+  //   bg = config.custom['background-color'];
+  // else if ( bgType == 'video' )
+  //   if (config.custom['video-texture'] === '\"gradient\"')
+  //     bg = 'linear-gradient(to bottom, '+ config.custom['gradient-from'] +' 0%, '+ config.custom['gradient-to'] +' 100%)';
+  //   else if (config.custom['video-texture'] === '\"image\"')
+  //     bg = 'url('+ config.custom['background-image-url'] +')';
+  //   else if (config.custom['video-texture'] === '\"color\"')
+  //     bg = config.custom['background-color'];
 
+  bg = 'white';
+
+  function getType() {
+    var reg = /(:?'|")(\w+)(:?'|")/g;
+    var m = reg.exec( config.custom['background-type'] );
+    return m ? m[2] : false;
+  }
 
   this.generateTag('div', body, {
     id: 'loading-overlay',
