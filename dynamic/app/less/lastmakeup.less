@@ -539,7 +539,7 @@ span.lg-font {
     padding: 0!important;
     box-shadow: none!important;
     p {
-      color: white!important;
+      color: @contrast !important;
     }
     b {
       margin-left: 6px;
@@ -551,12 +551,11 @@ span.lg-font {
       margin-top: 12px;
       padding: 18px 29px 19px 14px;
       text-align: center;
-      color: @contrast;
-      & when (@contrast = @accent) {
-        color: @light;
-      }
       border-radius: 3px;
       border: 2px solid darken(@accent,10%);
+      * {
+        color: @light;
+      }
       &:hover {
         background-color: lighten(@accent,10%);
         box-shadow: 0 0 10px 0px rgba(0,0,0,.2);
