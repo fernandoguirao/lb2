@@ -10,6 +10,9 @@ div#hu-experiment-header  {
 
 div#hu-experiment-header .hu-header-content .brand-name, div#hu-experiment-header .hu-header-content .more-leads, div#hu-experiment-header .hu-header-content .btt span {
   color: @contrast;
+  & when (@contrast = @accent) {
+    color: @light;
+  }
 }
 
 div#hu-experiment-header .more-leads.btt, div#hu-experiment-header a.btt, div#hu-experiment-header .btt.btt, div#hu-experiment-header h1.btt {
