@@ -56,10 +56,10 @@ function Landbot(config) {
       "contrast-0": "lighten(@contrast,10%)",
       "contrast-light": "lighten(@contrast,30%)",
       // Fonts
-      "embfonts": true,
-      "externalfonturl": '',
+      "embfonts": false,
+      "externalfonturl": '"https://fonts.googleapis.com/css?family=Montserrat"',
       "dark": "@black",
-      "font": "\"Gotham Rounded\"",
+      "font": "\"Montserrat\"",
       "font-type": "sans-serif",
       "font-size": "14px",
       "font-url": "\"https://guidango.com/fonts/gotham\"",

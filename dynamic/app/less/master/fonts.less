@@ -1,14 +1,14 @@
-& when (@embfonts = true){
-  @font-face {
-    .fontface_fn(@font-medium-slash,@id-medium,500);
-  }
-  @font-face {
-    .fontface_fn(@font-bold-slash,@id-bold,700);
-  }
-  @font-face {
-    .fontface_fn(@font-medium-slash,@id-regular, 300);
-  }
-}
-& when (@embfonts = false){
+// & when (@embfonts = true){
+//   @font-face {
+//     .fontface_fn(@font-medium-slash,@id-medium,500);
+//   }
+//   @font-face {
+//     .fontface_fn(@font-bold-slash,@id-bold,700);
+//   }
+//   @font-face {
+//     .fontface_fn(@font-medium-slash,@id-regular, 300);
+//   }
+// }
+// & when (@embfonts = false){
   @import (css) "@{externalfonturl}";
-}
+// }
