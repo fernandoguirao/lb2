@@ -168,81 +168,81 @@ Landbot.prototype.generateDocument = function generateDocument() {
 
   var head = document.getElementsByTagName('head')[0];
 
-  // Title
-  if (this.config.title)
-    document.title = this.config.title;
-  // Description
-  this.generateTag('meta', head, {
-    name: 'description',
-    content: this.config.description
-  });
-  // Viewport
-  this.generateTag('meta', head, {
-    name: 'viewport',
-    content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
-  });
-  // http-equiv
-  this.generateTag('meta', head, {
-    'http-equiv': 'Content-Type',
-    content: 'text/html; charset=UTF-8'
-  });
-  // og:title
-  this.generateTag('meta', head, {
-    property: 'og:title',
-    content: this.config.title
-  });
-  // og:description
-  this.generateTag('meta', head, {
-    property: 'og:type',
-    content: 'website'
-  });
-  // og:image
-  this.generateTag('meta', head, {
-    property: 'og:image',
-    content: this.config.staticUrl + 'landbot/files/ogimage.jpg'
-  });
-  // og:url
-  this.generateTag('meta', head, {
-    property: 'og:url',
-    content: this.config.url
-  });
-  // og:description
-  this.generateTag('meta', head, {
-    property: 'og:description',
-    content: this.config.description
-  });
-  // twitter:card
-  this.generateTag('meta', head, {
-    name: 'twitter:card',
-    content: 'summary'
-  });
-  // twitter:url
-  this.generateTag('meta', head, {
-    name: 'twitter:url',
-    content: this.config.url
-  });
-  // twitter:title
-  this.generateTag('meta', head, {
-    name: 'twitter:title',
-    content: this.config.title
-  });
-  // twitter:description
-  this.generateTag('meta', head, {
-    name: 'twitter:description',
-    content: this.config.description
-  });
-  // twitter:image
-  this.generateTag('meta', head, {
-    name: 'twitter:image',
-    content: this.config.staticUrl + 'landbot/files/ogimage.jpg'
-  });
-
-  // favicon
-  this.generateTag('link', head, {
-    rel: 'icon',
-    href: this.config.staticUrl + 'landbot/files/favicon.ico',
-    type: 'image/x-icon'
-  });
+  // // Title
+  // if (this.config.title)
+  //   document.title = this.config.title;
+  // // Description
+  // this.generateTag('meta', head, {
+  //   name: 'description',
+  //   content: this.config.description
+  // });
+  // // Viewport
+  // this.generateTag('meta', head, {
+  //   name: 'viewport',
+  //   content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+  // });
+  // // http-equiv
+  // this.generateTag('meta', head, {
+  //   'http-equiv': 'Content-Type',
+  //   content: 'text/html; charset=UTF-8'
+  // });
+  // // og:title
+  // this.generateTag('meta', head, {
+  //   property: 'og:title',
+  //   content: this.config.title
+  // });
+  // // og:description
+  // this.generateTag('meta', head, {
+  //   property: 'og:type',
+  //   content: 'website'
+  // });
+  // // og:image
+  // this.generateTag('meta', head, {
+  //   property: 'og:image',
+  //   content: this.config.staticUrl + 'landbot/files/ogimage.jpg'
+  // });
+  // // og:url
+  // this.generateTag('meta', head, {
+  //   property: 'og:url',
+  //   content: this.config.url
+  // });
+  // // og:description
+  // this.generateTag('meta', head, {
+  //   property: 'og:description',
+  //   content: this.config.description
+  // });
+  // // twitter:card
+  // this.generateTag('meta', head, {
+  //   name: 'twitter:card',
+  //   content: 'summary'
+  // });
+  // // twitter:url
+  // this.generateTag('meta', head, {
+  //   name: 'twitter:url',
+  //   content: this.config.url
+  // });
+  // // twitter:title
+  // this.generateTag('meta', head, {
+  //   name: 'twitter:title',
+  //   content: this.config.title
+  // });
+  // // twitter:description
+  // this.generateTag('meta', head, {
+  //   name: 'twitter:description',
+  //   content: this.config.description
+  // });
+  // // twitter:image
+  // this.generateTag('meta', head, {
+  //   name: 'twitter:image',
+  //   content: this.config.staticUrl + 'landbot/files/ogimage.jpg'
+  // });
+  //
+  // // favicon
+  // this.generateTag('link', head, {
+  //   rel: 'icon',
+  //   href: this.config.staticUrl + 'landbot/files/favicon.ico',
+  //   type: 'image/x-icon'
+  // });
 
   /////////// HIDE TEXTBOX ONLOAD ///////////
 
