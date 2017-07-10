@@ -324,9 +324,13 @@ function loadSearch(elem, path, callback){
         },
         success: function(result) {
           var __data;
-          if ( typeof(result) == 'object' ) __data = result;
+          try {
+            if ( typeof(result) == 'object' ) __data = result;
+            else if ( typeof(result) == 'string' ) __data = JSON.parse(result);
+          } catch(e) {
+            console.log('Error, invalid search data retrieved!')
+          }
           if (__data) {
-
             var $selectize = $('<select placeholder="Type here...">');
             var __dataFormatted = $.map( __data, function( elem, index ){
               return $.extend({}, elem );
