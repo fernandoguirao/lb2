@@ -310,11 +310,14 @@ function getEmailFromURL(){
 }
 
 function loadSearch(elem, path, callback){
-  var $elem = $(elem);
-  var $container = $elem.parent().parent();
+  // var $elem = $(elem);
+  var $elem = $('#hu-webchat-messages .hu-messenger-message:last-child .hu-message-content p br:last-child');
   var $paragraph = $elem.parent();
+  // var key = $paragraph.data('key');
+  // $paragraph = $('#hu-webchat-messages .hu-messenger-message:last-child .hu-message-content[data-key="'+key+'"]');
+  var $container = $paragraph.parent();
   $paragraph.fadeTo(0, 0);
-  if ( $elem.length > 0) {
+  if ( $paragraph.length > 0 && $container.length > 0) {
     $.ajax(
       {
         url: path,
@@ -330,15 +333,15 @@ function loadSearch(elem, path, callback){
           } catch(e) {
             console.log('Error, invalid search data retrieved!')
           }
-          if (__data) {
+          if (__data && !$container.hasClass('hu-message-content-search')) {
             var $selectize = $('<select placeholder="Type here...">');
-            var __dataFormatted = $.map( __data, function( elem, index ){
-              return $.extend({}, elem );
+            var __dataFormatted = $.map( __data, function( el, index ){
+              return $.extend({}, el );
             });
             $container.addClass('hu-message-content-search');
             $container.append( $selectize );
             $selectize.selectize({
-              maxOptions: 4,
+              maxOptions: 6,
               valueField: 'keyword',
               labelField: 'name',
               searchField: ['name'],
@@ -378,12 +381,12 @@ function loadSearch(elem, path, callback){
                   if (search.length > 0) {
                     var score = this.getScoreFunction(search);
                     return function(item) {
-                      console.log(item.name + ': ' + (score(item) * (1 + Math.min(item.score / 100, 1))));
+                      // console.log(item.name + ': ' + (score(item) * (1 + Math.min(item.score / 100, 1))));
                       return score(item) * (1 + Math.min(item.score / 100, 1));
                     };
                   } else {
                     return function(item) {
-                      console.log(item.name + ': ' + (1 + Math.min(item.score / 100, 1)));
+                      // console.log(item.name + ': ' + (1 + Math.min(item.score / 100, 1)));
                       return (1 + Math.min(item.score / 100, 1));
                     };
                   }
@@ -392,13 +395,15 @@ function loadSearch(elem, path, callback){
               render: {
                 option: function(item, escape) {
                   return '<div class="hu-selectize-item" data-keyword="' + escape(item.keyword) + '" onclick="javascript:selectizeClick(this);">' +
-                    '<span class="hu-selectize-avatar" style="background-image: url(' + escape(item.image) + ')"></span>' +
+                    // '<span class="hu-selectize-avatar" style="background-image: url(' + escape(item.image) + ')"></span>' +
                     '<span class="hu-selectize-text">' + escape(item.name) + '</span></div>';
                 }
               }
             })
             $paragraph.remove();
-            $container.find('.selectize-input').click(); // Foces open
+            $container.find('.selectize-input').click(); // Forces open
+            $container.find('.selectize-input').blur(); // Shows placeholder
+            $container.find('.selectize-input').focusout(); // Shows placeholder
             if ( typeof(callback) == 'function' ) callback(true);
           } else {
             if ( typeof(callback) == 'function' ) callback(false);
@@ -408,7 +413,6 @@ function loadSearch(elem, path, callback){
     );
   }
 }
-
 
 function selectizeClick( elem ){
   var $elem = $(elem);

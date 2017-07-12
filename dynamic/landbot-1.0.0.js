@@ -30,8 +30,46 @@ function Landbot(config) {
     'videoname': 'video',
     'onloadLivechatJS': 'renderHelloumiLiveChat()',
     'messageLimit': 100,
-    'welcome': {},
-    'initialMessage': '#start',
+    'welcome': {
+      'init': ['0','1','2'],
+      'messages': {
+        '0': {
+          'type': 'dialog',
+          'title': 'Hi there!',
+          'buttons': [ 'Hey' ],
+          'payloads': [ 'Hey' ],
+          'timestamp': Date.now() / 1000 ,
+          'readed': false,
+          'samurai': -1,
+          'next': false,
+          'isLastMessage': true
+        },
+        '1': {
+          'type': 'dialog',
+          'title': 'Hello 👋',
+          'buttons': [ 'Hey' ],
+          'payloads': [ 'Hey' ],
+          'timestamp': Date.now() / 1000 ,
+          'readed': false,
+          'samurai': -1,
+          'next': false,
+          'isLastMessage': true
+        },
+        '2': {
+          'type': 'dialog',
+          'title': 'Hey there!',
+          'buttons': [ 'Hey' ],
+          'payloads': [ 'Hey' ],
+          'timestamp': Date.now() / 1000 ,
+          'readed': false,
+          'samurai': -1,
+          'next': false,
+          'isLastMessage': true
+        }
+      }
+    },
+    // 'initialMessage': '#start',
+    'initialMessage': false,
     // custom content MUST be JSON parseable
     'custom': {
       "containertype": "fullscreen",
@@ -332,36 +370,19 @@ Landbot.prototype.generateDocument = function generateDocument() {
     href: this.config.staticUrl + 'webchat/css/main-' + this.config.livechatVersion + '.css'
   });
 
-  window.chatbotConfigs = {
-    "landbot": {
-      "staticUrl": this.config.staticUrl,
-      "serverUrl": this.config.serverUrl,
-      "channelToken": this.config.channelToken,
-      "brandID": this.config.brandID,
-      "version": this.config.livechatVersion,
-      "apiKey": this.config.apiKey,
-      "authDomain": this.config.authDomain,
-      "databaseURL": this.config.databaseURL,
-      "storageBucket": this.config.storageBucket,
-      "open": this.config.open,
-      "platform": this.config.platform,
-      "welcome": this.config.welcome,
-      "messageLimit": this.config.messageLimit
-    },
-    // "discorbot": {
-    //   "staticUrl": "https://storage.googleapis.com/static-demo-helloumi/",
-    //   "channelToken": "H-56-UPLZXWDID83F9F7Q",
-    //   "brandID": "230",
-    //   "version": "1.0.0.13",
-    //   "apiKey": "AIzaSyDsVTr4OpOV45cfIXxcV1UvAEQ6JjnMbZU",
-    //   "authDomain": "daisho-yexir.firebaseapp.com",
-    //   "databaseURL": "https://daisho-yexir.firebaseio.com",
-    //   "storageBucket": "daisho-yexir.appspot.com",
-    //   "open": true,
-    //   "platform": "landbot",
-    //   "initialMessage": "No email",
-    // }
-  };
+  window.chatbotConfigs = {};
+
+  window.chatbotConfigs['landbot'] = this.extend({
+    "staticUrl": this.config.staticUrl,
+    "serverUrl": this.config.serverUrl,
+    "channelToken": this.config.channelToken,
+    "brandID": this.config.brandID,
+    "version": this.config.livechatVersion,
+    "apiKey": this.config.apiKey,
+    "authDomain": this.config.authDomain,
+    "databaseURL": this.config.databaseURL,
+    "storageBucket": this.config.storageBucket
+  }, this.config);
 
   this.generateLivechatJS = function generateLivechatJS() {
     // Livechat js
