@@ -47,8 +47,8 @@ function Landbot(config) {
         '1': {
           'type': 'dialog',
           'title': 'Hello 👋',
-          'buttons': [ 'Hey' ],
-          'payloads': [ 'Hey' ],
+          'buttons': [ 'Hello' ],
+          'payloads': [ 'Hello' ],
           'timestamp': Date.now() / 1000 ,
           'readed': false,
           'samurai': -1,
@@ -58,8 +58,8 @@ function Landbot(config) {
         '2': {
           'type': 'dialog',
           'title': 'Hey there!',
-          'buttons': [ 'Hey' ],
-          'payloads': [ 'Hey' ],
+          'buttons': [ 'Howdy' ],
+          'payloads': [ 'Howdy' ],
           'timestamp': Date.now() / 1000 ,
           'readed': false,
           'samurai': -1,
