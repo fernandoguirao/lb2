@@ -30,6 +30,7 @@ function Landbot(config) {
     'videoname': 'video',
     'onloadLivechatJS': 'renderHelloumiLiveChat()',
     'messageLimit': 100,
+    'branding': true,
     'welcome': {
       'init': ['0','1','2'],
       'messages': {
@@ -417,20 +418,32 @@ Landbot.prototype.generateDocument = function generateDocument() {
 
   var body = document.getElementsByTagName('BODY')[0];
 
-  // #hu-experiment-header
-  this.generateTag('div', body, {
-    id: 'hu-experiment-header',
-    innerHTML: '\
-    <div class="hu-header-content">\
-      <img class="brand-logo" src="' + this.config.logo + '" alt="">\
-      <h1 class="brand-name">' + this.config.brandName + '</h1>\
-      <span class="more-leads">' + this.config.tagline + '</span>\
-      <a href="http://landbot.io/?utm_source=referral&utm_medium=customers&utm_campaign=' + this.config.brandName + '" target="_blank" class="btt" id="rightheader">\
-      <span class="btt-content">Powered by <b class="hu-bold">Landbot.io</b></span>\
-      <span class="btt-on-hover">Get your Landbot 🤖</span>\
-      </a>\
-    </div>'
-  });
+  if (this.config.branding === true) {
+    // #hu-experiment-header
+    this.generateTag('div', body, {
+      id: 'hu-experiment-header',
+      innerHTML: '\
+      <div class="hu-header-content">\
+        <img class="brand-logo" src="' + this.config.logo + '" alt="">\
+        <h1 class="brand-name">' + this.config.brandName + '</h1>\
+        <span class="more-leads">' + this.config.tagline + '</span>\
+        <a href="http://landbot.io/?utm_source=referral&utm_medium=customers&utm_campaign=' + this.config.brandName + '" target="_blank" class="btt" id="rightheader">\
+        <span class="btt-content">Powered by <b class="hu-bold">Landbot.io</b></span>\
+        <span class="btt-on-hover">Get your Landbot 🤖</span>\
+        </a>\
+      </div>'
+    });
+  } else {
+    this.generateTag('div', body, {
+      id: 'hu-experiment-header',
+      innerHTML: '\
+      <div class="hu-header-content">\
+        <img class="brand-logo" src="' + this.config.logo + '" alt="">\
+        <h1 class="brand-name">' + this.config.brandName + '</h1>\
+        <span class="more-leads">' + this.config.tagline + '</span>\
+      </div>'
+    });
+  }
   // this.generateTag('div', body, {
   //   id: 'hu-experiment-header',
   //   innerHTML: '\
@@ -451,20 +464,33 @@ Landbot.prototype.generateDocument = function generateDocument() {
   //   </div>'
   // });
 
-  // Loader
-  this.generateTag('div', body, {
-    innerHTML: '\
-    <div class="sk-folding-cube">\
-      <div class="sk-cube1 sk-cube"></div>\
-      <div class="sk-cube2 sk-cube"></div>\
-      <div class="sk-cube4 sk-cube"></div>\
-      <div class="sk-cube3 sk-cube"></div>\
-    </div>\
-    <div class="loader-referral">\
-      <span>Powered by</span>\
-      <a href="/">Landbot<i>.io</i> 🤖</a>\
-    </div>'
-  });
+  if (this.config.branding === true) {
+    // Loader
+    this.generateTag('div', body, {
+      innerHTML: '\
+      <div class="sk-folding-cube">\
+        <div class="sk-cube1 sk-cube"></div>\
+        <div class="sk-cube2 sk-cube"></div>\
+        <div class="sk-cube4 sk-cube"></div>\
+        <div class="sk-cube3 sk-cube"></div>\
+      </div>\
+      <div class="loader-referral">\
+        <span>Powered by</span>\
+        <a href="/">Landbot<i>.io</i> 🤖</a>\
+      </div>'
+    });
+  } else {
+    // Loader
+    this.generateTag('div', body, {
+      innerHTML: '\
+      <div class="sk-folding-cube">\
+        <div class="sk-cube1 sk-cube"></div>\
+        <div class="sk-cube2 sk-cube"></div>\
+        <div class="sk-cube4 sk-cube"></div>\
+        <div class="sk-cube3 sk-cube"></div>\
+      </div>'
+    });
+  }
 
   // // Botchat css
   // this.generateTag('link', body, {
