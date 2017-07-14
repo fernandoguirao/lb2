@@ -29,6 +29,8 @@ function renderHelloumiLiveChat( configKey, callback ) {
           if (container) {
             container.style.setProperty('display', 'none' , 'important');
           }
+          var textbox = document.getElementById('hu-composer-box');
+          if (textbox) textbox.blur();
         });
 
         __umichatCore.on('showtextbox', function(){
