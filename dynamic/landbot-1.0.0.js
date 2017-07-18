@@ -288,7 +288,7 @@ Landbot.prototype.generateDocument = function generateDocument() {
   this.generateTag('style', head, {
     id: 'hideChatbox',
     innerHTML: '\
-    .hu-messenger-footer {\
+    .hu-messenger-footer .hu-footer-state {\
       display: none !important;\
       opacity: 0 !important;\
     }'

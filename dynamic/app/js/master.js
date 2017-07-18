@@ -24,6 +24,7 @@ function renderHelloumiLiveChat( configKey, callback ) {
         }
 
         __umichatCore.on('sendmessage', function(){
+          __umichatCore.gui.hideTextbox();
           var messages = document.getElementById('hu-webchat-messages');
           var container = messages.querySelector('.hu-messenger-message:last-child .hu-message-content-buttons');
           if (container) {
@@ -34,6 +35,12 @@ function renderHelloumiLiveChat( configKey, callback ) {
         });
 
         __umichatCore.on('showtextbox', function(){
+          var styleHide = document.getElementById('hideChatbox');
+          if (styleHide) styleHide.parentNode.removeChild(styleHide);
+        });
+
+        __umichatCore.on('messagesloaded', function(){
+          console.log('messagesloaded');
           var styleHide = document.getElementById('hideChatbox');
           if (styleHide) styleHide.parentNode.removeChild(styleHide);
         });

@@ -55,65 +55,207 @@
   .hu-message-avatar, .hu-avatar {
     display: none !important;
   }
-  .hu-messenger-body-state {
-    padding-bottom: 220px;
-  }
-  #hu-container-widget[data-textbox="show"] #hu-container-messenger .hu-messenger-body-state {
-    padding-bottom: 36px;
-  }
   #hu-container-messenger {
     .hu-messenger-body .hu-messenger-message .hu-message-container {
       .hu-message-content.hu-message-content-buttons {
-        max-height: 205px;
-        width: 100%;
-        overflow: scroll;
         position: fixed;
-        bottom: 0;
-        margin: 0;
-        padding: 20px !important;
-        background-color: white !important;
-        &::before { content: none; }
-        .hu-dual-buttons .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink:last-child {
+      }
+    }
+    .hu-btn-group-footer {
+      margin-top: 10px;
+    }
+    .hu-messenger-footer {
+      .hu-btn-send {
+        padding: 15px 20px;
+        background-color: @accent;
+        color: @light;
+        font-size: 13px;
+        font-weight: 300;
+        width: 120px;
+        height: 48px;
+        border-radius: 48px;
+        border: 1px solid @light;
+        cursor: pointer;
+        &:disabled {
+          opacity: 0.4;
+          cursor: initial;
+        }
+        &:hover {
+          background-color: lighten(@accent,5%);
+        }
+        i.fi {
+          float: right;
+        }
+        * {
+          color: @light;
+        }
+      }
+      .hu-btn-multi {
+        .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink {
+          float: none;
+          display: inline-block;
+          width: 100%;
+          text-align: center;
+          max-width: 260px;
+          // padding: 11px 31px;
+          padding: 15px 30px;
+          margin-bottom: 2px;
+          background-color: @light;
+          color: @dark;
+          border-width: 2px;
+          border-color: @light;
+          span {
+            color: @dark;
+            padding-left: 15px;
+          }
+          &:hover {
+            background-color: @light;
+            border-color: @light;
+            color: @accent;
+            span { color: @accent; }
+            .check-block label:after {
+              opacity: 0.3;
+            }
+          }
+          &.active {
+            background-color: @accent;
+            border-color: @accent;
+            color: @light;
+            span { color: @light; }
+            .check-block {
+              border: 1px solid @light;
+            }
+          }
+          .check-block {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            border-radius: 50%;
+            border: 1px solid @accent;
+            label {
+              width: 20px;
+              height: 20px;
+              position: absolute;
+              top: 4px;
+              left: 4px;
+              cursor: pointer;
+              background: linear-gradient(top, #222 0%, #45484d 100%);
+              border-radius: 50px;
+              &:after {
+                content: '';
+                width: 13px;
+                height: 6px;
+                position: absolute;
+                top: 5px;
+                left: 3px;
+                border: 1px solid @accent;
+                border-top: none;
+                border-right: none;
+                background: transparent;
+                opacity: 0;
+                transform: rotate(-45deg);
+              }
+            }
+            input[type="checkbox"] {
+              visibility: hidden;
+              &:checked + label:after {
+                opacity: 1;
+                border-color: @light;
+              }
+            }
+          }
+        }
+      }
+      .hu-message-content.hu-message-content-buttons {
+        .hu-btn-pink {
           background-color: @accent;
           border-color: darken(@accent,10%);
           color: @light;
+          border-radius: 4px;
+          padding: 15px;
+          span {
+            font-size: 15px;
+          }
         }
-        .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink {
-          width: 100%;
-          max-width: 100%;
-          float: none;
-          text-align: left;
-          &[data-include="icon"], &[data-include="image"] {
-            .display-flex();
-            align-items: center;
-            i.fi {
-              display: inline-block;
-              margin: 0 20px 0 0;
+        .btn-pink {
+          background-color: @accent;
+          border-color: darken(@accent,10%);
+          color: @light;
+          border-radius: 0 !important;
+          background-color: transparent;
+          .display-flex();
+          .check-block {
+            .hu-btn-check {
+              display: none;
             }
-            .hu-btn-image {
-              width: 40px;
-              height: 40px;
-              margin: 0 20px 0 20px;
-              border-radius: 50%;
-            }
-            span {
-              width: auto;
+            .hu-btn-check-label {
+              border-radius: 100%;
+              border-color: darken(@accent,10%);
+              border-width: 2px;
             }
           }
         }
-        .hu-btn-group-footer {
-          width: 100%;
+      }
+    }
+    .hu-messenger-footer, .hu-messenger-body .hu-messenger-message .hu-message-container {
+      .hu-message-content.hu-message-content-buttons {
+        &:empty{
+          display: none;
         }
-        .hu-btn-multi {
+        &:not(:empty){
+          max-height: 205px;
+          width: 100%;
+          overflow: scroll;
+          bottom: 0;
+          margin: 0;
+          padding: 20px !important;
+          background-color: white !important;
+          &::before { content: none; }
+          .hu-dual-buttons .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink:last-child {
+            background-color: @accent;
+            border-color: darken(@accent,10%);
+            color: @light;
+          }
           .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink {
-            text-align: center;
-            border-color: @accent;
-            border-width: 3px;
+            width: 100%;
+            max-width: 100%;
+            float: none;
+            text-align: left;
+            &[data-include="icon"], &[data-include="image"] {
+              .display-flex();
+              align-items: center;
+              i.fi {
+                display: inline-block;
+                margin: 0 20px 0 0;
+              }
+              .hu-btn-image {
+                width: 40px;
+                height: 40px;
+                margin: 0 20px 0 20px;
+                border-radius: 50%;
+              }
+              span {
+                width: auto;
+              }
+            }
           }
-        }
-        .hu-btn-group-footer .hu-btn-send {
-          width: 100%;
-          font-size: 14px;
+          .hu-btn-group-footer {
+            width: 100%;
+          }
+          .hu-btn-multi {
+            .hu-btn.hu-btn-sm.hu-btn-block.hu-btn-pink {
+              text-align: center;
+              border-color: @accent;
+              border-width: 3px;
+              border-radius: 4px !important;
+            }
+          }
+          .hu-btn-group-footer .hu-btn-send {
+            width: 100%;
+            font-size: 14px;
+          }
         }
       }
     }
@@ -153,11 +295,14 @@
   }
   div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state {
     padding-top: 10px !important;
-    padding-bottom: 168px !important;
+    // padding-bottom: 168px !important;
   }
-  div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state .hu-messenger-messages {
+  div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state #hu-webchat-ghosts {
     // padding-bottom: 0 !important;
     // padding-bottom: 62px!important;
     padding-bottom: 32px !important;
+  }
+  div#hu-container-widget div#hu-container-messenger .hu-messenger-body .hu-messenger-body-state #hu-webchat-messages {
+    padding-bottom: 2px !important;
   }
 }
