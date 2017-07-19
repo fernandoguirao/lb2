@@ -34,16 +34,14 @@ function renderHelloumiLiveChat( configKey, callback ) {
           if (textbox) textbox.blur();
         });
 
-        __umichatCore.on('showtextbox', function(){
+        var removeHardcodedStyle = function(){
           var styleHide = document.getElementById('hideChatbox');
           if (styleHide) styleHide.parentNode.removeChild(styleHide);
-        });
-
-        __umichatCore.on('messagesloaded', function(){
-          console.log('messagesloaded');
-          var styleHide = document.getElementById('hideChatbox');
-          if (styleHide) styleHide.parentNode.removeChild(styleHide);
-        });
+          helloumi.webchat.umichatgui.scrollBottom();
+        };
+        __umichatCore.on('showtextbox', removeHardcodedStyle);
+        __umichatCore.on('welcomeloaded', removeHardcodedStyle);
+        __umichatCore.on('messagesloaded', removeHardcodedStyle);
       }
     }
   });
@@ -446,12 +444,19 @@ function selectizeClick( elem ){
 // ==============
 
 document.addEventListener("DOMContentLoaded", function(event) {
-  document.getElementById("back-btn").onclick = function(){
+  var backBtn = document.getElementById("back-btn");
+  if (backBtn) {
+    backBtn.onclick = function(){
      fakeMessage('back');
-   }
-   document.getElementById("publish-btn").onclick = function(){
+    }
+  }
+
+  var publishBtn = document.getElementById("publish-btn");
+  if (publishBtn) {
+    publishBtn.onclick = function(){
       fakeMessage('next');
     }
+  }
 });
 
 var showFooter = function(){

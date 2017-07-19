@@ -39,33 +39,39 @@ function Landbot(config) {
           'title': 'Hi there!',
           'buttons': [ 'Hey' ],
           'payloads': [ 'Hey' ],
-          'timestamp': Date.now() / 1000 ,
           'readed': false,
           'samurai': -1,
           'next': false,
-          'isLastMessage': true
+          'isLastMessage': true,
+          'extra': {
+            'hide_textbox': true
+          }
         },
         '1': {
           'type': 'dialog',
           'title': 'Hello 👋',
           'buttons': [ 'Hello' ],
           'payloads': [ 'Hello' ],
-          'timestamp': Date.now() / 1000 ,
           'readed': false,
           'samurai': -1,
           'next': false,
-          'isLastMessage': true
+          'isLastMessage': true,
+          'extra': {
+            'hide_textbox': true
+          }
         },
         '2': {
           'type': 'dialog',
           'title': 'Hey there!',
           'buttons': [ 'Howdy' ],
           'payloads': [ 'Howdy' ],
-          'timestamp': Date.now() / 1000 ,
           'readed': false,
           'samurai': -1,
           'next': false,
-          'isLastMessage': true
+          'isLastMessage': true,
+          'extra': {
+            'hide_textbox': true
+          }
         }
       }
     },
@@ -288,7 +294,7 @@ Landbot.prototype.generateDocument = function generateDocument() {
   this.generateTag('style', head, {
     id: 'hideChatbox',
     innerHTML: '\
-    .hu-messenger-footer .hu-footer-state {\
+    .hu-messenger-footer {\
       display: none !important;\
       opacity: 0 !important;\
     }'

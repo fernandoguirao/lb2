@@ -591,6 +591,9 @@
       &[data-key='typing'] {
         .animation(appear-left);
         .animation-duration(.3s);
+        &:not(:last-child) {
+          display: none;
+        }
       }
       position: relative;
       &[data-samurai^="\-"] .hu-avatar {
