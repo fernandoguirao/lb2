@@ -29,7 +29,7 @@ function Landbot(config) {
     'background-video': false,
     'videoname': 'video',
     'onloadLivechatJS': 'renderHelloumiLiveChat()',
-    'messageLimit': 100,
+    'messageLimit': 50,
     'branding': true,
     'welcome': {
       'init': ['0','1','2'],
