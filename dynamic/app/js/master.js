@@ -24,14 +24,31 @@ function renderHelloumiLiveChat( configKey, callback ) {
         }
 
         __umichatCore.on('sendmessage', function(){
-          __umichatCore.gui.hideTextbox();
-          var messages = document.getElementById('hu-webchat-messages');
-          var container = messages.querySelector('.hu-messenger-message:last-child .hu-message-content-buttons');
-          if (container) {
-            container.style.setProperty('display', 'none' , 'important');
+          // Message container
+          var __messages = document.getElementById('hu-webchat-messages');
+
+          // If last message is a human dont hide chatbox
+          var __lastMessage = __messages.querySelector('.hu-messenger-message:last-child');
+          if (__lastMessage) {
+            var __samurai = __lastMessage.getAttribute('data-samurai');
+            if ( typeof(__samurai) == 'string' ) {
+              __samurai = parseInt(__samurai);
+              if (__samurai <= 0 ) {
+                // Quit chatbox focus
+                var __textbox = document.getElementById('hu-composer-box');
+                if (__textbox) __textbox.blur();
+                // Hide chatbox
+                __umichatCore.gui.hideTextbox();
+              }
+            }
           }
-          var textbox = document.getElementById('hu-composer-box');
-          if (textbox) textbox.blur();
+
+          // Remove buttons
+          var __container = __messages.querySelector('.hu-messenger-message:last-child .hu-message-content-buttons');
+          if (__container) {
+            __container.style.setProperty('display', 'none' , 'important');
+          }
+
         });
 
         var removeHardcodedStyle = function(){
