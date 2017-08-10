@@ -513,7 +513,7 @@ Landbot.prototype.generateDocument = function generateDocument() {
 
 
   ///////////////// VIDEO /////////////////
-  if (this.config['background-video'] === true)
+  if (this.config['background-video'] === true) {
     this.generateTag('div', body, {
       innerHTML: '\
       <div class="bg-texture"></div>\
@@ -525,8 +525,51 @@ Landbot.prototype.generateDocument = function generateDocument() {
       <script>document.createElement("video");</script>\
       <![endif]-->'
     });
+  }
 
+  // HACK :: Facebook App built-in browser @ iOS
+  if ( this.isFacebookApp() && this.getMobileOS() == 'iOS') {
+    this.generateTag('style', head, {
+      id: 'fbAppHack',
+      innerHTML: '\
+      #hu-webchat-messages {\
+        padding-top: 40px !important;\
+      }'
+    });
+  }
+  document.body.scrollTop = document.body.offsetHeight;
 };
+
+Landbot.prototype.isFacebookApp = function isFacebookApp() {
+  var ua = navigator.userAgent || navigator.vendor || window.opera;
+  return (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1);
+};
+
+/**
+ * Determine the mobile operating system.
+ * This function returns one of 'iOS', 'Android', 'Windows Phone', or 'unknown'.
+ *
+ * @returns {String}
+ */
+Landbot.prototype.getMobileOS = function getMobileOS() {
+  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+  // Windows Phone must come first because its UA also contains "Android"
+  if (/windows phone/i.test(userAgent)) {
+      return "Windows Phone";
+  }
+
+  if (/android/i.test(userAgent)) {
+      return "Android";
+  }
+
+  // iOS detection from: http://stackoverflow.com/a/9039885/177710
+  if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      return "iOS";
+  }
+
+  return false;
+}
 
 Landbot.prototype.generateTag = function generateTag(tag, appendTo, data, attrs) {
   var t = document.createElement( tag );
